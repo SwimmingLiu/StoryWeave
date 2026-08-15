@@ -1,0 +1,35 @@
+{
+  "format": "storyweave/slides",
+  "version": 1,
+  "producer": "storyweave-imagegen",
+  "kind": "image",
+  "title": "夜间值班：服务仍然继续",
+  "canvas": {
+    "width": 2048,
+    "height": 1152
+  },
+  "entry": "index.html",
+  "slides": [
+    {
+      "id": "s01",
+      "role": "cover",
+      "source": "slides/s01.png",
+      "claim": "夜间值班，服务仍然继续",
+      "notes": "夜间值班，服务仍然继续"
+    },
+    {
+      "id": "s02",
+      "role": "image-hero",
+      "source": "slides/s02.png",
+      "claim": "当系统交给人工，交接不能从零开始",
+      "notes": "当系统交给人工，交接不能从零开始"
+    },
+    {
+      "id": "s03",
+      "role": "closing",
+      "source": "slides/s03.png",
+      "claim": "让下一班人接住已经发生的事",
+      "notes": "让下一班人接住已经发生的事"
+    }
+  ]
+}

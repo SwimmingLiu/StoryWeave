@@ -1,0 +1,38 @@
+{
+  "repository": "https://github.com/acnlie/open-kimi-ppt-skill",
+  "commit": "c32890fe0985bdf668f2722fed30f1010bdf24c9",
+  "retrieved_at": "2026-08-09",
+  "license": "source/LICENSE",
+  "purpose": "Local learning archive; not a Storyweave runtime dependency.",
+  "examples": [
+    {
+      "id": "dji-pocket4",
+      "path": "examples/dji-pocket4",
+      "pages": 18,
+      "pptd": "examples/dji-pocket4/dji-pocket4.pptd",
+      "pptx": "examples/dji-pocket4/DJI Osmo Pocket 4 产品深度解读.pptx"
+    },
+    {
+      "id": "xiaomi-yu7-ppt-animation",
+      "path": "examples/xiaomi-yu7-ppt-animation",
+      "pages": 8,
+      "pptd": "examples/xiaomi-yu7-ppt-animation/xiaomi-yu7.pptd",
+      "pptx": "examples/xiaomi-yu7-ppt-animation/xiaomi-yu7.pptx"
+    },
+    {
+      "id": "yu7-ppt",
+      "path": "examples/yu7-ppt",
+      "pages": 8,
+      "pptd": "examples/yu7-ppt/yu7.pptd",
+      "pptx": "examples/yu7-ppt/yu7.pptx"
+    }
+  ],
+  "source_docs": [
+    "source/README.md",
+    "source/SKILL.md",
+    "source/theme.md",
+    "source/theme_EN.md",
+    "source/pptd.md"
+  ],
+  "showcase_images": "showcase-images/"
+}

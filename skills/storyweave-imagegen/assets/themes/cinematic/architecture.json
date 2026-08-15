@@ -1,0 +1,9 @@
+{
+  "schema_version": 3,
+  "id": "cinematic",
+  "spatial_grammar": "用镜头方向、景别、光线和空间纵深组织连续影像",
+  "reading_order": "先进入场景，再从主体动作和空间线索理解主张",
+  "density_strategy": "画面可以沉浸，但文字必须有稳定、低纹理的安全区域",
+  "deck_rhythm": "以建立场景、推进动作、停留细节和留白结尾形成镜头节奏",
+  "default_anchor_id": "film-frame"
+}

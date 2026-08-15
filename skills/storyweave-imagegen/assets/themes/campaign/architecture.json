@@ -1,0 +1,9 @@
+{
+  "schema_version": 3,
+  "id": "campaign",
+  "spatial_grammar": "以单一传播主体为中心，用高识别度构图把主张快速推向观众",
+  "reading_order": "先识别主体和主张，再读取最少量的支持信息",
+  "density_strategy": "低密度、高识别，信息不能削弱第一眼的传播焦点",
+  "deck_rhythm": "以强封面、产品主体、短主张和行动收束形成传播节奏",
+  "default_anchor_id": "campaign-mark"
+}

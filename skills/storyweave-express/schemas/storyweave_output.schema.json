@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://easy-skills.local/storyweave/storyweave_output.schema.json",
+  "title": "Storyweave producer output",
+  "type": "object",
+  "required": ["format", "version", "producer", "kind", "title", "canvas", "slides"],
+  "properties": {
+    "format": { "const": "storyweave/slides" },
+    "version": { "const": 1 },
+    "producer": { "enum": ["storyweave-html", "storyweave-imagegen"] },
+    "kind": { "enum": ["html", "image"] },
+    "title": { "type": "string", "minLength": 1 },
+    "canvas": { "type": "object", "required": ["width", "height"], "properties": { "width": { "type": "integer", "minimum": 1 }, "height": { "type": "integer", "minimum": 1 } } },
+    "entry": { "type": "string" },
+    "slides": { "type": "array", "minItems": 1, "items": { "type": "object", "required": ["id", "source"], "properties": { "id": { "type": "string", "pattern": "^[A-Za-z0-9_-]+$" }, "source": { "type": "string", "minLength": 1 }, "role": { "type": "string" }, "claim": { "type": "string" }, "notes": { "type": "string" } } } }
+  },
+  "additionalProperties": true
+}

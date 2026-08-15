@@ -1,0 +1,4 @@
+interface:
+  display_name: "Storyweave Imagegen"
+  short_description: "Generate concise full-slide image presentations with Imagegen"
+  default_prompt: "Use $storyweave-imagegen to confirm the storyboard first, then generate one complete 16:9 image per slide with a consistent theme."

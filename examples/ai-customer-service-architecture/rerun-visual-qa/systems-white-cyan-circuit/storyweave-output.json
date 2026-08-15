@@ -1,0 +1,21 @@
+{
+  "format": "storyweave/slides",
+  "version": 1,
+  "producer": "storyweave-imagegen",
+  "kind": "image",
+  "title": "AI 智能客服架构 · 视觉复跑",
+  "canvas": {
+    "width": 2048,
+    "height": 1152
+  },
+  "entry": "index.html",
+  "slides": [
+    {
+      "id": "s01",
+      "role": "process",
+      "source": "slides/s01.png",
+      "claim": "AI 客服不是单点问答，而是一条可治理的服务闭环",
+      "notes": "通过。标题、中心节点、左右并行模块和底部治理轨道使用同一无衬线系统；抽象环、点、方块替代具象图标，连接线没有穿过文字。"
+    }
+  ]
+}

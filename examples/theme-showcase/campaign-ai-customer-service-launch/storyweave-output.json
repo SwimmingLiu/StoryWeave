@@ -1,0 +1,35 @@
+{
+  "format": "storyweave/slides",
+  "version": 1,
+  "producer": "storyweave-imagegen",
+  "kind": "image",
+  "title": "AI 客服：从回答开始，走向协作",
+  "canvas": {
+    "width": 2048,
+    "height": 1152
+  },
+  "entry": "index.html",
+  "slides": [
+    {
+      "id": "s01",
+      "role": "cover",
+      "source": "slides/s01.png",
+      "claim": "AI 客服，把每一次提问变成下一步行动",
+      "notes": "AI 客服，把每一次提问变成下一步行动"
+    },
+    {
+      "id": "s02",
+      "role": "image-hero",
+      "source": "slides/s02.png",
+      "claim": "一个入口，连接知识、工具与人工",
+      "notes": "一个入口，连接知识、工具与人工"
+    },
+    {
+      "id": "s03",
+      "role": "comparison",
+      "source": "slides/s03.png",
+      "claim": "上下文决定服务能否继续",
+      "notes": "上下文决定服务能否继续"
+    }
+  ]
+}

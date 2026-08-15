@@ -1,0 +1,4 @@
+interface:
+  display_name: "Storyweave Express"
+  short_description: "Package HTML or image slides for Bento presentation"
+  default_prompt: "Use $storyweave-express to package an existing Storyweave HTML or Imagegen output as a Bento presentation."

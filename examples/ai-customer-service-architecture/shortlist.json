@@ -1,0 +1,20 @@
+{
+  "selected": [
+    {
+      "id": "editorial",
+      "project": "variants/storyweave-editorial",
+      "image": "variants/storyweave-editorial/slides/s01.png"
+    },
+    {
+      "id": "wuming-cyan-circuit",
+      "project": "variants/wuming-cyan-circuit",
+      "image": "variants/wuming-cyan-circuit/slides/s01.png"
+    }
+  ],
+  "rejected_archive": "variants/_rejected",
+  "rejected": [
+    "business-minimal",
+    "launch-tech",
+    "premium-dark"
+  ]
+}

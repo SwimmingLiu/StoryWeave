@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<!-- ==================================================================
+     LONG DOCUMENT TEMPLATE · parchment design system
+     多页 A4 白皮书/技术报告/年度总结
+     结构：封面 -> 目录 -> 执行摘要 -> 正文章节 -> 附录
+     ================================================================== -->
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>HTML-first PPT 生成 Skill 设计文档</title>
+<meta name="author" content="easy-skills">
+<meta name="description" content="一套以结构化数据、可编辑 HTML、主题系统和可替换图片资产为核心的 PPT 生成 Skill 设计。">
+<meta name="keywords" content="PPT Skill, HTML 演示, 在线编辑, 主题系统, 图片生成">
+<meta name="generator" content="Kami">
+<style>
+  /* Regular weight */
+  @font-face {
+    font-family: "TsangerJinKai02";
+    src: url("../fonts/TsangerJinKai02-W04.ttf") format("truetype"),
+       url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W04.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* Bold weight - W05 for all bold variants */
+  @font-face {
+    font-family: "TsangerJinKai02";
+    src: url("../fonts/TsangerJinKai02-W05.ttf") format("truetype"),
+       url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W05.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @page {
+    size: A4;
+    margin: 20mm 22mm 22mm 22mm;
+    background: #f5f4ed;
+
+    @top-right {
+      content: string(section-title);
+      font-family: "TsangerJinKai02", "Source Han Serif SC",
+                   "Noto Serif CJK SC", "Songti SC", Georgia, serif;
+      font-size: 8pt;
+      color: #6b6a64;
+    }
+
+    @bottom-center {
+      content: counter(page) "  ·  HTML-first PPT 生成 Skill 设计文档";
+      font-family: "TsangerJinKai02", "Source Han Serif SC",
+                   "Noto Serif CJK SC", "Songti SC", Georgia, serif;
+      font-size: 9pt;
+      color: #6b6a64;
+    }
+  }
+
+  @page:first {
+    @top-right { content: ""; }
+    @bottom-center { content: ""; }
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --parchment: #f5f4ed;
+    --ivory:     #faf9f5;
+    --near-black:#141413;
+    --dark-warm: #3d3d3a;
+    --olive:     #504e49;
+    --stone:     #6b6a64;
+    --brand:     #1B365D;
+    --border:    #e8e6dc;
+    --border-soft:#e5e3d8;
+    --tag-bg:    #E4ECF5;
+    --serif: "TsangerJinKai02", "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", "STSong", Georgia, serif;
+    --sans: var(--serif);
+
+    --rhythm-module:  14pt;
+    --rhythm-section: 18pt;
+  }
+
+  html, body { background: var(--parchment); }
+
+  @media screen {
+    body { max-width: 210mm; margin: 0 auto; padding: 20mm 22mm 22mm 22mm; }
+  }
+
+  body {
+    color: var(--near-black);
+    font-family: var(--serif);
+    font-size: 10.5pt;
+    line-height: 1.55;
+    letter-spacing: 0.3pt;
+    widows: 3;
+    orphans: 3;
+  }
+
+  .sans {
+    font-family: var(--sans);
+  }
+
+  /* ========== COVER ========== */
+  .cover {
+    min-height: 240mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40mm 0 0 0;
+    break-after: page;
+  }
+  .cover-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8pt;
+    font-family: var(--sans);
+    font-size: 10pt;
+    color: var(--brand);
+    letter-spacing: 1.5pt;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 18pt;
+  }
+  .cover-eyebrow::before {
+    content: "";
+    width: 9pt;
+    height: 1.5pt;
+    border-radius: 0.75pt;
+    background: var(--brand);
+    flex-shrink: 0;
+  }
+  .cover-title {
+    font-size: 36pt;
+    font-weight: 500;
+    color: var(--near-black);
+    line-height: 1.15;
+    letter-spacing: 0.3pt;
+    margin-bottom: 16pt;
+  }
+  .cover-sub {
+    font-family: var(--sans);
+    font-size: 14pt;
+    color: var(--olive);
+    line-height: 1.5;
+    max-width: 85%;
+    margin-bottom: 30pt;
+  }
+  .cover-meta {
+    font-family: var(--sans);
+    font-size: 10pt;
+    color: var(--stone);
+    line-height: 1.5;
+  }
+  .cover-meta strong {
+    color: var(--dark-warm);
+    font-weight: 500;
+  }
+
+  /* ========== TOC（目录）========== */
+  .toc { break-after: page; }
+  .toc h2 {
+    font-size: 22pt;
+    font-weight: 500;
+    margin-bottom: var(--rhythm-module);
+    border-left: 2.5pt solid var(--brand);
+    border-radius: 1.5pt;
+    padding-left: 8pt;
+  }
+  .toc-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 6pt 0;
+    border-bottom: 0.3pt dotted var(--border);
+    font-size: 11pt;
+  }
+  .toc-item:last-of-type { border-bottom: none; }
+  .toc-num {
+    color: var(--brand);
+    font-weight: 500;
+    min-width: 30pt;
+  }
+  .toc-title {
+    flex: 1;
+    color: var(--near-black);
+    padding-left: 6pt;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 12pt;
+  }
+  .toc-title[href]::after {
+    content: target-counter(attr(href), page);
+    color: var(--stone);
+    font-variant-numeric: tabular-nums;
+    margin-left: auto;
+  }
+
+  /* ========== HEADINGS ========== */
+  h1 {
+    font-size: 22pt;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0 0 10pt 0;
+    border-left: 2.5pt solid var(--brand);
+    border-radius: 1.5pt;
+    padding-left: 8pt;
+    color: var(--near-black);
+    break-after: avoid;
+    string-set: section-title content();
+  }
+
+  .running-title { string-set: section-title content(); }
+
+  h2 {
+    font-size: 16pt;
+    font-weight: 500;
+    line-height: 1.25;
+    margin: 24pt 0 8pt 0;
+    color: var(--near-black);
+    break-after: avoid;
+  }
+
+  h3 {
+    font-size: 13pt;
+    font-weight: 500;
+    line-height: 1.3;
+    margin: 18pt 0 6pt 0;
+    color: var(--dark-warm);
+    break-after: avoid;
+  }
+
+  .chapter-num {
+    font-family: var(--sans);
+    font-size: 10pt;
+    color: var(--brand);
+    letter-spacing: 1pt;
+    text-transform: uppercase;
+    margin-bottom: 6pt;
+  }
+
+  /* ========== PARAGRAPHS ========== */
+  p {
+    margin: 0 0 10pt 0;
+    line-height: 1.55;
+    color: var(--near-black);
+    widows: 2;
+    orphans: 2;
+  }
+
+  .lead {
+    font-size: 12pt;
+    line-height: 1.55;
+    color: var(--dark-warm);
+    margin-bottom: var(--rhythm-module);
+  }
+
+  .hl { color: var(--brand); font-weight: 500; }
+  strong { font-weight: 500; }
+
+  /* ========== LISTS ========== */
+  ul, ol {
+    margin: 6pt 0 10pt 0;
+    padding-left: 20pt;
+    line-height: 1.55;
+  }
+  ul li::marker { color: var(--brand); }
+  ol li::marker { color: var(--brand); font-weight: 500; }
+
+  /* ========== QUOTE ========== */
+  blockquote, .quote {
+    border-left: 2pt solid var(--brand);
+    margin: 12pt 0;
+    padding: 4pt 0 4pt 16pt;
+    color: var(--olive);
+    line-height: 1.55;
+    break-inside: avoid;
+  }
+  blockquote .cite, .quote .cite {
+    display: block;
+    font-size: 9pt;
+    color: var(--stone);
+    margin-top: 4pt;
+  }
+
+  /* ========== CODE ========== */
+  /* Mono first for English glyphs, then CJK fallback so Chinese comments
+     inside code/pre render correctly. A mono-only chain causes missing
+     glyphs rendered as "?" or missing-glyph boxes in WeasyPrint when the system lacks
+     a mono font with CJK coverage. */
+  code {
+    font-family: "JetBrains Mono", "SF Mono", Consolas,
+                 "TsangerJinKai02", "Source Han Serif SC",
+                 "Noto Serif CJK SC", "Songti SC", monospace;
+    font-size: 9pt;
+    background: var(--ivory);
+    padding: 1pt 4pt;
+    border-radius: 2pt;
+    color: var(--dark-warm);
+  }
+  pre {
+    font-family: "JetBrains Mono", "SF Mono", Consolas,
+                 "TsangerJinKai02", "Source Han Serif SC",
+                 "Noto Serif CJK SC", "Songti SC", monospace;
+    font-size: 9pt;
+    line-height: 1.5;
+    background: var(--ivory);
+    border-radius: 4pt;
+    padding: 10pt 14pt;
+    margin: 10pt 0;
+    white-space: pre-wrap;
+    color: var(--near-black);
+    break-inside: avoid;
+  }
+  pre code { background: transparent; padding: 0; font-size: inherit; }
+
+  /* ========== TABLE (kami-table) ========== */
+  table, .kami-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9.5pt;
+    margin: 12pt 0;
+    break-inside: avoid;
+  }
+  table th, .kami-table th {
+    text-align: left;
+    font-weight: 500;
+    color: var(--dark-warm);
+    padding: 6pt 8pt;
+    border-bottom: 1pt solid var(--border);
+    background: transparent;
+  }
+  table td, .kami-table td {
+    padding: 5pt 8pt;
+    border-bottom: 0.3pt solid var(--border-soft);
+    vertical-align: top;
+  }
+  table.compact th, .kami-table.compact th { padding: 3pt 6pt; font-size: 8pt; }
+  table.compact td, .kami-table.compact td { padding: 2pt 6pt; font-size: 8pt; line-height: 1.4; }
+  table.financial td:not(:first-child), .kami-table.financial td:not(:first-child) {
+    text-align: right; font-variant-numeric: tabular-nums;
+  }
+  table.financial th:not(:first-child), .kami-table.financial th:not(:first-child) { text-align: right; }
+  table.striped tbody tr:nth-child(even) td, .kami-table.striped tbody tr:nth-child(even) td {
+    background: var(--ivory);
+  }
+  table .total td, .kami-table .total td {
+    font-weight: 500; border-top: 1pt solid var(--brand); border-bottom: none; color: var(--near-black);
+  }
+
+  /* ========== CALLOUT ========== */
+  .callout {
+    background: var(--ivory);
+    border-left: 2pt solid var(--brand);
+    padding: 10pt 14pt;
+    border-radius: 3pt;
+    margin: 12pt 0;
+    line-height: 1.55;
+    break-inside: avoid;
+  }
+  .callout blockquote,
+  .callout .quote {
+    border-left: none;
+    padding-left: 0;
+    margin: 6pt 0;
+    color: var(--olive);
+  }
+  .callout blockquote:first-child,
+  .callout .quote:first-child { margin-top: 0; }
+  .callout blockquote:last-child,
+  .callout .quote:last-child  { margin-bottom: 0; }
+
+  .takeaway {
+    background: var(--ivory);
+    border-radius: 4pt;
+    padding: 10pt 14pt;
+    margin: 14pt 0;
+    break-inside: avoid;
+  }
+  .takeaway-label {
+    font-family: var(--sans);
+    font-size: 9pt;
+    color: var(--brand);
+    letter-spacing: 0.5pt;
+    text-transform: uppercase;
+    margin-bottom: 4pt;
+  }
+
+  /* ========== TAG ========== */
+  .tag {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--brand);
+    font-family: var(--sans);
+    font-size: 9pt;
+    font-weight: 500;
+    padding: 1pt 6pt;
+    border-radius: 3pt;
+    margin-right: 4pt;
+  }
+
+  /* ========== FIGURE ========== */
+  figure {
+    margin: 14pt 0;
+    break-inside: avoid;
+  }
+  figure img {
+    max-width: 100%;
+    border-radius: 4pt;
+  }
+  /* Inline diagrams (e.g. a Mermaid-sourced SVG via scripts/mermaid_normalize.py):
+     center and cap width so the figure never bleeds past the text column. */
+  figure svg {
+    display: block;
+    margin: 0 auto;
+    max-width: 78%;
+    height: auto;
+  }
+  figcaption {
+    font-family: var(--sans);
+    font-size: 9pt;
+    color: var(--stone);
+    margin-top: 6pt;
+    text-align: center;
+  }
+
+  /* ========== EXECUTIVE SUMMARY ========== */
+  .exec-summary {
+    background: var(--ivory);
+    border-left: 1.4pt solid var(--brand);
+    border-radius: 6pt;
+    padding: 16pt 20pt;
+    margin: 14pt 0;
+    break-inside: avoid;
+  }
+  .exec-summary h2 {
+    margin-top: 0;
+    font-size: 13pt;
+  }
+
+  /* ========== CHAPTER BREAK ========== */
+  .chapter { break-before: page; }
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <div>
+    <div class="cover-eyebrow">Design Document · V0.1</div>
+    <div class="cover-title">HTML-first PPT<br>生成 Skill 设计文档</div>
+    <div class="cover-sub">以结构化内容、可编辑 HTML、多主题系统和可替换图片资产为基础，面向 Codex、QoderWork 等智能体宿主。</div>
+  </div>
+  <div class="cover-meta">
+    <strong>easy-skills</strong><br>
+    版本 V0.1 · 2026.07.19<br>
+    架构与产品设计
+  </div>
+</section>
+
+<section class="toc">
+  <h2>目录</h2>
+  <div class="toc-item"><span class="toc-num">01</span><a class="toc-title" href="#ch-architecture">宏观架构</a></div>
+  <div class="toc-item"><span class="toc-num">02</span><a class="toc-title" href="#ch-input">输入引导与逐页规划</a></div>
+  <div class="toc-item"><span class="toc-num">03</span><a class="toc-title" href="#ch-model">数据模型与任务编排</a></div>
+  <div class="toc-item"><span class="toc-num">04</span><a class="toc-title" href="#ch-content">内容策略</a></div>
+  <div class="toc-item"><span class="toc-num">05</span><a class="toc-title" href="#ch-style">主题与版式系统</a></div>
+  <div class="toc-item"><span class="toc-num">06</span><a class="toc-title" href="#ch-editor">HTML 渲染与编辑器</a></div>
+  <div class="toc-item"><span class="toc-num">07</span><a class="toc-title" href="#ch-assets">图片与资产管理</a></div>
+  <div class="toc-item"><span class="toc-num">08</span><a class="toc-title" href="#ch-export">安装、运行与导出</a></div>
+  <div class="toc-item"><span class="toc-num">09</span><a class="toc-title" href="#ch-fallback">异常处理与兜底</a></div>
+  <div class="toc-item"><span class="toc-num">10</span><a class="toc-title" href="#ch-review">内容校验与最终 Review</a></div>
+  <div class="toc-item"><span class="toc-num">11</span><a class="toc-title" href="#ch-delivery">实施计划与验收标准</a></div>
+  <div class="toc-item"><span class="toc-num">12</span><a class="toc-title" href="#ch-references">参考与边界</a></div>
+</section>
+
+<section class="chapter" id="ch-architecture">
+  <div class="chapter-num">01 · Architecture</div>
+  <h1>宏观架构</h1>
+
+  <h2>1.1 完整生成流程</h2>
+  <p class="lead">Skill 先把用户的演讲目标拆成逐页意图，再进入排版和资产生成。所有自动步骤都写入结构化主稿；浏览器修改也会回写主稿，因此生成、人工编辑和再次生成使用同一份状态。</p>
+
+  <figure>
+    <svg viewBox="0 0 960 760" xmlns="http://www.w3.org/2000/svg" style="max-width:100%; width:100%; height:auto;">
+      <style>
+        .ft { font-family: "TsangerJinKai02", "Source Han Serif SC", serif; fill: #141413; }
+        .fl { font-family: "JetBrains Mono", "TsangerJinKai02", serif; fill: #6b6a64; letter-spacing: 1px; }
+        .box { fill: #faf9f5; stroke: #504e49; stroke-width: 1.2; }
+        .focal { fill: #EEF2F7; stroke: #1B365D; stroke-width: 1.6; }
+        .soft { fill: #EEEDE6; stroke: #B2B1AC; stroke-width: 1.2; }
+        .line { fill: none; stroke: #504e49; stroke-width: 1.5; }
+        .brand-line { fill: none; stroke: #1B365D; stroke-width: 1.8; }
+      </style>
+      <rect width="960" height="760" fill="#f5f4ed"/>
+
+      <text x="48" y="32" class="fl" font-size="14">FIGURE  1 · END-TO-END FLOW</text>
+      <line x1="48" y1="48" x2="912" y2="48" stroke="#1B365D" stroke-width="1"/>
+
+      <rect x="48" y="80" width="160" height="72" rx="6" class="box"/>
+      <text x="128" y="108" class="ft" text-anchor="middle" font-size="19" font-weight="500">用户输入</text>
+      <text x="128" y="134" class="ft" text-anchor="middle" font-size="15" fill="#504e49">目标、资料、限制</text>
+
+      <rect x="264" y="80" width="176" height="72" rx="6" class="focal"/>
+      <text x="352" y="108" class="ft" text-anchor="middle" font-size="19" font-weight="500">输入预检</text>
+      <text x="352" y="134" class="ft" text-anchor="middle" font-size="15">页数、受众、素材</text>
+
+      <polygon points="544,76 624,116 544,156 464,116" class="focal"/>
+      <text x="544" y="112" class="ft" text-anchor="middle" font-size="17" font-weight="500">信息够用？</text>
+      <text x="544" y="134" class="fl" text-anchor="middle" font-size="12">GATE 01</text>
+
+      <rect x="696" y="80" width="216" height="72" rx="6" class="soft"/>
+      <text x="804" y="108" class="ft" text-anchor="middle" font-size="18" font-weight="500">补充或确认缺口</text>
+      <text x="804" y="134" class="ft" text-anchor="middle" font-size="15">降低目标或暂停生成</text>
+
+      <line x1="208" y1="116" x2="256" y2="116" class="line"/>
+      <path d="M248 108 L256 116 L248 124" class="line"/>
+      <line x1="440" y1="116" x2="464" y2="116" class="line"/>
+      <path d="M456 108 L464 116 L456 124" class="line"/>
+      <line x1="624" y1="116" x2="688" y2="116" class="line"/>
+      <path d="M680 108 L688 116 L680 124" class="line"/>
+      <text x="654" y="102" class="fl" font-size="12">否</text>
+      <path d="M804 152 L804 184 L352 184 L352 160" class="line"/>
+      <path d="M344 168 L352 160 L360 168" class="line"/>
+
+      <rect x="48" y="232" width="176" height="76" rx="6" class="focal"/>
+      <text x="136" y="260" class="ft" text-anchor="middle" font-size="19" font-weight="500">逐页构思</text>
+      <text x="136" y="286" class="ft" text-anchor="middle" font-size="15">每页讲什么、凭什么</text>
+
+      <rect x="280" y="232" width="176" height="76" rx="6" class="box"/>
+      <text x="368" y="260" class="ft" text-anchor="middle" font-size="19" font-weight="500">用户确认大纲</text>
+      <text x="368" y="286" class="ft" text-anchor="middle" font-size="15">页数、顺序、重点</text>
+
+      <rect x="512" y="232" width="176" height="76" rx="6" class="box"/>
+      <text x="600" y="260" class="ft" text-anchor="middle" font-size="19" font-weight="500">内容与资产规划</text>
+      <text x="600" y="286" class="ft" text-anchor="middle" font-size="15">证据、图片槽、备注</text>
+
+      <rect x="744" y="232" width="168" height="76" rx="6" class="box"/>
+      <text x="828" y="260" class="ft" text-anchor="middle" font-size="19" font-weight="500">主题与版式路由</text>
+      <text x="828" y="286" class="ft" text-anchor="middle" font-size="15">family、variant、layout</text>
+
+      <path d="M544 156 L544 204 L136 204 L136 224" class="brand-line"/>
+      <path d="M128 216 L136 224 L144 216" class="brand-line"/>
+      <text x="516" y="194" class="fl" font-size="12" fill="#1B365D">是</text>
+      <line x1="224" y1="270" x2="272" y2="270" class="line"/>
+      <path d="M264 262 L272 270 L264 278" class="line"/>
+      <line x1="456" y1="270" x2="504" y2="270" class="line"/>
+      <path d="M496 262 L504 270 L496 278" class="line"/>
+      <line x1="688" y1="270" x2="736" y2="270" class="line"/>
+      <path d="M728 262 L736 270 L728 278" class="line"/>
+
+      <rect x="48" y="388" width="176" height="76" rx="6" class="focal"/>
+      <text x="136" y="416" class="ft" text-anchor="middle" font-size="19" font-weight="500">生成样张</text>
+      <text x="136" y="442" class="ft" text-anchor="middle" font-size="15">封面 + 代表性内容页</text>
+
+      <polygon points="344,382 424,426 344,470 264,426" class="focal"/>
+      <text x="344" y="422" class="ft" text-anchor="middle" font-size="17" font-weight="500">样张通过？</text>
+      <text x="344" y="444" class="fl" text-anchor="middle" font-size="12">GATE 02</text>
+
+      <rect x="504" y="388" width="184" height="76" rx="6" class="box"/>
+      <text x="596" y="416" class="ft" text-anchor="middle" font-size="19" font-weight="500">批量生成 HTML</text>
+      <text x="596" y="442" class="ft" text-anchor="middle" font-size="15">写入 deck_spec</text>
+
+      <rect x="744" y="388" width="168" height="76" rx="6" class="box"/>
+      <text x="828" y="416" class="ft" text-anchor="middle" font-size="19" font-weight="500">机器检查</text>
+      <text x="828" y="442" class="ft" text-anchor="middle" font-size="15">内容、几何、资产</text>
+
+      <path d="M828 308 L828 352 L136 352 L136 380" class="line"/>
+      <path d="M128 372 L136 380 L144 372" class="line"/>
+      <line x1="224" y1="426" x2="264" y2="426" class="line"/>
+      <path d="M256 418 L264 426 L256 434" class="line"/>
+      <line x1="424" y1="426" x2="496" y2="426" class="brand-line"/>
+      <path d="M488 418 L496 426 L488 434" class="brand-line"/>
+      <text x="450" y="412" class="fl" font-size="12" fill="#1B365D">是</text>
+      <path d="M344 470 L344 496 L136 496 L136 472" class="line"/>
+      <path d="M128 480 L136 472 L144 480" class="line"/>
+      <text x="250" y="488" class="fl" font-size="12">否：调整主题、内容或素材</text>
+      <line x1="688" y1="426" x2="736" y2="426" class="line"/>
+      <path d="M728 418 L736 426 L728 434" class="line"/>
+
+      <polygon points="136,544 216,588 136,632 56,588" class="focal"/>
+      <text x="136" y="584" class="ft" text-anchor="middle" font-size="17" font-weight="500">检查通过？</text>
+      <text x="136" y="606" class="fl" text-anchor="middle" font-size="12">GATE 03</text>
+
+      <rect x="280" y="552" width="184" height="72" rx="6" class="box"/>
+      <text x="372" y="580" class="ft" text-anchor="middle" font-size="19" font-weight="500">浏览器 Review</text>
+      <text x="372" y="606" class="ft" text-anchor="middle" font-size="15">改字、换图、调版式</text>
+
+      <polygon points="596,544 676,588 596,632 516,588" class="focal"/>
+      <text x="596" y="584" class="ft" text-anchor="middle" font-size="17" font-weight="500">符合预期？</text>
+      <text x="596" y="606" class="fl" text-anchor="middle" font-size="12">GATE 04</text>
+
+      <rect x="744" y="552" width="168" height="72" rx="6" class="focal"/>
+      <text x="828" y="580" class="ft" text-anchor="middle" font-size="19" font-weight="500">输出与归档</text>
+      <text x="828" y="606" class="ft" text-anchor="middle" font-size="15">HTML、PDF、PPTX</text>
+
+      <path d="M828 464 L828 512 L136 512 L136 536" class="line"/>
+      <path d="M128 528 L136 536 L144 528" class="line"/>
+      <line x1="216" y1="588" x2="272" y2="588" class="brand-line"/>
+      <path d="M264 580 L272 588 L264 596" class="brand-line"/>
+      <text x="238" y="574" class="fl" font-size="12" fill="#1B365D">是</text>
+      <path d="M136 632 L136 664 L596 664 L596 640" class="line"/>
+      <path d="M588 648 L596 640 L604 648" class="line"/>
+      <text x="278" y="684" class="fl" font-size="12">否：定位失败页，修订后重新检查</text>
+      <line x1="464" y1="588" x2="516" y2="588" class="line"/>
+      <path d="M508 580 L516 588 L508 596" class="line"/>
+      <line x1="676" y1="588" x2="736" y2="588" class="brand-line"/>
+      <path d="M728 580 L736 588 L728 596" class="brand-line"/>
+      <path d="M596 632 L596 716 L372 716 L372 632" class="line"/>
+      <path d="M364 640 L372 632 L380 640" class="line"/>
+      <text x="470" y="706" class="fl" font-size="12">否：编辑状态回写，再次 Review</text>
+    </svg>
+    <figcaption>流程中的四个 Gate 都允许回退。缺资料时不生成猜测内容；样张、机器检查或人工 Review 未通过时，只返修受影响的页面。</figcaption>
+  </figure>
+
+  <h2>1.2 系统边界</h2>
+  <p>第一版只有一个主渲染器：HTML。PDF 和 PPTX 是导出结果，不再各自维护一套页面实现。整页生图保留为明确的可选模式，默认页面由原生文字、图形、图表和图片槽组成。</p>
+  <table class="striped">
+    <thead><tr><th>层</th><th>职责</th><th>不负责</th></tr></thead>
+    <tbody>
+      <tr><td>Skill 路由层</td><td>识别任务、加载工作流、调用宿主能力</td><td>保存具体页面样式</td></tr>
+      <tr><td>规划层</td><td>确定页数、逐页主张、证据和素材需求</td><td>直接生成 HTML</td></tr>
+      <tr><td>领域模型</td><td>保存 deck、编辑状态、资产和检查结果</td><td>绑定某个前端框架</td></tr>
+      <tr><td>渲染与编辑层</td><td>生成可离线演示的 HTML，并在本地浏览器修改</td><td>自由画布式设计</td></tr>
+      <tr><td>导出层</td><td>生成 PDF、逐页图片和尽可能可编辑的 PPTX</td><td>承诺复杂 CSS 全部转成原生 PPT 对象</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">默认的「在线修改」指本机启动预览服务后，在浏览器中编辑并自动保存。云端账号、多人协作和实时冲突合并不属于第一版。</div>
+</section>
+
+<section class="chapter" id="ch-input" style="break-before:auto;">
+  <div class="chapter-num">02 · Input Guidance</div>
+  <h1>输入引导与逐页规划</h1>
+  <p class="lead">生成前先确定演讲边界。用户不必写完整大纲，但需要知道大概讲几页、每页想让听众记住什么。Skill 负责把零散想法整理成可确认的页面计划。</p>
+
+  <h2>2.1 预检信息</h2>
+  <table>
+    <thead><tr><th>项目</th><th>最低要求</th><th>缺失时的处理</th></tr></thead>
+    <tbody>
+      <tr><td>受众与场景</td><td>谁看、现场讲还是异步阅读</td><td>根据资料推断并标注，无法判断时只问一次</td></tr>
+      <tr><td>时长或页数</td><td>二选一即可</td><td>按约 1–2 分钟一页给出建议区间</td></tr>
+      <tr><td>核心目标</td><td>希望听众理解、同意或采取什么行动</td><td>从用户材料提炼一句目标，交给用户确认</td></tr>
+      <tr><td>资料</td><td>大纲、文档、数据或链接至少一种</td><td>信息不足时降低页数，不用空话补满</td></tr>
+      <tr><td>视觉资产</td><td>说明是否有 Logo、截图、照片和图表</td><td>建立缺口清单，再选择无图版式、搜索或生图</td></tr>
+      <tr><td>输出限制</td><td>品牌、语言、比例和必须出现的页面</td><td>使用默认 16:9 和中性主题</td></tr>
+    </tbody>
+  </table>
+
+  <h2>2.2 页数建议</h2>
+  <p>页数不是固定模板。Skill 根据演讲时长、材料密度和阅读方式给出范围，并说明为何需要拆页或合并。现场演讲偏短，异步分享允许更多证据和来源。</p>
+  <table class="compact striped">
+    <thead><tr><th>使用方式</th><th>建议页数</th><th>内容密度</th></tr></thead>
+    <tbody>
+      <tr><td>5–10 分钟快速介绍</td><td>5–8 页</td><td>单一主线，少量证据</td></tr>
+      <tr><td>15–20 分钟分享</td><td>8–12 页</td><td>问题、判断、证据、结论</td></tr>
+      <tr><td>30 分钟汇报</td><td>14–20 页</td><td>允许数据页和案例页</td></tr>
+      <tr><td>异步阅读材料</td><td>按内容决定</td><td>增加来源、注释和必要背景</td></tr>
+    </tbody>
+  </table>
+
+  <h2>2.3 逐页构思</h2>
+  <p>Skill 先输出一张简短的页面计划表。用户只需改标题、顺序和页面目的，不需要填写版式参数。</p>
+  <table>
+    <thead><tr><th>页</th><th>这一页要讲什么</th><th>支撑材料</th><th>建议表达</th></tr></thead>
+    <tbody>
+      <tr><td>01</td><td>一句话说明主题和立场</td><td>品牌或主视觉</td><td>封面</td></tr>
+      <tr><td>02</td><td>说明当前问题为何需要处理</td><td>事实、现象或数据</td><td>陈述 / 数据</td></tr>
+      <tr><td>03</td><td>给出核心判断</td><td>对比或论证</td><td>对比 / 双栏</td></tr>
+      <tr><td>04</td><td>说明方案如何运行</td><td>步骤与责任</td><td>流程</td></tr>
+      <tr><td>05</td><td>落到结论或下一步</td><td>行动项</td><td>收束页</td></tr>
+    </tbody>
+  </table>
+  <p>大纲确认是第一次人工 Gate。确认后才选择主题、生成图片或批量渲染，避免在错误结构上消耗时间。</p>
+</section>
+
+<section class="chapter" id="ch-model" style="break-before:auto;">
+  <div class="chapter-num">03 · Domain Model</div>
+  <h1>数据模型与任务编排</h1>
+  <p class="lead">页面不是一段任意 HTML，而是受 Schema 约束的结构化对象。Agent 写内容和公开属性，渲染器决定 DOM；编辑器保存覆盖项，不直接改主题源码。</p>
+
+  <h2>3.1 四类持久化数据</h2>
+  <table class="striped">
+    <thead><tr><th>文件</th><th>主要内容</th><th>写入者</th></tr></thead>
+    <tbody>
+      <tr><td><code>deck_spec.json</code></td><td>演示信息、页面顺序、主张、布局、props、备注</td><td>Agent 与保存服务</td></tr>
+      <tr><td><code>editor_state.json</code></td><td>文字覆盖、页面增删、排序、用户调整的 props</td><td>浏览器编辑器</td></tr>
+      <tr><td><code>asset_manifest.json</code></td><td>文件路径、来源、比例、版权、生成参数和用途</td><td>资产管理器</td></tr>
+      <tr><td><code>qa_report.json</code></td><td>规则检查、渲染检查、人工确认和导出降级</td><td>检查器与导出器</td></tr>
+    </tbody>
+  </table>
+
+  <h2>3.2 Slide 对象</h2>
+  <pre><code class="language-json">{
+  "id": "s04",
+  "role": "process",
+  "claim": "生成前先确认每一页要讲什么",
+  "evidence": [{ "type": "workflow", "ref": "flow-01" }],
+  "layout": "process-horizontal",
+  "props": { "steps": 4, "density": "speaker-led" },
+  "media": [],
+  "speaker_notes": "说明大纲确认能减少整套返工。"
+}</code></pre>
+  <p><code>role</code> 表示页面在叙事中的职责，<code>layout</code> 是具体版式。主题切换时保留 role 和内容，只重新选择兼容 layout。这个分层借鉴了 Dashi 的 <code>layout + props</code>、presentation-skill 的语义角色，以及 MiniMax 的页面类型约束。</p>
+
+  <h2>3.3 任务状态</h2>
+  <table class="compact">
+    <thead><tr><th>状态</th><th>进入条件</th><th>允许动作</th></tr></thead>
+    <tbody>
+      <tr><td>drafting</td><td>正在整理输入</td><td>补资料、调整页数</td></tr>
+      <tr><td>outline-review</td><td>逐页计划已生成</td><td>确认、改序、拆页、合并</td></tr>
+      <tr><td>sample-review</td><td>代表性页面已渲染</td><td>换主题、换版式、改密度</td></tr>
+      <tr><td>generating</td><td>样张已确认</td><td>生成页面和资产</td></tr>
+      <tr><td>editing</td><td>机器检查通过</td><td>浏览器修改并保存</td></tr>
+      <tr><td>review</td><td>用户完成修改</td><td>差异检查、最终确认</td></tr>
+      <tr><td>exported</td><td>最终 Review 通过</td><td>导出、归档、再次打开</td></tr>
+    </tbody>
+  </table>
+
+  <h2>3.4 写入规则</h2>
+  <p>保存服务采用原子写入：先写临时文件，校验 JSON 后替换正式文件。每次保存带版本号；浏览器提交旧版本时返回冲突，不覆盖较新的磁盘状态。媒体按内容哈希命名，相同文件只保存一次。</p>
+</section>
+
+<section class="chapter" id="ch-content" style="break-before:auto;">
+  <div class="chapter-num">04 · Content Strategy</div>
+  <h1>内容策略</h1>
+  <p class="lead">简洁不是删到只剩标题，而是让一页只承担一个判断。标题说结论，正文给证据，演讲备注容纳解释。</p>
+
+  <h2>4.1 单页内容契约</h2>
+  <table>
+    <thead><tr><th>项目</th><th>默认限制</th><th>超限处理</th></tr></thead>
+    <tbody>
+      <tr><td>主张</td><td>每页 1 个</td><td>拆页，不在同页并列两个结论</td></tr>
+      <tr><td>标题</td><td>建议不超过 18 个中文字符</td><td>删除背景词，保留判断</td></tr>
+      <tr><td>支撑项</td><td>0–3 项</td><td>优先转换为图表或下一页</td></tr>
+      <tr><td>可见文字</td><td>现场演讲页约 60 个中文字符以内</td><td>解释移入备注</td></tr>
+      <tr><td>主要视觉</td><td>1 个</td><td>多个证据改用比较或图集版式</td></tr>
+    </tbody>
+  </table>
+
+  <h2>4.2 叙事生成</h2>
+  <p>内容规划采用结论先行和 action title。只读所有页面标题时，应能复述整套演示的论证。如果标题只是「背景」「方案」「优势」，说明页面还没有形成判断。</p>
+  <p>这一部分主要参考 academic-pptx-skill 的论证结构、editable-leadership-pptx 的证据优先原则，以及 wuming-cyan-circuit-launch-ppt 对长内容的压缩方式。整页图片的不可编辑实现不进入默认流程。</p>
+
+  <h2>4.3 差异化密度</h2>
+  <table class="striped">
+    <thead><tr><th>演示类型</th><th>内容重心</th><th>检查重点</th></tr></thead>
+    <tbody>
+      <tr><td>产品发布</td><td>主张、产品画面、节奏</td><td>不把功能清单塞进一页</td></tr>
+      <tr><td>领导汇报</td><td>结论、数据、决策请求</td><td>每个数字能追溯来源</td></tr>
+      <tr><td>学术答辩</td><td>问题、方法、结果、限制</td><td>图表真实，引用完整</td></tr>
+      <tr><td>教学培训</td><td>概念、示例、练习</td><td>术语首次出现时解释</td></tr>
+      <tr><td>异步分享</td><td>更多背景和注释</td><td>脱离演讲者仍能读懂</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="chapter" id="ch-style" style="break-before:auto;">
+  <div class="chapter-num">05 · Theme System</div>
+  <h1>主题与版式系统</h1>
+  <p class="lead">风格按结构去重，不按仓库中的名字累计。每套主题必须覆盖同一组基础页面角色，才能整套换肤，也便于检查。</p>
+
+  <h2>5.1 主题指纹</h2>
+  <p>主题索引记录 palette、typography、geometry、surface、imagery、motion 和 density 七组 token，并补充适用场景、布局覆盖、图片依赖、许可证和来源说明。两个主题的结构指纹相同时，只保留一个 family，旧名称成为 alias。</p>
+
+  <h2>5.2 首批主题 family</h2>
+  <table class="striped">
+    <thead><tr><th>Family</th><th>合并来源</th><th>适用场景</th></tr></thead>
+    <tbody>
+      <tr><td>business-minimal</td><td>Executive、Leadership、Corporate Clean</td><td>工作汇报、方案、管理层材料</td></tr>
+      <tr><td>editorial</td><td>E-ink、Magazine、Paper Journal</td><td>观点分享、品牌故事、研究摘要</td></tr>
+      <tr><td>swiss-grid</td><td>Swiss、Bauhaus、Neo Grid</td><td>方法论、设计、文化主题</td></tr>
+      <tr><td>launch-tech</td><td>青蓝电路、Blueprint、Code</td><td>产品发布、技术概念、架构介绍</td></tr>
+      <tr><td>data-consulting</td><td>McKinsey、Dashboard、Boardroom</td><td>经营分析、咨询、投融资</td></tr>
+      <tr><td>academic</td><td>Academic、Lab Report、Cold White</td><td>论文报告、答辩、白皮书</td></tr>
+      <tr><td>brand-bold</td><td>Memphis、Glass Candy、Bold Startup</td><td>创意提案、品牌活动</td></tr>
+      <tr><td>premium-dark</td><td>Black Gold、Keynote、Premium Dark</td><td>高端发布、战略演讲</td></tr>
+    </tbody>
+  </table>
+  <p>每个 family 先做 2–3 个 variant。主题源码采用 clean-room 重写，只吸收视觉原则，不复制第三方 CSS、模板组件或预览图。</p>
+
+  <h2>5.3 基础页面角色</h2>
+  <p>第一版提供 cover、section、statement、image-hero、two-column、comparison、process、data、quote 和 closing。每套主题都要覆盖这些角色；缺失时使用同 family 的基础版式，不跨主题拼接。</p>
+
+  <h2>5.4 主题选择</h2>
+  <p>Skill 不直接展示几十个名称，而是根据用途、受众和资料生成 3 个真实封面样张。用户确认其中一个后，只加载该主题的 recipe。这个选择方式参考 frontend-slides 和 beautiful-html-templates；Dashi 的大型主题库说明了覆盖率的价值，也说明模板数量过多会拖重生成流程。</p>
+</section>
+
+<section class="chapter" id="ch-editor" style="break-before:auto;">
+  <div class="chapter-num">06 · Renderer & Editor</div>
+  <h1>HTML 渲染与编辑器</h1>
+  <p class="lead">HTML 是演示文件，也是编辑工作台。静态文件负责离线播放，本地服务负责保存、媒体落盘和导出。</p>
+
+  <h2>6.1 渲染器</h2>
+  <p>渲染器读取合并后的 <code>deck_spec + editor_state</code>，按主题 registry 找到页面组件，再生成单文件入口和本地资产目录。页面尺寸固定为 16:9；缩放只改变显示比例，不改变内部布局坐标。</p>
+  <p>交互能力参考 html-ppt-skill、ppt-master 和 frontend-slides，包括键盘翻页、触摸导航、演讲者备注、页面索引和有限动效。动效由主题 token 控制，默认可关闭，并尊重 reduced-motion 设置。</p>
+
+  <h2>6.2 编辑器范围</h2>
+  <table>
+    <thead><tr><th>支持</th><th>第一版不支持</th></tr></thead>
+    <tbody>
+      <tr><td>行内改字、替换图片、裁切位置、页面排序</td><td>任意对象自由拖拽和像素级摆放</td></tr>
+      <tr><td>复制、删除、跳过页面</td><td>用户直接修改主题组件源码</td></tr>
+      <tr><td>在同一 role 中切换兼容 layout</td><td>跨主题混搭单页组件</td></tr>
+      <tr><td>调整公开 props、颜色 variant 和密度</td><td>多人同时编辑和冲突合并</td></tr>
+    </tbody>
+  </table>
+
+  <h2>6.3 编辑界面</h2>
+  <p>界面采用左侧缩略图、中间画布、右侧属性检查器。顶部只保留保存、演示、主题预览和导出。文本直接在画布中修改；图片槽支持点击替换和拖入文件。右侧面板只显示当前版式公开的参数，避免把 CSS 暴露给用户。</p>
+
+  <h2>6.4 持久化</h2>
+  <p>浏览器修改先写本地草稿，再通过 <code>/api/save</code> 提交给本机服务。服务校验 Schema、迁移媒体文件、原子写入状态并返回新版本号。离线通过 <code>file://</code> 打开时仍可演示和保留浏览器草稿，但不会声称已经保存到项目目录。</p>
+  <div class="callout">这一闭环参考 dashi-ppt-skill 的浏览器编辑和自动保存思想。实现采用自己的数据模型与代码，不复用其受限的导出组件。</div>
+</section>
+
+<section class="chapter" id="ch-assets" style="break-before:auto;">
+  <div class="chapter-num">07 · Asset Pipeline</div>
+  <h1>图片与资产管理</h1>
+  <p class="lead">图片是页面素材，不是页面本身。除非用户明确选择整页生图，标题、数字和结论都保留为 HTML 原生内容。</p>
+
+  <h2>7.1 资产优先级</h2>
+  <ol>
+    <li>用户上传的 Logo、截图、照片和原始图表。</li>
+    <li>根据真实数据生成的图表、流程图和示意图。</li>
+    <li>具有明确许可的图片搜索结果。</li>
+    <li>宿主提供的图片生成能力。</li>
+    <li>无图版式或 CSS 图形兜底。</li>
+  </ol>
+
+  <h2>7.2 图片槽</h2>
+  <p>每个媒体槽声明用途、比例、裁切策略、最小分辨率和替代文本。生成图片前先确定槽位比例。当前页面没有媒体槽时，编辑器可以切换到兼容的 image layout，或新增一张图片页，不把图片硬塞进正文区域。</p>
+
+  <h2>7.3 生图适配</h2>
+  <p>Skill 通过宿主适配器调用 Codex imagegen、GPT Image 或其他 provider，不在主题中绑定模型。请求包含 purpose、aspect_ratio、text_policy 和 fact_bearing。生成结果落盘后按普通图片处理，可替换、删除或重新生成。</p>
+  <table class="compact">
+    <thead><tr><th>字段</th><th>用途</th></tr></thead>
+    <tbody>
+      <tr><td>source / provider / model</td><td>说明资产来自哪里</td></tr>
+      <tr><td>prompt / reference</td><td>支持复现和局部重做</td></tr>
+      <tr><td>purpose / slide_id</td><td>说明图片在演示中的工作</td></tr>
+      <tr><td>license / attribution</td><td>保存许可和署名要求</td></tr>
+      <tr><td>fact_bearing</td><td>标记是否承载事实；AI 图默认 false</td></tr>
+    </tbody>
+  </table>
+
+  <h2>7.4 事实边界</h2>
+  <p>财务数字、实验结果、产品界面和论文图不交给生图模型重画。需要统一视觉时，可以生成明确标注为「示意重绘」的图，但原始证据仍保留来源。此处吸收了 codex-ppt-skill 的样张与逐页生成流程、ppt-master 的 provider registry，以及 presentation-skill 的图片追溯字段。</p>
+</section>
+
+<section class="chapter" id="ch-export" style="break-before:auto;">
+  <div class="chapter-num">08 · Runtime & Export</div>
+  <h1>安装、运行与导出</h1>
+  <p class="lead">Skill 包提供标准说明文件、运行脚本和宿主元数据。浏览器编辑器是本地应用，不要求用户注册云端账号。</p>
+
+  <h2>8.1 安装方式</h2>
+  <p>安装器自动探测常见的 <code>~/.codex/skills</code>、<code>~/.agents/skills</code> 和 <code>~/.claude/skills</code>，同时提供 <code>--dir</code> 指定目录。Codex 使用 <code>agents/openai.yaml</code> 暴露名称和默认提示。QoderWork 通过标准 <code>SKILL.md</code> 和自定义目录接入，发布前需要单独做宿主兼容测试。</p>
+
+  <h2>8.2 项目目录</h2>
+  <pre><code>presentation/
+├── deck_spec.json
+├── editor_state.json
+├── asset_manifest.json
+├── qa_report.json
+├── index.html
+└── assets/
+    ├── user-media/
+    ├── generated/
+    └── charts/</code></pre>
+
+  <h2>8.3 导出契约</h2>
+  <table>
+    <thead><tr><th>格式</th><th>定位</th><th>编辑性</th></tr></thead>
+    <tbody>
+      <tr><td>HTML</td><td>主交付，可离线演示和继续编辑</td><td>完整</td></tr>
+      <tr><td>PDF</td><td>固定版式分享、打印和归档</td><td>不可编辑</td></tr>
+      <tr><td>逐页 PNG</td><td>预览、社交分享和 QA</td><td>不可编辑</td></tr>
+      <tr><td>PPTX</td><td>与传统办公流程交换</td><td>文本、图片和基础形状尽量可编辑</td></tr>
+    </tbody>
+  </table>
+  <p>PPTX 导出器按 DOM 节点映射文字、图片、形状和简单图表。复杂 CSS、Canvas 或特效允许局部截图回退，并在报告中列出回退页面和可编辑对象比例。不能把「能打开」等同于「完全可编辑」。</p>
+  <div class="callout">Dashi 的 HTML 到 PPTX 思路可作行为参考，但其当前导出组件有单独许可限制。本项目需要自行实现或选择许可证兼容的导出器。</div>
+</section>
+
+<section class="chapter" id="ch-fallback" style="break-before:auto;">
+  <div class="chapter-num">09 · Failure Handling</div>
+  <h1>异常处理与兜底</h1>
+  <p class="lead">失败不应留下半套看似完成的演示。系统要指出缺口、缩小任务或退回上一个 Gate，并保留已经通过检查的页面。</p>
+
+  <h2>9.1 输入与资料异常</h2>
+  <table class="striped">
+    <thead><tr><th>情况</th><th>处理逻辑</th><th>是否继续</th></tr></thead>
+    <tbody>
+      <tr><td>用户提到附件，但文件不存在</td><td>列出缺失文件名和受影响页面，不猜测内容</td><td>等待补齐；不受影响页面可先规划</td></tr>
+      <tr><td>资料过少，无法支撑目标页数</td><td>建议降低页数，并标出需要补证据的页面</td><td>用户确认缩减后继续</td></tr>
+      <tr><td>资料互相冲突</td><td>并列冲突内容和来源，停止写入相关结论</td><td>冲突解决后继续</td></tr>
+      <tr><td>用户没有逐页思路</td><td>根据目标生成一版最小页面计划</td><td>确认页面计划后继续</td></tr>
+      <tr><td>用户要求的页数明显过多</td><td>说明哪些页面会重复，给出合并版</td><td>以用户最终确认的版本为准</td></tr>
+    </tbody>
+  </table>
+
+  <h2>9.2 图片与资产异常</h2>
+  <table class="striped">
+    <thead><tr><th>情况</th><th>优先处理</th><th>最终兜底</th></tr></thead>
+    <tbody>
+      <tr><td>页面需要产品图，但未上传</td><td>询问是否提供截图或允许图片搜索</td><td>切换到无图版式，并标注素材缺口</td></tr>
+      <tr><td>资料不足以生成可信图片</td><td>不生成带事实含义的画面</td><td>使用抽象概念图或纯排版，事实留在文字中</td></tr>
+      <tr><td>生图服务失败或超时</td><td>按 provider 策略重试或切换后端</td><td>保留媒体槽，使用占位色块不得作为最终交付</td></tr>
+      <tr><td>图片比例不匹配</td><td>优先 contain、留白或换槽</td><td>重新生成指定比例图片</td></tr>
+      <tr><td>图片许可不清楚</td><td>从最终产物移除</td><td>改用用户素材、开放许可来源或生图</td></tr>
+    </tbody>
+  </table>
+
+  <h2>9.3 生成、保存与导出异常</h2>
+  <table>
+    <thead><tr><th>故障</th><th>恢复方式</th></tr></thead>
+    <tbody>
+      <tr><td>某页渲染失败</td><td>隔离失败页，使用基础版式重渲染；其他页面不重做</td></tr>
+      <tr><td>文字溢出</td><td>先压缩内容或拆页，再换宽松版式；不自动缩成小字</td></tr>
+      <tr><td>保存版本冲突</td><td>保留磁盘版和浏览器草稿，展示差异后选择合并</td></tr>
+      <tr><td>媒体写入失败</td><td>保持草稿中的 data URL，提示重新保存，不生成虚假文件路径</td></tr>
+      <tr><td>PDF 导出失败</td><td>保存 HTML 和逐页截图，记录浏览器与字体诊断</td></tr>
+      <tr><td>PPTX 节点无法映射</td><td>局部截图回退，保留可抽取文字，并写入降级报告</td></tr>
+    </tbody>
+  </table>
+
+  <h2>9.4 错误分级</h2>
+  <p><span class="tag">BLOCKING</span> 会导致事实错误、文件损坏或用户修改丢失，必须停止交付。<span class="tag">DEGRADED</span> 表示某项能力降级，例如图片缺失或 PPTX 局部栅格化，可以在用户知情后继续。<span class="tag">WARNING</span> 用于密度偏高、字体回退等可检查问题。</p>
+</section>
+
+<section class="chapter" id="ch-review" style="break-before:auto;">
+  <div class="chapter-num">10 · Review</div>
+  <h1>内容校验与最终 Review</h1>
+  <p class="lead">检查分成逐页检查、整套检查和用户确认。规则只负责发现问题；是否符合表达意图，仍需回到逐页计划。</p>
+
+  <h2>10.1 逐页差异化检查</h2>
+  <table class="striped">
+    <thead><tr><th>页面角色</th><th>必检内容</th></tr></thead>
+    <tbody>
+      <tr><td>封面</td><td>主题、对象、时间或场景是否清楚；副标题不重复标题</td></tr>
+      <tr><td>陈述页</td><td>只有一个主张；支撑文字没有引入第二个结论</td></tr>
+      <tr><td>数据页</td><td>数字、单位、时间范围和来源一致；标题说出数据结论</td></tr>
+      <tr><td>比较页</td><td>比较维度对称，基准一致，不遗漏对结论不利的数据</td></tr>
+      <tr><td>流程页</td><td>步骤顺序、分支和责任明确；图中术语与正文一致</td></tr>
+      <tr><td>图片页</td><td>图片与主张相关，裁切不破坏证据，AI 图不冒充真实截图</td></tr>
+      <tr><td>引用页</td><td>引文、人物、机构和日期可追溯</td></tr>
+      <tr><td>结尾页</td><td>只保留一个结论或行动请求，不重新罗列全套内容</td></tr>
+    </tbody>
+  </table>
+
+  <h2>10.2 与用户预期对齐</h2>
+  <p>检查器将最终页面与确认过的 page plan 逐项比较：页面是否存在、主张是否改变、证据是否缺失、图片需求是否满足、必须出现的内容是否保留。任何自动改写导致的偏离都进入差异报告。</p>
+  <table class="compact">
+    <thead><tr><th>差异</th><th>处理</th></tr></thead>
+    <tbody>
+      <tr><td>标题更简洁，但含义未变</td><td>记录为可接受改写</td></tr>
+      <tr><td>页面被拆分或合并</td><td>说明原因，要求用户确认新页数</td></tr>
+      <tr><td>证据缺失或被替换</td><td>阻止最终导出，回到资产规划</td></tr>
+      <tr><td>结论发生变化</td><td>阻止交付，回到大纲确认</td></tr>
+      <tr><td>主题变化影响可读性</td><td>回退主题或换兼容版式</td></tr>
+    </tbody>
+  </table>
+
+  <h2>10.3 整套检查</h2>
+  <ol>
+    <li>标题串读：只读标题能否讲完整主线。</li>
+    <li>内容检查：重复、遗漏、术语、数字、引用和备注。</li>
+    <li>几何检查：溢出、重叠、安全边距、字号和图片比例。</li>
+    <li>视觉检查：逐页截图和 contact sheet，检查节奏与主题一致性。</li>
+    <li>编辑检查：刷新后改动仍存在，媒体路径可迁移。</li>
+    <li>导出检查：HTML 离线打开，PDF 页数正确，PPTX 报告降级区域。</li>
+  </ol>
+
+  <h2>10.4 最终 Review Gate</h2>
+  <p>机器检查通过后，Skill 打开浏览器 Review。用户可以按页标记「通过」「需修改」「跳过」。只重新生成需修改页面，完成后再次执行相关检查。全部页面通过，且整套差异报告没有 blocking 项，状态才进入 exported。</p>
+</section>
+
+<section class="chapter" id="ch-delivery" style="break-before:auto;">
+  <div class="chapter-num">11 · Delivery Plan</div>
+  <h1>实施计划与验收标准</h1>
+  <p class="lead">先把生成、编辑和保存做稳，再扩大主题数量和导出范围。第一版不以模板数量为目标。</p>
+
+  <h2>11.1 阶段划分</h2>
+  <table class="striped">
+    <thead><tr><th>阶段</th><th>范围</th><th>交付判断</th></tr></thead>
+    <tbody>
+      <tr><td>M1 · 核心闭环</td><td>输入预检、page plan、deck spec、8–10 个 layout、6 个主题、HTML 渲染</td><td>能从资料生成并离线播放一套简洁演示</td></tr>
+      <tr><td>M2 · 编辑闭环</td><td>浏览器编辑、自动保存、图片替换、页面增删与排序</td><td>刷新和重启服务后修改不丢失</td></tr>
+      <tr><td>M3 · 资产与主题</td><td>生图适配、资产清单、主题预览、整套换肤</td><td>图片可追溯，换主题不改变内容结构</td></tr>
+      <tr><td>M4 · 检查与导出</td><td>QA 报告、PDF、逐页图片、PPTX 基础映射</td><td>导出失败或降级都有明确报告</td></tr>
+      <tr><td>M5 · 宿主适配</td><td>Codex、QoderWork 安装与运行测试</td><td>安装、启动、保存、导出均有自动化冒烟测试</td></tr>
+    </tbody>
+  </table>
+
+  <h2>11.2 第一版验收</h2>
+  <ul>
+    <li>输入资料不足时不会编造页面、图片或数字。</li>
+    <li>用户能在生成前确认页数和每页目的。</li>
+    <li>HTML 中可修改文字、图片、顺序和公开属性。</li>
+    <li>所有修改能回写结构化状态，并可再次生成。</li>
+    <li>至少 6 个结构差异明显的主题通过基础角色覆盖测试。</li>
+    <li>图片缺失、生图失败、溢出和导出降级都有可执行的处理。</li>
+    <li>最终 Review 能定位到具体页面，并只返修失败页。</li>
+  </ul>
+</section>
+
+<section class="chapter" id="ch-references" style="break-before:auto;">
+  <div class="chapter-num">12 · References</div>
+  <h1>参考与边界</h1>
+  <p class="lead">参考项目用于提炼工作流、设计原则和能力边界。实际实现需要重新编写，并逐项核对许可证。</p>
+
+  <h2>12.1 主要借鉴关系</h2>
+  <table class="striped">
+    <thead><tr><th>模块</th><th>参考项目</th><th>吸收的思想</th></tr></thead>
+    <tbody>
+      <tr><td>论证与内容</td><td>academic-pptx-skill、editable-leadership-pptx</td><td>action title、证据优先、学术与管理层检查</td></tr>
+      <tr><td>简洁表达</td><td>wuming-cyan-circuit-launch-ppt、codex-ppt-skill</td><td>内容压缩、样张确认、逐页返修</td></tr>
+      <tr><td>HTML 演示</td><td>html-ppt-skill、ppt-master、frontend-slides、guizang-ppt-skill</td><td>交互、动效、演讲者模式和渐进加载</td></tr>
+      <tr><td>风格与路由</td><td>beautiful-html-templates、presentation-skill、MiniMax pptx-generator</td><td>风格元数据、语义角色、页面类型和 recipe</td></tr>
+      <tr><td>编辑闭环</td><td>dashi-ppt-skill</td><td>layout + props、浏览器修改、自动保存和媒体落盘</td></tr>
+      <tr><td>PPTX 工具</td><td>anthropics/skills pptx、GordenPPTSkill</td><td>PptxGenJS、OOXML、模板槽和包校验</td></tr>
+    </tbody>
+  </table>
+
+  <h2>12.2 不直接复用的内容</h2>
+  <ul>
+    <li>不复制第三方主题 CSS、模板页、预览图和受限制的导出器。</li>
+    <li>不把仅限非商用的模板打包进默认发行物。</li>
+    <li>不把整页图片式 PPT 描述为可编辑 PPT。</li>
+    <li>不承诺未经验证的 QoderWork 专用接口。</li>
+  </ul>
+
+  <h2>12.3 设计结论</h2>
+  <p>Skill 的主线是结构化规划、简洁页面、浏览器修改和可靠保存。主题数量、图片生成和 PPTX 导出都围绕这条主线工作；任何能力如果破坏主稿的一致性，就放到显式的可选模式中。</p>
+</section>
+
+</body>
+</html>

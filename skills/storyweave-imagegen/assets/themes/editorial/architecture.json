@@ -1,0 +1,9 @@
+{
+  "schema_version": 3,
+  "id": "editorial",
+  "spatial_grammar": "出版物式的非对称版面，文字、图片和图解在同一阅读平面上建立张力",
+  "reading_order": "先读主张，再沿图片、留白和图解进入证据或关系",
+  "density_strategy": "每页只保留一个主焦点，正文密度由页面职责决定，避免仪表盘式堆叠",
+  "deck_rhythm": "在观点停留、纪录主视觉、关系图解和安静收束之间交替",
+  "default_anchor_id": "oxide-rule"
+}

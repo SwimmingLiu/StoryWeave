@@ -1,0 +1,15 @@
+Use case: productivity-visual
+Asset type: complete 16:9 rasterized presentation slide, not a background asset and not a collage.
+Input images: Image 1 is a style reference only for white technical space, deep blue-gray Chinese sans-serif typography, cyan and blue-green signal lines, restrained glow, precise nodes, and generous whitespace. Do not copy its customer-service architecture, cards, labels, icons, arrows, or text.
+Primary request: create the finished cover slide for a concise Chinese presentation.
+Theme architecture: systems. Use spatial relationships and a single technical anchor, but keep the cover quiet and low-density.
+Theme style: white-cyan-circuit. White to pale-blue background, deep blue-gray typography, cyan and blue-green accents, fine technical grid used sparingly, clean light, restrained luminous edges.
+Visual scheme: keynote-cover. One large abstract connection node with a few calibrated paths and one short cyan calibration line. No dashboard, no UI, no data and no device imagery.
+Composition/framing: 16:9 landscape. Large modern Chinese sans-serif headline in the upper-left quiet zone. Smaller subtitle directly below. The single connection node occupies center-right and lower-right. Low density, strong hierarchy, large margins.
+Text (verbatim; render each line exactly once):
+1. "AI 原生知识工作流"
+2. "让上下文持续产生价值"
+Typography: large, crisp, projector-readable modern Chinese sans-serif; subtitle clearly subordinate; correct Chinese characters and intentional line breaks.
+Information boundary: only the two supplied lines may appear. Do not invent labels, node names, metadata, dates, English translations, page numbers, logos, or watermarks.
+Constraints: render one complete polished slide; all copy remains on a flat quiet white field; no signal line, grid, glow, or object crosses the letters; visibly preserve the white-cyan-circuit identity.
+Avoid: extra words; malformed Chinese; copied text or architecture from Image 1; cards; UI panels; app icons; circuit-board wallpaper; dark stage; purple neon; pseudo-data; watermark.

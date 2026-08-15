@@ -1,0 +1,110 @@
+{
+  "schema_version": 3,
+  "architecture_id": "cinematic",
+  "id": "natural-film",
+  "art_direction": "observational natural-light film stills with human scale, quiet tension and a credible sense of place",
+  "palette": "soft charcoal, dusk blue, warm sodium, bone white and muted green",
+  "typography": "humanist Chinese sans serif with a restrained serif accent for intimate statements and captions",
+  "materials": "fine film grain, natural lens falloff, tactile surfaces and controlled highlight rolloff",
+  "anchors": [
+    { "id": "film-frame", "prompt": "one subtle film-frame edge or crop" },
+    { "id": "light-pool", "prompt": "one quiet pool of warm practical light" },
+    { "id": "horizon-line", "prompt": "one restrained horizon or leading line" }
+  ],
+  "default_anchor_id": "film-frame",
+  "text_layout": "protect a stable low-texture field for a medium conclusion, caption or integrated line; atmosphere must support readability rather than force a giant title",
+  "contrast": "bone-white or deep charcoal copy on a matte shadow, sky or softly defocused field; faces, practical lights and high-frequency textures stay outside the text zone",
+  "avoid": ["fantasy sci-fi glow", "music-video excess", "fake documentary labels", "generic luxury black stage", "oversized title on every page"],
+  "role_defaults": {
+    "cover": "film-opening",
+    "section": "film-opening",
+    "statement": "human-moment",
+    "image-hero": "human-moment",
+    "two-column": "film-comparison",
+    "comparison": "film-comparison",
+    "process": "film-journey",
+    "data": "film-evidence",
+    "quote": "human-moment",
+    "closing": "quiet-ending"
+  },
+  "schemes": {
+    "film-opening": {
+      "label": "场景开场",
+      "summary": "用一个真实空间和方向性光线让观众进入故事",
+      "preview_image": "../../../examples/theme-showcase/cinematic/natural-film/slides/s01.png",
+      "roles": ["cover", "section"],
+      "default_anchor_id": "film-frame",
+      "composition": "wide establishing scene with one human-scale subject and a protected quiet edge for the conclusion",
+      "imagery": "natural-light workplace, street or service environment with honest texture and no invented signage",
+      "title_treatment": { "mode": "hero", "scale": "medium-to-large", "placement": "top-left", "weight": "calm conclusion with sparse support" },
+      "layout_constraints": { "text_safe_zones": ["top-left", "left", "bottom-left"], "visual_zones": ["center", "right", "top-right", "bottom-right"], "densities": ["low"] },
+      "requirements": ["establish one clear place and time of day", "keep the subject out of the text field"],
+      "avoid": ["unreadable fake signage", "film-poster billing", "multiple competing subjects"]
+    },
+    "human-moment": {
+      "label": "人物瞬间",
+      "summary": "用一个动作、表情或局部细节承载页面主张",
+      "preview_image": "../../../examples/theme-showcase/cinematic/natural-film/slides/s02.png",
+      "roles": ["statement", "image-hero", "quote"],
+      "default_anchor_id": "light-pool",
+      "composition": "medium close-up or tactile detail with a soft practical light and a separate text-safe shadow field",
+      "imagery": "anonymous human action or object detail; identity, role and quotation attribution only when supplied",
+      "title_treatment": { "mode": "caption", "scale": "small-to-medium", "placement": "top-left", "weight": "observational caption or short statement" },
+      "layout_constraints": { "text_safe_zones": ["top-left", "left", "bottom-left"], "visual_zones": ["center", "right", "top-right"], "densities": ["low"] },
+      "requirements": ["face and copy remain in separate visual fields", "the action must support the supplied claim"],
+      "avoid": ["celebrity likeness", "invented nameplates", "emotional overacting"]
+    },
+    "film-comparison": {
+      "label": "双场景对照",
+      "summary": "用两个镜头或空间的差异呈现变化",
+      "preview_image": "../../../examples/theme-showcase/cinematic/natural-film/slides/s03.png",
+      "roles": ["two-column", "comparison"],
+      "default_anchor_id": "horizon-line",
+      "composition": "two matched cinematic frames with the same visual dimension and a quiet central gutter",
+      "imagery": "paired spaces, gestures or light conditions; avoid turning the page into a storyboard grid",
+      "title_treatment": { "mode": "statement", "scale": "medium", "placement": "top-left", "weight": "short comparison conclusion" },
+      "layout_constraints": { "text_safe_zones": ["top-left", "left", "bottom-left"], "visual_zones": ["center", "right", "bottom-right"], "densities": ["medium"] },
+      "requirements": ["both frames share the same comparison dimension", "preserve cinematic depth without hiding copy"],
+      "avoid": ["unrelated stock montage", "invented timestamps", "third frame"]
+    },
+    "film-journey": {
+      "label": "行动旅程",
+      "summary": "用连续空间和动作方向讲清楚一段过程",
+      "preview_image": "../../../examples/theme-showcase/cinematic/natural-film/slides/s01.png",
+      "roles": ["process"],
+      "default_anchor_id": "horizon-line",
+      "composition": "one continuous path through a real-feeling space with a few clear action beats and a quiet caption field",
+      "imagery": "corridor, desk, service counter or landscape route; stages are visual, not numbered unless exact_text supplies numbers",
+      "title_treatment": { "mode": "integrated", "scale": "small-to-medium", "placement": "top-left", "weight": "journey-led conclusion" },
+      "layout_constraints": { "text_safe_zones": ["top-left", "left", "bottom-left"], "visual_zones": ["center", "right", "bottom-right"], "densities": ["medium"] },
+      "requirements": ["direction of movement is clear", "separate action beats with visible breathing room"],
+      "avoid": ["timeline UI", "fake chapter cards", "unmotivated arrows"]
+    },
+    "film-evidence": {
+      "label": "现场证据",
+      "summary": "让一组有来源的数字或观察落在真实场景中",
+      "preview_image": "../../../examples/theme-showcase/cinematic/natural-film/slides/s02.png",
+      "roles": ["data"],
+      "default_anchor_id": "horizon-line",
+      "composition": "one observational scene with a restrained data mark or chart in a clean shadow field",
+      "imagery": "realistic environment plus minimal graphic evidence; every number and unit comes from exact_text or evidence",
+      "title_treatment": { "mode": "integrated", "scale": "small-to-medium", "placement": "top-left", "weight": "evidence-led conclusion" },
+      "layout_constraints": { "text_safe_zones": ["top-left", "left", "top"], "visual_zones": ["center", "right", "bottom-right"], "densities": ["medium"] },
+      "requirements": ["data remains secondary to the scene but fully readable", "do not imply unsupported causality"],
+      "avoid": ["floating pseudo-dashboard", "fake statistics", "tiny annotations"]
+    },
+    "quiet-ending": {
+      "label": "安静收束",
+      "summary": "用留白、余光和一个动作把故事停在最后一句",
+      "preview_image": "../../../examples/theme-showcase/cinematic/natural-film/slides/s03.png",
+      "roles": ["closing"],
+      "default_anchor_id": "light-pool",
+      "composition": "quiet final frame with a receding subject or light pool and an open lower-left text field",
+      "imagery": "soft dusk, empty workspace or departing figure without readable signage",
+      "title_treatment": { "mode": "statement", "scale": "medium", "placement": "bottom-left", "weight": "quiet final conclusion" },
+      "layout_constraints": { "text_safe_zones": ["bottom-left", "left", "top-left"], "visual_zones": ["center", "right", "top-right"], "densities": ["low"] },
+      "requirements": ["the final line remains legible without a title banner", "end on one visual gesture"],
+      "avoid": ["trailer end card", "extra call to action", "dramatic logo reveal"]
+    }
+  }
+}

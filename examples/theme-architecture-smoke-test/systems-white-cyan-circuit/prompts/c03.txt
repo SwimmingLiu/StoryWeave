@@ -1,0 +1,18 @@
+Use case: productivity-visual
+Asset type: complete 16:9 rasterized presentation slide, not a background asset and not a collage.
+Input images: Image 1 is a style reference only for white technical space, deep blue-gray Chinese sans-serif typography, cyan and blue-green signal paths, precise nodes, restrained glow, and generous whitespace. Do not copy its customer-service architecture, cards, labels, icons, numbers, or text.
+Primary request: create the finished process slide for a concise Chinese presentation.
+Theme architecture: systems. Explain sequence and feedback through one clear spatial path.
+Theme style: white-cyan-circuit. White to pale-blue background, deep blue-gray typography, cyan and blue-green signal accents, fine technical grid, clean light, restrained glow.
+Visual scheme: circuit-flow. Four named nodes follow one continuous cyan circuit path that visibly closes into a loop. Use non-text geometric node markers and direction cues; no numbered nodes.
+Composition/framing: 16:9 landscape. Large headline in a quiet top zone. The four stages form a spacious horizontal-to-circular circuit across the middle and lower area. Clear direction, medium density, no cards or dashboard grid.
+Text (verbatim; render each line exactly once):
+1. "四个动作构成闭环"
+2. "收集现场"
+3. "建立关联"
+4. "形成判断"
+5. "推进行动"
+Typography: headline is large modern Chinese sans-serif. All four stage labels have equal visual weight, strong contrast, and projector-readable size. Render every Chinese character correctly.
+Information boundary: only the five supplied lines may appear. Do not invent numbers, abbreviations, node IDs, captions, English translations, metadata, dates, logos, or watermarks.
+Constraints: render one complete polished slide; keep labels on quiet white or pale-blue fields; no path, glow, grid, or node may obscure the letters; loop direction must be immediately understandable.
+Avoid: extra words; malformed Chinese; copied content from Image 1; 1–4 numbering; card matrix; UI panels; app icons; dense circuit-board wallpaper; dark stage; purple neon; pseudo-data; watermark.

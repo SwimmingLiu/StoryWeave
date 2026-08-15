@@ -1,0 +1,55 @@
+{
+  "schema_version": 2,
+  "status": "draft",
+  "title": "装更多龙虾解决不了问题",
+  "audience": "AI 工具使用者、团队负责人和 Skills 建设者",
+  "purpose": "用一页说明增加工具数量无法替代工作场景挖掘与技能迭代",
+  "page_count": 1,
+  "central_message": "不要继续堆叠工具；从真实工作场景出发，把方法沉淀为可复用并持续优化的 Skills。",
+  "narrative": {
+    "opening": "装更多龙虾解决不了问题。",
+    "problem": "工具数量增加，并不会自动改善工作结果。",
+    "insight": "需要先找到真实、重复出现的工作场景。",
+    "method": "挖掘场景、沉淀技能、持续迭代。",
+    "action": "选择一个高频场景，开始打造可复用的 Skill。"
+  },
+  "slides": [
+    {
+      "id": "s01",
+      "role": "process",
+      "claim": "装更多龙虾解决不了问题",
+      "exact_text": [
+        "装更多龙虾解决不了问题",
+        "你需要挖掘工作场景，打造并持续优化 Skills",
+        "WORKFLOW SKILLS",
+        "打造持续优化的 Skills",
+        "场景驱动",
+        "01",
+        "挖掘工作场景",
+        "02",
+        "沉淀可复用技能",
+        "03",
+        "持续迭代优化"
+      ],
+      "purpose": "在一页中交代问题判断、核心方法和三个连续动作",
+      "evidence": [],
+      "sources": [
+        {
+          "url": "https://github.com/chujianyun/wuming-cyan-circuit-launch-ppt",
+          "asset": "assets/preview.png",
+          "retrieved_at": "2026-08-15"
+        }
+      ],
+      "visual_brief": "Premium independent magazine spread on paper ivory. An off-center documentary-style still life contrasts a pile of generic lobster-shaped objects with a single hand-drawn workflow path. Oxide-red marker, carbon-black Chinese serif headline, muted marine-blue process line, print texture; no extra text.",
+      "transition": "单页结束",
+      "visual_anchor_id": "workflow-vs-tool-stack",
+      "continuity_group": "single-slide-comparison",
+      "layout_plan": {
+        "text_safe_zone": "left two-fifths for the headline and subtitle; bottom band for the numbered stages",
+        "visual_zone": "cropped documentary image on the right half with a quiet edge near text",
+        "hierarchy": "serif conclusion headline > subtitle > central method > numbered stages",
+        "density": "medium; asymmetric editorial rhythm with one dominant crop"
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "producer": "storyweave-html",
+  "export_ready": true,
+  "summary": {
+    "blocking": 0,
+    "warning": 0,
+    "degraded": 0
+  },
+  "visual_review": "browser",
+  "findings": []
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "assets"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "path", "source", "purpose", "fact_bearing"],
+        "properties": {
+          "id": { "type": "string" },
+          "path": { "type": "string" },
+          "source": { "enum": ["user", "generated", "search", "chart", "system"] },
+          "purpose": { "type": "string" },
+          "fact_bearing": { "type": "boolean" }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}

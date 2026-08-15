@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "title": "主题架构视觉冒烟测试",
+  "mode": "imagegen",
+  "theme": "editorial/paper-magazine",
+  "provider": "imagegen",
+  "canvas": "16:9",
+  "catalog_scope": "authoring",
+  "slides": [
+    {
+      "id": "c01",
+      "index": 1,
+      "role": "cover",
+      "theme": "editorial/paper-magazine",
+      "visual_scheme_ref": "editorial/paper-magazine/magazine-cover",
+      "prompt_sha256": "65dc3697f19f181c6d3b254ea6c2d4a18c14af6d1200272bdd47a0f6625298b3",
+      "image_sha256": "c7027fffec64f79ae300598e75046505edd3bbcc60757e56b805eecf5284e9a8",
+      "model": "imagegen",
+      "size": "2048x1152",
+      "actual_dimensions": {
+        "width": 1672,
+        "height": 941
+      },
+      "quality": "medium",
+      "output_path": "slides/c01.png",
+      "status": "pass",
+      "attempts": 1,
+      "error": null,
+      "warning": "Built-in Imagegen returned 1672x941 instead of the requested 2048x1152.",
+      "asset_role": "complete-slide",
+      "text_policy": "exact-text-in-image",
+      "visual_review": "pass",
+      "review_notes": "封面文字准确，纸张、衬线字、红蓝墨色和连接锚点通过。"
+    },
+    {
+      "id": "c02",
+      "index": 2,
+      "role": "statement",
+      "theme": "editorial/paper-magazine",
+      "visual_scheme_ref": "editorial/paper-magazine/editorial-statement",
+      "prompt_sha256": "a5363e4f7e478c9b58b8d3409ca53523b304654aec978e3de4033b53f7bedff6",
+      "image_sha256": "6bd453458daf7cbd3a314589ece8112521beba8a3717c528e88a3ac6639aa681",
+      "model": "imagegen",
+      "size": "2048x1152",
+      "actual_dimensions": {
+        "width": 1672,
+        "height": 941
+      },
+      "quality": "medium",
+      "output_path": "slides/c02.png",
+      "status": "pass",
+      "attempts": 1,
+      "error": null,
+      "warning": "Built-in Imagegen returned 1672x941 instead of the requested 2048x1152.",
+      "asset_role": "complete-slide",
+      "text_policy": "exact-text-in-image",
+      "visual_review": "pass",
+      "review_notes": "观点文字准确，碎片与失联关系清楚，没有额外标签。"
+    },
+    {
+      "id": "c03",
+      "index": 3,
+      "role": "process",
+      "theme": "editorial/paper-magazine",
+      "visual_scheme_ref": "editorial/paper-magazine/editorial-diagram",
+      "prompt_sha256": "cf8c53df044d23d0284fc01b61dfc514747b15b725db41275c2814660efe6164",
+      "image_sha256": "52e05aeb13438c7e6be7238f6b4ec22a835b615e134a516cbe6e7f649f6d15d7",
+      "model": "imagegen",
+      "size": "2048x1152",
+      "actual_dimensions": {
+        "width": 1672,
+        "height": 941
+      },
+      "quality": "medium",
+      "output_path": "slides/c03.png",
+      "status": "pass",
+      "attempts": 1,
+      "error": null,
+      "warning": "Built-in Imagegen returned 1672x941 instead of the requested 2048x1152.",
+      "asset_role": "complete-slide",
+      "text_policy": "exact-text-in-image",
+      "visual_review": "pass",
+      "review_notes": "大标题基线通过；四个阶段、闭环方向和无编号约束通过。"
+    },
+    {
+      "id": "c04",
+      "index": 4,
+      "role": "process",
+      "theme": "editorial/paper-magazine",
+      "visual_scheme_ref": "editorial/paper-magazine/editorial-diagram",
+      "prompt_sha256": "fd59804468e46fa40e6f9a2205bafb79d77e2827d2c5522a17edeafb3a03d591",
+      "image_sha256": "2f64a2d470b3eec6be1b4d55fe80b35a389140dc3e44b8d2a24c9f91faa3e932",
+      "model": "imagegen",
+      "size": "2048x1152",
+      "actual_dimensions": {
+        "width": 1672,
+        "height": 941
+      },
+      "quality": "medium",
+      "output_path": "slides/c04.png",
+      "status": "pass",
+      "attempts": 1,
+      "error": null,
+      "warning": "Built-in Imagegen returned 1672x941 instead of the requested 2048x1152.",
+      "asset_role": "complete-slide",
+      "text_policy": "exact-text-in-image",
+      "visual_review": "pass",
+      "review_notes": "图形主导变体通过；主张降为小型引导语，四个阶段和路径承担主要叙事。"
+    }
+  ]
+}

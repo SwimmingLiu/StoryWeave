@@ -12,7 +12,7 @@
 
 - 默认规格统一为 `2048x1152`、`medium`、`16:9`，不再使用 `1536x1024`。
 - 提示词从“无文字图片槽位”改为“完整 rasterized presentation slide”，同时传入页面目的、单页主张、主题构图、跨页锚点和 `exact_text`。
-- 主题按「主题架构 → 主题样式 → 视觉方案」解析。当前目录保留 `editorial/paper-magazine` 和 `systems/white-cyan-circuit` 两套候选样式；`campaign` 与 `cinematic` 只有规划元数据。旧四主题目录只用于 v2 项目兼容读取。
+- 主题按「主题架构 → 主题样式 → 视觉方案」解析。当前目录包含四套候选样式：`editorial/paper-magazine`、`systems/white-cyan-circuit`、`campaign/bold-poster` 和 `cinematic/natural-film`。旧扁平主题目录只用于 v2 项目兼容读取。
 - 每页必须通过尺寸、文件完整性和人工/模型视觉 Review；文字乱码、主体侵入文字区、对比不足、额外文字和主题漂移都会阻止导出。
 - Imagegen 失败只重试失败页，不使用占位图；未复核页面不能标记 `pass`。
 

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "export_ready": true,
+  "mode": "imagegen",
+  "theme": "editorial/paper-magazine",
+  "summary": {
+    "blocking": 0,
+    "warning": 1
+  },
+  "findings": [
+    {
+      "severity": "warning",
+      "code": "asset.size.mismatch",
+      "slide_id": "s01",
+      "message": "图片为 1672x941；比例和 PNG 完整性通过，正式交付前需统一到 2048x1152。"
+    }
+  ]
+}

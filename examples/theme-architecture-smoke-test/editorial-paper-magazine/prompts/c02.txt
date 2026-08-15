@@ -1,0 +1,17 @@
+Use case: productivity-visual
+Asset type: complete 16:9 rasterized presentation slide, not a background asset and not a collage.
+Input images: Image 1 is a style reference only for warm uncoated paper, black Chinese serif typography, oxide-red editorial accents, marine-blue ink lines, and asymmetric magazine rhythm. Do not copy its person, customer-service diagram, numbering, icons, or text.
+Primary request: create the finished statement slide for a concise Chinese presentation.
+Theme architecture: editorial reading rhythm with one strong claim, generous quiet space, and restrained publication-like tension.
+Theme style: paper-magazine. Warm ivory paper, carbon black, oxide red, muted marine blue, hairline rules, subtle print grain.
+Visual scheme: editorial-statement. Text leads. Three disconnected fragments or paper pieces on the right visually express loss of context; abstract geometry only, no literal documents or UI.
+Composition/framing: 16:9 landscape. Large statement in the left quiet zone. Beneath it, arrange the three short supplied lines with clear spacing and equal weight. The abstract fragments occupy center-right and right. Low density, no decorative clutter.
+Text (verbatim; render each line exactly once):
+1. "信息很多，上下文却在丢失"
+2. "资料散落"
+3. "判断失联"
+4. "行动断点"
+Typography: the first line is a large high-contrast Chinese serif headline; the three short lines are smaller but projector-readable. Correct Chinese characters and intentional line breaks.
+Information boundary: only the four supplied lines may appear. Do not invent numbering, punctuation labels, captions, English translations, issue markers, dates, logos, or watermarks.
+Constraints: render one complete polished slide; keep text on a flat quiet paper field; no fragment, line, or texture may cross the letters; retain the same editorial identity as Image 1 without copying content.
+Avoid: extra words; misspelled Chinese; copied text or imagery from Image 1; person; photographs; dashboard cards; website UI; tech neon; glossy gradients; watermark.

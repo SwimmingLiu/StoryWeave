@@ -1,0 +1,64 @@
+{
+  "schema_version": 3,
+  "status": "draft",
+  "catalog_scope": "authoring",
+  "title": "AI 客服：从回答开始，走向协作",
+  "audience": "产品市场团队、业务负责人和客户体验团队",
+  "purpose": "用品牌传播构图说明 AI 客服如何把一次提问推进到下一步行动",
+  "page_count": 3,
+  "central_message": "AI 客服的传播重点不是更像机器人，而是让服务动作更清楚。",
+  "narrative": {
+    "opening": "每一次提问都在等待一个下一步。",
+    "problem": "如果回答停在文字层面，服务动作仍然分散。",
+    "insight": "知识、工具与人工协作让回答成为行动入口。",
+    "method": "用一个入口连接理解、执行和交接。",
+    "action": "从一个高频服务承诺开始传播。"
+  },
+  "language": "zh-CN",
+  "canvas": "16:9",
+  "theme_ref": "campaign/bold-poster",
+  "slides": [
+    {
+      "id": "s01",
+      "role": "cover",
+      "purpose": "建立发布主张",
+      "claim": "AI 客服，把每一次提问变成下一步行动",
+      "exact_text": ["AI 客服，把每一次提问变成下一步行动", "从回答开始，走向协作"],
+      "evidence": [],
+      "visual_brief": "平面传播海报：一个抽象服务入口和明确的红蓝色块形成第一视觉焦点，不生成品牌 Logo 或额外广告文案。",
+      "visual_scheme_ref": "campaign/bold-poster/poster-claim",
+      "visual_anchor_id": "campaign-mark",
+      "continuity_group": "cover",
+      "layout_plan": {"text_safe_zone": "top-left", "visual_zone": ["center", "right"], "hierarchy": ["headline", "campaign-mark", "supporting-line"], "density": "low"},
+      "transition": "从主张进入产品主体"
+    },
+    {
+      "id": "s02",
+      "role": "image-hero",
+      "purpose": "呈现服务主体",
+      "claim": "一个入口，连接知识、工具与人工",
+      "exact_text": ["一个入口，连接知识、工具与人工", "服务动作不再分散"],
+      "evidence": [],
+      "visual_brief": "干净影棚式抽象服务入口：一个清晰的主体连接三种能力，画面不冒充真实产品界面，也不添加按钮或品牌名称。",
+      "visual_scheme_ref": "campaign/bold-poster/product-studio",
+      "visual_anchor_id": "product-silhouette",
+      "continuity_group": "service-promise",
+      "layout_plan": {"text_safe_zone": "top-left", "visual_zone": ["center", "right"], "hierarchy": ["caption", "product-silhouette", "supporting-line"], "density": "low"},
+      "transition": "从主体进入前后对照"
+    },
+    {
+      "id": "s03",
+      "role": "comparison",
+      "purpose": "对照服务传播前后的变化",
+      "claim": "上下文决定服务能否继续",
+      "exact_text": ["上下文决定服务能否继续", "旧入口：问题被分开处理", "新入口：上下文沿着服务继续"],
+      "evidence": [],
+      "visual_brief": "两个等重的传播色块对照旧入口和新入口，维度保持一致，不增加价格、效率或转化数据。",
+      "visual_scheme_ref": "campaign/bold-poster/campaign-comparison",
+      "visual_anchor_id": "color-block",
+      "continuity_group": "service-promise",
+      "layout_plan": {"text_safe_zone": "top-left", "visual_zone": ["center", "right"], "hierarchy": ["comparison-conclusion", "parallel-fields", "relationship-paths"], "density": "medium"},
+      "transition": "结束"
+    }
+  ]
+}

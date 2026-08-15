@@ -1,0 +1,43 @@
+{
+  "schema_version": 2,
+  "status": "approved",
+  "title": "AI 原生知识工作流",
+  "audience": "产品团队、知识工作者与组织管理者",
+  "purpose": "用一张封面页展示同一内容在不同图片主题下的视觉差异",
+  "page_count": 1,
+  "central_message": "把散落的信息、判断和行动接成一条能持续复用的工作流。",
+  "narrative": {
+    "opening": "信息越来越多，但上下文仍在不断丢失。",
+    "problem": "资料、判断与行动分散在不同工具和短期记忆中。",
+    "insight": "真正需要积累的是可复用的上下文，而不是更多文件。",
+    "method": "通过收集、关联、判断、行动形成闭环。",
+    "action": "先改造一条高频流程，再逐步扩展。"
+  },
+  "slides": [
+    {
+      "id": "s01",
+      "role": "cover",
+      "claim": "AI 原生知识工作流",
+      "exact_text": [
+        "AI 原生知识工作流",
+        "让上下文持续产生价值"
+      ],
+      "purpose": "建立主题与核心判断",
+      "evidence": [],
+      "visual_brief": "A calm visual metaphor for scattered notes becoming one connected, reusable knowledge flow; one dominant anchor and generous negative space",
+      "transition": "结束",
+      "visual_anchor_id": "theme-showcase-anchor",
+      "continuity_group": "theme-showcase",
+      "layout_plan": {
+        "text_safe_zone": "left-bottom",
+        "visual_zone": "right or center-right",
+        "hierarchy": "headline > supporting copy > visual anchor",
+        "density": "low; one dominant visual anchor"
+      }
+    }
+  ],
+  "mode": "imagegen",
+  "output_mode": "full-slide-image",
+  "theme": "editorial",
+  "approved_at": "2026-08-15T05:40:08.333Z"
+}

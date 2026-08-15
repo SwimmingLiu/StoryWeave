@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://easy-skills.local/storyweave-imagegen/deck_spec.schema.json",
+  "title": "Storyweave Imagegen approved deck v3",
+  "type": "object",
+  "required": ["schema_version", "status", "catalog_scope", "title", "audience", "purpose", "page_count", "central_message", "narrative", "language", "canvas", "mode", "output_mode", "theme_ref", "slides", "approved_at"],
+  "properties": {
+    "schema_version": { "const": 3 },
+    "status": { "const": "approved" },
+    "catalog_scope": { "enum": ["active", "authoring"] },
+    "title": { "type": "string", "minLength": 1 },
+    "audience": { "type": "string", "minLength": 1 },
+    "purpose": { "type": "string", "minLength": 1 },
+    "page_count": { "type": "integer", "minimum": 1 },
+    "central_message": { "type": "string", "minLength": 1 },
+    "language": { "type": "string", "minLength": 2 },
+    "canvas": { "const": "16:9" },
+    "mode": { "const": "imagegen" },
+    "output_mode": { "const": "full-slide-image" },
+    "theme_ref": { "type": "string", "pattern": "^[A-Za-z0-9_-]+/[A-Za-z0-9_-]+$" },
+    "approved_at": { "type": "string", "format": "date-time" },
+    "narrative": { "$ref": "#/$defs/narrative" },
+    "slides": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/slide" } }
+  },
+  "$defs": {
+    "narrative": {
+      "type": "object",
+      "required": ["opening", "problem", "insight", "method", "action"],
+      "properties": {
+        "opening": { "type": "string", "minLength": 1 },
+        "problem": { "type": "string", "minLength": 1 },
+        "insight": { "type": "string", "minLength": 1 },
+        "method": { "type": "string", "minLength": 1 },
+        "action": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "slide": {
+      "type": "object",
+      "required": ["id", "role", "purpose", "claim", "exact_text", "evidence", "visual_brief", "visual_scheme_ref", "visual_anchor_id", "continuity_group", "layout_plan", "transition"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[A-Za-z0-9_-]+$" },
+        "role": { "enum": ["cover", "section", "statement", "image-hero", "two-column", "comparison", "process", "data", "quote", "closing"] },
+        "purpose": { "type": "string", "minLength": 1 },
+        "claim": { "type": "string", "minLength": 1 },
+        "exact_text": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "evidence": { "type": "array" },
+        "visual_brief": { "type": "string", "minLength": 1 },
+        "visual_scheme_ref": { "type": "string", "pattern": "^[A-Za-z0-9_-]+/[A-Za-z0-9_-]+/[A-Za-z0-9_-]+$" },
+        "visual_anchor_id": { "type": "string", "minLength": 1 },
+        "continuity_group": { "type": "string", "minLength": 1 },
+        "layout_plan": { "$ref": "#/$defs/layout_plan" },
+        "transition": { "type": "string", "minLength": 1 },
+        "sources": { "type": "array" },
+        "speaker_notes": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "layout_plan": {
+      "type": "object",
+      "required": ["text_safe_zone", "visual_zone", "hierarchy", "density"],
+      "properties": {
+        "text_safe_zone": { "enum": ["top-left", "top", "top-right", "left", "center", "right", "bottom-left", "bottom", "bottom-right"] },
+        "visual_zone": { "type": "array", "minItems": 1, "items": { "enum": ["top-left", "top", "top-right", "left", "center", "right", "bottom-left", "bottom", "bottom-right"] } },
+        "hierarchy": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "density": { "enum": ["low", "medium", "high"] }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

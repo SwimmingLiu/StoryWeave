@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "title": "AI 原生知识工作流",
+  "mode": "imagegen",
+  "theme": "launch-tech",
+  "provider": "imagegen",
+  "canvas": "16:9",
+  "slides": [
+    {
+      "id": "s01",
+      "index": 1,
+      "role": "cover",
+      "theme": "launch-tech",
+      "prompt_sha256": "0af8dfda9317ecd11bfe26c21aa3a0318a46d03c1d4c7150779d9e4651da77c7",
+      "model": "imagegen",
+      "size": "2048x1152",
+      "quality": "medium",
+      "output_path": "slides/s01.png",
+      "status": "prepared",
+      "attempts": 0,
+      "error": null,
+      "asset_role": "complete-slide",
+      "text_policy": "exact-text-in-image",
+      "visual_review": "pending"
+    }
+  ]
+}

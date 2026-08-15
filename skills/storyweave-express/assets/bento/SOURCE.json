@@ -1,0 +1,20 @@
+{
+  "repository": "https://github.com/nyblnet/bento",
+  "source": "https://bento.page/releases/slides/Bento_Slides.bento.html",
+  "release_api": "https://api.github.com/repos/nyblnet/bento/releases/latest",
+  "release_tag": "v1.0.16",
+  "sha256": "d52e8f8e65bc8d9115eff239e75c41d7ee0d05f46e7d11295efc55e6af812b69",
+  "format": "bento/slides",
+  "block": "#bento-doc",
+  "license": "MIT",
+  "retrieval_note": "Bundled fallback captured from the official v1.0.16 release. Normal builds check the official latest release, verify its SHA-256, and use a user cache before falling back to this file. Replace the document JSON block only; leave the runtime shell and notices unchanged.",
+  "audited_features": [
+    "single self-contained HTML file",
+    "plaintext bento/slides JSON source of truth",
+    "embedded data URI assets",
+    "window.bento.loadDoc",
+    "window.bento.measure",
+    "window.bento.validate",
+    "native text, shape, image, svg, chart and table elements"
+  ]
+}

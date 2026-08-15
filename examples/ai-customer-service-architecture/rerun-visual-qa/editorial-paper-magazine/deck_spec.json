@@ -1,0 +1,59 @@
+{
+  "schema_version": 3,
+  "status": "approved",
+  "catalog_scope": "authoring",
+  "title": "AI 智能客服架构 · 视觉复跑",
+  "audience": "产品负责人、客服运营、解决方案架构师与研发团队",
+  "purpose": "比较同一份 AI 客服架构文字在两套主题语言中的可读性和层级",
+  "page_count": 1,
+  "central_message": "AI 客服不是单点问答，而是一条可治理的服务闭环",
+  "narrative": {
+    "opening": "用户从多个渠道发起咨询，但期待一致、连续的服务体验。",
+    "problem": "只接入大模型会造成上下文割裂、业务动作缺失、风险不可控。",
+    "insight": "能力重点在于编排，让模型在权限和安全边界内调用知识、工具与人工坐席。",
+    "method": "采用中心编排、并行能力、人工协同和治理轨道组成的分层架构。",
+    "action": "先比较视觉结果，再决定主题和页面层级是否进入实现。"
+  },
+  "language": "zh-CN",
+  "canvas": "16:9",
+  "theme_ref": "editorial/paper-magazine",
+  "slides": [
+    {
+      "id": "s01",
+      "role": "process",
+      "purpose": "说明客服请求从接入、理解、检索和执行到人工协同与持续优化的结构",
+      "claim": "AI 客服不是单点问答，而是一条可治理的服务闭环",
+      "exact_text": [
+        "AI 客服不是单点问答，而是一条可治理的服务闭环",
+        "用户触点",
+        "APP · Web · 微信 · 电话",
+        "统一接入",
+        "渠道适配 · 身份与会话 · 流量路由",
+        "智能编排",
+        "意图识别 · 对话状态 · Agent 编排 · 安全护栏",
+        "知识与工具",
+        "RAG 检索 · 知识库 · CRM · 订单 · 工单",
+        "模型服务",
+        "LLM 网关 · ASR / TTS · 模型路由",
+        "人工坐席",
+        "上下文移交 · 协同处理",
+        "运营与治理",
+        "质量评估 · 审计权限 · 反馈更新"
+      ],
+      "evidence": [],
+      "visual_brief": "中心智能编排连接左侧接入、右侧并行能力、下方人工坐席和底部运营治理轨道。",
+      "visual_anchor_id": "service-loop",
+      "continuity_group": "ai-customer-service-architecture",
+      "layout_plan": {
+        "text_safe_zone": "top 14% reserved for a medium conclusion",
+        "visual_zone": "middle and lower architecture topology",
+        "hierarchy": "conclusion > orchestration hub > capability groups > component descriptions > connectors",
+        "density": "medium"
+      },
+      "transition": "单页结束"
+    }
+  ],
+  "mode": "imagegen",
+  "output_mode": "full-slide-image",
+  "approved_at": "2026-08-15T00:00:00Z"
+}

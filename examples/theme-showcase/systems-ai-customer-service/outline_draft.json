@@ -1,0 +1,64 @@
+{
+  "schema_version": 3,
+  "status": "draft",
+  "catalog_scope": "authoring",
+  "title": "AI 客服：一条可治理的服务闭环",
+  "audience": "产品负责人、客服运营、解决方案架构师与研发团队",
+  "purpose": "用系统蓝图展示 AI 客服从接入、编排到人工协同和治理的关系",
+  "page_count": 3,
+  "central_message": "AI 客服不是单点问答，而是一条可治理的服务闭环。",
+  "narrative": {
+    "opening": "用户从多个触点发起咨询。",
+    "problem": "单点模型无法独立承担身份、知识、工具和人工协同。",
+    "insight": "中心编排让能力沿着一条可追踪路径协同工作。",
+    "method": "统一接入、智能编排、知识工具、模型服务、人工协同与运营治理。",
+    "action": "先让一条高频服务流程可追踪，再扩大自动化边界。"
+  },
+  "language": "zh-CN",
+  "canvas": "16:9",
+  "theme_ref": "systems/white-cyan-circuit",
+  "slides": [
+    {
+      "id": "s01",
+      "role": "process",
+      "purpose": "展示 AI 客服的中心关系",
+      "claim": "AI 客服是一条可治理的服务闭环",
+      "exact_text": ["AI 客服是一条可治理的服务闭环", "统一接入", "智能编排", "知识与工具", "模型服务", "人工协同", "运营治理"],
+      "evidence": [],
+      "visual_brief": "白色技术空间中，以智能编排为中心节点，左侧接入、右侧能力、下方人工和底部治理轨道通过清晰路径连接。",
+      "visual_scheme_ref": "systems/white-cyan-circuit/system-map",
+      "visual_anchor_id": "connection-node",
+      "continuity_group": "cover",
+      "layout_plan": {"text_safe_zone": "top-left", "visual_zone": ["center", "right"], "hierarchy": ["headline", "system-groups", "relationship-paths"], "density": "medium"},
+      "transition": "从总览进入结构对照"
+    },
+    {
+      "id": "s02",
+      "role": "comparison",
+      "purpose": "比较单点回答和闭环服务",
+      "claim": "服务能力必须沿着同一条上下文继续",
+      "exact_text": ["服务能力必须沿着同一条上下文继续", "单点回答", "知识、工具、人工彼此分开", "服务闭环", "上下文沿着关系继续"],
+      "evidence": [],
+      "visual_brief": "浅色技术场中用对称矩阵比较两个服务形态，统一维度和连接路径比装饰性卡片更重要。",
+      "visual_scheme_ref": "systems/white-cyan-circuit/comparison-matrix",
+      "visual_anchor_id": "calibration-line",
+      "continuity_group": "service-loop",
+      "layout_plan": {"text_safe_zone": "top-left", "visual_zone": ["center", "right"], "hierarchy": ["comparison-conclusion", "parallel-fields", "relationship-paths"], "density": "medium"},
+      "transition": "从结构判断进入行动建议"
+    },
+    {
+      "id": "s03",
+      "role": "closing",
+      "purpose": "给出系统落地起点",
+      "claim": "先让一条高频服务流程可追踪",
+      "exact_text": ["先让一条高频服务流程可追踪", "再逐步扩大自动化边界"],
+      "evidence": [],
+      "visual_brief": "安静的白色技术场以一个青蓝校准线收束，文字保持中等层级，让行动判断和空间锚点共同完成结尾。",
+      "visual_scheme_ref": "systems/white-cyan-circuit/keynote-cover",
+      "visual_anchor_id": "calibration-line",
+      "continuity_group": "service-loop",
+      "layout_plan": {"text_safe_zone": "bottom-left", "visual_zone": ["right"], "hierarchy": ["closing-claim", "supporting-line", "visual-anchor"], "density": "low"},
+      "transition": "结束"
+    }
+  ]
+}

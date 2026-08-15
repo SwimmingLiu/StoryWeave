@@ -1,0 +1,53 @@
+{
+  "schema_version": 2,
+  "status": "draft",
+  "title": "AI 智能客服架构",
+  "audience": "产品负责人、客服运营、解决方案架构师与研发团队",
+  "purpose": "用一页架构图说明 AI 客服如何连接多渠道、知识、业务系统、模型服务与人工坐席，并作为不同图片主题的测试案例",
+  "page_count": 1,
+  "central_message": "AI 客服不是单点问答，而是一条贯通用户触点、智能编排、知识与工具、模型服务和运营治理的服务闭环。",
+  "narrative": {
+    "opening": "用户从多个渠道发起咨询，但期待一致、连续的服务体验。",
+    "problem": "只接入大模型会造成上下文割裂、业务动作缺失、风险不可控。",
+    "insight": "核心能力是编排：让模型在权限和安全边界内调用知识、工具与人工坐席。",
+    "method": "采用分层架构，并以质量评估和反馈更新形成闭环。",
+    "action": "先用一页架构图确认系统边界，再选择主题生成视觉方案。"
+  },
+  "slides": [
+    {
+      "id": "s01",
+      "role": "process",
+      "claim": "AI 客服不是单点问答，而是一条可治理的服务闭环",
+      "exact_text": [
+        "AI 客服不是单点问答，而是一条可治理的服务闭环",
+        "用户触点",
+        "APP · Web · 微信 · 电话",
+        "统一接入",
+        "渠道适配 · 身份与会话 · 流量路由",
+        "智能编排",
+        "意图识别 · 对话状态 · Agent 编排 · 安全护栏",
+        "知识与工具",
+        "RAG 检索 · 知识库 · CRM · 订单 · 工单",
+        "模型服务",
+        "LLM 网关 · ASR / TTS · 模型路由",
+        "人工坐席",
+        "上下文移交 · 协同处理",
+        "运营与治理",
+        "质量评估 · 审计权限 · 反馈更新"
+      ],
+      "purpose": "说明一次客服请求从接入、理解、检索和执行到回复、转人工及持续优化的完整路径",
+      "evidence": [],
+      "visual_brief": "A clean 16:9 hub-and-spoke systems architecture diagram. User touchpoints and unified access enter from the left. Intelligent orchestration is the central hub. Knowledge and tools plus model services sit as two parallel capabilities on the right, both called bidirectionally by orchestration. Human agents form a separate collaboration branch below the hub with explicit context handoff. A restrained operations-and-governance rail spans the system, while quality signals return to orchestration and knowledge through a controlled feedback loop. Use clear grouped nodes, directional lines, generous spacing, and one dominant service-flow path. No dashboard cards, no decorative circuit-board wallpaper, no fabricated metrics.",
+      "visual_anchor_id": "service-loop",
+      "continuity_group": "ai-customer-service-architecture",
+      "layout_plan": {
+        "text_safe_zone": "top 18% reserved for the conclusion headline; all labels stay inside quiet matte fields with wide inner padding",
+        "visual_zone": "middle 62% for a left-entry, center-hub, right-parallel-capabilities topology; lower-middle for the human-agent branch; bottom 12% for the operations-and-governance rail and controlled feedback loop",
+        "hierarchy": "conclusion headline > intelligent-orchestration hub > surrounding capability groups > component labels > directional connectors",
+        "density": "medium; six primary groups, no more than five component labels per group, one governance rail, one feedback loop"
+      },
+      "transition": "单页结束；确认结构与文字后再选择主题并生成图片",
+      "sources": []
+    }
+  ]
+}

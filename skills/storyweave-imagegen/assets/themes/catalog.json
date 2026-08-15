@@ -1,0 +1,89 @@
+{
+  "schema_version": 3,
+  "architectures": [
+    {
+      "id": "editorial",
+      "label": "编辑叙事",
+      "summary": "用出版物节奏组织观点、人物、图片和图解",
+      "status": "candidate",
+      "file": "editorial/architecture.json",
+      "styles": [
+        {
+          "ref": "editorial/paper-magazine",
+          "label": "纸面杂志",
+          "summary": "纸张、裁切图片和克制排版组成的编辑叙事",
+          "status": "candidate",
+          "tags": ["编辑叙事", "纸面", "纪录感"],
+          "file": "editorial/styles/paper-magazine.json",
+          "preview": {
+            "cover": "../examples/theme-showcase/editorial/paper-magazine/slides/s01.png",
+            "gallery": "../examples/theme-showcase/editorial/paper-magazine/index.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "systems",
+      "label": "系统蓝图",
+      "summary": "用节点、路径和分组解释系统关系",
+      "status": "candidate",
+      "file": "systems/architecture.json",
+      "styles": [
+        {
+          "ref": "systems/white-cyan-circuit",
+          "label": "白底青蓝电路",
+          "summary": "白色技术空间中的节点、路径和青蓝信号",
+          "status": "candidate",
+          "tags": ["技术架构", "系统关系", "浅色"],
+          "file": "systems/styles/white-cyan-circuit.json",
+          "preview": {
+            "cover": "../examples/theme-showcase/systems/white-cyan-circuit/slides/s01.png",
+            "gallery": "../examples/theme-showcase/systems/white-cyan-circuit/index.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "campaign",
+      "label": "品牌传播",
+      "summary": "用强主体、清晰主张和传播构图形成第一眼记忆",
+      "status": "candidate",
+      "file": "campaign/architecture.json",
+      "styles": [
+        {
+          "ref": "campaign/bold-poster",
+          "label": "强传播海报",
+          "summary": "用平面色块、产品主体和中等字号主张建立传播焦点",
+          "status": "candidate",
+          "tags": ["品牌传播", "海报", "产品主体"],
+          "file": "campaign/styles/bold-poster.json",
+          "preview": {
+            "cover": "../examples/theme-showcase/campaign/bold-poster/slides/s01.png",
+            "gallery": "../examples/theme-showcase/campaign/bold-poster/index.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cinematic",
+      "label": "影像叙事",
+      "summary": "用镜头、光线和空间建立场景与情绪",
+      "status": "candidate",
+      "file": "cinematic/architecture.json",
+      "styles": [
+        {
+          "ref": "cinematic/natural-film",
+          "label": "自然胶片",
+          "summary": "用真实光线、人物动作和安静留白讲述连续场景",
+          "status": "candidate",
+          "tags": ["影像叙事", "自然光", "人物场景"],
+          "file": "cinematic/styles/natural-film.json",
+          "preview": {
+            "cover": "../examples/theme-showcase/cinematic/natural-film/slides/s01.png",
+            "gallery": "../examples/theme-showcase/cinematic/natural-film/index.html"
+          }
+        }
+      ]
+    }
+  ]
+}

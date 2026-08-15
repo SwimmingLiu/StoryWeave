@@ -1,0 +1,123 @@
+{
+  "schema_version": 3,
+  "architecture_id": "editorial",
+  "id": "paper-magazine",
+  "art_direction": "premium independent magazine spread with a clear point of view and calm editorial confidence",
+  "palette": "paper ivory, carbon black, oxide red, muted marine blue",
+  "typography": "high-contrast Chinese serif for conclusions paired with a restrained modern sans serif for support",
+  "materials": "uncoated paper grain, hairline rules, print-like image treatment and quiet ink variation",
+  "anchors": [
+    { "id": "oxide-rule", "prompt": "one thin oxide-red editorial rule" },
+    { "id": "paper-crop", "prompt": "an off-center printed image crop" },
+    { "id": "ink-dot", "prompt": "one restrained ink registration dot" }
+  ],
+  "default_anchor_id": "oxide-rule",
+  "text_layout": "place text in a quiet paper field with intentional line breaks; a page may use a medium conclusion, a caption, or integrated labels rather than an oversized title",
+  "contrast": "carbon-black or deep marine text on a quiet ivory or matte charcoal field; never place type over a face, high-frequency texture or bright highlight",
+  "avoid": ["website cards", "tech neon", "perfect symmetry", "generic luxury gold", "oversized title on every page"],
+  "role_defaults": {
+    "cover": "magazine-cover",
+    "section": "documentary-hero",
+    "statement": "editorial-statement",
+    "image-hero": "documentary-hero",
+    "two-column": "comparison-spread",
+    "comparison": "comparison-spread",
+    "process": "editorial-diagram",
+    "data": "editorial-diagram",
+    "quote": "profile-feature",
+    "closing": "editorial-statement"
+  },
+  "schemes": {
+    "magazine-cover": {
+      "label": "杂志封面",
+      "summary": "非对称裁切图片与明确主张组成有停留感的开场",
+      "preview_image": "../../../examples/theme-showcase/editorial/paper-magazine/slides/s01.png",
+      "roles": ["cover", "section"],
+      "default_anchor_id": "paper-crop",
+      "composition": "asymmetric cover spread with one cropped documentary anchor and a quiet text field",
+      "imagery": "editorial photograph or abstract printed image crop; no extra cover lines or issue metadata",
+      "title_treatment": { "mode": "hero", "scale": "large-but-not-full-bleed", "placement": "top-left", "weight": "serif conclusion with restrained support" },
+      "layout_constraints": { "text_safe_zones": ["top-left", "left", "bottom-left"], "visual_zones": ["center", "right", "bottom-right"], "densities": ["low", "medium"] },
+      "requirements": ["one clear first visual anchor", "headline remains readable at projection distance"],
+      "avoid": ["multiple cover lines", "title over the subject's face"]
+    },
+    "editorial-statement": {
+      "label": "编辑判断",
+      "summary": "让一条判断在纸面留白中停留，不依赖超大标题",
+      "preview_image": "../../../examples/theme-showcase/editorial/paper-magazine/slides/s02.png",
+      "roles": ["statement", "quote", "closing"],
+      "default_anchor_id": "oxide-rule",
+      "composition": "low-density statement page with a medium-sized text block balanced by quiet paper or a small image field",
+      "imagery": "subtle paper texture, restrained crop or abstract ink gesture without added words",
+      "title_treatment": { "mode": "statement", "scale": "medium", "placement": "left", "weight": "serif or calm sans conclusion" },
+      "layout_constraints": { "text_safe_zones": ["top-left", "left", "bottom-left", "center"], "visual_zones": ["right", "top-right", "bottom-right"], "densities": ["low"] },
+      "requirements": ["one sentence or short text cluster gets the most visual weight", "use whitespace as an active element"],
+      "avoid": ["giant centered title", "quote attribution not present in exact_text"]
+    },
+    "documentary-hero": {
+      "label": "纪录主视觉",
+      "summary": "用一幅有质感的主视觉承担大部分表达",
+      "preview_image": "../../../examples/theme-showcase/editorial/paper-magazine/slides/s03.png",
+      "roles": ["image-hero", "section"],
+      "default_anchor_id": "paper-crop",
+      "composition": "full-height or dominant editorial image with a protected quiet text margin and controlled subject crop",
+      "imagery": "documentary photography with honest light, tactile detail and a single readable subject",
+      "title_treatment": { "mode": "caption", "scale": "small-to-medium", "placement": "top-left", "weight": "restrained sans caption or short serif claim" },
+      "layout_constraints": { "text_safe_zones": ["top-left", "left", "bottom-left"], "visual_zones": ["center", "right", "bottom-right", "top-right"], "densities": ["low"] },
+      "requirements": ["subject must not cross the text-safe zone", "image carries the narrative without invented labels"],
+      "avoid": ["stock-photo collage", "text over eyes or faces"]
+    },
+    "profile-feature": {
+      "label": "人物特写",
+      "summary": "人物、角色或局部细节与编辑式引文并置",
+      "preview_image": "../../../examples/theme-showcase/editorial/paper-magazine/slides/s04.png",
+      "roles": ["quote", "image-hero", "section"],
+      "default_anchor_id": "paper-crop",
+      "composition": "portrait or character detail on one side with an editorial quote field on the other",
+      "imagery": "human-centered portrait, silhouette or user-provided character asset; identity details only when supplied",
+      "title_treatment": { "mode": "integrated", "scale": "medium", "placement": "left", "weight": "quote-led serif with small supporting line" },
+      "layout_constraints": { "text_safe_zones": ["left", "top-left", "bottom-left"], "visual_zones": ["center", "right", "top-right"], "densities": ["low", "medium"] },
+      "requirements": ["do not invent name, role or attribution", "keep the face and text in separate quiet regions"],
+      "avoid": ["celebrity lookalikes", "unverified captions"]
+    },
+    "editorial-diagram": {
+      "label": "纸面图解",
+      "summary": "用墨线、有限色块和留白把关系讲清楚",
+      "preview_image": "../../../examples/theme-showcase/editorial/paper-magazine/slides/s01.png",
+      "roles": ["process", "data"],
+      "default_anchor_id": "ink-dot",
+      "composition": "editorial diagram on a broad paper field with one dominant relationship and carefully spaced annotations",
+      "imagery": "ink lines, paper cut shapes, small evidence marks and simple diagram geometry; labels only from exact_text",
+      "title_treatment": { "mode": "integrated", "scale": "small-to-medium", "placement": "top-left", "weight": "short conclusion integrated with the diagram" },
+      "layout_constraints": { "text_safe_zones": ["top-left", "left", "bottom-left"], "visual_zones": ["center", "right", "bottom-right"], "densities": ["medium", "high"] },
+      "requirements": ["relationship direction or grouping must be legible", "all numbers and labels must be supplied"],
+      "avoid": ["fake data", "dashboard card grid", "unexplained arrows"]
+    },
+    "comparison-spread": {
+      "label": "对照跨页",
+      "summary": "两个阅读区域形成清楚的并置或对照",
+      "preview_image": "../../../examples/theme-showcase/editorial/paper-magazine/slides/s02.png",
+      "roles": ["two-column", "comparison"],
+      "default_anchor_id": "oxide-rule",
+      "composition": "two balanced editorial reading zones separated by a thin rule or quiet gutter",
+      "imagery": "paired crops, paper blocks or concise diagrams with aligned baselines",
+      "title_treatment": { "mode": "integrated", "scale": "medium", "placement": "top-left", "weight": "short comparison conclusion, not a banner" },
+      "layout_constraints": { "text_safe_zones": ["top-left", "left", "bottom-left"], "visual_zones": ["center", "right", "bottom-right"], "densities": ["medium"] },
+      "requirements": ["both columns use the same comparison dimension", "preserve a clear gutter"],
+      "avoid": ["unequal card stacks", "comparison labels invented by the model"]
+    },
+    "collage-scene": {
+      "label": "编辑拼贴",
+      "summary": "以拼贴或编辑插画把抽象主张转成可感知的场景",
+      "preview_image": "../../../examples/theme-showcase/editorial/paper-magazine/slides/s03.png",
+      "roles": ["image-hero", "statement", "closing"],
+      "default_anchor_id": "paper-crop",
+      "composition": "layered editorial collage with one dominant metaphor, irregular crop edges and generous quiet copy space",
+      "imagery": "paper collage, cut photographic fragments or restrained editorial illustration without pseudo-labels",
+      "title_treatment": { "mode": "caption", "scale": "small-to-medium", "placement": "bottom-left", "weight": "quiet caption or integrated conclusion" },
+      "layout_constraints": { "text_safe_zones": ["top-left", "left", "bottom-left"], "visual_zones": ["center", "right", "top-right", "bottom-right"], "densities": ["low", "medium"] },
+      "requirements": ["metaphor must support the supplied claim", "no collage fragment may introduce readable extra text"],
+      "avoid": ["busy scrapbook", "decorative words", "unrelated stock imagery"]
+    }
+  }
+}

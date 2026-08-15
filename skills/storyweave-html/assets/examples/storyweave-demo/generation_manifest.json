@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "producer": "storyweave-html",
+  "mode": "html",
+  "theme": "editorial",
+  "slides": [
+    {
+      "id": "s01",
+      "role": "cover",
+      "output_path": "slides/s01.html",
+      "status": "pass",
+      "asset_role": "complete-html-page",
+      "text_policy": "native-html-text"
+    },
+    {
+      "id": "s02",
+      "role": "statement",
+      "output_path": "slides/s02.html",
+      "status": "pass",
+      "asset_role": "complete-html-page",
+      "text_policy": "native-html-text"
+    },
+    {
+      "id": "s03",
+      "role": "comparison",
+      "output_path": "slides/s03.html",
+      "status": "pass",
+      "asset_role": "complete-html-page",
+      "text_policy": "native-html-text"
+    },
+    {
+      "id": "s04",
+      "role": "process",
+      "output_path": "slides/s04.html",
+      "status": "pass",
+      "asset_role": "complete-html-page",
+      "text_policy": "native-html-text"
+    },
+    {
+      "id": "s05",
+      "role": "data",
+      "output_path": "slides/s05.html",
+      "status": "pass",
+      "asset_role": "complete-html-page",
+      "text_policy": "native-html-text"
+    },
+    {
+      "id": "s06",
+      "role": "closing",
+      "output_path": "slides/s06.html",
+      "status": "pass",
+      "asset_role": "complete-html-page",
+      "text_policy": "native-html-text"
+    }
+  ]
+}

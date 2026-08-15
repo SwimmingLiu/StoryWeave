@@ -1,0 +1,66 @@
+{
+  "business-minimal": {
+    "id": "business-minimal",
+    "label": "Business Minimal",
+    "aliases": ["executive", "leadership", "corporate-clean"],
+    "roles": ["cover", "section", "statement", "image-hero", "two-column", "comparison", "process", "data", "quote", "closing"],
+    "variants": ["ink", "forest", "coral"],
+    "tokens": { "background": "#F3F4EF", "surface": "#FFFFFF", "text": "#172019", "muted": "#59645C", "accent": "#146C5A", "support": "#C58C2B", "line": "#D3D9D1", "radius": "6px", "heading": "Inter, 'Noto Sans SC', system-ui, sans-serif", "body": "Inter, 'Noto Sans SC', system-ui, sans-serif" }
+  },
+  "editorial": {
+    "id": "editorial",
+    "label": "Editorial",
+    "aliases": ["e-ink", "magazine", "paper-journal"],
+    "roles": ["cover", "section", "statement", "image-hero", "two-column", "comparison", "process", "data", "quote", "closing"],
+    "variants": ["paper", "oxide", "marine"],
+    "tokens": { "background": "#F1EEE7", "surface": "#FCF9F2", "text": "#201C18", "muted": "#70665C", "accent": "#A23B2A", "support": "#285C7A", "line": "#D4CABC", "radius": "0px", "heading": "Georgia, 'Noto Serif SC', serif", "body": "Georgia, 'Noto Serif SC', serif" }
+  },
+  "swiss-grid": {
+    "id": "swiss-grid",
+    "label": "Swiss Grid",
+    "aliases": ["swiss", "bauhaus", "neo-grid"],
+    "roles": ["cover", "section", "statement", "image-hero", "two-column", "comparison", "process", "data", "quote", "closing"],
+    "variants": ["signal-red", "ikb", "safety-orange"],
+    "tokens": { "background": "#F3F1E7", "surface": "#FFFEF7", "text": "#101010", "muted": "#55554F", "accent": "#E63B2E", "support": "#1647A8", "line": "#BEBDB5", "radius": "0px", "heading": "Arial, 'Noto Sans SC', sans-serif", "body": "Arial, 'Noto Sans SC', sans-serif" }
+  },
+  "launch-tech": {
+    "id": "launch-tech",
+    "label": "Launch Tech",
+    "aliases": ["cyan-circuit", "blueprint", "code"],
+    "roles": ["cover", "section", "statement", "image-hero", "two-column", "comparison", "process", "data", "quote", "closing"],
+    "variants": ["cyan", "blueprint", "terminal"],
+    "tokens": { "background": "#071719", "surface": "#10282B", "text": "#EAF8F7", "muted": "#8AA7A8", "accent": "#35D3D3", "support": "#E8B44C", "line": "#285054", "radius": "2px", "heading": "Inter, 'Noto Sans SC', sans-serif", "body": "Inter, 'Noto Sans SC', sans-serif" }
+  },
+  "data-consulting": {
+    "id": "data-consulting",
+    "label": "Data Consulting",
+    "aliases": ["mckinsey", "dashboard", "boardroom"],
+    "roles": ["cover", "section", "statement", "image-hero", "two-column", "comparison", "process", "data", "quote", "closing"],
+    "variants": ["boardroom", "slate", "signal"],
+    "tokens": { "background": "#F5F7F8", "surface": "#FFFFFF", "text": "#17212B", "muted": "#5E6974", "accent": "#007A6E", "support": "#D04A3A", "line": "#D4DCE1", "radius": "2px", "heading": "Arial, 'Noto Sans SC', sans-serif", "body": "Arial, 'Noto Sans SC', sans-serif" }
+  },
+  "academic": {
+    "id": "academic",
+    "label": "Academic",
+    "aliases": ["lab-report", "cold-white", "research"],
+    "roles": ["cover", "section", "statement", "image-hero", "two-column", "comparison", "process", "data", "quote", "closing"],
+    "variants": ["research", "journal", "defense"],
+    "tokens": { "background": "#FBFBF7", "surface": "#FFFFFF", "text": "#202421", "muted": "#616963", "accent": "#2F5D50", "support": "#7A3E48", "line": "#D4D9D3", "radius": "0px", "heading": "Georgia, 'Noto Serif SC', serif", "body": "Arial, 'Noto Sans SC', sans-serif" }
+  },
+  "brand-bold": {
+    "id": "brand-bold",
+    "label": "Brand Bold",
+    "aliases": ["memphis", "glass-candy", "bold-startup"],
+    "roles": ["cover", "section", "statement", "image-hero", "two-column", "comparison", "process", "data", "quote", "closing"],
+    "variants": ["coral", "mint", "poster"],
+    "tokens": { "background": "#F7D94C", "surface": "#FFF9E8", "text": "#171717", "muted": "#554B31", "accent": "#EA4B35", "support": "#067A83", "line": "#171717", "radius": "0px", "heading": "Arial Black, Arial, 'Noto Sans SC', sans-serif", "body": "Arial, 'Noto Sans SC', sans-serif" }
+  },
+  "premium-dark": {
+    "id": "premium-dark",
+    "label": "Premium Dark",
+    "aliases": ["black-gold", "keynote", "premium"],
+    "roles": ["cover", "section", "statement", "image-hero", "two-column", "comparison", "process", "data", "quote", "closing"],
+    "variants": ["black-gold", "teal", "graphite"],
+    "tokens": { "background": "#11100F", "surface": "#1D1B18", "text": "#F4EFE3", "muted": "#B5ADA0", "accent": "#D6B25E", "support": "#4EA7A0", "line": "#454139", "radius": "0px", "heading": "Georgia, 'Noto Serif SC', serif", "body": "Inter, 'Noto Sans SC', sans-serif" }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "format": "storyweave/slides",
+  "version": 1,
+  "producer": "storyweave-imagegen",
+  "kind": "image",
+  "title": "主题架构视觉冒烟测试",
+  "canvas": {
+    "width": 2048,
+    "height": 1152
+  },
+  "entry": "index.html",
+  "slides": [
+    {
+      "id": "c01",
+      "role": "cover",
+      "source": "slides/c01.png",
+      "claim": "AI 原生知识工作流",
+      "notes": "封面文字准确，白色技术空间、青蓝路径和连接锚点通过。"
+    },
+    {
+      "id": "c02",
+      "role": "statement",
+      "source": "slides/c02.png",
+      "claim": "信息很多，上下文却在丢失",
+      "notes": "观点文字准确，三个断点和失联关系清楚，没有额外标签。"
+    },
+    {
+      "id": "c03",
+      "role": "process",
+      "source": "slides/c03.png",
+      "claim": "四个动作构成闭环",
+      "notes": "大标题基线通过；四个阶段、闭环方向和无卡片矩阵约束通过。"
+    },
+    {
+      "id": "c04",
+      "role": "process",
+      "source": "slides/c04.png",
+      "claim": "四个动作构成闭环",
+      "notes": "图形主导变体通过；主张降为角落校准标签，四个阶段和连续路径承担主要叙事。"
+    }
+  ]
+}

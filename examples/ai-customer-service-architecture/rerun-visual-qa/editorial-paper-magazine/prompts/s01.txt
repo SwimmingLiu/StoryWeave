@@ -1,0 +1,29 @@
+Use case: productivity-visual
+Asset type: complete 16:9 rasterized presentation slide and systems architecture diagram, not a background asset and not a collage.
+Input images: Image 1 is a style reference only for warm uncoated paper, oxide-red editorial markers, marine-blue ink, restrained Chinese serif typography, and fine printed rules. Do not copy its person, labels, icons, numbers, or circular layout.
+Primary request: create one polished Chinese architecture slide explaining an AI customer-service system as a governable service loop, not a single chatbot.
+Scene/backdrop: warm ivory editorial paper with quiet grain and generous negative space.
+Subject: a clear hub-and-spoke architecture. On the left, 用户触点 enters 统一接入. The central dominant node is 智能编排. On the right, 知识与工具 and 模型服务 are two parallel capabilities called bidirectionally by the hub. Below the hub, 人工坐席 is a separate context-handoff branch. A thin 运营与治理 rail spans the bottom and sends controlled quality and feedback signals back to the hub and knowledge layer.
+Style/medium: independent magazine systems diagram, paper print texture, carbon black and marine-blue ink, small oxide-red emphasis, restrained geometric marks. This is a conceptual architecture map, not a circular numbered process.
+Composition/framing: 16:9 landscape. Reserve only the top 14% for the conclusion sentence; it may wrap into two balanced lines and must use a medium editorial size, never an oversized display title. Use the middle 60% for the left-entry, center-hub, right-parallel topology. Use the lower 18% for 人工坐席 and the governance rail. Keep every label inside quiet matte fields with wide inner padding. Let the central hub be the first visual focus, then the four surrounding capability groups, then the fine connectors.
+Typography: use one restrained Chinese Song-style serif for the conclusion and group headings, with moderate contrast and no calligraphic flourishes; use one clean modern sans-serif for technical descriptions. Group headings are consistent in size. Descriptions are smaller but still projector-readable. Do not make any single Chinese character extremely tall or heavy. Do not let a connector cross text.
+Color palette: warm paper ivory, carbon black, marine blue, oxide red used only for the main claim and governance signal.
+Text (verbatim; render every line exactly once, with correct Chinese characters and punctuation):
+1. "AI 客服不是单点问答，而是一条可治理的服务闭环"
+2. "用户触点"
+3. "APP · Web · 微信 · 电话"
+4. "统一接入"
+5. "渠道适配 · 身份与会话 · 流量路由"
+6. "智能编排"
+7. "意图识别 · 对话状态 · Agent 编排 · 安全护栏"
+8. "知识与工具"
+9. "RAG 检索 · 知识库 · CRM · 订单 · 工单"
+10. "模型服务"
+11. "LLM 网关 · ASR / TTS · 模型路由"
+12. "人工坐席"
+13. "上下文移交 · 协同处理"
+14. "运营与治理"
+15. "质量评估 · 审计权限 · 反馈更新"
+Information boundary: only the fifteen supplied lines may appear. Do not add step numbers, legends, captions, page numbers, logos, dates, slogans, metrics, or invented labels. Preserve every punctuation mark and English term exactly.
+Constraints: complete finished slide; architecture topology must be legible at a glance; primary path and feedback path must be distinguishable; all text must be readable and unobstructed; no dashboard cards; no automatic numbering; no pictorial icon set; no decorative photo behind labels; no watermark.
+Avoid: oversized headline; extreme high-contrast display type; heavy calligraphic Chinese; giant labels; mixed random fonts; text squeezed into tiny footnotes; serial circular loop; dense UI panels; copied reference content; extra words; malformed Chinese; pseudo-data; watermark.

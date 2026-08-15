@@ -1,0 +1,9 @@
+{
+  "schema_version": 3,
+  "id": "systems",
+  "spatial_grammar": "在共享技术场中用节点、路径和显式分组建立空间关系",
+  "reading_order": "先沿主要关系路径阅读，再查看次级分支和局部状态",
+  "density_strategy": "每页只突出一个系统关系，次级分支保持稀疏并留出文字安全区",
+  "deck_rhythm": "在全局概览、局部关系和安静判断页之间交替",
+  "default_anchor_id": "calibration-line"
+}

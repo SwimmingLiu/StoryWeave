@@ -1,0 +1,18 @@
+Use case: productivity-visual
+Asset type: complete 16:9 rasterized presentation slide, not a background asset and not a collage.
+Input images: Image 1 is a style reference only for warm uncoated paper, editorial serif typography, oxide-red accents, marine-blue ink, fine rules, and print texture. Do not copy its person, customer-service system, labels, icons, numbers, or text.
+Primary request: create the finished process slide for a concise Chinese presentation.
+Theme architecture: editorial reading rhythm that turns a process into a clear paper diagram while keeping the deck's magazine identity.
+Theme style: paper-magazine. Warm ivory paper, carbon black, oxide red, muted marine blue, restrained print grain and hairline rules.
+Visual scheme: editorial-diagram. Four named stages form one obvious closed loop. Use simple abstract ink shapes, arrows, and limited color blocks; no pictorial icons are required.
+Composition/framing: 16:9 landscape. Large headline in a quiet top zone. The four stages occupy a spacious circular or rounded-rectangular loop across the middle and lower area. Clear direction, medium density, no numbered nodes.
+Text (verbatim; render each line exactly once):
+1. "四个动作构成闭环"
+2. "收集现场"
+3. "建立关联"
+4. "形成判断"
+5. "推进行动"
+Typography: headline is large high-contrast Chinese serif. Stage labels are crisp, equal in visual weight, and projector-readable. Render every Chinese character correctly.
+Information boundary: only the five supplied lines may appear. Do not invent node numbers, captions, explanatory text, English translations, issue markers, dates, logos, or watermarks.
+Constraints: render one complete polished slide; maintain generous margins; the loop direction must be immediately understandable; labels sit in quiet fields and are not crossed by arrows or texture.
+Avoid: extra words; malformed Chinese; copied content from Image 1; automatic 1–4 numbering; person; photographs; dashboard cards; website UI; tech neon; dense decoration; watermark.

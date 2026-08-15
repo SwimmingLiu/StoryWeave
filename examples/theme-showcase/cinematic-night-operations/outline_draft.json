@@ -1,0 +1,64 @@
+{
+  "schema_version": 3,
+  "status": "draft",
+  "catalog_scope": "authoring",
+  "title": "夜间值班：服务仍然继续",
+  "audience": "客户体验负责人、客服主管和服务流程设计团队",
+  "purpose": "用自然胶片式影像讲述一次服务请求如何穿过不同现场并被继续接住",
+  "page_count": 3,
+  "central_message": "连续服务的最后一公里，是让下一班人接住已经发生的事。",
+  "narrative": {
+    "opening": "夜里，服务现场没有停止。",
+    "problem": "一次交接如果失去上下文，用户只能重新开始。",
+    "insight": "被保留下来的现场让动作可以继续。",
+    "method": "从入口、判断到人工接手，保持一条可追踪的服务旅程。",
+    "action": "从一次交接开始改造连续性。"
+  },
+  "language": "zh-CN",
+  "canvas": "16:9",
+  "theme_ref": "cinematic/natural-film",
+  "slides": [
+    {
+      "id": "s01",
+      "role": "cover",
+      "purpose": "让观众进入夜间服务现场",
+      "claim": "夜间值班，服务仍然继续",
+      "exact_text": ["夜间值班，服务仍然继续", "一条请求穿过多个现场"],
+      "evidence": [],
+      "visual_brief": "自然胶片式宽幅夜间服务场景：办公室、城市窗光和一个人尺度的主体建立时间与地点，不生成可读招牌。",
+      "visual_scheme_ref": "cinematic/natural-film/film-opening",
+      "visual_anchor_id": "film-frame",
+      "continuity_group": "cover",
+      "layout_plan": {"text_safe_zone": "top-left", "visual_zone": ["center", "right"], "hierarchy": ["headline", "scene-anchor", "short-caption"], "density": "low"},
+      "transition": "从场景进入人物动作"
+    },
+    {
+      "id": "s02",
+      "role": "image-hero",
+      "purpose": "呈现交接中的人物瞬间",
+      "claim": "当系统交给人工，交接不能从零开始",
+      "exact_text": ["当系统交给人工，交接不能从零开始", "上下文先到，动作才会连续"],
+      "evidence": [],
+      "visual_brief": "人物在安静的工作光线中接手一条请求，脸部和文字区分离；画面表达动作和上下文，不添加姓名、职位或界面文字。",
+      "visual_scheme_ref": "cinematic/natural-film/human-moment",
+      "visual_anchor_id": "light-pool",
+      "continuity_group": "handoff",
+      "layout_plan": {"text_safe_zone": "top-left", "visual_zone": ["center", "right"], "hierarchy": ["caption", "human-moment", "supporting-line"], "density": "low"},
+      "transition": "从人物动作进入结尾判断"
+    },
+    {
+      "id": "s03",
+      "role": "closing",
+      "purpose": "收束连续服务的行动起点",
+      "claim": "让下一班人接住已经发生的事",
+      "exact_text": ["让下一班人接住已经发生的事", "从一次交接开始"],
+      "evidence": [],
+      "visual_brief": "安静收束镜头：远处的暖光和离开画面的动作留下空间，左下方保留低纹理文字区，不出现结尾 Logo 或额外行动口号。",
+      "visual_scheme_ref": "cinematic/natural-film/quiet-ending",
+      "visual_anchor_id": "light-pool",
+      "continuity_group": "handoff",
+      "layout_plan": {"text_safe_zone": "bottom-left", "visual_zone": ["right"], "hierarchy": ["closing-claim", "supporting-line", "light-pool"], "density": "low"},
+      "transition": "结束"
+    }
+  ]
+}

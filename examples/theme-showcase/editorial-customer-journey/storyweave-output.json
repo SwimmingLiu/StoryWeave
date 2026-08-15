@@ -1,0 +1,35 @@
+{
+  "format": "storyweave/slides",
+  "version": 1,
+  "producer": "storyweave-imagegen",
+  "kind": "image",
+  "title": "客服体验：从一次回答到一段连续关系",
+  "canvas": {
+    "width": 2048,
+    "height": 1152
+  },
+  "entry": "index.html",
+  "slides": [
+    {
+      "id": "s01",
+      "role": "cover",
+      "source": "slides/s01.png",
+      "claim": "客服体验从一次回答变成一段可连续的关系",
+      "notes": "客服体验从一次回答变成一段可连续的关系"
+    },
+    {
+      "id": "s02",
+      "role": "process",
+      "source": "slides/s02.png",
+      "claim": "把一次咨询拆成可复用的服务判断",
+      "notes": "把一次咨询拆成可复用的服务判断"
+    },
+    {
+      "id": "s03",
+      "role": "quote",
+      "source": "slides/s03.png",
+      "claim": "好的客服不是更快结束，而是让用户少走一步",
+      "notes": "好的客服不是更快结束，而是让用户少走一步"
+    }
+  ]
+}

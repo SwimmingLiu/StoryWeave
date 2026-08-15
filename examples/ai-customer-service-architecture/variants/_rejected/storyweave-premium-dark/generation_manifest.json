@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "title": "AI 智能客服架构",
+  "mode": "imagegen",
+  "theme": "premium-dark",
+  "provider": "imagegen",
+  "canvas": "16:9",
+  "slides": [
+    {
+      "id": "s01",
+      "index": 1,
+      "role": "process",
+      "theme": "premium-dark",
+      "prompt_sha256": "235cbdcd76b0438f9b0dce3e0b608e71443c8ebe2604839a6fb5b028802aaeb3",
+      "model": "imagegen",
+      "size": "2048x1152",
+      "quality": "medium",
+      "output_path": "slides/s01.png",
+      "status": "revise",
+      "attempts": 1,
+      "error": null,
+      "asset_role": "complete-slide",
+      "text_policy": "exact-text-in-image",
+      "visual_review": "fail",
+      "warning": "/Users/swimmingliu/data/github-proj/StoryWeave/examples/ai-customer-service-architecture/variants/storyweave-premium-dark/slides/s01.png is 1672x941; expected 2048x1152.",
+      "review_notes": "出现未授权的 2–8 编号；中心视觉锚点不是智能编排",
+      "reviewed_at": "2026-08-15T07:01:13.411Z"
+    }
+  ]
+}

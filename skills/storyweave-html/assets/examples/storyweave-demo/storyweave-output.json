@@ -1,0 +1,56 @@
+{
+  "format": "storyweave/slides",
+  "version": 1,
+  "producer": "storyweave-html",
+  "kind": "html",
+  "title": "AI 原生知识工作流",
+  "canvas": {
+    "width": 1280,
+    "height": 720
+  },
+  "entry": "index.html",
+  "slides": [
+    {
+      "id": "s01",
+      "role": "cover",
+      "source": "slides/s01.html",
+      "claim": "AI 原生知识工作流",
+      "notes": "AI 原生知识工作流"
+    },
+    {
+      "id": "s02",
+      "role": "statement",
+      "source": "slides/s02.html",
+      "claim": "问题不是信息太少，而是上下文不断丢失",
+      "notes": "问题不是信息太少，而是上下文不断丢失"
+    },
+    {
+      "id": "s03",
+      "role": "comparison",
+      "source": "slides/s03.html",
+      "claim": "从文件堆积转向上下文复用",
+      "notes": "从文件堆积转向上下文复用"
+    },
+    {
+      "id": "s04",
+      "role": "process",
+      "source": "slides/s04.html",
+      "claim": "四个动作构成闭环",
+      "notes": "四个动作构成闭环"
+    },
+    {
+      "id": "s05",
+      "role": "data",
+      "source": "slides/s05.html",
+      "claim": "价值来自复用次数，而不是文件数量",
+      "notes": "价值来自复用次数，而不是文件数量"
+    },
+    {
+      "id": "s06",
+      "role": "closing",
+      "source": "slides/s06.html",
+      "claim": "先重做一条高频流程",
+      "notes": "先重做一条高频流程"
+    }
+  ]
+}

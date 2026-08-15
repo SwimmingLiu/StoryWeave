@@ -1,0 +1,4 @@
+interface:
+  display_name: "Storyweave HTML"
+  short_description: "Create standalone editable HTML presentation pages"
+  default_prompt: "Use $storyweave-html to confirm the storyboard, then build a concise presentation as standalone editable HTML pages."

@@ -1,0 +1,35 @@
+{
+  "format": "storyweave/slides",
+  "version": 1,
+  "producer": "storyweave-imagegen",
+  "kind": "image",
+  "title": "AI 客服发布：让下一步被看见",
+  "canvas": {
+    "width": 2048,
+    "height": 1152
+  },
+  "entry": "index.html",
+  "slides": [
+    {
+      "id": "s01",
+      "role": "process",
+      "source": "slides/s01.png",
+      "claim": "一次提问，沿着一条路径走向行动",
+      "notes": "一次提问，沿着一条路径走向行动"
+    },
+    {
+      "id": "s02",
+      "role": "data",
+      "source": "slides/s02.png",
+      "claim": "传播要让下一步看得见",
+      "notes": "传播要让下一步看得见"
+    },
+    {
+      "id": "s03",
+      "role": "quote",
+      "source": "slides/s03.png",
+      "claim": "好的传播，不替服务做承诺",
+      "notes": "好的传播，不替服务做承诺"
+    }
+  ]
+}

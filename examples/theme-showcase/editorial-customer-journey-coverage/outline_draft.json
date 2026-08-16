@@ -1,0 +1,137 @@
+{
+  "schema_version": 3,
+  "status": "draft",
+  "catalog_scope": "authoring",
+  "title": "客服体验：把关系继续下去",
+  "audience": "客户体验负责人、产品团队与客服运营团队",
+  "purpose": "用四种编辑式页面补齐人物、纪录、对照和拼贴表达",
+  "page_count": 4,
+  "central_message": "连续服务需要让一次说明成为下一步的起点。",
+  "narrative": {
+    "opening": "观众先进入一个具体的服务现场。",
+    "problem": "如果上下文、判断或交接被切断，下一步就要重新开始。",
+    "insight": "连续服务需要让关系、动作和现场线索保持可见。",
+    "method": "用一个页面职责承载一个清楚的关系，再把不同职责串成完整叙事。",
+    "action": "先把最常发生的一段服务关系接起来。"
+  },
+  "language": "zh-CN",
+  "canvas": "16:9",
+  "theme_ref": "editorial/paper-magazine",
+  "slides": [
+    {
+      "id": "s01",
+      "role": "image-hero",
+      "purpose": "用纪录现场承载连续服务的起点",
+      "claim": "一条问题从窗口进入，也带着上下文留下",
+      "exact_text": [
+        "一条问题从窗口进入，也带着上下文留下",
+        "从服务现场开始"
+      ],
+      "evidence": [],
+      "visual_brief": "纪录感服务现场：桌面、纸张和一个正在处理问题的人物被自然裁切，左侧纸面保留安静文字区，不出现可读招牌。",
+      "visual_scheme_ref": "editorial/paper-magazine/documentary-hero",
+      "visual_anchor_id": "paper-crop",
+      "continuity_group": "field-notes",
+      "layout_plan": {
+        "text_safe_zone": "top-left",
+        "visual_zone": [
+          "center",
+          "right"
+        ],
+        "hierarchy": [
+          "caption",
+          "documentary-scene",
+          "short-support"
+        ],
+        "density": "low"
+      },
+      "transition": "从现场进入人物判断"
+    },
+    {
+      "id": "s02",
+      "role": "quote",
+      "purpose": "让人物关系成为服务判断的载体",
+      "claim": "接住用户的人，不该从一句自我介绍开始",
+      "exact_text": [
+        "接住用户的人，不该从一句自我介绍开始",
+        "上下文先到，动作才会连续"
+      ],
+      "evidence": [],
+      "visual_brief": "匿名客服人员的编辑式人物特写，脸部和文字区分离，纸面边缘保留一块安静的引文区域，不添加姓名、职位或出处。",
+      "visual_scheme_ref": "editorial/paper-magazine/profile-feature",
+      "visual_anchor_id": "paper-crop",
+      "continuity_group": "field-notes",
+      "layout_plan": {
+        "text_safe_zone": "left",
+        "visual_zone": [
+          "right"
+        ],
+        "hierarchy": [
+          "quote",
+          "portrait",
+          "supporting-line"
+        ],
+        "density": "low"
+      },
+      "transition": "从人物回到关系对照"
+    },
+    {
+      "id": "s03",
+      "role": "comparison",
+      "purpose": "对照重复说明与连续理解的差异",
+      "claim": "同一件事，不要让用户重复讲两遍",
+      "exact_text": [
+        "同一件事，不要让用户重复讲两遍",
+        "第一次说明",
+        "再次说明"
+      ],
+      "evidence": [],
+      "visual_brief": "两块不对称的纸面区域使用同一比较维度：左侧是被拆开的说明，右侧是沿关系继续的说明；不加入数字、卡片或第三选项。",
+      "visual_scheme_ref": "editorial/paper-magazine/comparison-spread",
+      "visual_anchor_id": "oxide-rule",
+      "continuity_group": "field-notes",
+      "layout_plan": {
+        "text_safe_zone": "top-left",
+        "visual_zone": [
+          "center",
+          "right"
+        ],
+        "hierarchy": [
+          "comparison-conclusion",
+          "parallel-fields",
+          "short-labels"
+        ],
+        "density": "medium"
+      },
+      "transition": "从对照进入最后的拼贴收束"
+    },
+    {
+      "id": "s04",
+      "role": "closing",
+      "purpose": "用拼贴隐喻收束连续关系",
+      "claim": "让下一次服务接着上一次发生",
+      "exact_text": [
+        "让下一次服务接着上一次发生",
+        "关系可以继续"
+      ],
+      "evidence": [],
+      "visual_brief": "纸张、便签、线索和一条向前延伸的路径组成编辑拼贴；右侧承担隐喻，左下保持安静文字区，不添加清单外文字。",
+      "visual_scheme_ref": "editorial/paper-magazine/collage-scene",
+      "visual_anchor_id": "ink-dot",
+      "continuity_group": "field-notes",
+      "layout_plan": {
+        "text_safe_zone": "bottom-left",
+        "visual_zone": [
+          "right"
+        ],
+        "hierarchy": [
+          "closing-claim",
+          "collage-anchor",
+          "supporting-line"
+        ],
+        "density": "low"
+      },
+      "transition": "结束"
+    }
+  ]
+}

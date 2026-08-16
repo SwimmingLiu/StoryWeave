@@ -12,14 +12,16 @@ StoryWeave 是一组面向 16:9 演示文稿的独立 Skill。内容生产与展
 
 ## 主题 showcase
 
-当前目录有四套可运行的候选主题样式。每个案例包含三页完整图片、离线对照画廊、标准输出和逐页视觉 QA 记录；四个案例的页面评分均不低于 95/100。
+当前目录有四套可运行的候选主题样式。每套主题都有基础案例和补充 coverage：基础案例用于快速了解主题，coverage 用同一场景验证该主题下的细化视觉方案。全部 15 张 coverage 页面都经过人工视觉校验，评分不低于 95/100，并保留离线画廊、标准输出和逐页 QA 记录。
 
-| 主题样式 | 代表场景 | 页面结构 | 入口 |
+| 主题样式 | 代表场景 | 细化视觉方案覆盖 | 入口 |
 |---|---|---|---|
-| `editorial/paper-magazine` | 客服体验从一次回答延伸为连续关系 | 封面、编辑图解、判断页 | [案例 README](./examples/theme-showcase/editorial-customer-journey/README.md) · [画廊](./examples/theme-showcase/editorial-customer-journey/comparison_gallery.html) |
-| `systems/white-cyan-circuit` | AI 客服的节点、路径和运营治理关系 | 系统关系、对照矩阵、可追踪流程 | [案例 README](./examples/theme-showcase/systems-ai-customer-service/README.md) · [画廊](./examples/theme-showcase/systems-ai-customer-service/comparison_gallery.html) |
-| `campaign/bold-poster` | AI 客服发布与产品主张 | 海报主张、产品主体、传播对照 | [案例 README](./examples/theme-showcase/campaign-ai-customer-service-launch/README.md) · [画廊](./examples/theme-showcase/campaign-ai-customer-service-launch/comparison_gallery.html) |
-| `cinematic/natural-film` | 夜间值班与客服交接 | 场景建立、人物瞬间、安静结尾 | [案例 README](./examples/theme-showcase/cinematic-night-operations/README.md) · [画廊](./examples/theme-showcase/cinematic-night-operations/comparison_gallery.html) |
+| `editorial/paper-magazine` | 客服体验从一次回答延伸为连续关系 | 纪录主视觉、人物特写、对照跨页、编辑拼贴 | [基础案例](./examples/theme-showcase/editorial-customer-journey/README.md) · [基础画廊](./examples/theme-showcase/editorial-customer-journey/comparison_gallery.html) · [coverage 画廊](./examples/theme-showcase/editorial-customer-journey-coverage/comparison_gallery.html) |
+| `systems/white-cyan-circuit` | AI 客服的节点、路径和运营治理关系 | 连续回路、数据概览、信号判断、概念界面、等距技术空间 | [基础案例](./examples/theme-showcase/systems-ai-customer-service/README.md) · [基础画廊](./examples/theme-showcase/systems-ai-customer-service/comparison_gallery.html) · [coverage 画廊](./examples/theme-showcase/systems-ai-customer-service-coverage/comparison_gallery.html) |
+| `campaign/bold-poster` | AI 客服发布与产品主张 | 行动路径、传播数据、传播信号 | [基础案例](./examples/theme-showcase/campaign-ai-customer-service-launch/README.md) · [基础画廊](./examples/theme-showcase/campaign-ai-customer-service-launch/comparison_gallery.html) · [coverage 画廊](./examples/theme-showcase/campaign-ai-customer-service-coverage/comparison_gallery.html) |
+| `cinematic/natural-film` | 夜间值班与客服交接 | 双场景对照、行动旅程、现场证据 | [基础案例](./examples/theme-showcase/cinematic-night-operations/README.md) · [基础画廊](./examples/theme-showcase/cinematic-night-operations/comparison_gallery.html) · [coverage 画廊](./examples/theme-showcase/cinematic-night-operations-coverage/comparison_gallery.html) |
+
+coverage 的完整素材位于 [`examples/theme-showcase/`](./examples/theme-showcase/)；每个 coverage 目录都包含 `README.md`、`comparison_review.md`、离线 `comparison_gallery.html`、逐页 PNG、`storyweave-output.json` 和 `qa_report.json`。
 
 ## 安装
 

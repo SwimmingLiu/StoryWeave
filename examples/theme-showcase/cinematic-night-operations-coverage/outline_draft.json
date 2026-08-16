@@ -1,0 +1,114 @@
+{
+  "schema_version": 3,
+  "status": "draft",
+  "catalog_scope": "authoring",
+  "title": "夜间交接：同一条请求继续向前",
+  "audience": "客户体验负责人、客服主管和服务流程设计团队",
+  "purpose": "用三种影像式页面补齐双场景、行动旅程和现场证据",
+  "page_count": 3,
+  "central_message": "连续服务依靠现场、交接和下一步之间的可见关系。",
+  "narrative": {
+    "opening": "观众先进入一个具体的服务现场。",
+    "problem": "如果上下文、判断或交接被切断，下一步就要重新开始。",
+    "insight": "连续服务需要让关系、动作和现场线索保持可见。",
+    "method": "用一个页面职责承载一个清楚的关系，再把不同职责串成完整叙事。",
+    "action": "先把最常发生的一段服务关系接起来。"
+  },
+  "language": "zh-CN",
+  "canvas": "16:9",
+  "theme_ref": "cinematic/natural-film",
+  "slides": [
+    {
+      "id": "s01",
+      "role": "comparison",
+      "purpose": "比较同一请求在两个现场的连续性",
+      "claim": "同一条请求，在不同现场保持同一段上下文",
+      "exact_text": [
+        "同一条请求，在不同现场保持同一段上下文",
+        "接班前",
+        "接班后"
+      ],
+      "evidence": [],
+      "visual_brief": "两个自然光电影画面使用同一空间维度：接班前的桌面和接班后的手部动作；中央留出安静文字缝隙，不出现时间戳或伪字幕。",
+      "visual_scheme_ref": "cinematic/natural-film/film-comparison",
+      "visual_anchor_id": "horizon-line",
+      "continuity_group": "handoff-night",
+      "layout_plan": {
+        "text_safe_zone": "top-left",
+        "visual_zone": [
+          "center",
+          "right"
+        ],
+        "hierarchy": [
+          "comparison-conclusion",
+          "matched-scenes",
+          "short-labels"
+        ],
+        "density": "medium"
+      },
+      "transition": "从双场景进入动作旅程"
+    },
+    {
+      "id": "s02",
+      "role": "process",
+      "purpose": "让请求穿过空间和交接形成连续动作",
+      "claim": "一条请求穿过夜色，也穿过交接",
+      "exact_text": [
+        "一条请求穿过夜色，也穿过交接",
+        "现场",
+        "交接",
+        "继续"
+      ],
+      "evidence": [],
+      "visual_brief": "自然胶片式连续空间：窗边、走廊和工作台由光线方向串联，动作 beats 不编号，文字位于低纹理阴影区。",
+      "visual_scheme_ref": "cinematic/natural-film/film-journey",
+      "visual_anchor_id": "horizon-line",
+      "continuity_group": "handoff-night",
+      "layout_plan": {
+        "text_safe_zone": "top-left",
+        "visual_zone": [
+          "center",
+          "right"
+        ],
+        "hierarchy": [
+          "headline",
+          "journey-path",
+          "action-beats"
+        ],
+        "density": "medium"
+      },
+      "transition": "从动作进入现场证据"
+    },
+    {
+      "id": "s03",
+      "role": "data",
+      "purpose": "把现场线索作为连续服务的可见证据",
+      "claim": "服务的连续性，先从看见现场开始",
+      "exact_text": [
+        "服务的连续性，先从看见现场开始",
+        "现场线索",
+        "交接记录",
+        "下一步"
+      ],
+      "evidence": [],
+      "visual_brief": "真实工作现场中的少量证据标记：纸张、手部、灯光和一条克制的图形线，不生成数字、仪表盘或可读招牌。",
+      "visual_scheme_ref": "cinematic/natural-film/film-evidence",
+      "visual_anchor_id": "horizon-line",
+      "continuity_group": "handoff-night",
+      "layout_plan": {
+        "text_safe_zone": "top-left",
+        "visual_zone": [
+          "center",
+          "right"
+        ],
+        "hierarchy": [
+          "headline",
+          "scene-evidence",
+          "short-caption"
+        ],
+        "density": "medium"
+      },
+      "transition": "结束"
+    }
+  ]
+}

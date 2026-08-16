@@ -15,7 +15,7 @@
 
 一套 deck 只使用一个主题样式。每页使用一个属于该样式、且与页面职责兼容的视觉方案。视觉方案不在不同主题样式之间做全量交叉组合。
 
-目标目录包含四套主题架构：`editorial`、`systems`、`campaign`、`cinematic`。四套架构现在都各有一个可运行的候选主题样式，并使用独立的三页 showcase 做 golden deck 与图片 QA；通过后才标记为活动主题。
+目标目录包含四套主题架构：`editorial`、`systems`、`campaign`、`cinematic`。四套架构现在都各有一个可运行的候选主题样式，并使用基础 showcase 与补充 coverage deck 做 golden deck 和逐方案图片 QA；通过后才标记为活动主题。
 
 ## 2. 当前状态
 
@@ -118,9 +118,9 @@ systems/white-cyan-circuit/system-map
 | `poster-claim` | `cover`、`statement` | 单一传播主体和中等或大号结论形成第一眼焦点，不添加广告副文案。 |
 | `product-studio` | `image-hero`、`section` | 一个产品或服务主体占据画面中心，关系只用确认文字表达。 |
 | `campaign-comparison` | `comparison`、`two-column` | 两个等重色块使用同一比较维度，不添加第三选项或伪数据。 |
-| `launch-sequence` | `process`、`closing` | 用连续的平面动作或路径表现发布节奏，标签只来自 `exact_text`。 |
-| `testimonial-poster` | `quote`、`statement` | 以短句和传播主体并置，不补写姓名、职位或出处。 |
-| `product-closeup` | `data`、`image-hero` | 用单一细节或材质表达产品重点；不生成规格、价格或 Logo。 |
+| `campaign-flow` | `process` | 用连续的平面动作或路径表现发布节奏，标签只来自 `exact_text`。 |
+| `campaign-data` | `data` | 用单一数据形状或分组表达传播判断；不生成规格、价格或伪数据。 |
+| `campaign-signal` | `quote` | 以短句和传播主体并置，不补写姓名、职位或出处。 |
 
 ### `cinematic/natural-film`
 
@@ -129,9 +129,9 @@ systems/white-cyan-circuit/system-map
 | `film-opening` | `cover`、`section` | 宽幅自然光场景建立地点和时间，文字位于低纹理边缘。 |
 | `human-moment` | `image-hero`、`quote` | 用匿名人物动作或物件细节承载主张，脸部和文字保持分离。 |
 | `quiet-ending` | `closing`、`statement` | 用退场动作、余光或空场收束，不添加结尾 Logo 或行动口号。 |
-| `establishing-scene` | `cover`、`image-hero` | 用空间纵深建立连续场景，避免可读招牌和无来源地点信息。 |
-| `observational-detail` | `process`、`data` | 用手部、物件或局部光线表达过程状态，不生成伪界面或数字。 |
-| `sequence-cut` | `comparison`、`two-column` | 以两个镜头或两个空间作同维度对照，避免电影海报式账单文字。 |
+| `film-comparison` | `two-column`、`comparison` | 以两个镜头或两个空间作同维度对照，避免电影海报式账单文字。 |
+| `film-journey` | `process` | 用手部、物件或空间方向表达过程状态，不生成伪界面或数字。 |
+| `film-evidence` | `data` | 让有来源的观察落在真实场景中，不把画面当作未经确认的证据。 |
 
 同一页面职责可以有多个视觉方案，但候选必须来自当前主题样式。默认推荐不超过三个；不兼容的视觉方案不出现在候选列表中。
 
@@ -159,15 +159,15 @@ systems/white-cyan-circuit/system-map
 | 页面职责 | `editorial/paper-magazine` | `systems/white-cyan-circuit` | `campaign/bold-poster` | `cinematic/natural-film` |
 |---|---|---|---|---|
 | `cover` | `magazine-cover` | `keynote-cover` | `poster-claim` | `film-opening` |
-| `section` | `documentary-hero` | `keynote-cover` | `product-studio` | `establishing-scene` |
+| `section` | `documentary-hero` | `keynote-cover` | `poster-claim` | `film-opening` |
 | `statement` | `editorial-statement` | `signal-quote` | `poster-claim` | `quiet-ending` |
 | `image-hero` | `documentary-hero` | `isometric-space` | `product-studio` | `human-moment` |
-| `two-column` | `comparison-spread` | `comparison-matrix` | `campaign-comparison` | `sequence-cut` |
-| `comparison` | `comparison-spread` | `comparison-matrix` | `campaign-comparison` | `sequence-cut` |
-| `process` | `editorial-diagram` | `system-map` | `launch-sequence` | `observational-detail` |
-| `data` | `editorial-diagram` | `data-overview` | `product-closeup` | `observational-detail` |
-| `quote` | `profile-feature` | `signal-quote` | `testimonial-poster` | `human-moment` |
-| `closing` | `editorial-statement` | `keynote-cover` | `launch-sequence` | `quiet-ending` |
+| `two-column` | `comparison-spread` | `comparison-matrix` | `campaign-comparison` | `film-comparison` |
+| `comparison` | `comparison-spread` | `comparison-matrix` | `campaign-comparison` | `film-comparison` |
+| `process` | `editorial-diagram` | `system-map` | `campaign-flow` | `film-journey` |
+| `data` | `editorial-diagram` | `data-overview` | `campaign-data` | `film-evidence` |
+| `quote` | `profile-feature` | `signal-quote` | `campaign-signal` | `human-moment` |
+| `closing` | `editorial-statement` | `keynote-cover` | `poster-claim` | `quiet-ending` |
 
 ## 6. 主题与视觉方案的选择方式
 

@@ -1,0 +1,13 @@
+{
+  "schema_version": 3,
+  "export_ready": true,
+  "mode": "imagegen",
+  "theme": "campaign/bold-poster",
+  "theme_ref": "campaign/bold-poster",
+  "catalog_scope": "authoring",
+  "summary": {
+    "blocking": 0,
+    "warning": 0
+  },
+  "findings": []
+}

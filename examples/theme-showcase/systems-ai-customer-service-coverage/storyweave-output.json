@@ -1,0 +1,49 @@
+{
+  "format": "storyweave/slides",
+  "version": 1,
+  "producer": "storyweave-imagegen",
+  "kind": "image",
+  "title": "AI 客服：从信号到交接",
+  "canvas": {
+    "width": 2048,
+    "height": 1152
+  },
+  "entry": "index.html",
+  "slides": [
+    {
+      "id": "s01",
+      "role": "process",
+      "source": "slides/s01.png",
+      "claim": "一条请求沿着信号路径向前",
+      "notes": "一条请求沿着信号路径向前"
+    },
+    {
+      "id": "s02",
+      "role": "data",
+      "source": "slides/s02.png",
+      "claim": "运营治理需要看见每一段关系",
+      "notes": "运营治理需要看见每一段关系"
+    },
+    {
+      "id": "s03",
+      "role": "quote",
+      "source": "slides/s03.png",
+      "claim": "系统的价值，是让下一步有依据",
+      "notes": "系统的价值，是让下一步有依据"
+    },
+    {
+      "id": "s04",
+      "role": "image-hero",
+      "source": "slides/s04.png",
+      "claim": "先让概念界面服务于关系",
+      "notes": "先让概念界面服务于关系"
+    },
+    {
+      "id": "s05",
+      "role": "image-hero",
+      "source": "slides/s05.png",
+      "claim": "复杂服务也可以拥有清楚的空间",
+      "notes": "复杂服务也可以拥有清楚的空间"
+    }
+  ]
+}

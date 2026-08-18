@@ -72,14 +72,13 @@ GitHub 的完整树在 [commit tree](https://github.com/chujianyun/wuming-cyan-c
 | 数据格式 | Markdown 指令和自由文本 Prompt | Storyboard、deck spec、generation manifest、QA report 和 `storyweave-output.json` |
 | 编辑性 | 未提供图层或对象级编辑源；成图后需重生成 | HTML 页面可以修改；Imagegen 页面通过重生成指定页修改；Express 只负责 Bento 包装 |
 | 事实/QA | 只规定不编造品牌资产、人物、Logo、乱码等图像约束；无结构或浏览器 QA | 有资料缺口记录、用户确认门、结构校验、图片/浏览器 Review 和导出规则 |
-| 示例资源 | 1 张 `preview.png`，2 张公众号/微信群二维码 | 三个 Skill 自带示例；本仓库 `examples/` 保存对照案例和生成记录 |
+| 示例资源 | 1 张 `preview.png`，2 张公众号/微信群二维码 | 三个 Skill 自带示例；仓库不保存生成结果和对照案例 |
 
 Storyweave 的关键实现入口：
 
 - [`skills/storyweave-html/SKILL.md`](../../skills/storyweave-html/SKILL.md)：完整 HTML 页面生产合同和 CLI。
 - [`skills/storyweave-imagegen/SKILL.md`](../../skills/storyweave-imagegen/SKILL.md)：完整图片页面生产合同、主题、提示词编译和 Review 门。
 - [`skills/storyweave-express/SKILL.md`](../../skills/storyweave-express/SKILL.md)：消费 `storyweave-output.json` 并包装为 Bento。
-- [`docs/implementation-audit.md`](../implementation-audit.md)：三 Skill 的职责和验证结果。
 
 ## 可行的组合方式
 

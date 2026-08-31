@@ -17,3 +17,4 @@
 
 `kind` 只能是 `html` 或 `image`。所有路径相对 manifest 所在目录解析。页面 ID 必须稳定且唯一；消费者不得根据文件名重新排序。
 
+`version: 1` 兼容 HTML 与 Imagegen；canonical `storyweave-html` 可以使用 `version: 2`。version 2 只允许 `producer: storyweave-html` 且 `kind: html`，因为它增加了主题、scheme 和 render recipe 指纹字段。

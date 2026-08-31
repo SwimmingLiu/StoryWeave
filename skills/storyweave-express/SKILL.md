@@ -9,7 +9,7 @@ description: Package completed Storyweave HTML pages or Imagegen slide images in
 
 ## 输入与输出
 
-- 输入格式固定为 `storyweave/slides` version 1。
+- 输入格式为 `storyweave/slides` version 1；canonical `storyweave-html` 输出也接受 version 2。
 - `kind: html` 时，用浏览器按 manifest 指定画布逐页渲染 HTML，再作为整页图片写入 Bento。
 - `kind: image` 时，直接读取 manifest 中的逐页图片。
 - 输出为 `.bento.html`，每页仅包含一个全画布 image element；源 HTML 或源图片仍是内容母版。
@@ -24,6 +24,8 @@ description: Package completed Storyweave HTML pages or Imagegen slide images in
 5. 验证 Bento shell 的来源与 SHA-256，只替换唯一的 `#bento-doc` JSON 块。
 6. 覆盖已有输出时保留 `docId` 和 Bento 拥有的未知字段；页面 ID 沿用输入 manifest。
 7. 运行 `qa`，确认页数一致、每页只有一个全画布图片、资源已内嵌且 Bento 文档可解析。
+
+canonical HTML version 2 会把主题、scheme、render recipe 和页面节奏保留在 Bento 的 `meta` 中，但仍将每页作为单个全画布图片展示；Bento 不会把 HTML 页面重新解释成可编辑对象。
 
 ## 异常与兜底
 

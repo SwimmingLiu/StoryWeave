@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://easy-skills.local/storyweave-html/outline_draft.v2.schema.json",
+  "title": "Storyweave HTML legacy storyboard draft",
+  "type": "object",
+  "required": ["schema_version", "status", "title", "audience", "purpose", "page_count", "central_message", "narrative", "slides"],
+  "properties": {
+    "schema_version": { "const": 2 },
+    "status": { "const": "draft" },
+    "title": { "type": "string", "minLength": 1 },
+    "audience": { "type": "string", "minLength": 1 },
+    "purpose": { "type": "string", "minLength": 1 },
+    "page_count": { "type": "integer", "minimum": 1 },
+    "central_message": { "type": "string", "minLength": 1 },
+    "narrative": { "type": "object" },
+    "slides": { "type": "array", "minItems": 1 }
+  },
+  "additionalProperties": true
+}

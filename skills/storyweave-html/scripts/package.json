@@ -6,7 +6,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "test": "node --test ../tests/assets.test.mjs ../tests/storyweave-contract.test.mjs",
+    "test": "node --test ../tests/assets.test.mjs ../tests/storyweave-contract.test.mjs ../tests/themes.test.mjs",
     "validate": "node ppt.mjs qa ../assets/examples/storyweave-demo --json",
     "doctor": "node ppt.mjs doctor --json"
   },

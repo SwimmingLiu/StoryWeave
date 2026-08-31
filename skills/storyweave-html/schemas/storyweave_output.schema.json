@@ -6,13 +6,20 @@
   "required": ["format", "version", "producer", "kind", "title", "canvas", "slides"],
   "properties": {
     "format": { "const": "storyweave/slides" },
-    "version": { "const": 1 },
+    "version": { "enum": [1, 2] },
     "producer": { "enum": ["storyweave-html", "storyweave-imagegen"] },
     "kind": { "enum": ["html", "image"] },
     "title": { "type": "string", "minLength": 1 },
     "canvas": { "type": "object", "required": ["width", "height"], "properties": { "width": { "type": "integer", "minimum": 1 }, "height": { "type": "integer", "minimum": 1 } } },
     "entry": { "type": "string" },
-    "slides": { "type": "array", "minItems": 1, "items": { "type": "object", "required": ["id", "source"], "properties": { "id": { "type": "string", "pattern": "^[A-Za-z0-9_-]+$" }, "source": { "type": "string", "minLength": 1 }, "role": { "type": "string" }, "claim": { "type": "string" }, "notes": { "type": "string" } } } }
+    "renderer_version": { "type": "string", "minLength": 1 },
+    "contract_version": { "type": "integer", "minimum": 1 },
+    "theme_ref": { "type": "string", "pattern": "^[A-Za-z0-9_-]+/[A-Za-z0-9_-]+$" },
+    "theme_recipe_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "deck_spec_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "legacy_theme_id": { "type": "string" },
+    "migration_status": { "type": "string" },
+    "slides": { "type": "array", "minItems": 1, "items": { "type": "object", "required": ["id", "source"], "properties": { "id": { "type": "string", "pattern": "^[A-Za-z0-9_-]+$" }, "source": { "type": "string", "minLength": 1 }, "role": { "type": "string" }, "claim": { "type": "string" }, "notes": { "type": "string" }, "visual_scheme_ref": { "type": "string" }, "visual_scheme_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }, "render_recipe_ref": { "type": "string" }, "render_recipe_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }, "motion_recipe_ref": { "type": "string" }, "page_rhythm": { "enum": ["anchor", "dense", "breathing"] }, "asset_refs": { "type": "array" } } } }
   },
   "additionalProperties": true
 }

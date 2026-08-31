@@ -1,16 +1,18 @@
 # HTML 主题目录
 
-主题按版式语法去重，整套 deck 只选择一个家族；变体只改变颜色或材质，不改变网格和信息密度。
+canonical 主题按 Architecture、Style 和 Visual scheme 三层组织。整套 deck 选择一个 `architecture/style`，每页再根据角色解析 scheme。
 
-| 家族 | 视觉语法 | 适合内容 |
+每个 canonical style 还声明一个 `render_recipe`。它描述页面表面、布局语法、内容结构、图片策略和动效家族；审批后会为每页生成 `render_recipe_ref`、`render_recipe_sha256` 和 `motion_recipe_ref`。renderer 必须消费这些字段，不能只根据颜色和字体生成一套共同骨架。
+
+| Theme ref | 空间语法 | 状态 |
 |---|---|---|
-| `business-minimal` | 结论先行、宽留白、细规则 | 管理汇报、方案沟通 |
-| `editorial` | 非对称杂志节奏、衬线标题 | 行业观点、品牌故事 |
-| `swiss-grid` | 严格模块网格、海报式字号 | 设计发布、文化活动 |
-| `launch-tech` | 深色舞台、技术线条、低密度光线 | 产品发布、技术演讲 |
-| `data-consulting` | 答案先行、证据对齐、比较结构 | 战略分析、经营汇报 |
-| `academic` | 出版物层级、图注和证据留白 | 答辩、研究报告 |
-| `brand-bold` | 大标题、强色块、单一视觉动作 | 创意提案、品牌活动 |
-| `premium-dark` | 黑色舞台、低调高光、深留白 | 高端发布、主旨演讲 |
+| `editorial/paper-magazine` | 出版物式非对称版面、纸面留白和规则线 | active |
+| `systems/white-cyan-circuit` | 节点、路径、分组和青蓝校准线 | active |
+| `campaign/bold-poster` | 高对比色块、强主张和单一传播主体 | active |
+| `cinematic/natural-film` | 镜框、方向性光线、空间纵深和安静字幕区 | active |
 
-主题来源包括此前收集的 PPT、HTML 和 leadership skill；同一视觉语法只保留一个规范家族，来源别名只用于追溯，不复制上游模板代码或图片。
+每个 active style 都为 `cover`、`section`、`statement`、`image-hero`、`two-column`、`comparison`、`process`、`data`、`quote` 和 `closing` 声明唯一默认 scheme。审批后，`deck_spec.json` 中不能保留 `auto`。
+
+当前四套 style 的结构倾向分别是：`editorial` 使用纸面分栏和规则线，`systems` 使用校准网格、路径和节点，`campaign` 使用错位色块和强主张，`cinematic` 使用镜框、字幕安全区和连续场景。它们共享页面角色，不共享页面实现。
+
+原有 8 个主题 ID 继续沿 legacy 渲染路径构建。`editorial` 和 `brand-bold` 有确定迁移建议，但只有运行 `migrate` 才会写入 canonical 引用；其他旧主题要求显式选择目标。未知主题不会回退到默认值。

@@ -1,0 +1,4 @@
+interface:
+  display_name: "StoryWeave"
+  short_description: "Orchestrate HTML or Imagegen decks and show them in Bento"
+  default_prompt: "Use $storyweave to choose the right StoryWeave producer, run its QA, package the completed output with Bento, and open the presentation for review."

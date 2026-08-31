@@ -1,0 +1,6 @@
+{
+  "name": "storyweave-orchestrator-runtime",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" }
+}

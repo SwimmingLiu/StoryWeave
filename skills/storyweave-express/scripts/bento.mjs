@@ -45,13 +45,14 @@ export function buildBentoDocument(manifest, images, previous = null) {
       elements: [{ id: `${slide.id}-page`, type: 'image', x: 0, y: 0, w: width, h: height, rotation: 0, opacity: 1, src: images[index], fit: 'fill', radius: 0 }],
     })),
     assets: {},
-    meta: { ...(previous?.meta ?? {}), generator: 'storyweave-express', source_producer: manifest.producer, source_kind: manifest.kind, source_format: manifest.format },
+    meta: { ...(previous?.meta ?? {}), generator: 'storyweave-express', source_producer: manifest.producer, source_kind: manifest.kind, source_format: manifest.format, source_manifest_version: manifest.version, ...(manifest.theme_ref ? { theme_ref: manifest.theme_ref } : {}), ...(manifest.contract_version ? { contract_version: manifest.contract_version } : {}), ...(manifest.renderer_version ? { renderer_version: manifest.renderer_version } : {}), ...(manifest.theme_recipe_sha256 ? { theme_recipe_sha256: manifest.theme_recipe_sha256 } : {}), ...(manifest.deck_spec_sha256 ? { deck_spec_sha256: manifest.deck_spec_sha256 } : {}) },
   };
 }
 
 export function validateOutputManifest(manifest) {
   const findings = [];
-  if (manifest?.format !== 'storyweave/slides' || manifest?.version !== 1) findings.push({ severity: 'blocking', code: 'manifest.format', message: 'Expected storyweave/slides version 1.' });
+  const versionSupported = manifest?.version === 1 || (manifest?.version === 2 && manifest?.producer === 'storyweave-html' && manifest?.kind === 'html');
+  if (manifest?.format !== 'storyweave/slides' || !versionSupported) findings.push({ severity: 'blocking', code: 'manifest.format', message: 'Expected storyweave/slides version 1, or canonical HTML version 2.' });
   if (!['html', 'image'].includes(manifest?.kind)) findings.push({ severity: 'blocking', code: 'manifest.kind', message: 'Manifest kind must be html or image.' });
   if (!Array.isArray(manifest?.slides) || !manifest.slides.length) findings.push({ severity: 'blocking', code: 'manifest.slides', message: 'Manifest needs at least one slide.' });
   for (const slide of manifest?.slides ?? []) if (!slide.id || !slide.source) findings.push({ severity: 'blocking', code: 'manifest.slide', message: 'Every slide needs id and source.' });

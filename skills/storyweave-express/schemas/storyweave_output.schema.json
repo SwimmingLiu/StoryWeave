@@ -4,15 +4,16 @@
   "title": "Storyweave producer output",
   "type": "object",
   "required": ["format", "version", "producer", "kind", "title", "canvas", "slides"],
+  "allOf": [{ "if": { "properties": { "version": { "const": 2 } } }, "then": { "properties": { "producer": { "const": "storyweave-html" }, "kind": { "const": "html" } } } }],
   "properties": {
     "format": { "const": "storyweave/slides" },
-    "version": { "const": 1 },
+    "version": { "enum": [1, 2] },
     "producer": { "enum": ["storyweave-html", "storyweave-imagegen"] },
     "kind": { "enum": ["html", "image"] },
     "title": { "type": "string", "minLength": 1 },
     "canvas": { "type": "object", "required": ["width", "height"], "properties": { "width": { "type": "integer", "minimum": 1 }, "height": { "type": "integer", "minimum": 1 } } },
     "entry": { "type": "string" },
-    "slides": { "type": "array", "minItems": 1, "items": { "type": "object", "required": ["id", "source"], "properties": { "id": { "type": "string", "pattern": "^[A-Za-z0-9_-]+$" }, "source": { "type": "string", "minLength": 1 }, "role": { "type": "string" }, "claim": { "type": "string" }, "notes": { "type": "string" } } } }
+    "slides": { "type": "array", "minItems": 1, "items": { "type": "object", "required": ["id", "source"], "properties": { "id": { "type": "string", "pattern": "^[A-Za-z0-9_-]+$" }, "source": { "type": "string", "minLength": 1 }, "role": { "type": "string" }, "claim": { "type": "string" }, "notes": { "type": "string" }, "render_recipe_ref": { "type": "string" }, "render_recipe_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }, "asset_refs": { "type": "array" } } } }
   },
   "additionalProperties": true
 }

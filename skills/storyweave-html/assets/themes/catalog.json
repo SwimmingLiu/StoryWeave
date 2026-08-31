@@ -1,0 +1,89 @@
+{
+  "schema_version": 3,
+  "contract_version": 1,
+  "architectures": [
+    {
+      "id": "editorial",
+      "label": "编辑叙事",
+      "status": "active",
+      "spatial_grammar": "出版物式非对称版面，用文字、留白、规则线和图解组织阅读顺序",
+      "styles": [
+        {
+          "ref": "editorial/paper-magazine",
+          "label": "纸面杂志",
+          "status": "active",
+          "tokens": { "background": "#F1EEE7", "surface": "#FCF9F2", "text": "#201C18", "muted": "#70665C", "accent": "#A23B2A", "support": "#285C7A", "line": "#D4CABC", "radius": "0px", "heading": "Georgia, 'Noto Serif SC', serif", "body": "Inter, 'Noto Sans SC', system-ui, sans-serif" },
+          "render_recipe": { "id": "paper-editorial", "surface": "paper-split", "layout": "asymmetric-editorial", "content_structure": "headline-rule-caption", "image_policy": "top-safe-editorial", "motion": "quiet-stagger" },
+          "role_defaults": { "cover": "hero", "section": "hero", "statement": "hero", "image-hero": "visual", "two-column": "columns", "comparison": "columns", "process": "flow", "data": "data", "quote": "quote", "closing": "closing" }
+        }
+      ]
+    },
+    {
+      "id": "systems",
+      "label": "系统蓝图",
+      "status": "active",
+      "spatial_grammar": "在明亮技术场中用节点、路径、显式分组和校准线表达系统关系",
+      "styles": [
+        {
+          "ref": "systems/white-cyan-circuit",
+          "label": "白底青蓝电路",
+          "status": "active",
+          "tokens": { "background": "#F4F8F8", "surface": "#FFFFFF", "text": "#102529", "muted": "#567075", "accent": "#008B95", "support": "#E0A126", "line": "#BFD3D5", "radius": "2px", "heading": "Inter, 'Noto Sans SC', system-ui, sans-serif", "body": "Inter, 'Noto Sans SC', system-ui, sans-serif" },
+          "render_recipe": { "id": "white-circuit", "surface": "calibration-field", "layout": "grid-rail", "content_structure": "node-path-evidence", "image_policy": "contain-and-label", "motion": "node-trace" },
+          "role_defaults": { "cover": "hero", "section": "hero", "statement": "hero", "image-hero": "visual", "two-column": "columns", "comparison": "columns", "process": "flow", "data": "data", "quote": "quote", "closing": "closing" }
+        }
+      ]
+    },
+    {
+      "id": "campaign",
+      "label": "品牌传播",
+      "status": "active",
+      "spatial_grammar": "用高对比色块、强主张和单一传播主体建立第一眼焦点",
+      "styles": [
+        {
+          "ref": "campaign/bold-poster",
+          "label": "强传播海报",
+          "status": "active",
+          "tokens": { "background": "#F7D94C", "surface": "#FFF9E8", "text": "#171717", "muted": "#554B31", "accent": "#E54835", "support": "#067A83", "line": "#171717", "radius": "0px", "heading": "Arial Black, Arial, 'Noto Sans SC', sans-serif", "body": "Arial, 'Noto Sans SC', sans-serif" },
+          "render_recipe": { "id": "bold-poster", "surface": "poster-block", "layout": "offset-block", "content_structure": "bold-statement-stack", "image_policy": "full-bleed-block", "motion": "block-stamp" },
+          "role_defaults": { "cover": "hero", "section": "hero", "statement": "hero", "image-hero": "visual", "two-column": "columns", "comparison": "columns", "process": "flow", "data": "data", "quote": "quote", "closing": "closing" }
+        }
+      ]
+    },
+    {
+      "id": "cinematic",
+      "label": "影像叙事",
+      "status": "active",
+      "spatial_grammar": "用镜框、方向性光线、空间纵深和安静字幕区组织连续场景",
+      "styles": [
+        {
+          "ref": "cinematic/natural-film",
+          "label": "自然胶片",
+          "status": "active",
+          "tokens": { "background": "#171918", "surface": "#242826", "text": "#F4F1E8", "muted": "#B6B9B1", "accent": "#D7A954", "support": "#5E8D86", "line": "#4A504C", "radius": "2px", "heading": "Georgia, 'Noto Serif SC', serif", "body": "Inter, 'Noto Sans SC', system-ui, sans-serif" },
+          "render_recipe": { "id": "natural-film", "surface": "film-frame", "layout": "subtitle-safe-zone", "content_structure": "scene-caption-depth", "image_policy": "quiet-frame", "motion": "slow-focus" },
+          "role_defaults": { "cover": "hero", "section": "hero", "statement": "hero", "image-hero": "visual", "two-column": "columns", "comparison": "columns", "process": "flow", "data": "data", "quote": "quote", "closing": "closing" }
+        }
+      ]
+    }
+  ],
+  "schemes": {
+    "hero": { "roles": ["cover", "section", "statement"], "layout_defaults": { "text_safe_zone": "left", "visual_zone": ["right"], "hierarchy": ["headline", "support", "visual-anchor"], "density": "low" }, "layout_constraints": { "text_safe_zones": ["top-left", "left", "bottom-left"], "visual_zones": ["right", "top-right", "bottom-right"], "densities": ["low", "medium"] } },
+    "visual": { "roles": ["image-hero"], "layout_defaults": { "text_safe_zone": "bottom-left", "visual_zone": ["center", "right"], "hierarchy": ["visual-anchor", "caption"], "density": "low" }, "layout_constraints": { "text_safe_zones": ["top-left", "left", "bottom-left"], "visual_zones": ["center", "right", "top-right", "bottom-right"], "densities": ["low"] } },
+    "columns": { "roles": ["two-column", "comparison"], "layout_defaults": { "text_safe_zone": "top", "visual_zone": ["left", "right"], "hierarchy": ["headline", "parallel-fields"], "density": "medium" }, "layout_constraints": { "text_safe_zones": ["top", "top-left"], "visual_zones": ["left", "right", "bottom-left", "bottom-right"], "densities": ["medium", "high"] } },
+    "flow": { "roles": ["process"], "layout_defaults": { "text_safe_zone": "top-left", "visual_zone": ["center", "right"], "hierarchy": ["headline", "stages", "direction"], "density": "medium" }, "layout_constraints": { "text_safe_zones": ["top-left", "top"], "visual_zones": ["center", "right", "bottom"], "densities": ["medium", "high"] } },
+    "data": { "roles": ["data"], "layout_defaults": { "text_safe_zone": "top-left", "visual_zone": ["center", "right"], "hierarchy": ["headline", "metric", "evidence"], "density": "medium" }, "layout_constraints": { "text_safe_zones": ["top-left", "top"], "visual_zones": ["center", "right", "bottom"], "densities": ["medium", "high"] } },
+    "quote": { "roles": ["quote"], "layout_defaults": { "text_safe_zone": "left", "visual_zone": ["right"], "hierarchy": ["quote", "attribution", "visual-anchor"], "density": "low" }, "layout_constraints": { "text_safe_zones": ["top-left", "left", "bottom-left"], "visual_zones": ["right", "top-right", "bottom-right"], "densities": ["low"] } },
+    "closing": { "roles": ["closing"], "layout_defaults": { "text_safe_zone": "bottom-left", "visual_zone": ["right"], "hierarchy": ["closing-claim", "support", "visual-anchor"], "density": "low" }, "layout_constraints": { "text_safe_zones": ["left", "bottom-left"], "visual_zones": ["right", "top-right"], "densities": ["low"] } }
+  },
+  "legacy_migrations": {
+    "editorial": { "status": "deterministic", "theme_ref": "editorial/paper-magazine" },
+    "brand-bold": { "status": "deterministic", "theme_ref": "campaign/bold-poster" },
+    "business-minimal": { "status": "needs-selection", "suggestions": ["editorial/paper-magazine"] },
+    "academic": { "status": "needs-selection", "suggestions": ["editorial/paper-magazine"] },
+    "data-consulting": { "status": "needs-selection", "suggestions": ["systems/white-cyan-circuit"] },
+    "launch-tech": { "status": "needs-selection", "suggestions": ["systems/white-cyan-circuit"] },
+    "swiss-grid": { "status": "needs-selection", "suggestions": ["campaign/bold-poster"] },
+    "premium-dark": { "status": "needs-selection", "suggestions": ["cinematic/natural-film"] }
+  }
+}

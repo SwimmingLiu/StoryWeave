@@ -11,5 +11,5 @@
 运行：
 
 ```bash
-rtk node --test tests/integration/storyweave-all-skills.test.mjs
+node --test tests/integration/storyweave-all-skills.test.mjs
 ```

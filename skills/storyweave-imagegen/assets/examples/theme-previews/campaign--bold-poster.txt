@@ -1,0 +1,10 @@
+Use case: productivity-visual
+Asset type: complete 16:9 presentation cover, all image and text composed together.
+art_direction: bold contemporary launch campaign: one vivid vermilion field, a recognizable oversized subject and deliberate typographic scale; use sharp silhouette, crop and directional shadow to create impact
+palette: vermilion #EF442F signature, warm white #FFF5E8 and ink black #171717 neutrals; use one dominant chromatic field per page and keep the same vermilion across the deck
+typography: heavy open-counter Chinese sans serif for claims; medium-weight readable direct labels for analytical pages; do not generate a secondary explanatory text tier
+materials: dense matte screenprint ink and crisp graphic edges; product pages add real material texture and one directional studio shadow, without glossy interface styling
+text_layout: one concise headline as a strong graphic mass; essential product labels or values only, with semantic line breaks and complete unclipped glyphs
+contrast: warm-white headline on vermilion or ink-black type on warm white; essential labels use a high-contrast quiet field and remain clear of subject edges
+Composition: One large warm-white folded paper arrow with a sharp recognizable silhouette and directional studio shadow on a vivid matte vermilion field. Subject in right half; a bold complete Chinese headline on left with semantic line breaks. Strong scale, crisp edges.
+Text (verbatim): "让知识进入下一步". Render this title exactly once, with no other visible text. Only the title; no subtitle, small explanatory line, footer, watermark, logo, numbers or decorative microtype. Clear complete Chinese glyphs; generous quiet text space, no highlights crossing letters.

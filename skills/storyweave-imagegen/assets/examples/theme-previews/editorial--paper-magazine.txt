@@ -1,0 +1,10 @@
+Use case: productivity-visual
+Asset type: complete 16:9 presentation cover, all image and text composed together.
+art_direction: contemporary editorial keynote: bright fresh paper, assertive photographic crops and confident Chinese serif headlines; visual character comes from scale, alignment and a clear image-text relationship
+palette: clean warm paper #F4F0E7 dominant, carbon #20201E text, oxblood #9C302B accent; muted marine #344A5A only when a diagram needs a second series
+typography: Chinese Song-style serif with sturdy readable hairlines for headlines; neutral Chinese sans serif for captions, body and diagrams; deliberate contrast between headline and annotation size
+materials: fresh uncoated paper with almost imperceptible fiber, sharp ink edges and richly detailed photography; collage uses a few purposeful cuts and restrained contact shadows
+text_layout: one concise headline with only essential supplied labels, body statements or values; place type on a clean paper field with deliberate semantic line breaks
+contrast: carbon text on warm paper; reversed paper-white text only on a solid dark ink field; photographs, grain and rules stay outside letterforms
+Composition: One sharply cropped editorial photograph of blank notebooks and one pencil on a naturally lit desk, in the right 55 percent, with a clear straight image boundary and clean warm paper margin on left. An assertive two-line Song-style Chinese headline on left. No blurred photo-to-paper transition. No writing on the notebooks.
+Text (verbatim): "让知识进入下一步". Render this title exactly once, with no other visible text. Only the title; no subtitle, small explanatory line, footer, watermark, logo, numbers or decorative microtype. Clear complete Chinese glyphs; generous quiet text space, no highlights crossing letters.

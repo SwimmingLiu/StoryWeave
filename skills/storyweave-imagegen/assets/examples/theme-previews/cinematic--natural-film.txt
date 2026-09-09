@@ -1,0 +1,10 @@
+Use case: productivity-visual
+Asset type: complete 16:9 presentation cover, all image and text composed together.
+art_direction: bright observational cinema for a presentation: deliberate framing, natural window light, credible human action and readable environmental negative space; vary shot distance rather than adding ornamental graphics
+palette: daylight whites, natural skin tones, soft graphite #292D2C, muted olive #77816A and warm wood; preserve open midtones; time of day follows supplied content
+typography: medium-weight Chinese humanist sans serif for clear headlines and direct labels; restrained Song-style title optional when it fits the scene
+materials: photorealistic skin pores, cloth weave and worn surfaces, subtle fine grain and gentle highlight rolloff; midtones remain visible and shadow detail is retained
+text_layout: one concise headline or supplied quotation plus essential labels; compose a quiet wall, sky or softly defocused region for text; analytical content has a broad neutral margin
+contrast: graphite text on a light environmental field or warm-white text on a genuinely dark field; choose one polarity per text block, keep faces and highlights separate
+Composition: Photorealistic bright daytime studio. On right, one anonymous person hands an open blank notebook to another person whose hands enter from the right edge. Credible hand contact, natural window light, visible midtones, real cloth and skin texture. Left 40 percent a softly lit plain wall for dark text. No writing, signage or logos.
+Text (verbatim): "让知识进入下一步". Render this title exactly once, with no other visible text. Only the title; no subtitle, small explanatory line, footer, watermark, logo, numbers or decorative microtype. Clear complete Chinese glyphs; generous quiet text space, no highlights crossing letters.

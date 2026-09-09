@@ -2,19 +2,33 @@
   "schema_version": 3,
   "architecture_id": "systems",
   "id": "white-cyan-circuit",
-  "art_direction": "clean white technical keynote with precise cyan system signals and calm engineering confidence",
-  "palette": "white, pale blue, cyan, blue-green, deep blue-gray",
-  "typography": "clear modern Chinese sans serif with restrained mono microtype only when supplied",
-  "materials": "clean light, fine technical grid, matte surfaces and restrained cyan glow",
+  "art_direction": "bright cool-white technology infographic with crisp navy and blue typography, fine concentric instrument rings and low-contrast circuit traces; clear information hierarchy and generous whitespace",
+  "palette": "cool white #F7FAFF background, navy #1E2D4D text, bright blue #087FFF emphasis, cyan #16C7EF highlights and pale blue #C9E1FF secondary lines",
+  "typography": "crisp modern Chinese sans serif; bold blue emphasis and solid navy primary copy; readable direct labels, no glowing letterforms",
+  "materials": "mostly flat vector-like thin blue outlines, translucent pale-blue ring bands, restrained local cyan highlights; circuit decoration stays at the edges",
   "anchors": [
-    { "id": "calibration-line", "prompt": "one short cyan calibration line" },
-    { "id": "connection-node", "prompt": "one restrained cyan connection node" },
-    { "id": "blueprint-ring", "prompt": "one thin pale-blue blueprint ring" }
+    {
+      "id": "calibration-line",
+      "prompt": "one short fine blue calibration line on a quiet white margin"
+    },
+    {
+      "id": "connection-node",
+      "prompt": "one small blue outline terminal marking a meaningful connection"
+    },
+    {
+      "id": "blueprint-ring",
+      "prompt": "one pale-blue partial ring with restrained fine ticks, outside the text field"
+    }
   ],
   "default_anchor_id": "calibration-line",
-  "text_layout": "place conclusion text in a quiet white or pale-blue field; title treatment may be a focused statement, caption or integrated label rather than a huge headline",
-  "contrast": "deep blue-gray text on white or pale blue with no signal line, node or highlight behind letters",
-  "avoid": ["dark cyberpunk stage", "decorative pseudo-data", "dense circuit-board wallpaper", "glossy dashboard cards", "oversized title on every page"],
+  "text_layout": "place supplied headline, optional supplied supporting copy and essential labels in distinct clean light fields; preserve every supplied exact_text line and its hierarchy; do not add an automatic text tier",
+  "contrast": "solid dark navy or cobalt text on quiet white; background texture, particles, glass edges and highlights remain outside letterforms",
+  "avoid": [
+    "glow on letterforms",
+    "dense high-contrast background decoration",
+    "unprovided explanatory copy or decorative microtype",
+    "perspective distortion of quantitative marks"
+  ],
   "role_defaults": {
     "cover": "keynote-cover",
     "section": "keynote-cover",
@@ -30,107 +44,353 @@
   "schemes": {
     "keynote-cover": {
       "label": "技术开场",
-      "summary": "用单一青蓝锚点建立系统主题，不靠满屏大标题",
-      "preview_image": "../../../examples/theme-showcase/systems/white-cyan-circuit/slides/s01.png",
-      "roles": ["cover", "section", "closing"],
+      "summary": "以清晰标题、一个中心概念和从属信息建立技术主题",
+      "preview_image": "../../../examples/theme-previews/systems--white-cyan-circuit.png",
+      "roles": [
+        "cover",
+        "section",
+        "closing"
+      ],
       "default_anchor_id": "calibration-line",
-      "composition": "white technical keynote field with one cyan anchor and a quiet conclusion area",
-      "imagery": "abstract engineered surface, restrained ring or signal path; no product UI or pseudo-data",
-      "title_treatment": { "mode": "hero", "scale": "medium-to-large", "placement": "top-left", "weight": "modern sans conclusion with short support" },
-      "layout_constraints": { "text_safe_zones": ["top-left", "left", "bottom-left"], "visual_zones": ["center", "right", "bottom-right", "top-right"], "densities": ["low", "medium"] },
-      "requirements": ["one focal signal only", "keep a large quiet field for exact text"],
-      "avoid": ["dark stage", "multiple glowing objects", "invented product labels"]
+      "composition": "a strong headline in the frozen text-safe zone and one main concept in the visual zone; a circular focal structure may organize genuine hub-and-branch content, with subordinate nodes following supplied relationships",
+      "imagery": "fine concentric ring bands and precise blue outline nodes; sparse pale-blue angular circuit traces with small terminal dots, fading before text zones",
+      "title_treatment": {
+        "mode": "hero",
+        "scale": "large",
+        "placement": "top-left",
+        "weight": "bold modern sans headline with blue emphasis and navy remaining text"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "bottom-right",
+          "top-right"
+        ],
+        "densities": [
+          "low",
+          "medium"
+        ]
+      },
+      "requirements": [
+        "one focal signal only",
+        "keep a large quiet field for exact text",
+        "render every supplied exact_text line with clear hierarchy; visual effects remain separate from letters"
+      ],
+      "avoid": [
+        "invented product labels"
+      ]
     },
     "system-map": {
       "label": "系统关系图",
-      "summary": "用中心节点、分组和有方向的连线解释系统关系",
-      "preview_image": "../../../examples/theme-showcase/systems/white-cyan-circuit/slides/s02.png",
-      "roles": ["process", "statement", "data"],
+      "summary": "按真实关系组织中心节点、分组与连接",
+      "preview_image": "../../../examples/theme-previews/systems--white-cyan-circuit.png",
+      "roles": [
+        "process",
+        "statement",
+        "data"
+      ],
       "default_anchor_id": "connection-node",
-      "composition": "one dominant hub with grouped surrounding capabilities and a legible primary relationship path",
-      "imagery": "abstract nodes, thin directional connectors, restrained geometry; labels appear only when supplied by exact_text",
-      "title_treatment": { "mode": "integrated", "scale": "small-to-medium", "placement": "top-left", "weight": "conclusion integrated with the map" },
-      "layout_constraints": { "text_safe_zones": ["top-left", "left", "top"], "visual_zones": ["center", "right", "bottom-right"], "densities": ["low", "medium"] },
-      "requirements": ["relationship direction must be unambiguous", "central node must remain visually dominant"],
-      "avoid": ["serial pipeline when relationships are parallel", "unlabeled pseudo-metrics"]
+      "composition": "a connected technical field organized by the supplied hierarchy, dependency or parallel groups; choose a central hub only when the actual topology requires it",
+      "imagery": "fine concentric ring bands and precise blue outline nodes organized according to the actual node topology, with sparse pale-blue angular circuit traces with small terminal dots, fading before text zones",
+      "title_treatment": {
+        "mode": "integrated",
+        "scale": "small-to-medium",
+        "placement": "top-left",
+        "weight": "conclusion integrated with the map"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "top"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "bottom-right"
+        ],
+        "densities": [
+          "low",
+          "medium"
+        ]
+      },
+      "requirements": [
+        "preserve supplied node and edge relationships",
+        "distinguish main paths from secondary paths with line weight and cyan intensity",
+        "render every supplied exact_text line with clear hierarchy; visual effects remain separate from letters"
+      ],
+      "avoid": [
+        "serial pipeline when relationships are parallel",
+        "unlabeled pseudo-metrics"
+      ]
     },
     "circuit-flow": {
-      "label": "连续回路",
-      "summary": "让节点沿一条连续路径呈现顺序、循环或状态变化",
-      "preview_image": "../../../examples/theme-showcase/systems/white-cyan-circuit/slides/s03.png",
-      "roles": ["process"],
+      "label": "步骤演进",
+      "summary": "在同一浅色技术空间中呈现步骤和有方向的连接",
+      "preview_image": "../../../examples/theme-previews/systems--white-cyan-circuit.png",
+      "roles": [
+        "process"
+      ],
       "default_anchor_id": "connection-node",
-      "composition": "single continuous cyan route across a quiet technical field with clearly separated stages",
-      "imagery": "thin circuit-like path, abstract nodes and subtle state marks; numbers only when present in exact_text",
-      "title_treatment": { "mode": "caption", "scale": "small-to-medium", "placement": "top-left", "weight": "short process conclusion" },
-      "layout_constraints": { "text_safe_zones": ["top-left", "left", "bottom-left"], "visual_zones": ["center", "right", "bottom-right", "top-right"], "densities": ["medium"] },
-      "requirements": ["path order or loop direction must be readable", "stage spacing must be generous"],
-      "avoid": ["tangle of equal-weight connectors", "unconfirmed step numbers"]
+      "composition": "one open light field with supplied stages arranged along a clearly directed path; preserve stage order and distinguish functional connectors from background decoration",
+      "imagery": "content-relevant blue outline stage icons and direct supplied labels; sparse pale-blue angular circuit traces with small terminal dots, fading before text zones",
+      "title_treatment": {
+        "mode": "caption",
+        "scale": "small-to-medium",
+        "placement": "top-left",
+        "weight": "short process conclusion"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "bottom-right",
+          "top-right"
+        ],
+        "densities": [
+          "medium"
+        ]
+      },
+      "requirements": [
+        "preserve supplied sequence; use a return route only for an actual cycle",
+        "stages share one visual field; numbered icon nodes are appropriate when supplied by the content",
+        "one visual transformation carries attention across the page",
+        "render every supplied exact_text line with clear hierarchy; visual effects remain separate from letters"
+      ],
+      "avoid": [
+        "tangle of equal-weight connectors",
+        "unconfirmed step numbers"
+      ]
     },
     "data-overview": {
-      "label": "数据概览",
-      "summary": "用清爽分组和有限图形呈现有来源的数据关系",
-      "preview_image": "../../../examples/theme-showcase/systems/white-cyan-circuit/slides/s04.png",
-      "roles": ["data"],
+      "label": "精密数据",
+      "summary": "将真实数值组织成有共同标尺的信号轨道，用细节建立工程感",
+      "preview_image": "../../../examples/theme-previews/systems--white-cyan-circuit.png",
+      "roles": [
+        "data"
+      ],
       "default_anchor_id": "blueprint-ring",
-      "composition": "one readable chart or data grouping on a white field with a clear comparison baseline",
-      "imagery": "minimal technical chart geometry, dots, bars or rings; every visible number and label comes from exact_text or evidence",
-      "title_treatment": { "mode": "integrated", "scale": "small-to-medium", "placement": "top-left", "weight": "chart-led conclusion" },
-      "layout_constraints": { "text_safe_zones": ["top-left", "left", "top"], "visual_zones": ["center", "right", "bottom-right"], "densities": ["medium", "high"] },
-      "requirements": ["units and comparison dimensions stay consistent", "do not imply unsupported precision"],
-      "avoid": ["invented percentages", "decorative charts without evidence", "tiny unreadable axes"]
+      "composition": "one flat orthographic comparison chart on a clean white field; common origin, shared scale and exact endpoints with navy direct values",
+      "imagery": "blue quantitative marks with crisp endpoints and pale-gray guides; sparse pale-blue angular circuit traces with small terminal dots, fading before text zones confined to margins outside the chart; refraction and decorative curves never alter quantitative geometry",
+      "title_treatment": {
+        "mode": "integrated",
+        "scale": "small-to-medium",
+        "placement": "top-left",
+        "weight": "chart-led conclusion"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "top"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "bottom-right"
+        ],
+        "densities": [
+          "medium",
+          "high"
+        ]
+      },
+      "requirements": [
+        "exact supplied values and units determine geometry",
+        "all series use a shared baseline and scale",
+        "color and light distinguish supplied states only; no invented legend or metrics",
+        "render every supplied exact_text line with clear hierarchy; visual effects remain separate from letters"
+      ],
+      "avoid": [
+        "invented percentages",
+        "decorative charts without evidence",
+        "tiny unreadable axes"
+      ]
     },
     "comparison-matrix": {
       "label": "比较矩阵",
       "summary": "用对称网格保持比较维度一致而不过度卡片化",
-      "preview_image": "../../../examples/theme-showcase/systems/white-cyan-circuit/slides/s02.png",
-      "roles": ["two-column", "comparison"],
+      "preview_image": "../../../examples/theme-previews/systems--white-cyan-circuit.png",
+      "roles": [
+        "two-column",
+        "comparison"
+      ],
       "default_anchor_id": "calibration-line",
       "composition": "two or three aligned comparison fields with a disciplined baseline and a clear central divider",
-      "imagery": "simple node clusters, aligned bars or quiet geometric fields; no interface chrome",
-      "title_treatment": { "mode": "statement", "scale": "medium", "placement": "top-left", "weight": "short conclusion above the matrix" },
-      "layout_constraints": { "text_safe_zones": ["top-left", "left", "bottom-left"], "visual_zones": ["center", "right", "bottom-right"], "densities": ["medium"] },
-      "requirements": ["same dimensions appear in the same order", "keep equal visual weight between compared fields"],
-      "avoid": ["dashboard card grid", "unequal comparison units", "unconfirmed labels"]
+      "imagery": "matched flat diagrams with navy direct labels, pale-blue rules and blue emphasis; equal scale and perspective; sparse pale-blue angular circuit traces with small terminal dots, fading before text zones outside the comparison field",
+      "title_treatment": {
+        "mode": "statement",
+        "scale": "medium",
+        "placement": "top-left",
+        "weight": "short conclusion above the matrix"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "bottom-right"
+        ],
+        "densities": [
+          "medium"
+        ]
+      },
+      "requirements": [
+        "same dimensions appear in the same order",
+        "keep equal visual weight between compared fields",
+        "render every supplied exact_text line with clear hierarchy; visual effects remain separate from letters"
+      ],
+      "avoid": [
+        "dashboard card grid",
+        "unequal comparison units",
+        "unconfirmed labels"
+      ]
     },
     "signal-quote": {
       "label": "信号判断",
       "summary": "一条主张或引文配合一个青蓝信号锚点",
-      "preview_image": "../../../examples/theme-showcase/systems/white-cyan-circuit/slides/s01.png",
-      "roles": ["quote", "statement", "closing"],
+      "preview_image": "../../../examples/theme-previews/systems--white-cyan-circuit.png",
+      "roles": [
+        "quote",
+        "statement",
+        "closing"
+      ],
       "default_anchor_id": "calibration-line",
-      "composition": "single conclusion or confirmed quote in a quiet field with one small cyan signal",
-      "imagery": "one line, ring or node as a restrained signal; no invented author or citation",
-      "title_treatment": { "mode": "statement", "scale": "medium", "placement": "left", "weight": "calm sans or quote-led hierarchy" },
-      "layout_constraints": { "text_safe_zones": ["top-left", "left", "bottom-left", "center"], "visual_zones": ["right", "top-right", "bottom-right"], "densities": ["low"] },
-      "requirements": ["the supplied sentence remains the sole verbal focus", "anchor stays away from letters"],
-      "avoid": ["oversized motivational poster", "author or source not in exact_text"]
+      "composition": "one supplied statement on a generous white field, balanced by one cropped theme detail in the opposite visual zone",
+      "imagery": "sparse pale-blue angular circuit traces with small terminal dots, fading before text zones kept sparse and separated from the statement",
+      "title_treatment": {
+        "mode": "statement",
+        "scale": "medium",
+        "placement": "left",
+        "weight": "calm sans or quote-led hierarchy"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left",
+          "center"
+        ],
+        "visual_zones": [
+          "right",
+          "top-right",
+          "bottom-right"
+        ],
+        "densities": [
+          "low"
+        ]
+      },
+      "requirements": [
+        "the supplied sentence remains the sole verbal focus",
+        "anchor stays away from letters",
+        "render every supplied exact_text line with clear hierarchy; visual effects remain separate from letters"
+      ],
+      "avoid": [
+        "author or source not in exact_text"
+      ]
     },
     "ui-concept": {
       "label": "概念界面",
       "summary": "将系统能力转成抽象界面语言，但不冒充真实产品截图",
-      "preview_image": "../../../examples/theme-showcase/systems/white-cyan-circuit/slides/s03.png",
-      "roles": ["image-hero", "statement"],
+      "preview_image": "../../../examples/theme-previews/systems--white-cyan-circuit.png",
+      "roles": [
+        "image-hero",
+        "statement"
+      ],
       "default_anchor_id": "blueprint-ring",
       "composition": "one abstract interface-like composition embedded in a technical field with no readable invented UI copy",
-      "imagery": "conceptual panels, states and geometry only; real product UI requires user-provided asset",
-      "title_treatment": { "mode": "caption", "scale": "small-to-medium", "placement": "top-left", "weight": "short interface concept caption" },
-      "layout_constraints": { "text_safe_zones": ["top-left", "left", "bottom-left"], "visual_zones": ["center", "right", "bottom-right"], "densities": ["low", "medium"] },
-      "requirements": ["mark the visual as conceptual through abstraction, not added labels", "no real logo or product name"],
-      "avoid": ["fake dashboard screenshots", "invented UI text", "brand impersonation"]
+      "imagery": "front-facing abstract state surfaces on white with supplied labels and blue selected states; mostly flat vector-like thin blue outlines, translucent pale-blue ring bands, restrained local cyan highlights; circuit decoration stays at the edges; no invented readable interface copy",
+      "title_treatment": {
+        "mode": "caption",
+        "scale": "small-to-medium",
+        "placement": "top-left",
+        "weight": "short interface concept caption"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "bottom-right"
+        ],
+        "densities": [
+          "low",
+          "medium"
+        ]
+      },
+      "requirements": [
+        "mark the visual as conceptual through abstraction, not added labels",
+        "no real logo or product name",
+        "render every supplied exact_text line with clear hierarchy; visual effects remain separate from letters"
+      ],
+      "avoid": [
+        "fake dashboard screenshots",
+        "invented UI text",
+        "brand impersonation"
+      ]
     },
     "isometric-space": {
       "label": "等距技术空间",
       "summary": "用轻量建筑或等距空间承载系统的场景感",
-      "preview_image": "../../../examples/theme-showcase/systems/white-cyan-circuit/slides/s04.png",
-      "roles": ["image-hero", "section", "closing"],
+      "preview_image": "../../../examples/theme-previews/systems--white-cyan-circuit.png",
+      "roles": [
+        "image-hero",
+        "section",
+        "closing"
+      ],
       "default_anchor_id": "blueprint-ring",
       "composition": "light isometric technical space with one clear pathway and a protected copy margin",
-      "imagery": "white architectural volumes, pale-blue planes and sparse cyan signals; avoid dark neon and device advertising",
-      "title_treatment": { "mode": "caption", "scale": "small-to-medium", "placement": "top-left", "weight": "quiet sans caption or integrated conclusion" },
-      "layout_constraints": { "text_safe_zones": ["top-left", "left", "bottom-left"], "visual_zones": ["center", "right", "top-right", "bottom-right"], "densities": ["low", "medium"] },
-      "requirements": ["space must suggest a system, not a literal product claim", "keep geometric edges out of the text field"],
-      "avoid": ["dark cyberpunk", "server-room stock imagery", "unconfirmed interface labels"]
+      "imagery": "lightweight layered technical geometry with one clear content-related pathway and a quiet copy margin; mostly flat vector-like thin blue outlines, translucent pale-blue ring bands, restrained local cyan highlights; circuit decoration stays at the edges",
+      "title_treatment": {
+        "mode": "caption",
+        "scale": "small-to-medium",
+        "placement": "top-left",
+        "weight": "quiet sans caption or integrated conclusion"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "top-right",
+          "bottom-right"
+        ],
+        "densities": [
+          "low",
+          "medium"
+        ]
+      },
+      "requirements": [
+        "space must suggest a system, not a literal product claim",
+        "keep geometric edges out of the text field",
+        "render every supplied exact_text line with clear hierarchy; visual effects remain separate from letters"
+      ],
+      "avoid": [
+        "server-room stock imagery",
+        "unconfirmed interface labels"
+      ]
     }
   }
 }

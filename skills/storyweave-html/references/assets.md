@@ -7,6 +7,6 @@
 
 ## 素材槽位
 
-页面通过 `asset_refs` 声明素材使用关系。每个引用至少包含 `asset_id` 和 `slot`，可选字段包括 `fit`、`crop`、`focal_point`、`alt` 和 `caption`。`asset_id` 优先解析到项目根目录的 `asset_manifest.json`；没有 registry 时可以提供项目相对 `path`。
+页面通过 `asset_refs` 声明素材使用关系。每个引用至少包含 `asset_id` 和 `slot`，可选字段包括 `fit`、`crop`、`focal_point` 和 `alt`。v4 的可见图注来自批准内容的 `attribution`，计划中的 caption 元信息不能添加额外文字。`asset_id` 优先解析到项目根目录的 `asset_manifest.json`；没有 registry 时可以提供项目相对 `path`。
 
 允许的槽位为 `hero`、`supporting`、`background`、`logo` 和 `evidence`。路径必须是项目相对路径，不能指向绝对路径或通过 `..` 离开项目目录。图片主视觉默认不改变页面文字；素材缺失时 build 直接失败。

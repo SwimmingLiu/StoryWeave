@@ -1,0 +1,1344 @@
+[
+  {
+    "slide_id": "s01",
+    "viewport": "desktop",
+    "id": "s01",
+    "count": 1,
+    "active_count": 1,
+    "layout_id": "cover-split",
+    "theme_ref": "editorial/paper-magazine",
+    "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+    "stage": {
+      "x": 0,
+      "y": 0,
+      "width": 1280,
+      "height": 720
+    },
+    "text": "StoryWeave\n\n内容一份，表达两种\n\n从确认文字，到能被理解的页面。\n\n01 / 08",
+    "leaf_text": [
+      "StoryWeave",
+      "内容一份，表达两种",
+      "从确认文字，到能被理解的页面。"
+    ],
+    "unmarked_text": [],
+    "comparison": {
+      "columns": [],
+      "rows": []
+    },
+    "metrics": [],
+    "nodes": [],
+    "edges": [],
+    "outside": [],
+    "font_sizes": [
+      {
+        "kind": "kicker",
+        "size": 20
+      },
+      {
+        "kind": "title",
+        "size": 76
+      },
+      {
+        "kind": "body",
+        "size": 30
+      }
+    ],
+    "title_lines": 1,
+    "title_length": 9,
+    "overflow": false,
+    "region_overlaps": [],
+    "node_overlaps": [],
+    "broken_assets": []
+  },
+  {
+    "slide_id": "s02",
+    "viewport": "desktop",
+    "id": "s02",
+    "count": 1,
+    "active_count": 1,
+    "layout_id": "statement",
+    "theme_ref": "editorial/paper-magazine",
+    "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+    "stage": {
+      "x": 0,
+      "y": 0,
+      "width": 1280,
+      "height": 720
+    },
+    "text": "页面先表达关系，再选择外观\n\n对照需要比较轴。\n\n过程需要方向。\n\n数据需要单位和来源。\n\n02 / 08",
+    "leaf_text": [
+      "页面先表达关系，再选择外观",
+      "对照需要比较轴。",
+      "过程需要方向。",
+      "数据需要单位和来源。"
+    ],
+    "unmarked_text": [],
+    "comparison": {
+      "columns": [],
+      "rows": []
+    },
+    "metrics": [],
+    "nodes": [],
+    "edges": [],
+    "outside": [],
+    "font_sizes": [
+      {
+        "kind": "title",
+        "size": 76
+      },
+      {
+        "kind": "body",
+        "size": 30
+      },
+      {
+        "kind": "body",
+        "size": 30
+      },
+      {
+        "kind": "body",
+        "size": 30
+      }
+    ],
+    "title_lines": 1,
+    "title_length": 13,
+    "overflow": false,
+    "region_overlaps": [],
+    "node_overlaps": [],
+    "broken_assets": []
+  },
+  {
+    "slide_id": "s03",
+    "viewport": "desktop",
+    "id": "s03",
+    "count": 1,
+    "active_count": 1,
+    "layout_id": "comparison-matrix",
+    "theme_ref": "editorial/paper-magazine",
+    "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+    "stage": {
+      "x": 0,
+      "y": 0,
+      "width": 1280,
+      "height": 720
+    },
+    "text": "同一份内容，选择适合的页面源\n\tHTML\tImagegen\n页面源\t文字、形状与 SVG\t完整 PNG 画面\n编辑方式\t修改原生页面\t重新生成受影响页面\n质量检查\t浏览器与内容核对\t图片与逐页视觉复核\n03 / 08",
+    "leaf_text": [
+      "同一份内容，选择适合的页面源",
+      "HTML",
+      "Imagegen",
+      "页面源",
+      "文字、形状与 SVG",
+      "完整 PNG 画面",
+      "编辑方式",
+      "修改原生页面",
+      "重新生成受影响页面",
+      "质量检查",
+      "浏览器与内容核对",
+      "图片与逐页视觉复核"
+    ],
+    "unmarked_text": [],
+    "comparison": {
+      "columns": [
+        "HTML",
+        "Imagegen"
+      ],
+      "rows": [
+        {
+          "label": "页面源",
+          "values": [
+            "文字、形状与 SVG",
+            "完整 PNG 画面"
+          ]
+        },
+        {
+          "label": "编辑方式",
+          "values": [
+            "修改原生页面",
+            "重新生成受影响页面"
+          ]
+        },
+        {
+          "label": "质量检查",
+          "values": [
+            "浏览器与内容核对",
+            "图片与逐页视觉复核"
+          ]
+        }
+      ]
+    },
+    "metrics": [],
+    "nodes": [],
+    "edges": [],
+    "outside": [],
+    "font_sizes": [
+      {
+        "kind": "title",
+        "size": 62
+      },
+      {
+        "kind": "column-label",
+        "size": 34
+      },
+      {
+        "kind": "column-label",
+        "size": 34
+      },
+      {
+        "kind": "row-label",
+        "size": 24
+      },
+      {
+        "kind": "comparison-value",
+        "size": 26
+      },
+      {
+        "kind": "comparison-value",
+        "size": 26
+      },
+      {
+        "kind": "row-label",
+        "size": 24
+      },
+      {
+        "kind": "comparison-value",
+        "size": 26
+      },
+      {
+        "kind": "comparison-value",
+        "size": 26
+      },
+      {
+        "kind": "row-label",
+        "size": 24
+      },
+      {
+        "kind": "comparison-value",
+        "size": 26
+      },
+      {
+        "kind": "comparison-value",
+        "size": 26
+      }
+    ],
+    "title_lines": 1,
+    "title_length": 14,
+    "overflow": false,
+    "region_overlaps": [],
+    "node_overlaps": [],
+    "broken_assets": []
+  },
+  {
+    "slide_id": "s04",
+    "viewport": "desktop",
+    "id": "s04",
+    "count": 1,
+    "active_count": 1,
+    "layout_id": "process-linear",
+    "theme_ref": "editorial/paper-magazine",
+    "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+    "stage": {
+      "x": 0,
+      "y": 0,
+      "width": 1280,
+      "height": 720
+    },
+    "text": "先确认内容，再生成与交付\n01\n整理资料\n\n保留事实与来源\n\n02\n确认内容\n\n固定文字与关系\n\n03\n生成交付\n\n检查实际页面\n\n04 / 08",
+    "leaf_text": [
+      "先确认内容，再生成与交付",
+      "整理资料",
+      "保留事实与来源",
+      "确认内容",
+      "固定文字与关系",
+      "生成交付",
+      "检查实际页面"
+    ],
+    "unmarked_text": [],
+    "comparison": {
+      "columns": [],
+      "rows": []
+    },
+    "metrics": [],
+    "nodes": [
+      {
+        "id": "collect",
+        "label": "整理资料",
+        "detail": "保留事实与来源"
+      },
+      {
+        "id": "confirm",
+        "label": "确认内容",
+        "detail": "固定文字与关系"
+      },
+      {
+        "id": "deliver",
+        "label": "生成交付",
+        "detail": "检查实际页面"
+      }
+    ],
+    "edges": [
+      {
+        "from": "collect",
+        "to": "confirm",
+        "label": ""
+      },
+      {
+        "from": "confirm",
+        "to": "deliver",
+        "label": ""
+      }
+    ],
+    "outside": [],
+    "font_sizes": [
+      {
+        "kind": "title",
+        "size": 62
+      },
+      {
+        "kind": "node-label",
+        "size": 34
+      },
+      {
+        "kind": "body",
+        "size": 24
+      },
+      {
+        "kind": "node-label",
+        "size": 34
+      },
+      {
+        "kind": "body",
+        "size": 24
+      },
+      {
+        "kind": "node-label",
+        "size": 34
+      },
+      {
+        "kind": "body",
+        "size": 24
+      }
+    ],
+    "title_lines": 1,
+    "title_length": 12,
+    "overflow": false,
+    "region_overlaps": [],
+    "node_overlaps": [],
+    "broken_assets": []
+  },
+  {
+    "slide_id": "s05",
+    "viewport": "desktop",
+    "id": "s05",
+    "count": 1,
+    "active_count": 1,
+    "layout_id": "metric-ledger",
+    "theme_ref": "editorial/paper-magazine",
+    "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+    "stage": {
+      "x": 0,
+      "y": 0,
+      "width": 1280,
+      "height": 720
+    },
+    "text": "生成方式不同，交付画布一致\n2\n条\n生成路径\n\n来源：StoryWeave README\n\n1280\npx\nHTML 舞台宽度\n\n来源：HTML 架构边界\n\n720\npx\nHTML 舞台高度\n\n来源：HTML 架构边界\n\n05 / 08",
+    "leaf_text": [
+      "生成方式不同，交付画布一致",
+      "2",
+      "条",
+      "生成路径",
+      "来源：StoryWeave README",
+      "1280",
+      "px",
+      "HTML 舞台宽度",
+      "来源：HTML 架构边界",
+      "720",
+      "px",
+      "HTML 舞台高度",
+      "来源：HTML 架构边界"
+    ],
+    "unmarked_text": [],
+    "comparison": {
+      "columns": [],
+      "rows": []
+    },
+    "metrics": [
+      {
+        "value": "2",
+        "unit": "条",
+        "label": "生成路径",
+        "source": "来源：StoryWeave README"
+      },
+      {
+        "value": "1280",
+        "unit": "px",
+        "label": "HTML 舞台宽度",
+        "source": "来源：HTML 架构边界"
+      },
+      {
+        "value": "720",
+        "unit": "px",
+        "label": "HTML 舞台高度",
+        "source": "来源：HTML 架构边界"
+      }
+    ],
+    "nodes": [],
+    "edges": [],
+    "outside": [],
+    "font_sizes": [
+      {
+        "kind": "title",
+        "size": 62
+      },
+      {
+        "kind": "metric-value",
+        "size": 110
+      },
+      {
+        "kind": "metric-unit",
+        "size": 24
+      },
+      {
+        "kind": "metric-label",
+        "size": 26
+      },
+      {
+        "kind": "caption",
+        "size": 16
+      },
+      {
+        "kind": "metric-value",
+        "size": 110
+      },
+      {
+        "kind": "metric-unit",
+        "size": 24
+      },
+      {
+        "kind": "metric-label",
+        "size": 26
+      },
+      {
+        "kind": "caption",
+        "size": 16
+      },
+      {
+        "kind": "metric-value",
+        "size": 110
+      },
+      {
+        "kind": "metric-unit",
+        "size": 24
+      },
+      {
+        "kind": "metric-label",
+        "size": 26
+      },
+      {
+        "kind": "caption",
+        "size": 16
+      }
+    ],
+    "title_lines": 1,
+    "title_length": 13,
+    "overflow": false,
+    "region_overlaps": [],
+    "node_overlaps": [],
+    "broken_assets": []
+  },
+  {
+    "slide_id": "s06",
+    "viewport": "desktop",
+    "id": "s06",
+    "count": 1,
+    "active_count": 1,
+    "layout_id": "relationship-map",
+    "theme_ref": "editorial/paper-magazine",
+    "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+    "stage": {
+      "x": 0,
+      "y": 0,
+      "width": 1280,
+      "height": 720
+    },
+    "text": "生成负责表达，展示负责交付\n确认内容\n\n稳定 ID 与事实来源\n\nHTML 生成\n\n原生文字与图形\n\n图片生成\n\n完整页面与复核\n\n展示交付\n\n已验证的成品\n\n06 / 08",
+    "leaf_text": [
+      "生成负责表达，展示负责交付",
+      "确认内容",
+      "稳定 ID 与事实来源",
+      "HTML 生成",
+      "原生文字与图形",
+      "图片生成",
+      "完整页面与复核",
+      "展示交付",
+      "已验证的成品"
+    ],
+    "unmarked_text": [],
+    "comparison": {
+      "columns": [],
+      "rows": []
+    },
+    "metrics": [],
+    "nodes": [
+      {
+        "id": "core",
+        "label": "确认内容",
+        "detail": "稳定 ID 与事实来源"
+      },
+      {
+        "id": "html",
+        "label": "HTML 生成",
+        "detail": "原生文字与图形"
+      },
+      {
+        "id": "image",
+        "label": "图片生成",
+        "detail": "完整页面与复核"
+      },
+      {
+        "id": "display",
+        "label": "展示交付",
+        "detail": "已验证的成品"
+      }
+    ],
+    "edges": [
+      {
+        "from": "core",
+        "to": "html",
+        "label": ""
+      },
+      {
+        "from": "core",
+        "to": "image",
+        "label": ""
+      },
+      {
+        "from": "html",
+        "to": "display",
+        "label": ""
+      },
+      {
+        "from": "image",
+        "to": "display",
+        "label": ""
+      }
+    ],
+    "outside": [],
+    "font_sizes": [
+      {
+        "kind": "title",
+        "size": 62
+      },
+      {
+        "kind": "node-label",
+        "size": 28
+      },
+      {
+        "kind": "body",
+        "size": 24
+      },
+      {
+        "kind": "node-label",
+        "size": 28
+      },
+      {
+        "kind": "body",
+        "size": 24
+      },
+      {
+        "kind": "node-label",
+        "size": 28
+      },
+      {
+        "kind": "body",
+        "size": 24
+      },
+      {
+        "kind": "node-label",
+        "size": 28
+      },
+      {
+        "kind": "body",
+        "size": 24
+      }
+    ],
+    "title_lines": 1,
+    "title_length": 13,
+    "overflow": false,
+    "region_overlaps": [],
+    "node_overlaps": [],
+    "broken_assets": []
+  },
+  {
+    "slide_id": "s07",
+    "viewport": "desktop",
+    "id": "s07",
+    "count": 1,
+    "active_count": 1,
+    "layout_id": "statement",
+    "theme_ref": "editorial/paper-magazine",
+    "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+    "stage": {
+      "x": 0,
+      "y": 0,
+      "width": 1280,
+      "height": 720
+    },
+    "text": "当一页需要解释复杂关系时，版式应为内容留出空间，而不是把文字缩小到难以阅读\n\n先调整阅读顺序、版式和内容密度。\n\n需要改写事实或文字时，再回到内容确认。\n\n07 / 08",
+    "leaf_text": [
+      "当一页需要解释复杂关系时，版式应为内容留出空间，而不是把文字缩小到难以阅读",
+      "先调整阅读顺序、版式和内容密度。",
+      "需要改写事实或文字时，再回到内容确认。"
+    ],
+    "unmarked_text": [],
+    "comparison": {
+      "columns": [],
+      "rows": []
+    },
+    "metrics": [],
+    "nodes": [],
+    "edges": [],
+    "outside": [],
+    "font_sizes": [
+      {
+        "kind": "title",
+        "size": 64
+      },
+      {
+        "kind": "body",
+        "size": 30
+      },
+      {
+        "kind": "body",
+        "size": 30
+      }
+    ],
+    "title_lines": 5,
+    "title_length": 37,
+    "overflow": false,
+    "region_overlaps": [],
+    "node_overlaps": [],
+    "broken_assets": []
+  },
+  {
+    "slide_id": "s08",
+    "viewport": "desktop",
+    "id": "s08",
+    "count": 1,
+    "active_count": 1,
+    "layout_id": "closing-statement",
+    "theme_ref": "editorial/paper-magazine",
+    "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+    "stage": {
+      "x": 0,
+      "y": 0,
+      "width": 1280,
+      "height": 720
+    },
+    "text": "从一份真实内容开始\n\n确认内容，选择版式，核对页面。\n\n让每一次改动都有可比较的结果。\n\n08 / 08",
+    "leaf_text": [
+      "从一份真实内容开始",
+      "确认内容，选择版式，核对页面。",
+      "让每一次改动都有可比较的结果。"
+    ],
+    "unmarked_text": [],
+    "comparison": {
+      "columns": [],
+      "rows": []
+    },
+    "metrics": [],
+    "nodes": [],
+    "edges": [],
+    "outside": [],
+    "font_sizes": [
+      {
+        "kind": "title",
+        "size": 88
+      },
+      {
+        "kind": "body",
+        "size": 30
+      },
+      {
+        "kind": "body",
+        "size": 30
+      }
+    ],
+    "title_lines": 1,
+    "title_length": 9,
+    "overflow": false,
+    "region_overlaps": [],
+    "node_overlaps": [],
+    "broken_assets": []
+  },
+  {
+    "slide_id": "s01",
+    "viewport": "mobile",
+    "id": "s01",
+    "count": 1,
+    "active_count": 1,
+    "layout_id": "cover-split",
+    "theme_ref": "editorial/paper-magazine",
+    "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+    "stage": {
+      "x": 0,
+      "y": 312.3125,
+      "width": 390,
+      "height": 219.375
+    },
+    "text": "StoryWeave\n\n内容一份，表达两种\n\n从确认文字，到能被理解的页面。\n\n01 / 08",
+    "leaf_text": [
+      "StoryWeave",
+      "内容一份，表达两种",
+      "从确认文字，到能被理解的页面。"
+    ],
+    "unmarked_text": [],
+    "comparison": {
+      "columns": [],
+      "rows": []
+    },
+    "metrics": [],
+    "nodes": [],
+    "edges": [],
+    "outside": [],
+    "font_sizes": [
+      {
+        "kind": "kicker",
+        "size": 20
+      },
+      {
+        "kind": "title",
+        "size": 76
+      },
+      {
+        "kind": "body",
+        "size": 30
+      }
+    ],
+    "title_lines": 1,
+    "title_length": 9,
+    "overflow": false,
+    "region_overlaps": [],
+    "node_overlaps": [],
+    "broken_assets": []
+  },
+  {
+    "slide_id": "s02",
+    "viewport": "mobile",
+    "id": "s02",
+    "count": 1,
+    "active_count": 1,
+    "layout_id": "statement",
+    "theme_ref": "editorial/paper-magazine",
+    "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+    "stage": {
+      "x": 0,
+      "y": 312.3125,
+      "width": 390,
+      "height": 219.375
+    },
+    "text": "页面先表达关系，再选择外观\n\n对照需要比较轴。\n\n过程需要方向。\n\n数据需要单位和来源。\n\n02 / 08",
+    "leaf_text": [
+      "页面先表达关系，再选择外观",
+      "对照需要比较轴。",
+      "过程需要方向。",
+      "数据需要单位和来源。"
+    ],
+    "unmarked_text": [],
+    "comparison": {
+      "columns": [],
+      "rows": []
+    },
+    "metrics": [],
+    "nodes": [],
+    "edges": [],
+    "outside": [],
+    "font_sizes": [
+      {
+        "kind": "title",
+        "size": 76
+      },
+      {
+        "kind": "body",
+        "size": 30
+      },
+      {
+        "kind": "body",
+        "size": 30
+      },
+      {
+        "kind": "body",
+        "size": 30
+      }
+    ],
+    "title_lines": 1,
+    "title_length": 13,
+    "overflow": false,
+    "region_overlaps": [],
+    "node_overlaps": [],
+    "broken_assets": []
+  },
+  {
+    "slide_id": "s03",
+    "viewport": "mobile",
+    "id": "s03",
+    "count": 1,
+    "active_count": 1,
+    "layout_id": "comparison-matrix",
+    "theme_ref": "editorial/paper-magazine",
+    "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+    "stage": {
+      "x": 0,
+      "y": 312.3125,
+      "width": 390,
+      "height": 219.375
+    },
+    "text": "同一份内容，选择适合的页面源\n\tHTML\tImagegen\n页面源\t文字、形状与 SVG\t完整 PNG 画面\n编辑方式\t修改原生页面\t重新生成受影响页面\n质量检查\t浏览器与内容核对\t图片与逐页视觉复核\n03 / 08",
+    "leaf_text": [
+      "同一份内容，选择适合的页面源",
+      "HTML",
+      "Imagegen",
+      "页面源",
+      "文字、形状与 SVG",
+      "完整 PNG 画面",
+      "编辑方式",
+      "修改原生页面",
+      "重新生成受影响页面",
+      "质量检查",
+      "浏览器与内容核对",
+      "图片与逐页视觉复核"
+    ],
+    "unmarked_text": [],
+    "comparison": {
+      "columns": [
+        "HTML",
+        "Imagegen"
+      ],
+      "rows": [
+        {
+          "label": "页面源",
+          "values": [
+            "文字、形状与 SVG",
+            "完整 PNG 画面"
+          ]
+        },
+        {
+          "label": "编辑方式",
+          "values": [
+            "修改原生页面",
+            "重新生成受影响页面"
+          ]
+        },
+        {
+          "label": "质量检查",
+          "values": [
+            "浏览器与内容核对",
+            "图片与逐页视觉复核"
+          ]
+        }
+      ]
+    },
+    "metrics": [],
+    "nodes": [],
+    "edges": [],
+    "outside": [],
+    "font_sizes": [
+      {
+        "kind": "title",
+        "size": 62
+      },
+      {
+        "kind": "column-label",
+        "size": 34
+      },
+      {
+        "kind": "column-label",
+        "size": 34
+      },
+      {
+        "kind": "row-label",
+        "size": 24
+      },
+      {
+        "kind": "comparison-value",
+        "size": 26
+      },
+      {
+        "kind": "comparison-value",
+        "size": 26
+      },
+      {
+        "kind": "row-label",
+        "size": 24
+      },
+      {
+        "kind": "comparison-value",
+        "size": 26
+      },
+      {
+        "kind": "comparison-value",
+        "size": 26
+      },
+      {
+        "kind": "row-label",
+        "size": 24
+      },
+      {
+        "kind": "comparison-value",
+        "size": 26
+      },
+      {
+        "kind": "comparison-value",
+        "size": 26
+      }
+    ],
+    "title_lines": 1,
+    "title_length": 14,
+    "overflow": false,
+    "region_overlaps": [],
+    "node_overlaps": [],
+    "broken_assets": []
+  },
+  {
+    "slide_id": "s04",
+    "viewport": "mobile",
+    "id": "s04",
+    "count": 1,
+    "active_count": 1,
+    "layout_id": "process-linear",
+    "theme_ref": "editorial/paper-magazine",
+    "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+    "stage": {
+      "x": 0,
+      "y": 312.3125,
+      "width": 390,
+      "height": 219.375
+    },
+    "text": "先确认内容，再生成与交付\n01\n整理资料\n\n保留事实与来源\n\n02\n确认内容\n\n固定文字与关系\n\n03\n生成交付\n\n检查实际页面\n\n04 / 08",
+    "leaf_text": [
+      "先确认内容，再生成与交付",
+      "整理资料",
+      "保留事实与来源",
+      "确认内容",
+      "固定文字与关系",
+      "生成交付",
+      "检查实际页面"
+    ],
+    "unmarked_text": [],
+    "comparison": {
+      "columns": [],
+      "rows": []
+    },
+    "metrics": [],
+    "nodes": [
+      {
+        "id": "collect",
+        "label": "整理资料",
+        "detail": "保留事实与来源"
+      },
+      {
+        "id": "confirm",
+        "label": "确认内容",
+        "detail": "固定文字与关系"
+      },
+      {
+        "id": "deliver",
+        "label": "生成交付",
+        "detail": "检查实际页面"
+      }
+    ],
+    "edges": [
+      {
+        "from": "collect",
+        "to": "confirm",
+        "label": ""
+      },
+      {
+        "from": "confirm",
+        "to": "deliver",
+        "label": ""
+      }
+    ],
+    "outside": [],
+    "font_sizes": [
+      {
+        "kind": "title",
+        "size": 62
+      },
+      {
+        "kind": "node-label",
+        "size": 34
+      },
+      {
+        "kind": "body",
+        "size": 24
+      },
+      {
+        "kind": "node-label",
+        "size": 34
+      },
+      {
+        "kind": "body",
+        "size": 24
+      },
+      {
+        "kind": "node-label",
+        "size": 34
+      },
+      {
+        "kind": "body",
+        "size": 24
+      }
+    ],
+    "title_lines": 1,
+    "title_length": 12,
+    "overflow": false,
+    "region_overlaps": [],
+    "node_overlaps": [],
+    "broken_assets": []
+  },
+  {
+    "slide_id": "s05",
+    "viewport": "mobile",
+    "id": "s05",
+    "count": 1,
+    "active_count": 1,
+    "layout_id": "metric-ledger",
+    "theme_ref": "editorial/paper-magazine",
+    "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+    "stage": {
+      "x": 0,
+      "y": 312.3125,
+      "width": 390,
+      "height": 219.375
+    },
+    "text": "生成方式不同，交付画布一致\n2\n条\n生成路径\n\n来源：StoryWeave README\n\n1280\npx\nHTML 舞台宽度\n\n来源：HTML 架构边界\n\n720\npx\nHTML 舞台高度\n\n来源：HTML 架构边界\n\n05 / 08",
+    "leaf_text": [
+      "生成方式不同，交付画布一致",
+      "2",
+      "条",
+      "生成路径",
+      "来源：StoryWeave README",
+      "1280",
+      "px",
+      "HTML 舞台宽度",
+      "来源：HTML 架构边界",
+      "720",
+      "px",
+      "HTML 舞台高度",
+      "来源：HTML 架构边界"
+    ],
+    "unmarked_text": [],
+    "comparison": {
+      "columns": [],
+      "rows": []
+    },
+    "metrics": [
+      {
+        "value": "2",
+        "unit": "条",
+        "label": "生成路径",
+        "source": "来源：StoryWeave README"
+      },
+      {
+        "value": "1280",
+        "unit": "px",
+        "label": "HTML 舞台宽度",
+        "source": "来源：HTML 架构边界"
+      },
+      {
+        "value": "720",
+        "unit": "px",
+        "label": "HTML 舞台高度",
+        "source": "来源：HTML 架构边界"
+      }
+    ],
+    "nodes": [],
+    "edges": [],
+    "outside": [],
+    "font_sizes": [
+      {
+        "kind": "title",
+        "size": 62
+      },
+      {
+        "kind": "metric-value",
+        "size": 110
+      },
+      {
+        "kind": "metric-unit",
+        "size": 24
+      },
+      {
+        "kind": "metric-label",
+        "size": 26
+      },
+      {
+        "kind": "caption",
+        "size": 16
+      },
+      {
+        "kind": "metric-value",
+        "size": 110
+      },
+      {
+        "kind": "metric-unit",
+        "size": 24
+      },
+      {
+        "kind": "metric-label",
+        "size": 26
+      },
+      {
+        "kind": "caption",
+        "size": 16
+      },
+      {
+        "kind": "metric-value",
+        "size": 110
+      },
+      {
+        "kind": "metric-unit",
+        "size": 24
+      },
+      {
+        "kind": "metric-label",
+        "size": 26
+      },
+      {
+        "kind": "caption",
+        "size": 16
+      }
+    ],
+    "title_lines": 1,
+    "title_length": 13,
+    "overflow": false,
+    "region_overlaps": [],
+    "node_overlaps": [],
+    "broken_assets": []
+  },
+  {
+    "slide_id": "s06",
+    "viewport": "mobile",
+    "id": "s06",
+    "count": 1,
+    "active_count": 1,
+    "layout_id": "relationship-map",
+    "theme_ref": "editorial/paper-magazine",
+    "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+    "stage": {
+      "x": 0,
+      "y": 312.3125,
+      "width": 390,
+      "height": 219.375
+    },
+    "text": "生成负责表达，展示负责交付\n确认内容\n\n稳定 ID 与事实来源\n\nHTML 生成\n\n原生文字与图形\n\n图片生成\n\n完整页面与复核\n\n展示交付\n\n已验证的成品\n\n06 / 08",
+    "leaf_text": [
+      "生成负责表达，展示负责交付",
+      "确认内容",
+      "稳定 ID 与事实来源",
+      "HTML 生成",
+      "原生文字与图形",
+      "图片生成",
+      "完整页面与复核",
+      "展示交付",
+      "已验证的成品"
+    ],
+    "unmarked_text": [],
+    "comparison": {
+      "columns": [],
+      "rows": []
+    },
+    "metrics": [],
+    "nodes": [
+      {
+        "id": "core",
+        "label": "确认内容",
+        "detail": "稳定 ID 与事实来源"
+      },
+      {
+        "id": "html",
+        "label": "HTML 生成",
+        "detail": "原生文字与图形"
+      },
+      {
+        "id": "image",
+        "label": "图片生成",
+        "detail": "完整页面与复核"
+      },
+      {
+        "id": "display",
+        "label": "展示交付",
+        "detail": "已验证的成品"
+      }
+    ],
+    "edges": [
+      {
+        "from": "core",
+        "to": "html",
+        "label": ""
+      },
+      {
+        "from": "core",
+        "to": "image",
+        "label": ""
+      },
+      {
+        "from": "html",
+        "to": "display",
+        "label": ""
+      },
+      {
+        "from": "image",
+        "to": "display",
+        "label": ""
+      }
+    ],
+    "outside": [],
+    "font_sizes": [
+      {
+        "kind": "title",
+        "size": 62
+      },
+      {
+        "kind": "node-label",
+        "size": 28
+      },
+      {
+        "kind": "body",
+        "size": 24
+      },
+      {
+        "kind": "node-label",
+        "size": 28
+      },
+      {
+        "kind": "body",
+        "size": 24
+      },
+      {
+        "kind": "node-label",
+        "size": 28
+      },
+      {
+        "kind": "body",
+        "size": 24
+      },
+      {
+        "kind": "node-label",
+        "size": 28
+      },
+      {
+        "kind": "body",
+        "size": 24
+      }
+    ],
+    "title_lines": 1,
+    "title_length": 13,
+    "overflow": false,
+    "region_overlaps": [],
+    "node_overlaps": [],
+    "broken_assets": []
+  },
+  {
+    "slide_id": "s07",
+    "viewport": "mobile",
+    "id": "s07",
+    "count": 1,
+    "active_count": 1,
+    "layout_id": "statement",
+    "theme_ref": "editorial/paper-magazine",
+    "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+    "stage": {
+      "x": 0,
+      "y": 312.3125,
+      "width": 390,
+      "height": 219.375
+    },
+    "text": "当一页需要解释复杂关系时，版式应为内容留出空间，而不是把文字缩小到难以阅读\n\n先调整阅读顺序、版式和内容密度。\n\n需要改写事实或文字时，再回到内容确认。\n\n07 / 08",
+    "leaf_text": [
+      "当一页需要解释复杂关系时，版式应为内容留出空间，而不是把文字缩小到难以阅读",
+      "先调整阅读顺序、版式和内容密度。",
+      "需要改写事实或文字时，再回到内容确认。"
+    ],
+    "unmarked_text": [],
+    "comparison": {
+      "columns": [],
+      "rows": []
+    },
+    "metrics": [],
+    "nodes": [],
+    "edges": [],
+    "outside": [],
+    "font_sizes": [
+      {
+        "kind": "title",
+        "size": 64
+      },
+      {
+        "kind": "body",
+        "size": 30
+      },
+      {
+        "kind": "body",
+        "size": 30
+      }
+    ],
+    "title_lines": 5,
+    "title_length": 37,
+    "overflow": false,
+    "region_overlaps": [],
+    "node_overlaps": [],
+    "broken_assets": []
+  },
+  {
+    "slide_id": "s08",
+    "viewport": "mobile",
+    "id": "s08",
+    "count": 1,
+    "active_count": 1,
+    "layout_id": "closing-statement",
+    "theme_ref": "editorial/paper-magazine",
+    "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+    "stage": {
+      "x": 0,
+      "y": 312.3125,
+      "width": 390,
+      "height": 219.375
+    },
+    "text": "从一份真实内容开始\n\n确认内容，选择版式，核对页面。\n\n让每一次改动都有可比较的结果。\n\n08 / 08",
+    "leaf_text": [
+      "从一份真实内容开始",
+      "确认内容，选择版式，核对页面。",
+      "让每一次改动都有可比较的结果。"
+    ],
+    "unmarked_text": [],
+    "comparison": {
+      "columns": [],
+      "rows": []
+    },
+    "metrics": [],
+    "nodes": [],
+    "edges": [],
+    "outside": [],
+    "font_sizes": [
+      {
+        "kind": "title",
+        "size": 88
+      },
+      {
+        "kind": "body",
+        "size": 30
+      },
+      {
+        "kind": "body",
+        "size": 30
+      }
+    ],
+    "title_lines": 1,
+    "title_length": 9,
+    "overflow": false,
+    "region_overlaps": [],
+    "node_overlaps": [],
+    "broken_assets": []
+  }
+]

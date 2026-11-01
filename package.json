@@ -1,0 +1,11 @@
+{
+  "name": "storyweave",
+  "private": true,
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "package:skills": "node scripts/package-skills.mjs",
+    "check:packages": "node scripts/package-skills.mjs --check",
+    "test": "node --test tests/core/*.test.mjs tests/design-library/*.test.mjs tests/integration/*.test.mjs tests/packaging/*.test.mjs skills/*/tests/*.test.mjs",
+    "doctor": "node .agents/skills/verify-storyweave/scripts/verify.mjs doctor"
+  }
+}

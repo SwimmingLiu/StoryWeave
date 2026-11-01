@@ -1,0 +1,84 @@
+{
+  "schema_version": 2,
+  "producer": "storyweave-html",
+  "export_ready": true,
+  "visual_review": "browser",
+  "summary": {
+    "blocking": 0,
+    "warning": 0,
+    "degraded": 0
+  },
+  "findings": [],
+  "artifact_binding": {
+    "schema_version": 1,
+    "manifest_sha256": "eb1a00cd7668d8cf2c68e667a41508c8499d631054e7ebbda465414b2a3b118f",
+    "files": [
+      {
+        "path": "assets/paper-study.svg",
+        "sha256": "5e8335494476b12fe9304db6de42f03700902f81ab580ca055e419841b483dd2",
+        "role": "input"
+      },
+      {
+        "path": "deck_spec.json",
+        "sha256": "452fc787c8fd7b5f0397ebc1e2f56ea8f357118aabaab947ed1f6e3d32125cf9",
+        "role": "input"
+      },
+      {
+        "path": "generation_manifest.json",
+        "sha256": "b006195c9464677dc882c39a549219ef0d08e7ff2fbf5594c06c96448882d653",
+        "role": "input"
+      },
+      {
+        "path": "index.html",
+        "sha256": "a97eaba1b553a61687eab8821851a93462b9efcf0a1b01238ed970746e0e16e9",
+        "role": "entry"
+      },
+      {
+        "path": "plans/html.json",
+        "sha256": "3be4c0d94036dd532723fd2eae53027c78be401bb7bf4f44f46f5b9da384ecd9",
+        "role": "input"
+      },
+      {
+        "path": "slides/s01.html",
+        "sha256": "76fa4ce07ef3934ff1e2daa6e369a08533732e50ce83cd55ca465d244227e05f",
+        "role": "page"
+      },
+      {
+        "path": "slides/s02.html",
+        "sha256": "fd7076ac7228114df0cd55da9987df9f069cc6eee0ee9ef022482e9dfacc758a",
+        "role": "page"
+      },
+      {
+        "path": "slides/s03.html",
+        "sha256": "1c53c14c8c94fa4423d7bf409130a6c8501d8c48c30107a2e69dfa3f28584e3c",
+        "role": "page"
+      },
+      {
+        "path": "slides/s04.html",
+        "sha256": "1feb63817e048db667d5f2c7c9c92cccf4f0d0789ad4d038d6415f87440b0b3c",
+        "role": "page"
+      },
+      {
+        "path": "slides/s05.html",
+        "sha256": "5cf51ff3414e496ebd729322ed37f0e14e8512c89085a8a3d77dfb8c3d494d0a",
+        "role": "page"
+      },
+      {
+        "path": "slides/s06.html",
+        "sha256": "873856a5c618e4520b59ef00cadc133727fb20e8b7235ecc07c8ccd0f94b890a",
+        "role": "page"
+      },
+      {
+        "path": "slides/s07.html",
+        "sha256": "575dd717f1b9255c030ef4f6524f8f398976609cd1de864994248e9484b51f5e",
+        "role": "page"
+      },
+      {
+        "path": "slides/s08.html",
+        "sha256": "329131113a4d140c92231f983b78f2ff588fdd0d052452c324c7479808676f97",
+        "role": "page"
+      }
+    ],
+    "fingerprint": "e23ab020248e5738db69857d7c2ba922fa4229cc9481384b637e066e30f32ae5"
+  }
+}

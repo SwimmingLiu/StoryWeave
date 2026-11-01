@@ -1,68 +1,76 @@
 ---
 name: storyweave-imagegen
-description: Create concise 16:9 presentations as polished full-slide images with Imagegen. Use for themed keynotes, product launches, visual narratives, or image-first PNG, HTML gallery, PDF, and PPTX delivery where each page is intentionally rasterized.
+description: Create concise 16:9 presentations as full-slide images with Imagegen. Use for themed keynotes, product launches, visual narratives, or image-first PNG, HTML gallery, PDF, and PPTX delivery where each page is intentionally rasterized.
 ---
 
-# Storyweave Imagegen
+# StoryWeave Imagegen
 
-使用 `$imagegen` 一次生成每个完整的 16:9 页面，包括背景、配图、文字和版式。图片是最终视觉源；修改通过重新生成指定页面完成。
+使用真实生图工具生成完整 16:9 页面，包括背景、图像、文字和版式。PNG 是视觉源，修改通过重生成受影响页面完成。HTML 画廊、PDF 和 PPTX 都以整页图片交付。
 
-## 边界
+## 职责与状态
 
-- 只负责内容策划、完整页面生图、图片 QA 和图片式导出。
-- 不把图片与另一层文字或排版混合成同一页面。
-- 主交付物是逐页 PNG、离线 HTML 画廊和 `storyweave-output.json`；PDF/PPTX 为可选派生物。
-- 页面内文字、图表和装饰不承诺对象级可编辑。
-- 主题从 `assets/themes/catalog.json` 选择，按「主题架构 → 主题样式 → 视觉方案」解析；旧 `image-themes.json` 只用于 v2 项目的兼容读取。
-- 优先使用 `$imagegen` 的默认内置路径；只有用户明确选择 CLI/API 时才使用 CLI 回退。不要索取、输出或写入密钥。
+核心保存 schema 4 的确认内容，Imagegen 保存 schema 1 的 `plans/imagegen.json`，负责构图、任务编译、结果收集、复核状态与图片 QA。Agent 调用生图工具；CLI 不调用图片 API，不执行 OCR。运行实现位于 `runtime/core/`、`runtime/imagegen/` 和 `runtime/design-library/`。
 
-## 必经流程
+新草稿默认使用 v4，`--schema 3` 可显式创建旧 canonical 草稿。已有 v2、v3 项目继续读取，`migrate-content` 将文字保留到 v4 草稿，并报告需要作者补齐的结构。
 
-1. 检查资料、受众、目的、语言、展示场景和预期页数。非公开事实由用户提供；公开事实记录来源、口径和日期。
-2. 生成 `outline_draft.json` 和 `outline_preview.html`，包含中心含义、五段叙事、页数、逐页主张、准确文字、视觉构思、冻结的文字安全区与转场。
-3. 用户确认页数和逐页文字前，不调用 `$imagegen`。`exact_text` 是封闭清单。
-4. 审批后运行 `prompts`，为每页编译完整页面提示词。默认使用 `2048x1152`、`medium` 和 `16:9`。
-5. 按 `imagegen-jobs.jsonl` 逐页调用 `$imagegen`。保留稳定文件名和 manifest；失败只重试失败页。
-6. 检查尺寸、比例、损坏状态、主题一致性、文字准确性、主体裁切和对比度，并记录逐页 Review。
-7. 所有页面通过复核后运行 `build`，生成离线画廊和标准输出 manifest，再运行 `qa`。
-8. 修改时只重生成指定页面，保留未修改页面的 prompt hash、文件名和视觉锚点。
+## 生成与复核
 
-## 页面规则
+1. 检查资料、受众、用途、语言、场景与页数。事实记录来源，资料不足时缩短范围或标记待补。
+2. 编辑 `outline_draft.json`，确认叙事、逐页主张、结构化内容、来源与备注。用户确认前不调用生图工具。
+3. 运行 `approve`，保存确认内容与绑定 `contentRevision` 的视觉计划。`exact_text` 由内容投影生成。
+4. 运行 `prompts` 编译逐页任务，默认请求 `2048x1152`、`medium`。任务中包含准确文字、构图约束与参考用途。
+5. Agent 逐页调用内置 `image_gen`，将 `tool_input.referenced_image_paths` 作为实际附件传入。保留真实工具参数、返回图片和无凭证日志。
+6. 用 `record-result --receipt` 收集实际结果。检查图片文字、裁切、额外元素、对比度与主题，再用 `review --pass` 保存复核结论。
+7. 全部页面复核后执行 `build`、`qa`，再导出或交给 Bento。
 
-- 每页只讲一个主张；标题写结论，不写空泛栏目名。
-- 先确定完整页面，再生成图片；不要先做背景图再叠加另一套页面结构。
-- 提示词必须要求完整成稿、清晰中文、合理断行和投影可读字号，不得添加额外标签、Logo、水印或伪造数据。
-- 文字区位于主题规定的安静区域；主体、脸部、高频纹理和高亮不能穿过文字。
-- 数据、引用和事实性图表必须由用户资料或公开来源支撑。
-- 跨页保持相同的色彩、材质、镜头语法和视觉锚点。
+内置工具不可用或失败时，立即使用已安装 `image-gen-rightcodes` 的 `imagegen-cli`，沿用已授权的用户级路由。仅使用配置的 `OPENAI_SUB_*`，不索取 `OPENAI_API_KEY`，不把凭证写入项目或调用日志。
 
-## 异常与兜底
+## 设计参考与实际输入
 
-- 资料不足以支撑目标页数：给出更短页数和证据缺口，等待确认。
-- `$imagegen` 失败：记录页面、prompt hash、尝试次数和错误；达到上限后标记 `failed`。
-- 比例错误、文字疑似乱码、主体遮挡标题、对比不足、多余文字或主题漂移：标记 `revise`，针对单一问题重生成。
-- 浏览器或导出依赖不可用：保留 PNG、manifest 和 QA 报告，明确未验证的派生格式。
+演讲与分享稿先读[演示主题案例](references/presentation-cases.md)，从[主题参考画廊](assets/reference-library/index.html)按观点、流程、对比和数据查看多页样张及覆盖缺口。参考原图从来源加载，案例与生成主题分别维护。
+
+使用 `--library <path> --references <selection.json>` 选择案例页。生成器捕获所选图片到项目 `references/`，计划记录案例、页面、用途与哈希。完整案例库不随 Skill 安装。
+
+选择记录与实际工具附件分别保存。Prompt 提到图名、目录内存在图片或手工填写“已附图”均不能证明工具收到图片。`reference_mode` 使用实际对应的 `attached`、`prompt-only` 或 `unsupported`，由结果收集核对调用记录。receipt 格式见[工作流](references/workflow.md)。
+
+## 修改与失败处理
+
+v4 换主题或参考时运行 `replan`，保留确认内容。重新编译任务后，只保留任务指纹仍一致页面的有效结果与复核；变化的页面重新生成。改动文字、来源或关系则回到草稿重新确认。
+
+`status` 区分 `needs-images`、`needs-review` 和 `ready-for-qa`。缺图时 `status` 与 `build` 返回退出码 3，图片齐全但待复核时返回 2。`record-result` 不自动批准图片，复核绑定实际 PNG 字节；替换图片使旧复核与 QA 失效。
+
+乱码、多余文字、主体遮挡、错误裁切或主题漂移标为 revise，重生成受影响页面。尺寸与请求不一致时保留 QA warning，并说明实际尺寸。`review --pass` 是复核记录，不能代替查看真实图像。
 
 ## 命令
 
+从本 Skill 目录运行，先编辑草稿并取得确认，再执行审批与生成：
+
 ```bash
-node scripts/ppt.mjs draft <project-dir> --theme systems/white-cyan-circuit --scope authoring --title "标题"
+node scripts/ppt.mjs draft <project> --theme editorial/paper-magazine --title "标题"
 node scripts/ppt.mjs themes --json
-node scripts/ppt.mjs themes --all --json
-node scripts/ppt.mjs themes --style systems/white-cyan-circuit --json
-node scripts/ppt.mjs approve <project-dir> --theme systems/white-cyan-circuit
-node scripts/ppt.mjs prompts <project-dir>
-node scripts/ppt.mjs migrate <project-dir> --to 3 --language zh-CN
-# 按 imagegen-jobs.jsonl 调用 $imagegen，将结果保存到 slides/<slide-id>.png
-node scripts/ppt.mjs review <project-dir> --slide s01 --pass --notes "文字和构图通过"
-node scripts/ppt.mjs build <project-dir>
-node scripts/ppt.mjs qa <project-dir> --json
-node scripts/ppt.mjs export <project-dir> --format html|png|pdf|pptx
+node scripts/ppt.mjs approve <project> --theme editorial/paper-magazine
+node scripts/ppt.mjs replan <project> --theme systems/white-cyan-circuit
+node scripts/ppt.mjs prompts <project>
+# Agent 调用真实工具，保存日志、返回图片与 receipt。
+node scripts/ppt.mjs record-result <project> --receipt <actual-result.json>
+node scripts/ppt.mjs review <project> --slide s01 --pass --notes "实际图片复核结论"
+node scripts/ppt.mjs status <project> --json
+node scripts/ppt.mjs build <project>
+node scripts/ppt.mjs qa <project> --json
+node scripts/ppt.mjs export <project> --format png
 ```
+
+每页分别收集和复核。旧主题迁移使用 `migrate <project> --to 3 --language zh-CN`，内容迁移使用 `migrate-content <project>`。
+
+## 交付条件
+
+生产者 QA 绑定当前内容、计划、参考、实际调用记录、清单与图片。导出和 Bento 会重新核对文件身份。完整生成需要真实工具记录和逐页图片复核，合同 fixture 或提示词编译通过不代表文字与视觉质量达标。缺少导出依赖时保留 PNG 与已有报告，按实际入口报告结果。
 
 ## 参考文件
 
-- `references/workflow.md`：资料检查、Storyboard 确认、逐页生成和重试顺序。
-- `references/themes.md`：图片主题及来源映射。
-- `references/assets.md`：图片命名、来源、尺寸和生成记录。
-- `references/qa-export.md`：图片比例、文字、构图和导出检查。
+| 文档 | 内容 |
+| --- | --- |
+| [workflow](references/workflow.md) | 确认、任务、真实调用与 receipt |
+| [themes](references/themes.md) | 主题与旧版兼容 |
+| [assets](references/assets.md) | 图片、来源和生成记录 |
+| [qa-export](references/qa-export.md) | 图片身份、视觉复核与格式边界 |

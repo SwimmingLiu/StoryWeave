@@ -1,9 +1,10 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 
-import { approveOutline, createOutline, migrateOutline, replanOutline, validateOutline } from '../scripts/lib/outline.mjs';
-import { compileImageJobs, createGenerationManifest, IMAGEGEN_MODE, validateManifest } from '../scripts/lib/imagegen.mjs';
-import { openThemeCatalog } from '../scripts/lib/themes.mjs';
+// Runtime copies are generated; behavior tests exercise their authoritative source.
+import { approveOutline, createOutline, migrateOutline, replanOutline, validateOutline } from '../../../src/imagegen/outline.mjs';
+import { compileImageJobs, createGenerationManifest, IMAGEGEN_MODE, validateManifest } from '../../../src/imagegen/imagegen.mjs';
+import { openThemeCatalog } from '../../../src/imagegen/themes.mjs';
 
 const themeRoot = new URL('../assets/themes/', import.meta.url).pathname;
 

@@ -31,6 +31,14 @@
           "tokens": { "background": "#F4F8F8", "surface": "#FFFFFF", "text": "#102529", "muted": "#567075", "accent": "#008B95", "support": "#E0A126", "line": "#BFD3D5", "radius": "2px", "heading": "Inter, 'Noto Sans SC', system-ui, sans-serif", "body": "Inter, 'Noto Sans SC', system-ui, sans-serif" },
           "render_recipe": { "id": "white-circuit", "surface": "calibration-field", "layout": "grid-rail", "content_structure": "node-path-evidence", "image_policy": "contain-and-label", "motion": "node-trace" },
           "role_defaults": { "cover": "hero", "section": "hero", "statement": "hero", "image-hero": "visual", "two-column": "columns", "comparison": "columns", "process": "flow", "data": "data", "quote": "quote", "closing": "closing" }
+        },
+        {
+          "ref": "systems/ink-blue-grid",
+          "label": "克莱因蓝网格",
+          "status": "active",
+          "tokens": { "background": "#FAFAF8", "surface": "#FFFFFF", "text": "#0A0A0A", "muted": "#737373", "accent": "#002FA7", "support": "#002FA7", "line": "#D4D4D2", "radius": "0px", "heading": "Inter, 'Noto Sans SC', system-ui, sans-serif", "body": "Inter, 'Noto Sans SC', system-ui, sans-serif" },
+          "render_recipe": { "id": "ink-blue-grid", "surface": "swiss-paper", "layout": "grid-16-column", "content_structure": "type-ledger-diagram", "image_policy": "contain-and-label", "motion": "node-trace" },
+          "role_defaults": { "cover": "hero", "section": "hero", "statement": "hero", "image-hero": "visual", "two-column": "columns", "comparison": "columns", "process": "flow", "data": "data", "quote": "quote", "closing": "closing" }
         }
       ]
     },

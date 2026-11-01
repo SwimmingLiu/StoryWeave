@@ -1,0 +1,294 @@
+{
+  "schema_version": 4,
+  "status": "draft",
+  "title": "StoryWeave 内容与表达",
+  "audience": "演示文稿作者与项目维护者",
+  "purpose": "说明内容、视觉表达与交付的职责",
+  "central_message": "确认内容只保存一份，页面按信息关系选择表达。",
+  "language": "zh-CN",
+  "canvas": "16:9",
+  "reading_mode": "speaker-led",
+  "theme_ref": "editorial/paper-magazine",
+  "page_count": 8,
+  "narrative": {
+    "opening": "先明确内容，再选择表达。",
+    "problem": "同一套页面骨架难以表达不同的信息关系。",
+    "insight": "对照、流程、指标和关系需要各自的版式。",
+    "method": "把确认内容、视觉计划和交付检查分别维护。",
+    "action": "从一份真实内容开始，逐页核对阅读效果。"
+  },
+  "narrativeReferences": [],
+  "slides": [
+    {
+      "id": "s01",
+      "role": "cover",
+      "claim": "内容一份，表达两种",
+      "purpose": "建立内容与表达的边界",
+      "evidence": [],
+      "sources": [
+        "README.md"
+      ],
+      "transition": "先看内容怎样进入页面",
+      "content": {
+        "type": "statement",
+        "kicker": "StoryWeave",
+        "title": "内容一份，表达两种",
+        "body": [
+          "从确认文字，到能被理解的页面。"
+        ]
+      }
+    },
+    {
+      "id": "s02",
+      "role": "statement",
+      "claim": "页面先表达关系，再选择外观",
+      "purpose": "说明版式选择依据",
+      "evidence": [],
+      "sources": [
+        "docs/architecture/storyweave-target-architecture.md"
+      ],
+      "transition": "对照信息需要对齐的比较轴",
+      "content": {
+        "type": "statement",
+        "title": "页面先表达关系，再选择外观",
+        "body": [
+          "对照需要比较轴。",
+          "过程需要方向。",
+          "数据需要单位和来源。"
+        ]
+      }
+    },
+    {
+      "id": "s03",
+      "role": "comparison",
+      "claim": "同一份内容，选择适合的页面源",
+      "purpose": "比较两条生成路径",
+      "evidence": [],
+      "sources": [
+        "README.md"
+      ],
+      "transition": "内容确认后再组织生成步骤",
+      "content": {
+        "type": "comparison",
+        "title": "同一份内容，选择适合的页面源",
+        "columns": [
+          "HTML",
+          "Imagegen"
+        ],
+        "rows": [
+          {
+            "label": "页面源",
+            "values": [
+              "文字、形状与 SVG",
+              "完整 PNG 画面"
+            ]
+          },
+          {
+            "label": "编辑方式",
+            "values": [
+              "修改原生页面",
+              "重新生成受影响页面"
+            ]
+          },
+          {
+            "label": "质量检查",
+            "values": [
+              "浏览器与内容核对",
+              "图片与逐页视觉复核"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "s04",
+      "role": "process",
+      "claim": "先确认内容，再生成与交付",
+      "purpose": "展示明确的先后关系",
+      "evidence": [],
+      "sources": [
+        "docs/architecture/storyweave-target-architecture.md"
+      ],
+      "transition": "生成路径与画布都有明确约束",
+      "content": {
+        "type": "process",
+        "title": "先确认内容，再生成与交付",
+        "steps": [
+          {
+            "id": "collect",
+            "label": "整理资料",
+            "detail": "保留事实与来源"
+          },
+          {
+            "id": "confirm",
+            "label": "确认内容",
+            "detail": "固定文字与关系"
+          },
+          {
+            "id": "deliver",
+            "label": "生成交付",
+            "detail": "检查实际页面"
+          }
+        ],
+        "edges": [
+          {
+            "from": "collect",
+            "to": "confirm"
+          },
+          {
+            "from": "confirm",
+            "to": "deliver"
+          }
+        ]
+      }
+    },
+    {
+      "id": "s05",
+      "role": "data",
+      "claim": "生成方式不同，交付画布一致",
+      "purpose": "呈现可核对的项目参数",
+      "evidence": [],
+      "sources": [
+        "README.md",
+        "skills/storyweave-html/references/architecture.md"
+      ],
+      "transition": "再看模块之间的实际关系",
+      "content": {
+        "type": "metrics",
+        "title": "生成方式不同，交付画布一致",
+        "metrics": [
+          {
+            "value": "2",
+            "unit": "条",
+            "label": "生成路径",
+            "source": "来源：StoryWeave README"
+          },
+          {
+            "value": "1280",
+            "unit": "px",
+            "label": "HTML 舞台宽度",
+            "source": "来源：HTML 架构边界"
+          },
+          {
+            "value": "720",
+            "unit": "px",
+            "label": "HTML 舞台高度",
+            "source": "来源：HTML 架构边界"
+          }
+        ]
+      }
+    },
+    {
+      "id": "s06",
+      "role": "process",
+      "claim": "生成负责表达，展示负责交付",
+      "purpose": "展示模块间的依赖",
+      "evidence": [],
+      "sources": [
+        "docs/architecture/storyweave-target-architecture.md"
+      ],
+      "transition": "复杂标题也应保留完整含义",
+      "content": {
+        "type": "graph",
+        "title": "生成负责表达，展示负责交付",
+        "nodes": [
+          {
+            "id": "core",
+            "label": "确认内容",
+            "detail": "稳定 ID 与事实来源"
+          },
+          {
+            "id": "html",
+            "label": "HTML 生成",
+            "detail": "原生文字与图形"
+          },
+          {
+            "id": "image",
+            "label": "图片生成",
+            "detail": "完整页面与复核"
+          },
+          {
+            "id": "display",
+            "label": "展示交付",
+            "detail": "已验证的成品"
+          }
+        ],
+        "edges": [
+          {
+            "from": "core",
+            "to": "html"
+          },
+          {
+            "from": "core",
+            "to": "image"
+          },
+          {
+            "from": "html",
+            "to": "display"
+          },
+          {
+            "from": "image",
+            "to": "display"
+          }
+        ]
+      }
+    },
+    {
+      "id": "s07",
+      "role": "statement",
+      "claim": "长标题保留完整信息",
+      "purpose": "验证长中文标题的容量与层级",
+      "evidence": [],
+      "sources": [
+        "docs/plans/storyweave-refactor-plan.md"
+      ],
+      "transition": "从内容与关系完成最后一次核对",
+      "content": {
+        "type": "statement",
+        "title": "当一页需要解释复杂关系时，版式应为内容留出空间，而不是把文字缩小到难以阅读",
+        "body": [
+          "先调整阅读顺序、版式和内容密度。",
+          "需要改写事实或文字时，再回到内容确认。"
+        ]
+      },
+      "asset_refs": [
+        {
+          "asset_id": "layout-study",
+          "path": "assets/layout-study.svg",
+          "slot": "hero",
+          "fit": "cover",
+          "focal_point": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "subject_safe_area": {
+            "x": 0.03,
+            "y": 0.05,
+            "width": 0.94,
+            "height": 0.9
+          },
+          "alt": "同组标题、图片与正文信息块在拥挤和疏朗版式中的排布示意"
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "role": "closing",
+      "claim": "从一份真实内容开始",
+      "purpose": "给出可执行的收束",
+      "evidence": [],
+      "sources": [
+        "docs/plans/storyweave-refactor-plan.md"
+      ],
+      "transition": "结束",
+      "content": {
+        "type": "statement",
+        "title": "从一份真实内容开始",
+        "body": [
+          "确认内容，选择版式，核对页面。",
+          "让每一次改动都有可比较的结果。"
+        ]
+      }
+    }
+  ]
+}

@@ -2,15 +2,17 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 
-import { buildBentoDocument, parseBentoDocument, spliceBentoDocument, validateOutputManifest } from '../scripts/bento.mjs';
+// Producer and adapter assertions use the same canonical contract after runtime extraction.
+import { buildBentoDocument, parseBentoDocument, spliceBentoDocument } from '../../../src/bento/document.mjs';
+import { validateOutputManifest } from '../../../src/core/artifact.mjs';
 
 const manifest = {
-  format: 'storyweave/slides', version: 1, producer: 'storyweave-imagegen', kind: 'image', title: '测试',
+  format: 'storyweave/slides', version: 1, producer: 'storyweave-imagegen', kind: 'image', title: '测试', entry: 'index.html',
   canvas: { width: 2048, height: 1152 }, slides: [{ id: 's01', role: 'cover', source: 'slides/s01.png', notes: 'note' }],
 };
 
 const canonicalHtmlManifest = {
-  format: 'storyweave/slides', version: 2, producer: 'storyweave-html', kind: 'html', title: 'Canonical',
+  format: 'storyweave/slides', version: 2, producer: 'storyweave-html', kind: 'html', title: 'Canonical', entry: 'index.html',
   canvas: { width: 1280, height: 720 }, theme_ref: 'editorial/paper-magazine', contract_version: 1,
   slides: [{ id: 's01', role: 'cover', source: 'slides/s01.html', render_recipe_ref: 'editorial/paper-magazine/render-paper-editorial-hero', render_recipe_sha256: '0'.repeat(64) }],
 };
@@ -18,7 +20,10 @@ const canonicalHtmlManifest = {
 test('Skill triggers only for packaging completed producer artifacts', async () => {
   const skill = await readFile(new URL('../SKILL.md', import.meta.url), 'utf8');
   assert.match(skill, /storyweave-output\.json/);
-  assert.match(skill, /不策划内容、不改写文案、不生成视觉主题/);
+  // Routing depends on completed, verified input rather than the old wording of a scope disclaimer.
+  const description = skill.match(/^description: (.+)$/mu)?.[1] ?? '';
+  assert.match(description, /completed StoryWeave HTML pages or Imagegen slide images/u);
+  assert.match(description, /passed current producer QA/u);
 });
 
 test('adapter accepts the shared manifest and emits one full-page image per slide', () => {

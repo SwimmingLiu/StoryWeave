@@ -1,52 +1,55 @@
 ---
 name: storyweave-express
-description: Package completed Storyweave HTML pages or Imagegen slide images into a Bento presentation for editing slide order, notes, visibility, and delivery. Use only when the user already has a storyweave-output.json producer artifact and explicitly wants Bento presentation or packaging.
+description: Package completed StoryWeave HTML pages or Imagegen slide images into a Bento presentation for editing slide order, notes, visibility, and delivery. Use when a storyweave-output.json producer artifact has passed current producer QA and the user wants Bento presentation or packaging.
 ---
 
-# Storyweave Express
+# StoryWeave Express
 
-读取已有的 `storyweave-output.json`，把逐页 HTML 或图片包装为 `.bento.html`。本 Skill 只负责展示适配，不策划内容、不改写文案、不生成视觉主题。
+把通过当前生产者 QA 的 HTML 或图片包装为 `.bento.html`，保留页面 ID、顺序和备注。内容策划、视觉生成与源页面修改归生产者负责。运行实现位于 `runtime/core/` 和 `runtime/bento/`。
 
 ## 输入与输出
 
-- 输入格式为 `storyweave/slides` version 1；canonical `storyweave-html` 输出也接受 version 2。
-- `kind: html` 时，用浏览器按 manifest 指定画布逐页渲染 HTML，再作为整页图片写入 Bento。
-- `kind: image` 时，直接读取 manifest 中的逐页图片。
-- 输出为 `.bento.html`，每页仅包含一个全画布 image element；源 HTML 或源图片仍是内容母版。
-- HTML 在源文件中可编辑，进入 Bento 后不承诺对象级编辑。Bento 负责顺序、显隐、复制、备注和展示。
+输入是项目根目录中的 `storyweave-output.json`、`qa_report.json` 与实际页面。公共核心验证清单与 `artifact_binding`，直接 Express 和全局编排使用同一规则。旧报告缺少绑定，或页面、计划、素材与报告不一致时，先重新运行生产者 QA。
 
-## 必经流程
+清单支持 `storyweave/slides` v1 的 HTML、Imagegen，以及 v2 的 canonical HTML。所有资源路径相对项目解析，ID 稳定唯一，画布为 16:9。
 
-1. 定位生产者项目根目录及 `storyweave-output.json`，验证格式、版本、页面 ID、画布和资源路径。
-2. 不接受未完成的 Storyboard、Imagegen job 或任意网页目录来猜测页面；缺少标准 manifest 时停止并报告。
-3. HTML 输入必须逐页独立打开。使用 Playwright 在固定画布下等待页面与字体加载，再截图；不修改源 HTML。
-4. 图片输入必须可读且比例匹配。不得拉伸错误比例的图片来掩盖问题。
-5. 验证 Bento shell 的来源与 SHA-256，只替换唯一的 `#bento-doc` JSON 块。
-6. 覆盖已有输出时保留 `docId` 和 Bento 拥有的未知字段；页面 ID 沿用输入 manifest。
-7. 运行 `qa`，确认页数一致、每页只有一个全画布图片、资源已内嵌且 Bento 文档可解析。
+`kind: html` 时用浏览器按固定画布截图，缓存绑定页面、素材与渲染条件，输出绑定生产者指纹；`kind: image` 时直接读取 PNG。Bento 每页只有一张全画布图片，HTML 的文字与形状对象编辑能力保留在源文件中。
 
-canonical HTML version 2 会把主题、scheme、render recipe 和页面节奏保留在 Bento 的 `meta` 中，但仍将每页作为单个全画布图片展示；Bento 不会把 HTML 页面重新解释成可编辑对象。
+## 包装与检查
 
-## 异常与兜底
+1. 定位生产者项目，读取并验证公共清单、当前 QA 和文件指纹。
+2. 按清单页序截图 HTML 或读取图片，等待字体和资源就绪，不修改源文件。
+3. 校验 Bento shell 来源与 SHA-256，只替换唯一的 `#bento-doc` JSON 块。
+4. 写入 Bento 文档。覆盖已有输出时保留 `docId` 和适配器支持的未知字段。
+5. 运行 `qa`，核对页数、ID、顺序、备注、内嵌资源和全画布图片。
+6. 打开输出，查看实际页面显示，再交付路径与检查结果。
 
-- manifest 缺失、格式错误、页面 ID 重复或资源缺失：拒绝构建。
-- HTML 输入缺少 Playwright：报告依赖缺失；不要退化为不受控的网页截图工具。
-- Bento shell 缺失、多个 `#bento-doc`、格式错误或校验失败：拒绝写入。
-- 单页渲染失败：只重试该页；不得跳过后仍声称完整交付。
-- 网络不可用：仅使用已校验缓存或 Skill 附带的 Bento shell。
+适配 QA 写入 `qa/<output-id>.adapter-report.json`，不覆盖生产者 `qa_report.json`。HTML v2 的主题、scheme 和 render recipe 元数据继续传入 Bento `meta`，页面仍为图片。
 
 ## 命令
 
+从本 Skill 目录运行：
+
 ```bash
-node scripts/ppt.mjs build <producer-project> --out <presentation.bento.html>
+node scripts/ppt.mjs build <producer-project> --out <presentation.bento.html> --no-bento-update
 node scripts/ppt.mjs qa <producer-project> --file <presentation.bento.html> --json
 node scripts/ppt.mjs bento status --json
 node scripts/ppt.mjs bento update --force --json
 node scripts/ppt.mjs doctor --json
 ```
 
+网络不可用时使用已校验缓存或随附 shell。验证隔离缓存时，同时设置本次工作目录的 `STORYWEAVE_BENTO_CACHE_DIR` 和 `--no-bento-update`；只有后者仍可能读取用户缓存。
+
+## 失败处理
+
+manifest 无效、生产者 QA 过期、路径越界、缺页或重复 ID 时拒绝构建。缺少 Playwright 时报告依赖，保留生产者产物。shell 缺失、校验失败或多个 `#bento-doc` 时拒绝写入。单页截图失败后修复该页，完整交付不能跳页。
+
+适配失败只重做包装与适配检查。源 HTML、PNG 和生产者报告保持作为恢复依据。文档可解析不等于浏览器已正确展示；Bento 自身的编辑和播放交互按实际执行范围单独验证。
+
 ## 参考文件
 
-- `references/contract.md`：`storyweave/slides` version 1 输入协议。
-- `references/workflow.md`：HTML 栅格化、图片读取、Bento 构建和更新顺序。
-- `assets/bento/SOURCE.json`：随附 Bento shell 的来源与校验信息。
+| 文档 | 内容 |
+| --- | --- |
+| [contract](references/contract.md) | 公共产物协议与当前 QA 绑定 |
+| [workflow](references/workflow.md) | 栅格化、缓存、构建和报告所有权 |
+| [shell 来源](assets/bento/SOURCE.json) | 随附 shell 的来源与校验信息 |

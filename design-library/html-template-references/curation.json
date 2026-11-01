@@ -1,0 +1,760 @@
+{
+  "schema_version": 1,
+  "categories": [
+    {
+      "id": "minimal",
+      "label": "极简留白"
+    },
+    {
+      "id": "editorial",
+      "label": "编辑排版"
+    },
+    {
+      "id": "handdrawn",
+      "label": "手绘便签"
+    },
+    {
+      "id": "brutalist",
+      "label": "网格粗框"
+    },
+    {
+      "id": "retro",
+      "label": "复古数字"
+    },
+    {
+      "id": "nature",
+      "label": "自然质感"
+    },
+    {
+      "id": "business",
+      "label": "商务研究"
+    },
+    {
+      "id": "poster",
+      "label": "海报表达"
+    },
+    {
+      "id": "playful",
+      "label": "趣味几何"
+    }
+  ],
+  "groups": [
+    {
+      "id": "8-bit-orbit",
+      "title": "像素霓虹",
+      "category": "retro",
+      "tags": [
+        "像素",
+        "霓虹",
+        "技术",
+        "游戏",
+        "retro",
+        "pixel"
+      ],
+      "description": "用像素图标、细密网格和霓虹色组织标题、路线与模块。",
+      "use_cases": [
+        "开发者分享",
+        "游戏介绍",
+        "黑客松演示"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "biennale-yellow",
+      "title": "暖黄艺展",
+      "category": "editorial",
+      "tags": [
+        "暖黄",
+        "纸张",
+        "衬线",
+        "文化",
+        "设计",
+        "editorial"
+      ],
+      "description": "暖纸色承托靛蓝衬线标题，以黄色光晕和留白形成展览海报感。",
+      "use_cases": [
+        "设计大会分享",
+        "展览介绍",
+        "文化项目提案"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "block-frame",
+      "title": "色块粗框",
+      "category": "brutalist",
+      "tags": [
+        "色块",
+        "粗边框",
+        "高对比",
+        "设计",
+        "产品",
+        "brutalist"
+      ],
+      "description": "浅色和荧光色块配合粗黑边框，让图表、数字和分区形成清楚边界。",
+      "use_cases": [
+        "产品分享",
+        "品牌改版说明",
+        "创意方案评审"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "blue-professional",
+      "title": "钴蓝商务",
+      "category": "business",
+      "tags": [
+        "钴蓝",
+        "奶油白",
+        "简报",
+        "商务",
+        "研究",
+        "professional"
+      ],
+      "description": "奶油白纸面搭配钴蓝重点，使用清晰字阶和规整分区呈现业务信息。",
+      "use_cases": [
+        "商务汇报",
+        "研究结论分享",
+        "投资人更新"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "bold-poster",
+      "title": "红字海报",
+      "category": "poster",
+      "tags": [
+        "大字",
+        "红色",
+        "海报",
+        "演讲",
+        "品牌",
+        "poster"
+      ],
+      "description": "放大展示字体，以单一红色重点突出少量文字和主张。",
+      "use_cases": [
+        "主题演讲",
+        "品牌主张发布",
+        "创始人观点分享"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "broadside",
+      "title": "暗底橙报",
+      "category": "poster",
+      "tags": [
+        "深色",
+        "橙色",
+        "报刊",
+        "双语",
+        "演讲",
+        "editorial"
+      ],
+      "description": "深色底与火橙重点配合中英文标题字阶，形成报刊式的主张页面。",
+      "use_cases": [
+        "双语设计分享",
+        "观点演讲",
+        "品牌宣言"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "capsule",
+      "title": "胶囊色块",
+      "category": "playful",
+      "tags": [
+        "胶囊",
+        "圆角",
+        "柔和色",
+        "模块",
+        "产品",
+        "geometric"
+      ],
+      "description": "暖白底上的胶囊形模块配合柔和亮色，适合并列内容与轻松的产品叙事。",
+      "use_cases": [
+        "生活方式产品介绍",
+        "创作者作品分享",
+        "轻松的产品演示"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "cartesian",
+      "title": "暖灰极简",
+      "category": "minimal",
+      "tags": [
+        "暖灰",
+        "衬线",
+        "留白",
+        "极简",
+        "研究",
+        "minimal"
+      ],
+      "description": "暖中性色与古典衬线字体保留宽阔留白，让标题和少量证据承担页面重点。",
+      "use_cases": [
+        "研究观点分享",
+        "咨询提案",
+        "个人经验演讲"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "cobalt-grid",
+      "title": "钴蓝方格",
+      "category": "editorial",
+      "tags": [
+        "钴蓝",
+        "方格纸",
+        "细线",
+        "设计",
+        "科研",
+        "grid"
+      ],
+      "description": "方格纸上使用钴蓝衬线字、细分隔线与阶梯像素装饰，形成研究刊物式排版。",
+      "use_cases": [
+        "设计研究分享",
+        "趋势报告",
+        "建筑与艺术介绍"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "coral",
+      "title": "珊瑚黑底",
+      "category": "poster",
+      "tags": [
+        "珊瑚色",
+        "深色",
+        "窄体大字",
+        "品牌",
+        "分享",
+        "poster"
+      ],
+      "description": "接近黑色的底面搭配奶油色与珊瑚色，以窄体大字建立阅读重点。",
+      "use_cases": [
+        "生活方式品牌介绍",
+        "创作者作品集",
+        "产品观点演讲"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "creative-mode",
+      "title": "多彩创作",
+      "category": "playful",
+      "tags": [
+        "多彩",
+        "粗体",
+        "纸色",
+        "创意",
+        "设计",
+        "graphic"
+      ],
+      "description": "奶油纸色中组合绿、粉、橙、黄，以粗体标题和色块区分创意内容。",
+      "use_cases": [
+        "设计工作室介绍",
+        "创意提案",
+        "艺术指导评审"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "daisy-days",
+      "title": "雏菊手绘",
+      "category": "handdrawn",
+      "tags": [
+        "手绘",
+        "雏菊",
+        "柔和色",
+        "教学",
+        "工作坊",
+        "handdrawn"
+      ],
+      "description": "柔和底色配合手绘雏菊、星星和彩虹，让说明和分区带有插画感。",
+      "use_cases": [
+        "社区工作坊",
+        "教育内容分享",
+        "手作与插画介绍"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "editorial-forest",
+      "title": "森林编辑",
+      "category": "nature",
+      "tags": [
+        "森林绿",
+        "纸色",
+        "衬线",
+        "复盘",
+        "分享",
+        "editorial"
+      ],
+      "description": "森林绿、灰粉和奶油纸色搭配衬线字体，组织季度回顾和连续的编辑内容。",
+      "use_cases": [
+        "季度复盘",
+        "研究回顾",
+        "团队与工作室分享"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "editorial-tri-tone",
+      "title": "三色编辑",
+      "category": "editorial",
+      "tags": [
+        "灰粉",
+        "芥末色",
+        "酒红",
+        "衬线",
+        "设计",
+        "editorial"
+      ],
+      "description": "灰粉、芥末奶油色和深酒红形成三色系统，以衬线与无衬线字体区分层级。",
+      "use_cases": [
+        "时尚与生活方式分享",
+        "编辑提案",
+        "艺术指导评审"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "emerald-editorial",
+      "title": "翡翠杂志",
+      "category": "editorial",
+      "tags": [
+        "翡翠绿",
+        "藏蓝",
+        "杂志",
+        "双线",
+        "策略",
+        "editorial"
+      ],
+      "description": "翡翠绿、藏蓝和纸色配合粗衬线标题及双分隔线，形成杂志封面式层级。",
+      "use_cases": [
+        "策略简报",
+        "领导层汇报",
+        "研究与产品分享"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "grove",
+      "title": "深绿人文",
+      "category": "nature",
+      "tags": [
+        "森林绿",
+        "奶油色",
+        "锈红",
+        "自然",
+        "人文",
+        "organic"
+      ],
+      "description": "森林绿底搭配奶油色文字、古典衬线字体和少量锈红重点。",
+      "use_cases": [
+        "自然与可持续议题",
+        "人文艺术分享",
+        "餐饮与生活方式介绍"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "long-table",
+      "title": "暖色长桌",
+      "category": "editorial",
+      "tags": [
+        "奶油色",
+        "锈红",
+        "混合字重",
+        "社区",
+        "活动",
+        "hospitality"
+      ],
+      "description": "暖奶油色与锈红色搭配粗体标题、衬线字和圆角描边，适合社区与餐饮叙事。",
+      "use_cases": [
+        "社区活动介绍",
+        "餐饮与生活方式提案",
+        "小型品牌分享"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "mat",
+      "title": "灰绿暖调",
+      "category": "nature",
+      "tags": [
+        "灰绿",
+        "米白",
+        "焦橙",
+        "木质",
+        "设计",
+        "mid-century"
+      ],
+      "description": "深灰绿、米白和焦橙色结合木质色调，呈现二十世纪中叶现代设计的温暖质感。",
+      "use_cases": [
+        "空间与家具介绍",
+        "手工艺分享",
+        "设计工作室提案"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "monochrome",
+      "title": "黑白账本",
+      "category": "minimal",
+      "tags": [
+        "黑白",
+        "纸张",
+        "细线",
+        "研究",
+        "长文",
+        "monochrome"
+      ],
+      "description": "象牙纸色与黑色文字配合细分隔线，以标题、正文和数字字阶组织信息。",
+      "use_cases": [
+        "用户研究汇总",
+        "白皮书分享",
+        "学术与政策简报"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "neo-grid-bold",
+      "title": "荧黄网格",
+      "category": "brutalist",
+      "tags": [
+        "荧光黄",
+        "网格",
+        "强字阶",
+        "比较",
+        "流程",
+        "brutalist"
+      ],
+      "description": "米白纸面上以荧光黄重点、网格和强字阶组织数字、比较和流程。",
+      "use_cases": [
+        "技术大会分享",
+        "创始人演讲",
+        "数据与流程说明"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "peoples-platform",
+      "title": "色块宣言",
+      "category": "poster",
+      "tags": [
+        "蓝橙红",
+        "粗衬线",
+        "笔刷字",
+        "社区",
+        "主张",
+        "poster"
+      ],
+      "description": "奶油底中的蓝、橙、红色块搭配粗衬线和笔刷字，突出短句与立场。",
+      "use_cases": [
+        "社区倡议",
+        "文化观点分享",
+        "使命与品牌宣言"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "pin-and-paper",
+      "title": "别针纸张",
+      "category": "handdrawn",
+      "tags": [
+        "别针",
+        "黄纸",
+        "手写",
+        "研究",
+        "工作坊",
+        "handdrawn"
+      ],
+      "description": "黄色纸张、蓝色手写字和别针线稿形成手工笔记式的页面。",
+      "use_cases": [
+        "定性研究分享",
+        "个人经验回顾",
+        "工作坊复盘"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "pink-script",
+      "title": "暗底粉字",
+      "category": "editorial",
+      "tags": [
+        "粉色",
+        "黑底",
+        "衬线",
+        "时尚",
+        "品牌",
+        "editorial"
+      ],
+      "description": "黑色底面、亮粉重点和珠光奶油色配合衬线标题，形成夜间杂志般的画面。",
+      "use_cases": [
+        "时尚与个人品牌分享",
+        "产品发布",
+        "编辑专题"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "playful",
+      "title": "蜜桃创意",
+      "category": "playful",
+      "tags": [
+        "蜜桃色",
+        "展示字体",
+        "亲和",
+        "独立产品",
+        "分享",
+        "playful"
+      ],
+      "description": "温暖的蜜桃底色配合展示字体，适合轻松的产品和创作者介绍。",
+      "use_cases": [
+        "独立产品发布",
+        "创作者作品分享",
+        "社区介绍"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "raw-grid",
+      "title": "错位网格",
+      "category": "brutalist",
+      "tags": [
+        "粗边框",
+        "错位阴影",
+        "粉绿",
+        "比较",
+        "创业",
+        "brutalist"
+      ],
+      "description": "粗边框与错位阴影建立网格，以粉色、灰绿和墨色分隔统计与比较内容。",
+      "use_cases": [
+        "创业演示",
+        "产品提案",
+        "统计与流程分享"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "retro-windows",
+      "title": "复古窗口",
+      "category": "retro",
+      "tags": [
+        "窗口",
+        "像素字",
+        "九十年代",
+        "技术",
+        "游戏",
+        "retro"
+      ],
+      "description": "灰色标题栏、桌面窗口和像素字体构成早期图形界面的视觉语言。",
+      "use_cases": [
+        "技术历史分享",
+        "工具演示",
+        "复古游戏介绍"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "retro-zine",
+      "title": "复古印刷",
+      "category": "retro",
+      "tags": [
+        "米色纸",
+        "绿色",
+        "手写",
+        "印刷",
+        "社区",
+        "zine"
+      ],
+      "description": "米色纸面与绿色重点结合窄体标题和手写字，呈现小刊物的印刷质感。",
+      "use_cases": [
+        "独立出版分享",
+        "音乐与艺术介绍",
+        "社区项目说明"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "sakura-chroma",
+      "title": "日式彩带",
+      "category": "retro",
+      "tags": [
+        "彩条",
+        "窄体字",
+        "复古印刷",
+        "目录",
+        "设计",
+        "retro"
+      ],
+      "description": "奶油纸色、彩条、窄体粗字和规格标记形成日式复古产品目录的排版。",
+      "use_cases": [
+        "硬件与音乐产品介绍",
+        "设计作品回顾",
+        "创意工作室年报"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "scatterbrain",
+      "title": "便利贴草稿",
+      "category": "handdrawn",
+      "tags": [
+        "便利贴",
+        "手写",
+        "柔和色",
+        "脑暴",
+        "工作坊",
+        "workshop"
+      ],
+      "description": "柔和色便利贴、手写字和不同字形模拟白板上正在整理的想法。",
+      "use_cases": [
+        "头脑风暴",
+        "设计思考工作坊",
+        "创意过程分享"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "signal",
+      "title": "藏蓝简报",
+      "category": "business",
+      "tags": [
+        "藏蓝",
+        "米白",
+        "暗金",
+        "商务",
+        "决策",
+        "institutional"
+      ],
+      "description": "深藏蓝与米白分区使用少量暗金重点，适合证据较多的正式简报。",
+      "use_cases": [
+        "董事会汇报",
+        "投资提案",
+        "咨询与政策简报"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "soft-editorial",
+      "title": "柔和编辑",
+      "category": "editorial",
+      "tags": [
+        "暖纸色",
+        "衬线",
+        "柔和色",
+        "人物",
+        "叙事",
+        "editorial"
+      ],
+      "description": "暖纸色、衬线字体与灰绿、浅粉、柠檬色重点构成柔和的编辑页面。",
+      "use_cases": [
+        "人物与品牌故事",
+        "生活方式分享",
+        "展馆与文化介绍"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "stencil-tablet",
+      "title": "镂空档案",
+      "category": "editorial",
+      "tags": [
+        "镂空字",
+        "大地色",
+        "档案",
+        "文化",
+        "研究",
+        "archival"
+      ],
+      "description": "米白纸面上的镂空标题字配合大地色，形成档案和田野手册式的页面。",
+      "use_cases": [
+        "博物馆与文化介绍",
+        "建筑艺术分享",
+        "长期研究汇报"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "studio",
+      "title": "黑黄工作室",
+      "category": "poster",
+      "tags": [
+        "黑黄",
+        "高对比",
+        "大字",
+        "设计",
+        "品牌",
+        "graphic"
+      ],
+      "description": "黑色底面与亮黄色文字形成高对比，以大字和图形表达工作室形象。",
+      "use_cases": [
+        "设计工作室介绍",
+        "品牌作品展示",
+        "创意提案"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    },
+    {
+      "id": "vellum",
+      "title": "深蓝书页",
+      "category": "business",
+      "tags": [
+        "深蓝",
+        "暖黄",
+        "衬线",
+        "科研",
+        "研究",
+        "scholarly"
+      ],
+      "description": "深蓝底面使用暖黄衬线字与少量灰青重点，为少量研究结论保留留白。",
+      "use_cases": [
+        "科研观点分享",
+        "白皮书与政策简报",
+        "个人研究回顾"
+      ],
+      "render_route": "html",
+      "imagegen_reference_eligible": false
+    }
+  ],
+  "render_route": "html",
+  "imagegen_reference_eligible": false,
+  "classification_basis": "All groups link to existing HTML templates. Native typography, grids, cards, windows, charts and SVG decorations do not justify whole-slide raster generation."
+}

@@ -1,0 +1,27 @@
+{
+  "id": "storyweave-knowledge-flow",
+  "title": "StoryWeave 知识工作流验证样本",
+  "author": null,
+  "case_kind": "generated-verification-example",
+  "source": {
+    "kind": "repository-example",
+    "path": "skills/storyweave-html/assets/examples/storyweave-demo/index.html",
+    "approved_content": "skills/storyweave-html/assets/examples/storyweave-demo/deck_spec.json",
+    "attribution": "仓库已有六页生成样本。作者未记录，不作为优秀人类演讲案例或已验证设计规则。"
+  },
+  "transcript": null,
+  "video": null,
+  "tags": ["workflow", "comparison", "process", "baseline"],
+  "roles": ["cover", "statement", "comparison", "process", "data", "closing"],
+  "audiences": ["product", "engineering"],
+  "density": "medium",
+  "page_count": 6,
+  "pages": [
+    { "id": "s01", "order": 1, "role": "cover", "title": "AI 原生知识工作流", "path": "skills/storyweave-html/assets/examples/storyweave-demo/qa/screenshots/s01.png" },
+    { "id": "s02", "order": 2, "role": "statement", "title": "信息很多，上下文却在丢失", "path": "skills/storyweave-html/assets/examples/storyweave-demo/qa/screenshots/s02.png" },
+    { "id": "s03", "order": 3, "role": "comparison", "title": "从文件堆积，转向上下文复用", "path": "skills/storyweave-html/assets/examples/storyweave-demo/qa/screenshots/s03.png" },
+    { "id": "s04", "order": 4, "role": "process", "title": "四个动作构成闭环", "path": "skills/storyweave-html/assets/examples/storyweave-demo/qa/screenshots/s04.png" },
+    { "id": "s05", "order": 5, "role": "data", "title": "价值来自复用次数", "path": "skills/storyweave-html/assets/examples/storyweave-demo/qa/screenshots/s05.png" },
+    { "id": "s06", "order": 6, "role": "closing", "title": "先重做一条高频流程", "path": "skills/storyweave-html/assets/examples/storyweave-demo/qa/screenshots/s06.png" }
+  ]
+}

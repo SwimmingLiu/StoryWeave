@@ -1,0 +1,1702 @@
+{
+  "schema_version": 2,
+  "reference_kind": "presentation-style-content-pages",
+  "preview_mode": "remote-originals",
+  "unit": "presentation-style-sample",
+  "categories": [
+    {
+      "id": "technical",
+      "label": "技术与产品"
+    },
+    {
+      "id": "explainer",
+      "label": "知识与教学"
+    },
+    {
+      "id": "creative",
+      "label": "方法与创意"
+    }
+  ],
+  "cases": [
+    {
+      "id": "engineering-blueprint",
+      "title": "技术蓝图",
+      "category": "technical",
+      "density": "medium",
+      "description": "用工程网格、细线与剖解式概念图组织输入、处理、核心和输出。",
+      "presentation_fit": "适合 AI 原理、软件架构与系统设计分享，强调各部分如何连接。",
+      "visual_language": "工程纸、精密线描、统一深蓝和连续技术插画。",
+      "html_boundary": "网格、框线、文字与准确连接关系可由 HTML/SVG 实现；整页生图用于连续插画与材质。",
+      "limits": "样张小字密集，正式演讲应减少标签；示意脑结构不作为 AI 工作原理的事实证据。",
+      "case_url": "https://github.com/JimLiu/baoyu-skills/blob/1567581c26ec29f4216c6e6835415bf30343b0e3/skills/baoyu-slide-deck/references/styles/blueprint.md",
+      "prompt_url": "https://github.com/JimLiu/baoyu-skills/blob/1567581c26ec29f4216c6e6835415bf30343b0e3/skills/baoyu-slide-deck/references/styles/blueprint.md",
+      "creator": "JimLiu / Baoyu Skills",
+      "repository": "https://github.com/JimLiu/baoyu-skills",
+      "revision": "1567581c26ec29f4216c6e6835415bf30343b0e3",
+      "source_status": "style-preview",
+      "provenance_note": "Baoyu Slide Deck 样式预览；未逐图公开模型运行记录。",
+      "license_note": "仓库 MIT；本目录只链接来源预览，不复制第三方原图。",
+      "pages": [
+        {
+          "id": "p01",
+          "title": "内容页风格预览",
+          "url": "https://raw.githubusercontent.com/JimLiu/baoyu-skills/1567581c26ec29f4216c6e6835415bf30343b0e3/screenshots/slide-deck-styles/blueprint.webp",
+          "width": 1376,
+          "height": 768,
+          "roles": [
+            "process",
+            "architecture"
+          ],
+          "role_notes": {
+            "process": "输入资料经过处理后连接核心与输出。",
+            "architecture": "展示输入、处理、核心和输出的层级及连接。"
+          },
+          "source_url": "https://github.com/JimLiu/baoyu-skills/blob/1567581c26ec29f4216c6e6835415bf30343b0e3/skills/baoyu-slide-deck/references/styles/blueprint.md",
+          "prompt_url": "https://github.com/JimLiu/baoyu-skills/blob/1567581c26ec29f4216c6e6835415bf30343b0e3/skills/baoyu-slide-deck/references/styles/blueprint.md",
+          "prompt_scope": "style-or-sample",
+          "creator": "JimLiu / Baoyu Skills",
+          "revision": "1567581c26ec29f4216c6e6835415bf30343b0e3",
+          "provenance_note": "Baoyu Slide Deck 样式预览；未逐图公开模型运行记录。",
+          "license_note": "仓库 MIT；本目录只链接来源预览，不复制第三方原图。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "用工程网格、细线与剖解式概念图组织输入、处理、核心和输出。"
+          },
+          "html_assessment": "网格、框线、文字与准确连接关系可由 HTML/SVG 实现；整页生图用于连续插画与材质。"
+        },
+        {
+          "id": "transfer-demo-01",
+          "title": "住宅节能系统的空间分层与优化模块",
+          "url": "https://raw.githubusercontent.com/grapeot/nbp_slides/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/tech/blueprint-pop-lab/reference/transfer-demo-01.jpg",
+          "width": 1280,
+          "height": 720,
+          "roles": [
+            "architecture",
+            "comparison",
+            "data"
+          ],
+          "role_notes": {
+            "architecture": "住宅按楼层分解，部件与能源设施对应标注。",
+            "comparison": "五种优化模块按同一结构并列说明。",
+            "data": "各模块包含目标比例、传感器示例读数和年度估算。"
+          },
+          "source_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/tech/blueprint-pop-lab/reference/prompts.md",
+          "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/tech/blueprint-pop-lab/reference/prompts.md",
+          "prompt_scope": "sample-prompt",
+          "creator": "grapeot / nbp_slides",
+          "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+          "provenance_note": "历史 nbp_slides 样张与对应提示词；样式适配模型不等于每张图的运行证明。",
+          "license_note": "历史仓库未见根 LICENSE；仅保留来源链接，原图不随 Skill 分发。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "住宅节能系统的空间分层与优化模块"
+          },
+          "html_assessment": "主视觉是住宅的完整分层空间插画；右侧表格、准确读数和图表保留为 HTML/SVG。",
+          "limits": "示例数值、代码与关系只用于观察画面，真实演讲需使用自己的资料。"
+        }
+      ],
+      "technical_priority": true,
+      "continuity": "style-family"
+    },
+    {
+      "id": "warm-circuit-notes",
+      "title": "暖色电路讲义",
+      "category": "technical",
+      "density": "medium",
+      "description": "米色底、青绿电路与中央概念插画，右侧按定义、洞察、案例逐层展开。",
+      "presentation_fit": "适合概念入门、技术培训和知识分享；与现有青蓝主题有相近的信息层级。",
+      "visual_language": "暖纸色、青绿技术线描、局部标注和左右呼应。",
+      "html_boundary": "右侧文字区与标签可原生编辑，插画主体和电路融合部分作为图像素材。",
+      "limits": "同类视觉方法来自多个来源，不表示原本就是同一套演讲。新演示需统一人物、配色与字阶。",
+      "case_url": "https://github.com/JimLiu/baoyu-skills/blob/1567581c26ec29f4216c6e6835415bf30343b0e3/skills/baoyu-slide-deck/references/styles/intuition-machine.md",
+      "prompt_url": "https://github.com/JimLiu/baoyu-skills/blob/1567581c26ec29f4216c6e6835415bf30343b0e3/skills/baoyu-slide-deck/references/styles/intuition-machine.md",
+      "creator": "JimLiu / Baoyu Skills",
+      "repository": "https://github.com/JimLiu/baoyu-skills",
+      "revision": "1567581c26ec29f4216c6e6835415bf30343b0e3",
+      "source_status": "style-preview",
+      "provenance_note": "Baoyu Slide Deck 样式预览；未逐图公开模型运行记录。",
+      "license_note": "仓库 MIT；本目录只链接来源预览，不复制第三方原图。",
+      "pages": [
+        {
+          "id": "p01",
+          "title": "内容页风格预览",
+          "url": "https://raw.githubusercontent.com/JimLiu/baoyu-skills/1567581c26ec29f4216c6e6835415bf30343b0e3/screenshots/slide-deck-styles/intuition-machine.webp",
+          "width": 1376,
+          "height": 768,
+          "roles": [
+            "statement",
+            "architecture"
+          ],
+          "role_notes": {
+            "statement": "用定义、核心洞察与应用案例解释人工智能基础。",
+            "architecture": "中央技术脑图对应标注与概念区域。"
+          },
+          "source_url": "https://github.com/JimLiu/baoyu-skills/blob/1567581c26ec29f4216c6e6835415bf30343b0e3/skills/baoyu-slide-deck/references/styles/intuition-machine.md",
+          "prompt_url": "https://github.com/JimLiu/baoyu-skills/blob/1567581c26ec29f4216c6e6835415bf30343b0e3/skills/baoyu-slide-deck/references/styles/intuition-machine.md",
+          "prompt_scope": "style-or-sample",
+          "creator": "JimLiu / Baoyu Skills",
+          "revision": "1567581c26ec29f4216c6e6835415bf30343b0e3",
+          "provenance_note": "Baoyu Slide Deck 样式预览；未逐图公开模型运行记录。",
+          "license_note": "仓库 MIT；本目录只链接来源预览，不复制第三方原图。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "米色底、青绿电路与中央概念插画，右侧按定义、洞察、案例逐层展开。"
+          },
+          "html_assessment": "右侧文字区与标签可原生编辑，插画主体和电路融合部分作为图像素材。"
+        },
+        {
+          "id": "nomie-sample26",
+          "title": "以五个放置层级、父子目录和继承路径说明CLAUDE.md的放置策略；这是结构说明，不是时间顺序流程。",
+          "url": "https://raw.githubusercontent.com/nomie7/nano-banana-slides-prompter/038abe6506de020a807e94106d009c120e40ad55/docs/samples/sample26.png",
+          "width": 2752,
+          "height": 1536,
+          "roles": [
+            "architecture"
+          ],
+          "role_notes": {
+            "architecture": "五个放置层级、父子目录和继承范围组成结构说明，箭头不代表时间步骤。"
+          },
+          "source_url": "https://github.com/nomie7/nano-banana-slides-prompter/blob/038abe6506de020a807e94106d009c120e40ad55/README.md",
+          "prompt_url": "https://github.com/nomie7/nano-banana-slides-prompter/blob/038abe6506de020a807e94106d009c120e40ad55/server/src/prompts/system.ts",
+          "prompt_scope": "tool-system-prompt",
+          "creator": "nomie7",
+          "revision": "038abe6506de020a807e94106d009c120e40ad55",
+          "provenance_note": "README 将这些图片称为本工具生成提示词的 sample slides；具体运行日志与每图模型版本未给出。 公开的是工具系统提示词，不是每张样图的原始请求。",
+          "license_note": "仓库 GPL-3.0。仅保留作者与来源链接，不复制运行代码或第三方原图。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "以五个放置层级、父子目录和继承路径说明CLAUDE.md的放置策略；这是结构说明，不是时间顺序流程。"
+          },
+          "html_assessment": "同一等距目录空间解释父子目录、优先级和上下文范围，角色在场景中指引。 真实路径、层级、箭头和命令保留原生，图片仅提供等距空间的表达。",
+          "limits": "原图中的数值和概括性产品描述仅是演示样张，不能继承为本项目事实。"
+        }
+      ],
+      "technical_priority": true,
+      "continuity": "style-family"
+    },
+    {
+      "id": "chalkboard-explainer",
+      "title": "黑板粉笔讲解",
+      "category": "explainer",
+      "density": "medium",
+      "description": "将问题、研究、开发和实施串联成可顺着讲解的粉笔画流程。",
+      "presentation_fit": "适合课程、工作坊和方法讲解；每个阶段可以拆为后续内容页。",
+      "visual_language": "黑板擦痕、彩色粉笔、手绘图形与带方向的连续笔触。",
+      "html_boundary": "步骤关系和准确文字可用 HTML/SVG；只有普通黑底文字时归 HTML。",
+      "limits": "样张装饰较多，正式演讲应留出更安静的正文区域。",
+      "case_url": "https://github.com/JimLiu/baoyu-skills/blob/1567581c26ec29f4216c6e6835415bf30343b0e3/skills/baoyu-slide-deck/references/styles/chalkboard.md",
+      "prompt_url": "https://github.com/JimLiu/baoyu-skills/blob/1567581c26ec29f4216c6e6835415bf30343b0e3/skills/baoyu-slide-deck/references/styles/chalkboard.md",
+      "creator": "JimLiu / Baoyu Skills",
+      "repository": "https://github.com/JimLiu/baoyu-skills",
+      "revision": "1567581c26ec29f4216c6e6835415bf30343b0e3",
+      "source_status": "style-preview",
+      "provenance_note": "Baoyu Slide Deck 样式预览；未逐图公开模型运行记录。",
+      "license_note": "仓库 MIT；本目录只链接来源预览，不复制第三方原图。",
+      "pages": [
+        {
+          "id": "p01",
+          "title": "内容页风格预览",
+          "url": "https://raw.githubusercontent.com/JimLiu/baoyu-skills/1567581c26ec29f4216c6e6835415bf30343b0e3/screenshots/slide-deck-styles/chalkboard.webp",
+          "width": 1376,
+          "height": 768,
+          "roles": [
+            "process",
+            "statement"
+          ],
+          "role_notes": {
+            "process": "串联问题、研究、开发与实施。",
+            "statement": "强调计划、执行与复盘的讲解结论。"
+          },
+          "source_url": "https://github.com/JimLiu/baoyu-skills/blob/1567581c26ec29f4216c6e6835415bf30343b0e3/skills/baoyu-slide-deck/references/styles/chalkboard.md",
+          "prompt_url": "https://github.com/JimLiu/baoyu-skills/blob/1567581c26ec29f4216c6e6835415bf30343b0e3/skills/baoyu-slide-deck/references/styles/chalkboard.md",
+          "prompt_scope": "style-or-sample",
+          "creator": "JimLiu / Baoyu Skills",
+          "revision": "1567581c26ec29f4216c6e6835415bf30343b0e3",
+          "provenance_note": "Baoyu Slide Deck 样式预览；未逐图公开模型运行记录。",
+          "license_note": "仓库 MIT；本目录只链接来源预览，不复制第三方原图。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "将问题、研究、开发和实施串联成可顺着讲解的粉笔画流程。"
+          },
+          "html_assessment": "步骤关系和准确文字可用 HTML/SVG；只有普通黑底文字时归 HTML。"
+        }
+      ],
+      "technical_priority": false,
+      "continuity": "style-family"
+    },
+    {
+      "id": "sketch-sharing",
+      "title": "手绘知识分享",
+      "category": "explainer",
+      "density": "low-medium",
+      "description": "以训练资料、模型学习和预测串联整页，少量标签配合统一手绘图形。",
+      "presentation_fit": "适合技术概念入门、读书分享与工作方法说明。",
+      "visual_language": "暖纸底、柔和彩铅、手写标签与自然曲线箭头。",
+      "html_boundary": "简单箭头、标签和容器可用 SVG；完整手绘插画承担视觉主题。",
+      "limits": "同类视觉方法来自多个来源，不表示原本就是同一套演讲。新演示需统一人物、配色与字阶。",
+      "case_url": "https://github.com/JimLiu/baoyu-skills/blob/1567581c26ec29f4216c6e6835415bf30343b0e3/skills/baoyu-slide-deck/references/styles/sketch-notes.md",
+      "prompt_url": "https://github.com/JimLiu/baoyu-skills/blob/1567581c26ec29f4216c6e6835415bf30343b0e3/skills/baoyu-slide-deck/references/styles/sketch-notes.md",
+      "creator": "JimLiu / Baoyu Skills",
+      "repository": "https://github.com/JimLiu/baoyu-skills",
+      "revision": "1567581c26ec29f4216c6e6835415bf30343b0e3",
+      "source_status": "style-preview",
+      "provenance_note": "Baoyu Slide Deck 样式预览；未逐图公开模型运行记录。",
+      "license_note": "仓库 MIT；本目录只链接来源预览，不复制第三方原图。",
+      "pages": [
+        {
+          "id": "p01",
+          "title": "内容页风格预览",
+          "url": "https://raw.githubusercontent.com/JimLiu/baoyu-skills/1567581c26ec29f4216c6e6835415bf30343b0e3/screenshots/slide-deck-styles/sketch-notes.webp",
+          "width": 1376,
+          "height": 768,
+          "roles": [
+            "process"
+          ],
+          "role_notes": {
+            "process": "资料进入模型并形成模式学习与预测输出。"
+          },
+          "source_url": "https://github.com/JimLiu/baoyu-skills/blob/1567581c26ec29f4216c6e6835415bf30343b0e3/skills/baoyu-slide-deck/references/styles/sketch-notes.md",
+          "prompt_url": "https://github.com/JimLiu/baoyu-skills/blob/1567581c26ec29f4216c6e6835415bf30343b0e3/skills/baoyu-slide-deck/references/styles/sketch-notes.md",
+          "prompt_scope": "style-or-sample",
+          "creator": "JimLiu / Baoyu Skills",
+          "revision": "1567581c26ec29f4216c6e6835415bf30343b0e3",
+          "provenance_note": "Baoyu Slide Deck 样式预览；未逐图公开模型运行记录。",
+          "license_note": "仓库 MIT；本目录只链接来源预览，不复制第三方原图。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "以训练资料、模型学习和预测串联整页，少量标签配合统一手绘图形。"
+          },
+          "html_assessment": "简单箭头、标签和容器可用 SVG；完整手绘插画承担视觉主题。"
+        },
+        {
+          "id": "demo-01",
+          "title": "设计思维的五阶段循环",
+          "url": "https://raw.githubusercontent.com/grapeot/nbp_slides/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/education/sketchnote/reference/demo-01.jpg",
+          "width": 1280,
+          "height": 720,
+          "roles": [
+            "process",
+            "statement"
+          ],
+          "role_notes": {
+            "process": "同理、定义、创意、原型和测试顺序连接，并有反馈回路。",
+            "statement": "以以人为先、小步学习和迭代为观点。"
+          },
+          "source_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/education/sketchnote/reference/prompts.md",
+          "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/education/sketchnote/reference/prompts.md",
+          "prompt_scope": "sample-prompt",
+          "creator": "grapeot / nbp_slides",
+          "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+          "provenance_note": "历史 nbp_slides 样张与对应提示词；样式适配模型不等于每张图的运行证明。",
+          "license_note": "历史仓库未见根 LICENSE；仅保留来源链接，原图不随 Skill 分发。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "设计思维的五阶段循环"
+          },
+          "html_assessment": "手绘笔触与纸张融合承载整页；普通五框流程本身归 HTML。",
+          "limits": "示例数值、代码与关系只用于观察画面，真实演讲需使用自己的资料。"
+        },
+        {
+          "id": "demo-02",
+          "title": "手绘知识的输入、转换与输出",
+          "url": "https://raw.githubusercontent.com/grapeot/nbp_slides/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/education/sketchnote/reference/demo-02.jpg",
+          "width": 1280,
+          "height": 720,
+          "roles": [
+            "process"
+          ],
+          "role_notes": {
+            "process": "用光、水和二氧化碳输入连接叶片主体与输出。"
+          },
+          "source_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/education/sketchnote/reference/prompts.md",
+          "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/education/sketchnote/reference/prompts.md",
+          "prompt_scope": "sample-prompt",
+          "creator": "grapeot / nbp_slides",
+          "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+          "provenance_note": "历史 nbp_slides 样张与对应提示词；样式适配模型不等于每张图的运行证明。",
+          "license_note": "历史仓库未见根 LICENSE；仅保留来源链接，原图不随 Skill 分发。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "手绘知识的输入、转换与输出"
+          },
+          "html_assessment": "保留连续手绘主体的表达方法，公式与标签保持可编辑。",
+          "limits": "这是课程样张而非技术架构事实，化学关系需依据课程资料核对。"
+        },
+        {
+          "id": "nomie-sample21",
+          "title": "对比防御措施和威胁演进，左右两幅连续手绘图，下方逐维度说明。",
+          "url": "https://raw.githubusercontent.com/nomie7/nano-banana-slides-prompter/038abe6506de020a807e94106d009c120e40ad55/docs/samples/sample21.png",
+          "width": 2752,
+          "height": 1536,
+          "roles": [
+            "comparison"
+          ],
+          "role_notes": {
+            "comparison": "对比防御措施和威胁演进，左右两幅连续手绘图，下方逐维度说明。"
+          },
+          "source_url": "https://github.com/nomie7/nano-banana-slides-prompter/blob/038abe6506de020a807e94106d009c120e40ad55/README.md",
+          "prompt_url": "https://github.com/nomie7/nano-banana-slides-prompter/blob/038abe6506de020a807e94106d009c120e40ad55/server/src/prompts/system.ts",
+          "prompt_scope": "tool-system-prompt",
+          "creator": "nomie7",
+          "revision": "038abe6506de020a807e94106d009c120e40ad55",
+          "provenance_note": "README 将这些图片称为本工具生成提示词的 sample slides；具体运行日志与每图模型版本未给出。 公开的是工具系统提示词，不是每张样图的原始请求。",
+          "license_note": "仓库 GPL-3.0。仅保留作者与来源链接，不复制运行代码或第三方原图。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "对比防御措施和威胁演进，左右两幅连续手绘图，下方逐维度说明。"
+          },
+          "html_assessment": "连续手绘盾牌与威胁扩散图、人物讲解与纸面笔触构成整页视觉。 六个比较项与真实数据用HTML/SVG，保留插画风格。",
+          "limits": "原图中的数值和概括性产品描述仅是演示样张，不能继承为本项目事实。"
+        }
+      ],
+      "technical_priority": false,
+      "continuity": "style-family"
+    },
+    {
+      "id": "neon-system-talk",
+      "title": "深色霓虹系统",
+      "category": "technical",
+      "density": "medium-high",
+      "description": "中心运行环境连接工具、网络、文件和策略模块，标题与分组共同解释 Agent 沙箱。",
+      "presentation_fit": "适合 AI Agent、平台架构、安全边界和工程实践分享。",
+      "visual_language": "暗色底、青紫信号、半透明立体容器与有方向的线路。",
+      "html_boundary": "准确代码、策略和性能数据保持原生；普通仪表盘不作为整页生图的主参考。",
+      "limits": "同类视觉方法来自多个来源，不表示原本就是同一套演讲。新演示需统一人物、配色与字阶。",
+      "case_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/tech/dark-mode-tech/reference/prompts.md",
+      "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/tech/dark-mode-tech/reference/prompts.md",
+      "creator": "grapeot / nbp_slides",
+      "repository": "https://github.com/grapeot/nbp_slides",
+      "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+      "source_status": "historical-reference",
+      "provenance_note": "nbp_slides 的整页生图演示；样式说明列出适配模型，未逐图给出可核验的运行记录。",
+      "license_note": "历史仓库未见根 LICENSE；仅保留来源与提示词链接，不复制或重新授权原图。",
+      "successor_url": "https://github.com/grapeot/presentation_skill",
+      "pages": [
+        {
+          "id": "p01",
+          "title": "系统关系内容页",
+          "url": "https://raw.githubusercontent.com/grapeot/nbp_slides/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/tech/dark-mode-tech/reference/demo-02.jpg",
+          "width": 1280,
+          "height": 720,
+          "roles": [
+            "architecture"
+          ],
+          "role_notes": {
+            "architecture": "展示运行环境与工具、网络、文件和策略的边界。"
+          },
+          "source_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/tech/dark-mode-tech/reference/prompts.md",
+          "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/tech/dark-mode-tech/reference/prompts.md",
+          "prompt_scope": "style-or-sample",
+          "creator": "grapeot / nbp_slides",
+          "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+          "provenance_note": "nbp_slides 的整页生图演示；样式说明列出适配模型，未逐图给出可核验的运行记录。",
+          "license_note": "历史仓库未见根 LICENSE；仅保留来源与提示词链接，不复制或重新授权原图。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "中心运行环境连接工具、网络、文件和策略模块，标题与分组共同解释 Agent 沙箱。"
+          },
+          "html_assessment": "准确代码、策略和性能数据保持原生；普通仪表盘不作为整页生图的主参考。"
+        },
+        {
+          "id": "nomie-sample20",
+          "title": "Explore、Plan、Code、Commit四阶段沿顶部前进，中心开发者周围是验证与上下文保持等说明。",
+          "url": "https://raw.githubusercontent.com/nomie7/nano-banana-slides-prompter/038abe6506de020a807e94106d009c120e40ad55/docs/samples/sample20.jpeg",
+          "width": 2752,
+          "height": 1536,
+          "roles": [
+            "process"
+          ],
+          "role_notes": {
+            "process": "Explore、Plan、Code、Commit四阶段沿顶部前进，中心开发者周围是验证与上下文保持等说明。"
+          },
+          "source_url": "https://github.com/nomie7/nano-banana-slides-prompter/blob/038abe6506de020a807e94106d009c120e40ad55/README.md",
+          "prompt_url": "https://github.com/nomie7/nano-banana-slides-prompter/blob/038abe6506de020a807e94106d009c120e40ad55/server/src/prompts/system.ts",
+          "prompt_scope": "tool-system-prompt",
+          "creator": "nomie7",
+          "revision": "038abe6506de020a807e94106d009c120e40ad55",
+          "provenance_note": "README 将这些图片称为本工具生成提示词的 sample slides；具体运行日志与每图模型版本未给出。 公开的是工具系统提示词，不是每张样图的原始请求。",
+          "license_note": "仓库 GPL-3.0。仅保留作者与来源链接，不复制运行代码或第三方原图。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "Explore、Plan、Code、Commit四阶段沿顶部前进，中心开发者周围是验证与上下文保持等说明。"
+          },
+          "html_assessment": "中央开发者置于环绕界面和发光线路的连续技术空间，阶段说明与插画呼应。 四阶段流程本身可原生实现，复杂技术人物与全息空间由图像素材承载。",
+          "limits": "原图中的数值和概括性产品描述仅是演示样张，不能继承为本项目事实。"
+        }
+      ],
+      "technical_priority": true,
+      "continuity": "style-family"
+    },
+    {
+      "id": "glass-product-talk",
+      "title": "极光玻璃产品讲解",
+      "category": "technical",
+      "density": "medium",
+      "description": "中心玻璃主体连接搜索、分析、总结和导出四个能力区。",
+      "presentation_fit": "适合 AI 产品、工具能力介绍和方案说明，保留一个主体并围绕它解释功能。",
+      "visual_language": "极光光带、玻璃折射、柔和体积光与连续产品空间。",
+      "html_boundary": "功能卡片与真实数值可由 HTML 实现，生成重点是中心玻璃主体和整体光照。",
+      "limits": "参考原图的数值和文案只是样张输入；单纯玻璃卡片排版继续归 HTML。",
+      "case_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/tech/gradient-glass/reference/prompts.md",
+      "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/tech/gradient-glass/reference/prompts.md",
+      "creator": "grapeot / nbp_slides",
+      "repository": "https://github.com/grapeot/nbp_slides",
+      "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+      "source_status": "historical-reference",
+      "provenance_note": "nbp_slides 的整页生图演示；样式说明列出适配模型，未逐图给出可核验的运行记录。",
+      "license_note": "历史仓库未见根 LICENSE；仅保留来源与提示词链接，不复制或重新授权原图。",
+      "successor_url": "https://github.com/grapeot/presentation_skill",
+      "pages": [
+        {
+          "id": "p01",
+          "title": "产品能力内容页",
+          "url": "https://raw.githubusercontent.com/grapeot/nbp_slides/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/tech/gradient-glass/reference/demo-01.jpg",
+          "width": 1280,
+          "height": 720,
+          "roles": [
+            "statement"
+          ],
+          "role_notes": {
+            "statement": "围绕 Insight Engine 主体说明搜索、分析、总结与导出能力。"
+          },
+          "source_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/tech/gradient-glass/reference/prompts.md",
+          "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/tech/gradient-glass/reference/prompts.md",
+          "prompt_scope": "style-or-sample",
+          "creator": "grapeot / nbp_slides",
+          "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+          "provenance_note": "nbp_slides 的整页生图演示；样式说明列出适配模型，未逐图给出可核验的运行记录。",
+          "license_note": "历史仓库未见根 LICENSE；仅保留来源与提示词链接，不复制或重新授权原图。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "中心玻璃主体连接搜索、分析、总结和导出四个能力区。"
+          },
+          "html_assessment": "功能卡片与真实数值可由 HTML 实现，生成重点是中心玻璃主体和整体光照。"
+        },
+        {
+          "id": "demo-02",
+          "title": "玻璃材质的指标与构成展示",
+          "url": "https://raw.githubusercontent.com/grapeot/nbp_slides/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/tech/gradient-glass/reference/demo-02.jpg",
+          "width": 1280,
+          "height": 720,
+          "roles": [
+            "data",
+            "comparison"
+          ],
+          "role_notes": {
+            "data": "指标值、趋势和来源构成围绕立体环状主视觉呈现。",
+            "comparison": "多个来源的数值和比例并列。"
+          },
+          "source_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/tech/gradient-glass/reference/prompts.md",
+          "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/tech/gradient-glass/reference/prompts.md",
+          "prompt_scope": "sample-prompt",
+          "creator": "grapeot / nbp_slides",
+          "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+          "provenance_note": "历史 nbp_slides 样张与对应提示词；样式适配模型不等于每张图的运行证明。",
+          "license_note": "历史仓库未见根 LICENSE；仅保留来源链接，原图不随 Skill 分发。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "玻璃材质的指标与构成展示"
+          },
+          "html_assessment": "只借鉴立体玻璃与光照，普通仪表盘仍归 HTML；实际数据用原生图表保证比例。",
+          "limits": "示例数值、代码与关系只用于观察画面，真实演讲需使用自己的资料。"
+        }
+      ],
+      "technical_priority": true,
+      "continuity": "style-family"
+    },
+    {
+      "id": "ink-method-talk",
+      "title": "水墨黑板方法论",
+      "category": "creative",
+      "density": "medium-high",
+      "description": "用水墨人物、书法标题和粉笔批注承载工程原则，再以三栏解释分析与行动。",
+      "presentation_fit": "适合中文技术分享、方法论、团队培训与实践复盘。",
+      "visual_language": "墨绿黑板、水墨笔触、朱砂强调与可读粉笔正文。",
+      "html_boundary": "标题、步骤和真实图表可独立排版；水墨与粉笔融合的画面需要图像素材。",
+      "limits": "原图小字偏多，需按演讲距离精简。只提取视觉和页面组织，不继承示例百分比。",
+      "case_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/ink-wash-wuxia/reference/prompts.md",
+      "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/ink-wash-wuxia/reference/prompts.md",
+      "creator": "grapeot / nbp_slides",
+      "repository": "https://github.com/grapeot/nbp_slides",
+      "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+      "source_status": "historical-reference",
+      "provenance_note": "nbp_slides 的整页生图演示；样式说明列出适配模型，未逐图给出可核验的运行记录。",
+      "license_note": "历史仓库未见根 LICENSE；仅保留来源与提示词链接，不复制或重新授权原图。",
+      "successor_url": "https://github.com/grapeot/presentation_skill",
+      "pages": [
+        {
+          "id": "p01",
+          "title": "工程方法内容页",
+          "url": "https://raw.githubusercontent.com/grapeot/nbp_slides/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/ink-wash-wuxia/reference/demo-01.jpg",
+          "width": 1280,
+          "height": 720,
+          "roles": [
+            "statement"
+          ],
+          "role_notes": {
+            "statement": "简、稳、协、进四条工程原则与右侧方法框架。"
+          },
+          "source_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/ink-wash-wuxia/reference/prompts.md",
+          "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/ink-wash-wuxia/reference/prompts.md",
+          "prompt_scope": "style-or-sample",
+          "creator": "grapeot / nbp_slides",
+          "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+          "provenance_note": "nbp_slides 的整页生图演示；样式说明列出适配模型，未逐图给出可核验的运行记录。",
+          "license_note": "历史仓库未见根 LICENSE；仅保留来源与提示词链接，不复制或重新授权原图。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "用水墨人物、书法标题和粉笔批注承载工程原则，再以三栏解释分析与行动。"
+          },
+          "html_assessment": "标题、步骤和真实图表可独立排版；水墨与粉笔融合的画面需要图像素材。"
+        },
+        {
+          "id": "p02",
+          "title": "三阶段分析内容页",
+          "url": "https://raw.githubusercontent.com/grapeot/nbp_slides/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/ink-wash-wuxia/reference/demo-02.jpg",
+          "width": 1280,
+          "height": 720,
+          "roles": [
+            "process",
+            "comparison",
+            "data"
+          ],
+          "role_notes": {
+            "process": "观势、拆招、破局形成三阶段行动。",
+            "comparison": "各原因的影响程度并列比较。",
+            "data": "包含原因影响比例、分布和结果数值的视觉示例。"
+          },
+          "source_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/ink-wash-wuxia/reference/prompts.md",
+          "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/ink-wash-wuxia/reference/prompts.md",
+          "prompt_scope": "style-or-sample",
+          "creator": "grapeot / nbp_slides",
+          "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+          "provenance_note": "nbp_slides 的整页生图演示；样式说明列出适配模型，未逐图给出可核验的运行记录。",
+          "license_note": "历史仓库未见根 LICENSE；仅保留来源与提示词链接，不复制或重新授权原图。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "用水墨人物、书法标题和粉笔批注承载工程原则，再以三栏解释分析与行动。"
+          },
+          "html_assessment": "标题、步骤和真实图表可独立排版；水墨与粉笔融合的画面需要图像素材。"
+        }
+      ],
+      "technical_priority": false,
+      "continuity": "style-family"
+    },
+    {
+      "id": "clay-workflow-talk",
+      "title": "黏土流程讲解",
+      "category": "creative",
+      "density": "low-medium",
+      "description": "用同一条立体传送带串联计划、构建和改进三个阶段。",
+      "presentation_fit": "适合工作流程、产品流程、团队方法和培训开场，后续可逐阶段讲解。",
+      "visual_language": "柔和黏土、圆润实体图形、统一透视和温暖漫射光。",
+      "html_boundary": "阶段文字和准确连接关系可保留为 HTML；黏土实体和连续场景由图片表达。",
+      "limits": "该样张适合少量要点；密集正文需改成图文内容页。",
+      "case_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/clay-mimicry/reference/prompts.md",
+      "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/clay-mimicry/reference/prompts.md",
+      "creator": "grapeot / nbp_slides",
+      "repository": "https://github.com/grapeot/nbp_slides",
+      "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+      "source_status": "historical-reference",
+      "provenance_note": "nbp_slides 的整页生图演示；样式说明列出适配模型，未逐图给出可核验的运行记录。",
+      "license_note": "历史仓库未见根 LICENSE；仅保留来源与提示词链接，不复制或重新授权原图。",
+      "successor_url": "https://github.com/grapeot/presentation_skill",
+      "pages": [
+        {
+          "id": "p01",
+          "title": "流程步骤内容页",
+          "url": "https://raw.githubusercontent.com/grapeot/nbp_slides/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/clay-mimicry/reference/demo-01.jpg",
+          "width": 1280,
+          "height": 720,
+          "roles": [
+            "process"
+          ],
+          "role_notes": {
+            "process": "同一传送带上的计划、构建、改进三阶段。"
+          },
+          "source_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/clay-mimicry/reference/prompts.md",
+          "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/clay-mimicry/reference/prompts.md",
+          "prompt_scope": "style-or-sample",
+          "creator": "grapeot / nbp_slides",
+          "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+          "provenance_note": "nbp_slides 的整页生图演示；样式说明列出适配模型，未逐图给出可核验的运行记录。",
+          "license_note": "历史仓库未见根 LICENSE；仅保留来源与提示词链接，不复制或重新授权原图。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "用同一条立体传送带串联计划、构建和改进三个阶段。"
+          },
+          "html_assessment": "阶段文字和准确连接关系可保留为 HTML；黏土实体和连续场景由图片表达。"
+        },
+        {
+          "id": "demo-02",
+          "title": "黏土材质的学习进度展示",
+          "url": "https://raw.githubusercontent.com/grapeot/nbp_slides/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/clay-mimicry/reference/demo-02.jpg",
+          "width": 1280,
+          "height": 720,
+          "roles": [
+            "data",
+            "process"
+          ],
+          "role_notes": {
+            "data": "五个阶段以实体台阶对应20%到100%的示例进度。",
+            "process": "读、练习、复习的行动对应进度成长。"
+          },
+          "source_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/clay-mimicry/reference/prompts.md",
+          "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/clay-mimicry/reference/prompts.md",
+          "prompt_scope": "sample-prompt",
+          "creator": "grapeot / nbp_slides",
+          "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+          "provenance_note": "历史 nbp_slides 样张与对应提示词；样式适配模型不等于每张图的运行证明。",
+          "license_note": "历史仓库未见根 LICENSE；仅保留来源链接，原图不随 Skill 分发。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "黏土材质的学习进度展示"
+          },
+          "html_assessment": "黏土实体、材质和同一场景是参考重点；真实进度和文字保持原生。",
+          "limits": "示例数值、代码与关系只用于观察画面，真实演讲需使用自己的资料。"
+        }
+      ],
+      "technical_priority": false,
+      "continuity": "style-family"
+    },
+    {
+      "id": "whiteboard-strategy-talk",
+      "title": "协作白板策略",
+      "category": "technical",
+      "technical_priority": true,
+      "density": "medium-high",
+      "description": "真实白板感的手写笔触、便签和擦痕，承载产品取舍与组织行动。",
+      "presentation_fit": "适合产品技术方案评审、技术团队规划、工作坊与复盘。",
+      "visual_language": "白板空间、手写标注、局部圈划与自然擦痕。",
+      "html_boundary": "坐标轴、矩阵、组织结构与真实数字由 HTML/SVG；只借鉴完整手写板书的媒介。",
+      "limits": "仅收录已有内容页所能证明的用途；尚缺页型按实际目录显示。",
+      "case_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/fun/whiteboard-strategy/whiteboard-strategy.md",
+      "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/fun/whiteboard-strategy/reference/prompts.md",
+      "creator": "grapeot / nbp_slides",
+      "repository": "https://github.com/grapeot/nbp_slides",
+      "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+      "source_status": "historical-reference",
+      "provenance_note": "历史 nbp_slides 样张与对应提示词；样式适配模型不等于每张图的运行证明。",
+      "license_note": "历史仓库未见根 LICENSE；仅保留来源链接，原图不随 Skill 分发。",
+      "successor_url": "https://github.com/grapeot/presentation_skill",
+      "continuity": "source-style-set",
+      "pages": [
+        {
+          "id": "demo-01",
+          "title": "产品方案的取舍矩阵",
+          "url": "https://raw.githubusercontent.com/grapeot/nbp_slides/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/fun/whiteboard-strategy/reference/demo-01.jpg",
+          "width": 1280,
+          "height": 720,
+          "roles": [
+            "statement",
+            "comparison",
+            "process"
+          ],
+          "role_notes": {
+            "statement": "以少而正确的投入和核心产品押注表达结论。",
+            "comparison": "影响和投入的二维矩阵比较不同产品选择。",
+            "process": "选定方案连接验证、定义、估算与决定四步。"
+          },
+          "source_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/fun/whiteboard-strategy/reference/prompts.md",
+          "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/fun/whiteboard-strategy/reference/prompts.md",
+          "prompt_scope": "sample-prompt",
+          "creator": "grapeot / nbp_slides",
+          "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+          "provenance_note": "历史 nbp_slides 样张与对应提示词；样式适配模型不等于每张图的运行证明。",
+          "license_note": "历史仓库未见根 LICENSE；仅保留来源链接，原图不随 Skill 分发。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "产品方案的取舍矩阵"
+          },
+          "html_assessment": "坐标轴、矩阵、组织结构与真实数字由 HTML/SVG；只借鉴完整手写板书的媒介。",
+          "limits": "示例数值、代码与关系只用于观察画面，真实演讲需使用自己的资料。"
+        },
+        {
+          "id": "demo-02",
+          "title": "团队规划的时间线与规模",
+          "url": "https://raw.githubusercontent.com/grapeot/nbp_slides/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/fun/whiteboard-strategy/reference/demo-02.jpg",
+          "width": 1280,
+          "height": 720,
+          "roles": [
+            "process",
+            "data"
+          ],
+          "role_notes": {
+            "process": "按季度推进招聘并列出行动清单。",
+            "data": "季度新增人数、团队人数和目标指标形成数据内容。"
+          },
+          "source_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/fun/whiteboard-strategy/reference/prompts.md",
+          "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/fun/whiteboard-strategy/reference/prompts.md",
+          "prompt_scope": "sample-prompt",
+          "creator": "grapeot / nbp_slides",
+          "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+          "provenance_note": "历史 nbp_slides 样张与对应提示词；样式适配模型不等于每张图的运行证明。",
+          "license_note": "历史仓库未见根 LICENSE；仅保留来源链接，原图不随 Skill 分发。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "团队规划的时间线与规模"
+          },
+          "html_assessment": "坐标轴、矩阵、组织结构与真实数字由 HTML/SVG；只借鉴完整手写板书的媒介。",
+          "limits": "示例数值、代码与关系只用于观察画面，真实演讲需使用自己的资料。"
+        }
+      ]
+    },
+    {
+      "id": "retro-device-stack",
+      "title": "复古立体开发者",
+      "category": "technical",
+      "technical_priority": true,
+      "density": "high",
+      "description": "立体复古计算设备、荧光色与拼贴标签连接开发工具与工程模块。",
+      "presentation_fit": "适合开发者社区、工具链、可观测性与工程实践。",
+      "visual_language": "复古显示器、立体像素器件、荧光印刷与暗色空间。",
+      "html_boundary": "卡片框、代码与表格可原生实现，生成重点在立体器件与连续媒介场景。",
+      "limits": "仅收录已有内容页所能证明的用途；尚缺页型按实际目录显示。",
+      "case_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/tech/acid-retrofuturist-blocks/acid-retrofuturist-blocks.md",
+      "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/tech/acid-retrofuturist-blocks/reference/prompts.md",
+      "creator": "grapeot / nbp_slides",
+      "repository": "https://github.com/grapeot/nbp_slides",
+      "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+      "source_status": "historical-reference",
+      "provenance_note": "历史 nbp_slides 样张与对应提示词；样式适配模型不等于每张图的运行证明。",
+      "license_note": "历史仓库未见根 LICENSE；仅保留来源链接，原图不随 Skill 分发。",
+      "successor_url": "https://github.com/grapeot/presentation_skill",
+      "continuity": "source-style-set",
+      "pages": [
+        {
+          "id": "source-demo-01",
+          "title": "开发者工具链知识总览",
+          "url": "https://raw.githubusercontent.com/grapeot/nbp_slides/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/tech/acid-retrofuturist-blocks/reference/source-demo-01.jpg",
+          "width": 1280,
+          "height": 720,
+          "roles": [
+            "architecture",
+            "statement"
+          ],
+          "role_notes": {
+            "architecture": "终端、仓库、CI、评估、发布与观测构成工具栈。",
+            "statement": "构建、测试、评估、发布、观察形成工程实践主张。"
+          },
+          "source_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/tech/acid-retrofuturist-blocks/reference/prompts.md",
+          "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/tech/acid-retrofuturist-blocks/reference/prompts.md",
+          "prompt_scope": "sample-prompt",
+          "creator": "grapeot / nbp_slides",
+          "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+          "provenance_note": "历史 nbp_slides 样张与对应提示词；样式适配模型不等于每张图的运行证明。",
+          "license_note": "历史仓库未见根 LICENSE；仅保留来源链接，原图不随 Skill 分发。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "开发者工具链知识总览"
+          },
+          "html_assessment": "卡片框、代码与表格可原生实现，生成重点在立体器件与连续媒介场景。",
+          "limits": "示例数值、代码与关系只用于观察画面，真实演讲需使用自己的资料。"
+        },
+        {
+          "id": "transfer-demo-01",
+          "title": "复杂设备说明与参数对比",
+          "url": "https://raw.githubusercontent.com/grapeot/nbp_slides/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/tech/acid-retrofuturist-blocks/reference/transfer-demo-01.jpg",
+          "width": 1280,
+          "height": 720,
+          "roles": [
+            "data",
+            "comparison"
+          ],
+          "role_notes": {
+            "data": "灯具续航、可见度、路线与维护数据作为参数呈现样例。",
+            "comparison": "多种设备和路线指标按相同栏目比较。"
+          },
+          "source_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/tech/acid-retrofuturist-blocks/reference/prompts.md",
+          "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/tech/acid-retrofuturist-blocks/reference/prompts.md",
+          "prompt_scope": "sample-prompt",
+          "creator": "grapeot / nbp_slides",
+          "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+          "provenance_note": "历史 nbp_slides 样张与对应提示词；样式适配模型不等于每张图的运行证明。",
+          "license_note": "历史仓库未见根 LICENSE；仅保留来源链接，原图不随 Skill 分发。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "复杂设备说明与参数对比"
+          },
+          "html_assessment": "卡片框、代码与表格可原生实现，生成重点在立体器件与连续媒介场景。",
+          "limits": "示例数值、代码与关系只用于观察画面，真实演讲需使用自己的资料。"
+        }
+      ]
+    },
+    {
+      "id": "user-journey-storyboard",
+      "title": "用户旅程分镜",
+      "category": "technical",
+      "technical_priority": true,
+      "density": "medium",
+      "description": "同一人物连续经历不同步骤，界面和行为在画面中对应。",
+      "presentation_fit": "适合产品技术方案、用户体验、安全操作与服务流程。",
+      "visual_language": "连续角色、场景分镜、自然动作与短图注。",
+      "html_boundary": "分镜容器和准确界面可用 HTML；角色动作、环境和连续性由插画承担。",
+      "limits": "仅收录已有内容页所能证明的用途；尚缺页型按实际目录显示。",
+      "case_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/education/storyboard/storyboard.md",
+      "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/education/storyboard/reference/prompts.md",
+      "creator": "grapeot / nbp_slides",
+      "repository": "https://github.com/grapeot/nbp_slides",
+      "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+      "source_status": "historical-reference",
+      "provenance_note": "历史 nbp_slides 样张与对应提示词；样式适配模型不等于每张图的运行证明。",
+      "license_note": "历史仓库未见根 LICENSE；仅保留来源链接，原图不随 Skill 分发。",
+      "successor_url": "https://github.com/grapeot/presentation_skill",
+      "continuity": "source-style-set",
+      "pages": [
+        {
+          "id": "demo-01",
+          "title": "新用户的第一小时",
+          "url": "https://raw.githubusercontent.com/grapeot/nbp_slides/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/education/storyboard/reference/demo-01.jpg",
+          "width": 1280,
+          "height": 720,
+          "roles": [
+            "process",
+            "statement"
+          ],
+          "role_notes": {
+            "process": "注册、探索、遇阻和求助四个场景顺序推进。",
+            "statement": "以帮助用户尽早获得价值为目标。"
+          },
+          "source_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/education/storyboard/reference/prompts.md",
+          "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/education/storyboard/reference/prompts.md",
+          "prompt_scope": "sample-prompt",
+          "creator": "grapeot / nbp_slides",
+          "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+          "provenance_note": "历史 nbp_slides 样张与对应提示词；样式适配模型不等于每张图的运行证明。",
+          "license_note": "历史仓库未见根 LICENSE；仅保留来源链接，原图不随 Skill 分发。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "新用户的第一小时"
+          },
+          "html_assessment": "分镜容器和准确界面可用 HTML；角色动作、环境和连续性由插画承担。",
+          "limits": "示例数值、代码与关系只用于观察画面，真实演讲需使用自己的资料。"
+        },
+        {
+          "id": "demo-02",
+          "title": "查找、预约、领取和归还",
+          "url": "https://raw.githubusercontent.com/grapeot/nbp_slides/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/education/storyboard/reference/demo-02.jpg",
+          "width": 1280,
+          "height": 720,
+          "roles": [
+            "process"
+          ],
+          "role_notes": {
+            "process": "同一用户完成五阶段服务旅程。"
+          },
+          "source_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/education/storyboard/reference/prompts.md",
+          "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/education/storyboard/reference/prompts.md",
+          "prompt_scope": "sample-prompt",
+          "creator": "grapeot / nbp_slides",
+          "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+          "provenance_note": "历史 nbp_slides 样张与对应提示词；样式适配模型不等于每张图的运行证明。",
+          "license_note": "历史仓库未见根 LICENSE；仅保留来源链接，原图不随 Skill 分发。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "查找、预约、领取和归还"
+          },
+          "html_assessment": "分镜容器和准确界面可用 HTML；角色动作、环境和连续性由插画承担。",
+          "limits": "示例数值、代码与关系只用于观察画面，真实演讲需使用自己的资料。"
+        }
+      ]
+    },
+    {
+      "id": "comic-engineering",
+      "title": "漫画工程叙事",
+      "category": "creative",
+      "technical_priority": false,
+      "density": "medium",
+      "description": "动作分镜与工程隐喻把排错、隔离和修复串成故事。",
+      "presentation_fit": "适合工程经验、故障处理、开发流程与团队协作分享。",
+      "visual_language": "漫画网点、动态笔触、连续人物与强烈色块。",
+      "html_boundary": "短标签和步骤容器可用 HTML；连贯角色、动作与绘画场景是图片参考。",
+      "limits": "仅收录已有内容页所能证明的用途；尚缺页型按实际目录显示。",
+      "case_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/comic-book/comic-book.md",
+      "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/comic-book/reference/prompts.md",
+      "creator": "grapeot / nbp_slides",
+      "repository": "https://github.com/grapeot/nbp_slides",
+      "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+      "source_status": "historical-reference",
+      "provenance_note": "历史 nbp_slides 样张与对应提示词；样式适配模型不等于每张图的运行证明。",
+      "license_note": "历史仓库未见根 LICENSE；仅保留来源链接，原图不随 Skill 分发。",
+      "successor_url": "https://github.com/grapeot/presentation_skill",
+      "continuity": "source-style-set",
+      "pages": [
+        {
+          "id": "demo-01",
+          "title": "发现、隔离和修复问题",
+          "url": "https://raw.githubusercontent.com/grapeot/nbp_slides/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/comic-book/reference/demo-01.jpg",
+          "width": 1280,
+          "height": 720,
+          "roles": [
+            "process"
+          ],
+          "role_notes": {
+            "process": "三个动作分镜分别解释发现、隔离和修复。"
+          },
+          "source_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/comic-book/reference/prompts.md",
+          "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/comic-book/reference/prompts.md",
+          "prompt_scope": "sample-prompt",
+          "creator": "grapeot / nbp_slides",
+          "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+          "provenance_note": "历史 nbp_slides 样张与对应提示词；样式适配模型不等于每张图的运行证明。",
+          "license_note": "历史仓库未见根 LICENSE；仅保留来源链接，原图不随 Skill 分发。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "发现、隔离和修复问题"
+          },
+          "html_assessment": "短标签和步骤容器可用 HTML；连贯角色、动作与绘画场景是图片参考。",
+          "limits": "示例数值、代码与关系只用于观察画面，真实演讲需使用自己的资料。"
+        },
+        {
+          "id": "demo-02",
+          "title": "从发现问题到发布",
+          "url": "https://raw.githubusercontent.com/grapeot/nbp_slides/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/comic-book/reference/demo-02.jpg",
+          "width": 1280,
+          "height": 720,
+          "roles": [
+            "process",
+            "statement"
+          ],
+          "role_notes": {
+            "process": "火箭形路线图串联发现、规划、构建、测试与发布。",
+            "statement": "同一团队、同一目标表达协作主张。"
+          },
+          "source_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/comic-book/reference/prompts.md",
+          "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/comic-book/reference/prompts.md",
+          "prompt_scope": "sample-prompt",
+          "creator": "grapeot / nbp_slides",
+          "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+          "provenance_note": "历史 nbp_slides 样张与对应提示词；样式适配模型不等于每张图的运行证明。",
+          "license_note": "历史仓库未见根 LICENSE；仅保留来源链接，原图不随 Skill 分发。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "从发现问题到发布"
+          },
+          "html_assessment": "短标签和步骤容器可用 HTML；连贯角色、动作与绘画场景是图片参考。",
+          "limits": "示例数值、代码与关系只用于观察画面，真实演讲需使用自己的资料。"
+        }
+      ]
+    },
+    {
+      "id": "panoramic-system-illustration",
+      "title": "场景式平面图解",
+      "category": "explainer",
+      "technical_priority": false,
+      "density": "medium",
+      "description": "完整横向场景连接基础设施、系统关系和解释标签。",
+      "presentation_fit": "适合基础设施、能源系统、系统生态与概念入门。",
+      "visual_language": "统一平面插画、自然场景和与主体呼应的配色。",
+      "html_boundary": "数据、箭头和说明框保持原生；完整场景图与分层地形作为插画。",
+      "limits": "仅收录已有内容页所能证明的用途；尚缺页型按实际目录显示。",
+      "case_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/vector-illustration/vector-illustration.md",
+      "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/vector-illustration/reference/prompts.md",
+      "creator": "grapeot / nbp_slides",
+      "repository": "https://github.com/grapeot/nbp_slides",
+      "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+      "source_status": "historical-reference",
+      "provenance_note": "历史 nbp_slides 样张与对应提示词；样式适配模型不等于每张图的运行证明。",
+      "license_note": "历史仓库未见根 LICENSE；仅保留来源链接，原图不随 Skill 分发。",
+      "successor_url": "https://github.com/grapeot/presentation_skill",
+      "continuity": "source-style-set",
+      "pages": [
+        {
+          "id": "demo-01",
+          "title": "基础设施与能源构成",
+          "url": "https://raw.githubusercontent.com/grapeot/nbp_slides/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/vector-illustration/reference/demo-01.jpg",
+          "width": 1280,
+          "height": 720,
+          "roles": [
+            "architecture",
+            "data"
+          ],
+          "role_notes": {
+            "architecture": "横向校园场景对应基础设施分工。",
+            "data": "能源来源、使用构成和目标以三组数据呈现。"
+          },
+          "source_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/vector-illustration/reference/prompts.md",
+          "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/vector-illustration/reference/prompts.md",
+          "prompt_scope": "sample-prompt",
+          "creator": "grapeot / nbp_slides",
+          "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+          "provenance_note": "历史 nbp_slides 样张与对应提示词；样式适配模型不等于每张图的运行证明。",
+          "license_note": "历史仓库未见根 LICENSE；仅保留来源链接，原图不随 Skill 分发。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "基础设施与能源构成"
+          },
+          "html_assessment": "数据、箭头和说明框保持原生；完整场景图与分层地形作为插画。",
+          "limits": "示例数值、代码与关系只用于观察画面，真实演讲需使用自己的资料。"
+        },
+        {
+          "id": "demo-02",
+          "title": "连续空间中的水流过程",
+          "url": "https://raw.githubusercontent.com/grapeot/nbp_slides/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/vector-illustration/reference/demo-02.jpg",
+          "width": 1280,
+          "height": 720,
+          "roles": [
+            "process"
+          ],
+          "role_notes": {
+            "process": "收集、流动和储存与地表、地下场景对应。"
+          },
+          "source_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/vector-illustration/reference/prompts.md",
+          "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/creative/vector-illustration/reference/prompts.md",
+          "prompt_scope": "sample-prompt",
+          "creator": "grapeot / nbp_slides",
+          "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+          "provenance_note": "历史 nbp_slides 样张与对应提示词；样式适配模型不等于每张图的运行证明。",
+          "license_note": "历史仓库未见根 LICENSE；仅保留来源链接，原图不随 Skill 分发。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "连续空间中的水流过程"
+          },
+          "html_assessment": "数据、箭头和说明框保持原生；完整场景图与分层地形作为插画。",
+          "limits": "示例数值、代码与关系只用于观察画面，真实演讲需使用自己的资料。"
+        }
+      ]
+    },
+    {
+      "id": "pastel-guided-learning",
+      "title": "柔和彩绘讲解",
+      "category": "explainer",
+      "technical_priority": false,
+      "density": "medium",
+      "description": "柔和人物与自然场景把步骤、行动和解释组织在同一幅内容页。",
+      "presentation_fit": "适合入门培训、知识讲解和低门槛概念说明。",
+      "visual_language": "低饱和彩绘、纸面笔触、亲和角色与自然曲线。",
+      "html_boundary": "步骤与标签可用 HTML；只取用角色、场景和连续的手绘媒介。",
+      "limits": "仅收录已有内容页所能证明的用途；尚缺页型按实际目录显示。",
+      "case_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/education/soft-pastel-edu/soft-pastel-edu.md",
+      "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/education/soft-pastel-edu/reference/prompts.md",
+      "creator": "grapeot / nbp_slides",
+      "repository": "https://github.com/grapeot/nbp_slides",
+      "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+      "source_status": "historical-reference",
+      "provenance_note": "历史 nbp_slides 样张与对应提示词；样式适配模型不等于每张图的运行证明。",
+      "license_note": "历史仓库未见根 LICENSE；仅保留来源链接，原图不随 Skill 分发。",
+      "successor_url": "https://github.com/grapeot/presentation_skill",
+      "continuity": "source-style-set",
+      "pages": [
+        {
+          "id": "demo-01",
+          "title": "四阶段学习方法",
+          "url": "https://raw.githubusercontent.com/grapeot/nbp_slides/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/education/soft-pastel-edu/reference/demo-01.jpg",
+          "width": 1280,
+          "height": 720,
+          "roles": [
+            "process",
+            "statement"
+          ],
+          "role_notes": {
+            "process": "预览、阅读、思考和总结四阶段与动作对应。",
+            "statement": "以小步骤积累理解为学习主张。"
+          },
+          "source_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/education/soft-pastel-edu/reference/prompts.md",
+          "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/education/soft-pastel-edu/reference/prompts.md",
+          "prompt_scope": "sample-prompt",
+          "creator": "grapeot / nbp_slides",
+          "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+          "provenance_note": "历史 nbp_slides 样张与对应提示词；样式适配模型不等于每张图的运行证明。",
+          "license_note": "历史仓库未见根 LICENSE；仅保留来源链接，原图不随 Skill 分发。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "四阶段学习方法"
+          },
+          "html_assessment": "步骤与标签可用 HTML；只取用角色、场景和连续的手绘媒介。",
+          "limits": "示例数值、代码与关系只用于观察画面，真实演讲需使用自己的资料。"
+        },
+        {
+          "id": "demo-02",
+          "title": "循环过程与场景对应",
+          "url": "https://raw.githubusercontent.com/grapeot/nbp_slides/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/education/soft-pastel-edu/reference/demo-02.jpg",
+          "width": 1280,
+          "height": 720,
+          "roles": [
+            "process"
+          ],
+          "role_notes": {
+            "process": "蒸发、凝结、降水与汇集构成循环。"
+          },
+          "source_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/education/soft-pastel-edu/reference/prompts.md",
+          "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/education/soft-pastel-edu/reference/prompts.md",
+          "prompt_scope": "sample-prompt",
+          "creator": "grapeot / nbp_slides",
+          "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+          "provenance_note": "历史 nbp_slides 样张与对应提示词；样式适配模型不等于每张图的运行证明。",
+          "license_note": "历史仓库未见根 LICENSE；仅保留来源链接，原图不随 Skill 分发。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "循环过程与场景对应"
+          },
+          "html_assessment": "步骤与标签可用 HTML；只取用角色、场景和连续的手绘媒介。",
+          "limits": "示例数值、代码与关系只用于观察画面，真实演讲需使用自己的资料。"
+        }
+      ]
+    },
+    {
+      "id": "pixel-workflow-world",
+      "title": "像素世界流程",
+      "category": "creative",
+      "technical_priority": false,
+      "density": "low-medium",
+      "description": "以完整游戏世界把工程步骤转成关卡，并将进度嵌入实体城堡。",
+      "presentation_fit": "适合开发者社区、流程演进与项目进度分享。",
+      "visual_language": "像素场景、关卡纵深、角色行动和有限调色。",
+      "html_boundary": "HUD、标签和精确进度由原生图形实现；复杂像素场景作为图像素材。",
+      "limits": "仅收录已有内容页所能证明的用途；尚缺页型按实际目录显示。",
+      "case_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/fun/8bit-retro/8bit-retro.md",
+      "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/fun/8bit-retro/reference/prompts.md",
+      "creator": "grapeot / nbp_slides",
+      "repository": "https://github.com/grapeot/nbp_slides",
+      "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+      "source_status": "historical-reference",
+      "provenance_note": "历史 nbp_slides 样张与对应提示词；样式适配模型不等于每张图的运行证明。",
+      "license_note": "历史仓库未见根 LICENSE；仅保留来源链接，原图不随 Skill 分发。",
+      "successor_url": "https://github.com/grapeot/presentation_skill",
+      "continuity": "source-style-set",
+      "pages": [
+        {
+          "id": "demo-01",
+          "title": "计划、构建、测试与发布关卡",
+          "url": "https://raw.githubusercontent.com/grapeot/nbp_slides/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/fun/8bit-retro/reference/demo-01.jpg",
+          "width": 1280,
+          "height": 720,
+          "roles": [
+            "process"
+          ],
+          "role_notes": {
+            "process": "角色按四个具名平台推进。"
+          },
+          "source_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/fun/8bit-retro/reference/prompts.md",
+          "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/fun/8bit-retro/reference/prompts.md",
+          "prompt_scope": "sample-prompt",
+          "creator": "grapeot / nbp_slides",
+          "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+          "provenance_note": "历史 nbp_slides 样张与对应提示词；样式适配模型不等于每张图的运行证明。",
+          "license_note": "历史仓库未见根 LICENSE；仅保留来源链接，原图不随 Skill 分发。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "计划、构建、测试与发布关卡"
+          },
+          "html_assessment": "HUD、标签和精确进度由原生图形实现；复杂像素场景作为图像素材。",
+          "limits": "示例数值、代码与关系只用于观察画面，真实演讲需使用自己的资料。"
+        },
+        {
+          "id": "demo-02",
+          "title": "任务进度的像素场景",
+          "url": "https://raw.githubusercontent.com/grapeot/nbp_slides/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/fun/8bit-retro/reference/demo-02.jpg",
+          "width": 1280,
+          "height": 720,
+          "roles": [
+            "data",
+            "comparison"
+          ],
+          "role_notes": {
+            "data": "三个关卡用实体塔和百分比表达示例进度。",
+            "comparison": "计划、构建和发布的进度并列。"
+          },
+          "source_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/fun/8bit-retro/reference/prompts.md",
+          "prompt_url": "https://github.com/grapeot/nbp_slides/blob/53644861331f4aefa134ce4ff4d4ccde896dba37/styles/fun/8bit-retro/reference/prompts.md",
+          "prompt_scope": "sample-prompt",
+          "creator": "grapeot / nbp_slides",
+          "revision": "53644861331f4aefa134ce4ff4d4ccde896dba37",
+          "provenance_note": "历史 nbp_slides 样张与对应提示词；样式适配模型不等于每张图的运行证明。",
+          "license_note": "历史仓库未见根 LICENSE；仅保留来源链接，原图不随 Skill 分发。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "任务进度的像素场景"
+          },
+          "html_assessment": "HUD、标签和精确进度由原生图形实现；复杂像素场景作为图像素材。",
+          "limits": "示例数值、代码与关系只用于观察画面，真实演讲需使用自己的资料。"
+        }
+      ]
+    },
+    {
+      "id": "silver-glass-narrative",
+      "title": "银白玻璃技术叙事",
+      "category": "technical",
+      "technical_priority": true,
+      "density": "low-medium",
+      "description": "在统一银白玻璃空间中，用实体转换、结构分解和连续流程讲解技术方法。",
+      "presentation_fit": "适合 AI 方法、工程系统、产品方案和技术演讲。",
+      "visual_language": "银白磨砂玻璃、轻焦散、金属与实体隐喻。",
+      "html_boundary": "普通玻璃卡片和准确文字由 HTML；复杂实体、连续光照和材质转换由图像表达。",
+      "limits": "已收录观点、流程、对比和架构；来源未提供可用的同风格数据页。",
+      "case_url": "https://github.com/grapeot/presentation_skill/blob/6477fc1ed9495b7fdb7340c3599f5a9a6191d0ec/src/presentation_skill/templates/examples/image/visual_guideline.md",
+      "prompt_url": "https://github.com/grapeot/presentation_skill/blob/6477fc1ed9495b7fdb7340c3599f5a9a6191d0ec/src/presentation_skill/templates/examples/image/outline_visual.md",
+      "creator": "grapeot / presentation_skill",
+      "repository": "https://github.com/grapeot/presentation_skill",
+      "revision": "6477fc1ed9495b7fdb7340c3599f5a9a6191d0ec",
+      "source_status": "project-example",
+      "provenance_note": "项目模板中保留的连续演讲示例，公开 outline 与视觉规范，未附逐图服务运行日志。",
+      "license_note": "仓库 MIT；本目录仅保留远程预览与来源。",
+      "continuity": "same-deck",
+      "pages": [
+        {
+          "id": "slide-02",
+          "title": "分散组装到整体渲染的观点与对比",
+          "url": "https://raw.githubusercontent.com/grapeot/presentation_skill/6477fc1ed9495b7fdb7340c3599f5a9a6191d0ec/src/presentation_skill/templates/examples/image/generated_slides/slide_02_0.jpg",
+          "width": 1536,
+          "height": 864,
+          "roles": [
+            "statement",
+            "comparison"
+          ],
+          "role_notes": {
+            "statement": "提出由组装改为整体渲染的主张。",
+            "comparison": "零散积木向连续液态金属转变，对应两种方法。"
+          },
+          "source_url": "https://github.com/grapeot/presentation_skill/blob/6477fc1ed9495b7fdb7340c3599f5a9a6191d0ec/src/presentation_skill/templates/examples/image/outline_visual.md",
+          "prompt_url": "https://github.com/grapeot/presentation_skill/blob/6477fc1ed9495b7fdb7340c3599f5a9a6191d0ec/src/presentation_skill/templates/examples/image/outline_visual.md",
+          "prompt_scope": "slide-outline",
+          "creator": "grapeot / presentation_skill",
+          "revision": "6477fc1ed9495b7fdb7340c3599f5a9a6191d0ec",
+          "provenance_note": "项目模板中保留的连续演讲示例，公开 outline 与视觉规范，未附逐图服务运行日志。",
+          "license_note": "仓库 MIT；本目录仅保留远程预览与来源。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "分散组装到整体渲染的观点与对比"
+          },
+          "html_assessment": "立体玻璃、金属、焦散与实体比喻构成整页场景；可编辑文字和精确关系可独立排版。",
+          "limits": "示例用于观察连续视觉语言，不将营销主张与未经验证的效果描述作为事实。"
+        },
+        {
+          "id": "slide-05",
+          "title": "三个生成挑战",
+          "url": "https://raw.githubusercontent.com/grapeot/presentation_skill/6477fc1ed9495b7fdb7340c3599f5a9a6191d0ec/src/presentation_skill/templates/examples/image/generated_slides/slide_05_0.jpg",
+          "width": 1536,
+          "height": 864,
+          "roles": [
+            "statement"
+          ],
+          "role_notes": {
+            "statement": "风格漂移、幻觉与交互局限构成内容结论。"
+          },
+          "source_url": "https://github.com/grapeot/presentation_skill/blob/6477fc1ed9495b7fdb7340c3599f5a9a6191d0ec/src/presentation_skill/templates/examples/image/outline_visual.md",
+          "prompt_url": "https://github.com/grapeot/presentation_skill/blob/6477fc1ed9495b7fdb7340c3599f5a9a6191d0ec/src/presentation_skill/templates/examples/image/outline_visual.md",
+          "prompt_scope": "slide-outline",
+          "creator": "grapeot / presentation_skill",
+          "revision": "6477fc1ed9495b7fdb7340c3599f5a9a6191d0ec",
+          "provenance_note": "项目模板中保留的连续演讲示例，公开 outline 与视觉规范，未附逐图服务运行日志。",
+          "license_note": "仓库 MIT；本目录仅保留远程预览与来源。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "三个生成挑战"
+          },
+          "html_assessment": "立体玻璃、金属、焦散与实体比喻构成整页场景；可编辑文字和精确关系可独立排版。",
+          "limits": "示例用于观察连续视觉语言，不将营销主张与未经验证的效果描述作为事实。"
+        },
+        {
+          "id": "slide-06",
+          "title": "概率生成与确定性约束的结构",
+          "url": "https://raw.githubusercontent.com/grapeot/presentation_skill/6477fc1ed9495b7fdb7340c3599f5a9a6191d0ec/src/presentation_skill/templates/examples/image/generated_slides/slide_06_0.jpg",
+          "width": 1536,
+          "height": 864,
+          "roles": [
+            "architecture"
+          ],
+          "role_notes": {
+            "architecture": "三层实体对应概率AI、约束与确定性代码。"
+          },
+          "source_url": "https://github.com/grapeot/presentation_skill/blob/6477fc1ed9495b7fdb7340c3599f5a9a6191d0ec/src/presentation_skill/templates/examples/image/outline_visual.md",
+          "prompt_url": "https://github.com/grapeot/presentation_skill/blob/6477fc1ed9495b7fdb7340c3599f5a9a6191d0ec/src/presentation_skill/templates/examples/image/outline_visual.md",
+          "prompt_scope": "slide-outline",
+          "creator": "grapeot / presentation_skill",
+          "revision": "6477fc1ed9495b7fdb7340c3599f5a9a6191d0ec",
+          "provenance_note": "项目模板中保留的连续演讲示例，公开 outline 与视觉规范，未附逐图服务运行日志。",
+          "license_note": "仓库 MIT；本目录仅保留远程预览与来源。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "概率生成与确定性约束的结构"
+          },
+          "html_assessment": "立体玻璃、金属、焦散与实体比喻构成整页场景；可编辑文字和精确关系可独立排版。",
+          "limits": "示例用于观察连续视觉语言，不将营销主张与未经验证的效果描述作为事实。"
+        },
+        {
+          "id": "slide-07",
+          "title": "从描述样式到显示样式",
+          "url": "https://raw.githubusercontent.com/grapeot/presentation_skill/6477fc1ed9495b7fdb7340c3599f5a9a6191d0ec/src/presentation_skill/templates/examples/image/generated_slides/slide_07_0.jpg",
+          "width": 1536,
+          "height": 864,
+          "roles": [
+            "statement",
+            "comparison"
+          ],
+          "role_notes": {
+            "statement": "用展示代替描述建立风格约束。",
+            "comparison": "线框输入与材质输出在同一方向并列。"
+          },
+          "source_url": "https://github.com/grapeot/presentation_skill/blob/6477fc1ed9495b7fdb7340c3599f5a9a6191d0ec/src/presentation_skill/templates/examples/image/outline_visual.md",
+          "prompt_url": "https://github.com/grapeot/presentation_skill/blob/6477fc1ed9495b7fdb7340c3599f5a9a6191d0ec/src/presentation_skill/templates/examples/image/outline_visual.md",
+          "prompt_scope": "slide-outline",
+          "creator": "grapeot / presentation_skill",
+          "revision": "6477fc1ed9495b7fdb7340c3599f5a9a6191d0ec",
+          "provenance_note": "项目模板中保留的连续演讲示例，公开 outline 与视觉规范，未附逐图服务运行日志。",
+          "license_note": "仓库 MIT；本目录仅保留远程预览与来源。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "从描述样式到显示样式"
+          },
+          "html_assessment": "立体玻璃、金属、焦散与实体比喻构成整页场景；可编辑文字和精确关系可独立排版。",
+          "limits": "示例用于观察连续视觉语言，不将营销主张与未经验证的效果描述作为事实。"
+        },
+        {
+          "id": "slide-09",
+          "title": "先固定内容再渲染的流程",
+          "url": "https://raw.githubusercontent.com/grapeot/presentation_skill/6477fc1ed9495b7fdb7340c3599f5a9a6191d0ec/src/presentation_skill/templates/examples/image/generated_slides/slide_09_0.jpg",
+          "width": 1536,
+          "height": 864,
+          "roles": [
+            "process"
+          ],
+          "role_notes": {
+            "process": "内容、锁定、批量渲染和交付按四步骤排列。"
+          },
+          "source_url": "https://github.com/grapeot/presentation_skill/blob/6477fc1ed9495b7fdb7340c3599f5a9a6191d0ec/src/presentation_skill/templates/examples/image/outline_visual.md",
+          "prompt_url": "https://github.com/grapeot/presentation_skill/blob/6477fc1ed9495b7fdb7340c3599f5a9a6191d0ec/src/presentation_skill/templates/examples/image/outline_visual.md",
+          "prompt_scope": "slide-outline",
+          "creator": "grapeot / presentation_skill",
+          "revision": "6477fc1ed9495b7fdb7340c3599f5a9a6191d0ec",
+          "provenance_note": "项目模板中保留的连续演讲示例，公开 outline 与视觉规范，未附逐图服务运行日志。",
+          "license_note": "仓库 MIT；本目录仅保留远程预览与来源。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "先固定内容再渲染的流程"
+          },
+          "html_assessment": "立体玻璃、金属、焦散与实体比喻构成整页场景；可编辑文字和精确关系可独立排版。",
+          "limits": "示例用于观察连续视觉语言，不将营销主张与未经验证的效果描述作为事实。"
+        },
+        {
+          "id": "slide-10",
+          "title": "结构、知识与工具的方法",
+          "url": "https://raw.githubusercontent.com/grapeot/presentation_skill/6477fc1ed9495b7fdb7340c3599f5a9a6191d0ec/src/presentation_skill/templates/examples/image/generated_slides/slide_10_0.jpg",
+          "width": 1536,
+          "height": 864,
+          "roles": [
+            "architecture",
+            "statement"
+          ],
+          "role_notes": {
+            "architecture": "结构、指令和资产工具三个要素并列。",
+            "statement": "用结构、指导知识和工具释放软件潜力。"
+          },
+          "source_url": "https://github.com/grapeot/presentation_skill/blob/6477fc1ed9495b7fdb7340c3599f5a9a6191d0ec/src/presentation_skill/templates/examples/image/outline_visual.md",
+          "prompt_url": "https://github.com/grapeot/presentation_skill/blob/6477fc1ed9495b7fdb7340c3599f5a9a6191d0ec/src/presentation_skill/templates/examples/image/outline_visual.md",
+          "prompt_scope": "slide-outline",
+          "creator": "grapeot / presentation_skill",
+          "revision": "6477fc1ed9495b7fdb7340c3599f5a9a6191d0ec",
+          "provenance_note": "项目模板中保留的连续演讲示例，公开 outline 与视觉规范，未附逐图服务运行日志。",
+          "license_note": "仓库 MIT；本目录仅保留远程预览与来源。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "结构、知识与工具的方法"
+          },
+          "html_assessment": "立体玻璃、金属、焦散与实体比喻构成整页场景；可编辑文字和精确关系可独立排版。",
+          "limits": "示例用于观察连续视觉语言，不将营销主张与未经验证的效果描述作为事实。"
+        }
+      ]
+    },
+    {
+      "id": "character-guided-technical",
+      "title": "角色引导技术讲解",
+      "category": "technical",
+      "technical_priority": true,
+      "density": "medium-high",
+      "description": "用角色引导和具象化场景解释技术概念与方案差异。",
+      "presentation_fit": "适合 AI 工作流、开发者工具、信息安全与工程方法分享。",
+      "visual_language": "虚构角色、比喻场景和标题标签被统一到连续的完整画面，视觉价值来自具体绘画与角色表现。",
+      "html_boundary": "真实统计、文字标签、数据条保持可编辑；不因3D角色就将普通卡片图表整页栅格化。",
+      "limits": "两张属于同一作者的角色技术讲解方法，配色与角色不完全连续，不能视为已验证的同一deck。",
+      "case_url": "https://github.com/nomie7/nano-banana-slides-prompter/blob/038abe6506de020a807e94106d009c120e40ad55/README.md",
+      "prompt_url": "https://github.com/nomie7/nano-banana-slides-prompter/blob/038abe6506de020a807e94106d009c120e40ad55/server/src/prompts/system.ts",
+      "creator": "nomie7",
+      "repository": "https://github.com/nomie7/nano-banana-slides-prompter",
+      "revision": "038abe6506de020a807e94106d009c120e40ad55",
+      "source_status": "project-samples",
+      "provenance_note": "README 将这些图片称为本工具生成提示词的 sample slides；具体运行日志与每图模型版本未给出。",
+      "license_note": "仓库 GPL-3.0。仅保留作者与来源链接，不复制运行代码或第三方原图。",
+      "continuity": "style-family",
+      "pages": [
+        {
+          "id": "nomie-sample24",
+          "title": "CIA三支柱用立体建筑分别表达保密、完整与可用，底部有核心主张。",
+          "url": "https://raw.githubusercontent.com/nomie7/nano-banana-slides-prompter/038abe6506de020a807e94106d009c120e40ad55/docs/samples/sample24.png",
+          "width": 2752,
+          "height": 1536,
+          "roles": [
+            "statement"
+          ],
+          "role_notes": {
+            "statement": "CIA三支柱用立体建筑分别表达保密、完整与可用，底部有核心主张。"
+          },
+          "source_url": "https://github.com/nomie7/nano-banana-slides-prompter/blob/038abe6506de020a807e94106d009c120e40ad55/README.md",
+          "prompt_url": "https://github.com/nomie7/nano-banana-slides-prompter/blob/038abe6506de020a807e94106d009c120e40ad55/server/src/prompts/system.ts",
+          "prompt_scope": "tool-system-prompt",
+          "creator": "nomie7",
+          "revision": "038abe6506de020a807e94106d009c120e40ad55",
+          "provenance_note": "README 将这些图片称为本工具生成提示词的 sample slides；具体运行日志与每图模型版本未给出。 公开的是工具系统提示词，不是每张样图的原始请求。",
+          "license_note": "仓库 GPL-3.0。仅保留作者与来源链接，不复制运行代码或第三方原图。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "CIA三支柱用立体建筑分别表达保密、完整与可用，底部有核心主张。"
+          },
+          "html_assessment": "虚构角色、比喻场景和标题标签被统一到连续的完整画面，视觉价值来自具体绘画与角色表现。 真实统计、文字标签、数据条保持可编辑；不因3D角色就将普通卡片图表整页栅格化。",
+          "limits": "原图中的数值和概括性产品描述仅是演示样张，不能继承为本项目事实。"
+        },
+        {
+          "id": "nomie-sample22",
+          "title": "蓝色城堡防御与橙色主动狩猎形成技术策略对比，中心角色连接两侧。",
+          "url": "https://raw.githubusercontent.com/nomie7/nano-banana-slides-prompter/038abe6506de020a807e94106d009c120e40ad55/docs/samples/sample22.png",
+          "width": 2752,
+          "height": 1536,
+          "roles": [
+            "comparison"
+          ],
+          "role_notes": {
+            "comparison": "蓝色城堡防御与橙色主动狩猎形成技术策略对比，中心角色连接两侧。"
+          },
+          "source_url": "https://github.com/nomie7/nano-banana-slides-prompter/blob/038abe6506de020a807e94106d009c120e40ad55/README.md",
+          "prompt_url": "https://github.com/nomie7/nano-banana-slides-prompter/blob/038abe6506de020a807e94106d009c120e40ad55/server/src/prompts/system.ts",
+          "prompt_scope": "tool-system-prompt",
+          "creator": "nomie7",
+          "revision": "038abe6506de020a807e94106d009c120e40ad55",
+          "provenance_note": "README 将这些图片称为本工具生成提示词的 sample slides；具体运行日志与每图模型版本未给出。 公开的是工具系统提示词，不是每张样图的原始请求。",
+          "license_note": "仓库 GPL-3.0。仅保留作者与来源链接，不复制运行代码或第三方原图。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "蓝色城堡防御与橙色主动狩猎形成技术策略对比，中心角色连接两侧。"
+          },
+          "html_assessment": "虚构角色、比喻场景和标题标签被统一到连续的完整画面，视觉价值来自具体绘画与角色表现。 真实统计、文字标签、数据条保持可编辑；不因3D角色就将普通卡片图表整页栅格化。",
+          "limits": "原图中的数值和概括性产品描述仅是演示样张，不能继承为本项目事实。"
+        }
+      ]
+    },
+    {
+      "id": "black-gold-operational",
+      "title": "黑金技术运行叙事",
+      "category": "technical",
+      "technical_priority": true,
+      "density": "medium-high",
+      "description": "以金色技术信号、立体核心和复杂插画解释工作流与方案取舍。",
+      "presentation_fit": "适合 AI 工作流、开发者工具、信息安全与工程方法分享。",
+      "visual_language": "透明脑状计算核心和复杂的电缆/芯片对比主体提供了普通CSS卡片之外的绘画与材质。",
+      "html_boundary": "流程节点、对比文字和准确度量可原生排版。",
+      "limits": "原图含大量小字和无来源度量，制作新演讲时必须精简并替换。",
+      "case_url": "https://github.com/nomie7/nano-banana-slides-prompter/blob/038abe6506de020a807e94106d009c120e40ad55/README.md",
+      "prompt_url": "https://github.com/nomie7/nano-banana-slides-prompter/blob/038abe6506de020a807e94106d009c120e40ad55/server/src/prompts/system.ts",
+      "creator": "nomie7",
+      "repository": "https://github.com/nomie7/nano-banana-slides-prompter",
+      "revision": "038abe6506de020a807e94106d009c120e40ad55",
+      "source_status": "project-samples",
+      "provenance_note": "README 将这些图片称为本工具生成提示词的 sample slides；具体运行日志与每图模型版本未给出。",
+      "license_note": "仓库 GPL-3.0。仅保留作者与来源链接，不复制运行代码或第三方原图。",
+      "continuity": "style-family",
+      "pages": [
+        {
+          "id": "nomie-sample15",
+          "title": "六阶段数据到性能优化工作流围绕中央发光AI计算主体展开。",
+          "url": "https://raw.githubusercontent.com/nomie7/nano-banana-slides-prompter/038abe6506de020a807e94106d009c120e40ad55/docs/samples/sample15.jpeg",
+          "width": 2752,
+          "height": 1536,
+          "roles": [
+            "process"
+          ],
+          "role_notes": {
+            "process": "六阶段数据到性能优化工作流围绕中央发光AI计算主体展开。"
+          },
+          "source_url": "https://github.com/nomie7/nano-banana-slides-prompter/blob/038abe6506de020a807e94106d009c120e40ad55/README.md",
+          "prompt_url": "https://github.com/nomie7/nano-banana-slides-prompter/blob/038abe6506de020a807e94106d009c120e40ad55/server/src/prompts/system.ts",
+          "prompt_scope": "tool-system-prompt",
+          "creator": "nomie7",
+          "revision": "038abe6506de020a807e94106d009c120e40ad55",
+          "provenance_note": "README 将这些图片称为本工具生成提示词的 sample slides；具体运行日志与每图模型版本未给出。 公开的是工具系统提示词，不是每张样图的原始请求。",
+          "license_note": "仓库 GPL-3.0。仅保留作者与来源链接，不复制运行代码或第三方原图。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "六阶段数据到性能优化工作流围绕中央发光AI计算主体展开。"
+          },
+          "html_assessment": "透明脑状计算核心和复杂的电缆/芯片对比主体提供了普通CSS卡片之外的绘画与材质。 流程节点、对比文字和准确度量可原生排版。",
+          "limits": "原图中的数值和概括性产品描述仅是演示样张，不能继承为本项目事实。"
+        },
+        {
+          "id": "nomie-sample25",
+          "title": "杂乱电缆比喻手动收集上下文，与组织化金色文档芯片结构作并列对比。",
+          "url": "https://raw.githubusercontent.com/nomie7/nano-banana-slides-prompter/038abe6506de020a807e94106d009c120e40ad55/docs/samples/sample25.png",
+          "width": 2752,
+          "height": 1536,
+          "roles": [
+            "comparison"
+          ],
+          "role_notes": {
+            "comparison": "杂乱电缆比喻手动收集上下文，与组织化金色文档芯片结构作并列对比。"
+          },
+          "source_url": "https://github.com/nomie7/nano-banana-slides-prompter/blob/038abe6506de020a807e94106d009c120e40ad55/README.md",
+          "prompt_url": "https://github.com/nomie7/nano-banana-slides-prompter/blob/038abe6506de020a807e94106d009c120e40ad55/server/src/prompts/system.ts",
+          "prompt_scope": "tool-system-prompt",
+          "creator": "nomie7",
+          "revision": "038abe6506de020a807e94106d009c120e40ad55",
+          "provenance_note": "README 将这些图片称为本工具生成提示词的 sample slides；具体运行日志与每图模型版本未给出。 公开的是工具系统提示词，不是每张样图的原始请求。",
+          "license_note": "仓库 GPL-3.0。仅保留作者与来源链接，不复制运行代码或第三方原图。",
+          "visual_review": {
+            "status": "inspected",
+            "method": "browser",
+            "notes": "杂乱电缆比喻手动收集上下文，与组织化金色文档芯片结构作并列对比。"
+          },
+          "html_assessment": "透明脑状计算核心和复杂的电缆/芯片对比主体提供了普通CSS卡片之外的绘画与材质。 流程节点、对比文字和准确度量可原生排版。",
+          "limits": "原图中的数值和概括性产品描述仅是演示样张，不能继承为本项目事实。"
+        }
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "id": "statement",
+      "label": "观点"
+    },
+    {
+      "id": "process",
+      "label": "流程"
+    },
+    {
+      "id": "comparison",
+      "label": "对比"
+    },
+    {
+      "id": "data",
+      "label": "数据"
+    },
+    {
+      "id": "architecture",
+      "label": "架构"
+    }
+  ],
+  "required_roles": [
+    "statement",
+    "process",
+    "comparison",
+    "data"
+  ],
+  "selection_rule": "landscape-content-pages-with-illustration-material-or-scene-value",
+  "exclusions": [
+    {
+      "source": "nbp_slides / process-flow",
+      "reason": "只有标准流程框、箭头和工程网格，可直接用 HTML/SVG。"
+    },
+    {
+      "source": "nbp_slides / archival-casefile",
+      "reason": "纸张、贴纸、照片卡和表格布局可原生实现，未提供足够的连续绘图价值。"
+    },
+    {
+      "source": "nbp_slides / blueprint-pop-lab / source-demo-01",
+      "reason": "主体为表格、仪表、流程框和普通图表，保留家居分层插画页补充已有蓝图组。"
+    },
+    {
+      "source": "nbp_slides / terracotta-doodle-notes",
+      "reason": "普通卡片、图标和少量手绘边线，归 HTML。"
+    },
+    {
+      "source": "YouMind / 509",
+      "reason": "一张为360方形黑板预览，另一张为蛋糕；不组成横向演讲内容页集合。"
+    },
+    {
+      "source": "JuneYaooo/gpt-image2-ppt-skills",
+      "url": "https://raw.githubusercontent.com/JuneYaooo/gpt-image2-ppt-skills/2d57ef8127b83e8232a1be4e9515f0b3cc9fc91e/docs/assets/distilled-styles/data-science-consulting.jpg",
+      "visual_checked": true,
+      "reason": "几何装饰标题封面，缺少实际内容页。"
+    },
+    {
+      "source": "nexu-io/codex-slides",
+      "url": "https://raw.githubusercontent.com/nexu-io/codex-slides/dbc2a5992e937760e9ce8e587e11729f970881cb/public/community/nb-engineering-blueprint-grid.jpg",
+      "visual_checked": true,
+      "reason": "1000×1000实体物件剖面拼图，不属于16:9演讲内容页。"
+    },
+    {
+      "source": "Slidecraft Template Gallery",
+      "url": "https://slidecraft-template-gallery.vercel.app/templates/gradient-glass-02.jpg",
+      "visual_checked": true,
+      "reason": "观点页主体是三张普通卡片，玻璃球只是小装饰；HTML可保留真实文字。"
+    },
+    {
+      "source": "Slidecraft Template Gallery",
+      "url": "https://slidecraft-template-gallery.vercel.app/templates/gradient-glass-03.jpg",
+      "visual_checked": true,
+      "reason": "三数字卡与普通柱状图，旁边玻璃块不构成整页生图必要性。"
+    },
+    {
+      "source": "Slidecraft Template Gallery",
+      "url": "https://slidecraft-template-gallery.vercel.app/templates/dark-aurora-02.jpg",
+      "visual_checked": true,
+      "reason": "三卡片与线性图标，背景光弧不改变原生HTML可实现的内容组织。"
+    },
+    {
+      "source": "Slidecraft Template Gallery",
+      "url": "https://slidecraft-template-gallery.vercel.app/templates/dark-aurora-03.jpg",
+      "visual_checked": true,
+      "reason": "数值卡与普通折线图；主题背景和轻微glow可由CSS呈现。"
+    },
+    {
+      "source": "nomie7/nano-banana-slides-prompter",
+      "url": "https://raw.githubusercontent.com/nomie7/nano-banana-slides-prompter/038abe6506de020a807e94106d009c120e40ad55/docs/samples/sample23.jpeg",
+      "visual_checked": true,
+      "reason": "普通柱图与KPI卡片，且含未证实的Anthropic Internal Engineering Study 2024出处；不作为教学事实或参考数据。"
+    },
+    {
+      "source": "coderj001/notebooklm-infographic-style-libary",
+      "url": "https://raw.githubusercontent.com/coderj001/notebooklm-infographic-style-libary/c752c32dfb9654f485b0cb2150eb9259b816b326/docs/assets/tech-art-neon-62e3641e30f6.png",
+      "visual_checked": true,
+      "reason": "四页拼图里大多是标题、几何线段和简单界面线框；复杂人物裁切可作为单独素材。"
+    },
+    {
+      "source": "coderj001/notebooklm-infographic-style-libary",
+      "url": "https://raw.githubusercontent.com/coderj001/notebooklm-infographic-style-libary/c752c32dfb9654f485b0cb2150eb9259b816b326/docs/assets/royal-blue-and-red-70f77151f746.png",
+      "visual_checked": true,
+      "reason": "收尾句与水彩背景，不能代表多内容页主题覆盖。"
+    },
+    {
+      "source": "coderj001/notebooklm-infographic-style-libary",
+      "url": "https://raw.githubusercontent.com/coderj001/notebooklm-infographic-style-libary/c752c32dfb9654f485b0cb2150eb9259b816b326/docs/assets/anti-gravity-artifact-deck-cb9f7c6194e3.png",
+      "visual_checked": true,
+      "reason": "正文、公式与简单箭头适合HTML/SVG；同系列的复杂透明结构仅一页，未凑成新多页风格。"
+    }
+  ]
+}

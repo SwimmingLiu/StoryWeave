@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "producer": "storyweave-html",
+  "contentRevision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+  "renderer_version": "4.1.0",
+  "theme_ref": "editorial/paper-magazine",
+  "catalog_scope": "active",
+  "contract_version": 1,
+  "theme_source_sha256": "e00d707b221b2684390c3a2c6bbc8ebb425b60f648f573ec0985c022db0b410c",
+  "visual_system": "magazine",
+  "theme": {
+    "kind": "canonical",
+    "theme_ref": "editorial/paper-magazine",
+    "architecture_id": "editorial",
+    "label": "纸面杂志",
+    "tokens": {
+      "background": "#F1EEE7",
+      "surface": "#FCF9F2",
+      "text": "#201C18",
+      "muted": "#70665C",
+      "accent": "#A23B2A",
+      "support": "#285C7A",
+      "line": "#D4CABC",
+      "radius": "0px",
+      "heading": "Georgia, 'Noto Serif SC', serif",
+      "body": "Inter, 'Noto Sans SC', system-ui, sans-serif"
+    }
+  },
+  "typography": {
+    "heading_font": "'Songti SC', 'Noto Serif CJK SC', Georgia, serif",
+    "body_font": "'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', sans-serif",
+    "body_size": 28,
+    "caption_size": 16,
+    "heading_weight": 600,
+    "body_weight": 400,
+    "caption_weight": 500,
+    "title_break_policy": "chinese-word-boundaries"
+  },
+  "references": [],
+  "slides": [
+    {
+      "id": "s01",
+      "content_type": "statement",
+      "visual_scheme_ref": "editorial/paper-magazine/hero",
+      "visual_scheme_sha256": "2a291909cf186b45aa321fafdeb8940f5da5d07e7fba6e28a8ea84db64d89033",
+      "layout_id": "cover-split",
+      "tone": "dark",
+      "page_rhythm": "anchor",
+      "asset_refs": [],
+      "geometry": {
+        "gutter": 80,
+        "grid_columns": 12,
+        "grid_gap": 24,
+        "title_size": 96,
+        "title_weight": 600,
+        "title_max_lines": 2,
+        "title_body_gap": 40,
+        "content_safe_bottom": 80
+      },
+      "asset_slots": []
+    },
+    {
+      "id": "s02",
+      "content_type": "statement",
+      "visual_scheme_ref": "editorial/paper-magazine/hero",
+      "visual_scheme_sha256": "2a291909cf186b45aa321fafdeb8940f5da5d07e7fba6e28a8ea84db64d89033",
+      "layout_id": "statement",
+      "tone": "light",
+      "page_rhythm": "breathing",
+      "asset_refs": [],
+      "geometry": {
+        "gutter": 80,
+        "grid_columns": 12,
+        "grid_gap": 24,
+        "title_size": 64,
+        "title_weight": 600,
+        "title_max_lines": 2,
+        "title_body_gap": 48,
+        "content_safe_bottom": 80
+      },
+      "asset_slots": []
+    },
+    {
+      "id": "s03",
+      "content_type": "comparison",
+      "visual_scheme_ref": "editorial/paper-magazine/columns",
+      "visual_scheme_sha256": "6d87f25e11eabf0ca63dcca6c13b7cb73823d240b09fe76ca742ef941b1c5a3e",
+      "layout_id": "comparison-matrix",
+      "tone": "light",
+      "page_rhythm": "dense",
+      "asset_refs": [],
+      "geometry": {
+        "gutter": 80,
+        "grid_columns": 12,
+        "grid_gap": 24,
+        "title_size": 64,
+        "title_weight": 600,
+        "title_max_lines": 2,
+        "title_body_gap": 48,
+        "content_safe_bottom": 80
+      },
+      "asset_slots": []
+    },
+    {
+      "id": "s04",
+      "content_type": "process",
+      "visual_scheme_ref": "editorial/paper-magazine/flow",
+      "visual_scheme_sha256": "047dfa4f8e8472a52652e32d3e3f78949d84fbd5a0de79cea1a70320b70d0fac",
+      "layout_id": "process-linear",
+      "tone": "dark",
+      "page_rhythm": "dense",
+      "asset_refs": [],
+      "geometry": {
+        "gutter": 80,
+        "grid_columns": 12,
+        "grid_gap": 24,
+        "title_size": 64,
+        "title_weight": 600,
+        "title_max_lines": 2,
+        "title_body_gap": 48,
+        "content_safe_bottom": 80
+      },
+      "asset_slots": []
+    },
+    {
+      "id": "s05",
+      "content_type": "metrics",
+      "visual_scheme_ref": "editorial/paper-magazine/data",
+      "visual_scheme_sha256": "e2e6e5fb093ac942f63006c5c3272ccabfaa181c06964c0fbeaa1c1d8e813718",
+      "layout_id": "metric-ledger",
+      "tone": "dark",
+      "page_rhythm": "breathing",
+      "asset_refs": [],
+      "geometry": {
+        "gutter": 80,
+        "grid_columns": 12,
+        "grid_gap": 24,
+        "title_size": 64,
+        "title_weight": 600,
+        "title_max_lines": 2,
+        "title_body_gap": 48,
+        "content_safe_bottom": 80
+      },
+      "asset_slots": []
+    },
+    {
+      "id": "s06",
+      "content_type": "graph",
+      "visual_scheme_ref": "editorial/paper-magazine/flow",
+      "visual_scheme_sha256": "047dfa4f8e8472a52652e32d3e3f78949d84fbd5a0de79cea1a70320b70d0fac",
+      "layout_id": "relationship-map",
+      "tone": "light",
+      "page_rhythm": "dense",
+      "asset_refs": [],
+      "geometry": {
+        "gutter": 80,
+        "grid_columns": 12,
+        "grid_gap": 24,
+        "title_size": 64,
+        "title_weight": 600,
+        "title_max_lines": 2,
+        "title_body_gap": 48,
+        "content_safe_bottom": 80
+      },
+      "asset_slots": []
+    },
+    {
+      "id": "s07",
+      "content_type": "statement",
+      "visual_scheme_ref": "editorial/paper-magazine/hero",
+      "visual_scheme_sha256": "2a291909cf186b45aa321fafdeb8940f5da5d07e7fba6e28a8ea84db64d89033",
+      "layout_id": "image-hero",
+      "tone": "light",
+      "page_rhythm": "breathing",
+      "asset_refs": [
+        {
+          "asset_id": "paper-study",
+          "path": "assets/paper-study.svg",
+          "slot": "hero",
+          "fit": "cover",
+          "focal_point": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "subject_safe_area": {
+            "x": 0.3,
+            "y": 0.25,
+            "width": 0.4,
+            "height": 0.5
+          },
+          "alt": "折叠纸张的原创几何插画"
+        }
+      ],
+      "geometry": {
+        "gutter": 80,
+        "grid_columns": 12,
+        "grid_gap": 24,
+        "title_size": 48,
+        "title_weight": 600,
+        "title_max_lines": 3,
+        "title_body_gap": 40,
+        "content_safe_bottom": 80
+      },
+      "asset_slots": [
+        {
+          "asset_id": "paper-study",
+          "slot": "hero",
+          "aspect_ratio": "21:9",
+          "fit": "cover",
+          "focal_point": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "subject_safe_area": {
+            "x": 0.3,
+            "y": 0.25,
+            "width": 0.4,
+            "height": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "content_type": "statement",
+      "visual_scheme_ref": "editorial/paper-magazine/closing",
+      "visual_scheme_sha256": "a9720dfc004c9b2593c1fc47f74b3189982be40b3edd862accfa83ffeffaa8d4",
+      "layout_id": "closing-statement",
+      "tone": "dark",
+      "page_rhythm": "anchor",
+      "asset_refs": [],
+      "geometry": {
+        "gutter": 80,
+        "grid_columns": 12,
+        "grid_gap": 24,
+        "title_size": 96,
+        "title_weight": 600,
+        "title_max_lines": 2,
+        "title_body_gap": 40,
+        "content_safe_bottom": 80
+      },
+      "asset_slots": []
+    }
+  ],
+  "reference_applications": [],
+  "theme_recipe_sha256": "75fa0aa88f9f844a1b5dbe60b57ef2fa910d7aa861c3902cf9e2e41e093a25f1",
+  "plan_sha256": "18982bdd05515b55750edffb6435d4f2c1f58aaa756484884fab23f1e440de08"
+}

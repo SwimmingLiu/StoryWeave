@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "producer": "storyweave-html",
+  "contentRevision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+  "renderer_version": "4.0.0",
+  "theme_ref": "systems/ink-blue-grid",
+  "catalog_scope": "active",
+  "contract_version": 1,
+  "theme_source_sha256": "4686c1c32eaa0704048ee1173d07be7cafa2a2dd3e23742334b5c76fc13c1313",
+  "theme": {
+    "kind": "canonical",
+    "theme_ref": "systems/ink-blue-grid",
+    "architecture_id": "systems",
+    "label": "克莱因蓝网格",
+    "tokens": {
+      "background": "#FAFAF8",
+      "surface": "#FFFFFF",
+      "text": "#0A0A0A",
+      "muted": "#737373",
+      "accent": "#002FA7",
+      "support": "#002FA7",
+      "line": "#D4D4D2",
+      "radius": "0px",
+      "heading": "Inter, 'Noto Sans SC', system-ui, sans-serif",
+      "body": "Inter, 'Noto Sans SC', system-ui, sans-serif"
+    }
+  },
+  "typography": {
+    "heading_font": "'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', sans-serif",
+    "body_font": "'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', sans-serif",
+    "body_size": 28,
+    "caption_size": 16
+  },
+  "references": [],
+  "slides": [
+    {
+      "id": "s01",
+      "content_type": "statement",
+      "visual_scheme_ref": "systems/ink-blue-grid/hero",
+      "visual_scheme_sha256": "0b2d8eafc65ae00b105163b0999e69f2ce46b33201ff1bfe8c36540578dbbeee",
+      "layout_id": "cover-split",
+      "tone": "dark",
+      "page_rhythm": "anchor",
+      "asset_refs": []
+    },
+    {
+      "id": "s02",
+      "content_type": "statement",
+      "visual_scheme_ref": "systems/ink-blue-grid/hero",
+      "visual_scheme_sha256": "0b2d8eafc65ae00b105163b0999e69f2ce46b33201ff1bfe8c36540578dbbeee",
+      "layout_id": "statement",
+      "tone": "light",
+      "page_rhythm": "breathing",
+      "asset_refs": []
+    },
+    {
+      "id": "s03",
+      "content_type": "comparison",
+      "visual_scheme_ref": "systems/ink-blue-grid/columns",
+      "visual_scheme_sha256": "7a91ab311eeb3636a48497f76084204f9475b47ce4187c00644e39e708e0a205",
+      "layout_id": "comparison-matrix",
+      "tone": "light",
+      "page_rhythm": "dense",
+      "asset_refs": []
+    },
+    {
+      "id": "s04",
+      "content_type": "process",
+      "visual_scheme_ref": "systems/ink-blue-grid/flow",
+      "visual_scheme_sha256": "fb34489eab7ec3535e626ddd99a7ad6115a499157e215850429dd80103e5078b",
+      "layout_id": "process-linear",
+      "tone": "light",
+      "page_rhythm": "dense",
+      "asset_refs": []
+    },
+    {
+      "id": "s05",
+      "content_type": "metrics",
+      "visual_scheme_ref": "systems/ink-blue-grid/data",
+      "visual_scheme_sha256": "90ba8902a7c38db2a59224f3c003e9f496cbfef4d22acf4fe9721ecae81d8a2d",
+      "layout_id": "metric-ledger",
+      "tone": "dark",
+      "page_rhythm": "dense",
+      "asset_refs": []
+    },
+    {
+      "id": "s06",
+      "content_type": "graph",
+      "visual_scheme_ref": "systems/ink-blue-grid/flow",
+      "visual_scheme_sha256": "fb34489eab7ec3535e626ddd99a7ad6115a499157e215850429dd80103e5078b",
+      "layout_id": "relationship-map",
+      "tone": "light",
+      "page_rhythm": "dense",
+      "asset_refs": []
+    },
+    {
+      "id": "s07",
+      "content_type": "statement",
+      "visual_scheme_ref": "systems/ink-blue-grid/hero",
+      "visual_scheme_sha256": "0b2d8eafc65ae00b105163b0999e69f2ce46b33201ff1bfe8c36540578dbbeee",
+      "layout_id": "statement",
+      "tone": "light",
+      "page_rhythm": "breathing",
+      "asset_refs": [
+        {
+          "asset_id": "paper-study",
+          "path": "assets/paper-study.svg",
+          "slot": "hero",
+          "fit": "cover",
+          "focal_point": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "subject_safe_area": {
+            "x": 0.3,
+            "y": 0.25,
+            "width": 0.4,
+            "height": 0.5
+          },
+          "alt": "折叠纸张的原创几何插画"
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "content_type": "statement",
+      "visual_scheme_ref": "systems/ink-blue-grid/closing",
+      "visual_scheme_sha256": "555a49094664abb1a7427498f21cce8663aabc25aede33fab06914862c1c8035",
+      "layout_id": "closing-statement",
+      "tone": "accent",
+      "page_rhythm": "anchor",
+      "asset_refs": []
+    }
+  ],
+  "reference_applications": [],
+  "theme_recipe_sha256": "b8a4d07a3cb4b49829be6600f3b864976a1f08e9d31db2904f1e16636f434d9e",
+  "plan_sha256": "3fa61d3d04989488c64935c225d4e7788587a2c479a6e47891e7a8687893ef20"
+}

@@ -1,0 +1,77 @@
+{
+  "scope": "six current theme references",
+  "previews": [
+    {
+      "theme_ref": "editorial/paper-magazine",
+      "file": "editorial--paper-magazine.png",
+      "origin": "built-in imagegen",
+      "purpose": "style reference; individual schemes require page-specific visual QA",
+      "image_sha256": "5ed1f97bc188d481d9b78c335d12e861307118a8c6d3fef8e6f284a34a0cdb1f",
+      "actual_size": [
+        1672,
+        941
+      ],
+      "prompt": "editorial--paper-magazine.txt",
+      "prompt_sha256": "81615e3cdb3546ebcfa301e6e053788fb88c267e1ce4c9ce16013a6e1325ca24"
+    },
+    {
+      "theme_ref": "systems/white-cyan-circuit",
+      "file": "systems--white-cyan-circuit.png",
+      "origin": "user-provided reference",
+      "purpose": "style reference; individual schemes require page-specific visual QA",
+      "image_sha256": "63a868cf57998f7f8025b6c9383a9d5fa1eea1dee333c012434ea310d6132847",
+      "actual_size": [
+        1672,
+        941
+      ]
+    },
+    {
+      "theme_ref": "systems/white-cyan-wave",
+      "file": "systems--white-cyan-wave.png",
+      "origin": "built-in imagegen",
+      "purpose": "style reference; individual schemes require page-specific visual QA",
+      "image_sha256": "526c8fa9292aee5717370ffdb898fe47d7b2934bd0f76ef84f0a2c9edf18610c",
+      "actual_size": [
+        1672,
+        941
+      ]
+    },
+    {
+      "theme_ref": "systems/silver-glass",
+      "file": "systems--silver-glass.png",
+      "origin": "built-in imagegen",
+      "purpose": "style reference; individual schemes require page-specific visual QA",
+      "image_sha256": "403e4e9a9935e298d929ace9012bcb952b594afa6c981bbac5834a10749f42d8",
+      "actual_size": [
+        1672,
+        941
+      ]
+    },
+    {
+      "theme_ref": "campaign/bold-poster",
+      "file": "campaign--bold-poster.png",
+      "origin": "built-in imagegen",
+      "purpose": "style reference; individual schemes require page-specific visual QA",
+      "image_sha256": "fa102fca1e442485bd3f72ce8d7cf60b662ec590540ba21cfe0ebad53fdb9eb2",
+      "actual_size": [
+        1672,
+        941
+      ],
+      "prompt": "campaign--bold-poster.txt",
+      "prompt_sha256": "87bb6b707b5c8fa8ac211c2bdf54e2463a88d5ef7f3bf186d35dba86dbd8fe24"
+    },
+    {
+      "theme_ref": "cinematic/natural-film",
+      "file": "cinematic--natural-film.png",
+      "origin": "built-in imagegen",
+      "purpose": "style reference; individual schemes require page-specific visual QA",
+      "image_sha256": "c5336bd3bee03d18570a17920fbefd9da33ebb8afea5f87656061098afae7409",
+      "actual_size": [
+        1672,
+        941
+      ],
+      "prompt": "cinematic--natural-film.txt",
+      "prompt_sha256": "ee170d634df940c4cd5b22f5f48a1fcbff3d75c0627e34b5eb6b454eb2a393ae"
+    }
+  ]
+}

@@ -74,9 +74,14 @@ export function compileSlidePrompt(slide, themeOrPlan, options = {}) {
   const visual = fragments.visual_scheme ?? {};
   const titleTreatment = visual.title_treatment ?? plan.title_treatment ?? {};
   const layoutPlan = slide.layout_plan ?? {};
+  // Upstream themes now store anchor prose; internal IDs must not become visible image copy.
+  const anchorId = plan.visual_anchor_id ?? slide.visual_anchor_id;
+  const anchor = (theme.anchors ?? []).find((item) => typeof item === 'object' && item.id === anchorId);
+  const anchorPrompt = anchor?.prompt ?? fragments.style?.anchors?.[0] ?? anchorId ?? '';
+  const avoid = [...new Set([...(visual.avoid ?? scheme.avoid ?? []), ...(theme.avoid ?? [])])];
   const prompt = [
     'Use case: productivity-visual',
-    'Asset type: complete rasterized presentation slide, not a background asset and not a collage.',
+    'Asset type: complete rasterized presentation slide, with background, imagery, text and layout composed together.',
     `Primary request: create one polished 16:9 presentation slide for the ${role} page.`,
     `Communication purpose: ${escapePrompt(slide.purpose)}`,
     `Single claim: ${escapePrompt(slide.claim)}`,
@@ -84,17 +89,17 @@ export function compileSlidePrompt(slide, themeOrPlan, options = {}) {
     `Theme architecture: ${escapePrompt(plan.architecture_ref || plan.theme_ref)}; spatial grammar = ${escapePrompt(architecture.spatial_grammar || 'organize one clear spatial relationship')}; reading order = ${escapePrompt(architecture.reading_order || 'follow the primary visual relationship')}; density strategy = ${escapePrompt(architecture.density_strategy || 'keep secondary detail sparse')}; deck rhythm = ${escapePrompt(architecture.deck_rhythm || 'alternate focused and quiet pages')}.`,
     `Theme style: ${escapePrompt(plan.theme_ref)}; art direction = ${escapePrompt(style.art_direction || theme.art_direction)}; palette = ${escapePrompt(style.palette || theme.palette)}; typography = ${escapePrompt(style.typography || theme.typography)}; materials = ${escapePrompt(style.materials || theme.materials)}; text layout = ${escapePrompt(style.text_layout || theme.text_layout)}.`,
     `Visual scheme: ${escapePrompt(plan.visual_scheme_ref)}; composition = ${escapePrompt(visual.composition || scheme.composition || theme.composition)}; imagery = ${escapePrompt(visual.imagery || scheme.imagery || theme.imagery)}; requirements = ${escapePrompt((visual.requirements ?? scheme.requirements ?? []).join('; '))}.`,
-    `Title treatment: ${escapePrompt(JSON.stringify(titleTreatment))}; a page may use a medium conclusion, statement, caption or integrated text instead of an oversized title.`,
+    `Title treatment: ${escapePrompt(JSON.stringify(titleTreatment))}; follow this page-specific treatment.`,
     `Frozen layout plan: text safe zone = ${escapePrompt(layoutText(layoutPlan.text_safe_zone || 'left'))}; visual zone = ${escapePrompt(layoutText(layoutPlan.visual_zone || ['right'] ))}; hierarchy = ${escapePrompt(layoutText(layoutPlan.hierarchy || ['headline', 'visual anchor']))}; density = ${escapePrompt(layoutPlan.density || 'low')}.`,
     `Scene and visual brief: ${safeVisualBrief(slide)}`,
-    promptLines('Text (verbatim; render every line exactly once, with correct Chinese characters and punctuation)', copy),
+    promptLines('Text (verbatim; render every line exactly once, with correct characters and punctuation in the supplied language)', copy),
     `Evidence constraints (do not turn evidence into extra visible labels unless it is also in exact_text): ${escapePrompt(JSON.stringify(slide.evidence ?? []))}`,
-    'Typography: use the specified Chinese type pairing and a readable hierarchy; keep line breaks intentional; do not force every page into a giant headline and do not shrink text to fit.',
+    'Typography: follow the supplied text language and theme type pairing; use intentional line breaks and projection-readable sizes.',
     `Text safety: ${escapePrompt(style.contrast || theme.contrast || 'keep copy on a quiet, high-contrast field')}; no face, object, highlight, grid, or light path may pass behind the letters.`,
     'Information boundary: use only the supplied visible text; do not invent metrics, labels, citations, UI, logos, product screens, names, dates, or claims.',
-    'Constraints: render the complete slide as one finished image; preserve a clear visual hierarchy; keep generous margins; use one dominant visual anchor; no editable UI; no watermark; no logo.',
-    `Avoid: ${[...(visual.avoid ?? scheme.avoid ?? []), ...(theme.avoid ?? []), 'extra words', 'misspelled Chinese', 'gibberish', 'tiny labels', 'dense card grids', 'busy detail behind text', 'decorative pseudo-data'].join('; ')}.`,
-    `Continuity anchor: ${escapePrompt(plan.visual_anchor_id ?? slide.visual_anchor_id ?? `${theme.id}-anchor`)}; continuity group: ${escapePrompt(slide.continuity_group ?? `${theme.id}-deck`)}.`,
+    'Constraints: preserve the frozen text and layout, factual relationships, and one clear visual hierarchy; no watermark. Theme recipes guide visual choices within these boundaries.',
+    `Avoid: ${avoid.join('; ')}.`,
+    `Continuity anchor: ${escapePrompt(anchorPrompt)}. Internal theme, scheme and continuity identifiers are metadata, not visible text.`,
   ].join('\n');
   return prompt;
 }

@@ -8,9 +8,9 @@ StoryWeave 是制作 16:9 演示文稿的 Agent Skill 集合。Agent 整理资�
 | --- | --- |
 | [系统链路与模块职责](docs/architecture/storyweave-target-architecture.md) | 内容确认、两个生成器、设计参考、QA 与 Bento 的实际调用关系 |
 | [重构实施与验收](docs/plans/storyweave-refactor-plan.md) | 已完成的迁移、兼容方法与验收标准 |
-| [重构验证记录](docs/plans/storyweave-refactor-validation.md) | 七类用户路径、视觉前后对比、耗时和体积的实际结果 |
+| [重构验证记录](docs/plans/storyweave-refactor-validation.md) | 八类用户路径、视觉前后对比、耗时和体积的实际结果 |
 | [独立包体积优化](docs/plans/storyweave-package-size-validation.md) | 最小模块依赖、Bento 无损压缩和安装体积 |
-| [项目验证 Skill](.agents/skills/verify-storyweave/SKILL.md) | 公开 CLI、真实浏览器、七类用户路径与可保留的证据 |
+| [项目验证 Skill](.agents/skills/verify-storyweave/SKILL.md) | 公开 CLI、真实浏览器、八类用户路径与可保留的证据 |
 
 ## 运行结构
 
@@ -27,6 +27,42 @@ StoryWeave 是制作 16:9 演示文稿的 Agent Skill 集合。Agent 整理资�
 `storyweave-output.json` 保持 v1、v2 交接协议。`qa_report.json` 绑定实际输入和页面字节；修改后必须重新 QA。HTML 保留文字与图形编辑能力，当前 Bento 和 PPTX 每页使用一张图片。
 
 共享实现只有一份 `src/` 源码，打包器按公开 CLI 的实际依赖生成自包含 `runtime/`。全局 Skill 自带 Bento 适配器，可独立包装已完成的生产者项目。Bento 官方原稿集中保存在 `vendor/bento/`，随包使用无损压缩文件，读取时校验恢复后的官方 SHA。内容策划和生图工具调用仍由 Agent 执行。
+
+## Imagegen 主题
+
+Imagegen 使用主题架构组织空间、样式定义材质与色彩、单页方案确定构图。当前提供六套候选样式，使用 `--scope authoring` 制作。图片默认保留简洁主标题和必要内容，主题不自动添加说明性小字；用户提供的文字按 `exact_text` 保留。
+
+| 主题 | 完整引用 | 视觉方向 |
+|---|---|---|
+| 纸面编辑 | `editorial/paper-magazine` | 裁切摄影、宋体标题与干净纸边组成的编辑叙事 |
+| 白底电路 | `systems/white-cyan-circuit` | 冷白底、精细圆环与低对比度电路纹样 |
+| 参数化波纹 | `systems/white-cyan-wave` | 浅蓝平滑曲线、稀疏粒子与清晰的信息层级 |
+| 银白玻璃 | `systems/silver-glass` | 通透玻璃模块、银白空间与钴蓝重点 |
+| 朱红海报 | `campaign/bold-poster` | 朱红色场、大字与单一实物主体组成的传播画面 |
+| 日常电影 | `cinematic/natural-film` | 自然曝光、可信动作与连续镜头组成的场景叙事 |
+
+下列图片用于识别样式，各页面仍需核验实际文字、关系和数值。
+
+| 纸面编辑 | 白底电路 |
+|---|---|
+| ![纸面编辑](skills/storyweave-imagegen/assets/examples/theme-previews/editorial--paper-magazine.png) | ![白底电路](skills/storyweave-imagegen/assets/examples/theme-previews/systems--white-cyan-circuit.png) |
+
+| 参数化波纹 | 银白玻璃 |
+|---|---|
+| ![参数化波纹](skills/storyweave-imagegen/assets/examples/theme-previews/systems--white-cyan-wave.png) | ![银白玻璃](skills/storyweave-imagegen/assets/examples/theme-previews/systems--silver-glass.png) |
+
+| 朱红海报 | 日常电影 |
+|---|---|
+| ![朱红海报](skills/storyweave-imagegen/assets/examples/theme-previews/campaign--bold-poster.png) | ![日常电影](skills/storyweave-imagegen/assets/examples/theme-previews/cinematic--natural-film.png) |
+
+[主题目录](skills/storyweave-imagegen/references/themes.md) · [离线参考图画廊](skills/storyweave-imagegen/assets/examples/theme-previews/index.html)
+
+在仓库根目录查看主题或创建候选主题草稿：
+
+```bash
+node skills/storyweave-imagegen/scripts/ppt.mjs themes --all --json
+node skills/storyweave-imagegen/scripts/ppt.mjs draft ./my-deck --theme systems/white-cyan-wave --scope authoring --title "演示标题"
+```
 
 ## 安装与使用
 

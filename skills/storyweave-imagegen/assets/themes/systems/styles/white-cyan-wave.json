@@ -1,0 +1,398 @@
+{
+  "schema_version": 3,
+  "architecture_id": "systems",
+  "id": "white-cyan-wave",
+  "art_direction": "bright cool-white technology infographic with airy parametric wave curves, sparse blue particles and crisp navy-blue typography; smooth flowing geometry and generous whitespace",
+  "palette": "cool white #F7FAFF background, navy #1E2D4D text, bright blue #087FFF emphasis, cyan #16C7EF highlights and pale blue #C9E1FF waves",
+  "typography": "crisp modern Chinese sans serif; bold blue emphasis and solid navy primary copy; readable direct labels, no glowing letterforms",
+  "materials": "fine parallel smooth spline curves with variable spacing, translucent pale-blue bands and sparse tiny blue particles; almost-flat graphic treatment with restrained glow",
+  "anchors": [
+    {
+      "id": "calibration-line",
+      "prompt": "one short fine blue calibration line on a quiet white margin"
+    },
+    {
+      "id": "connection-node",
+      "prompt": "one small blue outline terminal marking a meaningful connection"
+    },
+    {
+      "id": "blueprint-ring",
+      "prompt": "one pale-blue partial ring with restrained fine ticks, outside the text field"
+    }
+  ],
+  "default_anchor_id": "calibration-line",
+  "text_layout": "place supplied headline, optional supplied supporting copy and essential labels in distinct clean light fields; preserve every supplied exact_text line and its hierarchy; do not add an automatic text tier",
+  "contrast": "solid dark navy or cobalt text on quiet white; background texture, particles, glass edges and highlights remain outside letterforms",
+  "avoid": [
+    "glow on letterforms",
+    "dense high-contrast background decoration",
+    "unprovided explanatory copy or decorative microtype",
+    "perspective distortion of quantitative marks",
+    "angular circuit-board background traces",
+    "large opaque particles"
+  ],
+  "role_defaults": {
+    "cover": "keynote-cover",
+    "section": "keynote-cover",
+    "statement": "signal-quote",
+    "image-hero": "isometric-space",
+    "two-column": "comparison-matrix",
+    "comparison": "comparison-matrix",
+    "process": "system-map",
+    "data": "data-overview",
+    "quote": "signal-quote",
+    "closing": "keynote-cover"
+  },
+  "schemes": {
+    "keynote-cover": {
+      "label": "技术开场",
+      "summary": "以清晰标题、一个中心概念和从属信息建立技术主题",
+      "preview_image": "../../../examples/theme-previews/systems--white-cyan-wave.png",
+      "roles": [
+        "cover",
+        "section",
+        "closing"
+      ],
+      "default_anchor_id": "calibration-line",
+      "composition": "a strong headline in the frozen text-safe zone and one main concept in the visual zone; a circular focal structure may organize genuine hub-and-branch content, with subordinate nodes following supplied relationships",
+      "imagery": "thin layered circular blue bands and smooth blue outline nodes; pale-blue parametric waves flowing inward from side margins, softly fading near the focal structure and leaving text fields clean",
+      "title_treatment": {
+        "mode": "hero",
+        "scale": "large",
+        "placement": "top-left",
+        "weight": "bold modern sans headline with blue emphasis and navy remaining text"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "bottom-right",
+          "top-right"
+        ],
+        "densities": [
+          "low",
+          "medium"
+        ]
+      },
+      "requirements": [
+        "one focal signal only",
+        "keep a large quiet field for exact text",
+        "render every supplied exact_text line with clear hierarchy; visual effects remain separate from letters"
+      ],
+      "avoid": [
+        "invented product labels"
+      ]
+    },
+    "system-map": {
+      "label": "系统关系图",
+      "summary": "按真实关系组织中心节点、分组与连接",
+      "preview_image": "../../../examples/theme-previews/systems--white-cyan-wave.png",
+      "roles": [
+        "process",
+        "statement",
+        "data"
+      ],
+      "default_anchor_id": "connection-node",
+      "composition": "a connected technical field organized by the supplied hierarchy, dependency or parallel groups; choose a central hub only when the actual topology requires it",
+      "imagery": "thin layered circular blue bands and smooth blue outline nodes organized according to the actual node topology, with pale-blue parametric waves flowing inward from side margins, softly fading near the focal structure and leaving text fields clean",
+      "title_treatment": {
+        "mode": "integrated",
+        "scale": "small-to-medium",
+        "placement": "top-left",
+        "weight": "conclusion integrated with the map"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "top"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "bottom-right"
+        ],
+        "densities": [
+          "low",
+          "medium"
+        ]
+      },
+      "requirements": [
+        "preserve supplied node and edge relationships",
+        "distinguish main paths from secondary paths with line weight and cyan intensity",
+        "render every supplied exact_text line with clear hierarchy; visual effects remain separate from letters"
+      ],
+      "avoid": [
+        "serial pipeline when relationships are parallel",
+        "unlabeled pseudo-metrics"
+      ]
+    },
+    "circuit-flow": {
+      "label": "步骤演进",
+      "summary": "在同一浅色技术空间中呈现步骤和有方向的连接",
+      "preview_image": "../../../examples/theme-previews/systems--white-cyan-wave.png",
+      "roles": [
+        "process"
+      ],
+      "default_anchor_id": "connection-node",
+      "composition": "one open light field with supplied stages arranged along a clearly directed path; preserve stage order and distinguish functional connectors from background decoration",
+      "imagery": "content-relevant blue outline stage icons and direct supplied labels; pale-blue parametric waves flowing inward from side margins, softly fading near the focal structure and leaving text fields clean",
+      "title_treatment": {
+        "mode": "caption",
+        "scale": "small-to-medium",
+        "placement": "top-left",
+        "weight": "short process conclusion"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "bottom-right",
+          "top-right"
+        ],
+        "densities": [
+          "medium"
+        ]
+      },
+      "requirements": [
+        "preserve supplied sequence; use a return route only for an actual cycle",
+        "stages share one visual field; numbered icon nodes are appropriate when supplied by the content",
+        "one visual transformation carries attention across the page",
+        "render every supplied exact_text line with clear hierarchy; visual effects remain separate from letters"
+      ],
+      "avoid": [
+        "tangle of equal-weight connectors",
+        "unconfirmed step numbers"
+      ]
+    },
+    "data-overview": {
+      "label": "精密数据",
+      "summary": "将真实数值组织成有共同标尺的信号轨道，用细节建立工程感",
+      "preview_image": "../../../examples/theme-previews/systems--white-cyan-wave.png",
+      "roles": [
+        "data"
+      ],
+      "default_anchor_id": "blueprint-ring",
+      "composition": "one flat orthographic comparison chart on a clean white field; common origin, shared scale and exact endpoints with navy direct values",
+      "imagery": "blue quantitative marks with crisp endpoints and pale-gray guides; pale-blue parametric waves flowing inward from side margins, softly fading near the focal structure and leaving text fields clean confined to margins outside the chart; refraction and decorative curves never alter quantitative geometry",
+      "title_treatment": {
+        "mode": "integrated",
+        "scale": "small-to-medium",
+        "placement": "top-left",
+        "weight": "chart-led conclusion"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "top"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "bottom-right"
+        ],
+        "densities": [
+          "medium",
+          "high"
+        ]
+      },
+      "requirements": [
+        "exact supplied values and units determine geometry",
+        "all series use a shared baseline and scale",
+        "color and light distinguish supplied states only; no invented legend or metrics",
+        "render every supplied exact_text line with clear hierarchy; visual effects remain separate from letters"
+      ],
+      "avoid": [
+        "invented percentages",
+        "decorative charts without evidence",
+        "tiny unreadable axes"
+      ]
+    },
+    "comparison-matrix": {
+      "label": "比较矩阵",
+      "summary": "用对称网格保持比较维度一致而不过度卡片化",
+      "preview_image": "../../../examples/theme-previews/systems--white-cyan-wave.png",
+      "roles": [
+        "two-column",
+        "comparison"
+      ],
+      "default_anchor_id": "calibration-line",
+      "composition": "two or three aligned comparison fields with a disciplined baseline and a clear central divider",
+      "imagery": "matched flat diagrams with navy direct labels, pale-blue rules and blue emphasis; equal scale and perspective; pale-blue parametric waves flowing inward from side margins, softly fading near the focal structure and leaving text fields clean outside the comparison field",
+      "title_treatment": {
+        "mode": "statement",
+        "scale": "medium",
+        "placement": "top-left",
+        "weight": "short conclusion above the matrix"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "bottom-right"
+        ],
+        "densities": [
+          "medium"
+        ]
+      },
+      "requirements": [
+        "same dimensions appear in the same order",
+        "keep equal visual weight between compared fields",
+        "render every supplied exact_text line with clear hierarchy; visual effects remain separate from letters"
+      ],
+      "avoid": [
+        "dashboard card grid",
+        "unequal comparison units",
+        "unconfirmed labels"
+      ]
+    },
+    "signal-quote": {
+      "label": "信号判断",
+      "summary": "一条主张或引文配合一个青蓝信号锚点",
+      "preview_image": "../../../examples/theme-previews/systems--white-cyan-wave.png",
+      "roles": [
+        "quote",
+        "statement",
+        "closing"
+      ],
+      "default_anchor_id": "calibration-line",
+      "composition": "one supplied statement on a generous white field, balanced by one cropped theme detail in the opposite visual zone",
+      "imagery": "pale-blue parametric waves flowing inward from side margins, softly fading near the focal structure and leaving text fields clean kept sparse and separated from the statement",
+      "title_treatment": {
+        "mode": "statement",
+        "scale": "medium",
+        "placement": "left",
+        "weight": "calm sans or quote-led hierarchy"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left",
+          "center"
+        ],
+        "visual_zones": [
+          "right",
+          "top-right",
+          "bottom-right"
+        ],
+        "densities": [
+          "low"
+        ]
+      },
+      "requirements": [
+        "the supplied sentence remains the sole verbal focus",
+        "anchor stays away from letters",
+        "render every supplied exact_text line with clear hierarchy; visual effects remain separate from letters"
+      ],
+      "avoid": [
+        "author or source not in exact_text"
+      ]
+    },
+    "ui-concept": {
+      "label": "概念界面",
+      "summary": "将系统能力转成抽象界面语言，但不冒充真实产品截图",
+      "preview_image": "../../../examples/theme-previews/systems--white-cyan-wave.png",
+      "roles": [
+        "image-hero",
+        "statement"
+      ],
+      "default_anchor_id": "blueprint-ring",
+      "composition": "one abstract interface-like composition embedded in a technical field with no readable invented UI copy",
+      "imagery": "front-facing abstract state surfaces on white with supplied labels and blue selected states; fine parallel smooth spline curves with variable spacing, translucent pale-blue bands and sparse tiny blue particles; almost-flat graphic treatment with restrained glow; no invented readable interface copy",
+      "title_treatment": {
+        "mode": "caption",
+        "scale": "small-to-medium",
+        "placement": "top-left",
+        "weight": "short interface concept caption"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "bottom-right"
+        ],
+        "densities": [
+          "low",
+          "medium"
+        ]
+      },
+      "requirements": [
+        "mark the visual as conceptual through abstraction, not added labels",
+        "no real logo or product name",
+        "render every supplied exact_text line with clear hierarchy; visual effects remain separate from letters"
+      ],
+      "avoid": [
+        "fake dashboard screenshots",
+        "invented UI text",
+        "brand impersonation"
+      ]
+    },
+    "isometric-space": {
+      "label": "等距技术空间",
+      "summary": "用轻量建筑或等距空间承载系统的场景感",
+      "preview_image": "../../../examples/theme-previews/systems--white-cyan-wave.png",
+      "roles": [
+        "image-hero",
+        "section",
+        "closing"
+      ],
+      "default_anchor_id": "blueprint-ring",
+      "composition": "light isometric technical space with one clear pathway and a protected copy margin",
+      "imagery": "lightweight layered technical geometry with one clear content-related pathway and a quiet copy margin; fine parallel smooth spline curves with variable spacing, translucent pale-blue bands and sparse tiny blue particles; almost-flat graphic treatment with restrained glow",
+      "title_treatment": {
+        "mode": "caption",
+        "scale": "small-to-medium",
+        "placement": "top-left",
+        "weight": "quiet sans caption or integrated conclusion"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "top-right",
+          "bottom-right"
+        ],
+        "densities": [
+          "low",
+          "medium"
+        ]
+      },
+      "requirements": [
+        "space must suggest a system, not a literal product claim",
+        "keep geometric edges out of the text field",
+        "render every supplied exact_text line with clear hierarchy; visual effects remain separate from letters"
+      ],
+      "avoid": [
+        "server-room stock imagery",
+        "unconfirmed interface labels"
+      ]
+    }
+  }
+}

@@ -310,7 +310,7 @@ Set display name and prompt to Bento-native PPT generation; remove `HTML-assiste
 - [ ] **Step 3: Run Skill validation**
 
 ```bash
-rtk python3 /Users/swimmingliu/data/研究生/学校各类事务/毕业论文/.claude/skills/.system/skill-creator/scripts/quick_validate.py skills/presentation/create-editable-ppt
+python3 /Users/swimmingliu/data/研究生/学校各类事务/毕业论文/.claude/skills/.system/skill-creator/scripts/quick_validate.py skills/presentation/create-editable-ppt
 ```
 
 Expected: `Skill is valid!`.
@@ -352,7 +352,7 @@ Check every page at desktop and mobile viewports; use pixel checks to reject bla
 - [ ] **Step 1: Search for retired contracts**
 
 ```bash
-rtk rg -n "image-first|pure-html|image-ppt-doc|business-minimal|launch-tech|data-consulting|brand-bold|premium-dark" skills/presentation/create-editable-ppt
+rg -n "image-first|pure-html|image-ppt-doc|business-minimal|launch-tech|data-consulting|brand-bold|premium-dark" skills/presentation/create-editable-ppt
 ```
 
 Expected: no runtime contract or canonical recipe matches. An inventory entry may retain an upstream source ID only when the provenance record requires its exact original name.
@@ -361,7 +361,7 @@ Expected: no runtime contract or canonical recipe matches. An inventory entry ma
 
 ```bash
 cd skills/presentation/create-editable-ppt/scripts
-rtk npm test
+npm test
 ```
 
 Expected: zero failures.

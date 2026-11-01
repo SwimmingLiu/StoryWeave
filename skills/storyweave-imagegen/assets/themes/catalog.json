@@ -10,14 +10,18 @@
       "styles": [
         {
           "ref": "editorial/paper-magazine",
-          "label": "纸面杂志",
-          "summary": "纸张、裁切图片和克制排版组成的编辑叙事",
+          "label": "纸面编辑",
+          "summary": "裁切摄影、宋体标题与干净纸边组成的编辑叙事",
           "status": "candidate",
-          "tags": ["编辑叙事", "纸面", "纪录感"],
+          "tags": [
+            "编辑叙事",
+            "纸面",
+            "纪录感"
+          ],
           "file": "editorial/styles/paper-magazine.json",
           "preview": {
-            "cover": "../examples/theme-showcase/editorial/paper-magazine/slides/s01.png",
-            "gallery": "../examples/theme-showcase/editorial/paper-magazine/index.html"
+            "cover": "../examples/theme-previews/editorial--paper-magazine.png",
+            "gallery": "../examples/theme-previews/index.html#editorial--paper-magazine"
           }
         }
       ]
@@ -31,14 +35,50 @@
       "styles": [
         {
           "ref": "systems/white-cyan-circuit",
-          "label": "白底青蓝电路",
-          "summary": "白色技术空间中的节点、路径和青蓝信号",
+          "label": "白底电路",
+          "summary": "冷白底、精细圆环与低对比度电路纹样",
           "status": "candidate",
-          "tags": ["技术架构", "系统关系", "浅色"],
+          "tags": [
+            "浅色科技",
+            "白底电路",
+            "系统关系"
+          ],
           "file": "systems/styles/white-cyan-circuit.json",
           "preview": {
-            "cover": "../examples/theme-showcase/systems/white-cyan-circuit/slides/s01.png",
-            "gallery": "../examples/theme-showcase/systems/white-cyan-circuit/index.html"
+            "cover": "../examples/theme-previews/systems--white-cyan-circuit.png",
+            "gallery": "../examples/theme-previews/index.html#systems--white-cyan-circuit"
+          }
+        },
+        {
+          "ref": "systems/white-cyan-wave",
+          "label": "参数化波纹",
+          "summary": "浅蓝平滑曲线、稀疏粒子与清晰的信息层级",
+          "status": "candidate",
+          "tags": [
+            "浅色科技",
+            "参数化波纹",
+            "系统关系"
+          ],
+          "file": "systems/styles/white-cyan-wave.json",
+          "preview": {
+            "cover": "../examples/theme-previews/systems--white-cyan-wave.png",
+            "gallery": "../examples/theme-previews/index.html#systems--white-cyan-wave"
+          }
+        },
+        {
+          "ref": "systems/silver-glass",
+          "label": "银白玻璃",
+          "summary": "通透玻璃模块、银白空间与钴蓝重点",
+          "status": "candidate",
+          "tags": [
+            "浅色科技",
+            "银白玻璃",
+            "系统关系"
+          ],
+          "file": "systems/styles/silver-glass.json",
+          "preview": {
+            "cover": "../examples/theme-previews/systems--silver-glass.png",
+            "gallery": "../examples/theme-previews/index.html#systems--silver-glass"
           }
         }
       ]
@@ -52,14 +92,18 @@
       "styles": [
         {
           "ref": "campaign/bold-poster",
-          "label": "强传播海报",
-          "summary": "用平面色块、产品主体和中等字号主张建立传播焦点",
+          "label": "朱红海报",
+          "summary": "朱红色场、大字与单一实物主体组成的传播画面",
           "status": "candidate",
-          "tags": ["品牌传播", "海报", "产品主体"],
+          "tags": [
+            "品牌传播",
+            "海报",
+            "产品主体"
+          ],
           "file": "campaign/styles/bold-poster.json",
           "preview": {
-            "cover": "../examples/theme-showcase/campaign/bold-poster/slides/s01.png",
-            "gallery": "../examples/theme-showcase/campaign/bold-poster/index.html"
+            "cover": "../examples/theme-previews/campaign--bold-poster.png",
+            "gallery": "../examples/theme-previews/index.html#campaign--bold-poster"
           }
         }
       ]
@@ -73,14 +117,18 @@
       "styles": [
         {
           "ref": "cinematic/natural-film",
-          "label": "自然胶片",
-          "summary": "用真实光线、人物动作和安静留白讲述连续场景",
+          "label": "日常电影",
+          "summary": "自然曝光、可信动作与连续镜头组成的场景叙事",
           "status": "candidate",
-          "tags": ["影像叙事", "自然光", "人物场景"],
+          "tags": [
+            "影像叙事",
+            "自然光",
+            "人物场景"
+          ],
           "file": "cinematic/styles/natural-film.json",
           "preview": {
-            "cover": "../examples/theme-showcase/cinematic/natural-film/slides/s01.png",
-            "gallery": "../examples/theme-showcase/cinematic/natural-film/index.html"
+            "cover": "../examples/theme-previews/cinematic--natural-film.png",
+            "gallery": "../examples/theme-previews/index.html#cinematic--natural-film"
           }
         }
       ]

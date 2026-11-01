@@ -1,5 +1,7 @@
 # Imagegen 生成与结果收集
 
+用户已经提供定稿文字、要求直接制作或授权自行决定时，沿用该授权完成草稿和 approve。用户要求先看预览时先交付 `outline_preview.html`。只为改变事实或用户明确约束的缺口提问；批准状态不代表用户另外点击了确认。
+
 1. 编辑 schema 4 草稿，写入叙事、逐页主张、结构化内容、事实来源与备注，取得用户确认。
 2. 执行 `approve`，保存 `deck_spec.json` 与 `plans/imagegen.json`。只改主题或参考时使用 `replan`，保留确认内容。
 3. 执行 `prompts`，读取 `imagegen-jobs.jsonl` 中的准确文字、构图与工具输入。

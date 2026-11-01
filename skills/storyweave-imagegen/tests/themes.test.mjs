@@ -15,6 +15,8 @@ test('theme catalog exposes candidate styles only in authoring scope', async () 
   assert.deepEqual(authoring.list({ includeAll: true }).map((item) => item.ref), [
     'editorial/paper-magazine',
     'systems/white-cyan-circuit',
+    'systems/white-cyan-wave',
+    'systems/silver-glass',
     'campaign/bold-poster',
     'cinematic/natural-film',
   ]);
@@ -27,6 +29,8 @@ test('all ten page roles resolve through each candidate style without mutating t
   for (const theme_ref of [
     'editorial/paper-magazine',
     'systems/white-cyan-circuit',
+    'systems/white-cyan-wave',
+    'systems/silver-glass',
     'campaign/bold-poster',
     'cinematic/natural-film',
   ]) {
@@ -123,4 +127,24 @@ test('v2 migration maps only deterministic legacy themes and requires language',
   assert.equal(migrated.status, 'draft');
   assert.ok(migrated.slides.every((slide) => slide.visual_scheme_ref === 'auto'));
   assert.throws(() => migrateOutline({ ...v2, theme: 'launch-tech' }, { themes: catalog, language: 'zh-CN' }), /没有确定的 v3 映射/);
+});
+
+
+test('theme prompts carry only the selected anchor description and allow editorial collage', async () => {
+  const catalog = await openThemeCatalog(themeRoot, { scope: 'authoring' });
+  const outline = createOutline('拼贴主题', { theme_ref: 'editorial/paper-magazine', catalog_scope: 'authoring' });
+  const slide = outline.slides[0];
+  slide.role = 'image-hero';
+  slide.layout_plan = { text_safe_zone: 'top-left', visual_zone: ['right'], hierarchy: ['caption', 'visual'], density: 'low' };
+  slide.visual_scheme_ref = 'editorial/paper-magazine/collage-scene';
+  slide.visual_anchor_id = 'ink-dot';
+  const deck = approveOutline(outline, { mode: IMAGEGEN_MODE, themes: catalog });
+  const jobs = compileImageJobs(deck, catalog);
+  const prompt = jobs.find((job) => job.slide_id === slide.id || job.id === slide.id)?.prompt;
+  assert.ok(prompt);
+  assert.match(prompt, /paper collage/);
+  assert.doesNotMatch(prompt, /not a collage/);
+  assert.ok(prompt.includes('one restrained ink registration dot'));
+  assert.ok(!prompt.includes('one thin oxide-red editorial rule'));
+  assert.ok(!prompt.includes('Continuity anchor: ink-dot'));
 });

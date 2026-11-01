@@ -1,11 +1,17 @@
 ---
 name: storyweave-imagegen
-description: Create concise 16:9 presentations as full-slide images with Imagegen. Use for themed keynotes, product launches, visual narratives, or image-first PNG, HTML gallery, PDF, and PPTX delivery where each page is intentionally rasterized.
+description: Create full-slide rasterized 16:9 presentations with Imagegen, or maintain their StoryWeave themes. Use when whole-slide images are the intended output or when updating presentation theme references.
 ---
 
 # StoryWeave Imagegen
 
 使用真实生图工具生成完整 16:9 页面，包括背景、图像、文字和版式。PNG 是视觉源，修改通过重生成受影响页面完成。HTML 画廊、PDF 和 PPTX 都以整页图片交付。
+
+## 按任务选择流程
+
+- 制作或修改演示时使用下方 schema 4 工作流，沿用已有明确授权；要求先看预览时再等待该预览的反馈。
+- 查看、优化或新增主题时读[主题维护方法](references/theme-authoring.md)，检查 recipe 与编译结果。仅维护主题不需创建演示或生图。
+- 选主题时读[主题目录](references/themes.md)，使用 catalog 的完整引用；演讲参考图库与生成配方分别计数。
 
 ## 职责与状态
 
@@ -71,6 +77,7 @@ node scripts/ppt.mjs export <project> --format png
 | 文档 | 内容 |
 | --- | --- |
 | [workflow](references/workflow.md) | 确认、任务、真实调用与 receipt |
-| [themes](references/themes.md) | 主题与旧版兼容 |
+| [themes](references/themes.md) | 六套候选主题与旧版兼容 |
+| [theme-authoring](references/theme-authoring.md) | 主题维护与编译检查 |
 | [assets](references/assets.md) | 图片、来源和生成记录 |
 | [qa-export](references/qa-export.md) | 图片身份、视觉复核与格式边界 |

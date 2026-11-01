@@ -2,19 +2,34 @@
   "schema_version": 3,
   "architecture_id": "campaign",
   "id": "bold-poster",
-  "art_direction": "confident contemporary campaign poster with one recognizable product or service subject and disciplined graphic energy",
-  "palette": "warm white, ink black, vermilion red, cobalt blue and one restrained lime accent",
-  "typography": "bold modern Chinese sans serif for the conclusion with compact neutral sans support and deliberate line breaks",
-  "materials": "flat printed color fields, crisp crop edges, subtle coated-paper grain and controlled studio light",
+  "art_direction": "bold contemporary launch campaign: one vivid vermilion field, a recognizable oversized subject and deliberate typographic scale; use sharp silhouette, crop and directional shadow to create impact",
+  "palette": "vermilion #EF442F signature, warm white #FFF5E8 and ink black #171717 neutrals; use one dominant chromatic field per page and keep the same vermilion across the deck",
+  "typography": "heavy open-counter Chinese sans serif for claims; medium-weight readable direct labels for analytical pages; do not generate a secondary explanatory text tier",
+  "materials": "dense matte screenprint ink and crisp graphic edges; product pages add real material texture and one directional studio shadow, without glossy interface styling",
   "anchors": [
-    { "id": "campaign-mark", "prompt": "one simple vermilion campaign mark" },
-    { "id": "product-silhouette", "prompt": "one clean product or service silhouette" },
-    { "id": "color-block", "prompt": "one decisive cobalt or vermilion color block" }
+    {
+      "id": "campaign-mark",
+      "prompt": "one short vermilion rectangular print tab, reversed to warm white on vermilion backgrounds"
+    },
+    {
+      "id": "product-silhouette",
+      "prompt": "a single crisp edge of the main subject, integrated into the composition rather than duplicated as an icon"
+    },
+    {
+      "id": "color-block",
+      "prompt": "one decisive vermilion color field with a crisp edge"
+    }
   ],
   "default_anchor_id": "campaign-mark",
-  "text_layout": "use a clear medium or large conclusion with compact supporting copy; a page may be a poster statement, a product caption or an integrated claim rather than a giant headline",
-  "contrast": "ink-black or bone-white text on a flat, quiet color field; keep product edges and bright highlights away from letters",
-  "avoid": ["generic corporate stock photo", "fake brand logo", "unverified product specifications", "crowded ad copy", "oversized title on every page"],
+  "text_layout": "one concise headline as a strong graphic mass; essential product labels or values only, with semantic line breaks and complete unclipped glyphs",
+  "contrast": "warm-white headline on vermilion or ink-black type on warm white; essential labels use a high-contrast quiet field and remain clear of subject edges",
+  "avoid": [
+    "simultaneous red blue and lime brand palette",
+    "generic 3D app icons",
+    "fake brand logo",
+    "unverified product specifications",
+    "crowded ad copy"
+  ],
   "role_defaults": {
     "cover": "poster-claim",
     "section": "poster-claim",
@@ -29,82 +44,265 @@
   },
   "schemes": {
     "poster-claim": {
-      "label": "传播主张",
-      "summary": "用平面色块和清晰主张制造第一眼记忆",
-      "preview_image": "../../../examples/theme-showcase/campaign/bold-poster/slides/s01.png",
-      "roles": ["cover", "section", "statement", "closing"],
+      "label": "色场主张",
+      "summary": "用朱红色场、大字和单一主体形成第一眼识别",
+      "preview_image": "../../../examples/theme-previews/campaign--bold-poster.png",
+      "roles": [
+        "cover",
+        "section",
+        "statement",
+        "closing"
+      ],
       "default_anchor_id": "campaign-mark",
-      "composition": "one confident conclusion in a flat color field with a single graphic mark and a restrained secondary subject",
-      "imagery": "poster geometry, cropped object silhouette or abstract service gesture; no extra campaign copy",
-      "title_treatment": { "mode": "hero", "scale": "medium-to-large", "placement": "top-left", "weight": "bold conclusion with compact support" },
-      "layout_constraints": { "text_safe_zones": ["top-left", "left", "bottom-left"], "visual_zones": ["center", "right", "top-right", "bottom-right"], "densities": ["low", "medium"] },
-      "requirements": ["one message dominates", "color contrast remains readable in projection"],
-      "avoid": ["multiple slogans", "invented campaign labels", "decorative logo lockups"]
+      "composition": "one high-impact headline mass in the text zone balanced by a boldly cropped subject in the visual zone; use large changes in scale, keeping every glyph intact",
+      "imagery": "one recognizable content-relevant object or flat photographic cutout against a matte vermilion or warm-white field; hard crop and grounded shadow, without a generic portal metaphor",
+      "title_treatment": {
+        "mode": "hero",
+        "scale": "large within safe zone",
+        "placement": "top-left",
+        "weight": "heavy open-counter sans; semantic line breaks"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "top-right",
+          "bottom-right"
+        ],
+        "densities": [
+          "low",
+          "medium"
+        ]
+      },
+      "requirements": [
+        "one message and one subject dominate",
+        "headline may be large but must fit the supplied copy and safe zone",
+        "default to one concise title and essential supplied content; no automatic explanatory subtitle, eyebrow or footer microcopy",
+        "headline and subject share the focal hierarchy; avoid leaving the image as a small decorative icon"
+      ],
+      "avoid": [
+        "multiple slogans",
+        "invented campaign labels",
+        "decorative logo lockups"
+      ]
     },
     "product-studio": {
-      "label": "产品影棚",
-      "summary": "用干净的主体、光线和留白呈现产品或服务",
-      "preview_image": "../../../examples/theme-showcase/campaign/bold-poster/slides/s02.png",
-      "roles": ["image-hero", "cover"],
+      "label": "硬光产品",
+      "summary": "实物纹理与明确投影建立产品存在感",
+      "preview_image": "../../../examples/theme-previews/campaign--bold-poster.png",
+      "roles": [
+        "image-hero",
+        "cover"
+      ],
       "default_anchor_id": "product-silhouette",
-      "composition": "clean studio hero with one centered product or service metaphor and a protected text field",
-      "imagery": "abstract product silhouette, service touchpoint or supplied product asset; never invent a real brand identity",
-      "title_treatment": { "mode": "caption", "scale": "small-to-medium", "placement": "top-left", "weight": "quiet product caption or concise claim" },
-      "layout_constraints": { "text_safe_zones": ["top-left", "left", "bottom-left"], "visual_zones": ["center", "right", "bottom-right"], "densities": ["low"] },
-      "requirements": ["subject silhouette remains recognizable", "copy never crosses the subject or specular highlight"],
-      "avoid": ["fake packaging text", "invented buttons or UI", "product render that implies unsupported features"]
+      "composition": "one enlarged product or content-relevant object, slightly off-axis in the visual zone, with a crisp directional shadow and a quiet headline margin",
+      "imagery": "photorealistic supplied product, faithful silhouette and surface details, warm-white studio backdrop with a vermilion plane; a service metaphor must stay clearly conceptual",
+      "title_treatment": {
+        "mode": "caption",
+        "scale": "small-to-medium",
+        "placement": "top-left",
+        "weight": "quiet product caption or concise claim"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "bottom-right"
+        ],
+        "densities": [
+          "low"
+        ]
+      },
+      "requirements": [
+        "subject silhouette remains recognizable",
+        "copy never crosses the subject or specular highlight",
+        "default to one concise title and essential supplied content; no automatic explanatory subtitle, eyebrow or footer microcopy"
+      ],
+      "avoid": [
+        "fake packaging text",
+        "invented buttons or UI",
+        "product render that implies unsupported features"
+      ]
     },
     "campaign-comparison": {
-      "label": "传播对照",
-      "summary": "用两块平面区域清楚比较两个选择或阶段",
-      "preview_image": "../../../examples/theme-showcase/campaign/bold-poster/slides/s03.png",
-      "roles": ["two-column", "comparison"],
+      "label": "海报对照",
+      "summary": "同尺度并置两个选择，用朱红统一视觉",
+      "preview_image": "../../../examples/theme-previews/campaign--bold-poster.png",
+      "roles": [
+        "two-column",
+        "comparison"
+      ],
       "default_anchor_id": "color-block",
-      "composition": "two graphic fields with equal visual weight, a decisive divider and one concise comparison conclusion",
-      "imagery": "paired silhouettes, flat color blocks or aligned service scenes; dimensions remain supplied by exact_text",
-      "title_treatment": { "mode": "statement", "scale": "medium", "placement": "top-left", "weight": "short comparison conclusion" },
-      "layout_constraints": { "text_safe_zones": ["top-left", "left", "bottom-left"], "visual_zones": ["center", "right", "bottom-right"], "densities": ["medium"] },
-      "requirements": ["both sides use the same comparison dimension", "do not let decoration become a third option"],
-      "avoid": ["unequal ad panels", "invented price or performance claims"]
+      "composition": "two aligned subject fields with matched scale and one common headline; vermilion frames or a shared rule establish one campaign identity",
+      "imagery": "paired object crops or flat diagrams on warm white, matched lighting and label positions; no winning badge unless supplied",
+      "title_treatment": {
+        "mode": "statement",
+        "scale": "medium",
+        "placement": "top-left",
+        "weight": "short comparison conclusion"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "bottom-right"
+        ],
+        "densities": [
+          "medium"
+        ]
+      },
+      "requirements": [
+        "both sides use the same comparison dimension",
+        "do not let decoration become a third option",
+        "default to one concise title and essential supplied content; no automatic explanatory subtitle, eyebrow or footer microcopy"
+      ],
+      "avoid": [
+        "unequal ad panels",
+        "invented price or performance claims"
+      ]
     },
     "campaign-flow": {
-      "label": "行动路径",
-      "summary": "把服务或产品动作压缩成一条可记忆的路径",
-      "preview_image": "../../../examples/theme-showcase/campaign/bold-poster/slides/s01.png",
-      "roles": ["process"],
+      "label": "行动图形",
+      "summary": "用粗细明确的路径组织动作",
+      "preview_image": "../../../examples/theme-previews/campaign--bold-poster.png",
+      "roles": [
+        "process"
+      ],
       "default_anchor_id": "color-block",
-      "composition": "one bold path across a poster field with separated stages and a clear forward direction",
-      "imagery": "graphic arrows, blocks and simple objects; labels only from exact_text",
-      "title_treatment": { "mode": "integrated", "scale": "small-to-medium", "placement": "top-left", "weight": "path-led conclusion" },
-      "layout_constraints": { "text_safe_zones": ["top-left", "left", "bottom-left"], "visual_zones": ["center", "right", "bottom-right"], "densities": ["medium"] },
-      "requirements": ["stage order must be immediately readable", "keep one directional rhythm"],
-      "avoid": ["process dashboard", "unconfirmed step numbers", "equal-weight decorative arrows"]
+      "composition": "one bold flat route links the supplied stages across a warm-white field; the stage labels carry more weight than the connecting arrows",
+      "imagery": "vermilion connectors, ink-black labels and simple content-relevant silhouettes; clear space at every arrowhead",
+      "title_treatment": {
+        "mode": "integrated",
+        "scale": "small-to-medium",
+        "placement": "top-left",
+        "weight": "path-led conclusion"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "bottom-right"
+        ],
+        "densities": [
+          "medium"
+        ]
+      },
+      "requirements": [
+        "stage order must be immediately readable",
+        "keep one directional rhythm",
+        "default to one concise title and essential supplied content; no automatic explanatory subtitle, eyebrow or footer microcopy"
+      ],
+      "avoid": [
+        "process dashboard",
+        "unconfirmed step numbers",
+        "equal-weight decorative arrows"
+      ]
     },
     "campaign-data": {
-      "label": "传播数据",
-      "summary": "用少量有来源的数字支持传播判断",
-      "preview_image": "../../../examples/theme-showcase/campaign/bold-poster/slides/s02.png",
-      "roles": ["data"],
+      "label": "数字海报",
+      "summary": "数字担任主角，比例图形提供比较依据",
+      "preview_image": "../../../examples/theme-previews/campaign--bold-poster.png",
+      "roles": [
+        "data"
+      ],
       "default_anchor_id": "color-block",
-      "composition": "one crisp metric or comparison shape on a high-contrast campaign field with generous margins",
-      "imagery": "flat bars, rings or dots; all values and units come from exact_text or evidence",
-      "title_treatment": { "mode": "integrated", "scale": "medium", "placement": "top-left", "weight": "data-led conclusion" },
-      "layout_constraints": { "text_safe_zones": ["top-left", "left", "top"], "visual_zones": ["center", "right", "bottom-right"], "densities": ["medium", "high"] },
-      "requirements": ["show the supplied unit and comparison dimension", "avoid implying precision beyond the evidence"],
-      "avoid": ["fake conversion rates", "decorative pseudo-data", "tiny chart labels"]
+      "composition": "one supplied key number or a concise proportional comparison takes the visual lead; a smaller headline and clear units occupy aligned positions",
+      "imagery": "large ink numerals on warm white with vermilion flat bars; if no numeric evidence is supplied, use a text statement instead of inventing a chart",
+      "title_treatment": {
+        "mode": "integrated",
+        "scale": "medium",
+        "placement": "top-left",
+        "weight": "data-led conclusion"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "top"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "bottom-right"
+        ],
+        "densities": [
+          "medium",
+          "high"
+        ]
+      },
+      "requirements": [
+        "preserve supplied values, units and comparison baseline",
+        "data marks stay flat and proportional; numerical emphasis does not imply unsupported importance",
+        "default to one concise title and essential supplied content; no automatic explanatory subtitle, eyebrow or footer microcopy",
+        "show necessary values directly; retain source and verification notes outside the slide unless explicitly required as content"
+      ],
+      "avoid": [
+        "fake conversion rates",
+        "decorative pseudo-data",
+        "tiny chart labels"
+      ]
     },
     "campaign-signal": {
-      "label": "传播信号",
-      "summary": "让一条引文或判断成为传播锚点",
-      "preview_image": "../../../examples/theme-showcase/campaign/bold-poster/slides/s01.png",
-      "roles": ["quote"],
+      "label": "短句海报",
+      "summary": "一条引文以有力度的排字完成传播",
+      "preview_image": "../../../examples/theme-previews/campaign--bold-poster.png",
+      "roles": [
+        "quote"
+      ],
       "default_anchor_id": "campaign-mark",
-      "composition": "one supplied quote or signal sentence with one graphic mark and an intentionally quiet opposite field",
-      "imagery": "abstract campaign mark or color block; no invented author, source or slogan",
-      "title_treatment": { "mode": "statement", "scale": "medium", "placement": "left", "weight": "quote-led sans hierarchy" },
-      "layout_constraints": { "text_safe_zones": ["top-left", "left", "bottom-left"], "visual_zones": ["right", "top-right", "bottom-right"], "densities": ["low"] },
-      "requirements": ["the supplied quote remains the only verbal focus", "mark stays away from letters"],
-      "avoid": ["motivational slogan", "unverified attribution", "extra campaign copy"]
+      "composition": "a single supplied quote arranged as a bold typographic mass on warm white or vermilion, balanced by a short reversed print tab",
+      "imagery": "matte solid ink and sharp type; no independent illustrative object unless required by the quote",
+      "title_treatment": {
+        "mode": "statement",
+        "scale": "medium",
+        "placement": "left",
+        "weight": "quote-led sans hierarchy"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left"
+        ],
+        "visual_zones": [
+          "right",
+          "top-right",
+          "bottom-right"
+        ],
+        "densities": [
+          "low"
+        ]
+      },
+      "requirements": [
+        "the supplied quote remains the only verbal focus",
+        "mark stays away from letters",
+        "default to one concise title and essential supplied content; no automatic explanatory subtitle, eyebrow or footer microcopy"
+      ],
+      "avoid": [
+        "motivational slogan",
+        "unverified attribution",
+        "extra campaign copy"
+      ]
     }
   }
 }

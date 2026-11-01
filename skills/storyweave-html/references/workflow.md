@@ -6,6 +6,9 @@
 4. 执行 `qa`，查看独立页与画廊逐页的桌面、移动截图，检查主张、关系与整套节奏。
 5. 解决 blocking 与 degraded，说明 warning 后导出或交给 Bento。
 
+<!-- Fixed-sample CI and actual-project visual acceptance serve different inputs and cannot approve each other. -->
+仓库生成器、版式或视觉规则改动后，还要运行同提交 GitHub Actions CI。固定杂志、瑞士风样张的画面变化必须逐页和整套查看、更新已评审基线，并让新提交重新通过。真实项目的批准稿、实际页面与视觉复核仍分别保留。
+
 结构化内容决定信息关系，HTML 计划决定布局、字阶、主题、素材槽位与节奏。构建验证 `contentRevision`、计划哈希、规则版本与参考资源，不在构建时猜测缺失的内容。
 
 只改主题或参考时执行 `replan`，再构建和 QA。v4 保留批准内容字节，不重复确认。改动文字、来源、备注或信息关系时重新编辑草稿并取得用户确认。

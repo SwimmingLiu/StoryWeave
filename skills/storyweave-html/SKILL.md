@@ -48,6 +48,9 @@ v4 只改主题或参考时运行 `replan`，确认稿保持原字节，不重�
 
 `qa_report.json` 的 `artifact_binding` 绑定确认稿、计划、素材、参考、清单与实际页面。导出和 Bento 交接重新核对字节，旧报告不能批准改动后的页面。自动几何检查不代替主张、字体、素材和全套节奏的人工判断。
 
+<!-- Local browser restrictions left rebuilt samples unreviewed; repository CI now captures and gates their real pixels. -->
+仓库开发使用 GitHub Actions 的 `Verification` 评测。它生成杂志、瑞士风各 8 页，完成双视口 QA，再与逐页看图确认的基线比较。画面、内容、视觉策略或环境变化时为 `needs-review`，检查失败并保留对照和评审模板；逐页与整套复核后显式更新基线，再运行新提交的 CI。固定样张相同截图继承已有判断，不代表任意新项目已通过视觉验收。独立安装包仍需对实际项目运行 QA 和看图复核，具体边界见 [qa-export](references/qa-export.md)。
+
 HTML 保留原生编辑能力。当前图片式 PPTX 和 Bento 每页一张图片；缺少某个导出依赖时保留 HTML，报告该格式尚未完成。
 
 ## 命令

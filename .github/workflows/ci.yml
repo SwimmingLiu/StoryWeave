@@ -59,6 +59,17 @@ jobs:
           python scripts/cache-presentation-references.py --cache "$CI_REFERENCE_CACHE" --check
       - name: Drive all eight features and verify cleanup
         run: npm run verify:ci -- --run-id "$CI_EVALUATION_RUN_ID" --reference-cache "$CI_REFERENCE_CACHE"
+      # Technical fixtures did not capture the actual two-deck visual sample; changed pixels require a reviewed baseline.
+      - name: Verify two eight-page HTML visual samples
+        run: npm run verify:visual -- check --out "$GITHUB_WORKSPACE/tmp/visual-ci"
+      - name: Retain HTML visual comparison
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: storyweave-html-visual-${{ github.run_id }}-${{ github.run_attempt }}
+          retention-days: 14
+          if-no-files-found: warn
+          path: tmp/visual-ci/
       - name: Retain verification evidence
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2

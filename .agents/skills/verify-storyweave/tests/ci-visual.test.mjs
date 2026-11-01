@@ -1,7 +1,9 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
+import { readFile } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
 import test from 'node:test';
-import { assessBaseline, compareBaseline } from '../scripts/ci-visual.mjs';
+import { assessBaseline, compareBaseline, readCapture } from '../scripts/ci-visual.mjs';
 import { pageAxes, readCalibration, setAxes } from '../scripts/visual-review.mjs';
 
 const fingerprint = (value) => createHash('sha256').update(JSON.stringify(value)).digest('hex');
@@ -60,4 +62,13 @@ test('the exact user-rejected s06 can never become an accepted baseline', () => 
   review.items[5].inspected_sha256 = [rejected.pages[5].sha256];
   review.items[16].inspected_sha256 = rejected.pages.slice(0, 8).map((page) => page.sha256);
   assert.equal(assessBaseline(rejected, review, calibration).status, 'regressed');
+});
+
+test('the committed sixteen-page baseline has intact actual PNGs and complete bound observations', async () => {
+  const root = fileURLToPath(new URL('../fixtures/visual-baseline/', import.meta.url));
+  const capture = await readCapture(root);
+  const review = JSON.parse(await readFile(new URL('../fixtures/visual-baseline/review.json', import.meta.url), 'utf8'));
+  assert.equal(capture.origin, 'github-actions-browser');
+  assert.equal(assessBaseline(capture, review, calibration).status, 'accepted');
+  assert.equal(compareBaseline(capture, capture, review, calibration).status, 'accepted-baseline');
 });

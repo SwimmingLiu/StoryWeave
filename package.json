@@ -10,7 +10,6 @@
     "doctor": "node .agents/skills/verify-storyweave/scripts/verify.mjs doctor"
   },
   "devDependencies": {
-    "playwright": "1.62.1",
-    "pptxgenjs": "4.0.1"
+    "playwright": "1.62.1"
   }
 }

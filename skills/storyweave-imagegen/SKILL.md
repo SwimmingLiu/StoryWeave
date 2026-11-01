@@ -7,9 +7,12 @@ description: Create full-slide rasterized 16:9 presentations with Imagegen, or m
 
 使用真实生图工具生成完整 16:9 页面，包括背景、图像、文字和版式。PNG 是视觉源，修改通过重生成受影响页面完成。HTML 画廊、PDF 和 PPTX 都以整页图片交付。
 
+当前有 6 套候选生成主题；分享稿参考图库另有 18 种风格、41 张内容页。两者分别维护，参考风格不会自动成为可选配方。
+
 ## 按任务选择流程
 
 - 制作或修改演示时使用下方 schema 4 工作流，沿用已有明确授权；要求先看预览时再等待该预览的反馈。
+- 选择演讲或技术分享的视觉方向时，先看[内容页参考](references/presentation-cases.md)及[参考图库](assets/reference-library/index.html)，按观点、流程、对比、数据或架构筛选。
 - 查看、优化或新增主题时读[主题维护方法](references/theme-authoring.md)，检查 recipe 与编译结果。仅维护主题不需创建演示或生图。
 - 选主题时读[主题目录](references/themes.md)，使用 catalog 的完整引用；演讲参考图库与生成配方分别计数。
 
@@ -22,7 +25,7 @@ description: Create full-slide rasterized 16:9 presentations with Imagegen, or m
 ## 生成与复核
 
 1. 检查资料、受众、用途、语言、场景与页数。事实记录来源，资料不足时缩短范围或标记待补。
-2. 编辑 `outline_draft.json`，确认叙事、逐页主张、结构化内容、来源与备注。用户确认前不调用生图工具。
+2. 编辑 `outline_draft.json`，确认叙事、逐页主张、结构化内容、来源与备注。沿用用户明确给出的制作授权；要求先看预览时先取得该预览的反馈。
 3. 运行 `approve`，保存确认内容与绑定 `contentRevision` 的视觉计划。`exact_text` 由内容投影生成。
 4. 运行 `prompts` 编译逐页任务，默认请求 `2048x1152`、`medium`。任务中包含准确文字、构图约束与参考用途。
 5. Agent 逐页调用内置 `image_gen`，将 `tool_input.referenced_image_paths` 作为实际附件传入。保留真实工具参数、返回图片和无凭证日志。
@@ -33,7 +36,7 @@ description: Create full-slide rasterized 16:9 presentations with Imagegen, or m
 
 ## 设计参考与实际输入
 
-演讲与分享稿先读[演示主题案例](references/presentation-cases.md)，从[主题参考画廊](assets/reference-library/index.html)按观点、流程、对比和数据查看多页样张及覆盖缺口。参考原图从来源加载，案例与生成主题分别维护。
+参考图库按实际内容页记录职责与覆盖缺口。原图联网加载，展开后可放大，失败时可重试；私有离线导出内嵌原图，具体命令见[参考图说明](references/presentation-cases.md)。原图缓存不进入分发包，纯 HTML 网格、卡片、表格和代码排版不作为 Imagegen 风格案例。
 
 使用 `--library <path> --references <selection.json>` 选择案例页。生成器捕获所选图片到项目 `references/`，计划记录案例、页面、用途与哈希。完整案例库不随 Skill 安装。
 

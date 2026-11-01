@@ -8,6 +8,11 @@ on:
 permissions:
   contents: read
 
+# Unspecified Linux shells do not enable pipefail, so tee could otherwise hide a failing test or download.
+defaults:
+  run:
+    shell: bash
+
 concurrency:
   group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true

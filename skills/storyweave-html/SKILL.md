@@ -15,6 +15,9 @@ description: Create concise 16:9 presentations as standalone, editable HTML page
 
 ## 生成页面
 
+<!-- The previous workflow checked geometry after build but had no required semantic design pass before layout. -->
+开始前必读[视觉生成规则](references/visual-generation.md)，明确主张、阅读顺序、图片用途和最小修改。保留已有清楚的关系，允许不同主题共用构图。HTML 计划的 `visual_policy` 与 `visual_intent` 保存内容职责，不能把字段存在当作视觉已通过。
+
 1. 检查资料、受众、用途、语言、阅读模式和页数。记录缺口，不补造事实。
 2. 创建并编辑 `outline_draft.json`，打开 `outline_preview.html` 核对叙事、主张、来源、结构化内容与备注。
 3. 取得用户确认后执行 `approve`，写入 `deck_spec.json` 与 `plans/html.json`。

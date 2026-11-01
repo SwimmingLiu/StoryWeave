@@ -24,6 +24,9 @@ description: Create full-slide rasterized 16:9 presentations with Imagegen, or m
 
 ## 生成与复核
 
+<!-- Theme fragments could supply generic props even when the actual page needed only an authored graph or statement. -->
+开始前必读[视觉生成规则](references/visual-generation.md)。先确定对象如何解释批准主张，再选择媒介、光线和构图；没有图片职责时直接表达文字或图解。计划与任务保存 `visual_intent`，真实提示词按内容类型加入语义约束。主题中的无关道具可以省略，不能以通用隐喻填空或引入假数字。
+
 1. 检查资料、受众、用途、语言、场景与页数。事实记录来源，资料不足时缩短范围或标记待补。
 2. 编辑 `outline_draft.json`，确认叙事、逐页主张、结构化内容、来源与备注。沿用用户明确给出的制作授权；要求先看预览时先取得该预览的反馈。
 3. 运行 `approve`，保存确认内容与绑定 `contentRevision` 的视觉计划。`exact_text` 由内容投影生成。

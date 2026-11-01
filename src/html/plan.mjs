@@ -1,9 +1,10 @@
 import { assertApprovedContent } from '../core/content.mjs';
 import { openThemeCatalog, resolveTheme, sha256 } from './themes.mjs';
 import { planDiagram } from './diagram.mjs';
+import { createVisualIntent, VISUAL_POLICY } from '../core/visual-policy.mjs';
 
-// Copy wrapping, image compositions and connection geometry changed; retain approved content and replan.
-export const HTML_RENDERER_VERSION = '4.2.0';
+// Content-driven diagram planning replaces the user-rejected theme-only direction; old v4 plans must replan.
+export const HTML_RENDERER_VERSION = '4.3.0';
 export const LAYOUTS = Object.freeze({
   statement: ['statement', 'statement-split', 'image-hero', 'cover-split', 'closing-statement', 'quote'],
   comparison: ['comparison-matrix'],
@@ -112,14 +113,15 @@ function assetSlots(page) {
 
 function finishPage(slide, page, system) {
   page.geometry = pageGeometry(slide, page.layout_id, system);
-  // Shared image and diagram skeletons had left the two visual systems too similar.
+  // Theme-specific image treatments remain choices to review, not proof that one composition is better.
   page.composition = page.layout_id === 'image-hero'
     ? system === 'magazine' ? 'image-editorial' : system === 'swiss' && [...slide.content.title].length <= 52 && (slide.content.body ?? []).join('').length <= 100 ? 'image-strip' : 'image-columns'
     : page.layout_id;
-  page.diagram = planDiagram(slide.content, page.layout_id, system);
+  page.diagram = planDiagram(slide.content, page.layout_id);
   if (page.diagram) page.composition = `diagram-${page.diagram.flow}`;
   page.comparison_emphasis = slide.content.type === 'comparison' ? 'neutral' : null;
   page.asset_slots = assetSlots(page);
+  page.visual_intent = createVisualIntent(slide);
 }
 
 function composeVisualPages(content, pages, system) {
@@ -196,6 +198,7 @@ export async function createHtmlPlan(content, { theme_ref = 'systems/ink-blue-gr
     contract_version: catalog.contract_version,
     theme_source_sha256: sha256(style),
     visual_system: system,
+    visual_policy: clone(VISUAL_POLICY),
     theme: { kind: 'canonical', theme_ref, architecture_id: style.architecture_id, label: style.label, tokens: clone(style.tokens) },
     typography: {
       heading_font: serif ? "'Songti SC', 'Noto Serif CJK SC', Georgia, serif" : "'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', sans-serif",
@@ -242,6 +245,8 @@ export function validateHtmlPlan(content, plan) {
   if (plan?.schema_version !== 1 || plan?.producer !== 'storyweave-html') errors.push('Expected an HTML plan schema 1.');
   if (plan?.contentRevision !== content?.revision) errors.push('HTML plan belongs to another approved content revision.');
   if (plan?.renderer_version !== HTML_RENDERER_VERSION) errors.push('HTML renderer changed; replan before building.');
+  // A valid hash of an older plan must not omit the shared generation policy or the content it is meant to express.
+  if (sha256(plan.visual_policy ?? null) !== sha256(VISUAL_POLICY)) errors.push('Visual generation policy changed; replan before building.');
   if (!plan?.theme || plan.theme.theme_ref !== plan.theme_ref || !plan?.typography) errors.push('HTML plan is missing its resolved theme or typography.');
   if (plan?.plan_sha256 !== planHash(plan ?? {})) errors.push('HTML plan changed after planning; replan before building.');
   if (plan?.theme_recipe_sha256 !== sha256({ theme: plan?.theme, typography: plan?.typography, contract_version: plan?.contract_version, reference_applications: plan?.reference_applications })) errors.push('HTML theme snapshot is stale.');
@@ -250,6 +255,7 @@ export function validateHtmlPlan(content, plan) {
     const slide = content?.slides?.[index];
     if (!page || typeof page !== 'object') { errors.push(`HTML plan page ${index + 1} must be an object.`); continue; }
     if (page.id !== slide?.id || page.content_type !== slide?.content?.type || !LAYOUTS[page.content_type]?.includes(page.layout_id)) errors.push(`HTML plan has an incompatible layout or page identity at ${index + 1}.`);
+    if (slide && sha256(page.visual_intent ?? null) !== sha256(createVisualIntent(slide))) errors.push(`Visual intent is stale for ${page.id}; replan it.`);
     if (!['light', 'dark', 'accent'].includes(page.tone)) errors.push(`HTML plan has an unsupported tone at ${index + 1}.`);
     if (page.layout_id === 'process-loop' && slide?.content?.type === 'process' && !cycleIn(slide.content.steps, slide.content.edges)) errors.push(`${page.id}: a loop layout needs an explicit cycle in the approved content.`);
     if (page.layout_id === 'image-hero' && !page.asset_refs?.some((asset) => asset.slot === 'hero')) errors.push(`${page.id}: an image-hero layout requires a bound hero asset.`);

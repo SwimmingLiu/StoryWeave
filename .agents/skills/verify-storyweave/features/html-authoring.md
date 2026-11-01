@@ -34,7 +34,7 @@ node .agents/skills/verify-storyweave/scripts/verify.mjs report --run-id "$VERIF
 计划选择 image-hero、statement-split 等匹配内容的版式。中文短词按语言分词保持同一行，准确文字投影继续逐字核对。QA 测量标题实际字符行、孤字行尾、字号字重、标题间距、文字重叠、底部 80px、导航遮挡、图片比例及焦点和主体裁切。`visual-comparisons.json` 保存两套内容与绑定，`visual-before-after.html` 提供 16 组逐页对照；人工查看字体、素材与整套疏密后记录判断。
 
 <!-- Fixed directions rewarded a known visual regression; geometry must match the chosen plan without prescribing novelty. -->
-正文 QA 检查孤字、短词拆行、连线与文字或无关节点相交、端点脱离，以及 neutral 比较列的颜色和字重。`layout-qa-states.json` 保留双视口原始测量。构图、方向和图片比例记录实际选择并核对计划与 DOM，不预设哪种方向更好。当前实现的杂志纵向选择仍作为产品行为记录，其视觉收益需要独立比较；版式种类数量只证明样本覆盖。
+正文 QA 检查孤字、短词拆行、连线与文字或无关节点相交、端点脱离，以及 neutral 比较列的颜色和字重。`layout-qa-states.json` 保留双视口原始测量。构图、方向和图片比例记录实际选择并核对计划与 DOM，不预设哪种方向更好。生成前共享策略与逐页意图进入计划及指纹；非循环关系图不再仅因杂志主题旋转为纵向。版式种类数量只证明样本覆盖。
 
 按[视觉评测参考](../references/visual-review.md)查看 `visual-review/review-sheet.html` 的全部页面及整套视图，再填写评审模板并运行 assess。每个维度有实际截图依据；未看或不确定为 unreviewed，任一维度退步阻断接受。用户拒绝的 s06 原图对作为固定反例。`summary.status: pass` 表示技术路径通过，不能覆盖 `visual_acceptance: regressed` 或 needs-review。
 

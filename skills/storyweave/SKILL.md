@@ -20,6 +20,9 @@ StoryWeave 使用一份确认内容、两个生成器和一个 Bento 展示适�
 
 ## 确认内容
 
+<!-- Post-generation QA alone did not prevent unrelated imagery and novelty-driven composition at generation time. -->
+生成或优化前必读[视觉生成规则](references/visual-generation.md)，记录视觉方向、素材用途与需保留的构图。该规则改编自 Damir Sokolovsky 的视觉版 unslop。先解决可指出的问题；两个主题可以共用清楚的阅读方向，不为增加差异重排信息。
+
 检查主题、受众、用途、语言、展示场景、预计页数与资料缺口。写出中心含义、叙事、逐页主张、事实来源、结构化内容和备注，再取得用户确认。事实来自项目材料；设计参考单独记录，不把案例数字或论断写入新项目。
 
 新结构化项目使用 schema 4 的 `deck_spec.json`。核心从内容生成 `exact_text` 和 `revision`，HTML 与 Imagegen 各自保存绑定修订的 schema 1 计划。只改主题或版式时运行所属生成器的 `replan`；修改文字、来源或关系时回到草稿重新确认。

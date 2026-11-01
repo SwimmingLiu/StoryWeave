@@ -6,6 +6,7 @@ import { writeJsonAtomic } from '../core/storage.mjs';
 import { defaultLayoutForRole } from './outline.mjs';
 import { compileImageJob, createGenerationManifest, IMAGEGEN_MODE, inspectGeneratedImage } from './imagegen.mjs';
 import { sha256 } from './themes.mjs';
+import { createVisualIntent, VISUAL_POLICY } from '../core/visual-policy.mjs';
 
 const hashBytes = (bytes) => createHash('sha256').update(bytes).digest('hex');
 const exists = (path) => access(path).then(() => true, () => false);
@@ -23,9 +24,10 @@ export function planImagegen(content, catalog, { theme_ref, references = [] } = 
   const slides = content.slides.map((slide) => {
     const input = { ...slide, exact_text: visibleText(slide), visual_scheme_ref: 'auto', visual_brief: `Express the authored ${slide.content.type} relationships without adding facts.`, visual_anchor_id: style.default_anchor_id, continuity_group: 'approved-content', layout_plan: defaultLayoutForRole(slide.role) };
     const resolved = catalog.resolveVisualPlan({ phase: 'approve', theme_ref, slide: input });
-    return { id: slide.id, role: slide.role, visual_scheme_ref: resolved.visual_scheme_ref, recipe: compactRecipe(resolved), references: references.filter((reference) => !reference.slide_id || reference.slide_id === slide.id) };
+    // Freeze the approved meaning alongside the recipe so a theme cannot silently become the page's subject.
+    return { id: slide.id, role: slide.role, visual_intent: createVisualIntent(slide), visual_scheme_ref: resolved.visual_scheme_ref, recipe: compactRecipe(resolved), references: references.filter((reference) => !reference.slide_id || reference.slide_id === slide.id) };
   });
-  const plan = { schema_version: 1, producer: 'storyweave-imagegen', contentRevision: content.revision, theme_ref, catalog_scope: catalog.scope, references: structuredClone(references), slides };
+  const plan = { schema_version: 1, producer: 'storyweave-imagegen', contentRevision: content.revision, visual_policy: structuredClone(VISUAL_POLICY), theme_ref, catalog_scope: catalog.scope, references: structuredClone(references), slides };
   return { ...plan, plan_sha256: sha256(planInput(plan)) };
 }
 
@@ -34,7 +36,10 @@ export function assertImagePlan(content, plan, catalog = null) {
   if (plan?.schema_version !== 1 || plan.producer !== 'storyweave-imagegen' || plan.contentRevision !== content.revision) throw new Error('Image plan does not match the approved content revision. Replan it.');
   if (!Array.isArray(plan.slides) || !Array.isArray(plan.references)) throw new Error('Image plan requires ordered slides and reference selections.');
   if (plan.plan_sha256 !== sha256(planInput(plan))) throw new Error('Image plan fingerprint is stale. Replan it.');
+  // Prompt-policy changes invalidate old tasks even when their original recipe and approved copy are unchanged.
+  if (sha256(plan.visual_policy ?? null) !== sha256(VISUAL_POLICY)) throw new Error('Visual generation policy changed. Replan it.');
   if (JSON.stringify(plan.slides.map((slide) => slide.id)) !== JSON.stringify(content.slides.map((slide) => slide.id))) throw new Error('Image plan page sequence does not match approved content.');
+  for (const [index, slide] of content.slides.entries()) if (sha256(plan.slides[index].visual_intent ?? null) !== sha256(createVisualIntent(slide))) throw new Error(`Visual intent is stale for ${slide.id}. Replan it.`);
   if (catalog) {
     for (const [index, slide] of content.slides.entries()) {
       const stored = plan.slides[index];

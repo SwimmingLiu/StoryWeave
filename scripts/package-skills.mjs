@@ -14,10 +14,10 @@ const check = process.argv.includes('--check');
 const args = process.argv.slice(2);
 const selected = args.includes('--skill') ? args[args.indexOf('--skill') + 1] : null;
 const profiles = {
-  'storyweave-html': { entry: 'html/cli.mjs', cli: 'ppt.mjs', example: true, dependencies: { playwright: '^1.54.0', pptxgenjs: '^4.0.1' } },
-  'storyweave-imagegen': { entry: 'imagegen/cli.mjs', cli: 'ppt.mjs', example: true, dependencies: { playwright: '^1.54.0', pptxgenjs: '^4.0.1' } },
+  'storyweave-html': { entry: 'html/cli.mjs', cli: 'ppt.mjs', example: true, visualGuidance: true, dependencies: { playwright: '^1.54.0', pptxgenjs: '^4.0.1' } },
+  'storyweave-imagegen': { entry: 'imagegen/cli.mjs', cli: 'ppt.mjs', example: true, visualGuidance: true, dependencies: { playwright: '^1.54.0', pptxgenjs: '^4.0.1' } },
   'storyweave-express': { entry: 'bento/cli.mjs', cli: 'ppt.mjs', bento: true, dependencies: { playwright: '^1.54.0' } },
-  storyweave: { entry: 'workflow/cli.mjs', cli: 'orchestrate.mjs', bento: true, dependencies: { playwright: '^1.54.0' } },
+  storyweave: { entry: 'workflow/cli.mjs', cli: 'orchestrate.mjs', bento: true, visualGuidance: true, dependencies: { playwright: '^1.54.0' } },
 };
 if (selected && !profiles[selected]) throw new Error(`Unknown Skill: ${selected}`);
 const hash = (bytes) => createHash('sha256').update(bytes).digest('hex');
@@ -55,6 +55,8 @@ async function emit(path, bytes, source) {
 for (const [name, profile] of activeProfiles) {
   const skill = join(root, 'skills', name);
   const inventory = [];
+  // Standalone producers previously lacked the shared generation guidance that existed only in repository QA notes.
+  if (profile.visualGuidance) inventory.push(await emit(join(skill, 'references/visual-generation.md'), await readFile(join(root, 'docs/architecture/visual-generation.md')), 'docs/architecture/visual-generation.md'));
   const needsThemeContract = graph[profile.entry].includes('core/theme-contract.mjs');
   if (needsThemeContract) inventory.push(await emit(join(skill, 'contracts/storyweave-theme/v1/contract.json'), await readFile(join(root, 'contracts/storyweave-theme/v1/contract.json')), 'contracts/storyweave-theme/v1/contract.json'));
   for (const module of graph[profile.entry]) {

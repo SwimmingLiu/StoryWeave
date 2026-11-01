@@ -1,5 +1,5 @@
 // Node positions belong to the visual plan; edges always come from approved content.
-export function planDiagram(content, layout, system) {
+export function planDiagram(content, layout) {
   if (!['process', 'graph'].includes(content.type) || layout === 'process-linear') return null;
   const nodes = content.steps ?? content.nodes;
   const edges = content.edges;
@@ -29,15 +29,14 @@ export function planDiagram(content, layout, system) {
     groups.get(level).push(node);
   }
   const maximum = Math.max(...levels.values(), 1);
-  const down = content.type === 'graph' && system === 'magazine' && maximum === 2 && [...groups.values()].every((group) => group.length <= 2);
+  // The magazine-only vertical rewrite flattened branches and scattered related nodes in the user-rejected s06.
+  // On a wide stage, preserve the left-to-right DAG reading path across themes; actual cycles keep their loop above.
   return {
-    width, height: down ? 400 : 350, node_width: down ? 320 : 220, flow: down ? 'down' : 'across',
+    width, height: 350, node_width: 220, flow: 'across',
     nodes: nodes.map((node) => {
       const level = levels.get(node.id);
       const peers = groups.get(level);
-      return down
-        ? { id: node.id, x: width / 2 + (peers.indexOf(node) - (peers.length - 1) / 2) * 528, y: 56 + level * 144 }
-        : { id: node.id, x: 120 + level * (width - 240) / maximum, y: (peers.indexOf(node) + .5) * 350 / peers.length };
+      return { id: node.id, x: 120 + level * (width - 240) / maximum, y: (peers.indexOf(node) + .5) * 350 / peers.length };
     }),
   };
 }

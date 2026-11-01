@@ -29,9 +29,10 @@ commands 中包含 themes、preview、replan、build 与 qa。`themes.json` 保�
 默认从 editorial/paper-magazine 重规划至 systems/ink-blue-grid；反向或其他起点优先选择杂志风。`theme-replan.json` 保存批准稿哈希、content revision、visual_system 与逐页计划，`before-replan/` 保留旧主题产物和截图。
 
 <!-- Visual plan versions and copy policies change independently from the approved content revision. -->
-重建清单与页面的 `meta[name="storyweave-theme-ref"]` 声明新主题。预览和重建使用不同浏览器上下文，分别保留编号 trace；完整内容核对与 `contact-sheet.html` 在重建路径保存。renderer 版本变化后的旧计划先 replan，批准内容保持不变；当前为 4.2.0。新计划须声明每页 composition、标题与正文断词策略，以及 neutral 比较权重。
+重建清单与页面的 `meta[name="storyweave-theme-ref"]` 声明新主题。预览和重建使用不同浏览器上下文，分别保留编号 trace；完整内容核对与 `contact-sheet.html` 在重建路径保存。renderer 版本变化后的旧计划先 replan，批准内容保持不变；当前为 4.3.0。新计划须声明每页 composition、标题与正文断词策略，以及 neutral 比较权重。
 
-默认主题 fixture 无图片；图片比例与构图由 html-authoring 的视觉基线选项覆盖。杂志图片为 `image-editorial / 21:9`；短标题和适量正文的瑞士图片为 `image-strip / 4:1`，其余为 image-columns。满足三层、每层最多两个节点条件的杂志非循环系统图采用纵向结构，瑞士采用横向结构。`theme-replan.json.pages` 与实际 DOM 保存相应 composition。
+<!-- Theme-only rotation caused the rejected s06; current DAG geometry preserves the same reading path across themes. -->
+默认主题 fixture 无图片；图片比例与构图由 html-authoring 的视觉基线选项覆盖。杂志图片为 `image-editorial / 21:9`；短标题和适量正文的瑞士图片为 `image-strip / 4:1`，其余为 image-columns。非循环系统图在两种主题中均按批准层级从左到右展开，只有真实循环边使用 loop。`theme-replan.json.pages` 与实际 DOM 保存 composition 和逐页视觉意图，计划保存共享视觉生成策略。
 
 <!-- Different theme skeletons are current behavior, not a requirement or proof that either is easier to read. -->
 上述构图描述当前实现，不是视觉接受条件。主题可以共用清楚的图解方向；不得为拉开主题差异降低阅读性。视觉改动按相同内容前后逐页及整套评测，任一退步单独阻断，不能凭 composition 不同或主题名称正确判为改善。

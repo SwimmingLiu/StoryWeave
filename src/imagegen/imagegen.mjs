@@ -2,6 +2,7 @@ import { access, readFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { extname, resolve } from 'node:path';
 import { isThemeCatalog, legacyThemePlan, sha256 } from './themes.mjs';
+import { createVisualIntent, visualGenerationInstructions } from '../core/visual-policy.mjs';
 
 export const IMAGEGEN_MODE = 'imagegen';
 export const DEFAULT_SIZE = '2048x1152';
@@ -34,10 +35,12 @@ function exactText(slide) {
 }
 
 function safeVisualBrief(slide) {
+  // Structured briefs contain approved copy; the old guard replaced them with a generic decorative metaphor.
+  if (slide.content?.type) return createVisualIntent(slide).representation;
   const copy = new Set(exactText(slide));
   const brief = escapePrompt(slide.visual_brief ?? slide.media_brief ?? '');
   if (brief && ![...copy].some((line) => brief.includes(line))) return brief;
-  return 'A restrained visual metaphor that supports the slide claim without adding factual detail';
+  return 'Compose the approved statement and supplied information clearly. An additional scene or object is optional and needs a direct connection to the claim.';
 }
 
 function isResolvedPlan(value) {
@@ -100,6 +103,8 @@ export function compileSlidePrompt(slide, themeOrPlan, options = {}) {
     'Constraints: preserve the frozen text and layout, factual relationships, and one clear visual hierarchy; no watermark. Theme recipes guide visual choices within these boundaries.',
     `Avoid: ${avoid.join('; ')}.`,
     `Continuity anchor: ${escapePrompt(anchorPrompt)}. Internal theme, scheme and continuity identifiers are metadata, not visible text.`,
+    // Theme prose alone encouraged decorative props; all task versions now receive meaning-specific generation rules.
+    visualGenerationInstructions(slide),
   ].join('\n');
   return prompt;
 }
@@ -141,6 +146,7 @@ export function compileImageJob(slide, plan, index, options = {}) {
     asset_role: 'complete-slide',
     text_policy: 'exact-text-in-image',
     visible_text: exactText(slide),
+    visual_intent: createVisualIntent(slide),
     canvas: { width: size.width, height: size.height, aspect_ratio: '16:9' },
     composition: {
       text_safe_zone: plan.layout_plan?.text_safe_zone ?? 'theme-defined quiet field',

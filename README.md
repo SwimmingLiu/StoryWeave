@@ -11,6 +11,7 @@ StoryWeave 是制作 16:9 演示文稿的 Agent Skill 集合。Agent 整理资�
 | [重构验证记录](docs/plans/storyweave-refactor-validation.md) | 八类用户路径、视觉前后对比、耗时和体积的实际结果 |
 | [独立包体积优化](docs/plans/storyweave-package-size-validation.md) | 最小模块依赖、Bento 无损压缩和安装体积 |
 | [项目验证 Skill](.agents/skills/verify-storyweave/SKILL.md) | 公开 CLI、真实浏览器、八类用户路径与可保留的证据 |
+| [CI 与评测](docs/ci.md) | 每次 push、PR 和手动评测的完整测试、八项验收和保留证据 |
 
 ## 运行结构
 

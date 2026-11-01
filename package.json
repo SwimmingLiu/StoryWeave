@@ -5,7 +5,12 @@
   "scripts": {
     "package:skills": "node scripts/package-skills.mjs",
     "check:packages": "node scripts/package-skills.mjs --check",
-    "test": "node --test tests/core/*.test.mjs tests/design-library/*.test.mjs tests/integration/*.test.mjs tests/packaging/*.test.mjs skills/*/tests/*.test.mjs",
+    "test": "node --test tests/core/*.test.mjs tests/design-library/*.test.mjs tests/integration/*.test.mjs tests/packaging/*.test.mjs skills/*/tests/*.test.mjs .agents/skills/verify-storyweave/tests/*.test.mjs",
+    "verify:ci": "node .agents/skills/verify-storyweave/scripts/ci.mjs",
     "doctor": "node .agents/skills/verify-storyweave/scripts/verify.mjs doctor"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1",
+    "pptxgenjs": "4.0.1"
   }
 }

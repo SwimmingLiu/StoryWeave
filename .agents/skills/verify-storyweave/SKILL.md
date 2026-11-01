@@ -7,6 +7,9 @@ description: 验证 StoryWeave 的公开 CLI、HTML 双视口与播放、主题�
 
 从仓库根目录执行。先读[功能地图](features/README.md)，再读受影响功能。公开 CLI 是操作入口，离线 HTML 是浏览器入口；用户项目和仓库示例只作为只读输入。
 
+<!-- Local-only evaluation left browser coverage unfinished; every evaluation now includes its exact-commit CI run. -->
+每次评测都需要运行[GitHub Actions CI](../../../.github/workflows/ci.yml)，记录同一提交的运行链接与结论。新提交 push 或 PR 自动触发；已有分支用 `gh workflow run ci.yml --ref <branch>` 重跑，等待最新提交的 `Verification` 成功。CI 失败、取消、未执行或仍有未提交改动时，不报告该代码已通过。具体覆盖与 artifact 见[CI 说明](../../../docs/ci.md)。
+
 <!-- Different compositions previously passed as improvements despite the user's s06 counterexample. -->
 生成、优化或复核视觉内容前，先读[视觉语义评测与生成前检查](references/visual-review.md)。记录问题和最小改动，保留已有清楚构图；生成后按同内容前后截图逐页评测。技术 QA、版式数量和主题差异均不作为审美改善结论。
 
@@ -127,6 +130,7 @@ node .agents/skills/verify-storyweave/scripts/verify.mjs drive reference-gallery
 | `visual-before-after.html`、`visual-comparisons.json` | 启用视觉基线后的逐页前后对照、内容与产物绑定 |
 | `visual-review/packet.json`、`key.json`、`review-sheet.html` | 同内容 A/B 图片、哈希、批准语义与逐页及整套评测入口 |
 | `visual-assessment/review.json`、`assessment.json` | 署名视觉观察、改善/持平/退步/未评测，以及不能被平均抵消的退步结论 |
+| `visual-assessment/assessment.html` | 原版与候选的逐页图片、结论及每项视觉依据 |
 | `image-integrity.json`、`input-cache-hashes.json` | 图库逐图解码、内嵌与原图哈希、角色计数、安装资产与只读输入 |
 | `offline-viewer/`、`desktop-decoded.json`、`mobile-decoded.json` | 离线原产物与实际浏览器逐图显示记录，后两项只在浏览器执行后存在 |
 | `image-boundary.json`、`image-error.png`、`image-retry.png` | 外部图片边界的一次失败、公开重试动作与恢复证据 |
@@ -158,6 +162,8 @@ node .agents/skills/verify-storyweave/scripts/verify.mjs report --run-id "$VERIF
 ## Helpers
 
 可执行入口为 [scripts/verify.mjs](scripts/verify.mjs)，提供 doctor、launch、drive、cleanup 与 report。
+
+CI 可执行入口为 [scripts/ci.mjs](scripts/ci.mjs)：`npm run verify:ci -- --run-id <unique-id> --reference-cache <absolute-directory>`。它驱动全部八项功能，明确检查 Imagegen 预期缺图门，清理后核对证据。依赖由根目录 package-lock.json 与 [requirements-ci.txt](scripts/requirements-ci.txt)固定；CI 不会自动重打包来修复未提交的生成副本。
 
 视觉评测入口为 [scripts/visual-review.mjs](scripts/visual-review.mjs)，提供 prepare、assess 与 report。其回归可用 `node --test .agents/skills/verify-storyweave/tests/visual-review.test.mjs` 执行；测试覆盖退步不能平均抵消、相同用户反例不能改判、缺评和陈旧截图不能通过。
 

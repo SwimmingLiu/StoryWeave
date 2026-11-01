@@ -193,7 +193,9 @@ async function withBrowser(proof, drive) {
   let context;
   try {
     context = await browser.newContext({ viewport: { width: 1280, height: 720 }, reducedMotion: 'reduce' });
-    await context.tracing.start({ screenshots: true, snapshots: true, sources: true });
+    // Embedded originals make each gallery DOM snapshot ~50 MB; action screenshots and the retained HTML provide its proof.
+    const snapshotDom = proof.feature !== 'reference-gallery';
+    await context.tracing.start({ screenshots: true, snapshots: snapshotDom, sources: snapshotDom });
     const page = await context.newPage();
     page.on('pageerror', (error) => proof.browser_errors.push(error.message));
     page.on('console', (message) => {

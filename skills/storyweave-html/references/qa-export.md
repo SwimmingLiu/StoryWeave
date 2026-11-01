@@ -14,6 +14,11 @@
 
 自动检查不判断审美。查看相同内容、相同主题的前后页面和整套缩略图，记录主张、关系、字阶、素材与节奏的具体判断。不要以 `export_ready` 代替这份视觉结论。
 
+<!-- CI previously reported technical success while the sixteen-page sample had no new visual review. -->
+仓库 CI 另生成杂志、瑞士风各 8 页的固定样张，与已实际查看并记录观察的截图基线比较。检查内容修订、主题、视觉策略、渲染环境及 PNG 字节；全部一致才继承已有判断。任一变化、缺评或基线退步都会阻断 `Verification`。像素差异不自动判定审美，CI 不自动填写视觉观察或更新基线。
+
+`storyweave-html-visual-<run-id>-<attempt>` artifact 保存完整 HTML、双视口截图、整套缩略图、逐页对照与评审模板。维护者实际看图后，用仓库验证入口 `ci-visual.mjs accept` 绑定 16 页和两套观察，提交基线并重跑 CI。任一维度退步或不确定均不能接受。独立 Skill 包的项目 QA 不依赖仓库夹具，也不能沿用固定样张的视觉结论。
+
 ## 导出边界
 
 | 格式 | 结果 |

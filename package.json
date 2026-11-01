@@ -8,6 +8,7 @@
     "check:themes": "node scripts/build-imagegen-theme-gallery.mjs --check",
     "test": "node --test tests/core/*.test.mjs tests/design-library/*.test.mjs tests/integration/*.test.mjs tests/packaging/*.test.mjs skills/*/tests/*.test.mjs .agents/skills/verify-storyweave/tests/*.test.mjs",
     "verify:ci": "node .agents/skills/verify-storyweave/scripts/ci.mjs",
+    "verify:visual": "node .agents/skills/verify-storyweave/scripts/ci-visual.mjs",
     "doctor": "node .agents/skills/verify-storyweave/scripts/verify.mjs doctor"
   },
   "devDependencies": {

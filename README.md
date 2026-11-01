@@ -36,6 +36,9 @@ node skills/storyweave/scripts/orchestrate.mjs ./my-deck --no-bento-update --jso
 
 确认内容保存在 `deck_spec.json`，两个生成器分别使用自己的视觉计划。换主题保留确认内容，修改内容或产物后重新 QA。旧 v2/v3 项目仍可读取，使用 `migrate-content` 显式迁移。
 
+<!-- Geometry alone previously allowed visually worse revisions; generation and review now preserve semantic reading paths. -->
+HTML 制作先读[视觉生成规则](docs/architecture/visual-generation.md)。构图由主张、比较轴、流程和关系决定，素材应解释具体内容；局部优化保留已有清楚的阅读路径。页面 QA 后还需查看逐页与整套效果，任何退步或不确定结果都不能作为视觉通过。
+
 ## Imagegen 主题与参考图
 
 生成器现有 **19 套候选主题**，已将 18 种参考风格归并成 14 个主题方向，补成可直接选择的配方。相近的手绘白板、角色彩绘和玻璃风格合并，其余保留独立的绘画与材质语言。[完整主题与合并关系](skills/storyweave-imagegen/references/themes.md) · [19 套实际预览](skills/storyweave-imagegen/assets/examples/theme-previews/index.html)
@@ -74,6 +77,8 @@ npm test
 npm run doctor
 ```
 
-[GitHub Actions CI](https://github.com/SwimmingLiu/StoryWeave/actions/workflows/ci.yml)在 push、PR 和手动评测时运行完整测试及八项功能验收，保留日志、截图和 trace。每次评测都核对对应提交的 CI 结果，PR 合并前要求 `Verification` 成功。付费生图与人工视觉评审分别记录，CI 不代填接受结论。运行与证据说明见 [CI 文档](docs/ci.md)。
+[GitHub Actions CI](.github/workflows/ci.yml)在 push、PR 和手动评测时运行完整测试、八项功能验收，以及杂志、瑞士风各 8 页的 HTML 视觉回归。两套样张经过双视口浏览器 QA，再与实际看图确认的基线逐页比较；内容、画面或环境变化时检查失败并等待复核。CI 保留 HTML、截图、前后对照和评审模板。
+
+每次评测都核对对应提交的 CI 结果，PR 合并前要求 `Verification` 成功。相同截图继承已有视觉判断，CI 不自动判定新画面的审美，也不调用付费生图。基线更新、artifact 下载与证据说明见 [CI 文档](docs/ci.md)。
 
 [系统架构](docs/architecture/storyweave-target-architecture.md) · [重构与验收](docs/plans/storyweave-refactor-plan.md) · [包体积优化](docs/plans/storyweave-package-size-validation.md) · [验证 Skill](.agents/skills/verify-storyweave/SKILL.md)

@@ -12,7 +12,8 @@ const exists = (path) => access(path).then(() => true, () => false);
 const planInput = (plan) => { const copy = structuredClone(plan); delete copy.plan_sha256; delete copy.created_at; return copy; };
 
 function compactRecipe(plan) {
-  const style = Object.fromEntries(['id', 'art_direction', 'palette', 'typography', 'materials', 'text_layout', 'contrast', 'avoid'].filter((name) => plan.style[name] !== undefined).map((name) => [name, plan.style[name]]));
+  // Dropping anchors silently replaced a non-first selection with the first prompt fragment in v4 jobs.
+  const style = Object.fromEntries(['id', 'art_direction', 'palette', 'typography', 'materials', 'text_layout', 'contrast', 'avoid', 'anchors'].filter((name) => plan.style[name] !== undefined).map((name) => [name, plan.style[name]]));
   return { theme_ref: plan.theme_ref, visual_scheme_ref: plan.visual_scheme_ref, architecture_ref: plan.architecture_ref, style, visual_scheme: plan.visual_scheme, title_treatment: plan.title_treatment, layout_plan: plan.layout_plan, visual_anchor_id: plan.visual_anchor_id, prompt_fragments: plan.prompt_fragments, theme_recipe_sha256: plan.theme_recipe_sha256, visual_scheme_sha256: plan.visual_scheme_sha256 };
 }
 

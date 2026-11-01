@@ -47,6 +47,21 @@ test('image plans bind shared content while visual replanning preserves approved
   assert.throws(() => assertImagePlan(content, changed), /fingerprint/u);
 });
 
+// A non-first default anchor was lost when the v4 plan compacted its theme recipe.
+test('v4 prompt compilation preserves a selected non-first continuity anchor', () => {
+  const theme_ref = 'editorial/paper-magazine';
+  const style = catalog.getStyle(theme_ref);
+  const selected = style.anchors[1];
+  const alternateDefault = { ...catalog, getStyle: (ref) => ({ ...catalog.getStyle(ref), default_anchor_id: selected.id }) };
+  const content = approveContent(fixture);
+  const plan = planImagegen(content, alternateDefault, { theme_ref });
+  const job = compilePlannedImageJobs(content, plan)[0];
+  assert.equal(plan.slides[0].recipe.visual_anchor_id, selected.id);
+  assert(job.prompt.includes(`Continuity anchor: ${selected.prompt}`));
+  assert(!job.prompt.includes(style.anchors[0].prompt));
+  assert(!job.prompt.includes(`Continuity anchor: ${selected.id}`));
+});
+
 test('tasks carry actual tool input paths for selected page-purpose records', async (t) => {
   const { root, plan, jobs } = await context(t, { references: true });
   assert.equal(jobs[0].reference_images.length, 0);

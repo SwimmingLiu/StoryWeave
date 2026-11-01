@@ -7,7 +7,7 @@ description: Create full-slide rasterized 16:9 presentations with Imagegen, or m
 
 使用真实生图工具生成完整 16:9 页面，包括背景、图像、文字和版式。PNG 是视觉源，修改通过重生成受影响页面完成。HTML 画廊、PDF 和 PPTX 都以整页图片交付。
 
-当前有 6 套候选生成主题；分享稿参考图库另有 18 种风格、41 张内容页。两者分别维护，参考风格不会自动成为可选配方。
+当前有 19 套候选生成主题；18 种参考风格已归并为 14 个主题方向，其中 1 个沿用已有主题、13 个新增。参考图库保留 41 张原始内容页，每种风格都有实际主题映射。
 
 ## 按任务选择流程
 
@@ -59,7 +59,7 @@ v4 换主题或参考时运行 `replan`，保留确认内容。重新编译任�
 
 ```bash
 node scripts/ppt.mjs draft <project> --theme editorial/paper-magazine --title "标题"
-node scripts/ppt.mjs themes --json
+node scripts/ppt.mjs themes --all --json
 node scripts/ppt.mjs approve <project> --theme editorial/paper-magazine
 node scripts/ppt.mjs replan <project> --theme systems/white-cyan-circuit
 node scripts/ppt.mjs prompts <project>
@@ -83,7 +83,7 @@ node scripts/ppt.mjs export <project> --format png
 | 文档 | 内容 |
 | --- | --- |
 | [workflow](references/workflow.md) | 确认、任务、真实调用与 receipt |
-| [themes](references/themes.md) | 六套候选主题与旧版兼容 |
+| [themes](references/themes.md) | 19 套主题、参考风格归并与旧版兼容 |
 | [theme-authoring](references/theme-authoring.md) | 主题维护与编译检查 |
 | [assets](references/assets.md) | 图片、来源和生成记录 |
 | [qa-export](references/qa-export.md) | 图片身份、视觉复核与格式边界 |

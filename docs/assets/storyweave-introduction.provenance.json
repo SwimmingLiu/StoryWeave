@@ -1,0 +1,12 @@
+{
+  "tool": "image_gen",
+  "actual_size": [
+    1672,
+    940
+  ],
+  "image_sha256": "6bbed1ea6bffd575a17c124ab40c5251d79738826eca313933a54a6bc7ebefb2",
+  "purpose": "repository introduction poster",
+  "visual_review": "Directly inspected; title, Chinese tagline, HTML/Imagegen/Bento labels, and the split/rejoin presentation flow are visible.",
+  "prompt": "storyweave-introduction.txt",
+  "prompt_sha256": "f51c426d2579dbdffad5290128f82d66ccd8e4444f7e92e80d3c653091e524a0"
+}

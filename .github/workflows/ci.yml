@@ -42,6 +42,8 @@ jobs:
       - name: Check generated packages and gallery
         run: |
           npm run check:packages
+          # Actual generated previews are separate from the external reference gallery and must match their provenance.
+          npm run check:themes
           node scripts/build-presentation-reference-gallery.mjs --check
       - name: Run complete test suite
         run: |

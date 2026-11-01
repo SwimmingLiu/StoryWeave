@@ -1,0 +1,319 @@
+{
+  "schema_version": 3,
+  "architecture_id": "illustrated",
+  "id": "pixel-world",
+  "art_direction": "complete coherent pixel-art technical world with purposeful scene depth and readable non-pixel copy",
+  "palette": "limited palette of night navy, moss teal, sand, amber and pale sky",
+  "typography": "Projection-readable Chinese sans serif for explanatory content; allow medium-specific display treatment only for the supplied title, preserve correct glyphs and intentional semantic breaks",
+  "materials": "intentional crisp pixel clusters, consistent sprite scale and clean pixel-world lighting",
+  "anchors": [
+    {
+      "id": "continuity-mark",
+      "prompt": "one small amber pixel waypoint"
+    }
+  ],
+  "default_anchor_id": "continuity-mark",
+  "text_layout": "One concise supplied title plus essential authored labels, quantities and qualifiers; protect generous margins, do not invent an eyebrow, subtitle or footer",
+  "contrast": "Use a stable high-contrast type field; background textures and bright materials stay outside letterforms",
+  "avoid": [
+    "generic website card grids",
+    "unrelated scene props",
+    "invented metrics, brands or extra words"
+  ],
+  "role_defaults": {
+    "cover": "opening",
+    "section": "opening",
+    "statement": "argument",
+    "image-hero": "concept-scene",
+    "two-column": "comparison",
+    "comparison": "comparison",
+    "process": "process",
+    "data": "data",
+    "quote": "argument",
+    "closing": "argument"
+  },
+  "schemes": {
+    "opening": {
+      "label": "场景开场",
+      "summary": "场景开场，按已确认内容组织画面",
+      "roles": [
+        "cover",
+        "section"
+      ],
+      "default_anchor_id": "continuity-mark",
+      "composition": "One content-specific intentional crisp pixel clusters, consistent sprite scale and clean pixel-world lighting scene introduces the actual topic, with a distinct clear title field",
+      "imagery": "complete coherent pixel-art technical world with purposeful scene depth and readable non-pixel copy",
+      "title_treatment": {
+        "mode": "caption",
+        "scale": "medium",
+        "placement": "top-left",
+        "weight": "one clear supplied conclusion"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left",
+          "top",
+          "center"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "top-right",
+          "bottom-right"
+        ],
+        "densities": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "requirements": [
+        "render every supplied exact_text line exactly once, no invented labels or small print",
+        "illustration explains the authored concepts, never imports claims from example images",
+        "separate text-safe fields from texture, glow, hatching and object edges"
+      ],
+      "avoid": [
+        "unconfirmed metrics, branding or captions",
+        "same-weight decorative objects unrelated to the supplied relationship"
+      ],
+      "preview_image": "../../../examples/theme-previews/illustrated--pixel-world.png"
+    },
+    "argument": {
+      "label": "观点与收尾",
+      "summary": "观点与收尾，按已确认内容组织画面",
+      "roles": [
+        "statement",
+        "quote",
+        "closing"
+      ],
+      "default_anchor_id": "continuity-mark",
+      "composition": "One supplied statement and one small meaning-bearing illustration in intentional crisp pixel clusters, consistent sprite scale and clean pixel-world lighting; ample quiet surrounding space",
+      "imagery": "complete coherent pixel-art technical world with purposeful scene depth and readable non-pixel copy",
+      "title_treatment": {
+        "mode": "statement",
+        "scale": "medium",
+        "placement": "top-left",
+        "weight": "one clear supplied conclusion"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left",
+          "top",
+          "center"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "top-right",
+          "bottom-right"
+        ],
+        "densities": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "requirements": [
+        "render every supplied exact_text line exactly once, no invented labels or small print",
+        "illustration explains the authored concepts, never imports claims from example images",
+        "separate text-safe fields from texture, glow, hatching and object edges"
+      ],
+      "avoid": [
+        "unconfirmed metrics, branding or captions",
+        "same-weight decorative objects unrelated to the supplied relationship"
+      ],
+      "preview_image": "../../../examples/theme-previews/illustrated--pixel-world.png"
+    },
+    "concept-scene": {
+      "label": "概念场景",
+      "summary": "概念场景，按已确认内容组织画面",
+      "roles": [
+        "image-hero"
+      ],
+      "default_anchor_id": "continuity-mark",
+      "composition": "One detailed content-linked scene using intentional crisp pixel clusters, consistent sprite scale and clean pixel-world lighting, with a short caption safely separated from the subject",
+      "imagery": "complete coherent pixel-art technical world with purposeful scene depth and readable non-pixel copy",
+      "title_treatment": {
+        "mode": "caption",
+        "scale": "medium",
+        "placement": "top-left",
+        "weight": "one clear supplied conclusion"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left",
+          "top",
+          "center"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "top-right",
+          "bottom-right"
+        ],
+        "densities": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "requirements": [
+        "render every supplied exact_text line exactly once, no invented labels or small print",
+        "illustration explains the authored concepts, never imports claims from example images",
+        "separate text-safe fields from texture, glow, hatching and object edges"
+      ],
+      "avoid": [
+        "unconfirmed metrics, branding or captions",
+        "same-weight decorative objects unrelated to the supplied relationship"
+      ],
+      "preview_image": "../../../examples/theme-previews/illustrated--pixel-world.png"
+    },
+    "comparison": {
+      "label": "同尺度对比",
+      "summary": "同尺度对比，按已确认内容组织画面",
+      "roles": [
+        "two-column",
+        "comparison"
+      ],
+      "default_anchor_id": "continuity-mark",
+      "composition": "Use the exact number of supplied comparison columns, each at equal scale with matched framing and ordering, rendered in intentional crisp pixel clusters, consistent sprite scale and clean pixel-world lighting; never force a two-column layout or favor an unsupported alternative.",
+      "imagery": "complete coherent pixel-art technical world with purposeful scene depth and readable non-pixel copy; difference is carried by actual object structure or action, not invented score badges",
+      "title_treatment": {
+        "mode": "integrated",
+        "scale": "medium",
+        "placement": "top-left",
+        "weight": "one clear supplied conclusion"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left",
+          "top",
+          "center"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "top-right",
+          "bottom-right"
+        ],
+        "densities": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "requirements": [
+        "render every supplied exact_text line exactly once, no invented labels or small print",
+        "illustration explains the authored concepts, never imports claims from example images",
+        "separate text-safe fields from texture, glow, hatching and object edges",
+        "Column count, shared dimensions, row order and values must match the approved comparison content."
+      ],
+      "avoid": [
+        "unconfirmed metrics, branding or captions",
+        "same-weight decorative objects unrelated to the supplied relationship"
+      ],
+      "preview_image": "../../../examples/theme-previews/illustrated--pixel-world.png"
+    },
+    "process": {
+      "label": "连续流程",
+      "summary": "连续流程，按已确认内容组织画面",
+      "roles": [
+        "process"
+      ],
+      "default_anchor_id": "continuity-mark",
+      "composition": "Authored nodes become connected places in one pixel world; the original character follows only the supplied routes, preserving node count, parallel branches, joins and supported cycles.",
+      "imagery": "complete coherent pixel-art technical world with purposeful scene depth and readable non-pixel copy; render only supplied actions and edges; maintain one perspective and mark clear arrow endpoints",
+      "title_treatment": {
+        "mode": "integrated",
+        "scale": "medium",
+        "placement": "top-left",
+        "weight": "one clear supplied conclusion"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left",
+          "top",
+          "center"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "top-right",
+          "bottom-right"
+        ],
+        "densities": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "requirements": [
+        "render every supplied exact_text line exactly once, no invented labels or small print",
+        "illustration explains the authored concepts, never imports claims from example images",
+        "separate text-safe fields from texture, glow, hatching and object edges",
+        "Node count and all directed edges come from approved content; retain branches, joins and cycles without inventing stages."
+      ],
+      "avoid": [
+        "unconfirmed metrics, branding or captions",
+        "same-weight decorative objects unrelated to the supplied relationship"
+      ],
+      "preview_image": "../../../examples/theme-previews/illustrated--pixel-world.png"
+    },
+    "data": {
+      "label": "准确数据",
+      "summary": "准确数据，按已确认内容组织画面",
+      "roles": [
+        "data"
+      ],
+      "default_anchor_id": "continuity-mark",
+      "composition": "One front-facing flat quantitative chart with exact supplied values, shared zero and scale, direct readable labels and no perspective distortion",
+      "imagery": "complete coherent pixel-art technical world with purposeful scene depth and readable non-pixel copy; keep the material illustration in a separate contextual region; quantitative marks remain geometrically exact",
+      "title_treatment": {
+        "mode": "integrated",
+        "scale": "medium",
+        "placement": "top-left",
+        "weight": "one clear supplied conclusion"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left",
+          "top",
+          "center"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "top-right",
+          "bottom-right"
+        ],
+        "densities": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "requirements": [
+        "render every supplied exact_text line exactly once, no invented labels or small print",
+        "illustration explains the authored concepts, never imports claims from example images",
+        "separate text-safe fields from texture, glow, hatching and object edges"
+      ],
+      "avoid": [
+        "unconfirmed metrics, branding or captions",
+        "same-weight decorative objects unrelated to the supplied relationship"
+      ],
+      "preview_image": "../../../examples/theme-previews/illustrated--pixel-world.png"
+    }
+  }
+}

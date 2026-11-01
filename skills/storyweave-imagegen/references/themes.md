@@ -1,44 +1,62 @@
 # 图片主题目录
 
-演讲与分享稿的内容页样张见[演示主题案例](presentation-cases.md)。参考案例与下列生成主题分别计数。
+当前有 **19 套候选生成主题**。18 种内容页参考合并为 14 个主题方向，其中银白玻璃沿用已有主题，新增 13 套；原有 6 套完整保留。每套主题都有实际预览，新增 13 套使用相同的“计划 → 构建 → 验证”内容。
 
-StoryWeave 的主题分为三层：主题架构决定整套 deck 的空间组织和阅读节奏，主题样式决定字体、颜色、材质和全局锚点，视觉方案决定单页的构图、媒介和标题处理。一套 deck 只选择一个主题样式，每页从该样式支持当前页面职责的方案中选择一个。
+[全部主题预览](../assets/examples/theme-previews/index.html) · [外部内容页参考](presentation-cases.md) · [逐项映射](../assets/themes/reference-theme-map.json)
 
-当前目录包含四种架构、六套候选样式，均处于 `candidate` 状态。系统蓝图包括白底电路、参数化波纹和银白玻璃；代表图见[浅色青蓝主题画廊](../assets/examples/theme-previews/index.html)。这些图片确认了单页风格，其他页面职责仍需按实际内容复核。新 CLI 草稿默认使用 `authoring` scope，审批沿用草稿范围；也可显式传入 `--scope active` 限定已晋升主题。允许规划候选主题不代表主题已经通过视觉评审。现有预览用于检查代表性页面，其余方案覆盖仍需逐项复核。
+## 可选择的主题
 
-| 完整引用 | 视觉组织 | 适合内容 | 当前状态 |
-|---|---|---|---|
-| `editorial/paper-magazine`（纸面编辑） | 干净纸边、宋体标题、裁切摄影与印刷图解 | 行业观点、品牌故事、人物、出版物式图解 | `candidate` |
-| `systems/white-cyan-circuit`（白底电路） | 冷白底、精细圆环与低对比度电路纹样 | AI 架构、流程、系统关系和数据关系 | `candidate` |
-| `systems/white-cyan-wave`（参数化波纹） | 浅蓝平滑曲线、稀疏粒子与清晰的信息层级 | AI 架构、流程、系统关系和数据关系 | `candidate` |
-| `systems/silver-glass`（银白玻璃） | 通透玻璃模块、银白空间与钴蓝重点 | AI 架构、流程、系统关系和数据关系 | `candidate` |
-| `campaign/bold-poster`（朱红海报） | 单一朱红色场、强字级对比、实物裁切与硬光投影 | 发布、品牌传播、商品主视觉和产品叙事 | `candidate` |
-| `cinematic/natural-film`（日常电影） | 自然曝光、真实动作、连续镜头与环境留白 | 场景叙事、交接、空间体验和人物关系 | `candidate` |
+| 架构 | 名称 | 完整引用 |
+| --- | --- | --- |
+| 编辑叙事 | 纸面编辑 | `editorial/paper-magazine` |
+| 系统蓝图 | 白底电路 | `systems/white-cyan-circuit` |
+| 系统蓝图 | 参数化波纹 | `systems/white-cyan-wave` |
+| 系统蓝图 | 银白玻璃 | `systems/silver-glass` |
+| 系统蓝图 | 技术蓝图 | `systems/engineering-blueprint` |
+| 系统蓝图 | 暖色电路 | `systems/warm-circuit` |
+| 系统蓝图 | 霓虹系统 | `systems/neon-network` |
+| 系统蓝图 | 黑金运行 | `systems/black-gold` |
+| 品牌传播 | 朱红海报 | `campaign/bold-poster` |
+| 影像叙事 | 日常电影 | `cinematic/natural-film` |
+| 知识讲解 | 粉笔黑板 | `knowledge/chalkboard` |
+| 知识讲解 | 手绘白板 | `knowledge/sketch-notes` |
+| 知识讲解 | 水墨方法论 | `knowledge/ink-method` |
+| 实体隐喻 | 黏土流程 | `tactile/clay-workflow` |
+| 实体隐喻 | 复古设备 | `tactile/retro-device` |
+| 绘画叙事 | 角色彩绘 | `illustrated/storybook-guide` |
+| 绘画叙事 | 漫画工程 | `illustrated/comic-engineering` |
+| 绘画叙事 | 场景系统图 | `illustrated/panoramic-system` |
+| 绘画叙事 | 像素世界 | `illustrated/pixel-world` |
 
-每套候选样式包含代表性视觉方案。编辑叙事提供 `magazine-cover`、`editorial-statement`、`documentary-hero`、`profile-feature`、`editorial-diagram`、`comparison-spread` 和 `collage-scene`；系统蓝图提供 `keynote-cover`、`system-map`、`circuit-flow`、`data-overview`、`comparison-matrix`、`signal-quote`、`ui-concept` 和 `isometric-space`；品牌传播提供 `poster-claim`、`product-studio`、`campaign-comparison`、`campaign-flow`、`campaign-data` 和 `campaign-signal`；影像叙事提供 `film-opening`、`human-moment`、`film-comparison`、`film-journey`、`film-evidence` 和 `quiet-ending`。
+## 参考风格如何归并
 
-方案中的 `title_treatment` 只规定本页标题的处理方式。它可以是 `hero`、`statement`、`caption` 或 `integrated`，所以 PPT 不需要每页都放一个超大标题。`exact_text` 仍是页面唯一可见文字来源，方案名称、摘要、预览图和装饰性编号不会进入生成提示词。
+| 参考风格 | 生成主题 |
+| --- | --- |
+| 技术蓝图 | 技术蓝图 · `systems/engineering-blueprint` |
+| 暖色电路讲义 | 暖色电路 · `systems/warm-circuit` |
+| 黑板粉笔讲解 | 粉笔黑板 · `knowledge/chalkboard` |
+| 手绘知识分享、协作白板策略 | 手绘白板 · `knowledge/sketch-notes` |
+| 水墨黑板方法论 | 水墨方法论 · `knowledge/ink-method` |
+| 深色霓虹系统 | 霓虹系统 · `systems/neon-network` |
+| 黏土流程讲解 | 黏土流程 · `tactile/clay-workflow` |
+| 复古立体开发者 | 复古设备 · `tactile/retro-device` |
+| 用户旅程分镜、柔和彩绘讲解、角色引导技术讲解 | 角色彩绘 · `illustrated/storybook-guide` |
+| 漫画工程叙事 | 漫画工程 · `illustrated/comic-engineering` |
+| 场景式平面图解 | 场景系统图 · `illustrated/panoramic-system` |
+| 像素世界流程 | 像素世界 · `illustrated/pixel-world` |
+| 黑金技术运行叙事 | 黑金运行 · `systems/black-gold` |
+| 极光玻璃产品讲解、银白玻璃技术叙事 | 银白玻璃 · `systems/silver-glass` |
 
-Awesome 的图片分类用于帮助选择主题架构，不直接变成全局主题。UI、图表和系统关系优先使用 `systems`；出版物、摄影、插画和人物叙事优先使用 `editorial`；品牌传播、商品和海报优先使用 `campaign`；建筑、场景和沉浸式写实画面优先使用 `cinematic`。真实产品 UI、品牌资产、人物身份和有来源的数据继续使用用户提供的素材或经过确认的资料。
+手绘知识分享与协作白板共用笔触和轻量批注，保留独立的白板流程方案。用户旅程、柔和彩绘和角色引导共用连续角色叙事，保留分镜方案。极光玻璃与银白玻璃共用材质和光照，极光作为 `aurora-capabilities` 方案；其余差异明确的媒介独立成主题。
 
-旧版 `business-minimal`、`editorial`、`launch-tech` 和 `premium-dark` 仍保存在 `image-themes.json` 中，供 v2 项目兼容读取。v3 resolver 不会把这些短 ID 静默改写成新引用；迁移应使用明确的项目级迁移流程。
+## 方案与连续性
 
-## 选择与连续性
+每套主题覆盖观点、流程、对比、数据，并支持封面、章节、图片主视觉、引文和收尾。架构决定阅读顺序，样式决定配色、字体、材质和连续性锚点，方案决定本页构图。一套演示保持样式连续，逐页组织由真实内容决定。
 
-浅色青蓝系列共享冷白背景、蓝色重点、深色文字和低对比度装饰。`systems/white-cyan-circuit` 使用细圆环与边缘电路纹样，并保留旧引用兼容；`systems/white-cyan-wave` 使用平滑参数化曲线和稀疏粒子；`systems/silver-glass` 使用通透模块、银白边缘和柔和阴影。一套演示选择一种样式并保持连续，用户明确要求对照时可以逐页比较。中心圆环与三个节点属于本次样张的构图，后续页面仍按真实关系选择流程、比较或数据布局。
+粉笔、水墨、黏土、像素和漫画属于不同的绘画语言；技术蓝图、暖色电路、霓虹与黑金分别处理精密线描、纸上讲解、信号关系和运行场景。主题名称不规定默认道具，预览里的齿轮、电脑或人物不自动进入新项目。
 
-纸面编辑适合观点、人物和研究叙事。摄影裁切、标题字级和印刷色建立辨识度，纸纹保持轻微。选择它时，应为逐页内容提供具体摄影或图解对象；目录中的笔记本样张不是后续页面的默认主体。
+数据方案使用共同基线、准确比例和直接标签，材质插画位于图表之外。普通代码、卡片、表格和精确图表优先使用 HTML/SVG；材质或角色不能改写事实和定量关系。
 
-朱红海报适合发布与传播。默认采用朱红、暖白、墨黑，单页保留一种主色。主张页可以放大文字，流程和数据页需要保留标签与比例。用户给出品牌配色时使用品牌色，并在同一套演示中保持连续。
+全部主题仍为 `candidate`。新增预览证明单张流程页的实际效果，不代表每个页型或整套演示均通过视觉验收。CLI 草稿默认使用 authoring scope，也可显式传入 `--scope authoring`；active scope 只返回已晋升主题。主题维护见 [theme-authoring](theme-authoring.md)。
 
-日常电影适合空间、人物关系与行动叙事。时间、光源、动作和地点从内容确定；夜景仍可使用，但保留中间调。数据页给平面图表独立的中性区域，摄影只提供情境。人物与地点需要跨页一致时使用确认过的参考图。
-
-各方案的完整 ID、角色、安全区与 `candidate` 状态保持有效。各方案预览共用所属样式的当前代表图，用于识别风格，不代表每个方案均已完成视觉验收。六套当前图片见[主题画廊](../assets/examples/theme-previews/index.html)。
-
-## 图片文字与当前预览
-
-各主题默认采用一个简洁主标题和必要内容标签、数值及单位。用户已提供的副标题等文字属于 `exact_text`，完整保留；主题不自行新增文字层级。生成来源与复核结果记录在图片外。
-
-纸面编辑通过明确摄影裁切、宋体与干净纸边建立层次；朱红海报通过主体尺度、色块和投影形成传播焦点；日常电影通过自然光、具体动作和景别变化推进内容。标题与图像各有清楚区域，分析页优先保证关系与数值可读。
-
-浅色系列代表图沿用本次已确认内容，用于比较材质、纹样与明暗关系。数据页仍要求正投影、共同基线和准确端点，背景装饰不得参与数值编码。
+旧 v2 的 `business-minimal`、`editorial`、`launch-tech`、`premium-dark` 保持兼容，短 ID 不静默改写成新主题。按项目使用 `migrate` 或 `migrate-content` 显式迁移。

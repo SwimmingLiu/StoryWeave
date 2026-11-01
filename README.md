@@ -1,5 +1,7 @@
 # StoryWeave
 
+![StoryWeave：共享内容、HTML 与 Imagegen 双生成器、Bento 展示](docs/assets/storyweave-introduction.png)
+
 制作 16:9 演示文稿的 Agent Skill 集合。共享核心保存确认内容，HTML 和 Imagegen 分别生成原生页面或整页图片，通过 QA 后交给 Bento 包装与展示。
 
 | Skill | 用途 | 交付物 |
@@ -36,12 +38,29 @@ node skills/storyweave/scripts/orchestrate.mjs ./my-deck --no-bento-update --jso
 
 ## Imagegen 主题与参考图
 
-生成器提供 **6 套候选主题**：纸面编辑、白底电路、参数化波纹、银白玻璃、朱红海报、日常电影。完整引用与适用场景见[主题目录](skills/storyweave-imagegen/references/themes.md)，实际效果见[六主题预览](skills/storyweave-imagegen/assets/examples/theme-previews/index.html)。
+生成器现有 **19 套候选主题**，已将 18 种参考风格归并成 14 个主题方向，补成可直接选择的配方。相近的手绘白板、角色彩绘和玻璃风格合并，其余保留独立的绘画与材质语言。[完整主题与合并关系](skills/storyweave-imagegen/references/themes.md) · [19 套实际预览](skills/storyweave-imagegen/assets/examples/theme-previews/index.html)
 
-[分享稿参考图库](skills/storyweave-imagegen/assets/reference-library/index.html)另收录 **18 种风格、41 张内容页**，可按观点、流程、对比、数据和架构筛选。它提供选风格的参考，不自动增加生成配方；纯 HTML 排版即可实现的案例归入 [HTML 参考目录](design-library/html-template-references/README.md)。联网版从来源加载原图，私有离线查看方法见[参考图说明](skills/storyweave-imagegen/references/presentation-cases.md)。
+以下六张使用同一份“让改动有据可查：计划 → 构建 → 验证”内容，直接比较生成效果。
+
+| 技术蓝图 | 粉笔黑板 |
+| --- | --- |
+| ![技术蓝图](skills/storyweave-imagegen/assets/examples/theme-previews/systems--engineering-blueprint.png) | ![粉笔黑板](skills/storyweave-imagegen/assets/examples/theme-previews/knowledge--chalkboard.png) |
+| `systems/engineering-blueprint` | `knowledge/chalkboard` |
+
+| 黏土流程 | 漫画工程 |
+| --- | --- |
+| ![黏土流程](skills/storyweave-imagegen/assets/examples/theme-previews/tactile--clay-workflow.png) | ![漫画工程](skills/storyweave-imagegen/assets/examples/theme-previews/illustrated--comic-engineering.png) |
+| `tactile/clay-workflow` | `illustrated/comic-engineering` |
+
+| 水墨方法论 | 像素世界 |
+| --- | --- |
+| ![水墨方法论](skills/storyweave-imagegen/assets/examples/theme-previews/knowledge--ink-method.png) | ![像素世界](skills/storyweave-imagegen/assets/examples/theme-previews/illustrated--pixel-world.png) |
+| `knowledge/ink-method` | `illustrated/pixel-world` |
+
+[分享稿参考图库](skills/storyweave-imagegen/assets/reference-library/index.html)另收录 **18 种风格、41 张内容页**，可按观点、流程、对比、数据和架构筛选。每种参考风格均已对应到实际主题；纯 HTML 排版即可实现的案例归入 [HTML 参考目录](design-library/html-template-references/README.md)。联网版从来源加载原图，私有离线查看方法见[参考图说明](skills/storyweave-imagegen/references/presentation-cases.md)。
 
 ```bash
-node skills/storyweave-imagegen/scripts/ppt.mjs draft ./image-deck --theme systems/white-cyan-wave --scope authoring
+node skills/storyweave-imagegen/scripts/ppt.mjs draft ./image-deck --theme tactile/clay-workflow --scope authoring
 ```
 
 Imagegen CLI 编译逐页任务，由 Agent 调用真实生图工具，再收集结果与逐页复核。主题仍为 candidate；编译通过不代表图片文字、构图或视觉质量已通过。

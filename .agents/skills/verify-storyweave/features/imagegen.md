@@ -4,6 +4,7 @@
 
 ## Sub-features
 
+- `image-theme-coverage` 核对全部候选主题的十种角色解析、同一份 v4 内容编译、18 种参考的完整映射，以及实际预览和提示词哈希。
 - `image-jobs` 运行 draft、approve 与 prompts，核对任务和准确文字。
 - `image-missing-gate` 实测 status 与 build 的 needs-images、退出码 3 和缺失页 ID。
 - `image-generate` Agent 调用真实工具，按任务附图并保存调用记录。
@@ -15,6 +16,8 @@
 通过 `skills/storyweave-imagegen/scripts/ppt.mjs` 创建并批准内容，prompts 写出 `imagegen-jobs.jsonl`。Agent 调用真实工具，将任务的 `tool_input.referenced_image_paths` 作为附件，保存日志和结果 receipt。执行 record-result，再查看图片并 review。全部通过后 build、qa 和 export。
 
 ## Driving it with verify-storyweave
+
+主题或参考扩充后先执行 `npm run check:themes`，并运行 Imagegen 主题、reference-themes 与 structured 测试；CI 会自动执行这些检查。每个主题的代表页预览与整套视觉接受分别记录。
 
 完成 doctor 与 launch，保留 `VERIFY_RUN_ID`。缺少真实图片时只运行任务路径：
 

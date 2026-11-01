@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 
 // Runtime copies are generated; behavior tests exercise their authoritative source.
-import { approveOutline, createOutline, migrateOutline, replanOutline, validateOutline } from '../../../src/imagegen/outline.mjs';
+import { approveOutline, createOutline, defaultLayoutForRole, migrateOutline, replanOutline, validateOutline } from '../../../src/imagegen/outline.mjs';
 import { compileImageJobs, createGenerationManifest, IMAGEGEN_MODE, validateManifest } from '../../../src/imagegen/imagegen.mjs';
 import { openThemeCatalog } from '../../../src/imagegen/themes.mjs';
 
@@ -12,7 +12,11 @@ test('theme catalog exposes candidate styles only in authoring scope', async () 
   const active = await openThemeCatalog(themeRoot, { scope: 'active' });
   const authoring = await openThemeCatalog(themeRoot, { scope: 'authoring' });
   assert.deepEqual(active.list(), []);
-  assert.deepEqual(authoring.list({ includeAll: true }).map((item) => item.ref), [
+  // Preserve the established references while allowing curated reference directions to become additional recipes.
+  assert.deepEqual(authoring.list({ includeAll: true }).map((item) => item.ref).filter((ref) => [
+    'editorial/paper-magazine', 'systems/white-cyan-circuit', 'systems/white-cyan-wave',
+    'systems/silver-glass', 'campaign/bold-poster', 'cinematic/natural-film',
+  ].includes(ref)), [
     'editorial/paper-magazine',
     'systems/white-cyan-circuit',
     'systems/white-cyan-wave',
@@ -26,16 +30,12 @@ test('theme catalog exposes candidate styles only in authoring scope', async () 
 
 test('all ten page roles resolve through each candidate style without mutating the slide', async () => {
   const catalog = await openThemeCatalog(themeRoot, { scope: 'authoring' });
-  for (const theme_ref of [
-    'editorial/paper-magazine',
-    'systems/white-cyan-circuit',
-    'systems/white-cyan-wave',
-    'systems/silver-glass',
-    'campaign/bold-poster',
-    'cinematic/natural-film',
-  ]) {
-    const outline = createOutline('角色覆盖', { theme_ref, catalog_scope: 'authoring' });
-    for (const slide of outline.slides) {
+  // All candidate recipes must support real role resolution, including newly added reference-derived styles.
+  for (const { ref: theme_ref } of catalog.list({ includeAll: true })) {
+    // Match the public CLI, which reads the selected style's anchor instead of using legacy architecture defaults.
+    const outline = createOutline('角色覆盖', { theme_ref, catalog_scope: 'authoring', visual_anchor_id: catalog.getStyle(theme_ref).default_anchor_id });
+    for (const role of ['cover', 'section', 'statement', 'image-hero', 'two-column', 'comparison', 'process', 'data', 'quote', 'closing']) {
+      const slide = { ...(outline.slides.find((item) => item.role === role) ?? outline.slides[0]), role, layout_plan: defaultLayoutForRole(role) };
       const before = structuredClone(slide);
       const plan = catalog.resolveVisualPlan({ phase: 'approve', theme_ref, slide });
       assert.match(plan.visual_scheme_ref, new RegExp(`^${theme_ref}/`));

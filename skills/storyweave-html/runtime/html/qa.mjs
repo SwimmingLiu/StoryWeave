@@ -12,6 +12,8 @@ async function settle(page) {
   await page.evaluate(async () => {
     await document.fonts.ready;
     await Promise.all(document.getAnimations().filter((animation) => animation.effect?.getComputedTiming().iterations !== Infinity).map((animation) => animation.finished.catch(() => {})));
+    // Fonts and DOM geometry can settle before Chromium paints; wait through a frame before inspecting or capturing the newly loaded slide.
+    await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
   });
 }
 

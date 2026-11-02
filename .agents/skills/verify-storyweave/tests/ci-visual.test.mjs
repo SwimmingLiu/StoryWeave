@@ -122,9 +122,13 @@ test('CI checks a changed baseline against the previous review even when the acc
   delete unpaired.baseline_capture_fingerprint;
   assert.throws(() => assessBaselineTransition(candidate, unpaired, previous, previousReview, calibration), /another baseline/);
   review.items[5].axes.relationships.preferred = 'baseline';
-  assert.equal(assessBaselineTransition(candidate, review, previous, previousReview, calibration).status, 'regressed');
+  const regression = assessBaselineTransition(candidate, review, previous, previousReview, calibration);
+  assert.equal(regression.status, 'regressed');
+  assert.deepEqual(regression.items[5].failed_axes, ['relationships']);
   review.items[5].axes.relationships.preferred = 'uncertain';
-  assert.equal(assessBaselineTransition(candidate, review, previous, previousReview, calibration).status, 'needs-review');
+  const pending = assessBaselineTransition(candidate, review, previous, previousReview, calibration);
+  assert.equal(pending.status, 'needs-review');
+  assert.deepEqual(pending.items[5].uncertain_axes, ['relationships']);
   review.items[5].axes.relationships.preferred = 'tie';
   assert.equal(assessBaselineTransition(candidate, review, previous, previousReview, calibration).status, 'accepted');
   const tampered = structuredClone(previousReview);

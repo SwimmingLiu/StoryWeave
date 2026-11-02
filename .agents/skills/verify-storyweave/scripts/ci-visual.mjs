@@ -124,9 +124,11 @@ export function assessBaseline(capture, review, calibration = { cases: [] }, pre
     assert(Array.isArray(row.slop?.findings) && substantive(row.slop.observation));
     for (const finding of row.slop.findings) assert(['blocking', 'advisory'].includes(finding.severity) && substantive(finding.pattern) && substantive(finding.observation));
     const veto = calibration.cases.some((entry) => entry.id === item.id && entry.candidate.sha256 === item.images[0]);
-    const failed = veto || Object.values(row.axes).some(({ status, preferred }) => status === 'fail' || (previous && preferred === 'baseline')) || row.slop.findings.some(({ severity }) => severity === 'blocking');
-    const uncertain = Object.values(row.axes).some(({ status, preferred }) => status === 'uncertain' || (previous && preferred === 'uncertain'));
-    return { id: item.id, status: failed ? 'regressed' : uncertain ? 'needs-review' : 'accepted' };
+    const failedAxes = Object.entries(row.axes).filter(([, { status, preferred }]) => status === 'fail' || (previous && preferred === 'baseline')).map(([axis]) => axis);
+    const uncertainAxes = Object.entries(row.axes).filter(([, { status, preferred }]) => status === 'uncertain' || (previous && preferred === 'uncertain')).map(([axis]) => axis);
+    const blockingSlop = row.slop.findings.filter(({ severity }) => severity === 'blocking');
+    const failed = veto || failedAxes.length || blockingSlop.length;
+    return { id: item.id, status: failed ? 'regressed' : uncertainAxes.length ? 'needs-review' : 'accepted', failed_axes: failedAxes, uncertain_axes: uncertainAxes, blocking_slop: blockingSlop, user_veto: veto };
   });
   return { status: results.some(({ status }) => status === 'regressed') ? 'regressed' : results.some(({ status }) => status === 'needs-review') ? 'needs-review' : 'accepted', items: results };
 }
@@ -308,7 +310,7 @@ async function main() {
   let result;
   try {
     const transition = baseline && assessBaselineTransition(baseline, review, previous?.capture, previous?.review, calibration);
-    result = transition && transition.status !== 'accepted' ? { status: transition.status, changed: expectedIds, reason: 'The changed baseline has a regression or incomplete comparison' } : compareBaseline(capture, baseline, review, calibration);
+    result = transition && transition.status !== 'accepted' ? { status: transition.status, changed: expectedIds, reason: 'The changed baseline has a regression or incomplete comparison', review_items: transition.items.filter((item) => item.status !== 'accepted') } : compareBaseline(capture, baseline, review, calibration);
   } catch (error) {
     result = { status: 'needs-review', changed: expectedIds, reason: `Invalid baseline transition: ${error.message}` };
   }

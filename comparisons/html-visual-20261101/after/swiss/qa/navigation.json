@@ -1,0 +1,32 @@
+[
+  {
+    "action": "next-button",
+    "before": "s01",
+    "expected": "s02",
+    "actual": "s02"
+  },
+  {
+    "action": "previous-button",
+    "before": "s02",
+    "expected": "s01",
+    "actual": "s01"
+  },
+  {
+    "action": "focused-space",
+    "before": "s01",
+    "expected": "s02",
+    "actual": "s02"
+  },
+  {
+    "action": "home",
+    "before": "s02",
+    "expected": "s01",
+    "actual": "s01"
+  },
+  {
+    "action": "end",
+    "before": "s01",
+    "expected": "s08",
+    "actual": "s08"
+  }
+]

@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "reference_kind": "ai-teaching-illustrations",
+  "preview_mode": "remote-originals",
+  "categories": [
+    {
+      "id": "engineering",
+      "label": "机械与工程"
+    },
+    {
+      "id": "biology",
+      "label": "生物与感知"
+    },
+    {
+      "id": "lab",
+      "label": "实验与物质"
+    },
+    {
+      "id": "spatial",
+      "label": "微缩与空间"
+    }
+  ],
+  "cases": [
+    {
+      "id": "openai-coffee-machine",
+      "title": "自动咖啡机内部原理",
+      "category": "engineering",
+      "medium": "写实剖面",
+      "why_imagegen": "需要绘制透明水箱、研磨器、泵、加热器和管道的空间关系及金属材质。",
+      "native_html_parts": "标题、步骤卡、图例、引线和必要数值可由 HTML、SVG 叠加。",
+      "reuse_focus": "用中央剖面主体串联部件与工作路径，按实际课件内容重排为 16:9。",
+      "facts_to_check": "部件功能、水流方向、压力和温度须依据所讲设备资料核对。",
+      "image_urls": [
+        "https://developers.openai.com/images/platform/guides/image-prompting/infographic-coffee-machine-gpt-image-2-5-sunburst.webp",
+        "https://developers.openai.com/images/platform/guides/image-prompting/infographic-coffee-machine-gpt-image-2-5-flare.webp"
+      ],
+      "image_labels": [
+        "GPT Image 2.5 Sunburst",
+        "GPT Image 2.5 Flare"
+      ],
+      "case_url": "https://developers.openai.com/api/docs/guides/image-prompting#explain-a-process-visually",
+      "prompt_url": "https://developers.openai.com/api/docs/guides/image-prompting#explain-a-process-visually",
+      "creator": "OpenAI",
+      "original_post_url": "https://developers.openai.com/api/docs/guides/image-prompting",
+      "model_label": "GPT Image 2.5 Sunburst / Flare",
+      "model_evidence": "official",
+      "license_note": "官方文档示例；图片仅链接预览，未按开源仓库许可重新分发。",
+      "prompt_summary": "以全自动咖啡机为对象，解释豆仓、研磨、称量、水箱、加热与出杯的运行过程。"
+    },
+    {
+      "id": "sunburst-watch-exploded",
+      "title": "机械表分层爆炸图",
+      "category": "engineering",
+      "medium": "材质写实与工程拆解",
+      "why_imagegen": "表盘、擒纵机构、发条盒和壳体具有复杂几何与不同材质，普通 CSS 图形难以表达。",
+      "native_html_parts": "零件编号、名称、尺寸表和结构说明可独立编辑。",
+      "reuse_focus": "统一透视、分层间距和不同材质，展示从整体到零件的层级关系。",
+      "facts_to_check": "Meridian 8 是虚构腕表，图中的尺寸、宝石数和动力储备不是实物证据。",
+      "image_urls": [
+        "https://raw.githubusercontent.com/wuyoscar/GPT-Image2-Skill/main/docs/technical-illustration/meridian8-sunburst.png"
+      ],
+      "case_url": "https://github.com/wuyoscar/GPT-Image2-Skill/blob/main/docs/sunburst-samples.md",
+      "prompt_url": "https://github.com/wuyoscar/GPT-Image2-Skill/blob/main/skills/gpt-image/references/gallery-technical-illustration.md#no-113--mechanical-watch-exploded-view",
+      "creator": "wuyoscar",
+      "original_post_url": "https://github.com/wuyoscar/GPT-Image2-Skill/blob/main/docs/sunburst-samples.md",
+      "model_label": "GPT Image 2.5 Sunburst",
+      "model_evidence": "author-run-report",
+      "license_note": "仓库根 LICENSE 为 MIT；画廊只链接原图与作者记录，不复制第三方素材。",
+      "prompt_summary": "把虚构机械腕表拆为垂直分层的部件，显示金属、玻璃、宝石和皮革的区别。"
+    },
+    {
+      "id": "sunburst-toy-cutaway",
+      "title": "半透明玩具机械剖面",
+      "category": "engineering",
+      "medium": "半透明产品剖面",
+      "why_imagegen": "需要在同一对象上连续呈现涂装外壳和透明内部，以及齿轮、弹簧和电子器件。",
+      "native_html_parts": "五个部件标签和指示线可由 SVG 叠加，避免修改标签时重绘主体。",
+      "reuse_focus": "以外壳和透明剖面的一体构图解释内部部件。",
+      "facts_to_check": "案例是概念玩具，不能作为真实设备的装配或电路依据。",
+      "image_urls": [
+        "https://media.popnow.ai/prompts/templates/toy-xray-cutaway-b2b4b9d7.webp"
+      ],
+      "case_url": "https://popnow.ai/prompts/toy-xray-cutaway",
+      "prompt_url": "https://popnow.ai/prompts/toy-xray-cutaway",
+      "creator": "PopNow；模板溯源 @ZeroZ_JQ",
+      "original_post_url": "https://popnow.ai/prompts/toy-xray-cutaway",
+      "model_label": "GPT Image 2.5 Sunburst",
+      "model_evidence": "platform-run-claim",
+      "license_note": "PopNow 声明该图由平台以 Sunburst 重绘；原始 Nano Banana 提示词与新图分开归因。平台图片仅链接预览。",
+      "prompt_summary": "同一个复古机器人玩具一半保留正常外壳，另一半透明展示内部，并为部件加短标签。"
+    },
+    {
+      "id": "edu-wind-turbine-cutaway",
+      "upstream_case_id": "youmind-19396",
+      "title": "风力发电机剖面与能量传递",
+      "category": "engineering",
+      "image_urls": [
+        "https://cms-assets.youmind.com/media/1778486141781_1gh8iz_HH7wWN9bMAAKY3p.jpg"
+      ],
+      "case_url": "https://x.com/GaganSingh8u/status/2053342755791999091",
+      "prompt_url": "https://x.com/GaganSingh8u/status/2053342755791999091",
+      "creator": "Gagan Singh (@GaganSingh8u)",
+      "original_post_url": "https://x.com/GaganSingh8u/status/2053342755791999091",
+      "model_label": "Gemini Nano Banana Pro",
+      "prompt_available": true,
+      "prompt_summary": "生成风机全景和机舱剖面，展示叶片、轮毂、主轴、齿轮箱、发电机、塔筒、变压器及送电关系。",
+      "teaches": "把风能、机械传动和发电设备的位置关系放在同一空间场景中。",
+      "why_imagegen": "机舱剖切、齿轮啮合、绕组和外壳的遮挡关系需要具体的三维机械插画。",
+      "native_html_parts": "标题、部件编号、引出线、说明文字和能量流箭头可由 HTML/SVG 保持可编辑。",
+      "license_note": "YouMind 汇编仓库标注 CC BY 4.0，原帖未见逐图复用授权。保留来源索引与远程预览，第三方原图不随 Skill 分发。",
+      "catalog_source_url": "https://github.com/YouMind-OpenLab/awesome-nano-banana-pro-prompts/blob/e2e90168be2a2d13c5195a0bb463c466e4720455/README.md#L2103",
+      "visual_check": "已在浏览器查看实际原图，1024×1024；适合作为工程剖面视觉参考，未验证为可制造的工程结构。",
+      "medium": "写实机舱剖面",
+      "facts_to_check": "部件名称、传动方向、绕组和能量流向须依据风机资料核对。",
+      "model_evidence_detail": "原作者帖首明确写 Gemini Nano Banana Pro；属于作者声明，不是独立运行记录。",
+      "model_evidence": "original-post",
+      "reuse_focus": "把风能、机械传动和发电设备的位置关系放在同一空间场景中。"
+    },
+    {
+      "id": "edu-renaissance-flamingo-anatomy",
+      "upstream_case_id": "youmind-7022",
+      "title": "火烈鸟的透明组织与骨骼层次",
+      "category": "biology",
+      "image_urls": [
+        "https://cms-assets.youmind.com/media/1768977372426_bjk9g6_G_FG87xXEAAnMEK.jpg"
+      ],
+      "case_url": "https://x.com/bguiz/status/2013469317548134903",
+      "prompt_url": "https://x.com/bguiz/status/2013469317548134903",
+      "creator": "Brendan Graetz (@bguiz)",
+      "original_post_url": "https://x.com/bguiz/status/2013469317548134903",
+      "model_label": "Nano Banana（原作者未写具体版本）",
+      "prompt_available": true,
+      "prompt_summary": "以单腿站立的火烈鸟为主体，用石墨、墨水交叉排线、半透明组织和旧纸张呈现自然学解剖研究。",
+      "teaches": "通过外形、骨架和组织叠层的对应关系介绍鸟类结构。",
+      "why_imagegen": "羽毛、半透明组织、骨骼叠层与细密排线构成同一幅连续插画，视觉价值来自绘画本身。",
+      "native_html_parts": "局部放大框、结构名称、讲解文字和课堂标注可单独使用 HTML/SVG。",
+      "license_note": "YouMind 汇编仓库标注 CC BY 4.0，原帖未见逐图复用授权。保留来源索引与远程预览，第三方原图不随 Skill 分发。",
+      "catalog_source_url": "https://github.com/YouMind-OpenLab/awesome-nano-banana-pro-prompts/blob/3320772b2ad433b6315f6a733e5d00918fce4a86/README.md#L3467",
+      "visual_check": "已在浏览器查看实际原图，508×680；作为透明组织和手绘层次参考，不作为专业解剖正确性的证明。",
+      "medium": "自然学排线与透明组织",
+      "facts_to_check": "原图提供手绘层次参考，骨骼与组织结构须另用教学资料核对。",
+      "model_evidence_detail": "原作者使用 nano banana prompt 表述。汇编归入 Nano Banana Pro，但这不足以确认图片的具体模型版本。",
+      "model_evidence": "original-post",
+      "reuse_focus": "通过外形、骨架和组织叠层的对应关系介绍鸟类结构。"
+    },
+    {
+      "id": "edu-culinary-science-diorama",
+      "upstream_case_id": "youmind-6666",
+      "title": "巧克力食品科学微缩实验箱",
+      "category": "lab",
+      "image_urls": [
+        "https://cms-assets.youmind.com/media/1768804323526_yo8sqc_G-1VmdxWgAAhdsk.jpg"
+      ],
+      "case_url": "https://x.com/Gdgtify/status/2012873106348482898",
+      "prompt_url": "https://x.com/Gdgtify/status/2012873106348482898",
+      "creator": "Gadgetify (@Gdgtify)",
+      "original_post_url": "https://x.com/Gdgtify/status/2012873106348482898",
+      "model_label": "Nano Banana Pro",
+      "prompt_available": true,
+      "prompt_summary": "用 L 形微缩展箱展示食品加工阶段与质地样本，并安排实验台、器皿和研究人员。",
+      "teaches": "把原料、加工状态、质地样本和实验观察联系起来。",
+      "why_imagegen": "食材质感、微缩人物、实验器材、模型箱和食品材质立体字共同构成可观察的教学场景。",
+      "native_html_parts": "加工阶段名称、样本标签、说明和对比数据可以覆盖为原生文字。",
+      "license_note": "YouMind 汇编仓库标注 CC BY 4.0，原帖未见逐图复用授权。保留来源索引与远程预览，第三方原图不随 Skill 分发。",
+      "catalog_source_url": "https://github.com/YouMind-OpenLab/awesome-nano-banana-pro-prompts/blob/4f4bdafea682eb1c9383f8d55e21f97fa354edb7/README.md#L3812",
+      "visual_check": "已在浏览器查看实际原图，456×434；小标签存在不可读字符，收录的是展箱和材质表达，教学正文需另行排版。",
+      "medium": "食品科学微缩实验箱",
+      "facts_to_check": "原图小标签存在不可读字符，教学正文与实验过程需另行编写和核对。",
+      "model_evidence_detail": "原作者明确称用 Nano banana Pro 绘制巧克力和焦糖的化学实验箱；属于作者声明。",
+      "model_evidence": "original-post",
+      "reuse_focus": "把原料、加工状态、质地样本和实验观察联系起来。"
+    },
+    {
+      "id": "edu-orchid-mantis-fieldboard",
+      "upstream_case_id": "youmind-7050-image-1",
+      "title": "兰花螳螂的形态、栖息地与行为观察",
+      "category": "biology",
+      "image_urls": [
+        "https://cms-assets.youmind.com/media/1769063173711_oz6u5l_G_M6E2MWQAUsAka.jpg"
+      ],
+      "case_url": "https://x.com/AllaAisling/status/2014017858607399325/photo/1",
+      "prompt_url": "https://x.com/AllaAisling/status/2014017858607399325",
+      "creator": "Alexandra Aisling (@AllaAisling)",
+      "original_post_url": "https://x.com/AllaAisling/status/2014017858607399325",
+      "model_label": "Nano Banana Pro（通过 Adobe Firefly）",
+      "prompt_available": true,
+      "prompt_summary": "以田野观察板串联物种插画、生命周期、栖息地地图、捕食关系和自然场景。",
+      "teaches": "把形态差异、生命周期、栖息环境和拟态行为放在一张观察板中比较。",
+      "why_imagegen": "兰花螳螂的细节插画、花朵拟态场景以及木框、标本纸和观察工具形成连续的自然学画面。",
+      "native_html_parts": "三栏容器、地图图例、物种信息和状态标签可由 HTML/SVG 呈现；生成重点在生物插画与栖息场景。",
+      "license_note": "YouMind 汇编仓库标注 CC BY 4.0，原帖未见逐图复用授权。保留来源索引与远程预览，第三方原图不随 Skill 分发。",
+      "catalog_source_url": "https://github.com/YouMind-OpenLab/awesome-nano-banana-pro-prompts/blob/413e9703bb3f9909c62a4812936ad2490ee63d0d/README.md#L3205",
+      "visual_check": "已在浏览器查看实际原图，1200×896；这是 AI 生成的观察板，不是真实采样、摄影或保护等级的证据。",
+      "medium": "自然学观察板",
+      "facts_to_check": "图中的生态关系、物种信息和保护等级须独立核对，不视为真实采样记录。",
+      "model_evidence_detail": "原作者明确写 Nano Banana Pro, Species Board, in Firefly；属于作者声明。",
+      "model_evidence": "original-post",
+      "reuse_focus": "把形态差异、生命周期、栖息环境和拟态行为放在一张观察板中比较。"
+    },
+    {
+      "id": "edu-diamond-production-diorama",
+      "upstream_case_id": "youmind-4808",
+      "title": "钻石开采、加工与零售的微缩产业链",
+      "category": "spatial",
+      "image_urls": [
+        "https://cms-assets.youmind.com/media/1767682202355_t27yr6_G9y3TexW8AAKh1K.jpg"
+      ],
+      "case_url": "https://x.com/Gdgtify/status/2007968286462681240",
+      "prompt_url": "https://x.com/Gdgtify/status/2007968286462681240",
+      "creator": "Gadgetify (@Gdgtify)",
+      "original_post_url": "https://x.com/Gdgtify/status/2007968286462681240",
+      "model_label": "Nano Banana Pro",
+      "prompt_available": true,
+      "prompt_summary": "在地图桌面上用 S 形输送带连接原料、加工和零售三个微缩工作场景。",
+      "teaches": "通过物料形态与工人操作的连续变化，解释开采、加工和终端销售的关系。",
+      "why_imagegen": "输送带里的物料变化、开采现场、加工设备与商店剖面共同组成有空间纵深的过程插画。",
+      "native_html_parts": "阶段标题、步骤编号、补充说明和真实贸易数据可原生排版；普通流程箭头本身交给 HTML/SVG。",
+      "license_note": "YouMind 汇编仓库标注 CC BY 4.0，原帖未见逐图复用授权。保留来源索引与远程预览，第三方原图不随 Skill 分发。",
+      "catalog_source_url": "https://github.com/YouMind-OpenLab/awesome-nano-banana-pro-prompts/blob/d51b7d3c707e8dc466d2721616b59a37cdfd65c9/README.md#L2854",
+      "visual_check": "已在浏览器查看实际原图，1024×1024；实际展示钻石产业链，地图作为模型底座，不代表已核实的国际贸易路线。",
+      "medium": "微缩产业链场景",
+      "facts_to_check": "地图是模型底座，不能作为已核实的贸易路线或矿区位置。",
+      "model_evidence_detail": "原作者明确写 This Nano Banana Pro prompt，并指定 diamond ring；属于作者声明。",
+      "model_evidence": "original-post",
+      "reuse_focus": "通过物料形态与工人操作的连续变化，解释开采、加工和终端销售的关系。"
+    },
+    {
+      "id": "edu-car-half-cutaway",
+      "upstream_case_id": "picotrex-case-80",
+      "title": "汽车外壳与内部布置的半剖面对照",
+      "category": "engineering",
+      "image_urls": [
+        "https://raw.githubusercontent.com/PicoTrex/Awesome-Nano-Banana-images/main/images/case80/output.png"
+      ],
+      "case_url": "https://x.com/old_pgmrs_will/status/1966053092371444029",
+      "prompt_url": "https://x.com/old_pgmrs_will/status/1966053092371444029",
+      "creator": "Will Oldgram (@old_pgmrs_will)",
+      "original_post_url": "https://x.com/old_pgmrs_will/status/1966053092371444029",
+      "model_label": "Nano Banana（原作者未写具体版本）",
+      "prompt_available": true,
+      "prompt_summary": "基于汽车参考图保留一侧完整外观，在另一侧暴露发动机和座椅，并保持比例和写实细节。",
+      "teaches": "把车辆外部形态与内部舱室、机械布局对应起来。",
+      "why_imagegen": "同一视角下完整外壳与局部剥离结构需要照片编辑、材质延续和复杂透视匹配。",
+      "native_html_parts": "部件名称、局部高亮、引出线和原图对比控制可以用 HTML/SVG。",
+      "license_note": "PicoTrex README 的 CC BY 4.0 声明与 LICENSE 的 Apache-2.0 文本不一致，原帖未见逐图复用授权。只保留来源索引与远程预览，第三方原图不随 Skill 分发。",
+      "catalog_source_url": "https://github.com/PicoTrex/Awesome-Nano-Banana-images/blob/main/README.md#L2843",
+      "visual_check": "已在浏览器查看实际原图，1710×974；展示半剖面改绘方法，未验证为对应车型的真实机械布置。",
+      "medium": "照片半剖面改绘",
+      "facts_to_check": "内部结构未验证为对应车型的真实布置；原提示词需要汽车参考图。",
+      "model_evidence_detail": "原作者在 2025 年 9 月原帖写 Nano Banana；没有证据将其升级标为 Nano Banana Pro 或 ChatGPT Images 2.5。",
+      "model_evidence": "original-post",
+      "reuse_focus": "把车辆外部形态与内部舱室、机械布局对应起来。"
+    }
+  ],
+  "excluded_examples": [
+    {
+      "id": "openai-cellular-respiration",
+      "title": "细胞呼吸流程图",
+      "route": "html-svg",
+      "reason": "主要是卡片、箭头、分子图标和简化线粒体轮廓，可用 SVG 保持标签与关系可编辑。",
+      "model_label": "GPT Image 2.5 Flare / Sunburst",
+      "source_url": "https://developers.openai.com/api/docs/guides/image-prompting#create-scientific-and-educational-visuals"
+    }
+  ]
+}

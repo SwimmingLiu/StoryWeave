@@ -1,9 +1,16 @@
-# HTML 工作流
+# HTML 构建与修改流程
 
-资料检查 → Storyboard → 用户确认 → 主题、逐页 scheme 与 render recipe 审批 → 逐页 HTML 构建 → 浏览器 Review → 导出。
+1. 创建草稿，编辑叙事、逐页主张、来源、备注和 `content`。打开草稿预览，取得用户确认。
+2. 执行 `approve --theme-ref <architecture/style>`。schema 4 的批准内容写入 `deck_spec.json`，视觉计划写入 `plans/html.json`。
+3. 执行 `build`，生成画廊、独立 HTML、生成清单和 `storyweave-output.json`。
+4. 执行 `qa`，查看独立页与画廊逐页的桌面、移动截图，检查主张、关系与整套节奏。
+5. 解决 blocking 与 degraded，说明 warning 后导出或交给 Bento。
 
-Storyboard 是构建门。每页只保留一个主张，并列出准确文字、证据、页面角色、页面节奏、素材槽位和转场。用户确认前不构建最终 HTML 页面。
+<!-- Fixed-sample CI and actual-project visual acceptance serve different inputs and cannot approve each other. -->
+仓库生成器、版式或视觉规则改动后，还要运行同提交 GitHub Actions CI。固定杂志、瑞士风样张的画面变化必须逐页和整套查看、更新已评审基线，并让新提交重新通过。真实项目的批准稿、实际页面与视觉复核仍分别保留。
 
-canonical Storyboard 使用 v3 schema。审批会固化 `theme_ref`、逐页 `visual_scheme_ref`、`render_recipe_ref`、布局、页面节奏和配方 hash；构建阶段拒绝 `auto`、跨主题 scheme、缺失素材和过期配方。legacy v2 项目继续使用原主题和原页面结构，迁移时另存 `outline_draft.v2.json`。
+结构化内容决定信息关系，HTML 计划决定布局、字阶、主题、素材槽位与节奏。构建验证 `contentRevision`、计划哈希、规则版本与参考资源，不在构建时猜测缺失的内容。
 
-构建时同时写入演示入口、逐页独立 HTML 和 `storyweave-output.json`。页面使用固定 `1280×720` 舞台整体等比缩放。浏览器 Review 使用 manifest 中的页面路径，在桌面与移动视口逐页检查资源、溢出、空白、主题引用、内部区域重叠、标题间距、底部安全线和独立打开能力。
+只改主题或参考时执行 `replan`，再构建和 QA。v4 保留批准内容字节，不重复确认。改动文字、来源、备注或信息关系时重新编辑草稿并取得用户确认。
+
+旧 v2、v3 保持原渲染语义，v3 `replan` 后仍需重新审批。`migrate` 处理主题迁移，`migrate-content` 保留原稿并创建 v4 草稿，报告比较、流程与指标所需的待补结构。补齐后再确认。

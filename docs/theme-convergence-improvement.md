@@ -1,5 +1,7 @@
 # StoryWeave HTML 与 Imagegen 主题收敛改善方案
 
+本文保留主题收敛前的提案与判断。当前模块、内容版本和运行链路见[系统架构](architecture/storyweave-target-architecture.md)。
+
 | 项目 | 内容 |
 | --- | --- |
 | 文档类型 | 技术改善提案 |
@@ -294,8 +296,8 @@ HTML 与 Imagegen 统一使用 `active`、`candidate` 和 `planned` 三种主题
 
 - [Imagegen 主题目录](../skills/storyweave-imagegen/references/themes.md)
 - [Imagegen 主题 catalog](../skills/storyweave-imagegen/assets/themes/catalog.json)
-- [Imagegen 主题解析器](../skills/storyweave-imagegen/scripts/lib/themes.mjs)
+- [Imagegen 主题解析器](../src/imagegen/themes.mjs)
 - [HTML 主题目录](../skills/storyweave-html/assets/themes/catalog.json)
-- [HTML 主题解析器](../skills/storyweave-html/scripts/lib/themes.mjs)
-- [HTML 渲染器](../skills/storyweave-html/scripts/lib/html.mjs)
-- [Imagegen 迁移逻辑](../skills/storyweave-imagegen/scripts/lib/outline.mjs)
+- [HTML 主题解析器](../src/html/themes.mjs)
+- [旧版 HTML 渲染器](../src/html/legacy.mjs)
+- [Imagegen 迁移逻辑](../src/imagegen/outline.mjs)

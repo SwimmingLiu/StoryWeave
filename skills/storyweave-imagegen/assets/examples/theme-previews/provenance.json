@@ -1,5 +1,5 @@
 {
-  "scope": "six current theme references",
+  "scope": "19 candidate themes; 13 newly generated process examples share the same authored content",
   "previews": [
     {
       "theme_ref": "editorial/paper-magazine",
@@ -72,6 +72,331 @@
       ],
       "prompt": "cinematic--natural-film.txt",
       "prompt_sha256": "ee170d634df940c4cd5b22f5f48a1fcbff3d75c0627e34b5eb6b454eb2a393ae"
+    },
+    {
+      "theme_ref": "systems/engineering-blueprint",
+      "file": "systems--engineering-blueprint.png",
+      "origin": "built-in imagegen",
+      "tool": "image_gen",
+      "purpose": "generated process content-page preview; other roles require page-specific visual QA",
+      "image_sha256": "5fa25f5e44bf111140f83a3ded1d74cc9f9b768d44ff012dc47df58769b0d737",
+      "actual_size": [
+        1672,
+        941
+      ],
+      "prompt": "systems--engineering-blueprint.txt",
+      "prompt_sha256": "d92be71448d7ad7655b65f33c00b3315057f5a7d3126e3b51feedb856ea0d894",
+      "visible_text": [
+        "让改动有据可查",
+        "计划",
+        "构建",
+        "验证"
+      ],
+      "visual_review": {
+        "status": "inspected",
+        "method": "direct-image",
+        "notes": "Viewed the generated image: the supplied title and three stage labels are readable, the ordered route is visible, and the intended medium is distinguishable. This is a single process-page preview, not full-deck acceptance."
+      }
+    },
+    {
+      "theme_ref": "systems/warm-circuit",
+      "file": "systems--warm-circuit.png",
+      "origin": "built-in imagegen",
+      "tool": "image_gen",
+      "purpose": "generated process content-page preview; other roles require page-specific visual QA",
+      "image_sha256": "228c62f63b22cf75e0f7edeb54adc0cf7235ff1bbd76c06afc2989bdbd9320f6",
+      "actual_size": [
+        1672,
+        941
+      ],
+      "prompt": "systems--warm-circuit.txt",
+      "prompt_sha256": "66b01726e72fb9f435f4461aa40fe658d6ab7ac4040b75b6511031c255c6477b",
+      "visible_text": [
+        "让改动有据可查",
+        "计划",
+        "构建",
+        "验证"
+      ],
+      "visual_review": {
+        "status": "inspected",
+        "method": "direct-image",
+        "notes": "Viewed the generated image: the supplied title and three stage labels are readable, the ordered route is visible, and the intended medium is distinguishable. This is a single process-page preview, not full-deck acceptance."
+      }
+    },
+    {
+      "theme_ref": "knowledge/chalkboard",
+      "file": "knowledge--chalkboard.png",
+      "origin": "built-in imagegen",
+      "tool": "image_gen",
+      "purpose": "generated process content-page preview; other roles require page-specific visual QA",
+      "image_sha256": "157cd15b213233a959bafacece20b875403f4431833e55b4f20236ffcc0c1ff3",
+      "actual_size": [
+        1672,
+        941
+      ],
+      "prompt": "knowledge--chalkboard.txt",
+      "prompt_sha256": "dd6f37ace1c885945489505af06f2d6058efabddea6fc2750c47cea699846194",
+      "visible_text": [
+        "让改动有据可查",
+        "计划",
+        "构建",
+        "验证"
+      ],
+      "visual_review": {
+        "status": "inspected",
+        "method": "direct-image",
+        "notes": "Viewed the generated image: the supplied title and three stage labels are readable, the ordered route is visible, and the intended medium is distinguishable. This is a single process-page preview, not full-deck acceptance."
+      }
+    },
+    {
+      "theme_ref": "knowledge/sketch-notes",
+      "file": "knowledge--sketch-notes.png",
+      "origin": "built-in imagegen",
+      "tool": "image_gen",
+      "purpose": "generated process content-page preview; other roles require page-specific visual QA",
+      "image_sha256": "42dc65edf3018bac7036fec722d324ba48be4278433406d681e5adf8ee7db55c",
+      "actual_size": [
+        1672,
+        941
+      ],
+      "prompt": "knowledge--sketch-notes.txt",
+      "prompt_sha256": "2262cb6064664cc392f391de88b79b852bf47c332d6c16b77acfaf4b1d495c18",
+      "visible_text": [
+        "让改动有据可查",
+        "计划",
+        "构建",
+        "验证"
+      ],
+      "visual_review": {
+        "status": "inspected",
+        "method": "direct-image",
+        "notes": "Viewed the generated image: the supplied title and three stage labels are readable, the ordered route is visible, and the intended medium is distinguishable. This is a single process-page preview, not full-deck acceptance."
+      }
+    },
+    {
+      "theme_ref": "knowledge/ink-method",
+      "file": "knowledge--ink-method.png",
+      "origin": "built-in imagegen",
+      "tool": "image_gen",
+      "purpose": "generated process content-page preview; other roles require page-specific visual QA",
+      "image_sha256": "9deed2bdd4c9d72d22a98e3a4df33bf76a853dd6047f9aa0de7a322c7e5d6b86",
+      "actual_size": [
+        1672,
+        941
+      ],
+      "prompt": "knowledge--ink-method.txt",
+      "prompt_sha256": "c2d74b7d982c5a97b00ea384c17beabbce5596eb082b4ed3d4e544fd845b7c04",
+      "visible_text": [
+        "让改动有据可查",
+        "计划",
+        "构建",
+        "验证"
+      ],
+      "visual_review": {
+        "status": "inspected",
+        "method": "direct-image",
+        "notes": "Viewed the generated image: the supplied title and three stage labels are readable, the ordered route is visible, and the intended medium is distinguishable. This is a single process-page preview, not full-deck acceptance."
+      }
+    },
+    {
+      "theme_ref": "systems/neon-network",
+      "file": "systems--neon-network.png",
+      "origin": "built-in imagegen",
+      "tool": "image_gen",
+      "purpose": "generated process content-page preview; other roles require page-specific visual QA",
+      "image_sha256": "2405f8e5becca0f17aa4971648e34248ff06356b1f67636d6d8bdce0b978fe52",
+      "actual_size": [
+        1672,
+        941
+      ],
+      "prompt": "systems--neon-network.txt",
+      "prompt_sha256": "7c27abaa4479de54147f5424708cd3708ba67116c162986c63ec3f7d29f0daf4",
+      "visible_text": [
+        "让改动有据可查",
+        "计划",
+        "构建",
+        "验证"
+      ],
+      "visual_review": {
+        "status": "inspected",
+        "method": "direct-image",
+        "notes": "Viewed the generated image: the supplied title and three stage labels are readable, the ordered route is visible, and the intended medium is distinguishable. This is a single process-page preview, not full-deck acceptance."
+      }
+    },
+    {
+      "theme_ref": "tactile/clay-workflow",
+      "file": "tactile--clay-workflow.png",
+      "origin": "built-in imagegen",
+      "tool": "image_gen",
+      "purpose": "generated process content-page preview; other roles require page-specific visual QA",
+      "image_sha256": "26fee38a081043903a1b9fe1637add6ba78af696f1c2f7a7fdf5426954545332",
+      "actual_size": [
+        1672,
+        941
+      ],
+      "prompt": "tactile--clay-workflow.txt",
+      "prompt_sha256": "7effa15f891b0dff2dd514f86600d43e4039192f2d1b0209fd7e3692b3bf3030",
+      "visible_text": [
+        "让改动有据可查",
+        "计划",
+        "构建",
+        "验证"
+      ],
+      "visual_review": {
+        "status": "inspected",
+        "method": "direct-image",
+        "notes": "Viewed the generated image: the supplied title and three stage labels are readable, the ordered route is visible, and the intended medium is distinguishable. This is a single process-page preview, not full-deck acceptance."
+      }
+    },
+    {
+      "theme_ref": "tactile/retro-device",
+      "file": "tactile--retro-device.png",
+      "origin": "built-in imagegen",
+      "tool": "image_gen",
+      "purpose": "generated process content-page preview; other roles require page-specific visual QA",
+      "image_sha256": "454b5061bc76577251c245c343c172b3e33b6f0791361474476c4ca3dedeebe2",
+      "actual_size": [
+        1672,
+        941
+      ],
+      "prompt": "tactile--retro-device.txt",
+      "prompt_sha256": "83a6821fc74a47f35e6a5942a7a6c8d4284d160d8fba6226d86489908561e1cd",
+      "visible_text": [
+        "让改动有据可查",
+        "计划",
+        "构建",
+        "验证"
+      ],
+      "visual_review": {
+        "status": "inspected",
+        "method": "direct-image",
+        "notes": "Viewed the generated image: the supplied title and three stage labels are readable, the ordered route is visible, and the intended medium is distinguishable. This is a single process-page preview, not full-deck acceptance."
+      }
+    },
+    {
+      "theme_ref": "illustrated/storybook-guide",
+      "file": "illustrated--storybook-guide.png",
+      "origin": "built-in imagegen",
+      "tool": "image_gen",
+      "purpose": "generated process content-page preview; other roles require page-specific visual QA",
+      "image_sha256": "40e6fe767faa07464574848dbcc7fc4a5140454938b6bcb9f4b0340967d39fec",
+      "actual_size": [
+        1672,
+        941
+      ],
+      "prompt": "illustrated--storybook-guide.txt",
+      "prompt_sha256": "dfe8c90e321b7b99e7f6c611370b44e7370af50e326ae659a88db732013fd120",
+      "visible_text": [
+        "让改动有据可查",
+        "计划",
+        "构建",
+        "验证"
+      ],
+      "visual_review": {
+        "status": "inspected",
+        "method": "direct-image",
+        "notes": "Viewed the generated image: the supplied title and three stage labels are readable, the ordered route is visible, and the intended medium is distinguishable. This is a single process-page preview, not full-deck acceptance."
+      }
+    },
+    {
+      "theme_ref": "illustrated/comic-engineering",
+      "file": "illustrated--comic-engineering.png",
+      "origin": "built-in imagegen",
+      "tool": "image_gen",
+      "purpose": "generated process content-page preview; other roles require page-specific visual QA",
+      "image_sha256": "1de63ff8fa608389106ca6bff848ec44029f4eae60f1840f422244e9601801e0",
+      "actual_size": [
+        1672,
+        941
+      ],
+      "prompt": "illustrated--comic-engineering.txt",
+      "prompt_sha256": "b88b7e69288cb5dd5d501381dd46762f6d94f985be99aab74e429c2d6acbc799",
+      "visible_text": [
+        "让改动有据可查",
+        "计划",
+        "构建",
+        "验证"
+      ],
+      "visual_review": {
+        "status": "inspected",
+        "method": "direct-image",
+        "notes": "Viewed the generated image: the supplied title and three stage labels are readable, the ordered route is visible, and the intended medium is distinguishable. This is a single process-page preview, not full-deck acceptance."
+      }
+    },
+    {
+      "theme_ref": "illustrated/panoramic-system",
+      "file": "illustrated--panoramic-system.png",
+      "origin": "built-in imagegen",
+      "tool": "image_gen",
+      "purpose": "generated process content-page preview; other roles require page-specific visual QA",
+      "image_sha256": "7f6841f3912939638aa3f8400048ee31c9ca4a0bdace6029faa25e137e854bcb",
+      "actual_size": [
+        1672,
+        941
+      ],
+      "prompt": "illustrated--panoramic-system.txt",
+      "prompt_sha256": "ecebe9918fbc87243e4e60f3538042e56e2e4a64ecc02383b1ee227826b6c992",
+      "visible_text": [
+        "让改动有据可查",
+        "计划",
+        "构建",
+        "验证"
+      ],
+      "visual_review": {
+        "status": "inspected",
+        "method": "direct-image",
+        "notes": "Viewed the generated image: the supplied title and three stage labels are readable, the ordered route is visible, and the intended medium is distinguishable. This is a single process-page preview, not full-deck acceptance."
+      }
+    },
+    {
+      "theme_ref": "illustrated/pixel-world",
+      "file": "illustrated--pixel-world.png",
+      "origin": "built-in imagegen",
+      "tool": "image_gen",
+      "purpose": "generated process content-page preview; other roles require page-specific visual QA",
+      "image_sha256": "f35bf3c154f1ce28b7c2b86eb400eb9e8643f2ec66393ff913285e58cd7d764d",
+      "actual_size": [
+        1672,
+        941
+      ],
+      "prompt": "illustrated--pixel-world.txt",
+      "prompt_sha256": "977d95b0ceee8c3b4c2ee747ca8da57401af641d1cf0444d40449e34230027b2",
+      "visible_text": [
+        "让改动有据可查",
+        "计划",
+        "构建",
+        "验证"
+      ],
+      "visual_review": {
+        "status": "inspected",
+        "method": "direct-image",
+        "notes": "Viewed the generated image: the supplied title and three stage labels are readable, the ordered route is visible, and the intended medium is distinguishable. This is a single process-page preview, not full-deck acceptance."
+      }
+    },
+    {
+      "theme_ref": "systems/black-gold",
+      "file": "systems--black-gold.png",
+      "origin": "built-in imagegen",
+      "tool": "image_gen",
+      "purpose": "generated process content-page preview; other roles require page-specific visual QA",
+      "image_sha256": "5724447f9696b2c45f7cd082b9f17dac045b532f67cc059dc12f78cb019b369f",
+      "actual_size": [
+        1672,
+        941
+      ],
+      "prompt": "systems--black-gold.txt",
+      "prompt_sha256": "a3da77ba2a3f05ae8388cd87a948deb9ea5ba598ce78f8c96a2a8ad984837d28",
+      "visible_text": [
+        "让改动有据可查",
+        "计划",
+        "构建",
+        "验证"
+      ],
+      "visual_review": {
+        "status": "inspected",
+        "method": "direct-image",
+        "notes": "Viewed the generated image: the supplied title and three stage labels are readable, the ordered route is visible, and the intended medium is distinguishable. This is a single process-page preview, not full-deck acceptance."
+      }
     }
   ]
 }

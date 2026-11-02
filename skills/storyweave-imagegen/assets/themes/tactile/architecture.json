@@ -1,0 +1,9 @@
+{
+  "schema_version": 3,
+  "id": "tactile",
+  "spatial_grammar": "通过连续实体、物理连接和可见转换解释过程",
+  "reading_order": "先看实体动作，再读与它对应的简短标签",
+  "density_strategy": "每页只解释一种经过确认的关系，次级细节保持稀疏，文字独立于复杂材质",
+  "deck_rhythm": "在整体实体路径、局部操作与平静结论间交替",
+  "default_anchor_id": "continuity-mark"
+}

@@ -5,157 +5,85 @@ description: Orchestrate StoryWeave presentation work from content discovery thr
 
 # StoryWeave 全局编排
 
-StoryWeave 是一个分层的演示文稿工作流：`storyweave-html` 负责可编辑的原生 HTML，`storyweave-imagegen` 负责整页图片式页面，`storyweave-express` 负责把已完成的标准产物包装进 Bento。这个 Skill 负责路由、状态检查和交付编排，不替代三个生产 Skill 的内容与视觉判断。
+StoryWeave 使用一份确认内容、两个生成器和一个 Bento 展示适配器。`storyweave-html` 生成原生 HTML，`storyweave-imagegen` 生成整页图片。本 Skill 推进内容确认、工具调用和交付，随包的 `runtime/bento/` 负责包装；独立 `storyweave-express` 也可消费相同产物。
 
-## 第一性原理
-
-遵守下面四条原则：
-
-1. **内容只有一个事实源**：标题、主张、准确文字、证据和备注来自 outline/deck；Bento 只能展示，不重新解释内容。
-2. **生产与展示分离**：HTML 或 PNG 是生产者产物，Bento 是展示适配器。展示失败不能修改生产者源文件。
-3. **通过标准 manifest 交接**：只有 `storyweave-output.json` 通过校验后，才能进入 Express；不要根据网页目录、文件名或截图猜测页面。
-4. **每个阶段都可验证**：先验证输入和 QA，再执行下一阶段；任何失败都报告具体项目、页面和恢复动作，不静默降级。
-
-## 路由规则
+## 选择生成路径
 
 | 用户目标 | 生产 Skill | 交付路径 |
 | --- | --- | --- |
-| 需要可编辑文字、形状、表格、图表和逐页 HTML | `$storyweave-html` | HTML draft → approve → build → qa → Express → Bento |
-| 需要整页视觉、图片优先或强情绪画面 | `$storyweave-imagegen` | Imagegen draft → approve → prompts → 生成/复核 → build → qa → Express → Bento |
-| 已有 HTML 或 Imagegen 标准产物，只需要展示、排序或包装 | `$storyweave-express` | manifest 校验 → Bento build → Bento QA |
-| 用户明确要求不包装 Bento | 对应生产 Skill | 完成生产者 QA 后停止，并说明未执行展示适配 |
+| 需要原生文字、图形、表格或 SVG 编辑 | `$storyweave-html` | 草稿、确认、HTML 计划、构建、浏览器 QA、Bento |
+| 需要整页图片构图或图片式交付 | `$storyweave-imagegen` | 草稿、确认、图片计划、任务、真实生成与复核、构建、QA、Bento |
+| 已有标准产物，需要展示或排序 | 本 Skill 或 `$storyweave-express` | 核对当前生产者 QA、包装、适配 QA |
+| 明确要求原始页面交付 | 对应生产 Skill | 完成生产者 QA 后交付 HTML 或图片画廊 |
 
-未明确选择时，按交付目标判断：需要对象级编辑和可审计文字时优先 HTML；需要图片内排版、完整画面或图片式 PPTX 时优先 Imagegen。只要生产者 QA 通过，默认继续调用 Express 构建 Bento；用户明确关闭展示适配时才跳过。
+按编辑与表达需求选择生成器。默认在生产者 QA 通过后继续包装 Bento。内容理解和图片服务调用由 Agent 执行，`orchestrate.mjs` 只消费已经完成的生产者项目。
 
-## 标准工作流
+## 确认内容
 
-### 1. 先确定内容和交付目标
+<!-- Post-generation QA alone did not prevent unrelated imagery and novelty-driven composition at generation time. -->
+生成或优化前必读[视觉生成规则](references/visual-generation.md)，记录视觉方向、素材用途与需保留的构图。该规则改编自 Damir Sokolovsky 的视觉版 unslop。先解决可指出的问题；两个主题可以共用清楚的阅读方向，不为增加差异重排信息。
 
-确认主题、受众、用途、语言、预计页数、是否需要图片、是否需要对象级编辑，以及是否要在 Bento 中展示。资料不足时缩短范围或标记缺口，不补造事实。
+检查主题、受众、用途、语言、展示场景、预计页数与资料缺口。写出中心含义、叙事、逐页主张、事实来源、结构化内容和备注，再取得用户确认。事实来自项目材料；设计参考单独记录，不把案例数字或论断写入新项目。
 
-如果用户要求写稿，先完成事实材料和 Storyboard，再生成页面。不要让视觉主题反过来决定未经证实的内容。
+新结构化项目使用 schema 4 的 `deck_spec.json`。核心从内容生成 `exact_text` 和 `revision`，HTML 与 Imagegen 各自保存绑定修订的 schema 1 计划。只改主题或版式时运行所属生成器的 `replan`；修改文字、来源或关系时回到草稿重新确认。
 
-### 2. 运行一个生产 Skill
+## 运行生产者
 
-HTML 路径遵循 `$storyweave-html` 的审批门：
+在确认草稿后运行 HTML 路径：
 
 ```bash
-node <storyweave-html>/scripts/ppt.mjs draft <project> --theme-ref <architecture/style>
-node <storyweave-html>/scripts/ppt.mjs approve <project> --theme-ref <architecture/style>
+node <storyweave-html>/scripts/ppt.mjs draft <project> --theme-ref systems/ink-blue-grid
+node <storyweave-html>/scripts/ppt.mjs approve <project> --theme-ref systems/ink-blue-grid
 node <storyweave-html>/scripts/ppt.mjs build <project>
 node <storyweave-html>/scripts/ppt.mjs qa <project> --json
 ```
 
-Imagegen 路径遵循 `$storyweave-imagegen` 的逐页生成和复核门：
+`draft` 创建示例输入，Agent 先替换为本项目内容。`plans/html.json` 保存视觉计划，确认内容保存在 `deck_spec.json`。HTML 浏览器检查必须执行，blocking 与 degraded 均为零。
+
+Imagegen 使用逐页任务和复核：
 
 ```bash
-node <storyweave-imagegen>/scripts/ppt.mjs draft <project> --theme <architecture/style> --scope authoring
-node <storyweave-imagegen>/scripts/ppt.mjs approve <project> --theme <architecture/style>
+node <storyweave-imagegen>/scripts/ppt.mjs draft <project> --theme editorial/paper-magazine
+node <storyweave-imagegen>/scripts/ppt.mjs approve <project> --theme editorial/paper-magazine
 node <storyweave-imagegen>/scripts/ppt.mjs prompts <project>
-# 按 imagegen-jobs.jsonl 调用 $imagegen，保存到 slides/<slide-id>.png
-node <storyweave-imagegen>/scripts/ppt.mjs review <project> --slide <slide-id> --pass
+# Agent 按任务调用 image_gen，并保存真实调用日志、返回图片和 receipt。
+node <storyweave-imagegen>/scripts/ppt.mjs record-result <project> --receipt <actual-result.json>
+node <storyweave-imagegen>/scripts/ppt.mjs review <project> --slide s01 --pass --notes "实际图片复核结论"
 node <storyweave-imagegen>/scripts/ppt.mjs build <project>
 node <storyweave-imagegen>/scripts/ppt.mjs qa <project> --json
 ```
 
-Imagegen 请求必须先走内置 `image_gen`；只有内置路径不可用或失败时，才按用户级路由调用 `image-gen-rightcodes` 的 `imagegen-cli`。不得请求 `OPENAI_API_KEY`，不得把 `OPENAI_SUB_*` 值写入项目或日志。
+为每页重复结果收集和复核。任务的 `tool_input.referenced_image_paths` 是实际待传参考图，不能用提示词中的图名代替附件。内置 `image_gen` 优先；不可用或失败时直接使用已安装 `image-gen-rightcodes` 的 `imagegen-cli` 回退。使用已配置的 `OPENAI_SUB_*`，不索取另一套密钥，不把凭证写入项目或日志。
 
-### 3. 自动包装进 Bento
+`needs-images` 表示缺图，`needs-review` 表示图片齐全但尚未复核。`review --pass` 记录所见图片字节，不能代替查看真实图片；当前不执行 OCR。
 
-生产者 `qa` 返回通过后，调用本 Skill 附带的编排脚本：
+## 包装与展示 Bento
+
+生产者完成构建与 QA 后调用随包工作流：
 
 ```bash
-node <storyweave>/scripts/orchestrate.mjs <project> --no-bento-update --json
+node scripts/orchestrate.mjs <project> --no-bento-update --json
 ```
 
-该脚本会：
+工作流重新读取 `storyweave-output.json`、`qa_report.json` 和实际文件，核对格式、producer、kind、版本、ID、画布、路径与 `artifact_binding`。只有当前文件对应已通过的生产者 QA，才进入 Bento。
 
-1. 读取并校验 `storyweave-output.json`；
-2. 检查 producer、kind、版本、页面 ID、路径和画布；
-3. 调用 `storyweave-express` 构建 `.bento.html`；
-4. 运行 Express QA，确认页数一致、每页只有一个全画布图片、Bento 文档可解析；
-5. 返回 producer 与 Bento 的路径、版本、页数和 QA 摘要。
+全局包自带 core、Bento 和 shell，无需相邻 Express。HTML 按固定画布截图，Imagegen 直接复用 PNG；Bento 每页为一张全画布图片，保留 ID、顺序和备注。适配器另写 `qa/<output-id>.adapter-report.json`，保留生产者报告与原始页面。
 
-canonical HTML version 2 和 Imagegen/legacy version 1 都可以进入 Express。HTML 页面在 Bento 中会被固定画布截图后作为整页图片；源 HTML 仍是可编辑母版，Bento 不承诺把它还原成对象级 HTML。
+打开返回的 `.bento.html`，核对实际显示。应用提供 `open_in_codex` 时可使用该入口，否则使用用户指定浏览器。Bento 的顺序、显隐和备注编辑不等于 HTML 文字与形状对象编辑。
 
-### 4. 展示结果
+## 处理失败
 
-拿到 Bento 输出后，使用应用的 `open_in_codex` 打开生成的 `.bento.html`，或在用户指定的浏览器中打开它。展示层出现问题时，先检查 Bento QA 和 producer manifest，再回到对应生产 Skill 修复；不要直接编辑 Bento 内嵌 JSON 来掩盖生产问题。
-
-## 生产路径的选择依据
-
-### 选择 HTML
-
-HTML 适合：
-
-- 文字、表格、图表、流程和 SVG 需要保持原生可编辑；
-- 需要逐页独立入口、稳定页面 ID、主题迁移和 manifest 指纹；
-- 需要把素材、证据和页面结构分开管理；
-- 页面可以由固定舞台和 CSS/SVG 结构表达。
-
-HTML 不应把整页截图作为主题实现，也不应在 build 阶段临时猜测缺失的 theme、scheme 或素材。
-
-### 选择 Imagegen
-
-Imagegen 适合：
-
-- 图片、空间、光线和整页构图是主要表达载体；
-- 文字可以在图片内一次性定稿，且不要求对象级编辑；
-- 需要强情绪、发布会或视觉叙事式页面。
-
-Imagegen 页面中的文字必须来自 `exact_text`，数据和事实必须有来源。生成图片不是事实来源；发现乱码、额外文字、裁切错误或主题漂移时，只重生成受影响页面。
-
-### 选择 Express
-
-Express 只消费完成的标准 manifest。它不负责策划、改写文案、重新选择主题或补生成图片。HTML version 2 允许 canonical theme/scheme/render recipe 元数据继续传递到 Bento `meta`；页面本身仍以整页图片展示。
-
-## 失败处理
-
-| 失败 | 处理 |
+| 情况 | 恢复动作 |
 | --- | --- |
-| Storyboard 或 deck 未审批 | 停在生产 Skill 的审批门，先补齐用户确认和准确文字 |
-| producer QA 有 blocking | 不调用 Express；修复对应 producer 源后重新 build/qa |
-| manifest 缺失或版本不支持 | 报告项目路径和期望格式，不猜测网页或图片目录 |
-| 页面文件缺失或 ID 重复 | 修复 producer manifest/输出，保持稳定 ID |
-| Bento shell 不可用 | 使用 Express 的可信缓存或随附 shell；无法验证时保留 producer 产物并报告 |
-| 单页截图失败 | 只重试对应页面；不得跳过后声称 Bento 完整 |
-| Bento QA 失败 | 保留 producer 不变，修复 Express 输入或 shell 后重新包装 |
-
-## 产物关系
-
-```text
-outline_draft.json
-        ↓ approve
-deck_spec.json
-        ↓ producer build
-index.html / slides/* / storyweave-output.json
-        ↓ producer qa 通过
-storyweave-express
-        ↓
-dist/<title>.bento.html
-        ↓ Bento QA
-展示 / 编辑页面顺序 / 演示
-```
-
-`storyweave-output.json` 是两个生产 Skill 与 Express 之间的唯一交接面。`deck_spec.json`、HTML 源文件和 PNG 是生产者的母版；`.bento.html` 是展示派生物。
+| 内容尚未确认或确认稿已被改写 | 回到草稿确认，不跳过审批 |
+| 计划、参考或规则过期 | 保留确认内容，重新规划，再构建和 QA |
+| 缺图或复核失败 | 补齐真实结果或重生成受影响页面，再复核 |
+| QA blocking、degraded 或文件指纹不匹配 | 修复生产者并重新 QA |
+| manifest 缺失、路径越界或页面 ID 重复 | 修复生产者清单，不按目录猜测页面 |
+| Bento 截图、shell 或适配 QA 失败 | 保留生产者，修复适配器后重新包装 |
 
 ## 完成标准
 
-只有同时满足以下条件，才可以报告 StoryWeave 任务完成：
+生成器完成自己的构建与当前文件 QA，产物清单通过公共校验。默认路径另有通过的 Bento 适配报告与实际展示证据。原始页面交付按用户选择结束。缺少前提或未执行的入口按实际状态报告，不能用合同 fixture 证明真实生图质量。
 
-- 选择的 producer 已完成自己的 build 和 QA；
-- `storyweave-output.json` 的 producer、kind、版本、页面 ID、画布和路径通过校验；
-- 默认路径下 Express 已构建 Bento，或用户明确要求跳过并记录原因；
-- Bento QA 无 blocking，页面数量与 producer manifest 一致；
-- 展示入口已打开，或已明确报告无法打开的环境原因；
-- 没有把 Bento 展示结果当作 HTML/Imagegen 源文件，也没有虚构对象级可编辑能力。
-
-## 综合测试
-
-仓库中的综合测试任务位于 `tests/integration/storyweave-all-skills.test.mjs`。它用一个 canonical HTML 项目、一个 Imagegen 合同 fixture 和 Express/Bento 适配分别验证三个 Skill 的交接，不调用真实图片生成服务，避免把网络或账号状态混入合同测试。
-
-```bash
-node --test tests/integration/storyweave-all-skills.test.mjs
-```
-
-若要测试真实 Imagegen，再单独按照 `$storyweave-imagegen` 的流程替换 fixture，并逐页完成 `review --pass`；真实图片生成失败不能被合同 fixture 的通过结果掩盖。
+运行实现位于 `runtime/core/`、`runtime/bento/` 与 `runtime/workflow/`。仓库开发只修改权威源码并重新打包，不手改运行副本。

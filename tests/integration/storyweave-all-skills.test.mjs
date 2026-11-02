@@ -7,6 +7,7 @@ import { deflateSync } from 'node:zlib';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import test from 'node:test';
+import { parseBentoDocument, spliceBentoDocument } from '../../src/bento/document.mjs';
 
 const run = promisify(execFile);
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
@@ -66,7 +67,7 @@ async function buildHtmlProject() {
 
 async function buildImagegenProject() {
   const project = await mkdtemp(join(tmpdir(), 'storyweave-all-imagegen-'));
-  await node(imagegenCli, 'draft', project, '--theme', 'editorial/paper-magazine', '--scope', 'authoring', '--title', 'Imagegen 集成测试');
+  await node(imagegenCli, 'draft', project, '--schema', '3', '--theme', 'editorial/paper-magazine', '--scope', 'authoring', '--title', 'Imagegen 集成测试');
   await node(imagegenCli, 'approve', project, '--theme', 'editorial/paper-magazine', '--scope', 'authoring');
   await node(imagegenCli, 'prompts', project, '--model', 'integration-test');
   const jobs = (await readFile(join(project, 'imagegen-jobs.jsonl'), 'utf8')).trim().split('\n').filter(Boolean).map((line) => JSON.parse(line));
@@ -85,8 +86,12 @@ async function buildImagegenProject() {
 async function orchestrate(project) {
   const result = await node(orchestrator, project, '--no-bento-update', '--json');
   const payload = JSON.parse(result.stdout);
-  assert.equal(payload.producer.slides, 6);
-  assert.deepEqual(payload.bento.qa, { blocking: 0, warning: 0 });
+  // Legacy and structured producers may have different page counts; delivery follows the manifest.
+  const manifest = JSON.parse(await readFile(join(project, 'storyweave-output.json'), 'utf8'));
+  assert.equal(payload.producer.slides, manifest.slides.length);
+  assert.equal(payload.bento.qa.blocking, 0);
+  assert.equal(payload.bento.qa.warning, 0);
+  assert.equal(payload.bento.qa.degraded, 0);
   await access(payload.bento.output);
   return payload;
 }
@@ -114,6 +119,52 @@ test('global Skill documents all three routes and the standard handoff', async (
   assert.match(skill, /storyweave-html/);
   assert.match(skill, /storyweave-imagegen/);
   assert.match(skill, /storyweave-express/);
-  assert.match(skill, /自动包装进 Bento/);
+  // The routing description preserves automatic packaging even when the explanatory prose changes.
+  assert.match(skill.match(/^description: (.+)$/mu)?.[1] ?? '', /automatic Bento packaging/);
   assert.match(skill, /storyweave-output\.json/);
+});
+
+
+test('direct Express and global workflow reject the same changed producer artifact', async () => {
+  const project = await buildImagegenProject();
+  const manifestPath = join(project, 'storyweave-output.json');
+  const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
+  const first = join(project, manifest.slides[0].source);
+  await writeFile(first, Buffer.concat([await readFile(first), Buffer.from('changed after QA')]));
+  for (const script of [join(repoRoot, 'skills/storyweave-express/scripts/ppt.mjs'), orchestrator]) {
+    const parameters = script === orchestrator ? [project, '--no-bento-update', '--json'] : ['build', project, '--no-bento-update'];
+    await assert.rejects(node(script, ...parameters), /stale|changed after inspection/i);
+  }
+});
+
+test('direct packaging preserves producer QA and writes a separate adapter report', async () => {
+  const project = await buildImagegenProject();
+  const before = await readFile(join(project, 'qa_report.json'), 'utf8');
+  const result = await orchestrate(project);
+  assert.equal(await readFile(join(project, 'qa_report.json'), 'utf8'), before);
+  await access(result.bento.report);
+  const report = JSON.parse(await readFile(result.bento.report, 'utf8'));
+  assert.equal(report.export_ready, true);
+  assert.equal(report.visual_review, 'browser');
+});
+
+test('Bento output paths cannot overwrite producer inputs', async () => {
+  const project = await buildImagegenProject();
+  const entry = join(project, 'index.html');
+  const before = await readFile(entry);
+  await assert.rejects(node(join(repoRoot, 'skills/storyweave-express/scripts/ppt.mjs'), 'build', project, '--out', entry, '--no-bento-update'), /overwrite a producer/);
+  assert.deepEqual(await readFile(entry), before);
+});
+
+test('adapter QA rejects transparent full-page images', async () => {
+  const project = await buildImagegenProject();
+  const result = await orchestrate(project);
+  const html = await readFile(result.bento.output, 'utf8');
+  const document = parseBentoDocument(html);
+  document.slides[0].elements[0].opacity = 0;
+  await writeFile(result.bento.output, spliceBentoDocument(html, document, document));
+  await assert.rejects(node(join(repoRoot, 'skills/storyweave-express/scripts/ppt.mjs'), 'qa', project, '--file', result.bento.output, '--json'), (error) => {
+    const qa = JSON.parse(error.stdout);
+    return qa.export_ready === false && qa.findings.some((finding) => finding.code === 'bento.slide_shape');
+  });
 });

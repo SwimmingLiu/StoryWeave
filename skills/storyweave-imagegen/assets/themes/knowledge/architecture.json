@@ -1,0 +1,9 @@
+{
+  "schema_version": 3,
+  "id": "knowledge",
+  "spatial_grammar": "通过手绘图解、比喻与批注逐层解释技术观点",
+  "reading_order": "先识别问题，再沿笔触与标注理解关系",
+  "density_strategy": "每页只解释一种经过确认的关系，次级细节保持稀疏，文字独立于复杂材质",
+  "deck_rhythm": "用清晰主张、细致讲解与安静收尾交替",
+  "default_anchor_id": "continuity-mark"
+}

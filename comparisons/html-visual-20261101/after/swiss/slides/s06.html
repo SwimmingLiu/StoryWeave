@@ -1,0 +1,80 @@
+<!doctype html><html lang="zh-CN" data-architecture="systems" data-visual-system="swiss"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="storyweave-producer" content="storyweave-html"><meta name="storyweave-theme-ref" content="systems/ink-blue-grid"><meta name="storyweave-canvas" content="1280x720"><meta name="storyweave-content-revision" content="1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a"><title>StoryWeave 内容与表达</title><style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}
+body{background:#FAFAF8;font-family:'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', sans-serif;color:#0A0A0A;-webkit-font-smoothing:antialiased}
+.stage-viewport{position:relative;width:100vw;height:100vh;overflow:hidden}
+.stage{position:absolute;left:50%;top:50%;margin-left:-640px;margin-top:-360px;width:1280px;height:720px;transform-origin:center}
+.slide{--paper:#FAFAF8;--ink:#0A0A0A;--brand:#002FA7;--surface:#FFFFFF;--line:#D4D4D2;--fg:var(--ink);--bg:var(--paper);--accent:var(--brand);--quiet:#737373;position:absolute;inset:0;display:none;background:var(--bg);color:var(--fg);overflow:hidden}
+.slide.active{display:block}.tone-dark{--bg:var(--ink);--fg:var(--paper);--quiet:#d4d8df;--accent:#bdcaff;--line:#687080;--surface:#252b35}
+.tone-accent{--bg:var(--brand);--fg:#fff;--quiet:#f2f3f7;--accent:#fff;--line:#ffffff66;--surface:#ffffff12}
+h1,h2,p,figure,blockquote{margin:0}h1{font-family:'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', sans-serif;font-size:var(--title-size,64px);font-weight:var(--title-weight,300);line-height:1.16;letter-spacing:-.035em;text-wrap:balance;overflow-wrap:anywhere;line-break:strict}
+h2{font-size:28px;line-height:1.25;font-weight:500}p,td,th{font-size:28px;line-height:1.5;font-weight:400}p{color:var(--quiet)}
+.title-word{white-space:nowrap}
+.slide-head{position:absolute;left:var(--gutter,64px);right:var(--gutter,64px);top:72px}
+.slide-head h1{max-width:1100px}.layout-body{position:absolute;left:var(--gutter,64px);right:var(--gutter,64px);top:var(--body-top,256px);bottom:80px}
+.counter{position:absolute;left:var(--gutter,64px);right:var(--gutter,64px);bottom:28px;text-align:right;color:var(--quiet);font:500 16px 'SFMono-Regular',Consolas,monospace;letter-spacing:.1em}
+.statement-composition{position:absolute;inset:80px var(--gutter,64px) 88px;display:grid;align-items:center}
+.statement-copy{min-width:0;max-width:1080px}.statement-copy h1{max-width:1000px}.statement-body{display:grid;gap:14px;margin-top:var(--title-gap,48px);max-width:920px}
+.statement-body p{font-size:28px;line-height:1.5}.kicker{font:500 18px 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', sans-serif;letter-spacing:.14em;margin-bottom:32px;color:var(--accent)}
+.layout-cover-split .statement-copy{max-width:1000px}.layout-cover-split .statement-body{max-width:760px}.layout-closing-statement .statement-copy{max-width:1060px}
+.layout-quote blockquote{border-left:3px solid var(--accent);padding-left:40px}.attribution{margin-top:24px;font-size:18px}
+.has-image{grid-template-columns:1fr 1fr;gap:56px}.has-image .statement-copy h1{font-size:min(var(--title-size),64px)}
+.asset-figure{min-width:0;align-self:start;display:grid;grid-template-rows:auto auto;gap:12px}.asset-figure img{display:block;width:100%;aspect-ratio:var(--image-ratio,4/3)}
+.asset-figure figcaption{font-size:16px;font-weight:500;line-height:1.4;color:var(--quiet)}
+.layout-statement-split .statement-copy{display:grid;grid-template-columns:7fr 5fr;gap:80px;align-items:center;max-width:none}
+.layout-statement-split h1{max-width:620px}.layout-statement-split .statement-body{margin:0;padding-left:32px;border-left:1px solid var(--line);gap:32px}
+.layout-statement-split .kicker{grid-column:1/-1}.image-hero-body{display:grid;grid-template-columns:2.15fr 1fr;gap:48px;align-items:start}
+.image-hero-body .asset-figure{--image-ratio:21/9}.image-copy{display:grid;gap:24px;padding-top:8px}.image-copy p{font-size:24px;line-height:1.5}
+.comparison-matrix{width:100%;border-collapse:collapse;table-layout:fixed}.comparison-axis{width:20%}
+.comparison-matrix thead th{padding:0 24px 24px;text-align:left;font-size:32px;font-weight:500;border-bottom:2px solid var(--accent);color:var(--fg)}
+.comparison-matrix thead th:first-child{padding-left:0;border-bottom:1px solid var(--line)}
+.comparison-matrix tbody th,.comparison-matrix tbody td{padding:20px 24px;vertical-align:top;border-bottom:1px solid var(--line);font-size:26px;line-height:1.4;text-align:left}
+.comparison-matrix tbody th{padding-left:0;font-size:24px;font-weight:500;color:var(--quiet)}.comparison-matrix tbody td:last-child{color:var(--accent)}
+.metrics-body{display:flex;flex-direction:column;gap:32px}.metric-ledger{display:grid;grid-template-columns:repeat(var(--metric-count),minmax(0,1fr));gap:32px;align-items:start}
+.metric-entry{min-width:0;padding-top:24px;border-top:1px solid var(--line)}.metric-number{display:flex;gap:10px;align-items:baseline;margin-bottom:24px;white-space:nowrap}
+.metric-number [data-storyweave-content="metric-value"]{font-family:'Helvetica Neue','Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', sans-serif;font-weight:300;font-size:var(--metric-size,104px);line-height:1;letter-spacing:-.055em;font-variant-numeric:tabular-nums}
+.metric-number [data-storyweave-content="metric-unit"]{font-size:24px;font-weight:500}.metric-entry h2{font-size:26px;font-weight:400}.metric-source{font-size:16px;line-height:1.4;margin-top:24px;font-weight:500}
+.metric-notes{display:grid;gap:10px}.metric-note{font-size:24px}
+.process-rail{position:relative;display:grid;grid-template-columns:repeat(var(--step-count),minmax(0,1fr));gap:36px;list-style:none;padding:0;margin:0}
+.process-rail li{min-width:0;padding-top:8px}.step-index{display:block;font:300 64px 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', sans-serif;line-height:1;margin-bottom:64px;color:var(--accent);letter-spacing:-.04em}
+.process-rail h2{font-size:32px;line-height:1.2;margin-bottom:20px}.process-rail p{font-size:24px;max-width:270px}
+.relationship-connections{position:absolute;inset:0;width:100%;height:350px;overflow:visible;color:var(--accent)}
+.relationship-connections text{font:24px 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', sans-serif;fill:var(--fg);stroke:var(--bg);stroke-width:6px;paint-order:stroke fill}
+.relationship-map{position:relative;width:100%;height:350px}.relationship-node{position:absolute;width:220px;min-height:96px;padding:18px 20px;border:1px solid var(--line);border-top:3px solid var(--accent);background:var(--bg);transform:translate(-50%,-50%)}
+.relationship-node h2{font-size:28px;line-height:1.22}.relationship-node p{font-size:24px;line-height:1.35;margin-top:12px}
+.nav{position:fixed;bottom:18px;width:44px;height:44px;border:1px solid #74809666;border-radius:50%;background:#fff;color:#18212d;font:26px Georgia,serif;cursor:pointer;z-index:20}
+.nav.prev{left:18px}.nav.next{right:18px}.nav:focus-visible{outline:3px solid #3e66ff;outline-offset:3px}
+/* Magazine layouts use offset text columns and a vertical ledger instead of repeating a card grid. */
+html[data-visual-system="magazine"] h1{letter-spacing:-.025em}
+html[data-visual-system="magazine"] .tone-dark{--accent:#e3baa6;--quiet:#d9d2c9;--line:#766e65}
+html[data-visual-system="magazine"] .layout-cover-split .statement-copy{border-top:1px solid var(--line);padding-top:48px}
+html[data-visual-system="magazine"] .layout-cover-split h1{max-width:880px}
+html[data-visual-system="magazine"] .layout-statement .statement-copy{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:48px 24px}
+html[data-visual-system="magazine"] .layout-statement h1,html[data-visual-system="magazine"] .layout-statement .kicker{grid-column:1/-1}
+html[data-visual-system="magazine"] .layout-statement .statement-body{grid-column:6/-1;margin:0;max-width:none;padding-top:24px;border-top:1px solid var(--line)}
+html[data-visual-system="magazine"] .layout-closing-statement .statement-body{margin-left:30%;max-width:760px}
+html[data-visual-system="magazine"] .comparison-matrix thead th{font-family:'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', sans-serif;font-weight:600}
+html[data-visual-system="magazine"] .metric-ledger{grid-template-columns:1fr;gap:0}
+html[data-visual-system="magazine"] .metric-entry{display:grid;grid-template-columns:4fr 3fr 4fr;gap:32px;align-items:baseline;padding:18px 0}
+html[data-visual-system="magazine"] .metric-number{margin:0}
+html[data-visual-system="magazine"] .metric-number [data-storyweave-content="metric-value"]{font-family:Georgia,'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', sans-serif;font-size:76px;font-weight:400}
+html[data-visual-system="magazine"] .metric-source{margin:0}
+html[data-visual-system="magazine"] .process-rail li{border-top:1px solid var(--line);padding-top:24px}
+html[data-visual-system="magazine"] .step-index{font-family:Georgia,serif;font-style:italic;margin-bottom:48px}
+/* Swiss pages share one 64px axis and reserve heavy color for anchor pages. */
+html[data-visual-system="swiss"] .layout-cover-split .statement-copy{max-width:1100px}
+html[data-visual-system="swiss"] .layout-cover-split .statement-body{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);max-width:1000px}
+html[data-visual-system="swiss"] .layout-statement-split{background:linear-gradient(90deg,var(--bg) 0 60%,var(--surface) 60%)}
+html[data-visual-system="swiss"] .layout-statement-split .statement-copy{grid-template-columns:repeat(16,minmax(0,1fr));gap:16px}
+html[data-visual-system="swiss"] .layout-statement-split h1{grid-column:1/10}
+html[data-visual-system="swiss"] .layout-statement-split .statement-body{grid-column:11/-1}
+html[data-visual-system="swiss"] .layout-closing-statement{background:linear-gradient(90deg,var(--brand) 0 58%,var(--paper) 58%)}
+html[data-visual-system="swiss"] .layout-closing-statement .statement-copy{display:grid;grid-template-columns:7fr 5fr;gap:96px;align-items:center;max-width:none}
+html[data-visual-system="swiss"] .layout-closing-statement h1{color:#fff;max-width:600px;font-size:min(var(--title-size),82px)}
+html[data-visual-system="swiss"] .layout-closing-statement .statement-body{margin:0;gap:32px}
+html[data-visual-system="swiss"] .layout-closing-statement .counter{color:var(--ink)}
+html[data-visual-system="swiss"] .metric-entry:first-child{border-top-color:var(--accent)}
+html[data-visual-system="swiss"] .relationship-node{border:0;border-top:1px solid var(--line);padding:16px 12px}
+html[data-architecture="campaign"] h1{font-weight:700}html[data-architecture="campaign"] .slide-head{border-left:8px solid var(--accent);padding-left:24px}
+html[data-architecture="cinematic"] .slide:after{content:"";position:absolute;inset:18px;border:1px solid var(--line);pointer-events:none}
+@media(prefers-reduced-motion:no-preference){.slide.active .slide-head,.slide.active .statement-copy{animation:page-enter .35s ease-out both}@keyframes page-enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}}
+</style></head><body><div class="stage-viewport"><main class="stage" data-reading-mode="speaker-led"><section class="slide layout-relationship-map tone-light active" style="--gutter:64px;--title-size:64px;--title-weight:300;--title-gap:48px;--body-top:240px;--metric-size:104px" data-storyweave-slide data-slide-id="s06" data-slide-index="5" data-layout-id="relationship-map" data-page-rhythm="dense" data-theme-ref="systems/ink-blue-grid" data-content-revision="1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a"><header class="slide-head" data-storyweave-region="title"><h1 class=" " data-storyweave-content="title"><span class="title-word">生成</span><span class="title-word">负责</span><span class="title-word">表达，</span><span class="title-word">展示</span><span class="title-word">负责</span><span class="title-word">交付</span></h1></header><main class="relationship-body layout-body" data-storyweave-region="content"><div class="relationship-map"><svg class="relationship-connections" viewBox="0 0 1088 350" aria-label="4 条已确认关系" role="img"><defs><marker id="arrow-s06" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor"/></marker></defs><g data-edge-from="core" data-edge-to="html"><path d="M230,175 C330,175 330,87.5 430,87.5" fill="none" stroke="currentColor" stroke-width="2" marker-end="url(#arrow-s06)"/></g><g data-edge-from="core" data-edge-to="image"><path d="M230,175 C330,175 330,262.5 430,262.5" fill="none" stroke="currentColor" stroke-width="2" marker-end="url(#arrow-s06)"/></g><g data-edge-from="html" data-edge-to="display"><path d="M654,87.5 C754,87.5 754,175 854,175" fill="none" stroke="currentColor" stroke-width="2" marker-end="url(#arrow-s06)"/></g><g data-edge-from="image" data-edge-to="display"><path d="M654,262.5 C754,262.5 754,175 854,175" fill="none" stroke="currentColor" stroke-width="2" marker-end="url(#arrow-s06)"/></g></svg><article class="relationship-node" data-node-id="core" style="left:11.029411764705882%;top:50%"><h2 data-storyweave-content="node-label" >确认内容</h2><p data-storyweave-content="body" >稳定 ID 与事实来源</p></article><article class="relationship-node" data-node-id="html" style="left:50%;top:25%"><h2 data-storyweave-content="node-label" >HTML 生成</h2><p data-storyweave-content="body" >原生文字与图形</p></article><article class="relationship-node" data-node-id="image" style="left:50%;top:75%"><h2 data-storyweave-content="node-label" >图片生成</h2><p data-storyweave-content="body" >完整页面与复核</p></article><article class="relationship-node" data-node-id="display" style="left:88.97058823529412%;top:50%"><h2 data-storyweave-content="node-label" >展示交付</h2><p data-storyweave-content="body" >已验证的成品</p></article></div></main><span class="counter">06 / 08</span></section></main></div><script>(()=>{const stage=document.querySelector('.stage');const fit=()=>{stage.style.transform='scale('+Math.min(innerWidth/1280,innerHeight/720)+')'};fit();addEventListener('resize',fit,{passive:true});})();</script></body></html>

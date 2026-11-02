@@ -1,0 +1,9 @@
+{
+  "schema_version": 3,
+  "id": "illustrated",
+  "spatial_grammar": "通过连续角色、场景和空间路径解释内容",
+  "reading_order": "先识别角色或场景中的动作，再跟随明确的因果或顺序",
+  "density_strategy": "每页只解释一种经过确认的关系，次级细节保持稀疏，文字独立于复杂材质",
+  "deck_rhythm": "在场景全览、局部行动和简短判断间交替",
+  "default_anchor_id": "continuity-mark"
+}

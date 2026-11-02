@@ -1,0 +1,577 @@
+{
+  "schema_version": 1,
+  "capture_fingerprint": "547f5b9d472bc049e27a243ff1c46afdc38641900a2570b5d52274cdeb4b6c20",
+  "reviewer": {
+    "name": "Codex",
+    "kind": "agent",
+    "familiarity": "已看过用户对杂志 s06 纵向候选的拒绝反馈。本轮实际逐张查看此 CI 的 16 张桌面 PNG，再查看两套各八页的整套拼图；不声称独立盲测。该记录建立可接受的桌面视觉基线，不宣称比过去所有版本更好。竖屏缩放与几何另由浏览器 QA 检查。"
+  },
+  "items": [
+    {
+      "id": "editorial/s01",
+      "inspected_sha256": [
+        "459dc5eae296ef17bc575df379e5c4bc81921ce8a91b02170100249d9bd24267"
+      ],
+      "axes": {
+        "meaning": {
+          "status": "pass",
+          "observation": "主张“内容一份，表达两种”成为画面主体，下方一句解释从确认文字到页面，含义一致。"
+        },
+        "reading": {
+          "status": "pass",
+          "observation": "暖白大标题在炭黑底上对比清楚，产品名小于主张，正文在标题下方独立成行。"
+        },
+        "relationships": {
+          "status": "pass",
+          "observation": "只有标题与其支持句，没有箭头、分组或尺度暗示未批准的信息关系。"
+        },
+        "composition": {
+          "status": "pass",
+          "observation": "左侧产品名、标题、正文共用起点，细横线与右下页码退居辅助位置。"
+        },
+        "specificity": {
+          "status": "pass",
+          "observation": "画面由当前产品名及批准主张组成，没有用通用物体填补大块留白。"
+        }
+      },
+      "slop": {
+        "findings": [],
+        "observation": "已检查背景、分隔线、产品名和页码；没有额外徽章、发光形状或虚构指标。"
+      }
+    },
+    {
+      "id": "editorial/s02",
+      "inspected_sha256": [
+        "5f18a1a5eb2285d9c761425f7fee3d95794989f509ea145461732a6ba96aecee"
+      ],
+      "axes": {
+        "meaning": {
+          "status": "pass",
+          "observation": "标题先表达关系再选择外观，正文具体列出比较轴、方向、单位与来源来支持它。"
+        },
+        "reading": {
+          "status": "pass",
+          "observation": "黑色单行标题先读，右下灰色正文三行完整，字号和行距能区分主张与解释。"
+        },
+        "relationships": {
+          "status": "pass",
+          "observation": "正文为并列要求，按相同行距排布，没有箭头把它们误画成前后步骤。"
+        },
+        "composition": {
+          "status": "pass",
+          "observation": "标题占上部横向区域，正文在右下成组，分隔线轻，留白没有拆散正文三项。"
+        },
+        "specificity": {
+          "status": "pass",
+          "observation": "三句话均对应信息表达任务，无装饰图标或可套用到任意产品的插画。"
+        }
+      },
+      "slop": {
+        "findings": [],
+        "observation": "检查了正文三项和细横线；强调集中于主张，没有每项都加徽章或卡片。"
+      }
+    },
+    {
+      "id": "editorial/s03",
+      "inspected_sha256": [
+        "099a877b950b00f96901095da51beeee5d17f7f4c2b0d0907edd472a3637e57e"
+      ],
+      "axes": {
+        "meaning": {
+          "status": "pass",
+          "observation": "HTML 和 Imagegen 在页面源、编辑方式、质量检查三条批准轴上逐行对应。"
+        },
+        "reading": {
+          "status": "pass",
+          "observation": "上方标题、列名、灰色行名与黑色值的层级清楚，各项文字完整可读。"
+        },
+        "relationships": {
+          "status": "pass",
+          "observation": "两列使用相同黑色和字重，共享红色表头横线；没有把某一列标成赢家。"
+        },
+        "composition": {
+          "status": "pass",
+          "observation": "行分隔线与对应值对齐，同一行左右值距离稳定，标题和表格之间有明确间距。"
+        },
+        "specificity": {
+          "status": "pass",
+          "observation": "表格内容都是两种生成器的具体能力，没有虚构评分、奖章或趋势图。"
+        }
+      },
+      "slop": {
+        "findings": [],
+        "observation": "已检查列头颜色、表格线与全部单元格；没有不受内容支持的高亮推荐。"
+      }
+    },
+    {
+      "id": "editorial/s04",
+      "inspected_sha256": [
+        "2bcde5b6d6c10837423e93d3c1e5c78e01e70ebe2573ca8b83b82cdb61c47c9e"
+      ],
+      "axes": {
+        "meaning": {
+          "status": "pass",
+          "observation": "整理资料、确认内容、生成交付三步和各自说明组成实际流程。"
+        },
+        "reading": {
+          "status": "pass",
+          "observation": "标题在上方，三步的序号、标签和说明层级分明，暖白文字在深底上清楚。"
+        },
+        "relationships": {
+          "status": "pass",
+          "observation": "两条水平箭头仅从第一步连第二步、第二步连第三步，没有额外反馈环。"
+        },
+        "composition": {
+          "status": "pass",
+          "observation": "三个步骤均分横向舞台，节点和说明垂直对齐，箭头位于文字上方。"
+        },
+        "specificity": {
+          "status": "pass",
+          "observation": "步骤序号表达批准顺序，图形只承担流程职责，没有额外场景或科技物体。"
+        }
+      },
+      "slop": {
+        "findings": [],
+        "observation": "检查了序号、方形端点和箭头；它们对应顺序关系，没有无意义的装饰卡片。"
+      }
+    },
+    {
+      "id": "editorial/s05",
+      "inspected_sha256": [
+        "5d305eaf15960653c96bbcc3b620bc8c0a6a33afd5c118d1b3434d7fc548d505"
+      ],
+      "axes": {
+        "meaning": {
+          "status": "pass",
+          "observation": "2 条生成路径、1280 px 宽、720 px 高分别配有标签与来源，支持画布一致的主张。"
+        },
+        "reading": {
+          "status": "pass",
+          "observation": "数值最醒目，单位紧邻数值，标签居中列，来源在右侧仍可辨认。"
+        },
+        "relationships": {
+          "status": "pass",
+          "observation": "三项按独立行呈现不同单位的数据，没有共同数轴、增长箭头或排名暗示。"
+        },
+        "composition": {
+          "status": "pass",
+          "observation": "数值、标签、来源各自形成对齐列，细横线分行，较长来源没有挤占数值。"
+        },
+        "specificity": {
+          "status": "pass",
+          "observation": "三个数字均为批准内容中的路径数与画布尺寸，没有填充的 KPI 或随机折线。"
+        }
+      },
+      "slop": {
+        "findings": [],
+        "observation": "已检查所有数字及来源；没有百分比、微型趋势图或进度条等额外数据。"
+      }
+    },
+    {
+      "id": "editorial/s06",
+      "inspected_sha256": [
+        "6cc6d438c19feba33c1310358f877123e46b6fc8d62e19eac2f68b199e16c88e"
+      ],
+      "axes": {
+        "meaning": {
+          "status": "pass",
+          "observation": "四个节点准确表达确认内容分到 HTML 与图片生成，再汇入展示交付。"
+        },
+        "reading": {
+          "status": "pass",
+          "observation": "标题在上方，节点黑色标签与灰色说明分层；“事实来源”保持完整词组。"
+        },
+        "relationships": {
+          "status": "pass",
+          "observation": "由左到右的两条分支与两条汇合曲线清楚，箭头离开文字，未引入反馈边。"
+        },
+        "composition": {
+          "status": "pass",
+          "observation": "起点与终点位于横向两端，两个生成节点在中间上下成组，路径没有压成平线。"
+        },
+        "specificity": {
+          "status": "pass",
+          "observation": "四个框和四条边均有对应内容职责，没有主题道具或额外系统节点。"
+        }
+      },
+      "slop": {
+        "findings": [],
+        "observation": "已检查横向分流汇合、节点边框及全部标签；没有被拒绝的纵向分散结构或虚构关系。"
+      }
+    },
+    {
+      "id": "editorial/s07",
+      "inspected_sha256": [
+        "c0784fd55f2daf52931e1f5578cc5bf2172e1b1ece5a71a1c117518be33708ea"
+      ],
+      "axes": {
+        "meaning": {
+          "status": "pass",
+          "observation": "完整长标题与两段正文说明为内容留空间，右侧同组信息块的疏密变化直接支持主张。"
+        },
+        "reading": {
+          "status": "pass",
+          "observation": "标题分为两行仍完整，左栏两段正文分组清楚，没有为塞下文字缩成密集小字。"
+        },
+        "relationships": {
+          "status": "pass",
+          "observation": "左侧文字与右侧两张布局示意各自成组，示意不伪装成真实产品数据或有向系统图。"
+        },
+        "composition": {
+          "status": "pass",
+          "observation": "正文列在左、图解在右；示意面板保留完整边界，标题与图文区没有重叠。"
+        },
+        "specificity": {
+          "status": "pass",
+          "observation": "图中的标题条、图块和八行文字条用于解释空间安排，代替了与主张无关的折纸物体。"
+        }
+      },
+      "slop": {
+        "findings": [],
+        "observation": "检查了两张示意图；它们是布局图解，不是虚构产品截图、KPI 或纯气氛插画。"
+      }
+    },
+    {
+      "id": "editorial/s08",
+      "inspected_sha256": [
+        "9e4ce5e8a6615756d801b7e3935dbac50112723d83d2b090f50878214eeaf20e"
+      ],
+      "axes": {
+        "meaning": {
+          "status": "pass",
+          "observation": "批准的行动主张“从一份真实内容开始”作为收束，下面两句说明具体动作。"
+        },
+        "reading": {
+          "status": "pass",
+          "observation": "大号暖白标题在深底上先读，两句较小正文位于右下，阅读层次清楚。"
+        },
+        "relationships": {
+          "status": "pass",
+          "observation": "正文支持行动主张，没有额外箭头或图形把动作画成未经批准的依赖关系。"
+        },
+        "composition": {
+          "status": "pass",
+          "observation": "标题与两行正文之间留白充足，正文成组，页码独立在右下角。"
+        },
+        "specificity": {
+          "status": "pass",
+          "observation": "收尾使用当前内容本身，没有添加口号、标志墙或通用庆祝图。"
+        }
+      },
+      "slop": {
+        "findings": [],
+        "observation": "已检查收尾标题、正文和背景；没有新增激励口号或装饰性物体。"
+      }
+    },
+    {
+      "id": "swiss/s01",
+      "inspected_sha256": [
+        "fa01b073dc3fc0f5c8ac1cfc44e9c01fcba1fa55e67c602a63afb7eb40aad752"
+      ],
+      "axes": {
+        "meaning": {
+          "status": "pass",
+          "observation": "内容一份、表达两种的批准主张直接占据蓝色封面主体，支持句解释交付目的。"
+        },
+        "reading": {
+          "status": "pass",
+          "observation": "白色大标题与蓝底对比强，产品名较小，下方正文由细横线隔开。"
+        },
+        "relationships": {
+          "status": "pass",
+          "observation": "标题与支持句关系明确，没有图标或箭头添加未批准的信息结构。"
+        },
+        "composition": {
+          "status": "pass",
+          "observation": "三段文字共用左起点，分隔线长度克制，页码位于右下角。"
+        },
+        "specificity": {
+          "status": "pass",
+          "observation": "蓝色和无衬线文字承担选定媒介，不需要机器人、球体或网格来表现技术感。"
+        }
+      },
+      "slop": {
+        "findings": [],
+        "observation": "已检查蓝底、文字和细线；没有发光边框、通用科技物体或额外标签。"
+      }
+    },
+    {
+      "id": "swiss/s02",
+      "inspected_sha256": [
+        "bd898a3b7d54a59f6520954cabcc99d998bec222c98e47a19d0ab70655b842a6"
+      ],
+      "axes": {
+        "meaning": {
+          "status": "pass",
+          "observation": "左侧主张由右侧比较轴、方向、单位与来源三句具体解释。"
+        },
+        "reading": {
+          "status": "pass",
+          "observation": "左侧大标题两行完整，右侧三句保持相同层级和间距，读序从主张到解释。"
+        },
+        "relationships": {
+          "status": "pass",
+          "observation": "并列要求没有被误画为流程；细竖线只区分主张与支持信息。"
+        },
+        "composition": {
+          "status": "pass",
+          "observation": "左右两组在舞台中部对齐，正文组内距离小于与标题的组间距离。"
+        },
+        "specificity": {
+          "status": "pass",
+          "observation": "以当前三种信息任务作为内容，没有增加图标、统计或通用装饰。"
+        }
+      },
+      "slop": {
+        "findings": [],
+        "observation": "已检查双栏和细竖线；没有每句一个装饰卡片或无意义徽章。"
+      }
+    },
+    {
+      "id": "swiss/s03",
+      "inspected_sha256": [
+        "46aa0238d9d35ac2bcb5b70d422b5e301251750f824c5401440e0749efadf249"
+      ],
+      "axes": {
+        "meaning": {
+          "status": "pass",
+          "observation": "HTML 与 Imagegen 按页面源、编辑方式、质量检查三行比较，值与批准内容对应。"
+        },
+        "reading": {
+          "status": "pass",
+          "observation": "大标题、两列列头、灰色行名与黑色值形成清楚层级，单元格文字完整。"
+        },
+        "relationships": {
+          "status": "pass",
+          "observation": "两列颜色、字号和字重一致，蓝线跨过两列，不构成单列推荐。"
+        },
+        "composition": {
+          "status": "pass",
+          "observation": "列头与正文共用起点，三行分隔线稳定，左右内容不会串行。"
+        },
+        "specificity": {
+          "status": "pass",
+          "observation": "实际能力构成整个表格，没有用星级、评分或样板指标替代比较。"
+        }
+      },
+      "slop": {
+        "findings": [],
+        "observation": "已检查两列权重与蓝色横线；没有任意高亮末列或暗示赢家的图形。"
+      }
+    },
+    {
+      "id": "swiss/s04",
+      "inspected_sha256": [
+        "9fe53d1b453e2fae17ca276e07598603efff84073c7256af0edee46f9eb8a306"
+      ],
+      "axes": {
+        "meaning": {
+          "status": "pass",
+          "observation": "三步的标签及说明直接表达从资料到确认再到交付的顺序。"
+        },
+        "reading": {
+          "status": "pass",
+          "observation": "白字和浅蓝序号在黑底上清楚，标签与说明字号不同，标题独立在上方。"
+        },
+        "relationships": {
+          "status": "pass",
+          "observation": "两条向右箭头仅连接批准的相邻步骤，路径位于文字上方且没有交叉。"
+        },
+        "composition": {
+          "status": "pass",
+          "observation": "三步沿水平线均匀分配，序号、标签与说明各自对齐，节点没有挤占箭头。"
+        },
+        "specificity": {
+          "status": "pass",
+          "observation": "数字用于顺序、线用于方向，不靠无关插画或通用科技背景解释过程。"
+        }
+      },
+      "slop": {
+        "findings": [],
+        "observation": "已检查序号、端点和线条；没有多余反馈环、图标或装饰面板。"
+      }
+    },
+    {
+      "id": "swiss/s05",
+      "inspected_sha256": [
+        "3f7f5529f87f87aa050f3fdf123a453964fde48123c5f6de6dd4fffd1f145aca"
+      ],
+      "axes": {
+        "meaning": {
+          "status": "pass",
+          "observation": "2 条路径与 1280、720 px 的舞台尺寸均带单位、标签和具体来源。"
+        },
+        "reading": {
+          "status": "pass",
+          "observation": "三列大数字先读，单位紧邻，标签在下，来源较小但在完整桌面图中可辨认。"
+        },
+        "relationships": {
+          "status": "pass",
+          "observation": "不同单位各自呈现，没有画共同长度标尺或趋势线来暗示量值可比较。"
+        },
+        "composition": {
+          "status": "pass",
+          "observation": "三列保持相同宽度与顶端细线，数字、标签、来源在各列内垂直成组。"
+        },
+        "specificity": {
+          "status": "pass",
+          "observation": "数值属于演示生成路径和画布尺寸，未增添成功率、增长幅度或无来源 KPI。"
+        }
+      },
+      "slop": {
+        "findings": [],
+        "observation": "已检查数字、单位、来源及列线；没有微型图、进度条或无依据的增长暗示。"
+      }
+    },
+    {
+      "id": "swiss/s06",
+      "inspected_sha256": [
+        "993628e12e79a621a034cfa0c32d363d5c2b7f061b6f59d3e2c951148483c5c5"
+      ],
+      "axes": {
+        "meaning": {
+          "status": "pass",
+          "observation": "确认内容分出 HTML 与图片生成，两者汇入展示交付，四条批准边均表达出来。"
+        },
+        "reading": {
+          "status": "pass",
+          "observation": "黑色节点名与灰色说明清楚，标题独立在上方，“事实来源”没有被拆开。"
+        },
+        "relationships": {
+          "status": "pass",
+          "observation": "蓝色曲线沿横向分流并汇合，两个生成节点上下相邻，没有假分组或反馈边。"
+        },
+        "composition": {
+          "status": "pass",
+          "observation": "节点以细顶线安静分组，线条与标签留有间距，中间两节点和两端节点位置清楚。"
+        },
+        "specificity": {
+          "status": "pass",
+          "observation": "节点和蓝线就是内容本身，没有机器人、电路背景或额外系统层。"
+        }
+      },
+      "slop": {
+        "findings": [],
+        "observation": "已检查蓝线、节点顶线和四组文字；没有用主题差异改变可读的横向关系。"
+      }
+    },
+    {
+      "id": "swiss/s07",
+      "inspected_sha256": [
+        "f940b8b9300d7fa02ec2e3c37e92b055cf075dd6a5ac17a9480cefe921dcb4b3"
+      ],
+      "axes": {
+        "meaning": {
+          "status": "pass",
+          "observation": "长标题提出为空间和阅读保留容量，左右布局示意展示同一组信息块的安排变化。"
+        },
+        "reading": {
+          "status": "pass",
+          "observation": "标题两行完整，下方两段批准正文清楚分开，图解没有遮住文字。"
+        },
+        "relationships": {
+          "status": "pass",
+          "observation": "两张图是空间排布示意，没有数据轴、虚构文档内容或未批准的因果箭头。"
+        },
+        "composition": {
+          "status": "pass",
+          "observation": "两张图并排且比例一致，正文在其下，标题与图解之间的边界清楚。"
+        },
+        "specificity": {
+          "status": "pass",
+          "observation": "蓝色只强调右侧示意中的标题与图块，对象确实用于解释版式空间。"
+        }
+      },
+      "slop": {
+        "findings": [],
+        "observation": "已检查面板中的标题条、图块和文字条；这些是内容相关的布局示意，不是假指标或气氛图。"
+      }
+    },
+    {
+      "id": "swiss/s08",
+      "inspected_sha256": [
+        "341831d9e8124bbcfefc9ba06d10845e1d410826f5be36ff0f3a1b8013b497ba"
+      ],
+      "axes": {
+        "meaning": {
+          "status": "pass",
+          "observation": "左侧从真实内容开始的主张与右侧确认、选择、核对的动作构成明确收尾。"
+        },
+        "reading": {
+          "status": "pass",
+          "observation": "蓝底白色大标题与白底灰色正文分层清楚，两行标题和两句正文都完整。"
+        },
+        "relationships": {
+          "status": "pass",
+          "observation": "左右分组表达主张与支持动作，没有箭头强加额外顺序或依赖。"
+        },
+        "composition": {
+          "status": "pass",
+          "observation": "蓝白分区边界清楚，正文成组位于右栏中部，页码不抢占内容位置。"
+        },
+        "specificity": {
+          "status": "pass",
+          "observation": "沿用封面蓝色与当前行动文字，没有补入庆祝插画或泛化标语。"
+        }
+      },
+      "slop": {
+        "findings": [],
+        "observation": "已检查分区、正文与页码；没有额外徽章、口号或通用收尾图。"
+      }
+    },
+    {
+      "id": "editorial/whole-set",
+      "inspected_sha256": [
+        "459dc5eae296ef17bc575df379e5c4bc81921ce8a91b02170100249d9bd24267",
+        "5f18a1a5eb2285d9c761425f7fee3d95794989f509ea145461732a6ba96aecee",
+        "099a877b950b00f96901095da51beeee5d17f7f4c2b0d0907edd472a3637e57e",
+        "2bcde5b6d6c10837423e93d3c1e5c78e01e70ebe2573ca8b83b82cdb61c47c9e",
+        "5d305eaf15960653c96bbcc3b620bc8c0a6a33afd5c118d1b3434d7fc548d505",
+        "6cc6d438c19feba33c1310358f877123e46b6fc8d62e19eac2f68b199e16c88e",
+        "c0784fd55f2daf52931e1f5578cc5bf2172e1b1ece5a71a1c117518be33708ea",
+        "9e4ce5e8a6615756d801b7e3935dbac50112723d83d2b090f50878214eeaf20e"
+      ],
+      "axes": {
+        "coherence": {
+          "status": "pass",
+          "observation": "逐页图和整套拼图中，暖纸与炭黑交替，标题、正文、细线及右下页码角色稳定；砖红或桃色用于图解与步骤。"
+        },
+        "rhythm": {
+          "status": "pass",
+          "observation": "01 开场、02 观点、03 比较、04 流程、05 数值、06 关系、07 布局示意、08 收尾的疏密随内容变化；04、05 连续深底仍以流程与数据结构区分。"
+        }
+      },
+      "slop": {
+        "findings": [],
+        "observation": "整套已检查重复卡片、无关素材、过量强调和固定图标；表达形式随任务变化，未发现阻断性的视觉填充。"
+      }
+    },
+    {
+      "id": "swiss/whole-set",
+      "inspected_sha256": [
+        "fa01b073dc3fc0f5c8ac1cfc44e9c01fcba1fa55e67c602a63afb7eb40aad752",
+        "bd898a3b7d54a59f6520954cabcc99d998bec222c98e47a19d0ab70655b842a6",
+        "46aa0238d9d35ac2bcb5b70d422b5e301251750f824c5401440e0749efadf249",
+        "9fe53d1b453e2fae17ca276e07598603efff84073c7256af0edee46f9eb8a306",
+        "3f7f5529f87f87aa050f3fdf123a453964fde48123c5f6de6dd4fffd1f145aca",
+        "993628e12e79a621a034cfa0c32d363d5c2b7f061b6f59d3e2c951148483c5c5",
+        "f940b8b9300d7fa02ec2e3c37e92b055cf075dd6a5ac17a9480cefe921dcb4b3",
+        "341831d9e8124bbcfefc9ba06d10845e1d410826f5be36ff0f3a1b8013b497ba"
+      ],
+      "axes": {
+        "coherence": {
+          "status": "pass",
+          "observation": "逐页图和整套拼图中，无衬线文字、蓝黑白色彩、细线与右下页码持续一致；蓝色封面与蓝白收尾呼应。"
+        },
+        "rhythm": {
+          "status": "pass",
+          "observation": "观点双栏、比较表、水平流程、独立指标、分流图与横向示意各服务于内容；04、05 连续黑底形成方法与数据段，06、07 回到浅底。"
+        }
+      },
+      "slop": {
+        "findings": [],
+        "observation": "整套已检查通用科技图、反复装饰面板和无意义徽章；没有把同一大物体或等宽卡片套到每页。"
+      }
+    }
+  ]
+}

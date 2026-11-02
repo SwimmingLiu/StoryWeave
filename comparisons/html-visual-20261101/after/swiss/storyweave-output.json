@@ -1,0 +1,160 @@
+{
+  "format": "storyweave/slides",
+  "version": 2,
+  "producer": "storyweave-html",
+  "kind": "html",
+  "title": "StoryWeave 内容与表达",
+  "canvas": {
+    "width": 1280,
+    "height": 720
+  },
+  "entry": "index.html",
+  "renderer_version": "4.1.0",
+  "contract_version": 1,
+  "theme_ref": "systems/ink-blue-grid",
+  "theme_recipe_sha256": "a5d20329ead160835e52d0ce0b013aef6612b7d420b3d6456d1f4167b1183a05",
+  "deck_spec_sha256": "8ab1be9408d103239a6ba1993977d62862bacae1440eeef7c580fda9fdd23e06",
+  "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+  "plan_sha256": "4fa49a883dab2cab077fdc207036e8b7fa094233b8990f7263e1e3182a76ce7e",
+  "reading_mode": "speaker-led",
+  "slides": [
+    {
+      "id": "s01",
+      "role": "cover",
+      "source": "slides/s01.html",
+      "claim": "内容一份，表达两种",
+      "notes": "内容一份，表达两种",
+      "layout_id": "cover-split",
+      "page_rhythm": "anchor",
+      "asset_refs": [],
+      "visual_scheme_ref": "systems/ink-blue-grid/hero",
+      "visual_scheme_sha256": "0b2d8eafc65ae00b105163b0999e69f2ce46b33201ff1bfe8c36540578dbbeee",
+      "render_recipe_ref": "systems/ink-blue-grid/render-v4-cover-split",
+      "render_recipe_sha256": "6d2cbf50cf0e25c1a5c7741470a610264271ad2fdb3f0e38b4c41bc7ac20da80",
+      "motion_recipe_ref": "systems/ink-blue-grid/motion-none"
+    },
+    {
+      "id": "s02",
+      "role": "statement",
+      "source": "slides/s02.html",
+      "claim": "页面先表达关系，再选择外观",
+      "notes": "页面先表达关系，再选择外观",
+      "layout_id": "statement-split",
+      "page_rhythm": "breathing",
+      "asset_refs": [],
+      "visual_scheme_ref": "systems/ink-blue-grid/hero",
+      "visual_scheme_sha256": "0b2d8eafc65ae00b105163b0999e69f2ce46b33201ff1bfe8c36540578dbbeee",
+      "render_recipe_ref": "systems/ink-blue-grid/render-v4-statement-split",
+      "render_recipe_sha256": "d92622878d81e9776271e33b7ee42aa1aeddff6ff0014e1b59ad47ce894753e2",
+      "motion_recipe_ref": "systems/ink-blue-grid/motion-none"
+    },
+    {
+      "id": "s03",
+      "role": "comparison",
+      "source": "slides/s03.html",
+      "claim": "同一份内容，选择适合的页面源",
+      "notes": "同一份内容，选择适合的页面源",
+      "layout_id": "comparison-matrix",
+      "page_rhythm": "dense",
+      "asset_refs": [],
+      "visual_scheme_ref": "systems/ink-blue-grid/columns",
+      "visual_scheme_sha256": "7a91ab311eeb3636a48497f76084204f9475b47ce4187c00644e39e708e0a205",
+      "render_recipe_ref": "systems/ink-blue-grid/render-v4-comparison-matrix",
+      "render_recipe_sha256": "282c95579011bd0d5ece6bfad6769f19d510b5fa73d944ad6aefff2bbab492a4",
+      "motion_recipe_ref": "systems/ink-blue-grid/motion-none"
+    },
+    {
+      "id": "s04",
+      "role": "process",
+      "source": "slides/s04.html",
+      "claim": "先确认内容，再生成与交付",
+      "notes": "先确认内容，再生成与交付",
+      "layout_id": "process-linear",
+      "page_rhythm": "dense",
+      "asset_refs": [],
+      "visual_scheme_ref": "systems/ink-blue-grid/flow",
+      "visual_scheme_sha256": "fb34489eab7ec3535e626ddd99a7ad6115a499157e215850429dd80103e5078b",
+      "render_recipe_ref": "systems/ink-blue-grid/render-v4-process-linear",
+      "render_recipe_sha256": "1a13a128c960e53bea5ac755c9a1ced80f88a4ce81a43a5985a9c35c80ae03f7",
+      "motion_recipe_ref": "systems/ink-blue-grid/motion-none"
+    },
+    {
+      "id": "s05",
+      "role": "data",
+      "source": "slides/s05.html",
+      "claim": "生成方式不同，交付画布一致",
+      "notes": "生成方式不同，交付画布一致",
+      "layout_id": "metric-ledger",
+      "page_rhythm": "breathing",
+      "asset_refs": [],
+      "visual_scheme_ref": "systems/ink-blue-grid/data",
+      "visual_scheme_sha256": "90ba8902a7c38db2a59224f3c003e9f496cbfef4d22acf4fe9721ecae81d8a2d",
+      "render_recipe_ref": "systems/ink-blue-grid/render-v4-metric-ledger",
+      "render_recipe_sha256": "e46975986287d7cb2e97a2d94ef6022aa499435c3d88481f1761e400c2c265bb",
+      "motion_recipe_ref": "systems/ink-blue-grid/motion-none"
+    },
+    {
+      "id": "s06",
+      "role": "process",
+      "source": "slides/s06.html",
+      "claim": "生成负责表达，展示负责交付",
+      "notes": "生成负责表达，展示负责交付",
+      "layout_id": "relationship-map",
+      "page_rhythm": "dense",
+      "asset_refs": [],
+      "visual_scheme_ref": "systems/ink-blue-grid/flow",
+      "visual_scheme_sha256": "fb34489eab7ec3535e626ddd99a7ad6115a499157e215850429dd80103e5078b",
+      "render_recipe_ref": "systems/ink-blue-grid/render-v4-relationship-map",
+      "render_recipe_sha256": "51562f3a094fb0add26e05792fb79ffd0074ef9ba904b2faae936c7327fa131c",
+      "motion_recipe_ref": "systems/ink-blue-grid/motion-none"
+    },
+    {
+      "id": "s07",
+      "role": "statement",
+      "source": "slides/s07.html",
+      "claim": "长标题保留完整信息",
+      "notes": "长标题保留完整信息",
+      "layout_id": "image-hero",
+      "page_rhythm": "breathing",
+      "asset_refs": [
+        {
+          "asset_id": "paper-study",
+          "path": "assets/paper-study.svg",
+          "slot": "hero",
+          "fit": "cover",
+          "focal_point": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "subject_safe_area": {
+            "x": 0.3,
+            "y": 0.25,
+            "width": 0.4,
+            "height": 0.5
+          },
+          "alt": "折叠纸张的原创几何插画"
+        }
+      ],
+      "visual_scheme_ref": "systems/ink-blue-grid/hero",
+      "visual_scheme_sha256": "0b2d8eafc65ae00b105163b0999e69f2ce46b33201ff1bfe8c36540578dbbeee",
+      "render_recipe_ref": "systems/ink-blue-grid/render-v4-image-hero",
+      "render_recipe_sha256": "3d76ee0d46f6fc05ca6c4c33b75d338aab431836be31e96e3f57d61c35adafe3",
+      "motion_recipe_ref": "systems/ink-blue-grid/motion-none"
+    },
+    {
+      "id": "s08",
+      "role": "closing",
+      "source": "slides/s08.html",
+      "claim": "从一份真实内容开始",
+      "notes": "从一份真实内容开始",
+      "layout_id": "closing-statement",
+      "page_rhythm": "anchor",
+      "asset_refs": [],
+      "visual_scheme_ref": "systems/ink-blue-grid/closing",
+      "visual_scheme_sha256": "555a49094664abb1a7427498f21cce8663aabc25aede33fab06914862c1c8035",
+      "render_recipe_ref": "systems/ink-blue-grid/render-v4-closing-statement",
+      "render_recipe_sha256": "1d86c586cb96255b73451ffd2c2514b36cf1b022ed73e2006048c6690e6e7481",
+      "motion_recipe_ref": "systems/ink-blue-grid/motion-none"
+    }
+  ]
+}

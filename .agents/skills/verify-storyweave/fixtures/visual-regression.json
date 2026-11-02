@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "editorial/s06",
+      "authority": "explicit-user-feedback",
+      "expected": "regressed",
+      "observation": "用户指出该候选不如原版。原版横向分流与汇合顺着阅读方向；候选为了主题差异改成纵向，分支线被压平、跨距变大，节点更散，关系辨认更费力。局部断词修复不能抵消整体关系表达退步。",
+      "feedback": "2026-11-01 当前聊天的截图与明确反馈",
+      "before": {
+        "path": "magazine-s06-before.png",
+        "sha256": "6786e4285b49bb95989286e5bf99b30ef75c36bcdf2dd9b98536e65120f25394"
+      },
+      "candidate": {
+        "path": "magazine-s06-candidate.png",
+        "sha256": "3887eb207770e84fcd188f0119ba34e190bd810c8fc5def46dddd06f6f89af9e"
+      }
+    }
+  ]
+}

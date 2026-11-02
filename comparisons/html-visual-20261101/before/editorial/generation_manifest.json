@@ -1,0 +1,68 @@
+{
+  "schema_version": 2,
+  "producer": "storyweave-html",
+  "renderer_version": "4.0.0",
+  "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+  "plan_sha256": "ece07ed290f7e89797a5c91dff1b2351042a5d0774c23dd2abe8d51796bc8ba2",
+  "theme_ref": "editorial/paper-magazine",
+  "references": [],
+  "reference_applications": [],
+  "slides": [
+    {
+      "id": "s01",
+      "output_path": "slides/s01.html",
+      "layout_id": "cover-split",
+      "status": "built",
+      "text_policy": "native-html-text"
+    },
+    {
+      "id": "s02",
+      "output_path": "slides/s02.html",
+      "layout_id": "statement",
+      "status": "built",
+      "text_policy": "native-html-text"
+    },
+    {
+      "id": "s03",
+      "output_path": "slides/s03.html",
+      "layout_id": "comparison-matrix",
+      "status": "built",
+      "text_policy": "native-html-text"
+    },
+    {
+      "id": "s04",
+      "output_path": "slides/s04.html",
+      "layout_id": "process-linear",
+      "status": "built",
+      "text_policy": "native-html-text"
+    },
+    {
+      "id": "s05",
+      "output_path": "slides/s05.html",
+      "layout_id": "metric-ledger",
+      "status": "built",
+      "text_policy": "native-html-text"
+    },
+    {
+      "id": "s06",
+      "output_path": "slides/s06.html",
+      "layout_id": "relationship-map",
+      "status": "built",
+      "text_policy": "native-html-text"
+    },
+    {
+      "id": "s07",
+      "output_path": "slides/s07.html",
+      "layout_id": "statement",
+      "status": "built",
+      "text_policy": "native-html-text"
+    },
+    {
+      "id": "s08",
+      "output_path": "slides/s08.html",
+      "layout_id": "closing-statement",
+      "status": "built",
+      "text_policy": "native-html-text"
+    }
+  ]
+}

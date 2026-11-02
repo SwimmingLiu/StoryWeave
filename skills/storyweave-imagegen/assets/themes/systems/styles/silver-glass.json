@@ -394,6 +394,50 @@
         "server-room stock imagery",
         "unconfirmed interface labels"
       ]
+    },
+    "aurora-capabilities": {
+      "label": "极光玻璃能力场",
+      "summary": "同一玻璃材质中的极光光带与能力关系",
+      "preview_image": "../../../examples/theme-previews/systems--silver-glass.png",
+      "roles": [
+        "image-hero",
+        "statement"
+      ],
+      "default_anchor_id": "blueprint-ring",
+      "composition": "One translucent glass core connects only the authored capabilities, with a quiet title region; aurora light stays outside labels",
+      "imagery": "silver-white glass with low-saturation cyan-violet aurora ribbons and restrained volumetric light; exact supplied relationships remain legible",
+      "title_treatment": {
+        "mode": "caption",
+        "scale": "small-to-medium",
+        "placement": "top-left",
+        "weight": "short interface concept caption"
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "bottom-right"
+        ],
+        "densities": [
+          "low",
+          "medium"
+        ]
+      },
+      "requirements": [
+        "mark the visual as conceptual through abstraction, not added labels",
+        "no real logo or product name",
+        "render every supplied exact_text line with clear hierarchy; visual effects remain separate from letters"
+      ],
+      "avoid": [
+        "fake dashboard screenshots",
+        "invented UI text",
+        "brand impersonation"
+      ]
     }
   }
 }

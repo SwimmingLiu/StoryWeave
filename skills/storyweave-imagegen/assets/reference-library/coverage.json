@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "totals": {
+    "styles": 18,
+    "content_pages": 41,
+    "by_role": {
+      "statement": 15,
+      "process": 21,
+      "comparison": 11,
+      "data": 8,
+      "architecture": 9
+    },
+    "multi_page_styles": 17,
+    "complete_styles": 2
+  },
+  "styles": [
+    {
+      "id": "engineering-blueprint",
+      "title": "技术蓝图",
+      "pages": 2,
+      "role_counts": {
+        "statement": 0,
+        "process": 1,
+        "comparison": 1,
+        "data": 1,
+        "architecture": 2
+      },
+      "missing_roles": [
+        "statement"
+      ]
+    },
+    {
+      "id": "warm-circuit-notes",
+      "title": "暖色电路讲义",
+      "pages": 2,
+      "role_counts": {
+        "statement": 1,
+        "process": 0,
+        "comparison": 0,
+        "data": 0,
+        "architecture": 2
+      },
+      "missing_roles": [
+        "process",
+        "comparison",
+        "data"
+      ]
+    },
+    {
+      "id": "chalkboard-explainer",
+      "title": "黑板粉笔讲解",
+      "pages": 1,
+      "role_counts": {
+        "statement": 1,
+        "process": 1,
+        "comparison": 0,
+        "data": 0,
+        "architecture": 0
+      },
+      "missing_roles": [
+        "comparison",
+        "data"
+      ]
+    },
+    {
+      "id": "sketch-sharing",
+      "title": "手绘知识分享",
+      "pages": 4,
+      "role_counts": {
+        "statement": 1,
+        "process": 3,
+        "comparison": 1,
+        "data": 0,
+        "architecture": 0
+      },
+      "missing_roles": [
+        "data"
+      ]
+    },
+    {
+      "id": "neon-system-talk",
+      "title": "深色霓虹系统",
+      "pages": 2,
+      "role_counts": {
+        "statement": 0,
+        "process": 1,
+        "comparison": 0,
+        "data": 0,
+        "architecture": 1
+      },
+      "missing_roles": [
+        "statement",
+        "comparison",
+        "data"
+      ]
+    },
+    {
+      "id": "glass-product-talk",
+      "title": "极光玻璃产品讲解",
+      "pages": 2,
+      "role_counts": {
+        "statement": 1,
+        "process": 0,
+        "comparison": 1,
+        "data": 1,
+        "architecture": 0
+      },
+      "missing_roles": [
+        "process"
+      ]
+    },
+    {
+      "id": "ink-method-talk",
+      "title": "水墨黑板方法论",
+      "pages": 2,
+      "role_counts": {
+        "statement": 1,
+        "process": 1,
+        "comparison": 1,
+        "data": 1,
+        "architecture": 0
+      },
+      "missing_roles": []
+    },
+    {
+      "id": "clay-workflow-talk",
+      "title": "黏土流程讲解",
+      "pages": 2,
+      "role_counts": {
+        "statement": 0,
+        "process": 2,
+        "comparison": 0,
+        "data": 1,
+        "architecture": 0
+      },
+      "missing_roles": [
+        "statement",
+        "comparison"
+      ]
+    },
+    {
+      "id": "whiteboard-strategy-talk",
+      "title": "协作白板策略",
+      "pages": 2,
+      "role_counts": {
+        "statement": 1,
+        "process": 2,
+        "comparison": 1,
+        "data": 1,
+        "architecture": 0
+      },
+      "missing_roles": []
+    },
+    {
+      "id": "retro-device-stack",
+      "title": "复古立体开发者",
+      "pages": 2,
+      "role_counts": {
+        "statement": 1,
+        "process": 0,
+        "comparison": 1,
+        "data": 1,
+        "architecture": 1
+      },
+      "missing_roles": [
+        "process"
+      ]
+    },
+    {
+      "id": "user-journey-storyboard",
+      "title": "用户旅程分镜",
+      "pages": 2,
+      "role_counts": {
+        "statement": 1,
+        "process": 2,
+        "comparison": 0,
+        "data": 0,
+        "architecture": 0
+      },
+      "missing_roles": [
+        "comparison",
+        "data"
+      ]
+    },
+    {
+      "id": "comic-engineering",
+      "title": "漫画工程叙事",
+      "pages": 2,
+      "role_counts": {
+        "statement": 1,
+        "process": 2,
+        "comparison": 0,
+        "data": 0,
+        "architecture": 0
+      },
+      "missing_roles": [
+        "comparison",
+        "data"
+      ]
+    },
+    {
+      "id": "panoramic-system-illustration",
+      "title": "场景式平面图解",
+      "pages": 2,
+      "role_counts": {
+        "statement": 0,
+        "process": 1,
+        "comparison": 0,
+        "data": 1,
+        "architecture": 1
+      },
+      "missing_roles": [
+        "statement",
+        "comparison"
+      ]
+    },
+    {
+      "id": "pastel-guided-learning",
+      "title": "柔和彩绘讲解",
+      "pages": 2,
+      "role_counts": {
+        "statement": 1,
+        "process": 2,
+        "comparison": 0,
+        "data": 0,
+        "architecture": 0
+      },
+      "missing_roles": [
+        "comparison",
+        "data"
+      ]
+    },
+    {
+      "id": "pixel-workflow-world",
+      "title": "像素世界流程",
+      "pages": 2,
+      "role_counts": {
+        "statement": 0,
+        "process": 1,
+        "comparison": 1,
+        "data": 1,
+        "architecture": 0
+      },
+      "missing_roles": [
+        "statement"
+      ]
+    },
+    {
+      "id": "silver-glass-narrative",
+      "title": "银白玻璃技术叙事",
+      "pages": 6,
+      "role_counts": {
+        "statement": 4,
+        "process": 1,
+        "comparison": 2,
+        "data": 0,
+        "architecture": 2
+      },
+      "missing_roles": [
+        "data"
+      ]
+    },
+    {
+      "id": "character-guided-technical",
+      "title": "角色引导技术讲解",
+      "pages": 2,
+      "role_counts": {
+        "statement": 1,
+        "process": 0,
+        "comparison": 1,
+        "data": 0,
+        "architecture": 0
+      },
+      "missing_roles": [
+        "process",
+        "data"
+      ]
+    },
+    {
+      "id": "black-gold-operational",
+      "title": "黑金技术运行叙事",
+      "pages": 2,
+      "role_counts": {
+        "statement": 0,
+        "process": 1,
+        "comparison": 1,
+        "data": 0,
+        "architecture": 0
+      },
+      "missing_roles": [
+        "statement",
+        "data"
+      ]
+    }
+  ]
+}

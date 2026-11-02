@@ -1,88 +1,84 @@
 # StoryWeave
 
-StoryWeave 是一组面向 16:9 演示文稿的独立 Skill。内容生产与展示适配分开：HTML 和 Imagegen 可以各自完成交付，Express 负责 Bento 包装；全局 `storyweave` Skill 负责路由、QA 和自动交接。
+![StoryWeave：共享内容、HTML 与 Imagegen 双生成器、Bento 展示](docs/assets/storyweave-introduction.png)
 
-## Skills
+制作 16:9 演示文稿的 Agent Skill 集合。共享核心保存确认内容，HTML 和 Imagegen 分别生成原生页面或整页图片，通过 QA 后交给 Bento 包装与展示。
 
-| Skill | 作用 | 主要输出 |
-|---|---|---|
-| [storyweave](./skills/storyweave/SKILL.md) | 统筹内容生产、QA、Bento 包装和展示 | producer → Bento 交接结果 |
-| [storyweave-html](./skills/storyweave-html/SKILL.md) | 生成可编辑的独立 HTML 页面 | 逐页 HTML、离线画廊、`storyweave-output.json` |
-| [storyweave-imagegen](./skills/storyweave-imagegen/SKILL.md) | 用 Imagegen 生成完整图片页面 | 逐页 PNG、离线画廊、图片式 PDF/PPTX |
-| [storyweave-express](./skills/storyweave-express/SKILL.md) | 把已有 HTML 或图片页面包装为 Bento | `.bento.html` |
+| Skill | 用途 | 交付物 |
+| --- | --- | --- |
+| [storyweave](skills/storyweave/SKILL.md) | 组织内容、选择生成器、推进交付 | 完整演示流程 |
+| [storyweave-html](skills/storyweave-html/SKILL.md) | 技术分享、流程、对比和准确数据 | 可编辑的原生 HTML、SVG 与图表 |
+| [storyweave-imagegen](skills/storyweave-imagegen/SKILL.md) | 插画、材质、场景及完整视觉叙事 | 整页 PNG、离线 HTML 画廊，可导出 PDF/PPTX |
+| [storyweave-express](skills/storyweave-express/SKILL.md) | 将已有产物包装为 Bento | 调整页序、备注与播放 |
 
-## Imagegen 主题
+四个 Skill 可独立运行。权威实现位于 `src/`，分发时按依赖生成自包含 `runtime/`；Bento 使用随包的无损压缩壳。HTML 保留原生文字和图形，当前 Bento 与 PPTX 每页使用一张图片。
 
-Imagegen 使用主题架构组织空间、样式定义材质与色彩、单页方案确定构图。当前提供六套候选样式，使用 `--scope authoring` 制作。图片默认保留简洁主标题和必要内容，主题不自动添加说明性小字；用户提供的文字按 `exact_text` 保留。
+## 使用
 
-| 主题 | 完整引用 | 视觉方向 |
-|---|---|---|
-| 纸面编辑 | `editorial/paper-magazine` | 裁切摄影、宋体标题与干净纸边组成的编辑叙事 |
-| 白底电路 | `systems/white-cyan-circuit` | 冷白底、精细圆环与低对比度电路纹样 |
-| 参数化波纹 | `systems/white-cyan-wave` | 浅蓝平滑曲线、稀疏粒子与清晰的信息层级 |
-| 银白玻璃 | `systems/silver-glass` | 通透玻璃模块、银白空间与钴蓝重点 |
-| 朱红海报 | `campaign/bold-poster` | 朱红色场、大字与单一实物主体组成的传播画面 |
-| 日常电影 | `cinematic/natural-film` | 自然曝光、可信动作与连续镜头组成的场景叙事 |
-
-下列图片用于识别样式，各页面仍需核验实际文字、关系和数值。
-
-| 纸面编辑 | 白底电路 |
-|---|---|
-| ![纸面编辑](skills/storyweave-imagegen/assets/examples/theme-previews/editorial--paper-magazine.png) | ![白底电路](skills/storyweave-imagegen/assets/examples/theme-previews/systems--white-cyan-circuit.png) |
-
-| 参数化波纹 | 银白玻璃 |
-|---|---|
-| ![参数化波纹](skills/storyweave-imagegen/assets/examples/theme-previews/systems--white-cyan-wave.png) | ![银白玻璃](skills/storyweave-imagegen/assets/examples/theme-previews/systems--silver-glass.png) |
-
-| 朱红海报 | 日常电影 |
-|---|---|
-| ![朱红海报](skills/storyweave-imagegen/assets/examples/theme-previews/campaign--bold-poster.png) | ![日常电影](skills/storyweave-imagegen/assets/examples/theme-previews/cinematic--natural-film.png) |
-
-[主题目录](skills/storyweave-imagegen/references/themes.md) · [离线参考图画廊](skills/storyweave-imagegen/assets/examples/theme-previews/index.html)
-
-在仓库根目录查看主题或创建候选主题草稿：
+需要 Node.js 20 以上。从仓库运行 CLI 时，先安装开发依赖与浏览器：
 
 ```bash
-node skills/storyweave-imagegen/scripts/ppt.mjs themes --all --json
-node skills/storyweave-imagegen/scripts/ppt.mjs draft ./my-deck --theme systems/white-cyan-wave --scope authoring --title "演示标题"
+npm ci
+npx playwright install chromium
+node skills/storyweave-html/scripts/ppt.mjs draft ./my-deck --theme-ref systems/ink-blue-grid
 ```
 
-## 安装
-
-安装到当前 Agent Skill 目录：
+编辑草稿并按已有授权确认内容后，继续构建和交付：
 
 ```bash
-node skills/storyweave/install.mjs --force
-node skills/storyweave-html/install.mjs --force
-node skills/storyweave-imagegen/install.mjs --force
-node skills/storyweave-express/install.mjs --force
+node skills/storyweave-html/scripts/ppt.mjs approve ./my-deck
+node skills/storyweave-html/scripts/ppt.mjs build ./my-deck
+node skills/storyweave-html/scripts/ppt.mjs qa ./my-deck --json
+node skills/storyweave/scripts/orchestrate.mjs ./my-deck --no-bento-update --json
 ```
 
-使用 `--dir <skills-root>` 可以指定安装目录。安装器会忽略 `node_modules` 和 `.DS_Store`。
+安装为 Agent Skill 时，运行 `node skills/<skill-name>/install.mjs`。`--dir` 指定安装根目录，`--force` 更新前保留备份；安装后按对应 Skill 的 `scripts/package.json` 安装所需第三方依赖。
 
-## 验证
+确认内容保存在 `deck_spec.json`，两个生成器分别使用自己的视觉计划。换主题保留确认内容，修改内容或产物后重新 QA。旧 v2/v3 项目仍可读取，使用 `migrate-content` 显式迁移。
+
+<!-- Geometry alone previously allowed visually worse revisions; generation and review now preserve semantic reading paths. -->
+HTML 制作先读[视觉生成规则](docs/architecture/visual-generation.md)。构图由主张、比较轴、流程和关系决定，素材应解释具体内容；局部优化保留已有清楚的阅读路径。页面 QA 后还需查看逐页与整套效果，任何退步或不确定结果都不能作为视觉通过。
+
+## Imagegen 主题与参考图
+
+生成器现有 **19 套候选主题**，已将 18 种参考风格归并成 14 个主题方向，补成可直接选择的配方。相近的手绘白板、角色彩绘和玻璃风格合并，其余保留独立的绘画与材质语言。[完整主题与合并关系](skills/storyweave-imagegen/references/themes.md) · [19 套实际预览](skills/storyweave-imagegen/assets/examples/theme-previews/index.html)
+
+以下六张使用同一份“让改动有据可查：计划 → 构建 → 验证”内容，直接比较生成效果。
+
+| 技术蓝图 | 粉笔黑板 |
+| --- | --- |
+| ![技术蓝图](skills/storyweave-imagegen/assets/examples/theme-previews/systems--engineering-blueprint.png) | ![粉笔黑板](skills/storyweave-imagegen/assets/examples/theme-previews/knowledge--chalkboard.png) |
+| `systems/engineering-blueprint` | `knowledge/chalkboard` |
+
+| 黏土流程 | 漫画工程 |
+| --- | --- |
+| ![黏土流程](skills/storyweave-imagegen/assets/examples/theme-previews/tactile--clay-workflow.png) | ![漫画工程](skills/storyweave-imagegen/assets/examples/theme-previews/illustrated--comic-engineering.png) |
+| `tactile/clay-workflow` | `illustrated/comic-engineering` |
+
+| 水墨方法论 | 像素世界 |
+| --- | --- |
+| ![水墨方法论](skills/storyweave-imagegen/assets/examples/theme-previews/knowledge--ink-method.png) | ![像素世界](skills/storyweave-imagegen/assets/examples/theme-previews/illustrated--pixel-world.png) |
+| `knowledge/ink-method` | `illustrated/pixel-world` |
+
+[分享稿参考图库](skills/storyweave-imagegen/assets/reference-library/index.html)另收录 **18 种风格、41 张内容页**，可按观点、流程、对比、数据和架构筛选。每种参考风格均已对应到实际主题；纯 HTML 排版即可实现的案例归入 [HTML 参考目录](design-library/html-template-references/README.md)。联网版从来源加载原图，私有离线查看方法见[参考图说明](skills/storyweave-imagegen/references/presentation-cases.md)。
 
 ```bash
-node --test tests/integration/storyweave-all-skills.test.mjs
-node --test skills/storyweave-html/tests/*.test.mjs
-node --test skills/storyweave-imagegen/tests/*.test.mjs
-node --test skills/storyweave-express/tests/*.test.mjs
+node skills/storyweave-imagegen/scripts/ppt.mjs draft ./image-deck --theme tactile/clay-workflow --scope authoring
 ```
 
-生产者 QA 通过后，可以由全局编排 Skill 自动包装并校验 Bento：
+Imagegen CLI 编译逐页任务，由 Agent 调用真实生图工具，再收集结果与逐页复核。主题仍为 candidate；编译通过不代表图片文字、构图或视觉质量已通过。
+
+## 开发与评测
 
 ```bash
-node skills/storyweave/scripts/orchestrate.mjs <producer-project> --json
+npm run package:skills
+npm run check:packages
+npm test
+npm run doctor
 ```
 
-## 目录
+[GitHub Actions CI](.github/workflows/ci.yml)在 push、PR 和手动评测时运行完整测试、八项功能验收，以及杂志、瑞士风各 8 页的 HTML 视觉回归。两套样张经过双视口浏览器 QA，再与实际看图确认的基线逐页比较；内容、画面或环境变化时检查失败并等待复核。CI 保留 HTML、截图、前后对照和评审模板。
 
-```text
-StoryWeave/
-├── skills/       # 四个可独立安装的 Skill
-└── docs/         # 研究资料、迁移记录和历史设计
-```
+每次评测都核对对应提交的 CI 结果，PR 合并前要求 `Verification` 成功。相同截图继承已有视觉判断，CI 不自动判定新画面的审美，也不调用付费生图。基线更新、artifact 下载与证据说明见 [CI 文档](docs/ci.md)。
 
-三个生产/适配 Skill 的演示与预览资源位于各自的 `assets/examples/`；全局 `storyweave` Skill 提供编排脚本。仓库根目录不保存生成结果或打包产物。
-
-`docs/` 中的内容用于研究、迁移和历史追溯，不参与 Skill 运行。
+[系统架构](docs/architecture/storyweave-target-architecture.md) · [重构与验收](docs/plans/storyweave-refactor-plan.md) · [包体积优化](docs/plans/storyweave-package-size-validation.md) · [验证 Skill](.agents/skills/verify-storyweave/SKILL.md)

@@ -1,0 +1,160 @@
+{
+  "format": "storyweave/slides",
+  "version": 2,
+  "producer": "storyweave-html",
+  "kind": "html",
+  "title": "StoryWeave 内容与表达",
+  "canvas": {
+    "width": 1280,
+    "height": 720
+  },
+  "entry": "index.html",
+  "renderer_version": "4.2.0",
+  "contract_version": 1,
+  "theme_ref": "editorial/paper-magazine",
+  "theme_recipe_sha256": "7d00fbf62dacc1db4673207e0fa96a099eadeba8d0dc126eefbb15fde23e7a13",
+  "deck_spec_sha256": "b0f1423bc98e7271df6a0d53ef979d34cf4b5f22ac4263091d6b2fa4867fbde2",
+  "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+  "plan_sha256": "62d27132fbf26e8ebe1d1d0767155a2567256c04dbb1a2dd4a5eb8d62a3b98fe",
+  "reading_mode": "speaker-led",
+  "slides": [
+    {
+      "id": "s01",
+      "role": "cover",
+      "source": "slides/s01.html",
+      "claim": "内容一份，表达两种",
+      "notes": "内容一份，表达两种",
+      "layout_id": "cover-split",
+      "page_rhythm": "anchor",
+      "asset_refs": [],
+      "visual_scheme_ref": "editorial/paper-magazine/hero",
+      "visual_scheme_sha256": "2a291909cf186b45aa321fafdeb8940f5da5d07e7fba6e28a8ea84db64d89033",
+      "render_recipe_ref": "editorial/paper-magazine/render-v4-cover-split",
+      "render_recipe_sha256": "32ea5003f2d8cd79c67d0bbd1b0968006b5b59df6ace10d49414a19e4ef08dd2",
+      "motion_recipe_ref": "editorial/paper-magazine/motion-none"
+    },
+    {
+      "id": "s02",
+      "role": "statement",
+      "source": "slides/s02.html",
+      "claim": "页面先表达关系，再选择外观",
+      "notes": "页面先表达关系，再选择外观",
+      "layout_id": "statement",
+      "page_rhythm": "breathing",
+      "asset_refs": [],
+      "visual_scheme_ref": "editorial/paper-magazine/hero",
+      "visual_scheme_sha256": "2a291909cf186b45aa321fafdeb8940f5da5d07e7fba6e28a8ea84db64d89033",
+      "render_recipe_ref": "editorial/paper-magazine/render-v4-statement",
+      "render_recipe_sha256": "aa89eed70146dcf999a9fe1af6cb65a57f6894f0a59f57627f8184ee3fb6d443",
+      "motion_recipe_ref": "editorial/paper-magazine/motion-none"
+    },
+    {
+      "id": "s03",
+      "role": "comparison",
+      "source": "slides/s03.html",
+      "claim": "同一份内容，选择适合的页面源",
+      "notes": "同一份内容，选择适合的页面源",
+      "layout_id": "comparison-matrix",
+      "page_rhythm": "dense",
+      "asset_refs": [],
+      "visual_scheme_ref": "editorial/paper-magazine/columns",
+      "visual_scheme_sha256": "6d87f25e11eabf0ca63dcca6c13b7cb73823d240b09fe76ca742ef941b1c5a3e",
+      "render_recipe_ref": "editorial/paper-magazine/render-v4-comparison-matrix",
+      "render_recipe_sha256": "17087b0d3c4919b798ccabadeb0f3d1dcb0b5e3faa7401e36e125f79893c0939",
+      "motion_recipe_ref": "editorial/paper-magazine/motion-none"
+    },
+    {
+      "id": "s04",
+      "role": "process",
+      "source": "slides/s04.html",
+      "claim": "先确认内容，再生成与交付",
+      "notes": "先确认内容，再生成与交付",
+      "layout_id": "process-linear",
+      "page_rhythm": "dense",
+      "asset_refs": [],
+      "visual_scheme_ref": "editorial/paper-magazine/flow",
+      "visual_scheme_sha256": "047dfa4f8e8472a52652e32d3e3f78949d84fbd5a0de79cea1a70320b70d0fac",
+      "render_recipe_ref": "editorial/paper-magazine/render-v4-process-linear",
+      "render_recipe_sha256": "385f2ee21aaa25d413d2bdb28315a3292762a1d9c1c7cb0f5c791db7bbf64ff7",
+      "motion_recipe_ref": "editorial/paper-magazine/motion-none"
+    },
+    {
+      "id": "s05",
+      "role": "data",
+      "source": "slides/s05.html",
+      "claim": "生成方式不同，交付画布一致",
+      "notes": "生成方式不同，交付画布一致",
+      "layout_id": "metric-ledger",
+      "page_rhythm": "breathing",
+      "asset_refs": [],
+      "visual_scheme_ref": "editorial/paper-magazine/data",
+      "visual_scheme_sha256": "e2e6e5fb093ac942f63006c5c3272ccabfaa181c06964c0fbeaa1c1d8e813718",
+      "render_recipe_ref": "editorial/paper-magazine/render-v4-metric-ledger",
+      "render_recipe_sha256": "44d5dd2c8a9c88630986667b94cef351510ab81d27ead8fb55031a23a28c583c",
+      "motion_recipe_ref": "editorial/paper-magazine/motion-none"
+    },
+    {
+      "id": "s06",
+      "role": "process",
+      "source": "slides/s06.html",
+      "claim": "生成负责表达，展示负责交付",
+      "notes": "生成负责表达，展示负责交付",
+      "layout_id": "relationship-map",
+      "page_rhythm": "dense",
+      "asset_refs": [],
+      "visual_scheme_ref": "editorial/paper-magazine/flow",
+      "visual_scheme_sha256": "047dfa4f8e8472a52652e32d3e3f78949d84fbd5a0de79cea1a70320b70d0fac",
+      "render_recipe_ref": "editorial/paper-magazine/render-v4-relationship-map",
+      "render_recipe_sha256": "14b6bda22b8ee8eb528ca8801b9d626a00a5313b8aeb1de165bea7e2985dfc3f",
+      "motion_recipe_ref": "editorial/paper-magazine/motion-none"
+    },
+    {
+      "id": "s07",
+      "role": "statement",
+      "source": "slides/s07.html",
+      "claim": "长标题保留完整信息",
+      "notes": "长标题保留完整信息",
+      "layout_id": "image-hero",
+      "page_rhythm": "breathing",
+      "asset_refs": [
+        {
+          "asset_id": "layout-study",
+          "path": "assets/layout-study.svg",
+          "slot": "hero",
+          "fit": "cover",
+          "focal_point": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "subject_safe_area": {
+            "x": 0.03,
+            "y": 0.05,
+            "width": 0.94,
+            "height": 0.9
+          },
+          "alt": "同组标题、图片与正文信息块在拥挤和疏朗版式中的排布示意"
+        }
+      ],
+      "visual_scheme_ref": "editorial/paper-magazine/hero",
+      "visual_scheme_sha256": "2a291909cf186b45aa321fafdeb8940f5da5d07e7fba6e28a8ea84db64d89033",
+      "render_recipe_ref": "editorial/paper-magazine/render-v4-image-hero",
+      "render_recipe_sha256": "51537491fdb7dbac27e78964148c09dca7a4a9f64ae9ea0432fd7f2f19575303",
+      "motion_recipe_ref": "editorial/paper-magazine/motion-none"
+    },
+    {
+      "id": "s08",
+      "role": "closing",
+      "source": "slides/s08.html",
+      "claim": "从一份真实内容开始",
+      "notes": "从一份真实内容开始",
+      "layout_id": "closing-statement",
+      "page_rhythm": "anchor",
+      "asset_refs": [],
+      "visual_scheme_ref": "editorial/paper-magazine/closing",
+      "visual_scheme_sha256": "a9720dfc004c9b2593c1fc47f74b3189982be40b3edd862accfa83ffeffaa8d4",
+      "render_recipe_ref": "editorial/paper-magazine/render-v4-closing-statement",
+      "render_recipe_sha256": "da629b49f44f1fffea2c66299a5049944eaa5ac773fe6ada1167da693d23e350",
+      "motion_recipe_ref": "editorial/paper-magazine/motion-none"
+    }
+  ]
+}

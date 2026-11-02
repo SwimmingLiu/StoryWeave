@@ -1,0 +1,62 @@
+[
+  {
+    "args": [
+      "replan",
+      "/Users/swimmingliu/data/github-proj/StoryWeave/comparisons/html-visual-20261101/after/editorial",
+      "--theme-ref",
+      "editorial/paper-magazine"
+    ],
+    "exit_code": 0,
+    "stdout": "/Users/swimmingliu/data/github-proj/StoryWeave/comparisons/html-visual-20261101/after/editorial/plans/html.json\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "build",
+      "/Users/swimmingliu/data/github-proj/StoryWeave/comparisons/html-visual-20261101/after/editorial"
+    ],
+    "exit_code": 0,
+    "stdout": "/Users/swimmingliu/data/github-proj/StoryWeave/comparisons/html-visual-20261101/after/editorial/index.html\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "qa",
+      "/Users/swimmingliu/data/github-proj/StoryWeave/comparisons/html-visual-20261101/after/editorial",
+      "--json"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":2,\"producer\":\"storyweave-html\",\"export_ready\":true,\"visual_review\":\"browser\",\"summary\":{\"blocking\":0,\"warning\":0,\"degraded\":0},\"findings\":[],\"artifact_binding\":{\"schema_version\":1,\"manifest_sha256\":\"81c3899eb19e86bbe6581c442c5fd5900bb95941a7978ab5b8758833a45fbe2f\",\"files\":[{\"path\":\"assets/paper-study.svg\",\"sha256\":\"5e8335494476b12fe9304db6de42f03700902f81ab580ca055e419841b483dd2\",\"role\":\"input\"},{\"path\":\"deck_spec.json\",\"sha256\":\"3daee76d6b673895739b42dd3595ad8d204e4c8a00650c8387054abb5c29228e\",\"role\":\"input\"},{\"path\":\"generation_manifest.json\",\"sha256\":\"447badfd5788060000c3177ba935d38a59642bab5fa15620eaf22f9d60f3af07\",\"role\":\"input\"},{\"path\":\"index.html\",\"sha256\":\"d50ee01e6b655100232fb92f9e357f08a69365d088c8c07fd829e3d8ab2999ac\",\"role\":\"entry\"},{\"path\":\"plans/html.json\",\"sha256\":\"6d65710e6c876cfb7ed501dc4366e5dca8cf5e8ab6a213db228867190f5bd605\",\"role\":\"input\"},{\"path\":\"slides/s01.html\",\"sha256\":\"ace1a961689eb169d9506aa6a5d08603cd48514646d1afd636979c28fce051b1\",\"role\":\"page\"},{\"path\":\"slides/s02.html\",\"sha256\":\"590937508d7bdf5787722098d66c4da498167aaebe018a8c60786b6076824a1a\",\"role\":\"page\"},{\"path\":\"slides/s03.html\",\"sha256\":\"5f95a2f952e34311faf39507de680153d52823e7f79369fc41f3cd317abb5a4b\",\"role\":\"page\"},{\"path\":\"slides/s04.html\",\"sha256\":\"446973512bbfe155132da69d7a1ac17e5e050cd48810202b33dab213a8b75376\",\"role\":\"page\"},{\"path\":\"slides/s05.html\",\"sha256\":\"ac26806acde7d3bcd9cd652800b5a97497551faa9998a00fbfa6c33bb6dfbb39\",\"role\":\"page\"},{\"path\":\"slides/s06.html\",\"sha256\":\"a84d0f9f2302468107aeceb9ad1ab222e8cde79eebeec8ffe61ff3b1901d8989\",\"role\":\"page\"},{\"path\":\"slides/s07.html\",\"sha256\":\"3687edae688a3b7ce6b1c10312e2e7c19d5bca345044ae536b0f7d114a9f4707\",\"role\":\"page\"},{\"path\":\"slides/s08.html\",\"sha256\":\"ddad91926dae29ab9f0fcf8873d781444a1e1e422570a91b873f0d4f369d796f\",\"role\":\"page\"}],\"fingerprint\":\"4a5c08f3712350b5a83c223a54ccad7116c4facd2a04b10339b1530fb0efe22d\"}}\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "replan",
+      "/Users/swimmingliu/data/github-proj/StoryWeave/comparisons/html-visual-20261101/after/swiss",
+      "--theme-ref",
+      "systems/ink-blue-grid"
+    ],
+    "exit_code": 0,
+    "stdout": "/Users/swimmingliu/data/github-proj/StoryWeave/comparisons/html-visual-20261101/after/swiss/plans/html.json\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "build",
+      "/Users/swimmingliu/data/github-proj/StoryWeave/comparisons/html-visual-20261101/after/swiss"
+    ],
+    "exit_code": 0,
+    "stdout": "/Users/swimmingliu/data/github-proj/StoryWeave/comparisons/html-visual-20261101/after/swiss/index.html\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "qa",
+      "/Users/swimmingliu/data/github-proj/StoryWeave/comparisons/html-visual-20261101/after/swiss",
+      "--json"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"schema_version\":2,\"producer\":\"storyweave-html\",\"export_ready\":true,\"visual_review\":\"browser\",\"summary\":{\"blocking\":0,\"warning\":0,\"degraded\":0},\"findings\":[],\"artifact_binding\":{\"schema_version\":1,\"manifest_sha256\":\"eb1a00cd7668d8cf2c68e667a41508c8499d631054e7ebbda465414b2a3b118f\",\"files\":[{\"path\":\"assets/paper-study.svg\",\"sha256\":\"5e8335494476b12fe9304db6de42f03700902f81ab580ca055e419841b483dd2\",\"role\":\"input\"},{\"path\":\"deck_spec.json\",\"sha256\":\"452fc787c8fd7b5f0397ebc1e2f56ea8f357118aabaab947ed1f6e3d32125cf9\",\"role\":\"input\"},{\"path\":\"generation_manifest.json\",\"sha256\":\"b006195c9464677dc882c39a549219ef0d08e7ff2fbf5594c06c96448882d653\",\"role\":\"input\"},{\"path\":\"index.html\",\"sha256\":\"a97eaba1b553a61687eab8821851a93462b9efcf0a1b01238ed970746e0e16e9\",\"role\":\"entry\"},{\"path\":\"plans/html.json\",\"sha256\":\"3be4c0d94036dd532723fd2eae53027c78be401bb7bf4f44f46f5b9da384ecd9\",\"role\":\"input\"},{\"path\":\"slides/s01.html\",\"sha256\":\"76fa4ce07ef3934ff1e2daa6e369a08533732e50ce83cd55ca465d244227e05f\",\"role\":\"page\"},{\"path\":\"slides/s02.html\",\"sha256\":\"fd7076ac7228114df0cd55da9987df9f069cc6eee0ee9ef022482e9dfacc758a\",\"role\":\"page\"},{\"path\":\"slides/s03.html\",\"sha256\":\"1c53c14c8c94fa4423d7bf409130a6c8501d8c48c30107a2e69dfa3f28584e3c\",\"role\":\"page\"},{\"path\":\"slides/s04.html\",\"sha256\":\"1feb63817e048db667d5f2c7c9c92cccf4f0d0789ad4d038d6415f87440b0b3c\",\"role\":\"page\"},{\"path\":\"slides/s05.html\",\"sha256\":\"5cf51ff3414e496ebd729322ed37f0e14e8512c89085a8a3d77dfb8c3d494d0a\",\"role\":\"page\"},{\"path\":\"slides/s06.html\",\"sha256\":\"873856a5c618e4520b59ef00cadc133727fb20e8b7235ecc07c8ccd0f94b890a\",\"role\":\"page\"},{\"path\":\"slides/s07.html\",\"sha256\":\"575dd717f1b9255c030ef4f6524f8f398976609cd1de864994248e9484b51f5e\",\"role\":\"page\"},{\"path\":\"slides/s08.html\",\"sha256\":\"329131113a4d140c92231f983b78f2ff588fdd0d052452c324c7479808676f97\",\"role\":\"page\"}],\"fingerprint\":\"e23ab020248e5738db69857d7c2ba922fa4229cc9481384b637e066e30f32ae5\"}}\n",
+    "stderr": ""
+  }
+]

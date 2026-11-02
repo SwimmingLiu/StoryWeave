@@ -6,9 +6,10 @@ import { join } from 'node:path';
 import test from 'node:test';
 import { promisify } from 'node:util';
 
-import { createHtmlManifest, renderHtmlDeck, validateHtmlManifest } from '../scripts/lib/html.mjs';
-import { approveOutline, createOutline, migrateOutline, replanOutline, validateOutline } from '../scripts/lib/outline.mjs';
-import { openThemeCatalog, PAGE_ROLES, requireTheme, resolveTheme, THEME_CONTRACT } from '../scripts/lib/themes.mjs';
+// Source tests and public CLI cases verify both ownership and the independently packaged runtime.
+import { createHtmlManifest, renderHtmlDeck, validateHtmlManifest } from '../../../src/html/render.mjs';
+import { approveOutline, createOutline, migrateOutline, replanOutline, validateOutline } from '../../../src/html/outline.mjs';
+import { openThemeCatalog, PAGE_ROLES, requireTheme, resolveTheme, THEME_CONTRACT } from '../../../src/html/themes.mjs';
 
 const run = promisify(execFile);
 const cli = new URL('../scripts/ppt.mjs', import.meta.url);
@@ -31,6 +32,7 @@ test('all active HTML styles resolve all ten page roles', async () => {
   assert.deepEqual(catalog.list().map((item) => item.ref), [
     'editorial/paper-magazine',
     'systems/white-cyan-circuit',
+    'systems/ink-blue-grid',
     'campaign/bold-poster',
     'cinematic/natural-film',
   ]);
@@ -105,7 +107,8 @@ test('migration preserves content and requires a choice for ambiguous legacy the
 
 test('v3 CLI produces canonical standalone output and fingerprints', async () => {
   const project = await mkdtemp(join(tmpdir(), 'storyweave-html-v3-'));
-  await run(process.execPath, [cli.pathname, 'draft', project, '--theme-ref', 'campaign/bold-poster']);
+  // This compatibility case keeps exercising v3 after new canonical drafts adopt structured content.
+  await run(process.execPath, [cli.pathname, 'draft', project, '--theme-ref', 'campaign/bold-poster', '--schema', '3']);
   await run(process.execPath, [cli.pathname, 'approve', project, '--theme-ref', 'campaign/bold-poster']);
   await run(process.execPath, [cli.pathname, 'build', project]);
   const manifest = JSON.parse(await readFile(join(project, 'storyweave-output.json'), 'utf8'));

@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "reference_styles": 18,
+  "mapped_theme_directions": 14,
+  "generated_themes": 19,
+  "mappings": [
+    {
+      "reference_id": "engineering-blueprint",
+      "theme_ref": "systems/engineering-blueprint",
+      "scheme_ref": "systems/engineering-blueprint/process",
+      "relationship": "dedicated",
+      "reason": "Architecture, infrastructure and engineering mechanisms"
+    },
+    {
+      "reference_id": "warm-circuit-notes",
+      "theme_ref": "systems/warm-circuit",
+      "scheme_ref": "systems/warm-circuit/process",
+      "relationship": "dedicated",
+      "reason": "Technical teaching, concepts and mechanism explanations"
+    },
+    {
+      "reference_id": "chalkboard-explainer",
+      "theme_ref": "knowledge/chalkboard",
+      "scheme_ref": "knowledge/chalkboard/process",
+      "relationship": "dedicated",
+      "reason": "Teaching talks, stepwise reasoning and engineering practice"
+    },
+    {
+      "reference_id": "sketch-sharing",
+      "theme_ref": "knowledge/sketch-notes",
+      "scheme_ref": "knowledge/sketch-notes/process",
+      "relationship": "merged",
+      "reason": "Knowledge sharing, collaborative planning and method explanation"
+    },
+    {
+      "reference_id": "whiteboard-strategy-talk",
+      "theme_ref": "knowledge/sketch-notes",
+      "scheme_ref": "knowledge/sketch-notes/whiteboard-process",
+      "relationship": "merged",
+      "reason": "Knowledge sharing, collaborative planning and method explanation"
+    },
+    {
+      "reference_id": "ink-method-talk",
+      "theme_ref": "knowledge/ink-method",
+      "scheme_ref": "knowledge/ink-method/process",
+      "relationship": "dedicated",
+      "reason": "Engineering principles, methodology and reflective technical talks"
+    },
+    {
+      "reference_id": "neon-system-talk",
+      "theme_ref": "systems/neon-network",
+      "scheme_ref": "systems/neon-network/process",
+      "relationship": "dedicated",
+      "reason": "Agent architectures, networking and runtime behavior"
+    },
+    {
+      "reference_id": "clay-workflow-talk",
+      "theme_ref": "tactile/clay-workflow",
+      "scheme_ref": "tactile/clay-workflow/process",
+      "relationship": "dedicated",
+      "reason": "Workflow, delivery practice and approachable product explanations"
+    },
+    {
+      "reference_id": "retro-device-stack",
+      "theme_ref": "tactile/retro-device",
+      "scheme_ref": "tactile/retro-device/process",
+      "relationship": "dedicated",
+      "reason": "Developer tooling, software stacks and computing culture"
+    },
+    {
+      "reference_id": "user-journey-storyboard",
+      "theme_ref": "illustrated/storybook-guide",
+      "scheme_ref": "illustrated/storybook-guide/journey-strip",
+      "relationship": "merged",
+      "reason": "User journeys, onboarding, accessible technical explanations and talks"
+    },
+    {
+      "reference_id": "pastel-guided-learning",
+      "theme_ref": "illustrated/storybook-guide",
+      "scheme_ref": "illustrated/storybook-guide/process",
+      "relationship": "merged",
+      "reason": "User journeys, onboarding, accessible technical explanations and talks"
+    },
+    {
+      "reference_id": "character-guided-technical",
+      "theme_ref": "illustrated/storybook-guide",
+      "scheme_ref": "illustrated/storybook-guide/process",
+      "relationship": "merged",
+      "reason": "User journeys, onboarding, accessible technical explanations and talks"
+    },
+    {
+      "reference_id": "comic-engineering",
+      "theme_ref": "illustrated/comic-engineering",
+      "scheme_ref": "illustrated/comic-engineering/process",
+      "relationship": "dedicated",
+      "reason": "Debugging, failure analysis, technical narratives and solution comparisons"
+    },
+    {
+      "reference_id": "panoramic-system-illustration",
+      "theme_ref": "illustrated/panoramic-system",
+      "scheme_ref": "illustrated/panoramic-system/process",
+      "relationship": "dedicated",
+      "reason": "System overviews, infrastructure, architecture and complex process explanations"
+    },
+    {
+      "reference_id": "pixel-workflow-world",
+      "theme_ref": "illustrated/pixel-world",
+      "scheme_ref": "illustrated/pixel-world/process",
+      "relationship": "dedicated",
+      "reason": "Developer sharing, learning paths, build pipelines and playful technical talks"
+    },
+    {
+      "reference_id": "black-gold-operational",
+      "theme_ref": "systems/black-gold",
+      "scheme_ref": "systems/black-gold/process",
+      "relationship": "dedicated",
+      "reason": "Operations, compute workflows, engineering decisions and high-contrast technical talks"
+    },
+    {
+      "reference_id": "glass-product-talk",
+      "theme_ref": "systems/silver-glass",
+      "scheme_ref": "systems/silver-glass/aurora-capabilities",
+      "relationship": "merged",
+      "reason": "共享玻璃实体与光照语言，极光作为单页方案保留。"
+    },
+    {
+      "reference_id": "silver-glass-narrative",
+      "theme_ref": "systems/silver-glass",
+      "scheme_ref": "systems/silver-glass/circuit-flow",
+      "relationship": "existing",
+      "reason": "银白玻璃实体、拆解与连续流程直接归入已有样式。"
+    }
+  ],
+  "notes": "候选配方源于视觉方法归纳；不复制第三方示例内容。编译覆盖不代表每种页型均已完成视觉复核。"
+}

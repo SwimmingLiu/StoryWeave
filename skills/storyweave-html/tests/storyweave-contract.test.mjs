@@ -6,9 +6,10 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import test from 'node:test';
 
-import { createHtmlManifest, renderHtmlDeck, renderHtmlSlide, validateHtmlManifest } from '../scripts/lib/html.mjs';
-import { approveOutline, createOutline, validateOutline } from '../scripts/lib/outline.mjs';
-import { openThemeCatalog, resolveTheme } from '../scripts/lib/themes.mjs';
+// Unit contracts follow canonical sources so removed private script modules cannot remain hidden dependencies.
+import { createHtmlManifest, renderHtmlDeck, renderHtmlSlide, validateHtmlManifest } from '../../../src/html/render.mjs';
+import { approveOutline, createOutline, validateOutline } from '../../../src/html/outline.mjs';
+import { openThemeCatalog, resolveTheme } from '../../../src/html/themes.mjs';
 
 const run = promisify(execFile);
 const cli = new URL('../scripts/ppt.mjs', import.meta.url);
@@ -17,8 +18,10 @@ test('Skill contract is standalone HTML with no presentation adapter dependency'
   const skill = await readFile(new URL('../SKILL.md', import.meta.url), 'utf8');
   const metadata = await readFile(new URL('../agents/openai.yaml', import.meta.url), 'utf8');
   assert.match(skill, /name: storyweave-html/);
-  assert.match(skill, /完整的 16:9 HTML 页面/);
-  assert.doesNotMatch(skill, /Bento/i);
+  assert.match(skill, /standalone, editable HTML pages/);
+  // Docs can explain the adapter handoff; the installed runtime determines whether HTML depends on it.
+  const inventory = JSON.parse(await readFile(new URL('../runtime/source-manifest.json', import.meta.url), 'utf8'));
+  assert(!inventory.files.some((file) => file.path.startsWith('runtime/bento/')));
   assert.match(metadata, /standalone editable HTML/);
 });
 
@@ -42,9 +45,22 @@ test('canonical renderer emits a fixed stage and render recipe metadata', async 
   const html = renderHtmlDeck(deck, theme);
   assert.match(html, /class="stage-viewport"/);
   assert.match(html, /width:1280px;height:720px/);
+  assert.match(html, /position:absolute;left:50%;top:50%/);
   assert.match(html, /data-render-recipe-ref="systems\/white-cyan-circuit\/render-/);
   assert.match(html, /data-reading-mode="speaker-led"/);
   assert.match(html, /data-page-rhythm="anchor"/);
+});
+
+test('canonical renderer supports page-level native SVG visual specs', async () => {
+  const catalog = await openThemeCatalog(null, { scope: 'active' });
+  const draft = createOutline('SVG visual spec', { theme_ref: 'systems/white-cyan-circuit' });
+  draft.slides[0].visual_spec = { type: 'runtime-loop', labels: ['理解目标', '检索依据', '调用工具', '校验结果'] };
+  const deck = approveOutline(draft, { mode: 'html', themes: catalog });
+  const theme = resolveTheme(deck.theme_ref, { catalog });
+  const html = renderHtmlDeck(deck, theme);
+  assert.match(html, /has-custom-visual/);
+  assert.match(html, /custom-visual-runtime-loop/);
+  assert.match(html, /class="visual-svg visual-runtime-loop"/);
 });
 
 test('renderer maps an asset slot to a relative image without changing page text', async () => {

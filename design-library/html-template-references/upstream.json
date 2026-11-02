@@ -1,0 +1,1168 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "https://github.com/zarazhangrui/beautiful-html-templates",
+    "revision": "e5e204fb1f3b06290846e7dcd7aceddabeceec8c",
+    "author": "Zara Zhang",
+    "license": "MIT",
+    "license_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/LICENSE"
+  },
+  "groups": [
+    {
+      "id": "8-bit-orbit",
+      "source_name": "8-Bit Orbit",
+      "density": "medium",
+      "source_slide_count": 10,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/8-bit-orbit",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/8-bit-orbit/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/8-bit-orbit-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/8-bit-orbit-1.png",
+          "bytes": 1371904,
+          "git_blob_sha1": "7a512c7f1548d500ea1c2570d34c500d8fbe212b"
+        },
+        {
+          "id": "p05",
+          "source_slide_number": 5,
+          "repository_path": "screenshots/8-bit-orbit-5.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/8-bit-orbit-5.png",
+          "bytes": 1130684,
+          "git_blob_sha1": "a20c3160cb24e4104dce9d9bc0877ea1dbc827be"
+        },
+        {
+          "id": "p06",
+          "source_slide_number": 6,
+          "repository_path": "screenshots/8-bit-orbit-6.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/8-bit-orbit-6.png",
+          "bytes": 1154965,
+          "git_blob_sha1": "efe6a32cf785688eb4b9cc85f898241c14aed16f"
+        }
+      ]
+    },
+    {
+      "id": "biennale-yellow",
+      "source_name": "Biennale Yellow",
+      "density": "medium",
+      "source_slide_count": 8,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/biennale-yellow",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/biennale-yellow/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/biennale-yellow-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/biennale-yellow-1.png",
+          "bytes": 507838,
+          "git_blob_sha1": "02f08e6f24085ac990df4eceff8b4dc6bc413504"
+        },
+        {
+          "id": "p05",
+          "source_slide_number": 5,
+          "repository_path": "screenshots/biennale-yellow-5.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/biennale-yellow-5.png",
+          "bytes": 165132,
+          "git_blob_sha1": "6d1d10172aeea4c8bdf0b46966be54248d05c7a6"
+        },
+        {
+          "id": "p08",
+          "source_slide_number": 8,
+          "repository_path": "screenshots/biennale-yellow-8.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/biennale-yellow-8.png",
+          "bytes": 346313,
+          "git_blob_sha1": "546fd6541e58a8864f9fcded1ba6284ff00f244d"
+        }
+      ]
+    },
+    {
+      "id": "block-frame",
+      "source_name": "BlockFrame",
+      "density": "high",
+      "source_slide_count": 10,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/block-frame",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/block-frame/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/block-frame-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/block-frame-1.png",
+          "bytes": 53533,
+          "git_blob_sha1": "975158ed51336f0a25cda46043fd935ea5d1bf88"
+        },
+        {
+          "id": "p04",
+          "source_slide_number": 4,
+          "repository_path": "screenshots/block-frame-4.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/block-frame-4.png",
+          "bytes": 43404,
+          "git_blob_sha1": "b0ceae441ef6eb7f3e0fcfafa4493547792d4ca0"
+        },
+        {
+          "id": "p08",
+          "source_slide_number": 8,
+          "repository_path": "screenshots/block-frame-8.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/block-frame-8.png",
+          "bytes": 59211,
+          "git_blob_sha1": "b300f1b7e77153d871299137359956c7a681edb7"
+        }
+      ]
+    },
+    {
+      "id": "blue-professional",
+      "source_name": "Blue Professional",
+      "density": "medium",
+      "source_slide_count": 10,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/blue-professional",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/blue-professional/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/blue-professional-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/blue-professional-1.png",
+          "bytes": 59096,
+          "git_blob_sha1": "32570d391c4ab0b19787130304b521501e367dec"
+        },
+        {
+          "id": "p06",
+          "source_slide_number": 6,
+          "repository_path": "screenshots/blue-professional-6.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/blue-professional-6.png",
+          "bytes": 67495,
+          "git_blob_sha1": "66a11cf7c32e857744e11f8c349e1a763ff02e74"
+        },
+        {
+          "id": "p08",
+          "source_slide_number": 8,
+          "repository_path": "screenshots/blue-professional-8.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/blue-professional-8.png",
+          "bytes": 70148,
+          "git_blob_sha1": "37f5fe115d90d7d4159d8f33863c9df1625d906e"
+        }
+      ]
+    },
+    {
+      "id": "bold-poster",
+      "source_name": "Bold Poster",
+      "density": "low",
+      "source_slide_count": 10,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/bold-poster",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/bold-poster/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/bold-poster-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/bold-poster-1.png",
+          "bytes": 78487,
+          "git_blob_sha1": "1b285daaa7f67faacad18f0c6e73f525c0ce5ee6"
+        },
+        {
+          "id": "p04",
+          "source_slide_number": 4,
+          "repository_path": "screenshots/bold-poster-4.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/bold-poster-4.png",
+          "bytes": 117083,
+          "git_blob_sha1": "be40dbbd9cc9d1e9d40fd4119d43f11e188a7481"
+        },
+        {
+          "id": "p08",
+          "source_slide_number": 8,
+          "repository_path": "screenshots/bold-poster-8.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/bold-poster-8.png",
+          "bytes": 94511,
+          "git_blob_sha1": "c907d6952d37f79e2f7fffbff943cacf0a9a879d"
+        }
+      ]
+    },
+    {
+      "id": "broadside",
+      "source_name": "Broadside",
+      "density": "medium",
+      "source_slide_count": 20,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/broadside",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/broadside/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/broadside-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/broadside-1.png",
+          "bytes": 78441,
+          "git_blob_sha1": "12865ef480008f29ce6538dc4e539d92858631d9"
+        },
+        {
+          "id": "p04",
+          "source_slide_number": 4,
+          "repository_path": "screenshots/broadside-4.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/broadside-4.png",
+          "bytes": 87432,
+          "git_blob_sha1": "d0065cb893f296df98ee562092e4fc284e41e476"
+        },
+        {
+          "id": "p13",
+          "source_slide_number": 13,
+          "repository_path": "screenshots/broadside-13.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/broadside-13.png",
+          "bytes": 68967,
+          "git_blob_sha1": "1d9c8a2b63a2b8846dbc4b98184a1fbd228bc9b9"
+        }
+      ]
+    },
+    {
+      "id": "capsule",
+      "source_name": "Capsule",
+      "density": "medium",
+      "source_slide_count": 10,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/capsule",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/capsule/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/capsule-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/capsule-1.png",
+          "bytes": 1967586,
+          "git_blob_sha1": "8e7290e865dc5aeda10616308e037c519c05d22b"
+        },
+        {
+          "id": "p04",
+          "source_slide_number": 4,
+          "repository_path": "screenshots/capsule-4.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/capsule-4.png",
+          "bytes": 718440,
+          "git_blob_sha1": "d6133ec6a2c6ef44ee4e61b29a4f57f797da3782"
+        },
+        {
+          "id": "p08",
+          "source_slide_number": 8,
+          "repository_path": "screenshots/capsule-8.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/capsule-8.png",
+          "bytes": 939163,
+          "git_blob_sha1": "264d1d8207386ca7e936e1ae2446c394a67b9c9d"
+        }
+      ]
+    },
+    {
+      "id": "cartesian",
+      "source_name": "Cartesian",
+      "density": "low",
+      "source_slide_count": 10,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/cartesian",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/cartesian/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/cartesian-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/cartesian-1.png",
+          "bytes": 59174,
+          "git_blob_sha1": "1a689372566d08160dabd621d74a6c9a3074cf62"
+        },
+        {
+          "id": "p04",
+          "source_slide_number": 4,
+          "repository_path": "screenshots/cartesian-4.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/cartesian-4.png",
+          "bytes": 47903,
+          "git_blob_sha1": "aa85f0d7ca03f32c6c8f292226f94483d946797e"
+        },
+        {
+          "id": "p08",
+          "source_slide_number": 8,
+          "repository_path": "screenshots/cartesian-8.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/cartesian-8.png",
+          "bytes": 50937,
+          "git_blob_sha1": "4aab3c2036dca256e99df89b138b3279eb5a4814"
+        }
+      ]
+    },
+    {
+      "id": "cobalt-grid",
+      "source_name": "Cobalt Grid",
+      "density": "medium",
+      "source_slide_count": 8,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/cobalt-grid",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/cobalt-grid/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/cobalt-grid-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/cobalt-grid-1.png",
+          "bytes": 70195,
+          "git_blob_sha1": "a631b7076f770c7bdb41d6eb9c4634c3ea443f7f"
+        },
+        {
+          "id": "p03",
+          "source_slide_number": 3,
+          "repository_path": "screenshots/cobalt-grid-3.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/cobalt-grid-3.png",
+          "bytes": 103212,
+          "git_blob_sha1": "67d315738fbad5016415570b79df0b0142fa46b9"
+        },
+        {
+          "id": "p05",
+          "source_slide_number": 5,
+          "repository_path": "screenshots/cobalt-grid-5.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/cobalt-grid-5.png",
+          "bytes": 81146,
+          "git_blob_sha1": "e1f19c354301483905636e955531fc2e8598c504"
+        }
+      ]
+    },
+    {
+      "id": "coral",
+      "source_name": "Coral",
+      "density": "medium",
+      "source_slide_count": 10,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/coral",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/coral/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/coral-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/coral-1.png",
+          "bytes": 59620,
+          "git_blob_sha1": "2cc5a090e306e3af129cedc2f9ea181a1278b29d"
+        },
+        {
+          "id": "p04",
+          "source_slide_number": 4,
+          "repository_path": "screenshots/coral-4.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/coral-4.png",
+          "bytes": 51825,
+          "git_blob_sha1": "765ffde12afdf5043aa525ba0508be541308afe4"
+        },
+        {
+          "id": "p08",
+          "source_slide_number": 8,
+          "repository_path": "screenshots/coral-8.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/coral-8.png",
+          "bytes": 60029,
+          "git_blob_sha1": "fb9562c5d8b4fda8d3b0b77af33d5a6dcfa1bfc3"
+        }
+      ]
+    },
+    {
+      "id": "creative-mode",
+      "source_name": "Creative Mode",
+      "density": "medium-high",
+      "source_slide_count": 8,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/creative-mode",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/creative-mode/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/creative-mode-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/creative-mode-1.png",
+          "bytes": 60502,
+          "git_blob_sha1": "fa015c900085944fce987ef50d0805982f0dee92"
+        },
+        {
+          "id": "p04",
+          "source_slide_number": 4,
+          "repository_path": "screenshots/creative-mode-4.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/creative-mode-4.png",
+          "bytes": 113241,
+          "git_blob_sha1": "3d4f4e71b281d1517d5bd97d9372972503b4a7d3"
+        },
+        {
+          "id": "p06",
+          "source_slide_number": 6,
+          "repository_path": "screenshots/creative-mode-6.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/creative-mode-6.png",
+          "bytes": 151184,
+          "git_blob_sha1": "79ee65266a4084e3b2a364cdfa560d0f24e73f8f"
+        }
+      ]
+    },
+    {
+      "id": "daisy-days",
+      "source_name": "Daisy Days",
+      "density": "medium",
+      "source_slide_count": 10,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/daisy-days",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/daisy-days/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/daisy-days-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/daisy-days-1.png",
+          "bytes": 99459,
+          "git_blob_sha1": "47dc81e5ea6344ce87590fe98ea9e2dbc72a7f6d"
+        },
+        {
+          "id": "p04",
+          "source_slide_number": 4,
+          "repository_path": "screenshots/daisy-days-4.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/daisy-days-4.png",
+          "bytes": 95834,
+          "git_blob_sha1": "8335c5ddbb95fc879942ab0c2a510e1c35136ae8"
+        },
+        {
+          "id": "p08",
+          "source_slide_number": 8,
+          "repository_path": "screenshots/daisy-days-8.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/daisy-days-8.png",
+          "bytes": 69413,
+          "git_blob_sha1": "bbb3b682d070b330fb885606d6e7490c2cb69475"
+        }
+      ]
+    },
+    {
+      "id": "editorial-forest",
+      "source_name": "Editorial Forest",
+      "density": "medium",
+      "source_slide_count": 8,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/editorial-forest",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/editorial-forest/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/editorial-forest-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/editorial-forest-1.png",
+          "bytes": 79689,
+          "git_blob_sha1": "7363fe9601341ad2a0af9e80e7e1f56dd9102f72"
+        },
+        {
+          "id": "p02",
+          "source_slide_number": 2,
+          "repository_path": "screenshots/editorial-forest-2.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/editorial-forest-2.png",
+          "bytes": 98014,
+          "git_blob_sha1": "be853f8515cc6d60b488a15d95b1e3957dbe5f70"
+        },
+        {
+          "id": "p05",
+          "source_slide_number": 5,
+          "repository_path": "screenshots/editorial-forest-5.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/editorial-forest-5.png",
+          "bytes": 69474,
+          "git_blob_sha1": "dd781d85b0c5e37b314af552bdc67063fff5225a"
+        }
+      ]
+    },
+    {
+      "id": "editorial-tri-tone",
+      "source_name": "Editorial Tri-Tone",
+      "density": "medium",
+      "source_slide_count": 8,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/editorial-tri-tone",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/editorial-tri-tone/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/editorial-tri-tone-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/editorial-tri-tone-1.png",
+          "bytes": 126061,
+          "git_blob_sha1": "dfdaa37e42238e13b8a1d367811e9d6a9f0d1e41"
+        },
+        {
+          "id": "p03",
+          "source_slide_number": 3,
+          "repository_path": "screenshots/editorial-tri-tone-3.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/editorial-tri-tone-3.png",
+          "bytes": 171113,
+          "git_blob_sha1": "4f39eb4c82187778a021c4f85e395828f5188673"
+        },
+        {
+          "id": "p04",
+          "source_slide_number": 4,
+          "repository_path": "screenshots/editorial-tri-tone-4.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/editorial-tri-tone-4.png",
+          "bytes": 94169,
+          "git_blob_sha1": "8dd981bfba0e3146c56f12fdabbccd87715895eb"
+        }
+      ]
+    },
+    {
+      "id": "emerald-editorial",
+      "source_name": "Emerald Editorial",
+      "density": "medium",
+      "source_slide_count": 8,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/emerald-editorial",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/emerald-editorial/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/emerald-editorial-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/emerald-editorial-1.png",
+          "bytes": 70984,
+          "git_blob_sha1": "6ca8fa0da3f40e9b046a5cd5142eed92a3c19034"
+        },
+        {
+          "id": "p03",
+          "source_slide_number": 3,
+          "repository_path": "screenshots/emerald-editorial-3.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/emerald-editorial-3.png",
+          "bytes": 120663,
+          "git_blob_sha1": "e88e840d7d6b9089da0c5d737e8297d96682d8b6"
+        },
+        {
+          "id": "p06",
+          "source_slide_number": 6,
+          "repository_path": "screenshots/emerald-editorial-6.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/emerald-editorial-6.png",
+          "bytes": 227014,
+          "git_blob_sha1": "d13620d9d790c71208a29ccf419916859d69b058"
+        }
+      ]
+    },
+    {
+      "id": "grove",
+      "source_name": "Grove",
+      "density": "medium",
+      "source_slide_count": 12,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/grove",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/grove/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/grove-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/grove-1.png",
+          "bytes": 60650,
+          "git_blob_sha1": "6c09bd3766a7a7b6211bfb555bba022ec34457f8"
+        },
+        {
+          "id": "p04",
+          "source_slide_number": 4,
+          "repository_path": "screenshots/grove-4.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/grove-4.png",
+          "bytes": 105368,
+          "git_blob_sha1": "ad7fa2f688569344f8fe8bbedee2a3e787c05c14"
+        },
+        {
+          "id": "p08",
+          "source_slide_number": 8,
+          "repository_path": "screenshots/grove-8.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/grove-8.png",
+          "bytes": 98633,
+          "git_blob_sha1": "eb277eda782d35a56ddd6f2e64a916466618a216"
+        }
+      ]
+    },
+    {
+      "id": "long-table",
+      "source_name": "Long Table",
+      "density": "medium",
+      "source_slide_count": 8,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/long-table",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/long-table/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/long-table-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/long-table-1.png",
+          "bytes": 117166,
+          "git_blob_sha1": "be4012ce22c060ee45bd235e626d28e7e9bbc22e"
+        },
+        {
+          "id": "p03",
+          "source_slide_number": 3,
+          "repository_path": "screenshots/long-table-3.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/long-table-3.png",
+          "bytes": 92658,
+          "git_blob_sha1": "15c043847d9821681b17796e9af87fff4b86e330"
+        },
+        {
+          "id": "p07",
+          "source_slide_number": 7,
+          "repository_path": "screenshots/long-table-7.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/long-table-7.png",
+          "bytes": 120562,
+          "git_blob_sha1": "ae154d27a123b26575354d908476c9ea59808890"
+        }
+      ]
+    },
+    {
+      "id": "mat",
+      "source_name": "Mat",
+      "density": "medium",
+      "source_slide_count": 9,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/mat",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/mat/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/mat-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/mat-1.png",
+          "bytes": 261880,
+          "git_blob_sha1": "3aa953945b1826517c41d90b07d378163f004fb1"
+        },
+        {
+          "id": "p04",
+          "source_slide_number": 4,
+          "repository_path": "screenshots/mat-4.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/mat-4.png",
+          "bytes": 247436,
+          "git_blob_sha1": "be7ee2e8f682e6df8b2e3e375033f6698e4a0656"
+        },
+        {
+          "id": "p08",
+          "source_slide_number": 8,
+          "repository_path": "screenshots/mat-8.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/mat-8.png",
+          "bytes": 184249,
+          "git_blob_sha1": "4342952cf7a22226227348f0799dc3e526504c66"
+        }
+      ]
+    },
+    {
+      "id": "monochrome",
+      "source_name": "Monochrome",
+      "density": "high",
+      "source_slide_count": 18,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/monochrome",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/monochrome/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/monochrome-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/monochrome-1.png",
+          "bytes": 67733,
+          "git_blob_sha1": "9d78e2ac753685d3db3032bb2c0b187ea7d31289"
+        },
+        {
+          "id": "p04",
+          "source_slide_number": 4,
+          "repository_path": "screenshots/monochrome-4.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/monochrome-4.png",
+          "bytes": 88764,
+          "git_blob_sha1": "6001dc72cce8739a3c8a564a0ceb8d8779c13a2b"
+        },
+        {
+          "id": "p12",
+          "source_slide_number": 12,
+          "repository_path": "screenshots/monochrome-12.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/monochrome-12.png",
+          "bytes": 85783,
+          "git_blob_sha1": "9b0ad30e94b5b790d0df926206310f3fad32d82b"
+        }
+      ]
+    },
+    {
+      "id": "neo-grid-bold",
+      "source_name": "Neo-Grid Bold",
+      "density": "high",
+      "source_slide_count": 13,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/neo-grid-bold",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/neo-grid-bold/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/neo-grid-bold-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/neo-grid-bold-1.png",
+          "bytes": 144177,
+          "git_blob_sha1": "467c0847a5b3bf392facaebb576294a9d4553066"
+        },
+        {
+          "id": "p03",
+          "source_slide_number": 3,
+          "repository_path": "screenshots/neo-grid-bold-3.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/neo-grid-bold-3.png",
+          "bytes": 122019,
+          "git_blob_sha1": "f5a8d6b1cd03ca6dedecd8848c5d339936f5a4d3"
+        },
+        {
+          "id": "p08",
+          "source_slide_number": 8,
+          "repository_path": "screenshots/neo-grid-bold-8.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/neo-grid-bold-8.png",
+          "bytes": 97431,
+          "git_blob_sha1": "f335038336b18bab31cd4b70756ee5f296d07c3a"
+        }
+      ]
+    },
+    {
+      "id": "peoples-platform",
+      "source_name": "People's Platform (Block & Bold)",
+      "density": "medium-high",
+      "source_slide_count": 10,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/peoples-platform",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/peoples-platform/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/peoples-platform-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/peoples-platform-1.png",
+          "bytes": 106459,
+          "git_blob_sha1": "5e5c1771910974cada77e34c91dd203cc5a15de2"
+        },
+        {
+          "id": "p04",
+          "source_slide_number": 4,
+          "repository_path": "screenshots/peoples-platform-4.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/peoples-platform-4.png",
+          "bytes": 193950,
+          "git_blob_sha1": "71af10d24f8822a058460c36661d5b7d7d8b3488"
+        },
+        {
+          "id": "p08",
+          "source_slide_number": 8,
+          "repository_path": "screenshots/peoples-platform-8.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/peoples-platform-8.png",
+          "bytes": 143339,
+          "git_blob_sha1": "99e103bd9a50f8fd6ba6eba8962b65d25adac3e9"
+        }
+      ]
+    },
+    {
+      "id": "pin-and-paper",
+      "source_name": "Pin & Paper",
+      "density": "medium",
+      "source_slide_count": 11,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/pin-and-paper",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/pin-and-paper/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/pin-and-paper-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/pin-and-paper-1.png",
+          "bytes": 1665291,
+          "git_blob_sha1": "1ce501623fb526b4ac47dade19b883152b87c12a"
+        },
+        {
+          "id": "p03",
+          "source_slide_number": 3,
+          "repository_path": "screenshots/pin-and-paper-3.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/pin-and-paper-3.png",
+          "bytes": 1087038,
+          "git_blob_sha1": "befec44b8d26dd9a9cb5f319f64ccea17c1499e3"
+        },
+        {
+          "id": "p11",
+          "source_slide_number": 11,
+          "repository_path": "screenshots/pin-and-paper-11.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/pin-and-paper-11.png",
+          "bytes": 604176,
+          "git_blob_sha1": "989fca28d67ae622fbbdc8d6bc0bfeb64fe5344f"
+        }
+      ]
+    },
+    {
+      "id": "pink-script",
+      "source_name": "Pink Script — After Hours",
+      "density": "low",
+      "source_slide_count": 9,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/pink-script",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/pink-script/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/pink-script-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/pink-script-1.png",
+          "bytes": 1952304,
+          "git_blob_sha1": "517272694ebb4cbcd8087a2aca0ffca63e00161f"
+        },
+        {
+          "id": "p04",
+          "source_slide_number": 4,
+          "repository_path": "screenshots/pink-script-4.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/pink-script-4.png",
+          "bytes": 1948772,
+          "git_blob_sha1": "ba0a0e5bb3a78e6a99756eab5bae5f69d0cbdacd"
+        },
+        {
+          "id": "p08",
+          "source_slide_number": 8,
+          "repository_path": "screenshots/pink-script-8.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/pink-script-8.png",
+          "bytes": 1961227,
+          "git_blob_sha1": "e779fe3512e953145027508436f7ae910a474fa8"
+        }
+      ]
+    },
+    {
+      "id": "playful",
+      "source_name": "Playful",
+      "density": "medium",
+      "source_slide_count": 10,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/playful",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/playful/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/playful-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/playful-1.png",
+          "bytes": 96657,
+          "git_blob_sha1": "95850d0abbca52532e1a034ce84100e843f48060"
+        },
+        {
+          "id": "p06",
+          "source_slide_number": 6,
+          "repository_path": "screenshots/playful-6.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/playful-6.png",
+          "bytes": 107693,
+          "git_blob_sha1": "e2e3a1c7434dc7a2ec731319f3dc53b734864225"
+        },
+        {
+          "id": "p08",
+          "source_slide_number": 8,
+          "repository_path": "screenshots/playful-8.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/playful-8.png",
+          "bytes": 54568,
+          "git_blob_sha1": "aad9f46aaa2d68bd390c30f520dea05ee4adc455"
+        }
+      ]
+    },
+    {
+      "id": "raw-grid",
+      "source_name": "Raw Grid",
+      "density": "high",
+      "source_slide_count": 10,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/raw-grid",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/raw-grid/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/raw-grid-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/raw-grid-1.png",
+          "bytes": 51999,
+          "git_blob_sha1": "0d9d665a8b00b2c5d7cece354ccc061fb123a669"
+        },
+        {
+          "id": "p04",
+          "source_slide_number": 4,
+          "repository_path": "screenshots/raw-grid-4.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/raw-grid-4.png",
+          "bytes": 72813,
+          "git_blob_sha1": "b0bc0c895eb482e6541c7245bb3379ef1dac9f53"
+        },
+        {
+          "id": "p08",
+          "source_slide_number": 8,
+          "repository_path": "screenshots/raw-grid-8.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/raw-grid-8.png",
+          "bytes": 54290,
+          "git_blob_sha1": "a50caf34970597c9bfe23f88d80d06c73219066a"
+        }
+      ]
+    },
+    {
+      "id": "retro-windows",
+      "source_name": "Retro Windows",
+      "density": "medium",
+      "source_slide_count": 10,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/retro-windows",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/retro-windows/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/retro-windows-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/retro-windows-1.png",
+          "bytes": 45724,
+          "git_blob_sha1": "48f22a5b1a9b42d758b839b063a40eec1e33c1e6"
+        },
+        {
+          "id": "p04",
+          "source_slide_number": 4,
+          "repository_path": "screenshots/retro-windows-4.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/retro-windows-4.png",
+          "bytes": 85851,
+          "git_blob_sha1": "80d6fb5fcfc374c14db9dea008f46d56e0436938"
+        },
+        {
+          "id": "p08",
+          "source_slide_number": 8,
+          "repository_path": "screenshots/retro-windows-8.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/retro-windows-8.png",
+          "bytes": 126669,
+          "git_blob_sha1": "88cb965cddb5c902f5dd512fac053c1bba15b74f"
+        }
+      ]
+    },
+    {
+      "id": "retro-zine",
+      "source_name": "Retro Zine",
+      "density": "medium",
+      "source_slide_count": 10,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/retro-zine",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/retro-zine/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/retro-zine-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/retro-zine-1.png",
+          "bytes": 405480,
+          "git_blob_sha1": "7be7d0b7317406c9e73262e78ed55d26d0f853fb"
+        },
+        {
+          "id": "p04",
+          "source_slide_number": 4,
+          "repository_path": "screenshots/retro-zine-4.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/retro-zine-4.png",
+          "bytes": 377591,
+          "git_blob_sha1": "01ad6689974a8a2508b6cacc8da75e867106fc19"
+        },
+        {
+          "id": "p08",
+          "source_slide_number": 8,
+          "repository_path": "screenshots/retro-zine-8.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/retro-zine-8.png",
+          "bytes": 877301,
+          "git_blob_sha1": "422e3b5b3b18e60212bd50f60490e7408bfeb169"
+        }
+      ]
+    },
+    {
+      "id": "sakura-chroma",
+      "source_name": "Sakura Chroma",
+      "density": "medium",
+      "source_slide_count": 8,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/sakura-chroma",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/sakura-chroma/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/sakura-chroma-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/sakura-chroma-1.png",
+          "bytes": 91515,
+          "git_blob_sha1": "c035cdef31f596effb2f2c69938d091f05a8789f"
+        },
+        {
+          "id": "p03",
+          "source_slide_number": 3,
+          "repository_path": "screenshots/sakura-chroma-3.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/sakura-chroma-3.png",
+          "bytes": 166719,
+          "git_blob_sha1": "885da49a9a952152f2f20757756d7ef9930fa9da"
+        },
+        {
+          "id": "p04",
+          "source_slide_number": 4,
+          "repository_path": "screenshots/sakura-chroma-4.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/sakura-chroma-4.png",
+          "bytes": 112402,
+          "git_blob_sha1": "c68da1aac4ea45f59c48c21337e5ca7f5e82bd0f"
+        }
+      ]
+    },
+    {
+      "id": "scatterbrain",
+      "source_name": "Scatterbrain",
+      "density": "high",
+      "source_slide_count": 10,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/scatterbrain",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/scatterbrain/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/scatterbrain-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/scatterbrain-1.png",
+          "bytes": 2259186,
+          "git_blob_sha1": "85d9ed76a636012e61cc97caa4557c4923c0eff7"
+        },
+        {
+          "id": "p04",
+          "source_slide_number": 4,
+          "repository_path": "screenshots/scatterbrain-4.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/scatterbrain-4.png",
+          "bytes": 2095959,
+          "git_blob_sha1": "07c24a6c4f04ff4f31a206dd1d2ec9bf44bd4003"
+        },
+        {
+          "id": "p08",
+          "source_slide_number": 8,
+          "repository_path": "screenshots/scatterbrain-8.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/scatterbrain-8.png",
+          "bytes": 1111967,
+          "git_blob_sha1": "d57b9804f774c76260fc685d397b89ccc1709304"
+        }
+      ]
+    },
+    {
+      "id": "signal",
+      "source_name": "Signal",
+      "density": "high",
+      "source_slide_count": 18,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/signal",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/signal/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/signal-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/signal-1.png",
+          "bytes": 73613,
+          "git_blob_sha1": "c653adb6f6e3bca907e8679414d085ca5061f89d"
+        },
+        {
+          "id": "p08",
+          "source_slide_number": 8,
+          "repository_path": "screenshots/signal-8.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/signal-8.png",
+          "bytes": 108426,
+          "git_blob_sha1": "2be54c617edd0bd1ee3a44fc89cd0b7138163e92"
+        },
+        {
+          "id": "p18",
+          "source_slide_number": 18,
+          "repository_path": "screenshots/signal-18.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/signal-18.png",
+          "bytes": 75963,
+          "git_blob_sha1": "5d1426aa9d096eaba3db754eecd142d90eceff2e"
+        }
+      ]
+    },
+    {
+      "id": "soft-editorial",
+      "source_name": "Soft Editorial",
+      "density": "low",
+      "source_slide_count": 12,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/soft-editorial",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/soft-editorial/template.html",
+      "images": [
+        {
+          "id": "p04",
+          "source_slide_number": 4,
+          "repository_path": "screenshots/soft-editorial-4.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/soft-editorial-4.png",
+          "bytes": 135962,
+          "git_blob_sha1": "8743e65f59c03492bb722fc328dec09d9c635c77"
+        },
+        {
+          "id": "p06",
+          "source_slide_number": 6,
+          "repository_path": "screenshots/soft-editorial-6.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/soft-editorial-6.png",
+          "bytes": 94778,
+          "git_blob_sha1": "c6242dcc0a297e38452fd8a0f91d04fa8a201b8e"
+        },
+        {
+          "id": "p10",
+          "source_slide_number": 10,
+          "repository_path": "screenshots/soft-editorial-10.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/soft-editorial-10.png",
+          "bytes": 149426,
+          "git_blob_sha1": "1cdae27342114f64d49be21e44627a76a368eedd"
+        }
+      ]
+    },
+    {
+      "id": "stencil-tablet",
+      "source_name": "Stencil & Tablet",
+      "density": "medium",
+      "source_slide_count": 11,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/stencil-tablet",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/stencil-tablet/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/stencil-tablet-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/stencil-tablet-1.png",
+          "bytes": 72946,
+          "git_blob_sha1": "961168a3120613cbbfbdb39899ed9e10348136b7"
+        },
+        {
+          "id": "p03",
+          "source_slide_number": 3,
+          "repository_path": "screenshots/stencil-tablet-3.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/stencil-tablet-3.png",
+          "bytes": 116085,
+          "git_blob_sha1": "84530b6c9ac757b57097d5fdff4568be864d693a"
+        },
+        {
+          "id": "p08",
+          "source_slide_number": 8,
+          "repository_path": "screenshots/stencil-tablet-8.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/stencil-tablet-8.png",
+          "bytes": 125774,
+          "git_blob_sha1": "aae0cbd7f9e46eb55e31a9f009cdc58d5aaae3c4"
+        }
+      ]
+    },
+    {
+      "id": "studio",
+      "source_name": "Studio",
+      "density": "medium",
+      "source_slide_count": 12,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/studio",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/studio/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/studio-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/studio-1.png",
+          "bytes": 38054,
+          "git_blob_sha1": "2861596d06723d49c62a82ce283a588dc0a26ad2"
+        },
+        {
+          "id": "p04",
+          "source_slide_number": 4,
+          "repository_path": "screenshots/studio-4.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/studio-4.png",
+          "bytes": 86820,
+          "git_blob_sha1": "4b0768a814125092bf1f6d13a6fc4a82d5580257"
+        },
+        {
+          "id": "p08",
+          "source_slide_number": 8,
+          "repository_path": "screenshots/studio-8.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/studio-8.png",
+          "bytes": 112241,
+          "git_blob_sha1": "d0defb2aa9d296616f83fe9378bf28fa582922ff"
+        }
+      ]
+    },
+    {
+      "id": "vellum",
+      "source_name": "Vellum",
+      "density": "low",
+      "source_slide_count": 9,
+      "template_url": "https://github.com/zarazhangrui/beautiful-html-templates/tree/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/vellum",
+      "source_html_url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/templates/vellum/template.html",
+      "images": [
+        {
+          "id": "p01",
+          "source_slide_number": 1,
+          "repository_path": "screenshots/vellum-1.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/vellum-1.png",
+          "bytes": 61638,
+          "git_blob_sha1": "1b6246c62096c8bdfb6a669dc56f3d1ac3db1c8f"
+        },
+        {
+          "id": "p04",
+          "source_slide_number": 4,
+          "repository_path": "screenshots/vellum-4.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/vellum-4.png",
+          "bytes": 70185,
+          "git_blob_sha1": "240d4b6aceb61b68978f4c24aea6467f5197dd8f"
+        },
+        {
+          "id": "p08",
+          "source_slide_number": 8,
+          "repository_path": "screenshots/vellum-8.png",
+          "url": "https://raw.githubusercontent.com/zarazhangrui/beautiful-html-templates/e5e204fb1f3b06290846e7dcd7aceddabeceec8c/screenshots/vellum-8.png",
+          "bytes": 53498,
+          "git_blob_sha1": "5ccf925fef26760df8a7379ee08047556029e45b"
+        }
+      ]
+    }
+  ]
+}

@@ -80,6 +80,66 @@
             "cover": "../examples/theme-previews/systems--silver-glass.png",
             "gallery": "../examples/theme-previews/index.html#systems--silver-glass"
           }
+        },
+        {
+          "ref": "systems/engineering-blueprint",
+          "label": "技术蓝图",
+          "summary": "深蓝工程纸与精密剖解线描",
+          "status": "candidate",
+          "tags": [
+            "技术分享",
+            "技术蓝图"
+          ],
+          "file": "systems/styles/engineering-blueprint.json",
+          "preview": {
+            "cover": "../examples/theme-previews/systems--engineering-blueprint.png",
+            "gallery": "../examples/theme-previews/index.html#systems--engineering-blueprint"
+          }
+        },
+        {
+          "ref": "systems/warm-circuit",
+          "label": "暖色电路",
+          "summary": "暖纸、青绿电路和技术手记",
+          "status": "candidate",
+          "tags": [
+            "技术分享",
+            "暖色电路"
+          ],
+          "file": "systems/styles/warm-circuit.json",
+          "preview": {
+            "cover": "../examples/theme-previews/systems--warm-circuit.png",
+            "gallery": "../examples/theme-previews/index.html#systems--warm-circuit"
+          }
+        },
+        {
+          "ref": "systems/neon-network",
+          "label": "霓虹系统",
+          "summary": "暗色技术空间与有方向的霓虹信号",
+          "status": "candidate",
+          "tags": [
+            "技术分享",
+            "霓虹系统"
+          ],
+          "file": "systems/styles/neon-network.json",
+          "preview": {
+            "cover": "../examples/theme-previews/systems--neon-network.png",
+            "gallery": "../examples/theme-previews/index.html#systems--neon-network"
+          }
+        },
+        {
+          "ref": "systems/black-gold",
+          "label": "黑金运行",
+          "summary": "黑金材质、计算核心与运行信号",
+          "status": "candidate",
+          "tags": [
+            "技术分享",
+            "黑金运行"
+          ],
+          "file": "systems/styles/black-gold.json",
+          "preview": {
+            "cover": "../examples/theme-previews/systems--black-gold.png",
+            "gallery": "../examples/theme-previews/index.html#systems--black-gold"
+          }
         }
       ]
     },
@@ -129,6 +189,168 @@
           "preview": {
             "cover": "../examples/theme-previews/cinematic--natural-film.png",
             "gallery": "../examples/theme-previews/index.html#cinematic--natural-film"
+          }
+        }
+      ]
+    },
+    {
+      "id": "knowledge",
+      "label": "知识讲解",
+      "summary": "通过手绘图解、比喻与批注逐层解释技术观点",
+      "status": "candidate",
+      "file": "knowledge/architecture.json",
+      "styles": [
+        {
+          "ref": "knowledge/chalkboard",
+          "label": "粉笔黑板",
+          "summary": "粉笔笔触、黑板擦痕和连续图解",
+          "status": "candidate",
+          "tags": [
+            "技术分享",
+            "粉笔黑板"
+          ],
+          "file": "knowledge/styles/chalkboard.json",
+          "preview": {
+            "cover": "../examples/theme-previews/knowledge--chalkboard.png",
+            "gallery": "../examples/theme-previews/index.html#knowledge--chalkboard"
+          }
+        },
+        {
+          "ref": "knowledge/sketch-notes",
+          "label": "手绘白板",
+          "summary": "彩铅与白板批注组成的知识讲解",
+          "status": "candidate",
+          "tags": [
+            "技术分享",
+            "手绘白板"
+          ],
+          "file": "knowledge/styles/sketch-notes.json",
+          "preview": {
+            "cover": "../examples/theme-previews/knowledge--sketch-notes.png",
+            "gallery": "../examples/theme-previews/index.html#knowledge--sketch-notes"
+          }
+        },
+        {
+          "ref": "knowledge/ink-method",
+          "label": "水墨方法论",
+          "summary": "水墨笔触、朱砂强调与工程方法",
+          "status": "candidate",
+          "tags": [
+            "技术分享",
+            "水墨方法论"
+          ],
+          "file": "knowledge/styles/ink-method.json",
+          "preview": {
+            "cover": "../examples/theme-previews/knowledge--ink-method.png",
+            "gallery": "../examples/theme-previews/index.html#knowledge--ink-method"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tactile",
+      "label": "实体隐喻",
+      "summary": "通过连续实体、物理连接和可见转换解释过程",
+      "status": "candidate",
+      "file": "tactile/architecture.json",
+      "styles": [
+        {
+          "ref": "tactile/clay-workflow",
+          "label": "黏土流程",
+          "summary": "黏土实体、物理路径与过程转换",
+          "status": "candidate",
+          "tags": [
+            "技术分享",
+            "黏土流程"
+          ],
+          "file": "tactile/styles/clay-workflow.json",
+          "preview": {
+            "cover": "../examples/theme-previews/tactile--clay-workflow.png",
+            "gallery": "../examples/theme-previews/index.html#tactile--clay-workflow"
+          }
+        },
+        {
+          "ref": "tactile/retro-device",
+          "label": "复古设备",
+          "summary": "复古计算设备与实体线缆关系",
+          "status": "candidate",
+          "tags": [
+            "技术分享",
+            "复古设备"
+          ],
+          "file": "tactile/styles/retro-device.json",
+          "preview": {
+            "cover": "../examples/theme-previews/tactile--retro-device.png",
+            "gallery": "../examples/theme-previews/index.html#tactile--retro-device"
+          }
+        }
+      ]
+    },
+    {
+      "id": "illustrated",
+      "label": "绘画叙事",
+      "summary": "通过连续角色、场景和空间路径解释内容",
+      "status": "candidate",
+      "file": "illustrated/architecture.json",
+      "styles": [
+        {
+          "ref": "illustrated/storybook-guide",
+          "label": "角色彩绘",
+          "summary": "连续角色、柔和彩绘与用户旅程",
+          "status": "candidate",
+          "tags": [
+            "技术分享",
+            "角色彩绘"
+          ],
+          "file": "illustrated/styles/storybook-guide.json",
+          "preview": {
+            "cover": "../examples/theme-previews/illustrated--storybook-guide.png",
+            "gallery": "../examples/theme-previews/index.html#illustrated--storybook-guide"
+          }
+        },
+        {
+          "ref": "illustrated/comic-engineering",
+          "label": "漫画工程",
+          "summary": "漫画分镜、人物动作与工程叙事",
+          "status": "candidate",
+          "tags": [
+            "技术分享",
+            "漫画工程"
+          ],
+          "file": "illustrated/styles/comic-engineering.json",
+          "preview": {
+            "cover": "../examples/theme-previews/illustrated--comic-engineering.png",
+            "gallery": "../examples/theme-previews/index.html#illustrated--comic-engineering"
+          }
+        },
+        {
+          "ref": "illustrated/panoramic-system",
+          "label": "场景系统图",
+          "summary": "完整场景中的基础设施与系统关系",
+          "status": "candidate",
+          "tags": [
+            "技术分享",
+            "场景系统图"
+          ],
+          "file": "illustrated/styles/panoramic-system.json",
+          "preview": {
+            "cover": "../examples/theme-previews/illustrated--panoramic-system.png",
+            "gallery": "../examples/theme-previews/index.html#illustrated--panoramic-system"
+          }
+        },
+        {
+          "ref": "illustrated/pixel-world",
+          "label": "像素世界",
+          "summary": "像素场景、角色行动与工程路径",
+          "status": "candidate",
+          "tags": [
+            "技术分享",
+            "像素世界"
+          ],
+          "file": "illustrated/styles/pixel-world.json",
+          "preview": {
+            "cover": "../examples/theme-previews/illustrated--pixel-world.png",
+            "gallery": "../examples/theme-previews/index.html#illustrated--pixel-world"
           }
         }
       ]

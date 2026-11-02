@@ -4,7 +4,8 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import test from 'node:test';
 
-import { approveOutline, createOutline } from '../scripts/lib/outline.mjs';
+// Runtime copies are generated; behavior tests exercise their authoritative source.
+import { approveOutline, createOutline } from '../../../src/imagegen/outline.mjs';
 import {
   IMAGEGEN_MODE,
   compileImageJobs,
@@ -12,7 +13,7 @@ import {
   createGenerationManifest,
   imageDimensions,
   inspectGeneratedImage,
-} from '../scripts/lib/imagegen.mjs';
+} from '../../../src/imagegen/imagegen.mjs';
 
 const themes = {
   id: 'editorial',

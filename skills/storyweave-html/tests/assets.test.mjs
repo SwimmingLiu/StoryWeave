@@ -4,7 +4,8 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import test from 'node:test';
 
-import { addAsset, listAssets, registerGeneratedAsset, removeAsset } from '../scripts/lib/assets.mjs';
+// Source tests target the maintained modules; public CLI cases separately exercise packaged copies.
+import { addAsset, listAssets, registerGeneratedAsset, removeAsset } from '../../../src/html/assets.mjs';
 
 const png1x1 = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=', 'base64');
 

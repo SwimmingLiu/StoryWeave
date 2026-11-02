@@ -1,5 +1,7 @@
 # StoryWeave HTML 改进建议汇总
 
+本文保留结构化内容重构前的改进建议。当前布局实现、模块职责与验收状态见[系统架构](architecture/storyweave-target-architecture.md)和[实施方案](plans/storyweave-refactor-plan.md)。
+
 ## 文档目的
 
 这份文档汇总 `guizang-ppt-skill`、`ppt-master` 和 `frontend-slides` 三个 Skill 对 StoryWeave HTML 的可借鉴做法，并将它们转换成当前仓库可以执行的改进项。
@@ -18,7 +20,7 @@
 
 StoryWeave HTML 已经具备一个可靠的主题合同层：canonical 主题使用 `architecture/style` 引用，审批会固化逐页 `visual_scheme_ref`，构建会校验主题和 deck 指纹，legacy 主题仍然可以兼容构建，页面也能独立打开。这些能力暂时不需要推翻。
 
-当前最大的缺口在渲染层：四个 active style 的 `role_defaults` 使用同一组 scheme，`html.mjs` 对 canonical 页面生成的 DOM 骨架基本相同，主题差异主要由颜色、字体和少量 CSS 覆盖产生。`visual_brief`、`visual_anchor_id`、`continuity_group`、`hierarchy` 和 `density` 已经写进输入模型，但没有充分影响最终页面；素材登记也还没有形成“页面—图片槽位—裁切策略”的完整关系。
+当前最大的缺口在渲染层：四个 active style 的 `role_defaults` 使用同一组 scheme，`html.mjs` 对 canonical 页面生成的 DOM 骨架基本相同，主题差异主要由颜色、字体和少量 CSS 覆盖产生。`visual_brief`、`visual_anchor_id`、`continuity_group`、`hierarchy` 和 `density` 已经写进输入模型，但没有充分影响最终页面；素材登记也还没有形成页面、图片槽位与裁切策略的完整关系。
 
 因此，下一阶段的目标不应是继续增加主题名称，而是让现有四套主题在不依赖颜色的情况下也能被辨认。优先级应放在四件事上：
 
@@ -278,6 +280,6 @@ renderer module 不应该负责：
 - [三个演示文稿 Skill 的设计与视觉逻辑](research/presentation-skill-design-comparison.md)
 - [StoryWeave HTML Skill](/Users/swimmingliu/data/github-proj/StoryWeave/skills/storyweave-html/SKILL.md)
 - [HTML 主题目录](/Users/swimmingliu/data/github-proj/StoryWeave/skills/storyweave-html/assets/themes/catalog.json)
-- [HTML 渲染器](/Users/swimmingliu/data/github-proj/StoryWeave/skills/storyweave-html/scripts/lib/html.mjs)
-- [HTML 主题解析器](/Users/swimmingliu/data/github-proj/StoryWeave/skills/storyweave-html/scripts/lib/themes.mjs)
+- [旧版 HTML 渲染器](/Users/swimmingliu/data/github-proj/StoryWeave/src/html/legacy.mjs)
+- [HTML 主题解析器](/Users/swimmingliu/data/github-proj/StoryWeave/src/html/themes.mjs)
 - [HTML 工作流](/Users/swimmingliu/data/github-proj/StoryWeave/skills/storyweave-html/references/workflow.md)

@@ -6,11 +6,12 @@ import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import test from 'node:test';
 
-import { PAGE_ROLES } from '../scripts/lib/themes.mjs';
+// The maintained catalog drives fixtures while the CLI below exercises the packaged runtime.
+import { PAGE_ROLES } from '../../../src/html/themes.mjs';
 
 const run = promisify(execFile);
 const cli = new URL('../scripts/ppt.mjs', import.meta.url);
-const themes = ['editorial/paper-magazine', 'systems/white-cyan-circuit', 'campaign/bold-poster', 'cinematic/natural-film'];
+const themes = ['editorial/paper-magazine', 'systems/white-cyan-circuit', 'systems/ink-blue-grid', 'campaign/bold-poster', 'cinematic/natural-film'];
 const layouts = {
   cover: { text_safe_zone: 'left', visual_zone: ['right'], hierarchy: ['headline', 'support', 'visual-anchor'], density: 'low' },
   section: { text_safe_zone: 'left', visual_zone: ['right'], hierarchy: ['headline', 'support', 'visual-anchor'], density: 'low' },

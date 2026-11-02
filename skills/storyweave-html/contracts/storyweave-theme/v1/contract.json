@@ -1,0 +1,28 @@
+{
+  "contract_version": 1,
+  "theme_ref_pattern": "^[A-Za-z0-9_-]+/[A-Za-z0-9_-]+$",
+  "visual_scheme_ref_pattern": "^[A-Za-z0-9_-]+/[A-Za-z0-9_-]+/[A-Za-z0-9_-]+$",
+  "page_roles": ["cover", "section", "statement", "image-hero", "two-column", "comparison", "process", "data", "quote", "closing"],
+  "layout_zones": ["top-left", "top", "top-right", "left", "center", "right", "bottom-left", "bottom", "bottom-right"],
+  "layout_densities": ["low", "medium", "high"],
+  "catalog_scopes": ["active", "authoring"],
+  "theme_statuses": ["active", "candidate", "planned"],
+  "resolution_kinds": ["canonical", "legacy-compatible", "needs-selection", "unknown"],
+  "blocking_error_codes": [
+    "theme_ref.invalid",
+    "theme_ref.unknown",
+    "theme.inactive",
+    "theme.planned",
+    "catalog.role_default.missing",
+    "visual_scheme_ref.invalid",
+    "visual_scheme.cross_theme",
+    "visual_scheme.unknown",
+    "visual_scheme.role_unsupported",
+    "visual_scheme.auto_unresolved",
+    "layout.zone.invalid",
+    "layout.zone_overlap",
+    "layout.density.invalid",
+    "layout.hierarchy.invalid",
+    "layout.constraint_mismatch"
+  ]
+}

@@ -1,0 +1,226 @@
+[
+  {
+    "input": "Open index.html",
+    "expected_id": "s01",
+    "state": {
+      "id": "s01",
+      "layout": "cover-split",
+      "text": "StoryWeave\n\n内容一份，表达两种\n\n从确认文字，到能被理解的页面。\n\n01 / 08"
+    },
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "screenshot": "gallery-s01-1280.png"
+  },
+  {
+    "input": "ArrowRight",
+    "expected_id": "s02",
+    "state": {
+      "id": "s02",
+      "layout": "statement-split",
+      "text": "页面先表达关系，再选择外观\n\n对照需要比较轴。\n\n过程需要方向。\n\n数据需要单位和来源。\n\n02 / 08"
+    },
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "screenshot": "gallery-s02-1280.png"
+  },
+  {
+    "input": "ArrowRight",
+    "expected_id": "s03",
+    "state": {
+      "id": "s03",
+      "layout": "comparison-matrix",
+      "text": "同一份内容，选择适合的页面源\n\tHTML\tImagegen\n页面源\t文字、形状与 SVG\t完整 PNG 画面\n编辑方式\t修改原生页面\t重新生成受影响页面\n质量检查\t浏览器与内容核对\t图片与逐页视觉复核\n03 / 08"
+    },
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "screenshot": "gallery-s03-1280.png"
+  },
+  {
+    "input": "ArrowRight",
+    "expected_id": "s04",
+    "state": {
+      "id": "s04",
+      "layout": "process-linear",
+      "text": "先确认内容，再生成与交付\n01\n整理资料\n\n保留事实与来源\n\n02\n确认内容\n\n固定文字与关系\n\n03\n生成交付\n\n检查实际页面\n\n04 / 08"
+    },
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "screenshot": "gallery-s04-1280.png"
+  },
+  {
+    "input": "ArrowRight",
+    "expected_id": "s05",
+    "state": {
+      "id": "s05",
+      "layout": "metric-ledger",
+      "text": "生成方式不同，交付画布一致\n2\n条\n生成路径\n\n来源：StoryWeave README\n\n1280\npx\nHTML 舞台宽度\n\n来源：HTML 架构边界\n\n720\npx\nHTML 舞台高度\n\n来源：HTML 架构边界\n\n05 / 08"
+    },
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "screenshot": "gallery-s05-1280.png"
+  },
+  {
+    "input": "ArrowRight",
+    "expected_id": "s06",
+    "state": {
+      "id": "s06",
+      "layout": "relationship-map",
+      "text": "生成负责表达，展示负责交付\n确认内容\n\n稳定 ID 与事实来源\n\nHTML 生成\n\n原生文字与图形\n\n图片生成\n\n完整页面与复核\n\n展示交付\n\n已验证的成品\n\n06 / 08"
+    },
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "screenshot": "gallery-s06-1280.png"
+  },
+  {
+    "input": "ArrowRight",
+    "expected_id": "s07",
+    "state": {
+      "id": "s07",
+      "layout": "image-hero",
+      "text": "当一页需要解释复杂关系时，版式应为内容留出空间，而不是把文字缩小到难以阅读\n\n先调整阅读顺序、版式和内容密度。\n\n需要改写事实或文字时，再回到内容确认。\n\n07 / 08"
+    },
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "screenshot": "gallery-s07-1280.png"
+  },
+  {
+    "input": "ArrowRight",
+    "expected_id": "s08",
+    "state": {
+      "id": "s08",
+      "layout": "closing-statement",
+      "text": "从一份真实内容开始\n\n确认内容，选择版式，核对页面。\n\n让每一次改动都有可比较的结果。\n\n08 / 08"
+    },
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "screenshot": "gallery-s08-1280.png"
+  },
+  {
+    "input": "Open index.html",
+    "expected_id": "s01",
+    "state": {
+      "id": "s01",
+      "layout": "cover-split",
+      "text": "StoryWeave\n\n内容一份，表达两种\n\n从确认文字，到能被理解的页面。\n\n01 / 08"
+    },
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "screenshot": "gallery-s01-390.png"
+  },
+  {
+    "input": "ArrowRight",
+    "expected_id": "s02",
+    "state": {
+      "id": "s02",
+      "layout": "statement-split",
+      "text": "页面先表达关系，再选择外观\n\n对照需要比较轴。\n\n过程需要方向。\n\n数据需要单位和来源。\n\n02 / 08"
+    },
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "screenshot": "gallery-s02-390.png"
+  },
+  {
+    "input": "ArrowRight",
+    "expected_id": "s03",
+    "state": {
+      "id": "s03",
+      "layout": "comparison-matrix",
+      "text": "同一份内容，选择适合的页面源\n\tHTML\tImagegen\n页面源\t文字、形状与 SVG\t完整 PNG 画面\n编辑方式\t修改原生页面\t重新生成受影响页面\n质量检查\t浏览器与内容核对\t图片与逐页视觉复核\n03 / 08"
+    },
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "screenshot": "gallery-s03-390.png"
+  },
+  {
+    "input": "ArrowRight",
+    "expected_id": "s04",
+    "state": {
+      "id": "s04",
+      "layout": "process-linear",
+      "text": "先确认内容，再生成与交付\n01\n整理资料\n\n保留事实与来源\n\n02\n确认内容\n\n固定文字与关系\n\n03\n生成交付\n\n检查实际页面\n\n04 / 08"
+    },
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "screenshot": "gallery-s04-390.png"
+  },
+  {
+    "input": "ArrowRight",
+    "expected_id": "s05",
+    "state": {
+      "id": "s05",
+      "layout": "metric-ledger",
+      "text": "生成方式不同，交付画布一致\n2\n条\n生成路径\n\n来源：StoryWeave README\n\n1280\npx\nHTML 舞台宽度\n\n来源：HTML 架构边界\n\n720\npx\nHTML 舞台高度\n\n来源：HTML 架构边界\n\n05 / 08"
+    },
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "screenshot": "gallery-s05-390.png"
+  },
+  {
+    "input": "ArrowRight",
+    "expected_id": "s06",
+    "state": {
+      "id": "s06",
+      "layout": "relationship-map",
+      "text": "生成负责表达，展示负责交付\n确认内容\n\n稳定 ID 与事实来源\n\nHTML 生成\n\n原生文字与图形\n\n图片生成\n\n完整页面与复核\n\n展示交付\n\n已验证的成品\n\n06 / 08"
+    },
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "screenshot": "gallery-s06-390.png"
+  },
+  {
+    "input": "ArrowRight",
+    "expected_id": "s07",
+    "state": {
+      "id": "s07",
+      "layout": "image-hero",
+      "text": "当一页需要解释复杂关系时，版式应为内容留出空间，而不是把文字缩小到难以阅读\n\n先调整阅读顺序、版式和内容密度。\n\n需要改写事实或文字时，再回到内容确认。\n\n07 / 08"
+    },
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "screenshot": "gallery-s07-390.png"
+  },
+  {
+    "input": "ArrowRight",
+    "expected_id": "s08",
+    "state": {
+      "id": "s08",
+      "layout": "closing-statement",
+      "text": "从一份真实内容开始\n\n确认内容，选择版式，核对页面。\n\n让每一次改动都有可比较的结果。\n\n08 / 08"
+    },
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "screenshot": "gallery-s08-390.png"
+  }
+]

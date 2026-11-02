@@ -1,0 +1,34 @@
+Use case: productivity-visual
+Asset type: complete rasterized presentation slide, with background, imagery, text and layout composed together.
+Primary request: create one polished 16:9 presentation slide for the process page.
+Communication purpose: 技术分享中解释持续改进流程
+Single claim: 让改动有据可查
+Audience: professional Chinese-speaking audience
+Theme style: illustrated/comic-engineering; art direction = editorial comic explanation of engineering work, purposeful sequential panels and a single original engineer character; palette = ivory paper, carbon black, cobalt and limited coral action emphasis; typography = Projection-readable Chinese sans serif for explanatory content; allow medium-specific display treatment only for the supplied title, preserve correct glyphs and intentional semantic breaks; materials = ink contours, selective halftone, expressive gesture and directional action strokes; text layout = One concise supplied title plus essential authored labels, quantities and qualifiers; protect generous margins, do not invent an eyebrow, subtitle or footer.
+Visual scheme: illustrated/comic-engineering/process; composition = Three purposeful comic panels show the same engineer discovering, changing and verifying the supplied mechanism; captions carry exact labels; imagery = editorial comic explanation of engineering work, purposeful sequential panels and a single original engineer character; render only supplied actions and edges; maintain one perspective and mark clear arrow endpoints; requirements = render every supplied exact_text line exactly once, no invented labels or small print; illustration explains the authored concepts, never imports claims from example images; separate text-safe fields from texture, glow, hatching and object edges.
+Title treatment: {"mode":"integrated","scale":"medium","placement":"top-left","weight":"one clear supplied conclusion"}; follow this page-specific treatment.
+Frozen layout plan: text safe zone = top-left; visual zone = center, right, bottom-right; hierarchy = claim, process, labels; density = medium.
+Scene and visual brief: Show three distinct authored stages: plan the change, construct the change, verify the result. One clear directed route from plan to build to verify. Make a complete presentation content page, not a cover.
+Text (verbatim; render every line exactly once, with correct characters and punctuation in the supplied language):
+1. "让改动有据可查"
+2. "计划"
+3. "构建"
+4. "验证"
+Typography: follow the supplied text language and theme type pairing; use intentional line breaks and projection-readable sizes.
+Text safety: Use a stable high-contrast type field; background textures and bright materials stay outside letterforms; no face, object, highlight, grid, or light path may pass behind the letters.
+Information boundary: use only the supplied visible text; do not invent metrics, labels, citations, UI, logos, product screens, names, dates, or claims.
+Constraints: preserve the frozen text and layout, factual relationships, and one clear visual hierarchy; no watermark. Theme recipes guide visual choices within these boundaries.
+Avoid: unconfirmed metrics, branding or captions; same-weight decorative objects unrelated to the supplied relationship; generic website card grids; unrelated scene props; invented metrics, brands or extra words.
+Continuity anchor: one restrained cobalt motion stroke. Internal theme, scheme and continuity identifiers are metadata, not visible text.
+Visual meaning and generation policy 1.0.0 (instructions, not visible copy):
+Information form: process. Compose the approved steps and directional edges as the process itself. Make entry, order and branching easy to follow; use a loop only when an approved edge actually returns.
+Choose visual form from the approved claim, information and audience. The theme supplies the visual language; it must not change factual meaning or relationships.
+Give the claim, its evidence or its relationship one clear focal hierarchy. Keep supporting surfaces and details quiet; rich material belongs to the content that needs it.
+Use an image only when its subject helps explain this particular claim. Describe that connection in one concrete sentence before selecting a subject; do not invent an object or metaphor to fill space.
+Keep colors, scale, proximity and arrows meaningful. Give neutral alternatives equal visual weight; never turn an unsupported emphasis into an apparent recommendation.
+Generic glossy shapes, AI robots or brains, decorative badges, glows, gradients and repeated cards are review signals, not a default design vocabulary. Use them only with a concrete content or chosen-medium reason.
+Preserve a clear existing reading path when repairing a local defect. Different themes may share the same useful composition; changing direction, adding visual variety or deleting color is not an improvement by itself.
+The page must still explain its claim without decorative effects. Keep required text readable, align related information, and let whitespace show grouping rather than separate related items.
+If a theme fragment requests an unrelated prop or decorative effect, omit that fragment while preserving its relevant palette, typography and medium. Do not replace it with another generic decoration.
+These instructions add no visible text. Render only the approved verbatim list. A theme example, plausible sample data or a generated product view cannot supply new facts.
+Asset type: actual full-slide 16:9 technical sharing process content page. Show only the four supplied Chinese strings. No footers, metadata, sample numbers or invented labels. Make all three process stages and their single clear route obvious. Use the theme material, illustration and spatial language throughout, not colored rectangle cards. This image will be shown next to other styles using exactly this same content.

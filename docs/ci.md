@@ -1,6 +1,6 @@
 # 持续集成与评测
 
-[CI 工作流](../.github/workflows/ci.yml)在每次 push、PR 和手动触发时运行。使用 Ubuntu 24.04、Node.js 24、Python 3.12，Node 依赖由根目录锁文件固定，Pillow 版本由验证 Skill 固定。浏览器与依赖从干净环境安装。
+[CI 工作流](../.github/workflows/ci.yml)在每次 push、PR 和手动触发时运行。使用 Ubuntu 24.04、Node.js 24、Python 3.12，Node 依赖由根目录锁文件固定，Pillow 版本由验证 Skill 固定。浏览器与依赖从干净环境安装。 测试文件串行执行，减少多个 Chromium 实例同时运行时的资源争用；截图错误仍使任务失败。
 
 | 阶段 | 检查内容 |
 | --- | --- |

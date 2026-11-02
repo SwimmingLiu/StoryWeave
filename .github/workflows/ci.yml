@@ -48,6 +48,7 @@ jobs:
       - name: Run complete test suite
         run: |
           mkdir -p tmp/ci
+          # Browser-heavy suites share a small runner; npm test serializes files after an intermittent captureScreenshot failure.
           npm test 2>&1 | tee tmp/ci/tests.log
       - name: Prepare original reference images
         shell: bash

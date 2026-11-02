@@ -39,6 +39,8 @@ gh run watch <run-id> --exit-status
 
 本次截图、内容、视觉策略和渲染环境与基线一致时为 `accepted-baseline`。任一变化或缺少基线时为 `needs-review`，退出码 4，使 `Verification` 失败。差异不自动表示退步或改善，也不自动更新基线。浏览器或几何失败同样阻断。
 
+视觉基线比较使用 `1280×720` 桌面图片；`390×844` 另验固定舞台缩放与几何，不据此声称小屏正文适合阅读。
+
 每次运行另保留 `storyweave-html-visual-<run-id>-<attempt>` artifact，包含两套完整 HTML、桌面与竖屏截图、`contact-sheet.html`、逐页 `comparison.html`、`capture.json`、`result.json` 和 `review-template.json`。下载后打开对照，实际查看每页与整套，再填写模板。评审者声明熟悉程度，不能把模板中的图片哈希视为已经看图。
 
 ```bash

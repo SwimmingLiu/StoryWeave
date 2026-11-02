@@ -9,7 +9,7 @@ import { dirname, isAbsolute, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { promisify } from 'node:util';
 import { writeLayoutStudy } from '../../../../scripts/html-layout-study.mjs';
-import { VISUAL_POLICY_VERSION } from '../../../../src/core/visual-policy.mjs';
+import { createVisualIntent, VISUAL_POLICY_VERSION } from '../../../../src/core/visual-policy.mjs';
 import { pageAxes, readCalibration, setAxes } from './visual-review.mjs';
 
 const repo = resolve(dirname(fileURLToPath(import.meta.url)), '../../../..');
@@ -135,6 +135,7 @@ async function captureSamples(directory) {
     const project = join(directory, 'projects', name);
     await command(['draft', project, '--theme-ref', theme]);
     await save(join(project, 'outline_draft.json'), { ...sample, theme_ref: theme });
+    await save(join(project, 'visual-intent.json'), { audience: sample.audience, purpose: sample.purpose, reading_mode: sample.reading_mode, medium: theme, imagery: 's07 uses the same title, image and text blocks to illustrate space allocation; other pages use their authored information.', slides: sample.slides.map(createVisualIntent) });
     await command(['approve', project, '--theme-ref', theme]);
     const approved = await readFile(join(project, 'deck_spec.json'));
     await writeLayoutStudy(project, name === 'editorial' ? 'magazine' : 'swiss');
@@ -145,6 +146,9 @@ async function captureSamples(directory) {
     assert(qa.export_ready && qa.visual_review === 'browser' && qa.summary.blocking === 0 && qa.summary.degraded === 0, JSON.stringify(qa.findings));
     const deck = await json(join(project, 'deck_spec.json'));
     const plan = await json(join(project, 'plans/html.json'));
+    assert.deepEqual(await readFile(join(project, 'deck_spec.json')), approved, 'Build and QA must preserve approved bytes');
+    assert.equal(plan.visual_policy.version, VISUAL_POLICY_VERSION);
+    assert(plan.slides.every((page) => page.visual_intent.review_status === 'required'), 'A generated plan cannot claim a visual pass');
     assert.equal(deck.slides.length, 8);
     assert.equal(plan.slides.find(({ content_type }) => content_type === 'graph').diagram.flow, 'across', 'A wide DAG keeps its readable branch/merge path');
     assert.equal(plan.slides.find(({ id }) => id === 's07').asset_slots[0].asset_id, 'layout-study');

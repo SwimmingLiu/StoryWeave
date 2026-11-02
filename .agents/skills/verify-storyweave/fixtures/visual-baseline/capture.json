@@ -1,0 +1,467 @@
+{
+  "schema_version": 1,
+  "origin": "github-actions-browser",
+  "source_revision": "a6814a0efbbe924e80a9fb70784231adb89e77a7",
+  "ci_run_url": "https://github.com/SwimmingLiu/StoryWeave/actions/runs/41327692663",
+  "visual_policy_version": "1.0.0",
+  "environment": {
+    "platform": "linux",
+    "arch": "x64",
+    "playwright": "1.62.1",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "projects": [
+    {
+      "name": "editorial",
+      "approved_sha256": "2f5e06dd582cfb3e53a704075f79d98798ef737b9a14ad7e060222b5f550764e",
+      "artifact_binding": {
+        "schema_version": 1,
+        "manifest_sha256": "0480b51b96bfb6233376b61dc92ece4dcd69ecf8ba2901c9fbba859fbd738c4b",
+        "files": [
+          {
+            "path": "assets/layout-study.svg",
+            "sha256": "ab7d8e969fd37c1f5efa5cecb871d21904bd98074db01eca726b6f545fca103d",
+            "role": "input"
+          },
+          {
+            "path": "deck_spec.json",
+            "sha256": "2f5e06dd582cfb3e53a704075f79d98798ef737b9a14ad7e060222b5f550764e",
+            "role": "input"
+          },
+          {
+            "path": "generation_manifest.json",
+            "sha256": "4af8be0aa26f475b0d22623ad7e365ff6e023f2888c5b2ac0fbdae1b9b3e7f91",
+            "role": "input"
+          },
+          {
+            "path": "index.html",
+            "sha256": "2fc6184165e5d0ab7d34d755df6606abdef9aeaecf33f589fbe248a0fc8e9117",
+            "role": "entry"
+          },
+          {
+            "path": "plans/html.json",
+            "sha256": "c1f3c75bd245a6a7f62cb5188bd92a50ac1b41cbba9587288d8eacc55bd87894",
+            "role": "input"
+          },
+          {
+            "path": "slides/s01.html",
+            "sha256": "ea35bb4e391a0d2155b8b2cc725b0b26e3aebb58783b6ff957ba4a177c909bbb",
+            "role": "page"
+          },
+          {
+            "path": "slides/s02.html",
+            "sha256": "4e78de13644b6191024288fc3f05e4379d48920d7305c1335632da31251bb09e",
+            "role": "page"
+          },
+          {
+            "path": "slides/s03.html",
+            "sha256": "bdcdc64dc5a83fe6e9fc93c5a1b2871c957d006bfe998bd19785ed26ce469dba",
+            "role": "page"
+          },
+          {
+            "path": "slides/s04.html",
+            "sha256": "9176caf1e219a9bc4a7e657b3485cb0d012d24a3fb267fe94ef95ec99e4643f5",
+            "role": "page"
+          },
+          {
+            "path": "slides/s05.html",
+            "sha256": "ed1e381992d643c71d142042ca2acbbaa93b3189573c9f2ae2e5ffc45b215f78",
+            "role": "page"
+          },
+          {
+            "path": "slides/s06.html",
+            "sha256": "2be4b98ec53ddf2c63c969d925eef96072a7f526e455571c129553ae5f112067",
+            "role": "page"
+          },
+          {
+            "path": "slides/s07.html",
+            "sha256": "524deaf19f2cd01f465fdd5963d35bd0f29df53f7b5c3fcf9180e8d207b05add",
+            "role": "page"
+          },
+          {
+            "path": "slides/s08.html",
+            "sha256": "44757827d36e23b03777e65e8fa2e97d03fd31744d6886aa511e0599db55d654",
+            "role": "page"
+          }
+        ],
+        "fingerprint": "7b12be0e7687b4e2e9d86174a1f08bb5dbed7e8a2c7e4a1764b9d401e3bf2a34"
+      },
+      "qa": {
+        "blocking": 0,
+        "warning": 0,
+        "degraded": 0
+      }
+    },
+    {
+      "name": "swiss",
+      "approved_sha256": "6dffa75635e9dd547cb472820c648dc7a4d2b07b1144770e7d6d1c246f97a9ef",
+      "artifact_binding": {
+        "schema_version": 1,
+        "manifest_sha256": "06d4c8f8fe4acb64b10be002c7b4f3b224d9053962075c14bd487a61bf800c1f",
+        "files": [
+          {
+            "path": "assets/layout-study.svg",
+            "sha256": "b9e8603aa2f8694cc15fa59579f1c7fe7dbcb53ac443b2c0d43792136aa1f568",
+            "role": "input"
+          },
+          {
+            "path": "deck_spec.json",
+            "sha256": "6dffa75635e9dd547cb472820c648dc7a4d2b07b1144770e7d6d1c246f97a9ef",
+            "role": "input"
+          },
+          {
+            "path": "generation_manifest.json",
+            "sha256": "bbc38967aae47c9c1b78f7e9d3dc8371f63f086d3e8e5da7bc7be82a139b0f9e",
+            "role": "input"
+          },
+          {
+            "path": "index.html",
+            "sha256": "eebfc5793866516ce7bbbe29e2de10ec1e53d6533b6d067f5a5467af3f0f446b",
+            "role": "entry"
+          },
+          {
+            "path": "plans/html.json",
+            "sha256": "81445dca2c52f1fa18d0d682f2f4853c12eb34e976f61b3d21690dd31ee19612",
+            "role": "input"
+          },
+          {
+            "path": "slides/s01.html",
+            "sha256": "984938ecb8f50c14c35a325b299c5cf7fe8a045fdf853aefa397ca1dda4bccd3",
+            "role": "page"
+          },
+          {
+            "path": "slides/s02.html",
+            "sha256": "aa296274fe3b0bc5f50839a48991b66e28f20b905a309398b6c9973a7ce98e8d",
+            "role": "page"
+          },
+          {
+            "path": "slides/s03.html",
+            "sha256": "a923c54d9e919bc068815ef3639cf65b11b93b9a519375d2679b0705cd55a98e",
+            "role": "page"
+          },
+          {
+            "path": "slides/s04.html",
+            "sha256": "013f57ecbac7f932bd6d4a9c573bd4b8fc59ced0925051fcff32a8ce9a27134f",
+            "role": "page"
+          },
+          {
+            "path": "slides/s05.html",
+            "sha256": "7eec15a98f56c89d492871769f995080b9ea7858e06274ae5b00d8d1793198c0",
+            "role": "page"
+          },
+          {
+            "path": "slides/s06.html",
+            "sha256": "fa4018234a13c268cf19367eae57c3e4de0f9d75b33ff7070771ce7eaad2e906",
+            "role": "page"
+          },
+          {
+            "path": "slides/s07.html",
+            "sha256": "d913bd9e5e381a21d638f8d7d746ddff2e93db40ce5a27ad8ca57ca947921466",
+            "role": "page"
+          },
+          {
+            "path": "slides/s08.html",
+            "sha256": "abd911998b6a566202befe3fe078f16c540d3f05df5e9e8e8b8e0ae5d3601e98",
+            "role": "page"
+          }
+        ],
+        "fingerprint": "f4a015a8e602a70e29e2c8ba8a5a4c92ecaaaf6b388a17afe26977ef6ba4c2be"
+      },
+      "qa": {
+        "blocking": 0,
+        "warning": 0,
+        "degraded": 0
+      }
+    }
+  ],
+  "pages": [
+    {
+      "id": "editorial/s01",
+      "theme_ref": "editorial/paper-magazine",
+      "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+      "content_type": "statement",
+      "claim": "内容一份，表达两种",
+      "exact_text": [
+        "StoryWeave",
+        "内容一份，表达两种",
+        "从确认文字，到能被理解的页面。"
+      ],
+      "image": "projects/editorial/qa/screenshots/s01.png",
+      "sha256": "459dc5eae296ef17bc575df379e5c4bc81921ce8a91b02170100249d9bd24267"
+    },
+    {
+      "id": "editorial/s02",
+      "theme_ref": "editorial/paper-magazine",
+      "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+      "content_type": "statement",
+      "claim": "页面先表达关系，再选择外观",
+      "exact_text": [
+        "页面先表达关系，再选择外观",
+        "对照需要比较轴。",
+        "过程需要方向。",
+        "数据需要单位和来源。"
+      ],
+      "image": "projects/editorial/qa/screenshots/s02.png",
+      "sha256": "5f18a1a5eb2285d9c761425f7fee3d95794989f509ea145461732a6ba96aecee"
+    },
+    {
+      "id": "editorial/s03",
+      "theme_ref": "editorial/paper-magazine",
+      "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+      "content_type": "comparison",
+      "claim": "同一份内容，选择适合的页面源",
+      "exact_text": [
+        "同一份内容，选择适合的页面源",
+        "HTML",
+        "Imagegen",
+        "页面源",
+        "文字、形状与 SVG",
+        "完整 PNG 画面",
+        "编辑方式",
+        "修改原生页面",
+        "重新生成受影响页面",
+        "质量检查",
+        "浏览器与内容核对",
+        "图片与逐页视觉复核"
+      ],
+      "image": "projects/editorial/qa/screenshots/s03.png",
+      "sha256": "099a877b950b00f96901095da51beeee5d17f7f4c2b0d0907edd472a3637e57e"
+    },
+    {
+      "id": "editorial/s04",
+      "theme_ref": "editorial/paper-magazine",
+      "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+      "content_type": "process",
+      "claim": "先确认内容，再生成与交付",
+      "exact_text": [
+        "先确认内容，再生成与交付",
+        "整理资料",
+        "保留事实与来源",
+        "确认内容",
+        "固定文字与关系",
+        "生成交付",
+        "检查实际页面"
+      ],
+      "image": "projects/editorial/qa/screenshots/s04.png",
+      "sha256": "2bcde5b6d6c10837423e93d3c1e5c78e01e70ebe2573ca8b83b82cdb61c47c9e"
+    },
+    {
+      "id": "editorial/s05",
+      "theme_ref": "editorial/paper-magazine",
+      "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+      "content_type": "metrics",
+      "claim": "生成方式不同，交付画布一致",
+      "exact_text": [
+        "生成方式不同，交付画布一致",
+        "2",
+        "条",
+        "生成路径",
+        "来源：StoryWeave README",
+        "1280",
+        "px",
+        "HTML 舞台宽度",
+        "来源：HTML 架构边界",
+        "720",
+        "px",
+        "HTML 舞台高度",
+        "来源：HTML 架构边界"
+      ],
+      "image": "projects/editorial/qa/screenshots/s05.png",
+      "sha256": "5d305eaf15960653c96bbcc3b620bc8c0a6a33afd5c118d1b3434d7fc548d505"
+    },
+    {
+      "id": "editorial/s06",
+      "theme_ref": "editorial/paper-magazine",
+      "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+      "content_type": "graph",
+      "claim": "生成负责表达，展示负责交付",
+      "exact_text": [
+        "生成负责表达，展示负责交付",
+        "确认内容",
+        "稳定 ID 与事实来源",
+        "HTML 生成",
+        "原生文字与图形",
+        "图片生成",
+        "完整页面与复核",
+        "展示交付",
+        "已验证的成品"
+      ],
+      "image": "projects/editorial/qa/screenshots/s06.png",
+      "sha256": "6cc6d438c19feba33c1310358f877123e46b6fc8d62e19eac2f68b199e16c88e"
+    },
+    {
+      "id": "editorial/s07",
+      "theme_ref": "editorial/paper-magazine",
+      "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+      "content_type": "statement",
+      "claim": "长标题保留完整信息",
+      "exact_text": [
+        "当一页需要解释复杂关系时，版式应为内容留出空间，而不是把文字缩小到难以阅读",
+        "先调整阅读顺序、版式和内容密度。",
+        "需要改写事实或文字时，再回到内容确认。"
+      ],
+      "image": "projects/editorial/qa/screenshots/s07.png",
+      "sha256": "c0784fd55f2daf52931e1f5578cc5bf2172e1b1ece5a71a1c117518be33708ea"
+    },
+    {
+      "id": "editorial/s08",
+      "theme_ref": "editorial/paper-magazine",
+      "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+      "content_type": "statement",
+      "claim": "从一份真实内容开始",
+      "exact_text": [
+        "从一份真实内容开始",
+        "确认内容，选择版式，核对页面。",
+        "让每一次改动都有可比较的结果。"
+      ],
+      "image": "projects/editorial/qa/screenshots/s08.png",
+      "sha256": "9e4ce5e8a6615756d801b7e3935dbac50112723d83d2b090f50878214eeaf20e"
+    },
+    {
+      "id": "swiss/s01",
+      "theme_ref": "systems/ink-blue-grid",
+      "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+      "content_type": "statement",
+      "claim": "内容一份，表达两种",
+      "exact_text": [
+        "StoryWeave",
+        "内容一份，表达两种",
+        "从确认文字，到能被理解的页面。"
+      ],
+      "image": "projects/swiss/qa/screenshots/s01.png",
+      "sha256": "fa01b073dc3fc0f5c8ac1cfc44e9c01fcba1fa55e67c602a63afb7eb40aad752"
+    },
+    {
+      "id": "swiss/s02",
+      "theme_ref": "systems/ink-blue-grid",
+      "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+      "content_type": "statement",
+      "claim": "页面先表达关系，再选择外观",
+      "exact_text": [
+        "页面先表达关系，再选择外观",
+        "对照需要比较轴。",
+        "过程需要方向。",
+        "数据需要单位和来源。"
+      ],
+      "image": "projects/swiss/qa/screenshots/s02.png",
+      "sha256": "bd898a3b7d54a59f6520954cabcc99d998bec222c98e47a19d0ab70655b842a6"
+    },
+    {
+      "id": "swiss/s03",
+      "theme_ref": "systems/ink-blue-grid",
+      "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+      "content_type": "comparison",
+      "claim": "同一份内容，选择适合的页面源",
+      "exact_text": [
+        "同一份内容，选择适合的页面源",
+        "HTML",
+        "Imagegen",
+        "页面源",
+        "文字、形状与 SVG",
+        "完整 PNG 画面",
+        "编辑方式",
+        "修改原生页面",
+        "重新生成受影响页面",
+        "质量检查",
+        "浏览器与内容核对",
+        "图片与逐页视觉复核"
+      ],
+      "image": "projects/swiss/qa/screenshots/s03.png",
+      "sha256": "46aa0238d9d35ac2bcb5b70d422b5e301251750f824c5401440e0749efadf249"
+    },
+    {
+      "id": "swiss/s04",
+      "theme_ref": "systems/ink-blue-grid",
+      "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+      "content_type": "process",
+      "claim": "先确认内容，再生成与交付",
+      "exact_text": [
+        "先确认内容，再生成与交付",
+        "整理资料",
+        "保留事实与来源",
+        "确认内容",
+        "固定文字与关系",
+        "生成交付",
+        "检查实际页面"
+      ],
+      "image": "projects/swiss/qa/screenshots/s04.png",
+      "sha256": "9fe53d1b453e2fae17ca276e07598603efff84073c7256af0edee46f9eb8a306"
+    },
+    {
+      "id": "swiss/s05",
+      "theme_ref": "systems/ink-blue-grid",
+      "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+      "content_type": "metrics",
+      "claim": "生成方式不同，交付画布一致",
+      "exact_text": [
+        "生成方式不同，交付画布一致",
+        "2",
+        "条",
+        "生成路径",
+        "来源：StoryWeave README",
+        "1280",
+        "px",
+        "HTML 舞台宽度",
+        "来源：HTML 架构边界",
+        "720",
+        "px",
+        "HTML 舞台高度",
+        "来源：HTML 架构边界"
+      ],
+      "image": "projects/swiss/qa/screenshots/s05.png",
+      "sha256": "3f7f5529f87f87aa050f3fdf123a453964fde48123c5f6de6dd4fffd1f145aca"
+    },
+    {
+      "id": "swiss/s06",
+      "theme_ref": "systems/ink-blue-grid",
+      "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+      "content_type": "graph",
+      "claim": "生成负责表达，展示负责交付",
+      "exact_text": [
+        "生成负责表达，展示负责交付",
+        "确认内容",
+        "稳定 ID 与事实来源",
+        "HTML 生成",
+        "原生文字与图形",
+        "图片生成",
+        "完整页面与复核",
+        "展示交付",
+        "已验证的成品"
+      ],
+      "image": "projects/swiss/qa/screenshots/s06.png",
+      "sha256": "993628e12e79a621a034cfa0c32d363d5c2b7f061b6f59d3e2c951148483c5c5"
+    },
+    {
+      "id": "swiss/s07",
+      "theme_ref": "systems/ink-blue-grid",
+      "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+      "content_type": "statement",
+      "claim": "长标题保留完整信息",
+      "exact_text": [
+        "当一页需要解释复杂关系时，版式应为内容留出空间，而不是把文字缩小到难以阅读",
+        "先调整阅读顺序、版式和内容密度。",
+        "需要改写事实或文字时，再回到内容确认。"
+      ],
+      "image": "projects/swiss/qa/screenshots/s07.png",
+      "sha256": "f940b8b9300d7fa02ec2e3c37e92b055cf075dd6a5ac17a9480cefe921dcb4b3"
+    },
+    {
+      "id": "swiss/s08",
+      "theme_ref": "systems/ink-blue-grid",
+      "content_revision": "1708b64e44e41252474c745c3c583b322b1de6694f706704070da3a40998182a",
+      "content_type": "statement",
+      "claim": "从一份真实内容开始",
+      "exact_text": [
+        "从一份真实内容开始",
+        "确认内容，选择版式，核对页面。",
+        "让每一次改动都有可比较的结果。"
+      ],
+      "image": "projects/swiss/qa/screenshots/s08.png",
+      "sha256": "341831d9e8124bbcfefc9ba06d10845e1d410826f5be36ff0f3a1b8013b497ba"
+    }
+  ],
+  "fingerprint": "547f5b9d472bc049e27a243ff1c46afdc38641900a2570b5d52274cdeb4b6c20"
+}

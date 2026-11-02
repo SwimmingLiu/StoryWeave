@@ -39,6 +39,8 @@ gh run watch <run-id> --exit-status
 
 本次截图、内容、视觉策略和渲染环境与基线一致时为 `accepted-baseline`。任一变化或缺少基线时为 `needs-review`，退出码 4，使 `Verification` 失败。差异不自动表示退步或改善，也不自动更新基线。浏览器或几何失败同样阻断。
 
+CI 从 PR 的目标提交或 push 前提交读取旧基线及其实际 PNG。即使直接修改基线文件，它也会验证旧基线身份和逐维度的前后判断；缺少比较、任一退步或不确定都不能通过。评审必须绑定当前对照的两组图片，旧截图或旧基线的评审不能复用。
+
 视觉基线比较使用 `1280×720` 桌面图片；`390×844` 另验固定舞台缩放与几何，不据此声称小屏正文适合阅读。
 
 每次运行另保留 `storyweave-html-visual-<run-id>-<attempt>` artifact，包含两套完整 HTML、桌面与竖屏截图、`contact-sheet.html`、逐页及整套 `comparison.html`、`capture.json`、`result.json` 和 `review-template.json`。下载后打开对照，实际查看两边的每页与整套，再填写模板。评审者声明熟悉程度，不能把模板中的图片哈希视为已经看图。
@@ -51,6 +53,6 @@ git commit -m "test: update reviewed HTML visual baseline"
 git push
 ```
 
-`accept` 要求截图记录来自 GitHub Actions，并核对两边的图片哈希、基线身份及全部比较维度。提交更新后必须重跑新提交的 CI。不能因构建成功、像素差异很小或为了合并而填写通过；存在退步时先修复页面。人工 A/B 判断的细则见[视觉评测参考](../.agents/skills/verify-storyweave/references/visual-review.md)。
+`accept` 要求截图记录来自 GitHub Actions，并核对两边的图片哈希、基线身份及全部比较维度。提交更新后必须重跑新提交的 CI。若直接编辑基线导致 CI 拒绝，先将工作区基线恢复为 artifact 中对应的目标提交版本，再用 artifact 中的新图和实际评审更新。不能因构建成功、像素差异很小或为了合并而填写通过；存在退步时先修复页面。人工 A/B 判断的细则见[视觉评测参考](../.agents/skills/verify-storyweave/references/visual-review.md)。
 
-比较要求相同的批准内容、主题和渲染环境。确需更换样本内容或环境时，在新分支移除旧基线并提交待评状态，再根据 CI 截图建立新的初始基线；旧记录由版本控制保留。这类重建只记录新样本是否可接受，不声明视觉改善。
+比较要求相同的批准内容、主题和渲染环境。确需更换其中任一项时，评审模板会提供 `baseline_reset`，填写旧基线指纹及更换原因，并将 16 页和两套作为新参考单独评审。这类重建不声明视觉改善；相同内容、主题和环境不能通过重建绕过前后比较。

@@ -1,9 +1,10 @@
 import assert from 'node:assert/strict';
+import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import test from 'node:test';
-import { assessBaseline, compareBaseline, readCapture } from '../scripts/ci-visual.mjs';
+import { assessBaseline, assessBaselineTransition, compareBaseline, readCapture, readGitBaseline } from '../scripts/ci-visual.mjs';
 import { pageAxes, readCalibration, setAxes } from '../scripts/visual-review.mjs';
 
 const fingerprint = (value) => createHash('sha256').update(JSON.stringify(value)).digest('hex');
@@ -112,4 +113,43 @@ test('a baseline update rejects stale evidence and comparisons with changed cont
   const differentEnvironment = revise(candidate, (body) => { body.environment.playwright = 'different browser'; });
   const environmentReview = { ...review, capture_fingerprint: differentEnvironment.fingerprint };
   assert.throws(() => assessBaseline(differentEnvironment, environmentReview, calibration, previous), /same render environment/);
+});
+
+test('CI checks a changed baseline against the previous review even when the accept command was bypassed', () => {
+  const { previous, candidate, review } = paired();
+  const previousReview = fixtures().review;
+  const unpaired = structuredClone(review);
+  delete unpaired.baseline_capture_fingerprint;
+  assert.throws(() => assessBaselineTransition(candidate, unpaired, previous, previousReview, calibration), /another baseline/);
+  review.items[5].axes.relationships.preferred = 'baseline';
+  assert.equal(assessBaselineTransition(candidate, review, previous, previousReview, calibration).status, 'regressed');
+  review.items[5].axes.relationships.preferred = 'uncertain';
+  assert.equal(assessBaselineTransition(candidate, review, previous, previousReview, calibration).status, 'needs-review');
+  review.items[5].axes.relationships.preferred = 'tie';
+  assert.equal(assessBaselineTransition(candidate, review, previous, previousReview, calibration).status, 'accepted');
+  const tampered = structuredClone(previousReview);
+  tampered.items[0].axes.meaning.observation = 'A changed observation for the same pixels.';
+  assert.throws(() => assessBaselineTransition(previous, tampered, previous, previousReview, calibration), /another baseline/);
+});
+
+test('a new reference needs a real context change and an explicit reason', () => {
+  const { previous, candidate, review } = paired();
+  const previousReview = fixtures().review;
+  review.baseline_reset = { previous_capture_fingerprint: previous.fingerprint, reason: 'The approved fixture content changed.' };
+  assert.throws(() => assessBaselineTransition(candidate, review, previous, previousReview, calibration), /cannot be reset/);
+  const different = revise(candidate, (body) => { body.pages[5].content_revision = 'new approved content'; });
+  review.capture_fingerprint = different.fingerprint;
+  const result = assessBaselineTransition(different, review, previous, previousReview, calibration);
+  assert.equal(result.status, 'accepted');
+  assert.equal(result.comparison, 'new-reference');
+  assert.equal(result.improvement_claim, false);
+  review.baseline_reset.reason = '';
+  assert.throws(() => assessBaselineTransition(different, review, previous, previousReview, calibration), /why the visual reference changed/);
+});
+
+test('the previous Git revision supplies a complete baseline bound to its actual PNG bytes', async () => {
+  const ref = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
+  const baseline = await readGitBaseline(ref);
+  assert.equal(baseline.capture.pages.length, 16);
+  assert.equal(assessBaseline(baseline.capture, baseline.review, calibration).status, 'accepted');
 });

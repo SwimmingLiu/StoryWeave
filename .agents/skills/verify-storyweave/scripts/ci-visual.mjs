@@ -26,6 +26,7 @@ const expectedIds = themes.flatMap(([name]) => Array.from({ length: 8 }, (_, ind
 const substantive = (value) => typeof value === 'string' && value.trim().length > 0 && !/^(TODO|pending|待评|未查看)$/iu.test(value.trim());
 const escape = (value) => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('"', '&quot;');
 const safeImage = (path) => typeof path === 'string' && /^projects\/(editorial|swiss)\/qa\/screenshots\/s0[1-8]\.png$/u.test(path);
+const baselinePath = '.agents/skills/verify-storyweave/fixtures/visual-baseline';
 
 function validateCapture(capture) {
   const { fingerprint: stored, ...body } = capture;
@@ -39,17 +40,37 @@ function validateCapture(capture) {
   }
 }
 
+function validateScreenshot(bytes, page) {
+  assert.equal(hash(bytes), page.sha256, `Reviewed screenshot changed: ${page.id}`);
+  assert.equal(bytes.subarray(0, 8).toString('hex'), '89504e470d0a1a0a');
+  assert.equal(bytes.readUInt32BE(16), 1280);
+  assert.equal(bytes.readUInt32BE(20), 720);
+}
+
 export async function readCapture(directory) {
   const capture = await json(join(directory, 'capture.json'));
   validateCapture(capture);
-  for (const page of capture.pages) {
-    const bytes = await readFile(join(directory, page.image));
-    assert.equal(hash(bytes), page.sha256, `Reviewed screenshot changed: ${page.id}`);
-    assert.equal(bytes.subarray(0, 8).toString('hex'), '89504e470d0a1a0a');
-    assert.equal(bytes.readUInt32BE(16), 1280);
-    assert.equal(bytes.readUInt32BE(20), 720);
-  }
+  for (const page of capture.pages) validateScreenshot(await readFile(join(directory, page.image)), page);
   return capture;
+}
+
+// A baseline edited directly in a pull request must still be checked against the target revision's real images.
+export async function readGitBaseline(ref) {
+  assert(/^[a-f0-9]{40}$/u.test(ref), 'CI baseline reference must be a commit SHA');
+  const path = `${baselinePath}/capture.json`;
+  const options = { cwd: repo, maxBuffer: 16 * 1024 * 1024 };
+  const entry = await execute('git', ['ls-tree', '--name-only', ref, '--', path], options);
+  if (!entry.stdout.trim()) return null;
+  const read = async (file) => (await execute('git', ['show', `${ref}:${baselinePath}/${file}`], { ...options, encoding: 'buffer' })).stdout;
+  const capture = JSON.parse((await read('capture.json')).toString('utf8'));
+  validateCapture(capture);
+  const screenshots = {};
+  for (const page of capture.pages) {
+    const bytes = await read(page.image);
+    validateScreenshot(bytes, page);
+    screenshots[page.image] = bytes;
+  }
+  return { capture, review: JSON.parse((await read('review.json')).toString('utf8')), screenshots };
 }
 
 function reviewItems(capture) {
@@ -57,6 +78,12 @@ function reviewItems(capture) {
     ...capture.pages.map((page) => ({ id: page.id, axes: pageAxes, images: [page.sha256] })),
     ...themes.map(([name]) => ({ id: `${name}/whole-set`, axes: setAxes, images: capture.pages.filter((page) => page.id.startsWith(`${name}/`)).map((page) => page.sha256) })),
   ];
+}
+
+function comparable(capture, previous) {
+  return fingerprint(capture.environment) === fingerprint(previous.environment)
+    && capture.pages.every((page, index) => page.content_revision === previous.pages[index].content_revision
+      && page.theme_ref === previous.pages[index].theme_ref);
 }
 
 // A candidate that looks acceptable alone can still be worse than the existing baseline.
@@ -104,6 +131,21 @@ export function assessBaseline(capture, review, calibration = { cases: [] }, pre
   return { status: results.some(({ status }) => status === 'regressed') ? 'regressed' : results.some(({ status }) => status === 'needs-review') ? 'needs-review' : 'accepted', items: results };
 }
 
+export function assessBaselineTransition(capture, review, previous, previousReview, calibration) {
+  const current = assessBaseline(capture, review, calibration);
+  if (!previous) return current;
+  assert.equal(assessBaseline(previous, previousReview, calibration).status, 'accepted', 'The previous baseline must have a complete review');
+  if (capture.fingerprint === previous.fingerprint && fingerprint(review) === fingerprint(previousReview)) return current;
+  assert.equal(review.baseline_capture_fingerprint, previous.fingerprint, 'Review belongs to another baseline');
+  if (review.baseline_reset) {
+    assert(!comparable(capture, previous), 'A comparable baseline cannot be reset to avoid paired review');
+    assert.equal(review.baseline_reset.previous_capture_fingerprint, previous.fingerprint);
+    assert(substantive(review.baseline_reset.reason), 'Explain why the visual reference changed');
+    return { ...current, comparison: 'new-reference', improvement_claim: false };
+  }
+  return assessBaseline(capture, review, calibration, previous);
+}
+
 export function compareBaseline(capture, baseline, review, calibration) {
   validateCapture(capture);
   if (!baseline) return { status: 'needs-review', changed: expectedIds, reason: 'No reviewed baseline' };
@@ -122,7 +164,8 @@ export function compareBaseline(capture, baseline, review, calibration) {
 async function writeReport(directory, capture, result, hasBaseline) {
   await save(join(directory, 'result.json'), { ...result, capture_fingerprint: capture.fingerprint, ci_run_url: capture.ci_run_url, source_revision: capture.source_revision });
   const image = (src, label) => `<figure><figcaption>${label}</figcaption><img src="${escape(src)}" alt="${label}"></figure>`;
-  const sections = capture.pages.map((page) => `<section><h2>${escape(page.id)} · ${result.changed.includes(page.id) ? '待复核' : '基线一致'}</h2><p>${escape(page.claim)}</p><div class="pair">${hasBaseline ? image(`baseline/${page.image}`, '已评审基线') : '<p>尚无已评审基线</p>'}${image(page.image, '本次 CI')}</div></section>`).join('');
+  const label = (id) => result.changed.includes(id) ? '待复核' : result.comparison_changed.includes(id) ? '已评审变更' : '基线一致';
+  const sections = capture.pages.map((page) => `<section><h2>${escape(page.id)} · ${label(page.id)}</h2><p>${escape(page.claim)}</p><div class="pair">${hasBaseline ? image(`baseline/${page.image}`, '已评审基线') : '<p>尚无已评审基线</p>'}${image(page.image, '本次 CI')}</div></section>`).join('');
   // Single-page pairs could not show a regression in the rhythm of the complete deck.
   const sets = themes.map(([name]) => {
     const pages = capture.pages.filter((page) => page.id.startsWith(`${name}/`));
@@ -202,7 +245,25 @@ async function captureSamples(directory) {
 
 function reviewTemplate(capture, baseline) {
   const before = baseline && new Map(reviewItems(baseline).map((item) => [item.id, item]));
-  return { schema_version: 1, capture_fingerprint: capture.fingerprint, ...(baseline && { baseline_capture_fingerprint: baseline.fingerprint }), reviewer: { name: '', kind: 'agent', familiarity: '' }, items: reviewItems(capture).map((item) => ({ id: item.id, inspected_sha256: item.images, ...(baseline && { baseline_inspected_sha256: before.get(item.id).images }), axes: Object.fromEntries(item.axes.map((axis) => [axis, { status: 'uncertain', observation: '', ...(baseline && { preferred: 'uncertain', comparison_observation: '' }) }])), slop: { findings: [], observation: '' } })) };
+  const reset = baseline && !comparable(capture, baseline);
+  return {
+    schema_version: 1,
+    capture_fingerprint: capture.fingerprint,
+    ...(baseline && { baseline_capture_fingerprint: baseline.fingerprint }),
+    ...(reset && { baseline_reset: { previous_capture_fingerprint: baseline.fingerprint, reason: '' } }),
+    reviewer: { name: '', kind: 'agent', familiarity: '' },
+    items: reviewItems(capture).map((item) => ({
+      id: item.id,
+      inspected_sha256: item.images,
+      ...(baseline && { baseline_inspected_sha256: before.get(item.id).images }),
+      axes: Object.fromEntries(item.axes.map((axis) => [axis, {
+        status: 'uncertain',
+        observation: '',
+        ...(baseline && !reset && { preferred: 'uncertain', comparison_observation: '' }),
+      }])),
+      slop: { findings: [], observation: '' },
+    })),
+  };
 }
 
 async function main() {
@@ -223,7 +284,7 @@ async function main() {
       const capturedBaseline = await readCapture(join(source, 'baseline'));
       assert.equal(capturedBaseline.fingerprint, previous.fingerprint, 'The baseline changed after this comparison was captured');
     }
-    assert.equal(assessBaseline(capture, review, calibration, previous).status, 'accepted', 'Every page and set must be reviewed without regressions or uncertainty');
+    assert.equal(assessBaselineTransition(capture, review, previous, previous ? await json(join(baselineRoot, 'review.json')) : null, calibration).status, 'accepted', 'Every page and set must be reviewed without regressions or uncertainty');
     // Only an explicit, fully reviewed update writes the repository baseline; CI check never refreshes it.
     for (const page of capture.pages) {
       const target = join(baselineRoot, page.image);
@@ -240,11 +301,33 @@ async function main() {
   const capture = await captureSamples(directory);
   const hasBaseline = await exists(join(baselineRoot, 'capture.json'));
   const baseline = hasBaseline ? await readCapture(baselineRoot) : null;
-  const result = compareBaseline(capture, baseline, hasBaseline ? await json(join(baselineRoot, 'review.json')) : null, await readCalibration());
-  if (hasBaseline) await cp(baselineRoot, join(directory, 'baseline'), { recursive: true });
+  const review = hasBaseline ? await json(join(baselineRoot, 'review.json')) : null;
+  const calibration = await readCalibration();
+  if (process.env.GITHUB_ACTIONS) assert(process.env.CI_VISUAL_BASE_REF, 'CI must identify the previous baseline revision');
+  const previous = process.env.CI_VISUAL_BASE_REF ? await readGitBaseline(process.env.CI_VISUAL_BASE_REF) : null;
+  let result;
+  try {
+    const transition = baseline && assessBaselineTransition(baseline, review, previous?.capture, previous?.review, calibration);
+    result = transition && transition.status !== 'accepted' ? { status: transition.status, changed: expectedIds, reason: 'The changed baseline has a regression or incomplete comparison' } : compareBaseline(capture, baseline, review, calibration);
+  } catch (error) {
+    result = { status: 'needs-review', changed: expectedIds, reason: `Invalid baseline transition: ${error.message}` };
+  }
+  const changedBaseline = previous && (!baseline || previous.capture.fingerprint !== baseline.fingerprint || fingerprint(previous.review) !== fingerprint(review));
+  const reference = changedBaseline ? previous.capture : baseline;
+  if (changedBaseline) {
+    // Preserve the target branch's prior PNGs when the proposed baseline itself changed.
+    for (const [path, bytes] of Object.entries(previous.screenshots)) {
+      const target = join(directory, 'baseline', path);
+      await mkdir(dirname(target), { recursive: true });
+      await writeFile(target, bytes);
+    }
+    await save(join(directory, 'baseline/capture.json'), previous.capture);
+    await save(join(directory, 'baseline/review.json'), previous.review);
+  } else if (hasBaseline) await cp(baselineRoot, join(directory, 'baseline'), { recursive: true });
+  result.comparison_changed = reference ? capture.pages.filter((page, index) => page.sha256 !== reference.pages[index].sha256).map(({ id }) => id) : expectedIds;
   // The comparison template can bind both versions only after the baseline is known.
-  await save(join(directory, 'review-template.json'), reviewTemplate(capture, baseline));
-  await writeReport(directory, capture, result, hasBaseline);
+  await save(join(directory, 'review-template.json'), reviewTemplate(capture, reference));
+  await writeReport(directory, capture, result, Boolean(reference));
   if (process.env.GITHUB_STEP_SUMMARY) await writeFile(process.env.GITHUB_STEP_SUMMARY, `\nHTML visual regression: **${result.status}**\n\nTwo eight-page decks; changed pages: ${result.changed.length}. Download the visual artifact for comparison.html, capture.json and review-template.json.\n`, { flag: 'a' });
   return result;
 }

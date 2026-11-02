@@ -125,10 +125,12 @@ test('CI checks a changed baseline against the previous review even when the acc
   const regression = assessBaselineTransition(candidate, review, previous, previousReview, calibration);
   assert.equal(regression.status, 'regressed');
   assert.deepEqual(regression.items[5].failed_axes, ['relationships']);
+  assert.equal(assessBaseline(candidate, review, calibration).status, 'regressed');
   review.items[5].axes.relationships.preferred = 'uncertain';
   const pending = assessBaselineTransition(candidate, review, previous, previousReview, calibration);
   assert.equal(pending.status, 'needs-review');
   assert.deepEqual(pending.items[5].uncertain_axes, ['relationships']);
+  assert.equal(assessBaseline(candidate, review, calibration).status, 'needs-review');
   review.items[5].axes.relationships.preferred = 'tie';
   assert.equal(assessBaselineTransition(candidate, review, previous, previousReview, calibration).status, 'accepted');
   const tampered = structuredClone(previousReview);

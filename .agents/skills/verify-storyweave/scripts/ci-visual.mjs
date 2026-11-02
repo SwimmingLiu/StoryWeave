@@ -94,6 +94,11 @@ export function assessBaseline(capture, review, calibration = { cases: [] }, pre
   assert(substantive(review.reviewer?.name) && ['human', 'agent'].includes(review.reviewer.kind));
   assert(substantive(review.reviewer.familiarity), 'Declare prior knowledge and review limits');
   const items = reviewItems(capture);
+  const hasPairedReview = Boolean(previous || (review.baseline_capture_fingerprint && !review.baseline_reset));
+  if (review.baseline_reset) {
+    assert.equal(review.baseline_reset.previous_capture_fingerprint, review.baseline_capture_fingerprint);
+    assert(substantive(review.baseline_reset.reason), 'Explain why the visual reference changed');
+  }
   let priorItems;
   if (previous) {
     validateCapture(previous);
@@ -114,18 +119,21 @@ export function assessBaseline(capture, review, calibration = { cases: [] }, pre
     const row = indexed.get(item.id);
     if (!row) return { id: item.id, status: 'needs-review' };
     assert.deepEqual([...row.inspected_sha256].sort(), [...item.images].sort(), `Inspect the actual images for ${item.id}`);
-    if (previous) {
+    if (hasPairedReview) {
       assert(Array.isArray(row.baseline_inspected_sha256), `Inspect the baseline images for ${item.id}`);
-      assert.deepEqual([...row.baseline_inspected_sha256].sort(), [...priorItems.get(item.id).images].sort(), `Inspect the baseline images for ${item.id}`);
+      assert.equal(row.baseline_inspected_sha256.length, item.images.length, `Inspect every baseline image for ${item.id}`);
+      assert(row.baseline_inspected_sha256.every((sha) => /^[a-f0-9]{64}$/u.test(sha)), `Record baseline image hashes for ${item.id}`);
+      if (previous) assert.deepEqual([...row.baseline_inspected_sha256].sort(), [...priorItems.get(item.id).images].sort(), `Inspect the baseline images for ${item.id}`);
     }
     assert.deepEqual(Object.keys(row.axes).sort(), [...item.axes].sort());
     for (const value of Object.values(row.axes)) assert(['pass', 'fail', 'uncertain'].includes(value.status) && substantive(value.observation), `Explain each visual axis for ${item.id}`);
-    if (previous) for (const value of Object.values(row.axes)) assert(['baseline', 'candidate', 'tie', 'uncertain'].includes(value.preferred) && substantive(value.comparison_observation), `Compare both versions on each visual axis for ${item.id}`);
+    if (hasPairedReview) for (const value of Object.values(row.axes)) assert(['baseline', 'candidate', 'tie', 'uncertain'].includes(value.preferred) && substantive(value.comparison_observation), `Compare both versions on each visual axis for ${item.id}`);
     assert(Array.isArray(row.slop?.findings) && substantive(row.slop.observation));
     for (const finding of row.slop.findings) assert(['blocking', 'advisory'].includes(finding.severity) && substantive(finding.pattern) && substantive(finding.observation));
     const veto = calibration.cases.some((entry) => entry.id === item.id && entry.candidate.sha256 === item.images[0]);
-    const failedAxes = Object.entries(row.axes).filter(([, { status, preferred }]) => status === 'fail' || (previous && preferred === 'baseline')).map(([axis]) => axis);
-    const uncertainAxes = Object.entries(row.axes).filter(([, { status, preferred }]) => status === 'uncertain' || (previous && preferred === 'uncertain')).map(([axis]) => axis);
+    // A stored comparison remains binding even when a later push has no access to the older baseline.
+    const failedAxes = Object.entries(row.axes).filter(([, { status, preferred }]) => status === 'fail' || (hasPairedReview && preferred === 'baseline')).map(([axis]) => axis);
+    const uncertainAxes = Object.entries(row.axes).filter(([, { status, preferred }]) => status === 'uncertain' || (hasPairedReview && preferred === 'uncertain')).map(([axis]) => axis);
     const blockingSlop = row.slop.findings.filter(({ severity }) => severity === 'blocking');
     const failed = veto || failedAxes.length || blockingSlop.length;
     return { id: item.id, status: failed ? 'regressed' : uncertainAxes.length ? 'needs-review' : 'accepted', failed_axes: failedAxes, uncertain_axes: uncertainAxes, blocking_slop: blockingSlop, user_veto: veto };
@@ -302,13 +310,25 @@ async function main() {
   assert(isAbsolute(directory));
   const capture = await captureSamples(directory);
   const hasBaseline = await exists(join(baselineRoot, 'capture.json'));
-  const baseline = hasBaseline ? await readCapture(baselineRoot) : null;
-  const review = hasBaseline ? await json(join(baselineRoot, 'review.json')) : null;
+  let baseline = null;
+  let review = null;
+  let baselineError;
+  if (hasBaseline) {
+    // A corrupt proposed baseline should still produce a comparison against the trusted previous revision.
+    try {
+      baseline = await readCapture(baselineRoot);
+      review = await json(join(baselineRoot, 'review.json'));
+    } catch (error) {
+      baseline = null;
+      baselineError = error;
+    }
+  }
   const calibration = await readCalibration();
   if (process.env.GITHUB_ACTIONS) assert(process.env.CI_VISUAL_BASE_REF, 'CI must identify the previous baseline revision');
   const previous = process.env.CI_VISUAL_BASE_REF ? await readGitBaseline(process.env.CI_VISUAL_BASE_REF) : null;
   let result;
   try {
+    if (baselineError) throw baselineError;
     const transition = baseline && assessBaselineTransition(baseline, review, previous?.capture, previous?.review, calibration);
     result = transition && transition.status !== 'accepted' ? { status: transition.status, changed: expectedIds, reason: 'The changed baseline has a regression or incomplete comparison', review_items: transition.items.filter((item) => item.status !== 'accepted') } : compareBaseline(capture, baseline, review, calibration);
   } catch (error) {
@@ -325,7 +345,7 @@ async function main() {
     }
     await save(join(directory, 'baseline/capture.json'), previous.capture);
     await save(join(directory, 'baseline/review.json'), previous.review);
-  } else if (hasBaseline) await cp(baselineRoot, join(directory, 'baseline'), { recursive: true });
+  } else if (baseline) await cp(baselineRoot, join(directory, 'baseline'), { recursive: true });
   result.comparison_changed = reference ? capture.pages.filter((page, index) => page.sha256 !== reference.pages[index].sha256).map(({ id }) => id) : expectedIds;
   // The comparison template can bind both versions only after the baseline is known.
   await save(join(directory, 'review-template.json'), reviewTemplate(capture, reference));

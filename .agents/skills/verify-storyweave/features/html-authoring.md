@@ -53,7 +53,7 @@ report 分别列出技术功能状态与 `visual_acceptance`。退步、blocking
 <!-- CI used to omit these two decks despite exercising the default HTML fixture. -->
 GitHub Actions 另以 `ci-visual.mjs check --out <absolute-directory>` 从公开内容生成两套八页样张，包含带图页和分流汇合关系图。双视口 QA 后，对桌面截图、内容修订、视觉策略和环境执行已评审基线比较。相同画面为 accepted-baseline；变化或缺少完整评审为 needs-review，并使 Verification 失败。它不生成新的审美结论。
 
-`storyweave-html-visual-<run-id>-<attempt>` artifact 包含完整项目、`capture.json`、`comparison.html`、整套视图与空评审模板。实际看图后用 `ci-visual.mjs accept --capture <directory> --review <file>` 更新共享基线，再提交重跑；16 页与两套维度全部通过才可保存，固定用户否决仍生效。详细步骤见[CI 文档](../../../../docs/ci.md)。
+`storyweave-html-visual-<run-id>-<attempt>` artifact 包含完整项目、`capture.json`、`comparison.html`、整套视图与空评审模板。实际查看前后图片后，用 `ci-visual.mjs accept --capture <directory> --review <file>` 更新共享基线，再提交重跑；16 页与两套的各维度均需比较，任一退步或不确定不能保存，固定用户否决仍生效。详细步骤见[CI 文档](../../../../docs/ci.md)。
 
 ## Gotchas
 

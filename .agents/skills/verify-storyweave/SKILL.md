@@ -166,7 +166,7 @@ node .agents/skills/verify-storyweave/scripts/verify.mjs report --run-id "$VERIF
 CI 可执行入口为 [scripts/ci.mjs](scripts/ci.mjs)：`npm run verify:ci -- --run-id <unique-id> --reference-cache <absolute-directory>`。它驱动全部八项功能，明确检查 Imagegen 预期缺图门，清理后核对证据。依赖由根目录 package-lock.json 与 [requirements-ci.txt](scripts/requirements-ci.txt)固定；CI 不会自动重打包来修复未提交的生成副本。
 
 <!-- Existing CI did not capture or gate the two eight-page decks; this explicit check never generates review judgments. -->
-CI 另运行 [scripts/ci-visual.mjs](scripts/ci-visual.mjs)：`npm run verify:visual -- check --out <absolute-directory>`。它生成两套八页样张、双视口 QA 与逐页基线对照。变化或缺少已评审基线返回 needs-review 和退出码 4；相同内容、环境与截图才继承已有视觉判断。artifact 和显式 `accept --capture <directory> --review <file>` 更新流程见 [CI 文档](../../../docs/ci.md)。accept 必须来自实际查看后的 16 页及两套观察，不能代填；用户拒绝的 s06 相同图片始终阻断。
+CI 另运行 [scripts/ci-visual.mjs](scripts/ci-visual.mjs)：`npm run verify:visual -- check --out <absolute-directory>`。它生成两套八页样张、双视口 QA 与逐页和整套基线对照。变化或缺少已评审基线返回 needs-review 和退出码 4；相同内容、环境与截图才继承已有视觉判断。artifact 和显式 `accept --capture <directory> --review <file>` 更新流程见 [CI 文档](../../../docs/ci.md)。更新时必须实际查看两边的 16 页及两套，对每个维度记录比较和截图依据；任一退步或不确定阻断接受。用户拒绝的 s06 相同图片始终阻断。
 
 视觉评测入口为 [scripts/visual-review.mjs](scripts/visual-review.mjs)，提供 prepare、assess 与 report。其回归可用 `node --test .agents/skills/verify-storyweave/tests/visual-review.test.mjs` 执行；测试覆盖退步不能平均抵消、相同用户反例不能改判、缺评和陈旧截图不能通过。
 

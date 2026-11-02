@@ -18,6 +18,19 @@ function fixtures() {
   return { capture, review };
 }
 function revise(capture, edit) { const { fingerprint: _, ...body } = structuredClone(capture); edit(body); return signed(body); }
+function paired() {
+  const { capture: previous, review } = fixtures();
+  const candidate = revise(previous, (body) => { body.pages[5].sha256 = fingerprint('new graph capture'); });
+  review.capture_fingerprint = candidate.fingerprint;
+  review.baseline_capture_fingerprint = previous.fingerprint;
+  for (const item of review.items) {
+    item.baseline_inspected_sha256 = [...item.inspected_sha256];
+    if (item.id === 'editorial/s06') item.inspected_sha256 = [candidate.pages[5].sha256];
+    if (item.id === 'editorial/whole-set') item.inspected_sha256 = candidate.pages.slice(0, 8).map((page) => page.sha256);
+    for (const axis of Object.values(item.axes)) Object.assign(axis, { preferred: 'tie', comparison_observation: 'Synthetic comparison of the actual baseline and candidate' });
+  }
+  return { previous, candidate, review };
+}
 
 test('only identical reviewed content, pixels, policy and environment inherit baseline acceptance', () => {
   const { capture, review } = fixtures();
@@ -71,4 +84,32 @@ test('the committed sixteen-page baseline has intact actual PNGs and complete bo
   assert.equal(capture.origin, 'github-actions-browser');
   assert.equal(assessBaseline(capture, review, calibration).status, 'accepted');
   assert.equal(compareBaseline(capture, capture, review, calibration).status, 'accepted-baseline');
+});
+
+test('a baseline update requires both images and cannot average away a worse axis', () => {
+  const { previous, candidate, review } = paired();
+  assert.equal(assessBaseline(candidate, review, calibration, previous).status, 'accepted');
+  for (const axis of Object.values(review.items[5].axes)) axis.preferred = 'candidate';
+  review.items[5].axes.relationships.preferred = 'baseline';
+  assert.equal(assessBaseline(candidate, review, calibration, previous).status, 'regressed');
+  review.items[5].axes.relationships.preferred = 'uncertain';
+  assert.equal(assessBaseline(candidate, review, calibration, previous).status, 'needs-review');
+  delete review.items[5].axes.relationships.preferred;
+  assert.throws(() => assessBaseline(candidate, review, calibration, previous), /Compare both versions/);
+});
+
+test('a baseline update rejects stale evidence and comparisons with changed content or environment', () => {
+  const { previous, candidate, review } = paired();
+  const wrongReview = structuredClone(review);
+  wrongReview.baseline_capture_fingerprint = 'older baseline';
+  assert.throws(() => assessBaseline(candidate, wrongReview, calibration, previous), /another baseline/);
+  const wrongImages = structuredClone(review);
+  wrongImages.items[5].baseline_inspected_sha256 = [fingerprint('different baseline pixels')];
+  assert.throws(() => assessBaseline(candidate, wrongImages, calibration, previous), /baseline images/);
+  const differentContent = revise(candidate, (body) => { body.pages[5].content_revision = 'changed content'; });
+  const contentReview = { ...review, capture_fingerprint: differentContent.fingerprint };
+  assert.throws(() => assessBaseline(differentContent, contentReview, calibration, previous), /same approved content/);
+  const differentEnvironment = revise(candidate, (body) => { body.environment.playwright = 'different browser'; });
+  const environmentReview = { ...review, capture_fingerprint: differentEnvironment.fingerprint };
+  assert.throws(() => assessBaseline(differentEnvironment, environmentReview, calibration, previous), /same render environment/);
 });

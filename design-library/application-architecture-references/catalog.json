@@ -698,7 +698,8 @@
         "code": "D3",
         "family": "玻璃与青蓝",
         "representative": false,
-        "reason": "青蓝分流与事件扇出清楚，保留图内标题；与 D1、D2 的材质较接近。"
+        "reason": "青蓝分流与事件扇出清楚，保留图内标题；与 D1、D2 的材质较接近。",
+        "selected": false
       }
     },
     {
@@ -715,7 +716,7 @@
       "license_note": "StoryWeave 原创生成案例，随本仓库按 MIT 许可分发。",
       "license_path": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/LICENSE",
       "imagegen_reference_eligible": true,
-      "theme_ref": "knowledge/sketch-notes",
+      "theme_ref": "knowledge/watercolor-machinery",
       "generation_note": "使用 Codex 内置 image_gen 真实生成并逐图查看，调用来源、原始提示词、修订与字节哈希保存在随包记录中；工具未披露具体模型 ID。",
       "pages": [
         {
@@ -744,7 +745,8 @@
         "code": "A1",
         "family": "细线手绘",
         "representative": true,
-        "reason": "线稿与淡彩分层清楚，适合知识讲解；与 A2 选一个即可形成手绘代表。"
+        "reason": "细蓝线与薄荷淡紫水彩，用内容相关的设备剖面解释知识关系。已选入新增主题。",
+        "selected": true
       }
     },
     {
@@ -790,7 +792,8 @@
         "code": "C1",
         "family": "黏土实体",
         "representative": true,
-        "reason": "哑光黏土与柔和色块明显区别于线稿和透明玻璃。"
+        "reason": "哑光黏土与柔和色块明显区别于线稿和透明玻璃。",
+        "selected": false
       }
     },
     {
@@ -807,7 +810,7 @@
       "license_note": "StoryWeave 原创生成案例，随本仓库按 MIT 许可分发。",
       "license_path": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/LICENSE",
       "imagegen_reference_eligible": true,
-      "theme_ref": "systems/silver-glass",
+      "theme_ref": "systems/glass-pipeline",
       "generation_note": "使用 Codex 内置 image_gen 真实生成并逐图查看，调用来源、原始提示词、修订与字节哈希保存在随包记录中；工具未披露具体模型 ID。",
       "pages": [
         {
@@ -836,7 +839,8 @@
         "code": "D1",
         "family": "玻璃与青蓝",
         "representative": true,
-        "reason": "主链和上下支路清楚，画布集中展示架构，可作为玻璃方向的代表。"
+        "reason": "银白玻璃剖面与青蓝箭头，区分处理主链、控制和存储支路。已选入新增主题。",
+        "selected": true
       }
     },
     {
@@ -853,7 +857,7 @@
       "license_note": "StoryWeave 原创生成案例，随本仓库按 MIT 许可分发。",
       "license_path": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/LICENSE",
       "imagegen_reference_eligible": true,
-      "theme_ref": "knowledge/sketch-notes",
+      "theme_ref": "knowledge/engineering-workshop",
       "generation_note": "使用 Codex 内置 image_gen 真实生成并逐图查看，调用来源、原始提示词、修订与字节哈希保存在随包记录中；工具未披露具体模型 ID。",
       "pages": [
         {
@@ -882,7 +886,8 @@
         "code": "A2",
         "family": "细线手绘",
         "representative": false,
-        "reason": "与 A1 的媒介和双层构图接近，外围留白更松，可作为同类替换。"
+        "reason": "清楚透视、硬朗工程线稿与浅色分区，展开系统部件和加工路径。已选入新增主题。",
+        "selected": true
       }
     },
     {
@@ -928,7 +933,8 @@
         "code": "B1",
         "family": "图鉴剖面",
         "representative": true,
-        "reason": "设备与仓库剖面有更实在的结构细节，批流汇合也区别于简单串行流程。"
+        "reason": "设备与仓库剖面有更实在的结构细节，批流汇合也区别于简单串行流程。",
+        "selected": false
       }
     },
     {
@@ -945,7 +951,7 @@
       "license_note": "StoryWeave 原创生成案例，随本仓库按 MIT 许可分发。",
       "license_path": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/LICENSE",
       "imagegen_reference_eligible": true,
-      "theme_ref": "systems/silver-glass",
+      "theme_ref": "systems/lavender-feedback",
       "generation_note": "使用 Codex 内置 image_gen 真实生成并逐图查看，调用来源、原始提示词、修订与字节哈希保存在随包记录中；工具未披露具体模型 ID。",
       "pages": [
         {
@@ -974,7 +980,8 @@
         "code": "D4",
         "family": "玻璃与青蓝",
         "representative": false,
-        "reason": "淡紫反馈线更突出，但整体仍属于相近的透明玻璃语言，存在一次可区分的交叉。"
+        "reason": "透明玻璃与淡紫回流轨道，分别表达主路径与真实反馈关系。已选入新增主题。",
+        "selected": true
       }
     },
     {
@@ -1020,7 +1027,8 @@
         "code": "D2",
         "family": "玻璃与青蓝",
         "representative": false,
-        "reason": "仓储与配送实体更丰富，适合偏业务的讲解；仍与 D1 共用浅蓝透明材质。"
+        "reason": "仓储与配送实体更丰富，适合偏业务的讲解；仍与 D1 共用浅蓝透明材质。",
+        "selected": false
       }
     }
   ]

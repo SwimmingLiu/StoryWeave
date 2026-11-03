@@ -1,12 +1,14 @@
 #!/usr/bin/env node
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { readFile, writeFile } from 'node:fs/promises';
-import { dirname, join } from 'node:path';
+import { readFile, realpath, writeFile } from 'node:fs/promises';
+import { dirname, isAbsolute, join, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const repo = join(dirname(fileURLToPath(import.meta.url)), '..');
 const root = join(repo, 'skills/storyweave-imagegen/assets/examples/theme-previews');
+const themeRoot = join(repo, 'skills/storyweave-imagegen/assets/themes');
+const assetsRoot = await realpath(join(themeRoot, '..'));
 const catalog = JSON.parse(await readFile(join(repo, 'skills/storyweave-imagegen/assets/themes/catalog.json'), 'utf8'));
 const provenance = JSON.parse(await readFile(join(root, 'provenance.json'), 'utf8'));
 const styles = catalog.architectures.flatMap((architecture) => architecture.styles);
@@ -15,6 +17,13 @@ assert.equal(records.size, provenance.previews.length, 'Duplicate preview proven
 assert.deepEqual([...records.keys()].sort(), styles.map((style) => style.ref).sort(), 'Every selectable theme needs an actual preview');
 const escape = (text) => String(text).replace(/[&<>"']/gu, (value) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[value]);
 const hash = (bytes) => createHash('sha256').update(bytes).digest('hex');
+// Selected architecture seeds already ship in the Skill; resolve contained asset paths instead of duplicating their PNGs.
+async function previewAsset(path) {
+  assert(typeof path === 'string' && !isAbsolute(path), `Unsafe preview path: ${path}`);
+  const actual = await realpath(resolve(root, path));
+  assert(actual.startsWith(`${assetsRoot}${sep}`), 'Preview evidence escaped the standalone Skill assets');
+  return actual;
+}
 async function verifyPng(path, record) {
   const bytes = await readFile(path);
   assert.equal(hash(bytes), record.image_sha256, `Image bytes changed: ${path}`);
@@ -28,12 +37,13 @@ for (const style of [...styles].sort((a, b) => Number(b.recommendation === 'pref
   assert(['light', 'dark', 'bold'].includes(style.appearance), `Missing theme appearance: ${style.ref}`);
   assert(['preferred', 'optional'].includes(style.recommendation), `Missing recommendation: ${style.ref}`);
   const record = records.get(style.ref);
-  assert(/^[a-z0-9-]+\.png$/u.test(record.file), `Unsafe preview path: ${record.file}`);
-  await verifyPng(join(root, record.file), record);
-  assert.equal(style.preview.cover, `../examples/theme-previews/${record.file}`);
-  if (record.prompt) assert.equal(hash(await readFile(join(root, record.prompt))), record.prompt_sha256, `Preview prompt changed: ${style.ref}`);
+  assert(record.file.endsWith('.png'), `Expected PNG preview: ${record.file}`);
+  const imagePath = await previewAsset(record.file);
+  await verifyPng(imagePath, record);
+  assert.equal(await realpath(resolve(themeRoot, style.preview.cover)), imagePath);
+  if (record.prompt) assert.equal(hash(await readFile(await previewAsset(record.prompt))), record.prompt_sha256, `Preview prompt changed: ${style.ref}`);
   const id = style.ref.replace('/', '--');
-  cards.push(`<article id="${escape(id)}" data-appearance="${style.appearance}"${style.appearance === 'light' ? '' : ' hidden'}><a href="${escape(record.file)}"><img src="${escape(record.file)}" alt="${escape(style.label)}" width="${record.actual_size[0]}" height="${record.actual_size[1]}" loading="lazy"></a><div><h2>${escape(style.label)}</h2><code>${escape(style.ref)}</code><p>${style.appearance === 'dark' ? '深色备选' : style.appearance === 'bold' ? '高饱和封面备选' : style.recommendation === 'preferred' ? '浅色优先' : '浅色备选'} · ${record.visible_text ? '同内容流程样张' : '样式参考'} · candidate</p></div></article>`);
+  cards.push(`<article id="${escape(id)}" data-appearance="${style.appearance}"${style.appearance === 'light' ? '' : ' hidden'}><a href="${escape(record.file)}"><img src="${escape(record.file)}" alt="${escape(style.label)}" width="${record.actual_size[0]}" height="${record.actual_size[1]}" loading="lazy"></a><div><h2>${escape(style.label)}</h2><code>${escape(style.ref)}</code><p>${style.appearance === 'dark' ? '深色备选' : style.appearance === 'bold' ? '高饱和封面备选' : style.recommendation === 'preferred' ? '浅色优先' : '浅色备选'} · ${record.page_type === 'architecture-seed' ? '架构主题参考图' : record.visible_text ? '同内容流程样张' : '样式参考'} · candidate</p></div></article>`);
 }
 // The README poster and local comparison links must survive a fresh checkout too.
 const poster = JSON.parse(await readFile(join(repo, 'docs/assets/storyweave-introduction.provenance.json'), 'utf8'));

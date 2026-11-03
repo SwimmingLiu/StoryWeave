@@ -16,7 +16,7 @@
     "path": "visual-intent.json",
     "sha256": "e97ad1f8774c3150e0471efcb5bded1fcee4dcc763d364c14f9a6f1e99c00a11"
   },
-  "scope": "Eight original teaching-reference images, reviewed as references. Selection for README remains a separate editorial choice.",
+  "scope": "Eight original teaching-reference images. Four explicitly selected images seed new candidate themes; seed images are design references, not proof of generation from the new recipes or acceptance of all page roles.",
   "images": [
     {
       "id": "ecommerce-cyan",
@@ -236,7 +236,8 @@
         "text": "标题、两处分组与 12 个手绘铭牌逐项可读；向量库未重复。",
         "composition": "细蓝线稿、薄荷与淡紫水彩形成两层，设备剖面表示解析、编码与检索职责。上下两层的共享依赖清楚；外缘较紧但组件与标签完整。",
         "limits": "向量库到检索的线较长；表达存储上下文供检索使用，不证明某个 RAG 产品的生产实现。"
-      }
+      },
+      "derived_theme_ref": "knowledge/watercolor-machinery"
     },
     {
       "id": "messaging-clay",
@@ -493,7 +494,8 @@
         "text": "图内只保留组件与上传处理、内容分发分组标签；12 个组件中文完整。",
         "composition": "整张图以银白玻璃架构为主体，原标题区释放后组件更大；主路径横向，元数据支路与源视频支路上下分开。最左、最右组件完整，留白较窄。",
         "limits": "节点多，演讲时应结合图外说明分段讲解；玻璃高光不代表任何运行指标。"
-      }
+      },
+      "derived_theme_ref": "systems/glass-pipeline"
     },
     {
       "id": "search-sketch",
@@ -611,7 +613,8 @@
         "text": "12 个组件标签与两个分组可读；网页来源、解析清洗和搜索索引未出现错字。",
         "composition": "工程手账用纸张输送、清洗设备和索引抽屉表达职责。边缘修订后，所有分区边框、设备与标签外都有连续暖白留白；主体仍足够大。",
         "limits": "与知识问答例共用双层组织方式，区别来自内容职责和设备细节，不声称版式变化本身带来质量提高。"
-      }
+      },
+      "derived_theme_ref": "knowledge/engineering-workshop"
     },
     {
       "id": "analytics-atlas",
@@ -859,7 +862,8 @@
         "text": "12 个组件与两个分组可读；排序设备中的 1、2、3 是排序符号，不是指标数据。",
         "composition": "清透银白与淡紫玻璃构成可见部件；主路径与反馈分区分开，箭头和标签未被裁切。分区外框距画布侧边较近，作为排版选图时需保留外围留白。",
         "limits": "反馈长线与主路径存在一次交叉，颜色和间隔能区分；需要完全无交叉版式的演讲页应另行重排。"
-      }
+      },
+      "derived_theme_ref": "systems/lavender-feedback"
     },
     {
       "id": "fulfillment-cyan",

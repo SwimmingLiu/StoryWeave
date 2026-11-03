@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { mkdir, mkdtemp, readFile, rm, symlink, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
-import { join } from 'node:path';
+import { join, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import test from 'node:test';
@@ -55,6 +55,25 @@ test('the generated casebook ships its images and prompts in a standalone Imageg
   for (const image of evidence.images) {
     assert.equal(createHash('sha256').update(await readFile(join(directory, image.output.path))).digest('hex'), image.output.sha256);
     for (const attempt of image.attempts) assert.equal(createHash('sha256').update(await readFile(join(directory, attempt.prompt))).digest('hex'), attempt.prompt_sha256);
+  }
+  // New theme previews reuse these originals; installed recipes must resolve them and compile through the public CLI without repository siblings.
+  const installed = join(root, 'storyweave-imagegen');
+  const themeRoot = join(installed, 'assets/themes');
+  const themes = JSON.parse(await readFile(join(themeRoot, 'catalog.json'), 'utf8'));
+  const execute = promisify(execFile);
+  for (const style of themes.architectures.flatMap((item) => item.styles).filter((item) => item.source_case)) {
+    const preview = resolve(themeRoot, style.preview.cover);
+    assert(preview.startsWith(`${installed}${sep}`));
+    const image = evidence.images.find((item) => item.id === style.source_case);
+    assert.equal(createHash('sha256').update(await readFile(preview)).digest('hex'), image.output.sha256);
+    const cli = join(installed, 'scripts/ppt.mjs');
+    const project = join(root, style.ref.replace('/', '--'));
+    await execute(process.execPath, [cli, 'draft', project, '--theme', style.ref, '--scope', 'authoring', '--title', '新主题合同检查']);
+    await execute(process.execPath, [cli, 'approve', project]);
+    await execute(process.execPath, [cli, 'prompts', project]);
+    const plan = JSON.parse(await readFile(join(project, 'plans/imagegen.json'), 'utf8'));
+    assert.equal(plan.theme_ref, style.ref);
+    await assert.rejects(execute(process.execPath, [cli, 'status', project, '--json']), (error) => error.code === 3 && JSON.parse(error.stdout).status === 'needs-images');
   }
 });
 

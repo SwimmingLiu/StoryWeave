@@ -1,0 +1,330 @@
+{
+  "schema_version": 3,
+  "architecture_id": "knowledge",
+  "id": "watercolor-machinery",
+  "art_direction": "intricate fine-pen and pencil technical illustration on warm-white paper, light mint and lavender watercolor washes, softly modeled cutaway mechanisms selected from the actual content; clear attached labels and generous uncluttered paper margins",
+  "palette": "warm white #FFFCF5, dark ink blue #172B52, pale mint #DDEEDC and restrained lavender #E7DDF2",
+  "typography": "Projection-readable Chinese labels in solid dark ink, natural word spacing and semantic line breaks; keep texture, highlights and routing separate from letterforms.",
+  "materials": "fine navy ink contours, restrained pencil texture, translucent watercolor washes and shallow illustrated mechanical depth",
+  "anchors": [
+    {
+      "id": "watercolor-wash",
+      "prompt": "one pale mint or lavender wash behind an authored information group, with no added lettering"
+    }
+  ],
+  "default_anchor_id": "watercolor-wash",
+  "text_layout": "Prioritize authored component labels and relationships. Include a title only when supplied in exact_text, with hierarchy set by the page task. Keep reusable diagram headings outside the illustration when the page provides them; do not invent a teaching-reference subtitle or fixed title band.",
+  "contrast": "Solid navy text on quiet white or warm-white fields; material highlights and line hatching remain outside letterforms.",
+  "avoid": [
+    "decorative objects unrelated to the content",
+    "extra text not in exact_text",
+    "invented graph nodes, connections or feedback loops"
+  ],
+  "role_defaults": {
+    "cover": "opening",
+    "section": "opening",
+    "statement": "argument",
+    "image-hero": "concept-scene",
+    "two-column": "comparison",
+    "comparison": "comparison",
+    "process": "process",
+    "data": "data",
+    "quote": "argument",
+    "closing": "argument"
+  },
+  "schemes": {
+    "opening": {
+      "label": "内容开场",
+      "summary": "内容开场，按当前确认内容安排空间",
+      "preview_image": "../../../application-architecture-references/generated-cases/rag-sketch.png",
+      "roles": [
+        "cover",
+        "section"
+      ],
+      "default_anchor_id": "watercolor-wash",
+      "composition": "One content-specific illustrated subject introduces the approved topic, balanced with a quiet supplied-title field. Its size follows the page claim rather than a fixed oversized heading.",
+      "imagery": "intricate fine-pen and pencil technical illustration on warm-white paper, light mint and lavender watercolor washes, softly modeled cutaway mechanisms selected from the actual content; clear attached labels and generous uncluttered paper margins",
+      "title_treatment": {
+        "mode": "caption",
+        "scale": "small-to-medium",
+        "placement": "top-left",
+        "weight": "Only a supplied title or statement participates in the hierarchy; reusable architecture illustrations use diagram space for their components, with a page-level title outside the illustration when appropriate."
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left",
+          "top",
+          "center"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "densities": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "requirements": [
+        "Render every supplied exact_text line exactly once; all visible words, numbers and qualifiers come from approved content.",
+        "The example supplies drawing language only; component names, relationships and facts must come from the current page.",
+        "Keep every component, label, group outline, arrowhead and shadow inside quiet outer margins. Give routes clear endpoints and keep them away from text."
+      ],
+      "avoid": [
+        "invented metrics, brands, captions or automatic subtitle tiers",
+        "unrelated gear icons or generic landscapes",
+        "labels or shadows cropped by the canvas"
+      ]
+    },
+    "argument": {
+      "label": "观点与收尾",
+      "summary": "观点与收尾，按当前确认内容安排空间",
+      "preview_image": "../../../application-architecture-references/generated-cases/rag-sketch.png",
+      "roles": [
+        "statement",
+        "quote",
+        "closing"
+      ],
+      "default_anchor_id": "watercolor-wash",
+      "composition": "One authored statement or quotation leads the page, accompanied by one content-relevant detail in a separate visual zone. Keep the detail secondary to the actual claim.",
+      "imagery": "intricate fine-pen and pencil technical illustration on warm-white paper, light mint and lavender watercolor washes, softly modeled cutaway mechanisms selected from the actual content; clear attached labels and generous uncluttered paper margins",
+      "title_treatment": {
+        "mode": "integrated",
+        "scale": "small-to-medium",
+        "placement": "top-left",
+        "weight": "Only a supplied title or statement participates in the hierarchy; reusable architecture illustrations use diagram space for their components, with a page-level title outside the illustration when appropriate."
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left",
+          "top",
+          "center"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "densities": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "requirements": [
+        "Render every supplied exact_text line exactly once; all visible words, numbers and qualifiers come from approved content.",
+        "The example supplies drawing language only; component names, relationships and facts must come from the current page.",
+        "Keep every component, label, group outline, arrowhead and shadow inside quiet outer margins. Give routes clear endpoints and keep them away from text."
+      ],
+      "avoid": [
+        "invented metrics, brands, captions or automatic subtitle tiers",
+        "unrelated gear icons or generic landscapes",
+        "labels or shadows cropped by the canvas"
+      ]
+    },
+    "concept-scene": {
+      "label": "结构剖面",
+      "summary": "结构剖面，按当前确认内容安排空间",
+      "preview_image": "../../../application-architecture-references/generated-cases/rag-sketch.png",
+      "roles": [
+        "image-hero"
+      ],
+      "default_anchor_id": "watercolor-wash",
+      "composition": "Use a single content-specific cutaway or relationship composition with legible component labels; its objects and spatial hierarchy must explain the authored topic.",
+      "imagery": "intricate fine-pen and pencil technical illustration on warm-white paper, light mint and lavender watercolor washes, softly modeled cutaway mechanisms selected from the actual content; clear attached labels and generous uncluttered paper margins",
+      "title_treatment": {
+        "mode": "caption",
+        "scale": "small-to-medium",
+        "placement": "top-left",
+        "weight": "Only a supplied title or statement participates in the hierarchy; reusable architecture illustrations use diagram space for their components, with a page-level title outside the illustration when appropriate."
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left",
+          "top",
+          "center"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "densities": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "requirements": [
+        "Render every supplied exact_text line exactly once; all visible words, numbers and qualifiers come from approved content.",
+        "The example supplies drawing language only; component names, relationships and facts must come from the current page.",
+        "Keep every component, label, group outline, arrowhead and shadow inside quiet outer margins. Give routes clear endpoints and keep them away from text."
+      ],
+      "avoid": [
+        "invented metrics, brands, captions or automatic subtitle tiers",
+        "unrelated gear icons or generic landscapes",
+        "labels or shadows cropped by the canvas"
+      ]
+    },
+    "comparison": {
+      "label": "同尺度比较",
+      "summary": "同尺度比较，按当前确认内容安排空间",
+      "preview_image": "../../../application-architecture-references/generated-cases/rag-sketch.png",
+      "roles": [
+        "two-column",
+        "comparison"
+      ],
+      "default_anchor_id": "watercolor-wash",
+      "composition": "Use the exact number of approved comparison columns at equal scale with the same row order and dimensions. Match viewpoint and material treatment so only authored differences carry emphasis.",
+      "imagery": "intricate fine-pen and pencil technical illustration on warm-white paper, light mint and lavender watercolor washes, softly modeled cutaway mechanisms selected from the actual content; clear attached labels and generous uncluttered paper margins",
+      "title_treatment": {
+        "mode": "integrated",
+        "scale": "small-to-medium",
+        "placement": "top-left",
+        "weight": "Only a supplied title or statement participates in the hierarchy; reusable architecture illustrations use diagram space for their components, with a page-level title outside the illustration when appropriate."
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left",
+          "top",
+          "center"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "densities": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "requirements": [
+        "Render every supplied exact_text line exactly once; all visible words, numbers and qualifiers come from approved content.",
+        "The example supplies drawing language only; component names, relationships and facts must come from the current page.",
+        "Keep every component, label, group outline, arrowhead and shadow inside quiet outer margins. Give routes clear endpoints and keep them away from text."
+      ],
+      "avoid": [
+        "invented metrics, brands, captions or automatic subtitle tiers",
+        "unrelated gear icons or generic landscapes",
+        "labels or shadows cropped by the canvas"
+      ]
+    },
+    "process": {
+      "label": "组件与关系",
+      "summary": "组件与关系，按当前确认内容安排空间",
+      "preview_image": "../../../application-architecture-references/generated-cases/rag-sketch.png",
+      "roles": [
+        "process"
+      ],
+      "default_anchor_id": "watercolor-wash",
+      "composition": "Organize the actual graph into readable groups and short directed routes. Use aligned parallel tiers only when the approved content has parallel work or a shared dependency; show a shared store once and connect it to its actual consumers. Let fine-pen cutaway detail explain each supplied component rather than adding ornamental machinery.",
+      "imagery": "intricate fine-pen and pencil technical illustration on warm-white paper, light mint and lavender watercolor washes, softly modeled cutaway mechanisms selected from the actual content; clear attached labels and generous uncluttered paper margins",
+      "title_treatment": {
+        "mode": "integrated",
+        "scale": "small-to-medium",
+        "placement": "top-left",
+        "weight": "Only a supplied title or statement participates in the hierarchy; reusable architecture illustrations use diagram space for their components, with a page-level title outside the illustration when appropriate."
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left",
+          "top",
+          "center"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "densities": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "requirements": [
+        "Render every supplied exact_text line exactly once; all visible words, numbers and qualifiers come from approved content.",
+        "The example supplies drawing language only; component names, relationships and facts must come from the current page.",
+        "Keep every component, label, group outline, arrowhead and shadow inside quiet outer margins. Give routes clear endpoints and keep them away from text.",
+        "Node count and every directed edge must match approved content, including branches, joins and real cycles."
+      ],
+      "avoid": [
+        "invented metrics, brands, captions or automatic subtitle tiers",
+        "unrelated gear icons or generic landscapes",
+        "labels or shadows cropped by the canvas"
+      ]
+    },
+    "data": {
+      "label": "准确数据",
+      "summary": "准确数据，按当前确认内容安排空间",
+      "preview_image": "../../../application-architecture-references/generated-cases/rag-sketch.png",
+      "roles": [
+        "data"
+      ],
+      "default_anchor_id": "watercolor-wash",
+      "composition": "One flat front-facing quantitative chart uses the exact supplied values, shared baseline and common scale with directly attached labels. Material illustration stays in a separate contextual area and never changes data geometry.",
+      "imagery": "intricate fine-pen and pencil technical illustration on warm-white paper, light mint and lavender watercolor washes, softly modeled cutaway mechanisms selected from the actual content; clear attached labels and generous uncluttered paper margins",
+      "title_treatment": {
+        "mode": "integrated",
+        "scale": "small-to-medium",
+        "placement": "top-left",
+        "weight": "Only a supplied title or statement participates in the hierarchy; reusable architecture illustrations use diagram space for their components, with a page-level title outside the illustration when appropriate."
+      },
+      "layout_constraints": {
+        "text_safe_zones": [
+          "top-left",
+          "left",
+          "bottom-left",
+          "top",
+          "center"
+        ],
+        "visual_zones": [
+          "center",
+          "right",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "densities": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "requirements": [
+        "Render every supplied exact_text line exactly once; all visible words, numbers and qualifiers come from approved content.",
+        "The example supplies drawing language only; component names, relationships and facts must come from the current page.",
+        "Keep every component, label, group outline, arrowhead and shadow inside quiet outer margins. Give routes clear endpoints and keep them away from text."
+      ],
+      "avoid": [
+        "invented metrics, brands, captions or automatic subtitle tiers",
+        "unrelated gear icons or generic landscapes",
+        "labels or shadows cropped by the canvas"
+      ]
+    }
+  }
+}

@@ -156,6 +156,44 @@
           },
           "appearance": "dark",
           "recommendation": "optional"
+        },
+        {
+          "ref": "systems/glass-pipeline",
+          "label": "银白玻璃管线",
+          "summary": "银白玻璃剖面与青蓝箭头，区分处理主链、控制和存储支路",
+          "status": "candidate",
+          "tags": [
+            "浅色架构",
+            "用户选定案例",
+            "银白玻璃管线"
+          ],
+          "file": "systems/styles/glass-pipeline.json",
+          "preview": {
+            "cover": "../application-architecture-references/generated-cases/video-glass.png",
+            "gallery": "../examples/theme-previews/index.html#systems--glass-pipeline"
+          },
+          "appearance": "light",
+          "recommendation": "preferred",
+          "source_case": "video-glass"
+        },
+        {
+          "ref": "systems/lavender-feedback",
+          "label": "淡紫玻璃反馈",
+          "summary": "透明玻璃与淡紫回流轨道，分别表达主路径与真实反馈关系",
+          "status": "candidate",
+          "tags": [
+            "浅色架构",
+            "用户选定案例",
+            "淡紫玻璃反馈"
+          ],
+          "file": "systems/styles/lavender-feedback.json",
+          "preview": {
+            "cover": "../application-architecture-references/generated-cases/recommendation-glass.png",
+            "gallery": "../examples/theme-previews/index.html#systems--lavender-feedback"
+          },
+          "appearance": "light",
+          "recommendation": "preferred",
+          "source_case": "recommendation-glass"
         }
       ]
     },
@@ -270,6 +308,44 @@
           },
           "appearance": "light",
           "recommendation": "optional"
+        },
+        {
+          "ref": "knowledge/watercolor-machinery",
+          "label": "淡彩机械手绘",
+          "summary": "细蓝线与薄荷淡紫水彩，用内容相关的设备剖面解释知识关系",
+          "status": "candidate",
+          "tags": [
+            "浅色架构",
+            "用户选定案例",
+            "淡彩机械手绘"
+          ],
+          "file": "knowledge/styles/watercolor-machinery.json",
+          "preview": {
+            "cover": "../application-architecture-references/generated-cases/rag-sketch.png",
+            "gallery": "../examples/theme-previews/index.html#knowledge--watercolor-machinery"
+          },
+          "appearance": "light",
+          "recommendation": "preferred",
+          "source_case": "rag-sketch"
+        },
+        {
+          "ref": "knowledge/engineering-workshop",
+          "label": "工程线稿工坊",
+          "summary": "清楚透视、硬朗工程线稿与浅色分区，展开系统部件和加工路径",
+          "status": "candidate",
+          "tags": [
+            "浅色架构",
+            "用户选定案例",
+            "工程线稿工坊"
+          ],
+          "file": "knowledge/styles/engineering-workshop.json",
+          "preview": {
+            "cover": "../application-architecture-references/generated-cases/search-sketch.png",
+            "gallery": "../examples/theme-previews/index.html#knowledge--engineering-workshop"
+          },
+          "appearance": "light",
+          "recommendation": "preferred",
+          "source_case": "search-sketch"
         }
       ]
     },

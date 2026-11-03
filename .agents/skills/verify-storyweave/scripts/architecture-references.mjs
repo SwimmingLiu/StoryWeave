@@ -74,10 +74,12 @@ try {
   for (const viewport of [{ id: 'desktop', width: 1440, height: 900 }, { id: 'mobile', width: 390, height: 844 }]) {
     await page.setViewportSize({ width: viewport.width, height: viewport.height });
     await page.goto(pathToFileURL(join(repo, 'skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/index.html')).href);
-    assert.equal(await page.locator('article:visible').count(), generated.filter((item) => item.curation.representative).length);
+    const selected = generated.filter((item) => item.curation.selected);
+    assert.equal(await page.locator('article:visible').count(), selected.length);
     await page.screenshot({ path: join(output, `shortlist-${viewport.id}.png`), fullPage: true });
-    // The shortlist is a suggestion, never a saved user choice; exercise a disposable pick and exported fixture explicitly.
-    assert.equal(await page.locator('[data-pick]:checked').count(), 0);
+    // Start from the explicit user selection, then exercise a disposable export without changing the saved selection.
+    assert.deepEqual((await page.locator('[data-pick]:checked').evaluateAll((inputs) => inputs.map((input) => input.value))).sort(), selected.map((item) => item.id).sort());
+    for (const checkbox of await page.getByRole('checkbox').all()) await checkbox.uncheck();
     assert(await page.locator('[data-export]').isDisabled());
     const firstPick = page.getByRole('checkbox').first();
     const firstId = await firstPick.getAttribute('value');
@@ -116,8 +118,24 @@ try {
       await save('actions.json', actions);
     }
   }
-  await page.goto(pathToFileURL(join(repo, 'skills/storyweave-imagegen/assets/examples/theme-previews/index.html')).href);
-  assert.equal(await page.locator('article:visible').count(), styles.filter((style) => style.appearance === 'light').length);
+  // The new recipes reuse selected architecture assets; verify those relative image paths through the actual theme gallery too.
+  for (const viewport of [{ id: 'desktop', width: 1440, height: 900 }, { id: 'mobile', width: 390, height: 844 }]) {
+    await page.setViewportSize({ width: viewport.width, height: viewport.height });
+    await page.goto(pathToFileURL(join(repo, 'skills/storyweave-imagegen/assets/examples/theme-previews/index.html')).href);
+    assert.equal(await page.locator('article:visible').count(), styles.filter((style) => style.appearance === 'light').length);
+    for (const style of styles.filter((entry) => entry.source_case)) {
+      const card = page.locator(`#${style.ref.replace('/', '--')}`);
+      await card.scrollIntoViewIfNeeded();
+      const picture = card.locator('img');
+      await picture.evaluate((image) => image.decode());
+      const state = await picture.evaluate((image) => ({ width: image.naturalWidth, height: image.naturalHeight }));
+      const original = catalog.cases.find((entry) => entry.id === style.source_case).pages[0];
+      assert.deepEqual([state.width, state.height], [original.width, original.height]);
+      await card.screenshot({ path: join(output, `theme-${viewport.id}-${style.ref.replace('/', '--')}.png`) });
+      actions.push({ action: 'selected-theme-preview', viewport: viewport.id, theme_ref: style.ref, state });
+      await save('actions.json', actions);
+    }
+  }
   await page.getByRole('button', { name: /^全部主题/u }).click();
   assert.equal(await page.locator('article:visible').count(), styles.length);
   await page.getByRole('button', { name: /^深色备选/u }).click();

@@ -397,6 +397,163 @@
         "method": "direct-image",
         "notes": "Viewed the generated image: the supplied title and three stage labels are readable, the ordered route is visible, and the intended medium is distinguishable. This is a single process-page preview, not full-deck acceptance."
       }
+    },
+    {
+      "theme_ref": "knowledge/watercolor-machinery",
+      "file": "../../application-architecture-references/generated-cases/rag-sketch.png",
+      "origin": "built-in imagegen",
+      "tool": "image_gen.imagegen",
+      "model_id": null,
+      "purpose": "User-selected architecture seed for a new candidate recipe; the image was generated before that recipe and is not acceptance of other page roles.",
+      "page_type": "architecture-seed",
+      "source_case": "rag-sketch",
+      "image_sha256": "bc19d567bc8fcabff8e377b9388c1f48be84ef1e642f8f1285cb94c0e21810b7",
+      "actual_size": [
+        1672,
+        941
+      ],
+      "prompt": "../../application-architecture-references/generated-cases/prompts/rag-sketch.prompt.txt",
+      "prompt_sha256": "f505c484ca32e3c13dc669fc0f88c58797b84f802f45d74ce7585c7562f470bd",
+      "generation_record": "../../application-architecture-references/generated-cases/generation.json",
+      "visible_text": [
+        "知识问答：索引构建与检索生成",
+        "教学参考架构",
+        "文档来源",
+        "接入服务",
+        "任务队列",
+        "解析分块",
+        "向量编码",
+        "向量库",
+        "用户问题",
+        "检索服务",
+        "重排器",
+        "提示组装",
+        "语言模型",
+        "答案与引用",
+        "离线索引",
+        "在线问答"
+      ],
+      "visual_review": {
+        "status": "inspected",
+        "method": "direct-image",
+        "notes": "上层六个离线组件从左向右；唯一向量库通过层间长线向下进入检索服务。下层从用户问题经检索、重排、提示组装与模型到答案引用。11 条服务关系齐全，组件内部图标不作为额外服务连线。 细蓝线稿、薄荷与淡紫水彩形成两层，设备剖面表示解析、编码与检索职责。上下两层的共享依赖清楚；外缘较紧但组件与标签完整。"
+      }
+    },
+    {
+      "theme_ref": "knowledge/engineering-workshop",
+      "file": "../../application-architecture-references/generated-cases/search-sketch.png",
+      "origin": "built-in imagegen",
+      "tool": "image_gen.imagegen",
+      "model_id": null,
+      "purpose": "User-selected architecture seed for a new candidate recipe; the image was generated before that recipe and is not acceptance of other page roles.",
+      "page_type": "architecture-seed",
+      "source_case": "search-sketch",
+      "image_sha256": "e2eba588eda75607affb54bae6f5713c2dbaf55f5a0b1321fb0eb4b50c483cc0",
+      "actual_size": [
+        1672,
+        941
+      ],
+      "prompt": "../../application-architecture-references/generated-cases/prompts/search-sketch.frame-edit.prompt.txt",
+      "prompt_sha256": "3044cc0349c522960a636c1ae16e43a8c0d60c298a96b336765dbc225a73474b",
+      "generation_record": "../../application-architecture-references/generated-cases/generation.json",
+      "visible_text": [
+        "网页来源",
+        "采集服务",
+        "抓取队列",
+        "解析清洗",
+        "索引构建",
+        "搜索索引",
+        "用户查询",
+        "查询入口",
+        "检索服务",
+        "排序服务",
+        "结果组装",
+        "搜索结果",
+        "采集与索引",
+        "在线搜索"
+      ],
+      "visual_review": {
+        "status": "inspected",
+        "method": "direct-image",
+        "notes": "上层从网页来源经采集、队列、清洗、构建到唯一搜索索引；下层从查询到搜索结果。搜索索引从层间走廊进入检索服务顶部，11 条服务箭头齐全。 工程手账用纸张输送、清洗设备和索引抽屉表达职责。边缘修订后，所有分区边框、设备与标签外都有连续暖白留白；主体仍足够大。"
+      }
+    },
+    {
+      "theme_ref": "systems/glass-pipeline",
+      "file": "../../application-architecture-references/generated-cases/video-glass.png",
+      "origin": "built-in imagegen",
+      "tool": "image_gen.imagegen",
+      "model_id": null,
+      "purpose": "User-selected architecture seed for a new candidate recipe; the image was generated before that recipe and is not acceptance of other page roles.",
+      "page_type": "architecture-seed",
+      "source_case": "video-glass",
+      "image_sha256": "8ce065ba1685a9dcf4b094793edcd21fd632d07b481aa2430e8a905979111bb3",
+      "actual_size": [
+        1672,
+        941
+      ],
+      "prompt": "../../application-architecture-references/generated-cases/prompts/video-glass.content-edit.prompt.txt",
+      "prompt_sha256": "aba47aa57c98a3b0f1e95ae42472c5e83dab92e8feb495158400b2631120ecac",
+      "generation_record": "../../application-architecture-references/generated-cases/generation.json",
+      "visible_text": [
+        "上传端",
+        "上传入口",
+        "源视频库",
+        "任务队列",
+        "转码调度",
+        "转码集群",
+        "封装服务",
+        "成品库",
+        "内容分发",
+        "播放端",
+        "元数据服务",
+        "元数据库",
+        "上传与处理"
+      ],
+      "visual_review": {
+        "status": "inspected",
+        "method": "direct-image",
+        "notes": "上传入口向上进入源视频库，源视频库单独输入转码集群；中路由队列和调度控制集群，之后顺序进入封装、成品、分发与播放。元数据支路在下方，12 条关系无交叉、遗漏或额外连接。 整张图以银白玻璃架构为主体，原标题区释放后组件更大；主路径横向，元数据支路与源视频支路上下分开。最左、最右组件完整，留白较窄。"
+      }
+    },
+    {
+      "theme_ref": "systems/lavender-feedback",
+      "file": "../../application-architecture-references/generated-cases/recommendation-glass.png",
+      "origin": "built-in imagegen",
+      "tool": "image_gen.imagegen",
+      "model_id": null,
+      "purpose": "User-selected architecture seed for a new candidate recipe; the image was generated before that recipe and is not acceptance of other page roles.",
+      "page_type": "architecture-seed",
+      "source_case": "recommendation-glass",
+      "image_sha256": "96be2054b0c82621572568970f173fa344f4dc50443d59e36d96e7d788b8fea1",
+      "actual_size": [
+        1672,
+        941
+      ],
+      "prompt": "../../application-architecture-references/generated-cases/prompts/recommendation-glass.prompt.txt",
+      "prompt_sha256": "914be2e710d0b8b0ebe1009e4c3b40668ec02f8f3e0641c243d8ad14ca3912b4",
+      "generation_record": "../../application-architecture-references/generated-cases/generation.json",
+      "visible_text": [
+        "客户端",
+        "推荐入口",
+        "画像服务",
+        "画像库",
+        "召回服务",
+        "向量索引",
+        "排序服务",
+        "模型服务",
+        "策略过滤",
+        "推荐结果",
+        "行为采集",
+        "事件总线",
+        "在线推荐",
+        "行为反馈"
+      ],
+      "visual_review": {
+        "status": "inspected",
+        "method": "direct-image",
+        "notes": "中间主推荐路径由客户端到结果；画像服务位于上方并输入排序，向量与模型依赖在下方。客户端下接行为采集，总线通过紫色独立上行轨道进入画像服务。13 条关系齐全，轨道交叉处凭颜色与白色间隔区分，未增加交汇点。 清透银白与淡紫玻璃构成可见部件；主路径与反馈分区分开，箭头和标签未被裁切。分区外框距画布侧边较近，作为排版选图时需保留外围留白。"
+      }
     }
   ]
 }

@@ -41,19 +41,21 @@ HTML 制作先读[视觉生成规则](docs/architecture/visual-generation.md)。
 
 ## Imagegen 主题与参考图
 
-生成器现有 **19 套候选主题**，已将 18 种参考风格归并成 14 个主题方向，补成可直接选择的配方。相近的手绘白板、角色彩绘和玻璃风格合并，其余保留独立的绘画与材质语言。[完整主题与合并关系](skills/storyweave-imagegen/references/themes.md) · [19 套实际预览](skills/storyweave-imagegen/assets/examples/theme-previews/index.html)
+生成器现有 **23 套候选主题**。新增淡彩机械手绘、工程线稿工坊、银白玻璃管线、淡紫玻璃反馈四套配方，以下为各自的原创架构参考图。原有主题与完整引用保留。[完整主题目录](skills/storyweave-imagegen/references/themes.md) · [23 套实际预览](skills/storyweave-imagegen/assets/examples/theme-previews/index.html)
 
-默认优先浅色主题，深色主题保留为显式备选。以下流程样张使用同一份内容，用于比较媒介；复杂架构另看[应用架构案例](design-library/application-architecture-references/index.html)。
+默认优先浅色主题，深色主题保留为显式备选。每套新主题都支持现有页型与准确文字合同；参考图说明媒介和关系表达，具体演示仍需逐页复核。
 
-| 白底青蓝 | 银白玻璃 |
+| 淡彩机械手绘 · A1 | 工程线稿工坊 · A2 |
 | --- | --- |
-| ![白底青蓝](skills/storyweave-imagegen/assets/examples/theme-previews/systems--white-cyan-circuit.png) | ![银白玻璃](skills/storyweave-imagegen/assets/examples/theme-previews/systems--silver-glass.png) |
+| ![淡彩机械手绘知识问答](skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/rag-sketch.png) | ![工程线稿工坊搜索平台](skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/search-sketch.png) |
+| `knowledge/watercolor-machinery` | `knowledge/engineering-workshop` |
 
-| 黏土流程 | 漫画工程 |
+| 银白玻璃管线 · D1 | 淡紫玻璃反馈 · D4 |
 | --- | --- |
-| ![黏土流程](skills/storyweave-imagegen/assets/examples/theme-previews/tactile--clay-workflow.png) | ![漫画工程](skills/storyweave-imagegen/assets/examples/theme-previews/illustrated--comic-engineering.png) |
+| ![银白玻璃管线视频平台](skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/video-glass.png) | ![淡紫玻璃反馈推荐系统](skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/recommendation-glass.png) |
+| `systems/glass-pipeline` | `systems/lavender-feedback` |
 
-应用架构目录包含 **26 个案例**：16 个结构讲解参考归入 HTML/SVG，10 个插画参考归入 Imagegen。其中 [8 张原创候选图](skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/index.html)按相似风格分组，默认展示手绘、图鉴、黏土与玻璃四种代表，可勾选并导出选择；原图与提示词随包保存。以下两张 Google 原图附上游许可；[全部来源与用途](design-library/application-architecture-references/README.md)。
+应用架构目录包含 **26 个案例**：16 个结构讲解参考归入 HTML/SVG，10 个插画参考归入 Imagegen。其中 [8 张原创候选图](skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/index.html)按相似风格分组，默认展示已选的 A1、A2、D1、D4，可展开备选并导出选择；原图与提示词随包保存。以下两张 Google 原图附上游许可；[全部来源与用途](design-library/application-architecture-references/README.md)。
 
 | 银行业务边界 · Bank of Anthos | 电商服务调用 · Online Boutique |
 | --- | --- |
@@ -63,7 +65,7 @@ HTML 制作先读[视觉生成规则](docs/architecture/visual-generation.md)。
 [分享稿参考图库](skills/storyweave-imagegen/assets/reference-library/index.html)另收录 **18 种风格、41 张内容页**，可按观点、流程、对比、数据和架构筛选。每种参考风格均已对应到实际主题；纯 HTML 排版即可实现的案例归入 [HTML 参考目录](design-library/html-template-references/README.md)。联网版从来源加载原图，私有离线查看方法见[参考图说明](skills/storyweave-imagegen/references/presentation-cases.md)。
 
 ```bash
-node skills/storyweave-imagegen/scripts/ppt.mjs draft ./image-deck --theme tactile/clay-workflow --scope authoring
+node skills/storyweave-imagegen/scripts/ppt.mjs draft ./image-deck --theme knowledge/watercolor-machinery --scope authoring
 ```
 
 Imagegen CLI 编译逐页任务，由 Agent 调用真实生图工具，再收集结果与逐页复核。主题仍为 candidate；编译通过不代表图片文字、构图或视觉质量已通过。

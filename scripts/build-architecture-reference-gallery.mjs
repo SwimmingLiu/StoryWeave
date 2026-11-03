@@ -30,7 +30,7 @@ export function validateCatalog(catalog) {
     if (item.kind === 'generated-example') {
       assert(/^[A-Z][1-9][0-9]*$/u.test(item.curation?.code) && !curationCodes.has(item.curation.code), 'Generated choices need distinct readable codes');
       curationCodes.add(item.curation.code);
-      assert(item.curation.family?.trim() && item.curation.reason?.trim() && typeof item.curation.representative === 'boolean', 'Generated choices need similarity groups and a representative suggestion');
+      assert(item.curation.family?.trim() && item.curation.reason?.trim() && typeof item.curation.representative === 'boolean' && typeof item.curation.selected === 'boolean', 'Generated choices need similarity groups and an explicit selection state');
     }
     assert.equal(new URL(item.source_url).protocol, 'https:');
     assert(Array.isArray(item.pages) && item.pages.length, `Missing figures: ${item.id}`);
@@ -87,6 +87,9 @@ async function checkGeneratedEvidence(item, page, bytes) {
   assert.equal(record.review.status, 'accepted-for-reference');
   assert.equal(record.review.reviewed_sha256, page.sha256);
   assert.equal(record.review.content_spec_sha256, evidence.content_spec.sha256);
+  const selection = JSON.parse(await read('selection.json'));
+  assert.equal(selection.selected.some((entry) => entry.id === item.id), item.curation.selected, 'Casebook selection changed');
+  if (item.curation.selected) assert.equal(record.derived_theme_ref, item.theme_ref, 'Selected theme no longer matches its source image');
   assert.deepEqual(record.review.observed_nodes, content.nodes);
   assert.deepEqual(record.review.observed_edges, content.edges);
   assert(record.review.notes && record.review.text && record.review.composition && record.review.limits);
@@ -111,6 +114,9 @@ export async function buildGallery({ check = false, cacheRoot = null, output = n
   if (cacheDirectory) assert(outputDirectory !== cacheDirectory && !outputDirectory.startsWith(`${cacheDirectory}${sep}`), 'Offline output must stay outside the input cache');
   const source = await readFile(sourcePath);
   const catalog = validateCatalog(JSON.parse(source));
+  const themeCatalog = JSON.parse(await readFile(join(repo, 'skills/storyweave-imagegen/assets/themes/catalog.json'), 'utf8'));
+  const themes = new Set(themeCatalog.architectures.flatMap((entry) => entry.styles.map((style) => style.ref)));
+  for (const item of catalog.cases.filter((entry) => entry.target === 'imagegen')) assert(themes.has(item.theme_ref), `Unknown architecture theme: ${item.theme_ref}`);
   const cache = cacheDirectory ? JSON.parse(await readFile(join(cacheDirectory, 'cache.json'), 'utf8')) : null;
   if (cache) assert.equal(cache.catalog_sha256, hash(source), 'Refresh the architecture cache for this catalog');
   const images = new Map();
@@ -145,7 +151,7 @@ export async function buildGallery({ check = false, cacheRoot = null, output = n
   ];
   for (const [directory, cases] of targets) {
     const subset = { ...catalog, cases };
-    const figures = [...cases].sort((a, b) => Number(b.kind === 'generated-example') - Number(a.kind === 'generated-example')).flatMap((item) => item.pages.map((page) => {
+    const figures = [...cases].sort((a, b) => Number(Boolean(b.curation?.selected)) - Number(Boolean(a.curation?.selected)) || Number(b.kind === 'generated-example') - Number(a.kind === 'generated-example')).flatMap((item) => item.pages.map((page) => {
       const src = images.get(page.url) ?? (page.local_asset ? relative(directory, resolve(repo, page.local_asset)).split(sep).join('/') : page.url);
       const license = item.license_path ? `<a href="${escape(relative(directory, resolve(repo, item.license_path)).split(sep).join('/'))}">许可文本</a>` : '';
       return `<article data-case="${escape(item.id)}" data-page="${escape(page.id)}" data-target="${item.target}" data-kind="${item.kind}" data-search="${escape([item.title, item.category, item.creator, item.description, item.theme_ref ?? ''].join(' ').toLowerCase())}"><div class="frame"><button data-zoom aria-label="放大 ${escape(item.title)}"><img data-figure src="${escape(src)}" alt="${escape(item.title)}" width="${page.width}" height="${page.height}" loading="eager" referrerpolicy="no-referrer"></button><p data-error hidden>图片未能加载。<button data-retry>重试</button> · <a href="${escape(page.url)}" target="_blank" rel="noreferrer">原图</a></p></div><div class="copy"><p class="tag">${item.target === 'imagegen' ? 'Imagegen · 插画与空间表达' : 'HTML / SVG · 架构讲解'} · ${escape(item.category)}</p><h2>${escape(item.title)}</h2><p>${escape(item.selection_note)}</p><details><summary>用途与来源</summary><p>${escape(item.limits)}</p><p>${escape(item.generation_note)}</p><p>${escape(item.license_note)}</p></details><p class="links"><a href="${escape(item.source_url)}" target="_blank" rel="noreferrer">${escape(item.creator)} · 来源 ↗</a>${license}${page.provenance ? `<a href="${escape(relative(directory, resolve(repo, page.provenance)).split(sep).join('/'))}">生成与逐图观察</a><a href="${escape(relative(directory, resolve(repo, page.prompt)).split(sep).join('/'))}">提示词</a>` : ''}</p></div></article>`;

@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "source": "explicit-user-selection",
+  "selected": [
+    {
+      "code": "A1",
+      "id": "rag-sketch",
+      "theme_ref": "knowledge/watercolor-machinery"
+    },
+    {
+      "code": "A2",
+      "id": "search-sketch",
+      "theme_ref": "knowledge/engineering-workshop"
+    },
+    {
+      "code": "D1",
+      "id": "video-glass",
+      "theme_ref": "systems/glass-pipeline"
+    },
+    {
+      "code": "D4",
+      "id": "recommendation-glass",
+      "theme_ref": "systems/lavender-feedback"
+    }
+  ]
+}

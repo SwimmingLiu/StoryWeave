@@ -56,6 +56,9 @@ try {
       const visibleCases = await page.locator('article:visible').evaluateAll((cards) => [...new Set(cards.map((card) => card.dataset.case))]);
       assert.equal(visibleCases.length, catalog.cases.filter((item) => item.target === target).length);
     }
+    // A mixed Imagegen subset hid the new originals among remote references; exercise the dedicated comparison filter too.
+    await page.locator('[data-filter="generated"]').click();
+    assert.equal(await page.locator('article:visible').count(), catalog.cases.filter((item) => item.kind === 'generated-example').length);
     await page.getByRole('searchbox', { name: '搜索架构案例' }).fill('__no_architecture_match__');
     assert.equal(await page.locator('article:visible').count(), 0);
     assert(await page.locator('[data-empty]').isVisible());
@@ -65,6 +68,53 @@ try {
     await page.screenshot({ path: join(output, `${viewport.id}.png`) });
     actions.push({ action: 'filters-zoom-and-empty-state', viewport: viewport.id, status: 'pass' });
     await save('actions.json', actions);
+  }
+  // The private embedded viewer cannot prove the shipped casebook is self-contained; open its actual local assets offline.
+  const generated = catalog.cases.filter((item) => item.kind === 'generated-example');
+  for (const viewport of [{ id: 'desktop', width: 1440, height: 900 }, { id: 'mobile', width: 390, height: 844 }]) {
+    await page.setViewportSize({ width: viewport.width, height: viewport.height });
+    await page.goto(pathToFileURL(join(repo, 'skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/index.html')).href);
+    assert.equal(await page.locator('article:visible').count(), generated.filter((item) => item.curation.representative).length);
+    await page.screenshot({ path: join(output, `shortlist-${viewport.id}.png`), fullPage: true });
+    // The shortlist is a suggestion, never a saved user choice; exercise a disposable pick and exported fixture explicitly.
+    assert.equal(await page.locator('[data-pick]:checked').count(), 0);
+    assert(await page.locator('[data-export]').isDisabled());
+    const firstPick = page.getByRole('checkbox').first();
+    const firstId = await firstPick.getAttribute('value');
+    await firstPick.check();
+    await page.locator('[data-filter="selected"]').click();
+    assert.equal(await page.locator('article:visible').count(), 1);
+    const [download] = await Promise.all([page.waitForEvent('download'), page.locator('[data-export]').click()]);
+    const selectedFixture = join(output, `selection-fixture-${viewport.id}.json`);
+    await download.saveAs(selectedFixture);
+    assert.deepEqual(JSON.parse(await readFile(selectedFixture, 'utf8')).selected.map((item) => item.id), [firstId]);
+    await firstPick.uncheck();
+    assert(await page.locator('[data-empty]').isVisible());
+    for (const family of new Set(generated.map((item) => item.curation.family))) {
+      await page.getByRole('button', { name: family, exact: true }).click();
+      assert.equal(await page.locator('article:visible').count(), generated.filter((item) => item.curation.family === family).length);
+    }
+    await page.locator('[data-filter="all"]').click();
+    assert.equal(await page.locator('article:visible').count(), generated.length);
+    actions.push({ action: 'shortlist-families-pick-and-export-fixture', viewport: viewport.id, status: 'pass' });
+    assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'Generated casebook overflows the viewport');
+    for (const item of generated) {
+      const card = page.locator(`[data-case="${item.id}"]`);
+      await card.scrollIntoViewIfNeeded();
+      const picture = card.locator('[data-figure]');
+      await picture.evaluate((image) => image.decode());
+      const state = await picture.evaluate((image) => ({ width: image.naturalWidth, height: image.naturalHeight }));
+      assert.deepEqual([state.width, state.height], [item.pages[0].width, item.pages[0].height]);
+      await card.screenshot({ path: join(output, `generated-${viewport.id}-${item.id}.png`) });
+      await card.locator('[data-zoom]').click();
+      const dialog = page.getByRole('dialog');
+      assert(await dialog.isVisible());
+      await dialog.locator('img').evaluate((image) => image.decode());
+      await page.keyboard.press('Escape');
+      assert(!await dialog.isVisible());
+      actions.push({ action: 'shipped-generated-display-and-zoom', viewport: viewport.id, case_id: item.id, state });
+      await save('actions.json', actions);
+    }
   }
   await page.goto(pathToFileURL(join(repo, 'skills/storyweave-imagegen/assets/examples/theme-previews/index.html')).href);
   assert.equal(await page.locator('article:visible').count(), styles.filter((style) => style.appearance === 'light').length);

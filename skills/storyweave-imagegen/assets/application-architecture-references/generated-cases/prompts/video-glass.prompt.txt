@@ -1,0 +1,21 @@
+Use case: infographic-diagram
+Asset type: original full-slide 16:9 Chinese technical presentation content page for StoryWeave.
+Primary request: draw the authored teaching reference architecture below as a detailed light-background technical illustration. This is an explanatory model, not a named company production architecture.
+Style/medium: light silver-glass architectural cutaway illustration, clear frosted-white and ice-blue miniature processing modules with finely drawn circuitry, translucent routing tracks and legible dark blue labels; white background, diffuse high-key lighting, realistic shallow material depth; controlled cyan and muted violet accents, no black metal.
+Composition/framing: landscape 16:9. A modest title above the architecture; large crisp component labels; broad quiet margins. Broad horizontal processing line; show source-video storage feeding the processing cluster separately from the queue/scheduler control path. Make the cluster an illustrated cutaway containing repeated processing units but only one shared label. Finished assets flow through distribution to a player. Place the metadata branch below the upload entrance without crossing the main data path.
+All visible text, verbatim, and no other strings: ["视频平台：上传、转码与分发", "教学参考架构", "上传端", "上传入口", "源视频库", "任务队列", "转码调度", "转码集群", "封装服务", "成品库", "内容分发", "播放端", "元数据服务", "元数据库", "上传与处理", "内容分发"]
+Every one of the 12 named components appears exactly once with its own directly attached label. The objects must express their software responsibilities. The two group labels annotate regions, not extra components.
+Exact directed relationships, each rendered once with a legible arrowhead and no additional connections:
+上传端 -> 上传入口
+上传入口 -> 源视频库
+上传入口 -> 任务队列
+任务队列 -> 转码调度
+转码调度 -> 转码集群
+源视频库 -> 转码集群
+转码集群 -> 封装服务
+封装服务 -> 成品库
+成品库 -> 内容分发
+内容分发 -> 播放端
+上传入口 -> 元数据服务
+元数据服务 -> 元数据库
+Information clarity, authored topology and exact Chinese text take priority over decoration. Short non-overlapping routes, clear fan-out, correct arrowheads and generous text clearance. Do not add metrics, brands, code, people, gears, generic landscapes or ornamental icons. Do not replace this with a plain box-and-arrow vector chart: use the specified detailed physical or drawn medium. No dark background, neon, gold, giant headline, border or footer. Keep labels and every arrowhead inside the canvas.

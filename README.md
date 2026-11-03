@@ -53,7 +53,7 @@ HTML 制作先读[视觉生成规则](docs/architecture/visual-generation.md)。
 | --- | --- |
 | ![黏土流程](skills/storyweave-imagegen/assets/examples/theme-previews/tactile--clay-workflow.png) | ![漫画工程](skills/storyweave-imagegen/assets/examples/theme-previews/illustrated--comic-engineering.png) |
 
-新增 **18 个应用架构与插画参考**，覆盖电商、银行、消息、视频、支付、搜索和 AI。16 个结构讲解案例归入 HTML/SVG，2 个浅色等距案例供 Imagegen 参考。以下两张原图随仓库保存，附上游许可；[全部来源与用途](design-library/application-architecture-references/README.md)。
+应用架构目录包含 **26 个案例**：16 个结构讲解参考归入 HTML/SVG，10 个插画参考归入 Imagegen。其中 [8 张原创候选图](skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/index.html)按相似风格分组，默认展示手绘、图鉴、黏土与玻璃四种代表，可勾选并导出选择；原图与提示词随包保存。以下两张 Google 原图附上游许可；[全部来源与用途](design-library/application-architecture-references/README.md)。
 
 | 银行业务边界 · Bank of Anthos | 电商服务调用 · Online Boutique |
 | --- | --- |

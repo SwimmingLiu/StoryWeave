@@ -1,0 +1,21 @@
+Use case: infographic-diagram
+Asset type: original near-16:9 technical architecture illustration for a presentation; the page title will be outside the image.
+Primary request: draw the authored teaching reference below as a detailed, light-background technical illustration. It does not claim any company production implementation.
+Style/medium: precise engineering field-notebook illustration on warm white paper, fine dark-blue pen and restrained pencil construction lines, pale sage and lavender watercolor washes; detailed miniature web-document conveyors, parsing equipment, searchable index cabinet and retrieval instruments; crisp attached Chinese labels, no heavy paper aging
+Composition/framing: Two well-spaced horizontal tiers. The six offline components progress left to right across the upper tier. The six online components progress left to right below. A single, clearly separated dependency descends from the shared upper-right search index, follows the empty corridor between tiers, and enters the top of the lower retrieval component. Short direct arrows everywhere else; no duplicate index.
+Layout and edges: architecture fills the useful canvas, with at least 4 percent quiet outer margins on every side. Keep grouping planes, component bases, attached labels, arrowheads and soft shadows fully inside those margins. Use two or three balanced information zones; short nonoverlapping routes; generous space around labels. Components should be large enough to read on a presentation. No empty title band. No giant headline, subtitle, footer or decorative badges.
+ONLY visible text, verbatim: ["网页来源", "采集服务", "抓取队列", "解析清洗", "索引构建", "搜索索引", "用户查询", "查询入口", "检索服务", "排序服务", "结果组装", "搜索结果", "采集与索引", "在线搜索"]
+Each of the 12 named components appears exactly once, with its own attached label. Region labels annotate groups and do not create extra components.
+Exact service-level directed relationships, each once with a clear arrowhead and no additional connections:
+网页来源 -> 采集服务
+采集服务 -> 抓取队列
+抓取队列 -> 解析清洗
+解析清洗 -> 索引构建
+索引构建 -> 搜索索引
+用户查询 -> 查询入口
+查询入口 -> 检索服务
+搜索索引 -> 检索服务
+检索服务 -> 排序服务
+排序服务 -> 结果组装
+结果组装 -> 搜索结果
+Content, exact Chinese and topology take priority over decoration. Use the specified physical or drawn medium, not a plain HTML-like box-and-arrow chart. Draw distinct domain-specific equipment and cutaways, no generic gears, generic landscape, unsupported metrics, brands, people or code. Keep a bright white or warm-white background and controlled small shadows. No cropped objects or frames touching the canvas edge.

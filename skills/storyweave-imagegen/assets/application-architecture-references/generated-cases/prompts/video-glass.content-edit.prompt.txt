@@ -1,0 +1,22 @@
+Use case: precise-object-edit
+Edit target: the supplied silver-glass video-platform architecture illustration.
+Produce the architecture illustration itself. Remove the entire top main title and subtitle and all title ornament. Use the released canvas area to ENLARGE and reframe the architecture, rather than leaving an empty header band. The title and explanation will be placed outside the image by the presentation.
+Keep a wide near-16:9 canvas, bright white background, silver-clear glass and ice-blue modules, cyan arrows, violet content-distribution zone, existing diagram organization and meaningful physical component details.
+Composition: architecture fills the canvas with comfortable outer margins. Put the two group tabs near the top of their respective pale grouping planes. Enlarge the service components and their readable attached labels. Keep the source-video store above the upload/queue/scheduler control line, with its separate arrow into the processing cluster. Keep the metadata branch below the upload entrance. The main processing/distribution line remains horizontal, with all 12 components visible and no crossing or cropping. Preserve all software relationships exactly.
+ONLY visible strings, attached to their components or group regions, each component label exactly once:
+"上传端", "上传入口", "源视频库", "任务队列", "转码调度", "转码集群", "封装服务", "成品库", "内容分发", "播放端", "元数据服务", "元数据库", "上传与处理"
+The region label "内容分发" may also appear above the right-side group, separate from the identically named component.
+Exactly 12 service-level directed connections, each once with a clear arrowhead:
+上传端 -> 上传入口
+上传入口 -> 源视频库
+上传入口 -> 任务队列
+任务队列 -> 转码调度
+转码调度 -> 转码集群
+源视频库 -> 转码集群
+转码集群 -> 封装服务
+封装服务 -> 成品库
+成品库 -> 内容分发
+内容分发 -> 播放端
+上传入口 -> 元数据服务
+元数据服务 -> 元数据库
+No other text, headline, subtitle, caption, badge, logo or decorative rules. Do not add components, extra relationships, gears or generic scenery. Information clarity and larger useful diagram content take priority.

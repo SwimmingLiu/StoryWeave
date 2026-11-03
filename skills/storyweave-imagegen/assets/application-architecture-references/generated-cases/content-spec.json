@@ -1,0 +1,625 @@
+{
+  "purpose": "authored teaching references; not production completeness claims",
+  "cases": [
+    {
+      "id": "ecommerce-cyan",
+      "title": "电商交易：请求、订单与事件",
+      "theme_ref": "systems/white-cyan-circuit",
+      "style": "high-quality light technical editorial illustration; frosted cyan glass and pale blue ceramic miniature services, precise ink-blue routing tracks, white background, bright diffuse daylight",
+      "groups": [
+        "同步请求",
+        "异步事件"
+      ],
+      "nodes": [
+        "客户端",
+        "API 入口",
+        "商品查询",
+        "商品缓存",
+        "商品库",
+        "订单服务",
+        "订单库",
+        "事件总线",
+        "库存服务",
+        "库存库",
+        "支付服务",
+        "支付网关",
+        "通知服务",
+        "消息渠道"
+      ],
+      "edges": [
+        [
+          "客户端",
+          "API 入口"
+        ],
+        [
+          "API 入口",
+          "商品查询"
+        ],
+        [
+          "API 入口",
+          "订单服务"
+        ],
+        [
+          "商品查询",
+          "商品缓存"
+        ],
+        [
+          "商品查询",
+          "商品库"
+        ],
+        [
+          "订单服务",
+          "订单库"
+        ],
+        [
+          "订单服务",
+          "事件总线"
+        ],
+        [
+          "事件总线",
+          "库存服务"
+        ],
+        [
+          "事件总线",
+          "支付服务"
+        ],
+        [
+          "事件总线",
+          "通知服务"
+        ],
+        [
+          "库存服务",
+          "库存库"
+        ],
+        [
+          "支付服务",
+          "支付网关"
+        ],
+        [
+          "通知服务",
+          "消息渠道"
+        ]
+      ],
+      "composition": "Client/API entry at left; product reads above the middle; order persistence and event backbone in the middle; inventory, payment and notification on the right. Distinguish synchronous requests from event fan-out, with pale cyan and mint grouping planes.",
+      "in_image_headings": [
+        "电商交易：请求、订单与事件",
+        "教学参考架构"
+      ]
+    },
+    {
+      "id": "rag-sketch",
+      "title": "知识问答：索引构建与检索生成",
+      "theme_ref": "knowledge/sketch-notes",
+      "style": "intricate technical sketchbook illustration on clean warm-white paper, precise pencil and dark blue ink, pale mint and lavender watercolor washes; miniature cutaway document-processing equipment, labeled storage vessels and retrieval instruments physically joined by routing tracks; restrained irregular drawing texture, no solid dark fills",
+      "groups": [
+        "离线索引",
+        "在线问答"
+      ],
+      "nodes": [
+        "文档来源",
+        "接入服务",
+        "任务队列",
+        "解析分块",
+        "向量编码",
+        "向量库",
+        "用户问题",
+        "检索服务",
+        "重排器",
+        "提示组装",
+        "语言模型",
+        "答案与引用"
+      ],
+      "edges": [
+        [
+          "文档来源",
+          "接入服务"
+        ],
+        [
+          "接入服务",
+          "任务队列"
+        ],
+        [
+          "任务队列",
+          "解析分块"
+        ],
+        [
+          "解析分块",
+          "向量编码"
+        ],
+        [
+          "向量编码",
+          "向量库"
+        ],
+        [
+          "用户问题",
+          "检索服务"
+        ],
+        [
+          "向量库",
+          "检索服务"
+        ],
+        [
+          "检索服务",
+          "重排器"
+        ],
+        [
+          "重排器",
+          "提示组装"
+        ],
+        [
+          "提示组装",
+          "语言模型"
+        ],
+        [
+          "语言模型",
+          "答案与引用"
+        ]
+      ],
+      "composition": "Two wide parallel tiers, upper offline indexing and lower online answering, sharing exactly one vector store near the right of the upper tier. Arrows show data movement: stored candidate context flows from the vector store into retrieval. Keep the authored shared dependency visible; do not duplicate the vector store or imply that a model independently creates citations.",
+      "in_image_headings": [
+        "知识问答：索引构建与检索生成",
+        "教学参考架构"
+      ]
+    },
+    {
+      "id": "messaging-clay",
+      "title": "即时消息：在线投递与离线通知",
+      "theme_ref": "tactile/clay-workflow",
+      "style": "bright tactile clay technical diorama, matte porcelain and soft mint, coral and sky-blue modeled service components, precise short dark-blue directional tracks, broad white studio background and soft daylight, small consistent shadows, no night scene",
+      "groups": [
+        "在线投递",
+        "离线通知"
+      ],
+      "nodes": [
+        "发送端",
+        "连接网关",
+        "消息服务",
+        "消息库",
+        "事件总线",
+        "在线路由",
+        "接收网关",
+        "接收端",
+        "离线推送",
+        "推送渠道",
+        "状态服务",
+        "会话索引"
+      ],
+      "edges": [
+        [
+          "发送端",
+          "连接网关"
+        ],
+        [
+          "连接网关",
+          "消息服务"
+        ],
+        [
+          "消息服务",
+          "消息库"
+        ],
+        [
+          "消息服务",
+          "事件总线"
+        ],
+        [
+          "事件总线",
+          "在线路由"
+        ],
+        [
+          "在线路由",
+          "接收网关"
+        ],
+        [
+          "接收网关",
+          "接收端"
+        ],
+        [
+          "事件总线",
+          "离线推送"
+        ],
+        [
+          "离线推送",
+          "推送渠道"
+        ],
+        [
+          "消息服务",
+          "状态服务"
+        ],
+        [
+          "状态服务",
+          "会话索引"
+        ],
+        [
+          "状态服务",
+          "在线路由"
+        ]
+      ],
+      "composition": "Horizontal send-to-receive path across the upper half; a distinctly separated lower branch for offline push. Place persistent storage beside the message service and session-state lookup beside the routing decision. Emphasize fan-out and the state dependency; do not collapse all services into a single serial chain.",
+      "in_image_headings": [
+        "即时消息：在线投递与离线通知",
+        "教学参考架构"
+      ]
+    },
+    {
+      "id": "video-glass",
+      "title": "视频平台：上传、转码与分发",
+      "theme_ref": "systems/silver-glass",
+      "style": "light silver-glass architectural cutaway illustration, clear frosted-white and ice-blue miniature processing modules with finely drawn circuitry, translucent routing tracks and legible dark blue labels; white background, diffuse high-key lighting, realistic shallow material depth; controlled cyan and muted violet accents, no black metal",
+      "groups": [
+        "上传与处理",
+        "内容分发"
+      ],
+      "nodes": [
+        "上传端",
+        "上传入口",
+        "源视频库",
+        "任务队列",
+        "转码调度",
+        "转码集群",
+        "封装服务",
+        "成品库",
+        "内容分发",
+        "播放端",
+        "元数据服务",
+        "元数据库"
+      ],
+      "edges": [
+        [
+          "上传端",
+          "上传入口"
+        ],
+        [
+          "上传入口",
+          "源视频库"
+        ],
+        [
+          "上传入口",
+          "任务队列"
+        ],
+        [
+          "任务队列",
+          "转码调度"
+        ],
+        [
+          "转码调度",
+          "转码集群"
+        ],
+        [
+          "源视频库",
+          "转码集群"
+        ],
+        [
+          "转码集群",
+          "封装服务"
+        ],
+        [
+          "封装服务",
+          "成品库"
+        ],
+        [
+          "成品库",
+          "内容分发"
+        ],
+        [
+          "内容分发",
+          "播放端"
+        ],
+        [
+          "上传入口",
+          "元数据服务"
+        ],
+        [
+          "元数据服务",
+          "元数据库"
+        ]
+      ],
+      "composition": "Broad horizontal processing line; show source-video storage feeding the processing cluster separately from the queue/scheduler control path. Make the cluster an illustrated cutaway containing repeated processing units but only one shared label. Finished assets flow through distribution to a player. Place the metadata branch below the upload entrance without crossing the main data path.",
+      "in_image_headings": []
+    },
+    {
+      "id": "search-sketch",
+      "title": "搜索平台：采集、索引与查询",
+      "theme_ref": "knowledge/sketch-notes",
+      "style": "precise engineering field-notebook illustration on warm white paper, fine dark-blue pen and restrained pencil construction lines, pale sage and lavender watercolor washes; detailed miniature web-document conveyors, parsing equipment, searchable index cabinet and retrieval instruments; crisp attached Chinese labels, no heavy paper aging",
+      "groups": [
+        "采集与索引",
+        "在线搜索"
+      ],
+      "nodes": [
+        "网页来源",
+        "采集服务",
+        "抓取队列",
+        "解析清洗",
+        "索引构建",
+        "搜索索引",
+        "用户查询",
+        "查询入口",
+        "检索服务",
+        "排序服务",
+        "结果组装",
+        "搜索结果"
+      ],
+      "edges": [
+        [
+          "网页来源",
+          "采集服务"
+        ],
+        [
+          "采集服务",
+          "抓取队列"
+        ],
+        [
+          "抓取队列",
+          "解析清洗"
+        ],
+        [
+          "解析清洗",
+          "索引构建"
+        ],
+        [
+          "索引构建",
+          "搜索索引"
+        ],
+        [
+          "用户查询",
+          "查询入口"
+        ],
+        [
+          "查询入口",
+          "检索服务"
+        ],
+        [
+          "搜索索引",
+          "检索服务"
+        ],
+        [
+          "检索服务",
+          "排序服务"
+        ],
+        [
+          "排序服务",
+          "结果组装"
+        ],
+        [
+          "结果组装",
+          "搜索结果"
+        ]
+      ],
+      "composition": "Two well-spaced horizontal tiers. The six offline components progress left to right across the upper tier. The six online components progress left to right below. A single, clearly separated dependency descends from the shared upper-right search index, follows the empty corridor between tiers, and enters the top of the lower retrieval component. Short direct arrows everywhere else; no duplicate index.",
+      "in_image_headings": []
+    },
+    {
+      "id": "analytics-atlas",
+      "title": "数据分析：批流处理与指标交付",
+      "theme_ref": "knowledge/sketch-notes",
+      "style": "editorial scientific-atlas cutaway drawing on clean white paper; hairline graphite and navy technical contours, transparent pale-aqua and soft ochre watercolor sections, detailed instrument-like streaming processors and a warehouse cutaway; clean printed Chinese labels rather than calligraphy; measured realistic proportions, delicate restrained material texture",
+      "groups": [
+        "实时处理",
+        "离线分析",
+        "指标交付"
+      ],
+      "nodes": [
+        "业务库",
+        "变更采集",
+        "事件流",
+        "流式计算",
+        "实时指标库",
+        "对象存储",
+        "批处理",
+        "分析仓库",
+        "指标服务",
+        "查询接口",
+        "分析报表",
+        "告警服务"
+      ],
+      "edges": [
+        [
+          "业务库",
+          "变更采集"
+        ],
+        [
+          "变更采集",
+          "事件流"
+        ],
+        [
+          "事件流",
+          "流式计算"
+        ],
+        [
+          "流式计算",
+          "实时指标库"
+        ],
+        [
+          "事件流",
+          "对象存储"
+        ],
+        [
+          "对象存储",
+          "批处理"
+        ],
+        [
+          "批处理",
+          "分析仓库"
+        ],
+        [
+          "实时指标库",
+          "指标服务"
+        ],
+        [
+          "分析仓库",
+          "指标服务"
+        ],
+        [
+          "指标服务",
+          "查询接口"
+        ],
+        [
+          "查询接口",
+          "分析报表"
+        ],
+        [
+          "实时指标库",
+          "告警服务"
+        ]
+      ],
+      "composition": "An upper real-time processing lane and lower offline analysis lane converge into one metrics service toward the right. The event stream also archives downward into object storage. Use the open corridor between lanes for that branch. Metrics service flows through a query interface to an analytics report at the right; the live metrics store has a separate short branch to alerts above the report area. Balance three regions instead of squeezing all twelve components into one row.",
+      "in_image_headings": []
+    },
+    {
+      "id": "recommendation-glass",
+      "title": "内容推荐：在线决策与行为反馈",
+      "theme_ref": "systems/silver-glass",
+      "style": "bright silver and translucent ice-blue glass technical cutaway, shallow physical depth, thin dark-blue outlines on glass modules, subtle violet personalisation accents, white studio background, diffuse daylight; detailed profile-card storage, vector search instrument, ranking processor and a visible filtering assembly; legible dark navy labels",
+      "groups": [
+        "在线推荐",
+        "行为反馈"
+      ],
+      "nodes": [
+        "客户端",
+        "推荐入口",
+        "画像服务",
+        "画像库",
+        "召回服务",
+        "向量索引",
+        "排序服务",
+        "模型服务",
+        "策略过滤",
+        "推荐结果",
+        "行为采集",
+        "事件总线"
+      ],
+      "edges": [
+        [
+          "客户端",
+          "推荐入口"
+        ],
+        [
+          "推荐入口",
+          "画像服务"
+        ],
+        [
+          "画像服务",
+          "画像库"
+        ],
+        [
+          "推荐入口",
+          "召回服务"
+        ],
+        [
+          "召回服务",
+          "向量索引"
+        ],
+        [
+          "召回服务",
+          "排序服务"
+        ],
+        [
+          "画像服务",
+          "排序服务"
+        ],
+        [
+          "排序服务",
+          "模型服务"
+        ],
+        [
+          "排序服务",
+          "策略过滤"
+        ],
+        [
+          "策略过滤",
+          "推荐结果"
+        ],
+        [
+          "客户端",
+          "行为采集"
+        ],
+        [
+          "行为采集",
+          "事件总线"
+        ],
+        [
+          "事件总线",
+          "画像服务"
+        ]
+      ],
+      "composition": "A broad left-to-right recommendation path across the middle: client, entry, retrieval, ranking, policy filter, result. Profile service and its store sit above the entry/ranking area and visibly feed ranking. Vector index sits below retrieval and model service below ranking with short isolated dependency arrows. A separate lower feedback lane runs client to event collection to event bus, then a carefully routed upward arrow enters profile service from an outside corridor. At crossings show clear bridge separation without a junction dot. Twelve components, no extra recommendations or feedback destinations.",
+      "in_image_headings": []
+    },
+    {
+      "id": "fulfillment-cyan",
+      "title": "订单履约：库存、仓储与配送",
+      "theme_ref": "systems/white-cyan-circuit",
+      "style": "light product-launch technical diorama in pale cyan glazed ceramic and frosted blue glass, precise deep-blue routing tracks, small realistic cutaway warehouse shelves, parcel reservation bins and dispatch equipment; broad white background and soft clean shadows, restrained mint grouping planes; polished physical details that express each software responsibility",
+      "groups": [
+        "履约处理",
+        "通知交付"
+      ],
+      "nodes": [
+        "订单入口",
+        "履约服务",
+        "订单库",
+        "事件总线",
+        "库存预留",
+        "库存库",
+        "仓库调度",
+        "仓储接口",
+        "配送服务",
+        "承运接口",
+        "通知服务",
+        "消息渠道"
+      ],
+      "edges": [
+        [
+          "订单入口",
+          "履约服务"
+        ],
+        [
+          "履约服务",
+          "订单库"
+        ],
+        [
+          "履约服务",
+          "事件总线"
+        ],
+        [
+          "事件总线",
+          "库存预留"
+        ],
+        [
+          "库存预留",
+          "库存库"
+        ],
+        [
+          "库存预留",
+          "仓库调度"
+        ],
+        [
+          "仓库调度",
+          "仓储接口"
+        ],
+        [
+          "仓库调度",
+          "配送服务"
+        ],
+        [
+          "配送服务",
+          "承运接口"
+        ],
+        [
+          "配送服务",
+          "通知服务"
+        ],
+        [
+          "事件总线",
+          "通知服务"
+        ],
+        [
+          "通知服务",
+          "消息渠道"
+        ]
+      ],
+      "composition": "Use a spacious upper main chain: order entrance to fulfillment to event bus to stock reservation to warehouse scheduler to delivery. Place each of the four dependent stores or external interfaces immediately above its service with a short arrow. Put notifications and message channel in a separate lower-right region; two separate arrows enter notifications, one from event bus and one from delivery. No accidental joining of independent input lines. Keep the main architecture broad and balanced without giant generic icons.",
+      "in_image_headings": []
+    }
+  ]
+}

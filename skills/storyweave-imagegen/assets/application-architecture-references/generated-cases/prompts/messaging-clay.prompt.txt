@@ -1,0 +1,21 @@
+Use case: infographic-diagram
+Asset type: original full-slide 16:9 Chinese technical presentation content page for StoryWeave.
+Primary request: draw the authored teaching reference architecture below as a detailed light-background technical illustration. This is an explanatory model, not a named company production architecture.
+Style/medium: bright tactile clay technical diorama, matte porcelain and soft mint, coral and sky-blue modeled service components, precise short dark-blue directional tracks, broad white studio background and soft daylight, small consistent shadows, no night scene.
+Composition/framing: landscape 16:9. A modest title above the architecture; large crisp component labels; broad quiet margins. Horizontal send-to-receive path across the upper half; a distinctly separated lower branch for offline push. Place persistent storage beside the message service and session-state lookup beside the routing decision. Emphasize fan-out and the state dependency; do not collapse all services into a single serial chain.
+All visible text, verbatim, and no other strings: ["即时消息：在线投递与离线通知", "教学参考架构", "发送端", "连接网关", "消息服务", "消息库", "事件总线", "在线路由", "接收网关", "接收端", "离线推送", "推送渠道", "状态服务", "会话索引", "在线投递", "离线通知"]
+Every one of the 12 named components appears exactly once with its own directly attached label. The objects must express their software responsibilities. The two group labels annotate regions, not extra components.
+Exact directed relationships, each rendered once with a legible arrowhead and no additional connections:
+发送端 -> 连接网关
+连接网关 -> 消息服务
+消息服务 -> 消息库
+消息服务 -> 事件总线
+事件总线 -> 在线路由
+在线路由 -> 接收网关
+接收网关 -> 接收端
+事件总线 -> 离线推送
+离线推送 -> 推送渠道
+消息服务 -> 状态服务
+状态服务 -> 会话索引
+状态服务 -> 在线路由
+Information clarity, authored topology and exact Chinese text take priority over decoration. Short non-overlapping routes, clear fan-out, correct arrowheads and generous text clearance. Do not add metrics, brands, code, people, gears, generic landscapes or ornamental icons. Do not replace this with a plain box-and-arrow vector chart: use the specified detailed physical or drawn medium. No dark background, neon, gold, giant headline, border or footer. Keep labels and every arrowhead inside the canvas.

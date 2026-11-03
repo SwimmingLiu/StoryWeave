@@ -1,0 +1,376 @@
+{
+  "schema_version": 1,
+  "title": "应用架构讲解参考",
+  "selection_rule": "浅色、清楚组件与关系优先；普通方框连线归 HTML，连续插画与实体空间表达归 Imagegen。",
+  "review_scope": "原图参考；不把教学示意、模型生成图与真实项目生产全貌混同。",
+  "cases": [
+    {
+      "id": "ecommerce-cyan",
+      "title": "电商交易：请求、订单与事件",
+      "category": "原创教学架构",
+      "target": "imagegen",
+      "kind": "generated-example",
+      "creator": "StoryWeave / Codex image_gen",
+      "source_url": "https://github.com/SwimmingLiu/StoryWeave/tree/main/skills/storyweave-imagegen/assets/application-architecture-references/generated-cases",
+      "description": "左侧入口向上分出商品查询，查询分别指向缓存与商品库；下路订单服务向下落库，向右进入事件总线；总线向右分出库存、支付、通知，各自连接对应存储或渠道。13 个箭头的端点和方向可逐项追踪。",
+      "selection_note": "青蓝陶瓷与磨砂玻璃区分服务和存储；同步区与异步区清楚，左侧客户端距边缘较近但轮廓、标签与阴影未被裁切。",
+      "limits": "原创教学参考模型，只说明图中列出的关系，不代表具体公司的生产实现或完整系统。标题占用一定高度；属于参考插画，后续作为内容图使用时可按页面任务调整图外标题。",
+      "license_note": "StoryWeave 原创生成案例，随本仓库按 MIT 许可分发。",
+      "license_path": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/LICENSE",
+      "imagegen_reference_eligible": true,
+      "theme_ref": "systems/white-cyan-circuit",
+      "generation_note": "使用 Codex 内置 image_gen 真实生成并逐图查看，调用来源、原始提示词、修订与字节哈希保存在随包记录中；工具未披露具体模型 ID。",
+      "pages": [
+        {
+          "id": "p01",
+          "title": "电商交易：请求、订单与事件",
+          "url": "https://raw.githubusercontent.com/SwimmingLiu/StoryWeave/main/skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/ecommerce-cyan.png",
+          "local_asset": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/ecommerce-cyan.png",
+          "provenance": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/generation.json",
+          "prompt": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/prompts/ecommerce-cyan.prompt.txt",
+          "width": 1672,
+          "height": 941,
+          "sha256": "4b2d61ef03fa4e0c46f6296acba3c64b29b9343e4140b494fc15a0bb1a0f890a",
+          "roles": [
+            "architecture",
+            "process"
+          ],
+          "review": {
+            "kind": "agent",
+            "method": "actual-image",
+            "reviewed_sha256": "4b2d61ef03fa4e0c46f6296acba3c64b29b9343e4140b494fc15a0bb1a0f890a",
+            "notes": "左侧入口向上分出商品查询，查询分别指向缓存与商品库；下路订单服务向下落库，向右进入事件总线；总线向右分出库存、支付、通知，各自连接对应存储或渠道。13 个箭头的端点和方向可逐项追踪。 青蓝陶瓷与磨砂玻璃区分服务和存储；同步区与异步区清楚，左侧客户端距边缘较近但轮廓、标签与阴影未被裁切。"
+          }
+        }
+      ],
+      "curation": {
+        "code": "D3",
+        "family": "玻璃与青蓝",
+        "representative": false,
+        "reason": "青蓝分流与事件扇出清楚，保留图内标题；与 D1、D2 的材质较接近。"
+      }
+    },
+    {
+      "id": "rag-sketch",
+      "title": "知识问答：索引构建与检索生成",
+      "category": "原创教学架构",
+      "target": "imagegen",
+      "kind": "generated-example",
+      "creator": "StoryWeave / Codex image_gen",
+      "source_url": "https://github.com/SwimmingLiu/StoryWeave/tree/main/skills/storyweave-imagegen/assets/application-architecture-references/generated-cases",
+      "description": "上层六个离线组件从左向右；唯一向量库通过层间长线向下进入检索服务。下层从用户问题经检索、重排、提示组装与模型到答案引用。11 条服务关系齐全，组件内部图标不作为额外服务连线。",
+      "selection_note": "细蓝线稿、薄荷与淡紫水彩形成两层，设备剖面表示解析、编码与检索职责。上下两层的共享依赖清楚；外缘较紧但组件与标签完整。",
+      "limits": "原创教学参考模型，只说明图中列出的关系，不代表具体公司的生产实现或完整系统。向量库到检索的线较长；表达存储上下文供检索使用，不证明某个 RAG 产品的生产实现。",
+      "license_note": "StoryWeave 原创生成案例，随本仓库按 MIT 许可分发。",
+      "license_path": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/LICENSE",
+      "imagegen_reference_eligible": true,
+      "theme_ref": "knowledge/sketch-notes",
+      "generation_note": "使用 Codex 内置 image_gen 真实生成并逐图查看，调用来源、原始提示词、修订与字节哈希保存在随包记录中；工具未披露具体模型 ID。",
+      "pages": [
+        {
+          "id": "p01",
+          "title": "知识问答：索引构建与检索生成",
+          "url": "https://raw.githubusercontent.com/SwimmingLiu/StoryWeave/main/skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/rag-sketch.png",
+          "local_asset": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/rag-sketch.png",
+          "provenance": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/generation.json",
+          "prompt": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/prompts/rag-sketch.prompt.txt",
+          "width": 1672,
+          "height": 941,
+          "sha256": "bc19d567bc8fcabff8e377b9388c1f48be84ef1e642f8f1285cb94c0e21810b7",
+          "roles": [
+            "architecture",
+            "process"
+          ],
+          "review": {
+            "kind": "agent",
+            "method": "actual-image",
+            "reviewed_sha256": "bc19d567bc8fcabff8e377b9388c1f48be84ef1e642f8f1285cb94c0e21810b7",
+            "notes": "上层六个离线组件从左向右；唯一向量库通过层间长线向下进入检索服务。下层从用户问题经检索、重排、提示组装与模型到答案引用。11 条服务关系齐全，组件内部图标不作为额外服务连线。 细蓝线稿、薄荷与淡紫水彩形成两层，设备剖面表示解析、编码与检索职责。上下两层的共享依赖清楚；外缘较紧但组件与标签完整。"
+          }
+        }
+      ],
+      "curation": {
+        "code": "A1",
+        "family": "细线手绘",
+        "representative": true,
+        "reason": "线稿与淡彩分层清楚，适合知识讲解；与 A2 选一个即可形成手绘代表。"
+      }
+    },
+    {
+      "id": "messaging-clay",
+      "title": "即时消息：在线投递与离线通知",
+      "category": "原创教学架构",
+      "target": "imagegen",
+      "kind": "generated-example",
+      "creator": "StoryWeave / Codex image_gen",
+      "source_url": "https://github.com/SwimmingLiu/StoryWeave/tree/main/skills/storyweave-imagegen/assets/application-architecture-references/generated-cases",
+      "description": "上层主路径从发送端到接收端；消息服务向上落消息库、向下进入状态服务。状态服务顶部独立出线进入在线路由，向右连会话索引。事件总线向下进入离线推送再到渠道。修订后白色跨线隔离将离线线与状态输入线区分开。",
+      "selection_note": "黏土与哑光陶瓷的柔和实体厚度明显；在线区、状态依赖及离线支路分开。四周轮廓和箭头均完整，底部分区留白较窄。",
+      "limits": "原创教学参考模型，只说明图中列出的关系，不代表具体公司的生产实现或完整系统。交叉处用白色跨线隔离，适合放大查看；不将白色桥或路由组件内部的扇出符号计为新服务关系。",
+      "license_note": "StoryWeave 原创生成案例，随本仓库按 MIT 许可分发。",
+      "license_path": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/LICENSE",
+      "imagegen_reference_eligible": true,
+      "theme_ref": "tactile/clay-workflow",
+      "generation_note": "使用 Codex 内置 image_gen 真实生成并逐图查看，调用来源、原始提示词、修订与字节哈希保存在随包记录中；工具未披露具体模型 ID。",
+      "pages": [
+        {
+          "id": "p01",
+          "title": "即时消息：在线投递与离线通知",
+          "url": "https://raw.githubusercontent.com/SwimmingLiu/StoryWeave/main/skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/messaging-clay.png",
+          "local_asset": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/messaging-clay.png",
+          "provenance": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/generation.json",
+          "prompt": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/prompts/messaging-clay.edit.prompt.txt",
+          "width": 1672,
+          "height": 941,
+          "sha256": "b3ac05840534c9ac54f4fbcf621e3b7d20b11fbc86dc1af02c5bb25b0c2462a5",
+          "roles": [
+            "architecture",
+            "process"
+          ],
+          "review": {
+            "kind": "agent",
+            "method": "actual-image",
+            "reviewed_sha256": "b3ac05840534c9ac54f4fbcf621e3b7d20b11fbc86dc1af02c5bb25b0c2462a5",
+            "notes": "上层主路径从发送端到接收端；消息服务向上落消息库、向下进入状态服务。状态服务顶部独立出线进入在线路由，向右连会话索引。事件总线向下进入离线推送再到渠道。修订后白色跨线隔离将离线线与状态输入线区分开。 黏土与哑光陶瓷的柔和实体厚度明显；在线区、状态依赖及离线支路分开。四周轮廓和箭头均完整，底部分区留白较窄。"
+          }
+        }
+      ],
+      "curation": {
+        "code": "C1",
+        "family": "黏土实体",
+        "representative": true,
+        "reason": "哑光黏土与柔和色块明显区别于线稿和透明玻璃。"
+      }
+    },
+    {
+      "id": "video-glass",
+      "title": "视频平台：上传、转码与分发",
+      "category": "原创教学架构",
+      "target": "imagegen",
+      "kind": "generated-example",
+      "creator": "StoryWeave / Codex image_gen",
+      "source_url": "https://github.com/SwimmingLiu/StoryWeave/tree/main/skills/storyweave-imagegen/assets/application-architecture-references/generated-cases",
+      "description": "上传入口向上进入源视频库，源视频库单独输入转码集群；中路由队列和调度控制集群，之后顺序进入封装、成品、分发与播放。元数据支路在下方，12 条关系无交叉、遗漏或额外连接。",
+      "selection_note": "整张图以银白玻璃架构为主体，原标题区释放后组件更大；主路径横向，元数据支路与源视频支路上下分开。最左、最右组件完整，留白较窄。",
+      "limits": "原创教学参考模型，只说明图中列出的关系，不代表具体公司的生产实现或完整系统。节点多，演讲时应结合图外说明分段讲解；玻璃高光不代表任何运行指标。",
+      "license_note": "StoryWeave 原创生成案例，随本仓库按 MIT 许可分发。",
+      "license_path": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/LICENSE",
+      "imagegen_reference_eligible": true,
+      "theme_ref": "systems/silver-glass",
+      "generation_note": "使用 Codex 内置 image_gen 真实生成并逐图查看，调用来源、原始提示词、修订与字节哈希保存在随包记录中；工具未披露具体模型 ID。",
+      "pages": [
+        {
+          "id": "p01",
+          "title": "视频平台：上传、转码与分发",
+          "url": "https://raw.githubusercontent.com/SwimmingLiu/StoryWeave/main/skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/video-glass.png",
+          "local_asset": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/video-glass.png",
+          "provenance": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/generation.json",
+          "prompt": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/prompts/video-glass.content-edit.prompt.txt",
+          "width": 1672,
+          "height": 941,
+          "sha256": "8ce065ba1685a9dcf4b094793edcd21fd632d07b481aa2430e8a905979111bb3",
+          "roles": [
+            "architecture",
+            "process"
+          ],
+          "review": {
+            "kind": "agent",
+            "method": "actual-image",
+            "reviewed_sha256": "8ce065ba1685a9dcf4b094793edcd21fd632d07b481aa2430e8a905979111bb3",
+            "notes": "上传入口向上进入源视频库，源视频库单独输入转码集群；中路由队列和调度控制集群，之后顺序进入封装、成品、分发与播放。元数据支路在下方，12 条关系无交叉、遗漏或额外连接。 整张图以银白玻璃架构为主体，原标题区释放后组件更大；主路径横向，元数据支路与源视频支路上下分开。最左、最右组件完整，留白较窄。"
+          }
+        }
+      ],
+      "curation": {
+        "code": "D1",
+        "family": "玻璃与青蓝",
+        "representative": true,
+        "reason": "主链和上下支路清楚，画布集中展示架构，可作为玻璃方向的代表。"
+      }
+    },
+    {
+      "id": "search-sketch",
+      "title": "搜索平台：采集、索引与查询",
+      "category": "原创教学架构",
+      "target": "imagegen",
+      "kind": "generated-example",
+      "creator": "StoryWeave / Codex image_gen",
+      "source_url": "https://github.com/SwimmingLiu/StoryWeave/tree/main/skills/storyweave-imagegen/assets/application-architecture-references/generated-cases",
+      "description": "上层从网页来源经采集、队列、清洗、构建到唯一搜索索引；下层从查询到搜索结果。搜索索引从层间走廊进入检索服务顶部，11 条服务箭头齐全。",
+      "selection_note": "工程手账用纸张输送、清洗设备和索引抽屉表达职责。边缘修订后，所有分区边框、设备与标签外都有连续暖白留白；主体仍足够大。",
+      "limits": "原创教学参考模型，只说明图中列出的关系，不代表具体公司的生产实现或完整系统。与知识问答例共用双层组织方式，区别来自内容职责和设备细节，不声称版式变化本身带来质量提高。",
+      "license_note": "StoryWeave 原创生成案例，随本仓库按 MIT 许可分发。",
+      "license_path": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/LICENSE",
+      "imagegen_reference_eligible": true,
+      "theme_ref": "knowledge/sketch-notes",
+      "generation_note": "使用 Codex 内置 image_gen 真实生成并逐图查看，调用来源、原始提示词、修订与字节哈希保存在随包记录中；工具未披露具体模型 ID。",
+      "pages": [
+        {
+          "id": "p01",
+          "title": "搜索平台：采集、索引与查询",
+          "url": "https://raw.githubusercontent.com/SwimmingLiu/StoryWeave/main/skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/search-sketch.png",
+          "local_asset": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/search-sketch.png",
+          "provenance": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/generation.json",
+          "prompt": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/prompts/search-sketch.frame-edit.prompt.txt",
+          "width": 1672,
+          "height": 941,
+          "sha256": "e2eba588eda75607affb54bae6f5713c2dbaf55f5a0b1321fb0eb4b50c483cc0",
+          "roles": [
+            "architecture",
+            "process"
+          ],
+          "review": {
+            "kind": "agent",
+            "method": "actual-image",
+            "reviewed_sha256": "e2eba588eda75607affb54bae6f5713c2dbaf55f5a0b1321fb0eb4b50c483cc0",
+            "notes": "上层从网页来源经采集、队列、清洗、构建到唯一搜索索引；下层从查询到搜索结果。搜索索引从层间走廊进入检索服务顶部，11 条服务箭头齐全。 工程手账用纸张输送、清洗设备和索引抽屉表达职责。边缘修订后，所有分区边框、设备与标签外都有连续暖白留白；主体仍足够大。"
+          }
+        }
+      ],
+      "curation": {
+        "code": "A2",
+        "family": "细线手绘",
+        "representative": false,
+        "reason": "与 A1 的媒介和双层构图接近，外围留白更松，可作为同类替换。"
+      }
+    },
+    {
+      "id": "analytics-atlas",
+      "title": "数据分析：批流处理与指标交付",
+      "category": "原创教学架构",
+      "target": "imagegen",
+      "kind": "generated-example",
+      "creator": "StoryWeave / Codex image_gen",
+      "source_url": "https://github.com/SwimmingLiu/StoryWeave/tree/main/skills/storyweave-imagegen/assets/application-architecture-references/generated-cases",
+      "description": "上路实时处理、下路离线分析共同输入右侧指标服务。事件流归档线从左下端出发，沿空隙进入对象存储顶部右侧，未穿过离线分组铭牌；对象存储继续到批处理。实时指标库另有独立告警支路。12 条关系符合合同。",
+      "selection_note": "图鉴式剖面呈现存储机架、批流计算设备与分析仓库，淡青、浅赭和浅蓝分区；外轮廓向内收，左右留白完整。归档箭头不再与文字重叠。",
+      "limits": "原创教学参考模型，只说明图中列出的关系，不代表具体公司的生产实现或完整系统。数据库、仓库和报表中的简化图形用于表示职责，不作为真实数据、吞吐量或统计结果。",
+      "license_note": "StoryWeave 原创生成案例，随本仓库按 MIT 许可分发。",
+      "license_path": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/LICENSE",
+      "imagegen_reference_eligible": true,
+      "theme_ref": "knowledge/sketch-notes",
+      "generation_note": "使用 Codex 内置 image_gen 真实生成并逐图查看，调用来源、原始提示词、修订与字节哈希保存在随包记录中；工具未披露具体模型 ID。",
+      "pages": [
+        {
+          "id": "p01",
+          "title": "数据分析：批流处理与指标交付",
+          "url": "https://raw.githubusercontent.com/SwimmingLiu/StoryWeave/main/skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/analytics-atlas.png",
+          "local_asset": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/analytics-atlas.png",
+          "provenance": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/generation.json",
+          "prompt": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/prompts/analytics-atlas.layout-edit.prompt.txt",
+          "width": 1672,
+          "height": 941,
+          "sha256": "628e74aefe882c350b0a324b28dd85eb490f8496a09a903436c0d32149ec83a2",
+          "roles": [
+            "architecture",
+            "process"
+          ],
+          "review": {
+            "kind": "agent",
+            "method": "actual-image",
+            "reviewed_sha256": "628e74aefe882c350b0a324b28dd85eb490f8496a09a903436c0d32149ec83a2",
+            "notes": "上路实时处理、下路离线分析共同输入右侧指标服务。事件流归档线从左下端出发，沿空隙进入对象存储顶部右侧，未穿过离线分组铭牌；对象存储继续到批处理。实时指标库另有独立告警支路。12 条关系符合合同。 图鉴式剖面呈现存储机架、批流计算设备与分析仓库，淡青、浅赭和浅蓝分区；外轮廓向内收，左右留白完整。归档箭头不再与文字重叠。"
+          }
+        }
+      ],
+      "curation": {
+        "code": "B1",
+        "family": "图鉴剖面",
+        "representative": true,
+        "reason": "设备与仓库剖面有更实在的结构细节，批流汇合也区别于简单串行流程。"
+      }
+    },
+    {
+      "id": "recommendation-glass",
+      "title": "内容推荐：在线决策与行为反馈",
+      "category": "原创教学架构",
+      "target": "imagegen",
+      "kind": "generated-example",
+      "creator": "StoryWeave / Codex image_gen",
+      "source_url": "https://github.com/SwimmingLiu/StoryWeave/tree/main/skills/storyweave-imagegen/assets/application-architecture-references/generated-cases",
+      "description": "中间主推荐路径由客户端到结果；画像服务位于上方并输入排序，向量与模型依赖在下方。客户端下接行为采集，总线通过紫色独立上行轨道进入画像服务。13 条关系齐全，轨道交叉处凭颜色与白色间隔区分，未增加交汇点。",
+      "selection_note": "清透银白与淡紫玻璃构成可见部件；主路径与反馈分区分开，箭头和标签未被裁切。分区外框距画布侧边较近，作为排版选图时需保留外围留白。",
+      "limits": "原创教学参考模型，只说明图中列出的关系，不代表具体公司的生产实现或完整系统。反馈长线与主路径存在一次交叉，颜色和间隔能区分；需要完全无交叉版式的演讲页应另行重排。",
+      "license_note": "StoryWeave 原创生成案例，随本仓库按 MIT 许可分发。",
+      "license_path": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/LICENSE",
+      "imagegen_reference_eligible": true,
+      "theme_ref": "systems/silver-glass",
+      "generation_note": "使用 Codex 内置 image_gen 真实生成并逐图查看，调用来源、原始提示词、修订与字节哈希保存在随包记录中；工具未披露具体模型 ID。",
+      "pages": [
+        {
+          "id": "p01",
+          "title": "内容推荐：在线决策与行为反馈",
+          "url": "https://raw.githubusercontent.com/SwimmingLiu/StoryWeave/main/skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/recommendation-glass.png",
+          "local_asset": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/recommendation-glass.png",
+          "provenance": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/generation.json",
+          "prompt": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/prompts/recommendation-glass.prompt.txt",
+          "width": 1672,
+          "height": 941,
+          "sha256": "96be2054b0c82621572568970f173fa344f4dc50443d59e36d96e7d788b8fea1",
+          "roles": [
+            "architecture",
+            "process"
+          ],
+          "review": {
+            "kind": "agent",
+            "method": "actual-image",
+            "reviewed_sha256": "96be2054b0c82621572568970f173fa344f4dc50443d59e36d96e7d788b8fea1",
+            "notes": "中间主推荐路径由客户端到结果；画像服务位于上方并输入排序，向量与模型依赖在下方。客户端下接行为采集，总线通过紫色独立上行轨道进入画像服务。13 条关系齐全，轨道交叉处凭颜色与白色间隔区分，未增加交汇点。 清透银白与淡紫玻璃构成可见部件；主路径与反馈分区分开，箭头和标签未被裁切。分区外框距画布侧边较近，作为排版选图时需保留外围留白。"
+          }
+        }
+      ],
+      "curation": {
+        "code": "D4",
+        "family": "玻璃与青蓝",
+        "representative": false,
+        "reason": "淡紫反馈线更突出，但整体仍属于相近的透明玻璃语言，存在一次可区分的交叉。"
+      }
+    },
+    {
+      "id": "fulfillment-cyan",
+      "title": "订单履约：库存、仓储与配送",
+      "category": "原创教学架构",
+      "target": "imagegen",
+      "kind": "generated-example",
+      "creator": "StoryWeave / Codex image_gen",
+      "source_url": "https://github.com/SwimmingLiu/StoryWeave/tree/main/skills/storyweave-imagegen/assets/application-architecture-references/generated-cases",
+      "description": "主履约路径从左向右，四个存储或外部接口在对应服务上方。事件总线和配送服务分别以不同端点进入下方通知服务，再向右进入消息渠道。12 条关系完整，没有将两路通知输入合并为一条关系。",
+      "selection_note": "青蓝玻璃与浅色实体货架、装箱及调度设备对应履约职责；分支连接短，通知区与主区有明确空隙。对象、铭牌和阴影均完整。",
+      "limits": "原创教学参考模型，只说明图中列出的关系，不代表具体公司的生产实现或完整系统。仓库和承运实体是软件接口的讲解隐喻，不声称全部物流设备、异常或补偿流程已覆盖。",
+      "license_note": "StoryWeave 原创生成案例，随本仓库按 MIT 许可分发。",
+      "license_path": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/LICENSE",
+      "imagegen_reference_eligible": true,
+      "theme_ref": "systems/white-cyan-circuit",
+      "generation_note": "使用 Codex 内置 image_gen 真实生成并逐图查看，调用来源、原始提示词、修订与字节哈希保存在随包记录中；工具未披露具体模型 ID。",
+      "pages": [
+        {
+          "id": "p01",
+          "title": "订单履约：库存、仓储与配送",
+          "url": "https://raw.githubusercontent.com/SwimmingLiu/StoryWeave/main/skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/fulfillment-cyan.png",
+          "local_asset": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/fulfillment-cyan.png",
+          "provenance": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/generation.json",
+          "prompt": "skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/prompts/fulfillment-cyan.prompt.txt",
+          "width": 1672,
+          "height": 941,
+          "sha256": "1f93db216257a5c1a5fe5ad4d14c27a84002b9304a75010c176d5fadd49abc14",
+          "roles": [
+            "architecture",
+            "process"
+          ],
+          "review": {
+            "kind": "agent",
+            "method": "actual-image",
+            "reviewed_sha256": "1f93db216257a5c1a5fe5ad4d14c27a84002b9304a75010c176d5fadd49abc14",
+            "notes": "主履约路径从左向右，四个存储或外部接口在对应服务上方。事件总线和配送服务分别以不同端点进入下方通知服务，再向右进入消息渠道。12 条关系完整，没有将两路通知输入合并为一条关系。 青蓝玻璃与浅色实体货架、装箱及调度设备对应履约职责；分支连接短，通知区与主区有明确空隙。对象、铭牌和阴影均完整。"
+          }
+        }
+      ],
+      "curation": {
+        "code": "D2",
+        "family": "玻璃与青蓝",
+        "representative": false,
+        "reason": "仓储与配送实体更丰富，适合偏业务的讲解；仍与 D1 共用浅蓝透明材质。"
+      }
+    }
+  ]
+}

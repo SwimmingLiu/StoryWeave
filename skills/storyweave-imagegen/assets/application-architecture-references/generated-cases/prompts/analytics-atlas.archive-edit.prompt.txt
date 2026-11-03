@@ -1,0 +1,17 @@
+Use case: precise-object-edit
+Edit the supplied data analytics architecture illustration. Preserve all twelve components, Chinese labels, layout, cutaway drawing style, color regions, arrows and white background, EXCEPT the one incorrect archive connection.
+The arrow descending from 事件流 currently ends on the TOP of 批处理. This is incorrect. Remove that descending arrow's lower segment and reroute it so it ends with a clear arrowhead on the TOP CENTER of 对象存储, the warehouse rack at lower left. It must be 事件流 -> 对象存储. Use the empty white corridor between the upper and lower regions for the horizontal part of this branch. The existing 对象存储 -> 批处理 arrow remains.
+There must be NO direct connection 事件流 -> 批处理. Do not create an extra arrow or junction.
+All other exact directed edges remain:
+业务库 -> 变更采集
+变更采集 -> 事件流
+事件流 -> 流式计算
+流式计算 -> 实时指标库
+对象存储 -> 批处理
+批处理 -> 分析仓库
+实时指标库 -> 指标服务
+分析仓库 -> 指标服务
+指标服务 -> 查询接口
+查询接口 -> 分析报表
+实时指标库 -> 告警服务
+Do not change anything else or add text.

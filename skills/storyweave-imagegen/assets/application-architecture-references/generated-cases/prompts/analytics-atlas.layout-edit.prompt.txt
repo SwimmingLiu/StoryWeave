@@ -1,0 +1,6 @@
+Use case: precise-object-edit
+Edit the supplied scientific-atlas data analytics architecture.
+Keep all twelve components, exact Chinese labels, all twelve directed edges, drawing style, three colored regions, and organization.
+Refine the archive arrow 事件流 -> 对象存储: its current vertical segment is hidden behind the 离线分析 group tab. Reroute that vertical segment to the RIGHT of the group tab, through the clear space immediately to the right of the object-storage rack. End its arrowhead on the UPPER-RIGHT TOP EDGE of the 对象存储 rack itself. Keep a visible continuous path from the event stream, through the empty corridor between upper and lower groups, into object storage. The arrow must never pass behind or through any text or group tab. The existing 对象存储 -> 批处理 arrow remains. Do not connect the event stream directly to batch processing.
+Also reframe the complete composition slightly smaller and centered, roughly 94 percent of the current width, so the left and right colored region outlines have at least 45 pixels of clean white outer margin. Keep all component labels readable and all shadows inside the canvas.
+Do not add or remove any component, service arrow, string, title or subtitle.

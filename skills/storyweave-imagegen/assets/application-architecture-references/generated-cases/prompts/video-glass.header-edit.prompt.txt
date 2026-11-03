@@ -1,0 +1,8 @@
+Use case: precise-object-edit
+Edit target: the supplied silver-glass video-platform architecture slide.
+Change ONLY the header area above the two architecture group tabs, within the top 210 pixels of the 1672 by 941 image. Preserve the entire diagram below that area: all 12 components, labels, 12 directed connections, positions, materials, colors, group tabs, boundaries and whitespace.
+Problem to correct: the very heavy main title, widely spaced subtitle and decorative horizontal rules feel like unrelated pieces.
+Make the title and subtitle one coherent compact header group. Keep both centered on the same vertical axis. Use the same clean Chinese sans-serif type family for both, natural character spacing. Reduce the main title to a balanced semibold size, about 56 pixels, dark ink blue. Set the subtitle at about 27 pixels in a quieter blue-gray, regular weight, 12–16 pixels below the main title. Place the combined group comfortably around the top center, with clear white margins. Remove both decorative horizontal rules. No badge, pill, underline, new text or other decoration.
+Exact main title: "视频平台：上传、转码与分发"
+Exact subtitle: "教学参考架构"
+Do not alter anything else. In particular, preserve the existing lower architecture illustration and every arrowhead. Keep the same canvas and aspect ratio.

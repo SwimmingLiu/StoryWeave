@@ -1,0 +1,22 @@
+Use case: infographic-diagram
+Asset type: original near-16:9 technical architecture illustration for a presentation; the page title will be outside the image.
+Primary request: draw the authored teaching reference below as a detailed, light-background technical illustration. It does not claim any company production implementation.
+Style/medium: editorial scientific-atlas cutaway drawing on clean white paper; hairline graphite and navy technical contours, transparent pale-aqua and soft ochre watercolor sections, detailed instrument-like streaming processors and a warehouse cutaway; clean printed Chinese labels rather than calligraphy; measured realistic proportions, delicate restrained material texture
+Composition/framing: An upper real-time processing lane and lower offline analysis lane converge into one metrics service toward the right. The event stream also archives downward into object storage. Use the open corridor between lanes for that branch. Metrics service flows through a query interface to an analytics report at the right; the live metrics store has a separate short branch to alerts above the report area. Balance three regions instead of squeezing all twelve components into one row.
+Layout and edges: architecture fills the useful canvas, with at least 4 percent quiet outer margins on every side. Keep grouping planes, component bases, attached labels, arrowheads and soft shadows fully inside those margins. Use two or three balanced information zones; short nonoverlapping routes; generous space around labels. Components should be large enough to read on a presentation. No empty title band. No giant headline, subtitle, footer or decorative badges.
+ONLY visible text, verbatim: ["业务库", "变更采集", "事件流", "流式计算", "实时指标库", "对象存储", "批处理", "分析仓库", "指标服务", "查询接口", "分析报表", "告警服务", "实时处理", "离线分析", "指标交付"]
+Each of the 12 named components appears exactly once, with its own attached label. Region labels annotate groups and do not create extra components.
+Exact service-level directed relationships, each once with a clear arrowhead and no additional connections:
+业务库 -> 变更采集
+变更采集 -> 事件流
+事件流 -> 流式计算
+流式计算 -> 实时指标库
+事件流 -> 对象存储
+对象存储 -> 批处理
+批处理 -> 分析仓库
+实时指标库 -> 指标服务
+分析仓库 -> 指标服务
+指标服务 -> 查询接口
+查询接口 -> 分析报表
+实时指标库 -> 告警服务
+Content, exact Chinese and topology take priority over decoration. Use the specified physical or drawn medium, not a plain HTML-like box-and-arrow chart. Draw distinct domain-specific equipment and cutaways, no generic gears, generic landscape, unsupported metrics, brands, people or code. Keep a bright white or warm-white background and controlled small shadows. No cropped objects or frames touching the canvas edge.

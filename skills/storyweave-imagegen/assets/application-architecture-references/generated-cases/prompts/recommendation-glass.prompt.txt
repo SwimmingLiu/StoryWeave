@@ -1,0 +1,23 @@
+Use case: infographic-diagram
+Asset type: original near-16:9 technical architecture illustration for a presentation; the page title will be outside the image.
+Primary request: draw the authored teaching reference below as a detailed, light-background technical illustration. It does not claim any company production implementation.
+Style/medium: bright silver and translucent ice-blue glass technical cutaway, shallow physical depth, thin dark-blue outlines on glass modules, subtle violet personalisation accents, white studio background, diffuse daylight; detailed profile-card storage, vector search instrument, ranking processor and a visible filtering assembly; legible dark navy labels
+Composition/framing: A broad left-to-right recommendation path across the middle: client, entry, retrieval, ranking, policy filter, result. Profile service and its store sit above the entry/ranking area and visibly feed ranking. Vector index sits below retrieval and model service below ranking with short isolated dependency arrows. A separate lower feedback lane runs client to event collection to event bus, then a carefully routed upward arrow enters profile service from an outside corridor. At crossings show clear bridge separation without a junction dot. Twelve components, no extra recommendations or feedback destinations.
+Layout and edges: architecture fills the useful canvas, with at least 4 percent quiet outer margins on every side. Keep grouping planes, component bases, attached labels, arrowheads and soft shadows fully inside those margins. Use two or three balanced information zones; short nonoverlapping routes; generous space around labels. Components should be large enough to read on a presentation. No empty title band. No giant headline, subtitle, footer or decorative badges.
+ONLY visible text, verbatim: ["客户端", "推荐入口", "画像服务", "画像库", "召回服务", "向量索引", "排序服务", "模型服务", "策略过滤", "推荐结果", "行为采集", "事件总线", "在线推荐", "行为反馈"]
+Each of the 12 named components appears exactly once, with its own attached label. Region labels annotate groups and do not create extra components.
+Exact service-level directed relationships, each once with a clear arrowhead and no additional connections:
+客户端 -> 推荐入口
+推荐入口 -> 画像服务
+画像服务 -> 画像库
+推荐入口 -> 召回服务
+召回服务 -> 向量索引
+召回服务 -> 排序服务
+画像服务 -> 排序服务
+排序服务 -> 模型服务
+排序服务 -> 策略过滤
+策略过滤 -> 推荐结果
+客户端 -> 行为采集
+行为采集 -> 事件总线
+事件总线 -> 画像服务
+Content, exact Chinese and topology take priority over decoration. Use the specified physical or drawn medium, not a plain HTML-like box-and-arrow chart. Draw distinct domain-specific equipment and cutaways, no generic gears, generic landscape, unsupported metrics, brands, people or code. Keep a bright white or warm-white background and controlled small shadows. No cropped objects or frames touching the canvas edge.

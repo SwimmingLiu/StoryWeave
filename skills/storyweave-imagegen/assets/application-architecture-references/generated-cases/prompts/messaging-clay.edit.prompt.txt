@@ -1,0 +1,18 @@
+Use case: precise-object-edit
+Edit target: the supplied clay messaging architecture slide. Preserve the existing 16:9 canvas, all 12 modeled components, their materials, positions, every Chinese label, colors, group panels, title and already correct arrows. Correct only the two routing ambiguities below. Do not add any text, component or relationship.
+1. The arrow from 状态服务 to 在线路由 must clearly START on the TOP CENTER of the green 状态服务 block itself. Route it vertically upward a short distance, then right in the existing empty horizontal corridor, then upward to the bottom of 在线路由. Remove the old segment that branches off the 消息服务 -> 状态服务 input line near its arrowhead. The new 状态服务 output must visibly touch the state component and must NOT appear to originate from the incoming message-service line.
+2. The vertical 事件总线 -> 离线推送 route crosses the horizontal 消息服务 -> 状态服务 route. At that single crossing, draw a small crisp bridge/hop in the vertical route, with white separation and no junction dot, so these two independent connections cannot be read as joined. Keep one downward flow into 离线推送.
+Final exact service-level directed edges, each exactly once:
+发送端 -> 连接网关
+连接网关 -> 消息服务
+消息服务 -> 消息库
+消息服务 -> 事件总线
+事件总线 -> 在线路由
+在线路由 -> 接收网关
+接收网关 -> 接收端
+事件总线 -> 离线推送
+离线推送 -> 推送渠道
+消息服务 -> 状态服务
+状态服务 -> 会话索引
+状态服务 -> 在线路由
+All existing Chinese text stays verbatim. Do not change the illustration or labels. No other modifications.

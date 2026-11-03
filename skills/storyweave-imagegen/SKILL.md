@@ -7,13 +7,15 @@ description: Create full-slide rasterized 16:9 presentations with Imagegen, or m
 
 使用真实生图工具生成完整 16:9 页面，包括背景、图像、文字和版式。PNG 是视觉源，修改通过重生成受影响页面完成。HTML 画廊、PDF 和 PPTX 都以整页图片交付。
 
-当前有 19 套候选生成主题；18 种参考风格已归并为 14 个主题方向，其中 1 个沿用已有主题、13 个新增。参考图库保留 41 张原始内容页，每种风格都有实际主题映射。
+当前有 23 套候选生成主题，包含四套由已选原创架构图提炼的手绘与玻璃主题；原有 19 套主题保持兼容。18 种外部参考风格对应 14 个生成方向，参考图库保留 41 张原始内容页。主题与架构参考图分别记录和计数。
 
 ## 浅色选择与应用架构
 
 未指定明暗时优先选浅色青蓝、银白玻璃、手绘白板或与内容匹配的明亮插画。深色蓝图、霓虹、黑金、黑板、暗室设备与夜景像素仅在用户明确选择时使用；保留原主题 ID。
 
-大型应用先看[浅色架构视觉参考](assets/application-architecture-references/index.html)。案例保留实际组件、服务边界、主调用链和数据流，先确定这些关系，再安排材质与空间；不用通用齿轮、风景岛或三个大图标代替架构。普通方框连线交给 HTML/SVG，插画不得增删已批准关系。来源图只是参考，不能继承其中的数值或概括性结论。
+大型应用先看[浅色架构视觉参考](assets/application-architecture-references/index.html)与[已选原创案例](assets/application-architecture-references/generated-cases/index.html)。案例保留实际组件、服务边界、主调用链和数据流，先确定这些关系，再安排材质与空间；不用通用齿轮、风景岛或三个大图标代替架构。普通方框连线交给 HTML/SVG，插画不得增删已批准关系。来源图只是参考，不能继承其中的数值或概括性结论。
+
+架构图按内容安排空间，外轮廓、阴影、标签与箭头留在完整边缘内。可复用图解的标题与说明优先放在图外；整页生成按 `exact_text` 保留实际提供的标题和必要标签，避免固定标题带与自动副标题挤压图解。
 
 ## 按任务选择流程
 
@@ -89,7 +91,7 @@ node scripts/ppt.mjs export <project> --format png
 | 文档 | 内容 |
 | --- | --- |
 | [workflow](references/workflow.md) | 确认、任务、真实调用与 receipt |
-| [themes](references/themes.md) | 19 套主题、参考风格归并与旧版兼容 |
+| [themes](references/themes.md) | 23 套主题、架构参考、风格归并与旧版兼容 |
 | [theme-authoring](references/theme-authoring.md) | 主题维护与编译检查 |
 | [assets](references/assets.md) | 图片、来源和生成记录 |
 | [qa-export](references/qa-export.md) | 图片身份、视觉复核与格式边界 |

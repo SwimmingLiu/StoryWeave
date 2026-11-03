@@ -1,0 +1,81 @@
+{
+  "audience_and_task": "技术分享观众在 16:9 演讲页中辨认组件职责、中文标签、调用方向和分支。",
+  "claim": "四组原创教学参考架构；不声称任何公司的生产实现或完整性。",
+  "representation": "图中材料与绘画语言区分案例；组件对象和有向箭头承担关系表达；文字与内容合同逐项核对。",
+  "findings": [
+    {
+      "scope": "new-assets",
+      "observation": "目前只有四组已准备的内容合同和提示词，没有本轮成功生成的图片。"
+    }
+  ],
+  "preserve": "保留全部批准组件名称、精确有向边、分组、明亮背景和宽屏演讲用途。",
+  "proposed_change": "逐张使用内置 image_gen 生成并实际查看，只修正有问题的图片；逐项记录文字、组件、箭头、额外或遗漏关系与裁切，不自动填写接受结论。",
+  "cases": [
+    {
+      "id": "ecommerce-cyan",
+      "nodes": 14,
+      "edges": 13,
+      "representation": "Client/API entry at left; product reads above the middle; order persistence and event backbone in the middle; inventory, payment and notification on the right. Distinguish synchronous requests from event fan-out, with pale cyan and mint grouping planes.",
+      "medium": "high-quality light technical editorial illustration; frosted cyan glass and pale blue ceramic miniature services, precise ink-blue routing tracks, white background, bright diffuse daylight"
+    },
+    {
+      "id": "rag-sketch",
+      "nodes": 12,
+      "edges": 11,
+      "representation": "Two wide parallel tiers, upper offline indexing and lower online answering, sharing exactly one vector store near the right of the upper tier. Arrows show data movement: stored candidate context flows from the vector store into retrieval. Keep the authored shared dependency visible; do not duplicate the vector store or imply that a model independently creates citations.",
+      "medium": "intricate technical sketchbook illustration on clean warm-white paper, precise pencil and dark blue ink, pale mint and lavender watercolor washes; miniature cutaway document-processing equipment, labeled storage vessels and retrieval instruments physically joined by routing tracks; restrained irregular drawing texture, no solid dark fills"
+    },
+    {
+      "id": "messaging-clay",
+      "nodes": 12,
+      "edges": 12,
+      "representation": "Horizontal send-to-receive path across the upper half; a distinctly separated lower branch for offline push. Place persistent storage beside the message service and session-state lookup beside the routing decision. Emphasize fan-out and the state dependency; do not collapse all services into a single serial chain.",
+      "medium": "bright tactile clay technical diorama, matte porcelain and soft mint, coral and sky-blue modeled service components, precise short dark-blue directional tracks, broad white studio background and soft daylight, small consistent shadows, no night scene"
+    },
+    {
+      "id": "video-glass",
+      "nodes": 12,
+      "edges": 12,
+      "representation": "Broad horizontal processing line; show source-video storage feeding the processing cluster separately from the queue/scheduler control path. Make the cluster an illustrated cutaway containing repeated processing units but only one shared label. Finished assets flow through distribution to a player. Place the metadata branch below the upload entrance without crossing the main data path.",
+      "medium": "light silver-glass architectural cutaway illustration, clear frosted-white and ice-blue miniature processing modules with finely drawn circuitry, translucent routing tracks and legible dark blue labels; white background, diffuse high-key lighting, realistic shallow material depth; controlled cyan and muted violet accents, no black metal"
+    }
+  ],
+  "additional_cases": [
+    {
+      "id": "search-sketch",
+      "audience_and_task": "在演讲中追踪系统组件与有向关系；标题与说明放在图外。",
+      "claim": "搜索平台：采集、索引与查询",
+      "representation": "Two well-spaced horizontal tiers. The six offline components progress left to right across the upper tier. The six online components progress left to right below. A single, clearly separated dependency descends from the shared upper-right search index, follows the empty corridor between tiers, and enters the top of the lower retrieval component. Short direct arrows everywhere else; no duplicate index.",
+      "findings": "新图生成前记录；尚无本图像素结果。",
+      "preserve": "全部中文组件、精确有向关系、浅色媒介与信息分组。",
+      "proposed_change": "生成四种相关图解，重点检查整体布局、边缘留白、标签与箭头。"
+    },
+    {
+      "id": "analytics-atlas",
+      "audience_and_task": "在演讲中追踪系统组件与有向关系；标题与说明放在图外。",
+      "claim": "数据分析：批流处理与指标交付",
+      "representation": "An upper real-time processing lane and lower offline analysis lane converge into one metrics service toward the right. The event stream also archives downward into object storage. Use the open corridor between lanes for that branch. Metrics service flows through a query interface to an analytics report at the right; the live metrics store has a separate short branch to alerts above the report area. Balance three regions instead of squeezing all twelve components into one row.",
+      "findings": "新图生成前记录；尚无本图像素结果。",
+      "preserve": "全部中文组件、精确有向关系、浅色媒介与信息分组。",
+      "proposed_change": "生成四种相关图解，重点检查整体布局、边缘留白、标签与箭头。"
+    },
+    {
+      "id": "recommendation-glass",
+      "audience_and_task": "在演讲中追踪系统组件与有向关系；标题与说明放在图外。",
+      "claim": "内容推荐：在线决策与行为反馈",
+      "representation": "A broad left-to-right recommendation path across the middle: client, entry, retrieval, ranking, policy filter, result. Profile service and its store sit above the entry/ranking area and visibly feed ranking. Vector index sits below retrieval and model service below ranking with short isolated dependency arrows. A separate lower feedback lane runs client to event collection to event bus, then a carefully routed upward arrow enters profile service from an outside corridor. At crossings show clear bridge separation without a junction dot. Twelve components, no extra recommendations or feedback destinations.",
+      "findings": "新图生成前记录；尚无本图像素结果。",
+      "preserve": "全部中文组件、精确有向关系、浅色媒介与信息分组。",
+      "proposed_change": "生成四种相关图解，重点检查整体布局、边缘留白、标签与箭头。"
+    },
+    {
+      "id": "fulfillment-cyan",
+      "audience_and_task": "在演讲中追踪系统组件与有向关系；标题与说明放在图外。",
+      "claim": "订单履约：库存、仓储与配送",
+      "representation": "Use a spacious upper main chain: order entrance to fulfillment to event bus to stock reservation to warehouse scheduler to delivery. Place each of the four dependent stores or external interfaces immediately above its service with a short arrow. Put notifications and message channel in a separate lower-right region; two separate arrows enter notifications, one from event bus and one from delivery. No accidental joining of independent input lines. Keep the main architecture broad and balanced without giant generic icons.",
+      "findings": "新图生成前记录；尚无本图像素结果。",
+      "preserve": "全部中文组件、精确有向关系、浅色媒介与信息分组。",
+      "proposed_change": "生成四种相关图解，重点检查整体布局、边缘留白、标签与箭头。"
+    }
+  ]
+}

@@ -4,7 +4,7 @@
 
 | 阶段 | 检查内容 |
 | --- | --- |
-| 生成资产 | 四个 Skill 的 runtime 与权威源码一致，19 套主题预览与生成记录哈希一致，参考图库及两个 Skill 的应用架构子集一致 |
+| 生成资产 | 四个 Skill 的 runtime 与权威源码一致，全部主题预览与生成记录哈希一致，参考图库及两个 Skill 的应用架构子集一致 |
 | 完整测试 | 核心、案例库、各生成器、适配器、独立分发和视觉评审判定回归 |
 | HTML | 公开草稿、审批、构建、浏览器 QA、双视口、播放、主题重规划和 v2/v3 兼容 |
 | HTML 视觉回归 | 杂志、瑞士风各 8 页的真实浏览器截图、批准稿不变、图片布局、连线与比较权重，以及已评审基线比较 |
@@ -31,7 +31,7 @@ gh run watch <run-id> --exit-status
 
 每次运行以 `storyweave-verification-<run-id>-<attempt>` 保留 14 天 artifact。失败时也上传测试日志、命令、报告、截图与 trace；临时缓存和内嵌完整原图的离线 HTML 不上传。下载后可查看 `tmp/ci/<evaluation-run-id>/summary.json` 与各功能的 summary、actions 和 trace。
 
-应用架构的证据在同一 artifact 的 `tmp/application-architecture-ci/`，包括 summary、逐图 actions、双视口截图和 trace。缓存按独立 catalog 准备；非 16:9 的来源图保留原始比例，不混入演示主题页型统计。验证结束后删除内嵌原图 HTML，输入缓存保持只读。CI 不调用生图服务，也不将图片可显示等同于设计质量通过。
+应用架构的证据在同一 artifact 的 `tmp/application-architecture-ci/`，包括 summary、逐图 actions、双视口截图和 trace。缓存按独立 catalog 准备；非 16:9 的来源图保留原始比例，不混入演示主题页型统计。随包原创图优先从已绑定哈希的仓库资产准备缓存，检查生成记录、提示词与逐图观察的字节绑定；浏览器另在断网环境打开实际分发的选图册，核对已选案例、同类筛选、临时勾选与导出 fixture，再逐图解码、截图、放大并用 Escape 关闭。截图与导出 fixture 不作为用户选图记录。完整图库同时验证原创筛选。验证结束后删除内嵌外部原图的 HTML，输入缓存保持只读。CI 不调用生图服务，也不将图片可显示等同于设计质量通过。
 
 ## 两套八页的视觉回归
 

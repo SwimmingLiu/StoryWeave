@@ -1,0 +1,5 @@
+Use case: precise-object-edit
+Edit the supplied engineering-sketch search architecture illustration.
+Preserve all twelve components, every exact Chinese label, all eleven service-level arrows, watercolor colors, fine pen drawing and two-tier organization.
+Correct only the outer framing: the colored group outlines and some objects currently sit too near the canvas edges. Reframe the COMPLETE existing composition slightly smaller, about 92 percent of its current width and height, centered on the same warm-white wide canvas. Give a continuous quiet warm-white gutter around ALL group outlines, shadows, components and labels, approximately 55 to 70 pixels at the left and right and at least 35 pixels top and bottom. No outline may touch the image boundary. Keep the drawing large and readable; do not add a title band or text.
+Preserve the upper-left to upper-right offline chain, lower-left to lower-right online chain, and the single 搜索索引 -> 检索服务 dependency through the corridor. No extra arrow, duplicate index, relabeling or style change.

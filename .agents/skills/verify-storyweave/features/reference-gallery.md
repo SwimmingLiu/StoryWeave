@@ -55,6 +55,8 @@ CI 用 `scripts/cache-presentation-references.py --catalog design-library/applic
 npm run verify:architecture-references -- --cache <absolute-cache-directory> --out <fresh-evidence-directory>
 ```
 
-独立浏览器在 `1440×900` 与 `390×844` 逐图解码并核对显示、放大、HTML/Imagegen 筛选及搜索空状态，另检查主题页浅色默认、深色显式选择和直接链接。结束后复核离线产物和输入缓存，清理内嵌原图 HTML，保留 summary、actions、截图和 trace。浏览器失败阻断；不代填新画面的审美结论。
+独立浏览器在 `1440×900` 与 `390×844` 逐图解码并核对显示、放大、HTML/Imagegen/原创筛选及搜索空状态，另检查主题页浅色默认、深色显式选择和直接链接。原创图的实际分发入口为 Imagegen 包中的 `assets/application-architecture-references/generated-cases/index.html`；断网逐图解码、截图、放大并以 Escape 关闭，验证不依赖外部原图服务器。生成记录与提示词只核对字节绑定，不推断审美。结束后复核离线产物和输入缓存，清理内嵌外部原图 HTML，保留 summary、actions、截图和 trace。浏览器失败阻断；不代填新画面的审美结论。
 
 当前环境若已明确禁止本地 HTML 浏览，仍按 Skill 的 Launch 规则保留限制，不直接运行这个浏览器入口绕过；交由独立 GitHub Actions 验证。
+
+选定架构图提炼为新主题后，CI 还在两种视口逐张解码和截图其实际主题预览，核对复用原图的相对路径。独立安装测试通过公开 draft、approve、prompts 和 status 编译这些主题，缺图状态仍须准确返回；不调用生图服务，也不从参考图推断所有页型已被视觉接受。

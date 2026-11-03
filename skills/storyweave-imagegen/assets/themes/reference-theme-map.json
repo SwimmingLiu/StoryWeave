@@ -2,7 +2,7 @@
   "schema_version": 1,
   "reference_styles": 18,
   "mapped_theme_directions": 14,
-  "generated_themes": 19,
+  "generated_themes": 23,
   "mappings": [
     {
       "reference_id": "engineering-blueprint",
@@ -131,5 +131,31 @@
       "reason": "银白玻璃实体、拆解与连续流程直接归入已有样式。"
     }
   ],
-  "notes": "候选配方源于视觉方法归纳；不复制第三方示例内容。编译覆盖不代表每种页型均已完成视觉复核。"
+  "notes": "候选配方源于视觉方法归纳；不复制第三方示例内容。编译覆盖不代表每种页型均已完成视觉复核。",
+  "selected_architecture_themes": [
+    {
+      "case_id": "rag-sketch",
+      "code": "A1",
+      "theme_ref": "knowledge/watercolor-machinery",
+      "scheme_ref": "knowledge/watercolor-machinery/process"
+    },
+    {
+      "case_id": "search-sketch",
+      "code": "A2",
+      "theme_ref": "knowledge/engineering-workshop",
+      "scheme_ref": "knowledge/engineering-workshop/process"
+    },
+    {
+      "case_id": "video-glass",
+      "code": "D1",
+      "theme_ref": "systems/glass-pipeline",
+      "scheme_ref": "systems/glass-pipeline/process"
+    },
+    {
+      "case_id": "recommendation-glass",
+      "code": "D4",
+      "theme_ref": "systems/lavender-feedback",
+      "scheme_ref": "systems/lavender-feedback/process"
+    }
+  ]
 }

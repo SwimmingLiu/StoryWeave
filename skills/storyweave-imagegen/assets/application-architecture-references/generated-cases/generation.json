@@ -1,0 +1,978 @@
+{
+  "schema_version": 1,
+  "source": {
+    "tool": "image_gen.imagegen",
+    "route": "built-in",
+    "model_id": null,
+    "model_disclosure": "The built-in tool returned image bytes and a save hint, without a model identifier.",
+    "recorded_on": "2026-11-04",
+    "calls": 14
+  },
+  "content_spec": {
+    "path": "content-spec.json",
+    "sha256": "65bd46bd1fe847d415766018c1d67a9eef3412ec6bf2544ce6ab4580273cfbbc"
+  },
+  "visual_intent": {
+    "path": "visual-intent.json",
+    "sha256": "e97ad1f8774c3150e0471efcb5bded1fcee4dcc763d364c14f9a6f1e99c00a11"
+  },
+  "scope": "Eight original teaching-reference images. Four explicitly selected images seed new candidate themes; seed images are design references, not proof of generation from the new recipes or acceptance of all page roles.",
+  "images": [
+    {
+      "id": "ecommerce-cyan",
+      "theme_ref": "systems/white-cyan-circuit",
+      "requested_aspect_ratio": "16:9",
+      "output": {
+        "path": "ecommerce-cyan.png",
+        "sha256": "4b2d61ef03fa4e0c46f6296acba3c64b29b9343e4140b494fc15a0bb1a0f890a",
+        "width": 1672,
+        "height": 941,
+        "bytes": 1450884
+      },
+      "attempts": [
+        {
+          "operation": "generate",
+          "prompt": "prompts/ecommerce-cyan.prompt.txt",
+          "prompt_sha256": "0c40bce811bb2af719ad93f244394ebfe14a1a9a54452b6e59275af4f0eadabd",
+          "tool_output_id": "exec-29699ad7-5d9b-48dd-ab12-a0865431a59e",
+          "output_sha256": "4b2d61ef03fa4e0c46f6296acba3c64b29b9343e4140b494fc15a0bb1a0f890a",
+          "width": 1672,
+          "height": 941,
+          "bytes": 1450884,
+          "disposition": "selected",
+          "observation": "14 个组件与 13 条关系核对完成。"
+        }
+      ],
+      "review": {
+        "kind": "agent",
+        "method": "actual-image",
+        "reviewer": "Codex visual assistant in the authoring conversation",
+        "familiarity": "Author and reviewer; not an independent or human review.",
+        "status": "accepted-for-reference",
+        "reviewed_sha256": "4b2d61ef03fa4e0c46f6296acba3c64b29b9343e4140b494fc15a0bb1a0f890a",
+        "content_spec_sha256": "65bd46bd1fe847d415766018c1d67a9eef3412ec6bf2544ce6ab4580273cfbbc",
+        "observed_nodes": [
+          "客户端",
+          "API 入口",
+          "商品查询",
+          "商品缓存",
+          "商品库",
+          "订单服务",
+          "订单库",
+          "事件总线",
+          "库存服务",
+          "库存库",
+          "支付服务",
+          "支付网关",
+          "通知服务",
+          "消息渠道"
+        ],
+        "observed_edges": [
+          [
+            "客户端",
+            "API 入口"
+          ],
+          [
+            "API 入口",
+            "商品查询"
+          ],
+          [
+            "API 入口",
+            "订单服务"
+          ],
+          [
+            "商品查询",
+            "商品缓存"
+          ],
+          [
+            "商品查询",
+            "商品库"
+          ],
+          [
+            "订单服务",
+            "订单库"
+          ],
+          [
+            "订单服务",
+            "事件总线"
+          ],
+          [
+            "事件总线",
+            "库存服务"
+          ],
+          [
+            "事件总线",
+            "支付服务"
+          ],
+          [
+            "事件总线",
+            "通知服务"
+          ],
+          [
+            "库存服务",
+            "库存库"
+          ],
+          [
+            "支付服务",
+            "支付网关"
+          ],
+          [
+            "通知服务",
+            "消息渠道"
+          ]
+        ],
+        "missing_nodes": [],
+        "extra_nodes": [],
+        "missing_edges": [],
+        "extra_edges": [],
+        "cropping": "全部组件、中文标签和服务箭头端点均在画布内。",
+        "text_validation": "逐项视觉查看；没有执行 OCR。",
+        "notes": "左侧入口向上分出商品查询，查询分别指向缓存与商品库；下路订单服务向下落库，向右进入事件总线；总线向右分出库存、支付、通知，各自连接对应存储或渠道。13 个箭头的端点和方向可逐项追踪。",
+        "text": "标题、教学参考说明、两处分组及 14 个组件标签可读；API 入口的拉丁字母与中文均完整。",
+        "composition": "青蓝陶瓷与磨砂玻璃区分服务和存储；同步区与异步区清楚，左侧客户端距边缘较近但轮廓、标签与阴影未被裁切。",
+        "limits": "标题占用一定高度；属于参考插画，后续作为内容图使用时可按页面任务调整图外标题。"
+      }
+    },
+    {
+      "id": "rag-sketch",
+      "theme_ref": "knowledge/sketch-notes",
+      "requested_aspect_ratio": "16:9",
+      "output": {
+        "path": "rag-sketch.png",
+        "sha256": "bc19d567bc8fcabff8e377b9388c1f48be84ef1e642f8f1285cb94c0e21810b7",
+        "width": 1672,
+        "height": 941,
+        "bytes": 2673328
+      },
+      "attempts": [
+        {
+          "operation": "generate",
+          "prompt": "prompts/rag-sketch.prompt.txt",
+          "prompt_sha256": "f505c484ca32e3c13dc669fc0f88c58797b84f802f45d74ce7585c7562f470bd",
+          "tool_output_id": "exec-dee44707-12c0-4f49-b560-49dcd50e7554",
+          "output_sha256": "bc19d567bc8fcabff8e377b9388c1f48be84ef1e642f8f1285cb94c0e21810b7",
+          "width": 1672,
+          "height": 941,
+          "bytes": 2673328,
+          "disposition": "selected",
+          "observation": "12 个组件与 11 条关系核对完成。"
+        }
+      ],
+      "review": {
+        "kind": "agent",
+        "method": "actual-image",
+        "reviewer": "Codex visual assistant in the authoring conversation",
+        "familiarity": "Author and reviewer; not an independent or human review.",
+        "status": "accepted-for-reference",
+        "reviewed_sha256": "bc19d567bc8fcabff8e377b9388c1f48be84ef1e642f8f1285cb94c0e21810b7",
+        "content_spec_sha256": "65bd46bd1fe847d415766018c1d67a9eef3412ec6bf2544ce6ab4580273cfbbc",
+        "observed_nodes": [
+          "文档来源",
+          "接入服务",
+          "任务队列",
+          "解析分块",
+          "向量编码",
+          "向量库",
+          "用户问题",
+          "检索服务",
+          "重排器",
+          "提示组装",
+          "语言模型",
+          "答案与引用"
+        ],
+        "observed_edges": [
+          [
+            "文档来源",
+            "接入服务"
+          ],
+          [
+            "接入服务",
+            "任务队列"
+          ],
+          [
+            "任务队列",
+            "解析分块"
+          ],
+          [
+            "解析分块",
+            "向量编码"
+          ],
+          [
+            "向量编码",
+            "向量库"
+          ],
+          [
+            "用户问题",
+            "检索服务"
+          ],
+          [
+            "向量库",
+            "检索服务"
+          ],
+          [
+            "检索服务",
+            "重排器"
+          ],
+          [
+            "重排器",
+            "提示组装"
+          ],
+          [
+            "提示组装",
+            "语言模型"
+          ],
+          [
+            "语言模型",
+            "答案与引用"
+          ]
+        ],
+        "missing_nodes": [],
+        "extra_nodes": [],
+        "missing_edges": [],
+        "extra_edges": [],
+        "cropping": "全部组件、中文标签和服务箭头端点均在画布内。",
+        "text_validation": "逐项视觉查看；没有执行 OCR。",
+        "notes": "上层六个离线组件从左向右；唯一向量库通过层间长线向下进入检索服务。下层从用户问题经检索、重排、提示组装与模型到答案引用。11 条服务关系齐全，组件内部图标不作为额外服务连线。",
+        "text": "标题、两处分组与 12 个手绘铭牌逐项可读；向量库未重复。",
+        "composition": "细蓝线稿、薄荷与淡紫水彩形成两层，设备剖面表示解析、编码与检索职责。上下两层的共享依赖清楚；外缘较紧但组件与标签完整。",
+        "limits": "向量库到检索的线较长；表达存储上下文供检索使用，不证明某个 RAG 产品的生产实现。"
+      },
+      "derived_theme_ref": "knowledge/watercolor-machinery"
+    },
+    {
+      "id": "messaging-clay",
+      "theme_ref": "tactile/clay-workflow",
+      "requested_aspect_ratio": "16:9",
+      "output": {
+        "path": "messaging-clay.png",
+        "sha256": "b3ac05840534c9ac54f4fbcf621e3b7d20b11fbc86dc1af02c5bb25b0c2462a5",
+        "width": 1672,
+        "height": 941,
+        "bytes": 1797991
+      },
+      "attempts": [
+        {
+          "operation": "generate",
+          "prompt": "prompts/messaging-clay.prompt.txt",
+          "prompt_sha256": "751e5384c536e3633265a7e60c3e7cf533c6d14851ec977d7e38499a061ca371",
+          "tool_output_id": "exec-7ee2004c-83a2-42f0-af76-8e67757e48c2",
+          "output_sha256": "1f4a2757c0c54553702ed037f55a63d0f93c0e9855e23b640857abd0f7165630",
+          "width": 1672,
+          "height": 941,
+          "bytes": 1878010,
+          "disposition": "superseded",
+          "observation": "状态服务输出起点与输入支路靠近，交叉处缺少隔离。"
+        },
+        {
+          "operation": "edit",
+          "prompt": "prompts/messaging-clay.edit.prompt.txt",
+          "prompt_sha256": "44f66b88020c9cb2327159176f903b252bf7bffef68bb6344e227c9ef9f62085",
+          "tool_output_id": "exec-acf96606-3ffe-4d71-bd11-89b51547ded5",
+          "output_sha256": "b3ac05840534c9ac54f4fbcf621e3b7d20b11fbc86dc1af02c5bb25b0c2462a5",
+          "width": 1672,
+          "height": 941,
+          "bytes": 1797991,
+          "disposition": "selected",
+          "observation": "状态输出起点与跨线隔离已修正并重新看图。",
+          "input_image_sha256": "1f4a2757c0c54553702ed037f55a63d0f93c0e9855e23b640857abd0f7165630"
+        }
+      ],
+      "review": {
+        "kind": "agent",
+        "method": "actual-image",
+        "reviewer": "Codex visual assistant in the authoring conversation",
+        "familiarity": "Author and reviewer; not an independent or human review.",
+        "status": "accepted-for-reference",
+        "reviewed_sha256": "b3ac05840534c9ac54f4fbcf621e3b7d20b11fbc86dc1af02c5bb25b0c2462a5",
+        "content_spec_sha256": "65bd46bd1fe847d415766018c1d67a9eef3412ec6bf2544ce6ab4580273cfbbc",
+        "observed_nodes": [
+          "发送端",
+          "连接网关",
+          "消息服务",
+          "消息库",
+          "事件总线",
+          "在线路由",
+          "接收网关",
+          "接收端",
+          "离线推送",
+          "推送渠道",
+          "状态服务",
+          "会话索引"
+        ],
+        "observed_edges": [
+          [
+            "发送端",
+            "连接网关"
+          ],
+          [
+            "连接网关",
+            "消息服务"
+          ],
+          [
+            "消息服务",
+            "消息库"
+          ],
+          [
+            "消息服务",
+            "事件总线"
+          ],
+          [
+            "事件总线",
+            "在线路由"
+          ],
+          [
+            "在线路由",
+            "接收网关"
+          ],
+          [
+            "接收网关",
+            "接收端"
+          ],
+          [
+            "事件总线",
+            "离线推送"
+          ],
+          [
+            "离线推送",
+            "推送渠道"
+          ],
+          [
+            "消息服务",
+            "状态服务"
+          ],
+          [
+            "状态服务",
+            "会话索引"
+          ],
+          [
+            "状态服务",
+            "在线路由"
+          ]
+        ],
+        "missing_nodes": [],
+        "extra_nodes": [],
+        "missing_edges": [],
+        "extra_edges": [],
+        "cropping": "全部组件、中文标签和服务箭头端点均在画布内。",
+        "text_validation": "逐项视觉查看；没有执行 OCR。",
+        "notes": "上层主路径从发送端到接收端；消息服务向上落消息库、向下进入状态服务。状态服务顶部独立出线进入在线路由，向右连会话索引。事件总线向下进入离线推送再到渠道。修订后白色跨线隔离将离线线与状态输入线区分开。",
+        "text": "12 个组件及在线投递、离线通知均可读，无遗漏组件或额外服务。",
+        "composition": "黏土与哑光陶瓷的柔和实体厚度明显；在线区、状态依赖及离线支路分开。四周轮廓和箭头均完整，底部分区留白较窄。",
+        "limits": "交叉处用白色跨线隔离，适合放大查看；不将白色桥或路由组件内部的扇出符号计为新服务关系。"
+      }
+    },
+    {
+      "id": "video-glass",
+      "theme_ref": "systems/silver-glass",
+      "requested_aspect_ratio": "16:9",
+      "output": {
+        "path": "video-glass.png",
+        "sha256": "8ce065ba1685a9dcf4b094793edcd21fd632d07b481aa2430e8a905979111bb3",
+        "width": 1672,
+        "height": 941,
+        "bytes": 1592009
+      },
+      "attempts": [
+        {
+          "operation": "generate",
+          "prompt": "prompts/video-glass.prompt.txt",
+          "prompt_sha256": "03f0e24bf5032f012f5488d09f3c449aafcf4442c1de5a490304b1e0cb2686e0",
+          "tool_output_id": "exec-89874eb0-aa1d-4c2c-9769-21a7e707e339",
+          "output_sha256": "6df034b4d47edc837fff7fb7cdd93959108ff4d16607544dba4cb5f30861642b",
+          "width": 1672,
+          "height": 941,
+          "bytes": 1638282,
+          "disposition": "superseded",
+          "observation": "顶部标题和副标题的组织需要调整。"
+        },
+        {
+          "operation": "edit",
+          "prompt": "prompts/video-glass.header-edit.prompt.txt",
+          "prompt_sha256": "8c377d1dfd54089557f2c369561c3c728068af3094cf9cf3e09aeb3e4229b296",
+          "tool_output_id": "exec-20e96665-76a5-4e76-a827-76dc7e70e5e1",
+          "output_sha256": "fa13031489d25da71f38c7356fcd645eb7eed41bd16309a0f89d7ce0512730a1",
+          "width": 1672,
+          "height": 941,
+          "bytes": 1685382,
+          "disposition": "superseded",
+          "observation": "顶部仍占用图解空间，后续选择图外标题。",
+          "input_image_sha256": "6df034b4d47edc837fff7fb7cdd93959108ff4d16607544dba4cb5f30861642b"
+        },
+        {
+          "operation": "edit",
+          "prompt": "prompts/video-glass.content-edit.prompt.txt",
+          "prompt_sha256": "aba47aa57c98a3b0f1e95ae42472c5e83dab92e8feb495158400b2631120ecac",
+          "tool_output_id": "exec-8e5b1110-de41-4d30-aaae-61537b37df4d",
+          "output_sha256": "8ce065ba1685a9dcf4b094793edcd21fd632d07b481aa2430e8a905979111bb3",
+          "width": 1672,
+          "height": 941,
+          "bytes": 1592009,
+          "disposition": "selected",
+          "observation": "以图解填充画布，12 条关系与中文重新核对。",
+          "input_image_sha256": "fa13031489d25da71f38c7356fcd645eb7eed41bd16309a0f89d7ce0512730a1"
+        }
+      ],
+      "review": {
+        "kind": "agent",
+        "method": "actual-image",
+        "reviewer": "Codex visual assistant in the authoring conversation",
+        "familiarity": "Author and reviewer; not an independent or human review.",
+        "status": "accepted-for-reference",
+        "reviewed_sha256": "8ce065ba1685a9dcf4b094793edcd21fd632d07b481aa2430e8a905979111bb3",
+        "content_spec_sha256": "65bd46bd1fe847d415766018c1d67a9eef3412ec6bf2544ce6ab4580273cfbbc",
+        "observed_nodes": [
+          "上传端",
+          "上传入口",
+          "源视频库",
+          "任务队列",
+          "转码调度",
+          "转码集群",
+          "封装服务",
+          "成品库",
+          "内容分发",
+          "播放端",
+          "元数据服务",
+          "元数据库"
+        ],
+        "observed_edges": [
+          [
+            "上传端",
+            "上传入口"
+          ],
+          [
+            "上传入口",
+            "源视频库"
+          ],
+          [
+            "上传入口",
+            "任务队列"
+          ],
+          [
+            "任务队列",
+            "转码调度"
+          ],
+          [
+            "转码调度",
+            "转码集群"
+          ],
+          [
+            "源视频库",
+            "转码集群"
+          ],
+          [
+            "转码集群",
+            "封装服务"
+          ],
+          [
+            "封装服务",
+            "成品库"
+          ],
+          [
+            "成品库",
+            "内容分发"
+          ],
+          [
+            "内容分发",
+            "播放端"
+          ],
+          [
+            "上传入口",
+            "元数据服务"
+          ],
+          [
+            "元数据服务",
+            "元数据库"
+          ]
+        ],
+        "missing_nodes": [],
+        "extra_nodes": [],
+        "missing_edges": [],
+        "extra_edges": [],
+        "cropping": "全部组件、中文标签和服务箭头端点均在画布内。",
+        "text_validation": "逐项视觉查看；没有执行 OCR。",
+        "notes": "上传入口向上进入源视频库，源视频库单独输入转码集群；中路由队列和调度控制集群，之后顺序进入封装、成品、分发与播放。元数据支路在下方，12 条关系无交叉、遗漏或额外连接。",
+        "text": "图内只保留组件与上传处理、内容分发分组标签；12 个组件中文完整。",
+        "composition": "整张图以银白玻璃架构为主体，原标题区释放后组件更大；主路径横向，元数据支路与源视频支路上下分开。最左、最右组件完整，留白较窄。",
+        "limits": "节点多，演讲时应结合图外说明分段讲解；玻璃高光不代表任何运行指标。"
+      },
+      "derived_theme_ref": "systems/glass-pipeline"
+    },
+    {
+      "id": "search-sketch",
+      "theme_ref": "knowledge/sketch-notes",
+      "requested_aspect_ratio": "16:9",
+      "output": {
+        "path": "search-sketch.png",
+        "sha256": "e2eba588eda75607affb54bae6f5713c2dbaf55f5a0b1321fb0eb4b50c483cc0",
+        "width": 1672,
+        "height": 941,
+        "bytes": 2058287
+      },
+      "attempts": [
+        {
+          "operation": "generate",
+          "prompt": "prompts/search-sketch.prompt.txt",
+          "prompt_sha256": "0ec295015f2428a3d0065114276dad74f0e48a7f5dc32161f383ffd0b97ea224",
+          "tool_output_id": "exec-c14f7ad0-8c08-466a-9cb1-d15db331ab9b",
+          "output_sha256": "63a1b68bb785c5ffa94a39c5c7212c2b8ab04499ceea3fab0e4e6d69be17af26",
+          "width": 1672,
+          "height": 941,
+          "bytes": 2495588,
+          "disposition": "superseded",
+          "observation": "分组外框距边缘过近。"
+        },
+        {
+          "operation": "edit",
+          "prompt": "prompts/search-sketch.frame-edit.prompt.txt",
+          "prompt_sha256": "3044cc0349c522960a636c1ae16e43a8c0d60c298a96b336765dbc225a73474b",
+          "tool_output_id": "exec-b6d1c6e6-4251-49e0-a0f7-3a24cdd7e859",
+          "output_sha256": "e2eba588eda75607affb54bae6f5713c2dbaf55f5a0b1321fb0eb4b50c483cc0",
+          "width": 1672,
+          "height": 941,
+          "bytes": 2058287,
+          "disposition": "selected",
+          "observation": "外框和主体整体向内收，标签与关系重新核对。",
+          "input_image_sha256": "63a1b68bb785c5ffa94a39c5c7212c2b8ab04499ceea3fab0e4e6d69be17af26"
+        }
+      ],
+      "review": {
+        "kind": "agent",
+        "method": "actual-image",
+        "reviewer": "Codex visual assistant in the authoring conversation",
+        "familiarity": "Author and reviewer; not an independent or human review.",
+        "status": "accepted-for-reference",
+        "reviewed_sha256": "e2eba588eda75607affb54bae6f5713c2dbaf55f5a0b1321fb0eb4b50c483cc0",
+        "content_spec_sha256": "65bd46bd1fe847d415766018c1d67a9eef3412ec6bf2544ce6ab4580273cfbbc",
+        "observed_nodes": [
+          "网页来源",
+          "采集服务",
+          "抓取队列",
+          "解析清洗",
+          "索引构建",
+          "搜索索引",
+          "用户查询",
+          "查询入口",
+          "检索服务",
+          "排序服务",
+          "结果组装",
+          "搜索结果"
+        ],
+        "observed_edges": [
+          [
+            "网页来源",
+            "采集服务"
+          ],
+          [
+            "采集服务",
+            "抓取队列"
+          ],
+          [
+            "抓取队列",
+            "解析清洗"
+          ],
+          [
+            "解析清洗",
+            "索引构建"
+          ],
+          [
+            "索引构建",
+            "搜索索引"
+          ],
+          [
+            "用户查询",
+            "查询入口"
+          ],
+          [
+            "查询入口",
+            "检索服务"
+          ],
+          [
+            "搜索索引",
+            "检索服务"
+          ],
+          [
+            "检索服务",
+            "排序服务"
+          ],
+          [
+            "排序服务",
+            "结果组装"
+          ],
+          [
+            "结果组装",
+            "搜索结果"
+          ]
+        ],
+        "missing_nodes": [],
+        "extra_nodes": [],
+        "missing_edges": [],
+        "extra_edges": [],
+        "cropping": "全部组件、中文标签和服务箭头端点均在画布内。",
+        "text_validation": "逐项视觉查看；没有执行 OCR。",
+        "notes": "上层从网页来源经采集、队列、清洗、构建到唯一搜索索引；下层从查询到搜索结果。搜索索引从层间走廊进入检索服务顶部，11 条服务箭头齐全。",
+        "text": "12 个组件标签与两个分组可读；网页来源、解析清洗和搜索索引未出现错字。",
+        "composition": "工程手账用纸张输送、清洗设备和索引抽屉表达职责。边缘修订后，所有分区边框、设备与标签外都有连续暖白留白；主体仍足够大。",
+        "limits": "与知识问答例共用双层组织方式，区别来自内容职责和设备细节，不声称版式变化本身带来质量提高。"
+      },
+      "derived_theme_ref": "knowledge/engineering-workshop"
+    },
+    {
+      "id": "analytics-atlas",
+      "theme_ref": "knowledge/sketch-notes",
+      "requested_aspect_ratio": "16:9",
+      "output": {
+        "path": "analytics-atlas.png",
+        "sha256": "628e74aefe882c350b0a324b28dd85eb490f8496a09a903436c0d32149ec83a2",
+        "width": 1672,
+        "height": 941,
+        "bytes": 1885883
+      },
+      "attempts": [
+        {
+          "operation": "generate",
+          "prompt": "prompts/analytics-atlas.prompt.txt",
+          "prompt_sha256": "03c61255f886f96a28279c9126deade4d4a8c5709fcecba33ffe15b7b7ffcec7",
+          "tool_output_id": "exec-258a1847-6f69-47d9-9a40-2ccf3388b314",
+          "output_sha256": "7baea860ed7b6d3254660af25fdb66f89b2583c919104f834c6d924de5e58f77",
+          "width": 1672,
+          "height": 941,
+          "bytes": 2506489,
+          "disposition": "superseded",
+          "observation": "事件流错误直连批处理，应先归档对象存储。"
+        },
+        {
+          "operation": "edit",
+          "prompt": "prompts/analytics-atlas.archive-edit.prompt.txt",
+          "prompt_sha256": "99ba3cf49ea933ac6a400efd4f1f136f60d22ed5fbcbbef26c715251fba8d11c",
+          "tool_output_id": "exec-b766da96-12a9-4706-b2ec-8ea914ddb471",
+          "output_sha256": "bdb0290db5e5c01dc65ca43ea76c71aeff5d610bbd99bb1d067b36f34f92e362",
+          "width": 1672,
+          "height": 941,
+          "bytes": 2243572,
+          "disposition": "superseded",
+          "observation": "归档端点已正确，但路线经过分组铭牌。",
+          "input_image_sha256": "7baea860ed7b6d3254660af25fdb66f89b2583c919104f834c6d924de5e58f77"
+        },
+        {
+          "operation": "edit",
+          "prompt": "prompts/analytics-atlas.layout-edit.prompt.txt",
+          "prompt_sha256": "eaa492b2b83673641039a9ba38d5707588315ebcc0dce20c18e58eda686d344c",
+          "tool_output_id": "exec-26807960-8e89-4f16-bebf-1c690e9616b5",
+          "output_sha256": "628e74aefe882c350b0a324b28dd85eb490f8496a09a903436c0d32149ec83a2",
+          "width": 1672,
+          "height": 941,
+          "bytes": 1885883,
+          "disposition": "selected",
+          "observation": "归档线绕过铭牌且外缘留白完整，12 条关系重新核对。",
+          "input_image_sha256": "bdb0290db5e5c01dc65ca43ea76c71aeff5d610bbd99bb1d067b36f34f92e362"
+        }
+      ],
+      "review": {
+        "kind": "agent",
+        "method": "actual-image",
+        "reviewer": "Codex visual assistant in the authoring conversation",
+        "familiarity": "Author and reviewer; not an independent or human review.",
+        "status": "accepted-for-reference",
+        "reviewed_sha256": "628e74aefe882c350b0a324b28dd85eb490f8496a09a903436c0d32149ec83a2",
+        "content_spec_sha256": "65bd46bd1fe847d415766018c1d67a9eef3412ec6bf2544ce6ab4580273cfbbc",
+        "observed_nodes": [
+          "业务库",
+          "变更采集",
+          "事件流",
+          "流式计算",
+          "实时指标库",
+          "对象存储",
+          "批处理",
+          "分析仓库",
+          "指标服务",
+          "查询接口",
+          "分析报表",
+          "告警服务"
+        ],
+        "observed_edges": [
+          [
+            "业务库",
+            "变更采集"
+          ],
+          [
+            "变更采集",
+            "事件流"
+          ],
+          [
+            "事件流",
+            "流式计算"
+          ],
+          [
+            "流式计算",
+            "实时指标库"
+          ],
+          [
+            "事件流",
+            "对象存储"
+          ],
+          [
+            "对象存储",
+            "批处理"
+          ],
+          [
+            "批处理",
+            "分析仓库"
+          ],
+          [
+            "实时指标库",
+            "指标服务"
+          ],
+          [
+            "分析仓库",
+            "指标服务"
+          ],
+          [
+            "指标服务",
+            "查询接口"
+          ],
+          [
+            "查询接口",
+            "分析报表"
+          ],
+          [
+            "实时指标库",
+            "告警服务"
+          ]
+        ],
+        "missing_nodes": [],
+        "extra_nodes": [],
+        "missing_edges": [],
+        "extra_edges": [],
+        "cropping": "全部组件、中文标签和服务箭头端点均在画布内。",
+        "text_validation": "逐项视觉查看；没有执行 OCR。",
+        "notes": "上路实时处理、下路离线分析共同输入右侧指标服务。事件流归档线从左下端出发，沿空隙进入对象存储顶部右侧，未穿过离线分组铭牌；对象存储继续到批处理。实时指标库另有独立告警支路。12 条关系符合合同。",
+        "text": "12 个组件、实时处理、离线分析和指标交付标签均可读。",
+        "composition": "图鉴式剖面呈现存储机架、批流计算设备与分析仓库，淡青、浅赭和浅蓝分区；外轮廓向内收，左右留白完整。归档箭头不再与文字重叠。",
+        "limits": "数据库、仓库和报表中的简化图形用于表示职责，不作为真实数据、吞吐量或统计结果。"
+      }
+    },
+    {
+      "id": "recommendation-glass",
+      "theme_ref": "systems/silver-glass",
+      "requested_aspect_ratio": "16:9",
+      "output": {
+        "path": "recommendation-glass.png",
+        "sha256": "96be2054b0c82621572568970f173fa344f4dc50443d59e36d96e7d788b8fea1",
+        "width": 1672,
+        "height": 941,
+        "bytes": 1764806
+      },
+      "attempts": [
+        {
+          "operation": "generate",
+          "prompt": "prompts/recommendation-glass.prompt.txt",
+          "prompt_sha256": "914be2e710d0b8b0ebe1009e4c3b40668ec02f8f3e0641c243d8ad14ca3912b4",
+          "tool_output_id": "exec-2ceeeaca-15d2-493f-8fd1-17fb4be45697",
+          "output_sha256": "96be2054b0c82621572568970f173fa344f4dc50443d59e36d96e7d788b8fea1",
+          "width": 1672,
+          "height": 941,
+          "bytes": 1764806,
+          "disposition": "selected",
+          "observation": "12 个组件与 13 条关系核对完成；记录一次可区分的反馈交叉。"
+        }
+      ],
+      "review": {
+        "kind": "agent",
+        "method": "actual-image",
+        "reviewer": "Codex visual assistant in the authoring conversation",
+        "familiarity": "Author and reviewer; not an independent or human review.",
+        "status": "accepted-for-reference",
+        "reviewed_sha256": "96be2054b0c82621572568970f173fa344f4dc50443d59e36d96e7d788b8fea1",
+        "content_spec_sha256": "65bd46bd1fe847d415766018c1d67a9eef3412ec6bf2544ce6ab4580273cfbbc",
+        "observed_nodes": [
+          "客户端",
+          "推荐入口",
+          "画像服务",
+          "画像库",
+          "召回服务",
+          "向量索引",
+          "排序服务",
+          "模型服务",
+          "策略过滤",
+          "推荐结果",
+          "行为采集",
+          "事件总线"
+        ],
+        "observed_edges": [
+          [
+            "客户端",
+            "推荐入口"
+          ],
+          [
+            "推荐入口",
+            "画像服务"
+          ],
+          [
+            "画像服务",
+            "画像库"
+          ],
+          [
+            "推荐入口",
+            "召回服务"
+          ],
+          [
+            "召回服务",
+            "向量索引"
+          ],
+          [
+            "召回服务",
+            "排序服务"
+          ],
+          [
+            "画像服务",
+            "排序服务"
+          ],
+          [
+            "排序服务",
+            "模型服务"
+          ],
+          [
+            "排序服务",
+            "策略过滤"
+          ],
+          [
+            "策略过滤",
+            "推荐结果"
+          ],
+          [
+            "客户端",
+            "行为采集"
+          ],
+          [
+            "行为采集",
+            "事件总线"
+          ],
+          [
+            "事件总线",
+            "画像服务"
+          ]
+        ],
+        "missing_nodes": [],
+        "extra_nodes": [],
+        "missing_edges": [],
+        "extra_edges": [],
+        "cropping": "全部组件、中文标签和服务箭头端点均在画布内。",
+        "text_validation": "逐项视觉查看；没有执行 OCR。",
+        "notes": "中间主推荐路径由客户端到结果；画像服务位于上方并输入排序，向量与模型依赖在下方。客户端下接行为采集，总线通过紫色独立上行轨道进入画像服务。13 条关系齐全，轨道交叉处凭颜色与白色间隔区分，未增加交汇点。",
+        "text": "12 个组件与两个分组可读；排序设备中的 1、2、3 是排序符号，不是指标数据。",
+        "composition": "清透银白与淡紫玻璃构成可见部件；主路径与反馈分区分开，箭头和标签未被裁切。分区外框距画布侧边较近，作为排版选图时需保留外围留白。",
+        "limits": "反馈长线与主路径存在一次交叉，颜色和间隔能区分；需要完全无交叉版式的演讲页应另行重排。"
+      },
+      "derived_theme_ref": "systems/lavender-feedback"
+    },
+    {
+      "id": "fulfillment-cyan",
+      "theme_ref": "systems/white-cyan-circuit",
+      "requested_aspect_ratio": "16:9",
+      "output": {
+        "path": "fulfillment-cyan.png",
+        "sha256": "1f93db216257a5c1a5fe5ad4d14c27a84002b9304a75010c176d5fadd49abc14",
+        "width": 1672,
+        "height": 941,
+        "bytes": 1600041
+      },
+      "attempts": [
+        {
+          "operation": "generate",
+          "prompt": "prompts/fulfillment-cyan.prompt.txt",
+          "prompt_sha256": "9acb35032fa9675c37e535414593cd2d56a690d2a78752632ea3c8abac2b0114",
+          "tool_output_id": "exec-79267ae0-8ae6-41ee-959c-c42a0f025ea7",
+          "output_sha256": "1f93db216257a5c1a5fe5ad4d14c27a84002b9304a75010c176d5fadd49abc14",
+          "width": 1672,
+          "height": 941,
+          "bytes": 1600041,
+          "disposition": "selected",
+          "observation": "12 个组件、12 条关系和两路通知输入核对完成。"
+        }
+      ],
+      "review": {
+        "kind": "agent",
+        "method": "actual-image",
+        "reviewer": "Codex visual assistant in the authoring conversation",
+        "familiarity": "Author and reviewer; not an independent or human review.",
+        "status": "accepted-for-reference",
+        "reviewed_sha256": "1f93db216257a5c1a5fe5ad4d14c27a84002b9304a75010c176d5fadd49abc14",
+        "content_spec_sha256": "65bd46bd1fe847d415766018c1d67a9eef3412ec6bf2544ce6ab4580273cfbbc",
+        "observed_nodes": [
+          "订单入口",
+          "履约服务",
+          "订单库",
+          "事件总线",
+          "库存预留",
+          "库存库",
+          "仓库调度",
+          "仓储接口",
+          "配送服务",
+          "承运接口",
+          "通知服务",
+          "消息渠道"
+        ],
+        "observed_edges": [
+          [
+            "订单入口",
+            "履约服务"
+          ],
+          [
+            "履约服务",
+            "订单库"
+          ],
+          [
+            "履约服务",
+            "事件总线"
+          ],
+          [
+            "事件总线",
+            "库存预留"
+          ],
+          [
+            "库存预留",
+            "库存库"
+          ],
+          [
+            "库存预留",
+            "仓库调度"
+          ],
+          [
+            "仓库调度",
+            "仓储接口"
+          ],
+          [
+            "仓库调度",
+            "配送服务"
+          ],
+          [
+            "配送服务",
+            "承运接口"
+          ],
+          [
+            "配送服务",
+            "通知服务"
+          ],
+          [
+            "事件总线",
+            "通知服务"
+          ],
+          [
+            "通知服务",
+            "消息渠道"
+          ]
+        ],
+        "missing_nodes": [],
+        "extra_nodes": [],
+        "missing_edges": [],
+        "extra_edges": [],
+        "cropping": "全部组件、中文标签和服务箭头端点均在画布内。",
+        "text_validation": "逐项视觉查看；没有执行 OCR。",
+        "notes": "主履约路径从左向右，四个存储或外部接口在对应服务上方。事件总线和配送服务分别以不同端点进入下方通知服务，再向右进入消息渠道。12 条关系完整，没有将两路通知输入合并为一条关系。",
+        "text": "订单、库存、仓库调度、仓储与承运接口等 12 个标签完整；两处分组标签位于区域内缘。",
+        "composition": "青蓝玻璃与浅色实体货架、装箱及调度设备对应履约职责；分支连接短，通知区与主区有明确空隙。对象、铭牌和阴影均完整。",
+        "limits": "仓库和承运实体是软件接口的讲解隐喻，不声称全部物流设备、异常或补偿流程已覆盖。"
+      }
+    }
+  ]
+}

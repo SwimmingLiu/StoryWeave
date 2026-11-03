@@ -1,0 +1,22 @@
+Use case: infographic-diagram
+Asset type: original near-16:9 technical architecture illustration for a presentation; the page title will be outside the image.
+Primary request: draw the authored teaching reference below as a detailed, light-background technical illustration. It does not claim any company production implementation.
+Style/medium: light product-launch technical diorama in pale cyan glazed ceramic and frosted blue glass, precise deep-blue routing tracks, small realistic cutaway warehouse shelves, parcel reservation bins and dispatch equipment; broad white background and soft clean shadows, restrained mint grouping planes; polished physical details that express each software responsibility
+Composition/framing: Use a spacious upper main chain: order entrance to fulfillment to event bus to stock reservation to warehouse scheduler to delivery. Place each of the four dependent stores or external interfaces immediately above its service with a short arrow. Put notifications and message channel in a separate lower-right region; two separate arrows enter notifications, one from event bus and one from delivery. No accidental joining of independent input lines. Keep the main architecture broad and balanced without giant generic icons.
+Layout and edges: architecture fills the useful canvas, with at least 4 percent quiet outer margins on every side. Keep grouping planes, component bases, attached labels, arrowheads and soft shadows fully inside those margins. Use two or three balanced information zones; short nonoverlapping routes; generous space around labels. Components should be large enough to read on a presentation. No empty title band. No giant headline, subtitle, footer or decorative badges.
+ONLY visible text, verbatim: ["订单入口", "履约服务", "订单库", "事件总线", "库存预留", "库存库", "仓库调度", "仓储接口", "配送服务", "承运接口", "通知服务", "消息渠道", "履约处理", "通知交付"]
+Each of the 12 named components appears exactly once, with its own attached label. Region labels annotate groups and do not create extra components.
+Exact service-level directed relationships, each once with a clear arrowhead and no additional connections:
+订单入口 -> 履约服务
+履约服务 -> 订单库
+履约服务 -> 事件总线
+事件总线 -> 库存预留
+库存预留 -> 库存库
+库存预留 -> 仓库调度
+仓库调度 -> 仓储接口
+仓库调度 -> 配送服务
+配送服务 -> 承运接口
+配送服务 -> 通知服务
+事件总线 -> 通知服务
+通知服务 -> 消息渠道
+Content, exact Chinese and topology take priority over decoration. Use the specified physical or drawn medium, not a plain HTML-like box-and-arrow chart. Draw distinct domain-specific equipment and cutaways, no generic gears, generic landscape, unsupported metrics, brands, people or code. Keep a bright white or warm-white background and controlled small shadows. No cropped objects or frames touching the canvas edge.

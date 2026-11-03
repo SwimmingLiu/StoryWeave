@@ -1,6 +1,6 @@
 # 应用架构讲解参考
 
-[查看全部案例](index.html)。当前 18 个案例：16 个结构讲解参考进入 HTML Skill，2 个浅色等距参考进入 Imagegen Skill。图解保留原始比例；长图宜拆页讲解。
+[查看全部案例](index.html) · [浏览 8 张原创架构图](../../skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/index.html)。当前 26 个案例：16 个结构讲解参考进入 HTML Skill，2 个外部浅色等距参考与 8 个原创生成案例进入 Imagegen Skill。图解保留原始比例；长图宜拆页讲解。
 
 项目维护图、可运行示例、作者教学模型和 AI 生成示例分别标注。它们用于研究组件分组、服务边界、主调用链与数据流，不作为某家公司当前生产架构的完整证明。普通方框连线不计为 Imagegen 风格。
 
@@ -24,8 +24,18 @@
 | AI 案例：企业银行应用架构 | HTML / SVG | 评估有明确组件与关系的 AI 生成架构讲解图。 | [ArcadeAI / Blueprint MCP](https://github.com/ArcadeAI/blueprint-mcp) |
 | AI 案例：LangGraph 架构学习卡 | HTML / SVG | 评估有明确组件与关系的 AI 生成架构讲解图。 | [ArcadeAI / Blueprint MCP](https://github.com/ArcadeAI/blueprint-mcp) |
 | Google：Bank of Anthos 银行示例应用 | HTML / SVG | 浅色服务分区适合讲解金融应用的入口、账户与交易边界。 | [GoogleCloudPlatform/bank-of-anthos](https://github.com/GoogleCloudPlatform/bank-of-anthos/tree/db35fea9fd090150e2398106aadb475576f80d94) |
+| 电商交易 | Imagegen · 青蓝 | 商品读取、订单持久化与三路事件分发。 | [原图与提示词](../../skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/README.md) |
+| 知识问答 | Imagegen · 手绘 | 离线索引、在线问答与共享向量库。 | 同上 |
+| 即时消息 | Imagegen · 黏土 | 在线路径、状态依赖与离线通知。 | 同上 |
+| 视频平台 | Imagegen · 银白玻璃 | 源视频输入、调度、转码、分发和元数据支路。 | 同上 |
+| 搜索平台 | Imagegen · 工程手绘 | 采集索引与在线查询的共享依赖。 | 同上 |
+| 数据分析 | Imagegen · 图鉴剖面 | 批流处理汇合到指标服务，另有归档与告警。 | 同上 |
+| 内容推荐 | Imagegen · 银白玻璃 | 在线推荐、模型依赖与行为反馈。 | 同上 |
+| 订单履约 | Imagegen · 青蓝 | 库存、仓储、配送与两路通知输入。 | 同上 |
 
-Bank of Anthos 与 Online Boutique 的两张 Apache-2.0 原图随 HTML Skill 分发，保留许可文本、原图哈希与固定版本来源。其余原图只链接来源，不复制到分发包；ByteByteGo 的非商业、禁止演绎许可、Icograms 模板版权和其他来源限制保留在目录中。
+Bank of Anthos 与 Online Boutique 的两张 Apache-2.0 原图随 HTML Skill 分发，保留许可文本、原图哈希与固定版本来源。其余外部原图只链接来源；ByteByteGo 的非商业、禁止演绎许可、Icograms 模板版权和其他来源限制保留在目录中。
+
+8 张原创教学图使用 Codex 内置 image_gen 生成，按 MIT 许可随 Imagegen Skill 分发。逐图提示词、修订、图片与提示词哈希、实际尺寸、调用来源及视觉模型观察保存在 [generation.json](../../skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/generation.json)。工具没有返回具体模型 ID，记录中保留为空。它们用于比较绘画语言、组件职责与关系表达，README 展示图另行挑选。
 
 从仓库根目录更新或校验目录：
 
@@ -35,6 +45,8 @@ npm run check:architecture-references
 ```
 
 私有离线查看复用原图缓存，每张图均核对已查看原图的哈希。导出目录应放在分发 Skill 之外：
+
+准备缓存时，已绑定哈希的 `local_asset` 优先从仓库内只读复制，外部原图通过 HTTPS 下载；绝对路径、越界路径和越界符号链接会失败。`--check` 仅核对现有缓存。
 
 ```bash
 python3 scripts/cache-presentation-references.py --catalog design-library/application-architecture-references/catalog.json --cache ./tmp/application-reference-cache

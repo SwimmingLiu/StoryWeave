@@ -46,7 +46,8 @@ test('reference-derived prompts preserve branched graphs and three-column compar
   assert.equal(graph.content.nodes.length, 4);
   assert.equal(graph.content.edges.length, 4);
   const mapping = JSON.parse(await readFile(new URL('reference-theme-map.json', root)));
-  for (const ref of new Set(mapping.mappings.map((item) => item.theme_ref))) {
+  // Selected architecture seeds must not freeze their example topology into the newly authored recipes.
+  for (const ref of new Set([...mapping.mappings, ...mapping.selected_architecture_themes].map((item) => item.theme_ref))) {
     const jobs = compilePlannedImageJobs(content, planImagegen(content, catalog, { theme_ref: ref }));
     const graphJob = jobs.find((job) => job.id === graph.id);
     assert(graphJob.prompt.includes(JSON.stringify(graph.content)));

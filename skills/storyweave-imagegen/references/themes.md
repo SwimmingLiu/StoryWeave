@@ -1,14 +1,29 @@
 # 图片主题目录
 
-当前有 **19 套候选生成主题**。18 种内容页参考合并为 14 个主题方向，其中银白玻璃沿用已有主题，新增 13 套；原有 6 套完整保留。每套主题都有实际预览，新增 13 套使用相同的“计划 → 构建 → 验证”内容。
+当前有 **23 套候选生成主题**。新增四套主题来自已选原创架构图，保留其媒介和材料处理；原有 19 套主题及完整引用继续兼容。18 种外部内容页参考仍对应 14 个主题方向。各主题都有实际参考预览；新增四张是架构参考图，原有流程样张使用共同内容，分别记录来源与观察。
 
 [全部主题预览](../assets/examples/theme-previews/index.html) · [外部内容页参考](presentation-cases.md) · [逐项映射](../assets/themes/reference-theme-map.json)
 
 ## 默认选择
 
-[主题预览](../assets/examples/theme-previews/index.html)默认展示 12 套浅色方向，6 套深色主题通过“深色备选”显式查看；高饱和朱红海报在“全部主题”中保留。主题 ID、配方与旧项目保持兼容，未晋升的主题仍为 candidate。
+[主题预览](../assets/examples/theme-previews/index.html)默认展示 16 套浅色方向，6 套深色主题通过“深色备选”显式查看；高饱和朱红海报在“全部主题”中保留。主题 ID、配方与旧项目保持兼容，未晋升的主题仍为 candidate。
 
 大型应用的参考与短流程样张分开。先看[浅色应用架构插画](../assets/application-architecture-references/index.html)，确认服务边界、主调用链与异步路径；再选择材质。流程样张证明单页媒介效果，不证明已覆盖复杂架构。
+
+[原创架构案例册](../assets/application-architecture-references/generated-cases/index.html)提供 8 张可离线比较的实际图片，默认显示已选的 A1、A2、D1、D4，分别对应下方四个新增主题。工程手绘适合表现分层流程与共享依赖；图鉴剖面适合展开计算、存储和加工设备；青蓝实体与银白玻璃适合产品结构、应用方案和技术发布。青蓝发布页可将视觉集中到一个主产品，再用剖面或少量功能近景解释能力。
+
+架构内容图的标题与说明优先由演示页承载。图内用组件、分组和方向表达内容，围绕主调用链安排空间；为外轮廓、阴影、标签与箭头保留完整边缘，避免分组铭牌遮住连线。选用参考时仍需核对本页实际关系。
+
+## 新增架构主题
+
+| 案例 | 主题引用 | 主要表达 |
+| --- | --- | --- |
+| A1 · 知识问答 | `knowledge/watercolor-machinery` | 细蓝笔触、薄荷与淡紫水彩、内容相关的设备剖面 |
+| A2 · 搜索平台 | `knowledge/engineering-workshop` | 清楚透视、工程线稿、部件构造与完整外围留白 |
+| D1 · 视频平台 | `systems/glass-pipeline` | 银白玻璃剖面、青蓝主链、相互独立的处理与存储支路 |
+| D4 · 内容推荐 | `systems/lavender-feedback` | 透明玻璃、淡紫反馈轨道与清楚的方向、交叉隔离 |
+
+这些配方从参考图提炼材质、笔触和连接处理，组件、分支、回流与标题由当前内容决定。每套覆盖十种既有页型，状态为 `candidate`，通过 `--scope authoring` 使用。原图生成早于配方定义，是设计参考，不能作为新配方全部页型或整套演示的通过证明。
 
 ## 可选择的主题
 
@@ -18,6 +33,8 @@
 | 系统蓝图 | 白底电路 | `systems/white-cyan-circuit` |
 | 系统蓝图 | 参数化波纹 | `systems/white-cyan-wave` |
 | 系统蓝图 | 银白玻璃 | `systems/silver-glass` |
+| 系统蓝图 | 银白玻璃管线 | `systems/glass-pipeline` |
+| 系统蓝图 | 淡紫玻璃反馈 | `systems/lavender-feedback` |
 | 系统蓝图 | 技术蓝图 | `systems/engineering-blueprint` |
 | 系统蓝图 | 暖色电路 | `systems/warm-circuit` |
 | 系统蓝图 | 霓虹系统 | `systems/neon-network` |
@@ -26,6 +43,8 @@
 | 影像叙事 | 日常电影 | `cinematic/natural-film` |
 | 知识讲解 | 粉笔黑板 | `knowledge/chalkboard` |
 | 知识讲解 | 手绘白板 | `knowledge/sketch-notes` |
+| 知识讲解 | 淡彩机械手绘 | `knowledge/watercolor-machinery` |
+| 知识讲解 | 工程线稿工坊 | `knowledge/engineering-workshop` |
 | 知识讲解 | 水墨方法论 | `knowledge/ink-method` |
 | 实体隐喻 | 黏土流程 | `tactile/clay-workflow` |
 | 实体隐喻 | 复古设备 | `tactile/retro-device` |

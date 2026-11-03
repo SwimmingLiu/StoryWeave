@@ -4,6 +4,12 @@
 
 [全部主题预览](../assets/examples/theme-previews/index.html) · [外部内容页参考](presentation-cases.md) · [逐项映射](../assets/themes/reference-theme-map.json)
 
+## 默认选择
+
+[主题预览](../assets/examples/theme-previews/index.html)默认展示 12 套浅色方向，6 套深色主题通过“深色备选”显式查看；高饱和朱红海报在“全部主题”中保留。主题 ID、配方与旧项目保持兼容，未晋升的主题仍为 candidate。
+
+大型应用的参考与短流程样张分开。先看[浅色应用架构插画](../assets/application-architecture-references/index.html)，确认服务边界、主调用链与异步路径；再选择材质。流程样张证明单页媒介效果，不证明已覆盖复杂架构。
+
 ## 可选择的主题
 
 | 架构 | 名称 | 完整引用 |

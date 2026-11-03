@@ -1,7 +1,9 @@
 {
   "name": "storyweave",
   "private": true,
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "package:skills": "node scripts/package-skills.mjs",
     "check:packages": "node scripts/package-skills.mjs --check",
@@ -9,7 +11,9 @@
     "test": "node --test --test-concurrency=1 tests/core/*.test.mjs tests/design-library/*.test.mjs tests/integration/*.test.mjs tests/packaging/*.test.mjs skills/*/tests/*.test.mjs .agents/skills/verify-storyweave/tests/*.test.mjs",
     "verify:ci": "node .agents/skills/verify-storyweave/scripts/ci.mjs",
     "verify:visual": "node .agents/skills/verify-storyweave/scripts/ci-visual.mjs",
-    "doctor": "node .agents/skills/verify-storyweave/scripts/verify.mjs doctor"
+    "doctor": "node .agents/skills/verify-storyweave/scripts/verify.mjs doctor",
+    "check:architecture-references": "node scripts/build-architecture-reference-gallery.mjs --check",
+    "verify:architecture-references": "node .agents/skills/verify-storyweave/scripts/architecture-references.mjs"
   },
   "devDependencies": {
     "playwright": "1.62.1"

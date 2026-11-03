@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "title": "应用架构讲解参考",
+  "selection_rule": "浅色、清楚组件与关系优先；普通方框连线归 HTML，连续插画与实体空间表达归 Imagegen。",
+  "review_scope": "原图参考；不把教学示意、模型生成图与真实项目生产全貌混同。",
+  "cases": [
+    {
+      "id": "isometric-ai",
+      "title": "浅色等距：AI 数据处理",
+      "category": "等距视觉参考",
+      "target": "imagegen",
+      "kind": "visual-reference",
+      "creator": "Icograms",
+      "source_url": "https://icograms.com/templates/1248/ai-data-processing",
+      "description": "观察有标注的组件与路径如何融入浅色空间；仅借鉴视觉组织。",
+      "selection_note": "白底与蓝色分层台座可借鉴，组件和路径嵌入空间；这是通用示意，具体系统关系需要另有依据。",
+      "limits": "用于研究原图的组织方式；具体技术关系按来源版本及实际项目核对。",
+      "license_note": "Icograms copyrighted template preview; inspiration and source link only; no redistribution or recoloring.",
+      "imagegen_reference_eligible": true,
+      "theme_ref": "illustrated/panoramic-system",
+      "generation_note": "not established by source",
+      "pages": [
+        {
+          "id": "p01",
+          "url": "https://storage.icograms.com/templates/preview/ai-data-processing.webp",
+          "width": 1200,
+          "height": 640,
+          "sha256": "2f5fb1f90218a35113751eb82e2b9ab5cee131b7b622f0e34c88c951a518609d",
+          "roles": [
+            "architecture",
+            "process"
+          ],
+          "review": {
+            "kind": "agent",
+            "method": "actual-image",
+            "reviewed_sha256": "2f5fb1f90218a35113751eb82e2b9ab5cee131b7b622f0e34c88c951a518609d",
+            "notes": "白底与蓝色分层台座可借鉴，组件和路径嵌入空间；这是通用示意，具体系统关系需要另有依据。"
+          },
+          "title": "浅色等距：AI 数据处理"
+        }
+      ]
+    },
+    {
+      "id": "isometric-network",
+      "title": "浅色等距：网络层次",
+      "category": "等距视觉参考",
+      "target": "imagegen",
+      "kind": "visual-reference",
+      "creator": "Icograms",
+      "source_url": "https://icograms.com/templates/291/network-diagram-1",
+      "description": "观察有标注的组件与路径如何融入浅色空间；仅借鉴视觉组织。",
+      "selection_note": "白底、轴测设备和清楚的连接层次适合解释部署关系；字体与资产略显传统，借鉴组织而非原样复制。",
+      "limits": "用于研究原图的组织方式；具体技术关系按来源版本及实际项目核对。",
+      "license_note": "Icograms copyrighted template preview; inspiration and source link only; no redistribution or recoloring.",
+      "imagegen_reference_eligible": true,
+      "theme_ref": "illustrated/panoramic-system",
+      "generation_note": "not established by source",
+      "pages": [
+        {
+          "id": "p01",
+          "url": "https://storage.icograms.com/templates/preview/it-network-diagram-1.png",
+          "width": 640,
+          "height": 480,
+          "sha256": "7f85b9185bc3cdf674baf2caef0413131ebe0276cd107474b295e18788fb6313",
+          "roles": [
+            "architecture"
+          ],
+          "review": {
+            "kind": "agent",
+            "method": "actual-image",
+            "reviewed_sha256": "7f85b9185bc3cdf674baf2caef0413131ebe0276cd107474b295e18788fb6313",
+            "notes": "白底、轴测设备和清楚的连接层次适合解释部署关系；字体与资产略显传统，借鉴组织而非原样复制。"
+          },
+          "title": "浅色等距：网络层次"
+        }
+      ]
+    }
+  ]
+}

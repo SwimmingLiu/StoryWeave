@@ -22,7 +22,9 @@
           "preview": {
             "cover": "../examples/theme-previews/editorial--paper-magazine.png",
             "gallery": "../examples/theme-previews/index.html#editorial--paper-magazine"
-          }
+          },
+          "appearance": "light",
+          "recommendation": "optional"
         }
       ]
     },
@@ -47,7 +49,9 @@
           "preview": {
             "cover": "../examples/theme-previews/systems--white-cyan-circuit.png",
             "gallery": "../examples/theme-previews/index.html#systems--white-cyan-circuit"
-          }
+          },
+          "appearance": "light",
+          "recommendation": "preferred"
         },
         {
           "ref": "systems/white-cyan-wave",
@@ -63,7 +67,9 @@
           "preview": {
             "cover": "../examples/theme-previews/systems--white-cyan-wave.png",
             "gallery": "../examples/theme-previews/index.html#systems--white-cyan-wave"
-          }
+          },
+          "appearance": "light",
+          "recommendation": "preferred"
         },
         {
           "ref": "systems/silver-glass",
@@ -79,7 +85,9 @@
           "preview": {
             "cover": "../examples/theme-previews/systems--silver-glass.png",
             "gallery": "../examples/theme-previews/index.html#systems--silver-glass"
-          }
+          },
+          "appearance": "light",
+          "recommendation": "preferred"
         },
         {
           "ref": "systems/engineering-blueprint",
@@ -94,7 +102,9 @@
           "preview": {
             "cover": "../examples/theme-previews/systems--engineering-blueprint.png",
             "gallery": "../examples/theme-previews/index.html#systems--engineering-blueprint"
-          }
+          },
+          "appearance": "dark",
+          "recommendation": "optional"
         },
         {
           "ref": "systems/warm-circuit",
@@ -109,7 +119,9 @@
           "preview": {
             "cover": "../examples/theme-previews/systems--warm-circuit.png",
             "gallery": "../examples/theme-previews/index.html#systems--warm-circuit"
-          }
+          },
+          "appearance": "light",
+          "recommendation": "preferred"
         },
         {
           "ref": "systems/neon-network",
@@ -124,7 +136,9 @@
           "preview": {
             "cover": "../examples/theme-previews/systems--neon-network.png",
             "gallery": "../examples/theme-previews/index.html#systems--neon-network"
-          }
+          },
+          "appearance": "dark",
+          "recommendation": "optional"
         },
         {
           "ref": "systems/black-gold",
@@ -139,7 +153,9 @@
           "preview": {
             "cover": "../examples/theme-previews/systems--black-gold.png",
             "gallery": "../examples/theme-previews/index.html#systems--black-gold"
-          }
+          },
+          "appearance": "dark",
+          "recommendation": "optional"
         }
       ]
     },
@@ -164,7 +180,9 @@
           "preview": {
             "cover": "../examples/theme-previews/campaign--bold-poster.png",
             "gallery": "../examples/theme-previews/index.html#campaign--bold-poster"
-          }
+          },
+          "appearance": "bold",
+          "recommendation": "optional"
         }
       ]
     },
@@ -189,7 +207,9 @@
           "preview": {
             "cover": "../examples/theme-previews/cinematic--natural-film.png",
             "gallery": "../examples/theme-previews/index.html#cinematic--natural-film"
-          }
+          },
+          "appearance": "light",
+          "recommendation": "optional"
         }
       ]
     },
@@ -213,7 +233,9 @@
           "preview": {
             "cover": "../examples/theme-previews/knowledge--chalkboard.png",
             "gallery": "../examples/theme-previews/index.html#knowledge--chalkboard"
-          }
+          },
+          "appearance": "dark",
+          "recommendation": "optional"
         },
         {
           "ref": "knowledge/sketch-notes",
@@ -228,7 +250,9 @@
           "preview": {
             "cover": "../examples/theme-previews/knowledge--sketch-notes.png",
             "gallery": "../examples/theme-previews/index.html#knowledge--sketch-notes"
-          }
+          },
+          "appearance": "light",
+          "recommendation": "preferred"
         },
         {
           "ref": "knowledge/ink-method",
@@ -243,7 +267,9 @@
           "preview": {
             "cover": "../examples/theme-previews/knowledge--ink-method.png",
             "gallery": "../examples/theme-previews/index.html#knowledge--ink-method"
-          }
+          },
+          "appearance": "light",
+          "recommendation": "optional"
         }
       ]
     },
@@ -267,7 +293,9 @@
           "preview": {
             "cover": "../examples/theme-previews/tactile--clay-workflow.png",
             "gallery": "../examples/theme-previews/index.html#tactile--clay-workflow"
-          }
+          },
+          "appearance": "light",
+          "recommendation": "preferred"
         },
         {
           "ref": "tactile/retro-device",
@@ -282,7 +310,9 @@
           "preview": {
             "cover": "../examples/theme-previews/tactile--retro-device.png",
             "gallery": "../examples/theme-previews/index.html#tactile--retro-device"
-          }
+          },
+          "appearance": "dark",
+          "recommendation": "optional"
         }
       ]
     },
@@ -306,7 +336,9 @@
           "preview": {
             "cover": "../examples/theme-previews/illustrated--storybook-guide.png",
             "gallery": "../examples/theme-previews/index.html#illustrated--storybook-guide"
-          }
+          },
+          "appearance": "light",
+          "recommendation": "optional"
         },
         {
           "ref": "illustrated/comic-engineering",
@@ -321,7 +353,9 @@
           "preview": {
             "cover": "../examples/theme-previews/illustrated--comic-engineering.png",
             "gallery": "../examples/theme-previews/index.html#illustrated--comic-engineering"
-          }
+          },
+          "appearance": "light",
+          "recommendation": "preferred"
         },
         {
           "ref": "illustrated/panoramic-system",
@@ -336,7 +370,9 @@
           "preview": {
             "cover": "../examples/theme-previews/illustrated--panoramic-system.png",
             "gallery": "../examples/theme-previews/index.html#illustrated--panoramic-system"
-          }
+          },
+          "appearance": "light",
+          "recommendation": "preferred"
         },
         {
           "ref": "illustrated/pixel-world",
@@ -351,7 +387,9 @@
           "preview": {
             "cover": "../examples/theme-previews/illustrated--pixel-world.png",
             "gallery": "../examples/theme-previews/index.html#illustrated--pixel-world"
-          }
+          },
+          "appearance": "dark",
+          "recommendation": "optional"
         }
       ]
     }

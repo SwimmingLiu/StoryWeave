@@ -1,19 +1,21 @@
 #!/usr/bin/env node
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { access, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
-import { dirname, join, resolve } from 'node:path';
+import { mkdir, readFile, realpath, rm, writeFile } from 'node:fs/promises';
+import { basename, dirname, join, resolve, sep } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { chromium } from 'playwright';
 import { buildGallery } from '../../../../scripts/build-architecture-reference-gallery.mjs';
 
 const repo = resolve(dirname(fileURLToPath(import.meta.url)), '../../../..');
 const option = (name) => { const index = process.argv.indexOf(name); assert(index >= 0 && process.argv[index + 1] && !process.argv[index + 1].startsWith('--'), `Missing ${name}`); return resolve(process.argv[index + 1]); };
-const output = option('--out');
-const cacheRoot = option('--cache');
+const requestedOutput = option('--out');
+const output = join(await realpath(dirname(requestedOutput)), basename(requestedOutput));
+const cacheRoot = await realpath(option('--cache'));
 const cacheBefore = await readFile(join(cacheRoot, 'cache.json'));
-assert(!(await access(join(output, 'summary.json')).then(() => true, () => false)), 'Keep the previous evidence; use a fresh output directory');
-await mkdir(output, { recursive: true });
+assert(output !== cacheRoot && !output.startsWith(`${cacheRoot}${sep}`) && !cacheRoot.startsWith(`${output}${sep}`), 'Evidence and input cache must not overlap');
+// A missing summary did not establish ownership; exclusive creation protects incomplete runs and unrelated work from cleanup.
+await mkdir(output);
 const work = join(output, 'offline-viewer');
 const catalog = JSON.parse(await readFile(join(repo, 'design-library/application-architecture-references/catalog.json'), 'utf8'));
 const themeCatalog = JSON.parse(await readFile(join(repo, 'skills/storyweave-imagegen/assets/themes/catalog.json'), 'utf8'));

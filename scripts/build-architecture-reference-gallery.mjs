@@ -2,7 +2,7 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { mkdir, readFile, realpath, writeFile } from 'node:fs/promises';
-import { dirname, join, relative, resolve, sep } from 'node:path';
+import { basename, dirname, join, relative, resolve, sep } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const repo = resolve(fileURLToPath(new URL('..', import.meta.url)));
@@ -51,13 +51,25 @@ async function localFile(path) {
   return actual;
 }
 
+async function canonicalDestination(path) {
+  try { return await realpath(path); }
+  catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+    return join(await canonicalDestination(dirname(path)), basename(path));
+  }
+}
+
 export async function buildGallery({ check = false, cacheRoot = null, output = null } = {}) {
   assert.equal(Boolean(cacheRoot), Boolean(output), 'Use --cache and --out together for a private offline viewer');
-  if (output) assert(!resolve(output).startsWith(`${join(repo, 'skills')}${sep}`), 'Offline originals stay outside distributed Skills');
+  // A lexical prefix missed equal paths and linked ancestors, allowing private originals into distributed Skills.
+  const outputDirectory = output ? await canonicalDestination(resolve(output)) : null;
+  const skillsDirectory = await realpath(join(repo, 'skills'));
+  if (outputDirectory) assert(outputDirectory !== skillsDirectory && !outputDirectory.startsWith(`${skillsDirectory}${sep}`), 'Offline originals stay outside distributed Skills');
+  // Resolve both sides before writing so exporting cannot modify a supplied read-only cache through an alias.
+  const cacheDirectory = cacheRoot ? await realpath(cacheRoot) : null;
+  if (cacheDirectory) assert(outputDirectory !== cacheDirectory && !outputDirectory.startsWith(`${cacheDirectory}${sep}`), 'Offline output must stay outside the input cache');
   const source = await readFile(sourcePath);
   const catalog = validateCatalog(JSON.parse(source));
-  // Canonicalize the supplied root too: a legitimate /var cache may resolve beneath /private/var on macOS.
-  const cacheDirectory = cacheRoot ? await realpath(cacheRoot) : null;
   const cache = cacheDirectory ? JSON.parse(await readFile(join(cacheDirectory, 'cache.json'), 'utf8')) : null;
   if (cache) assert.equal(cache.catalog_sha256, hash(source), 'Refresh the architecture cache for this catalog');
   const images = new Map();
@@ -82,7 +94,7 @@ export async function buildGallery({ check = false, cacheRoot = null, output = n
       images.set(page.url, `data:${record.mime};base64,${bytes.toString('base64')}`);
     }
   }
-  const targets = output ? [[resolve(output), catalog.cases]] : [
+  const targets = outputDirectory ? [[outputDirectory, catalog.cases]] : [
     [dirname(sourcePath), catalog.cases],
     [join(repo, 'skills/storyweave-html/assets/application-architecture-references'), catalog.cases.filter((item) => item.target === 'html')],
     [join(repo, 'skills/storyweave-imagegen/assets/application-architecture-references'), catalog.cases.filter((item) => item.target === 'imagegen')],

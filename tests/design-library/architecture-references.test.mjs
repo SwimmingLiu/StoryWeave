@@ -1,7 +1,8 @@
 import assert from 'node:assert/strict';
-import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { mkdir, mkdtemp, readFile, rm, symlink, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import test from 'node:test';
 import { buildGallery, validateCatalog } from '../../scripts/build-architecture-reference-gallery.mjs';
@@ -37,8 +38,21 @@ test('stale observations and duplicate originals cannot satisfy architecture cur
 test('an offline architecture viewer refuses cache bytes different from the viewed original', async (t) => {
   const root = await mkdtemp(join(tmpdir(), 'storyweave-architecture-cache-'));
   t.after(() => rm(root, { recursive: true, force: true }));
-  await writeFile(join(root, 'changed.png'), 'changed bytes');
+  const cacheRoot = join(root, 'cache');
+  await mkdir(cacheRoot);
+  await writeFile(join(cacheRoot, 'changed.png'), 'changed bytes');
   const first = catalog.cases[0].pages[0];
-  await writeFile(join(root, 'cache.json'), JSON.stringify({ catalog_sha256: createHash('sha256').update(bytes).digest('hex'), images: { [first.url]: { path: 'changed.png' } } }));
-  await assert.rejects(buildGallery({ cacheRoot: root, output: join(root, 'offline') }), /Cached original changed/u);
+  await writeFile(join(cacheRoot, 'cache.json'), JSON.stringify({ catalog_sha256: createHash('sha256').update(bytes).digest('hex'), images: { [first.url]: { path: 'changed.png' } } }));
+  await assert.rejects(buildGallery({ cacheRoot, output: join(root, 'offline') }), /Cached original changed/u);
+});
+
+test('offline originals cannot enter distributed Skills through equal or linked output paths, or modify the cache', async (t) => {
+  const root = await mkdtemp(join(tmpdir(), 'storyweave-architecture-boundary-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const skills = fileURLToPath(new URL('../../skills', import.meta.url));
+  const alias = join(root, 'linked-skill');
+  await symlink(skills, alias, 'dir');
+  await assert.rejects(buildGallery({ cacheRoot: root, output: skills }), /outside distributed Skills/u);
+  await assert.rejects(buildGallery({ cacheRoot: root, output: join(alias, 'private-export') }), /outside distributed Skills/u);
+  await assert.rejects(buildGallery({ cacheRoot: root, output: join(root, 'private-export') }), /outside the input cache/u);
 });

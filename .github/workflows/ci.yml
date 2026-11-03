@@ -25,6 +25,7 @@ jobs:
     env:
       CI_EVALUATION_RUN_ID: ci-${{ github.run_id }}-${{ github.run_attempt }}
       CI_REFERENCE_CACHE: ${{ github.workspace }}/tmp/ci-reference-cache
+      CI_ARCHITECTURE_CACHE: ${{ github.workspace }}/tmp/ci-architecture-cache
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
@@ -44,6 +45,8 @@ jobs:
           npm run check:packages
           # Actual generated previews are separate from the external reference gallery and must match their provenance.
           npm run check:themes
+          # Application diagrams were only scratch references; check routed Skill copies and byte-bound originals too.
+          npm run check:architecture-references
           node scripts/build-presentation-reference-gallery.mjs --check
       - name: Run complete test suite
         run: |
@@ -60,8 +63,19 @@ jobs:
             if [ "$attempt" = 3 ]; then exit 1; fi
           done
           python scripts/cache-presentation-references.py --cache "$CI_REFERENCE_CACHE" --check
+      - name: Prepare inspected application architecture figures
+        run: |
+          for attempt in 1 2 3; do
+            if python scripts/cache-presentation-references.py --catalog design-library/application-architecture-references/catalog.json --cache "$CI_ARCHITECTURE_CACHE" | tee "tmp/ci/architecture-cache-$attempt.json"; then
+              break
+            fi
+            if [ "$attempt" = 3 ]; then exit 1; fi
+          done
+          python scripts/cache-presentation-references.py --catalog design-library/application-architecture-references/catalog.json --cache "$CI_ARCHITECTURE_CACHE" --check
       - name: Drive all eight features and verify cleanup
         run: npm run verify:ci -- --run-id "$CI_EVALUATION_RUN_ID" --reference-cache "$CI_REFERENCE_CACHE"
+      - name: Verify light selection and architecture gallery in both viewports
+        run: npm run verify:architecture-references -- --cache "$CI_ARCHITECTURE_CACHE" --out "$GITHUB_WORKSPACE/tmp/application-architecture-ci"
       # Comparing only the new baseline let direct file edits bypass the required paired review.
       - name: Fetch the previous visual baseline
         env:
@@ -95,4 +109,5 @@ jobs:
           path: |
             tmp/ci/
             tmp/verification/
+            tmp/application-architecture-ci/
             !tmp/verification/**/offline-viewer/**

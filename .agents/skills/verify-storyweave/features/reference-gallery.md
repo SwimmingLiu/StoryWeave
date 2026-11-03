@@ -10,6 +10,8 @@
 - `gallery-filter` 验证主题、观点、流程、对比、数据、架构和搜索组合，自动展开实际匹配页并显示空状态。
 - `gallery-display` 每种视口逐张展开、解码并截图，核对首图直接加载、展开转 eager 和画面比例。
 - `gallery-retry-zoom` 图片失败时显示重试，通过按钮重新请求；点击图片放大后可用关闭按钮或 Escape 退出。
+- `architecture-routing` 应用架构资料按 HTML 与 Imagegen 分发，保留原始比例、来源、许可与已查看原图哈希。
+- `light-selection` 主题页默认浅色，用户可显式查看全部主题、深色主题及旧主题的直接链接。
 
 ## How to get to it (user POV)
 
@@ -42,3 +44,17 @@ helper 先检查分发产物，在隔离目录安装 Imagegen，运行缓存 `--
 - 主题参考不自动变成生成器的可选配方；图库数量和实际生成主题数量分别统计。
 - 原图内嵌会增大私有离线 HTML。分发包仅含 catalog、coverage 与远程引用 HTML；独立安装必须保留这一边界。
 - 截图和自动几何检查不证明技术内容、中文字形或演讲节奏合格，仍需查看实际图片。
+
+## 应用架构资料与浅色选择
+
+新入口为 `design-library/application-architecture-references/index.html`；两个生成器各自携带对应子集的 `assets/application-architecture-references/index.html`。普通方框连线和 AI 白板示例归 HTML，连续插画与实体空间参考归 Imagegen。
+
+CI 用 `scripts/cache-presentation-references.py --catalog design-library/application-architecture-references/catalog.json` 准备独立缓存，核对原图尺寸与已查看字节。随后运行：
+
+```bash
+npm run verify:architecture-references -- --cache <absolute-cache-directory> --out <fresh-evidence-directory>
+```
+
+独立浏览器在 `1440×900` 与 `390×844` 逐图解码并核对显示、放大、HTML/Imagegen 筛选及搜索空状态，另检查主题页浅色默认、深色显式选择和直接链接。结束后复核离线产物和输入缓存，清理内嵌原图 HTML，保留 summary、actions、截图和 trace。浏览器失败阻断；不代填新画面的审美结论。
+
+当前环境若已明确禁止本地 HTML 浏览，仍按 Skill 的 Launch 规则保留限制，不直接运行这个浏览器入口绕过；交由独立 GitHub Actions 验证。

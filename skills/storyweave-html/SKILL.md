@@ -87,3 +87,7 @@ node scripts/ppt.mjs migrate-content <project> --theme-ref systems/white-cyan-ci
 | [visual-layouts](references/visual-layouts.md) | 杂志与瑞士风、标题容量、网格、图片裁切与安全区 |
 | [assets](references/assets.md) | 素材与字体约束 |
 | [qa-export](references/qa-export.md) | 浏览器检查、产物绑定与导出 |
+
+## 应用架构参考
+
+需要讲解大型应用时，读[应用架构资料](assets/application-architecture-references/index.html)。按真实职责、主调用链、同步与异步边界组织原生 HTML/SVG；参考图不作为生产架构全貌，也不继承未经项目资料确认的关系或数字。

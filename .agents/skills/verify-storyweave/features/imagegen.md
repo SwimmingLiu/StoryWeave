@@ -5,6 +5,7 @@
 ## Sub-features
 
 - `image-theme-coverage` 核对全部候选主题的十种角色解析、同一份 v4 内容编译、18 种参考的完整映射，以及实际预览和提示词哈希。
+- `image-reference-route` 应用架构图解保留在独立资料目录，纯结构图归 HTML；实际图片的明暗选择与主题 ID 分别维护。
 - `image-jobs` 运行 draft、approve 与 prompts，核对任务和准确文字。
 - `image-missing-gate` 实测 status 与 build 的 needs-images、退出码 3 和缺失页 ID。
 - `image-generate` Agent 调用真实工具，按任务附图并保存调用记录。

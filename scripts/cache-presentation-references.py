@@ -17,9 +17,11 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--cache", type=Path, required=True)
     parser.add_argument("--check", action="store_true")
+    # Application diagrams have their own routes and original aspect ratios; reuse the byte cache without mixing them into slide styles.
+    parser.add_argument("--catalog", type=Path)
     args = parser.parse_args()
     root = Path(__file__).resolve().parent.parent
-    catalog_path = root / "design-library/presentation-references/catalog.json"
+    catalog_path = args.catalog.resolve() if args.catalog else root / "design-library/presentation-references/catalog.json"
     catalog_bytes = catalog_path.read_bytes()
     catalog = json.loads(catalog_bytes)
     cache = args.cache.resolve()
@@ -28,6 +30,9 @@ def main():
     pages = {page["url"]: page for case in catalog["cases"] for page in case["pages"]}
 
     def inspect(data, page):
+        # Curated architecture references bind the exact inspected original, not merely its advertised dimensions.
+        if page.get("sha256") and hashlib.sha256(data).hexdigest() != page["sha256"]:
+            raise ValueError("Source image differs from the inspected original")
         with Image.open(io.BytesIO(data)) as picture:
             picture.load()
             if picture.format not in {"PNG", "JPEG", "WEBP"}:

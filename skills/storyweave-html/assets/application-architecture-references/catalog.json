@@ -1,0 +1,588 @@
+{
+  "schema_version": 1,
+  "title": "应用架构讲解参考",
+  "selection_rule": "浅色、清楚组件与关系优先；普通方框连线归 HTML，连续插画与实体空间表达归 Imagegen。",
+  "review_scope": "原图参考；不把教学示意、模型生成图与真实项目生产全貌混同。",
+  "cases": [
+    {
+      "id": "slack-connect",
+      "title": "Slack：连接建立与服务发现",
+      "category": "即时通信",
+      "target": "html",
+      "kind": "project",
+      "creator": "Slack Engineering",
+      "source_url": "https://slack.engineering/real-time-messaging/",
+      "description": "客户端与网关、频道服务之间的连接建立。",
+      "selection_note": "边缘区域和主区域用虚线边界区分，编号能引导连接建立的阅读；原图字号偏小，适合拆页讲解。",
+      "limits": "用于研究原图的组织方式；具体技术关系按来源版本及实际项目核对。",
+      "license_note": "Original publisher retains image rights; private research copy with source attribution; not distributed.",
+      "imagegen_reference_eligible": false,
+      "theme_ref": null,
+      "generation_note": "not established by source",
+      "pages": [
+        {
+          "id": "p01",
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2023/03/client-websocket-setup-slim-e1680215351716.jpg?w=640",
+          "width": 640,
+          "height": 297,
+          "sha256": "b813df99b515f92a752dc2b0ce769fce8099a6579a7765786c4b0c2d5805e39f",
+          "roles": [
+            "architecture",
+            "process"
+          ],
+          "review": {
+            "kind": "agent",
+            "method": "actual-image",
+            "reviewed_sha256": "b813df99b515f92a752dc2b0ce769fce8099a6579a7765786c4b0c2d5805e39f",
+            "notes": "边缘区域和主区域用虚线边界区分，编号能引导连接建立的阅读；原图字号偏小，适合拆页讲解。"
+          },
+          "title": "Slack：连接建立与服务发现"
+        }
+      ]
+    },
+    {
+      "id": "slack-message",
+      "title": "Slack：一条消息的路径",
+      "category": "即时通信",
+      "target": "html",
+      "kind": "project",
+      "creator": "Slack Engineering",
+      "source_url": "https://slack.engineering/real-time-messaging/",
+      "description": "按消息经过的服务组织讲解，突出主调用链。",
+      "selection_note": "同一条消息穿过入口、持久化、路由与跨区分发，适合逐步高亮；不要在单页缩成小图。",
+      "limits": "用于研究原图的组织方式；具体技术关系按来源版本及实际项目核对。",
+      "license_note": "Original publisher retains image rights; private research copy with source attribution; not distributed.",
+      "imagegen_reference_eligible": false,
+      "theme_ref": null,
+      "generation_note": "not established by source",
+      "pages": [
+        {
+          "id": "p01",
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2023/03/journey-of-a-message-slim-Page-1.jpg?w=640",
+          "width": 640,
+          "height": 506,
+          "sha256": "85fb2f3d5e0b43e36eeeaa38773afeeb91b77788f08ba969fd2cebf46f40651d",
+          "roles": [
+            "architecture",
+            "process"
+          ],
+          "review": {
+            "kind": "agent",
+            "method": "actual-image",
+            "reviewed_sha256": "85fb2f3d5e0b43e36eeeaa38773afeeb91b77788f08ba969fd2cebf46f40651d",
+            "notes": "同一条消息穿过入口、持久化、路由与跨区分发，适合逐步高亮；不要在单页缩成小图。"
+          },
+          "title": "Slack：一条消息的路径"
+        }
+      ]
+    },
+    {
+      "id": "slack-events",
+      "title": "Slack：事件分发",
+      "category": "即时通信",
+      "target": "html",
+      "kind": "project",
+      "creator": "Slack Engineering",
+      "source_url": "https://slack.engineering/real-time-messaging/",
+      "description": "区分事件来源、分发层和客户端接收路径。",
+      "selection_note": "事件在主区域和两个边缘区域之间流动，适合与持久消息路径对照。",
+      "limits": "用于研究原图的组织方式；具体技术关系按来源版本及实际项目核对。",
+      "license_note": "Original publisher retains image rights; private research copy with source attribution; not distributed.",
+      "imagegen_reference_eligible": false,
+      "theme_ref": null,
+      "generation_note": "not established by source",
+      "pages": [
+        {
+          "id": "p01",
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2023/03/events-flow-slim.jpg?w=640",
+          "width": 640,
+          "height": 558,
+          "sha256": "d4bd35d1fa29476c4660e6c321c55459844196d7c1436109c317e72805f47771",
+          "roles": [
+            "architecture",
+            "process"
+          ],
+          "review": {
+            "kind": "agent",
+            "method": "actual-image",
+            "reviewed_sha256": "d4bd35d1fa29476c4660e6c321c55459844196d7c1436109c317e72805f47771",
+            "notes": "事件在主区域和两个边缘区域之间流动，适合与持久消息路径对照。"
+          },
+          "title": "Slack：事件分发"
+        }
+      ]
+    },
+    {
+      "id": "discord-coalescing",
+      "title": "Discord：请求合并服务",
+      "category": "存储与扩展",
+      "target": "html",
+      "kind": "project",
+      "creator": "Discord Engineering",
+      "source_url": "https://discord.com/blog/how-discord-stores-trillions-of-messages",
+      "description": "在存储前增加服务层，解释如何减少重复请求。",
+      "selection_note": "浅底与少量紫色清楚表达 API、消息服务、存储；是局部子系统图，不是全应用总览。",
+      "limits": "用于研究原图的组织方式；具体技术关系按来源版本及实际项目核对。",
+      "license_note": "Original publisher retains image rights; private research copy with source attribution; not distributed.",
+      "imagegen_reference_eligible": false,
+      "theme_ref": null,
+      "generation_note": "not established by source",
+      "pages": [
+        {
+          "id": "p01",
+          "url": "https://cdn.prod.website-files.com/5f9072399b2640f14d6a2bf4/640662a51e3e13599d292404_Example%202%402x.png",
+          "width": 1806,
+          "height": 1154,
+          "sha256": "f41897953b55a4f3ea66e5baf49d80b7f65289e40f1369982e8ecdf8d2438343",
+          "roles": [
+            "architecture",
+            "process"
+          ],
+          "review": {
+            "kind": "agent",
+            "method": "actual-image",
+            "reviewed_sha256": "f41897953b55a4f3ea66e5baf49d80b7f65289e40f1369982e8ecdf8d2438343",
+            "notes": "浅底与少量紫色清楚表达 API、消息服务、存储；是局部子系统图，不是全应用总览。"
+          },
+          "title": "Discord：请求合并服务"
+        }
+      ]
+    },
+    {
+      "id": "uber-doma",
+      "title": "Uber：网关与公开/私有接口边界",
+      "category": "微服务治理",
+      "target": "html",
+      "kind": "project",
+      "creator": "Uber Engineering",
+      "source_url": "https://www.uber.com/gb/en/blog/microservice-architecture/",
+      "description": "通过领域边界和网关减少跨服务依赖的讲解方法。",
+      "selection_note": "用颜色区别公开与私有接口，并以横线区分在线、离线；是网关边界图，适合 HTML 重绘。",
+      "limits": "用于研究原图的组织方式；具体技术关系按来源版本及实际项目核对。",
+      "license_note": "Original publisher retains image rights; private research copy with source attribution; not distributed.",
+      "imagegen_reference_eligible": false,
+      "theme_ref": null,
+      "generation_note": "not established by source",
+      "pages": [
+        {
+          "id": "p01",
+          "url": "https://tb-static.uber.com/prod/udam-assets/c6e95c28-223a-52d1-a431-249d1706bcd2.png",
+          "width": 1278,
+          "height": 1054,
+          "sha256": "cc08607e65d2571f80557fd64c9dd569f3cce4c12afa707049f6fd819855bb6d",
+          "roles": [
+            "architecture",
+            "process"
+          ],
+          "review": {
+            "kind": "agent",
+            "method": "actual-image",
+            "reviewed_sha256": "cc08607e65d2571f80557fd64c9dd569f3cce4c12afa707049f6fd819855bb6d",
+            "notes": "白底网关图用绿/红区分公开与私有接口，水平虚线分隔在线与离线；服务、数据库、ETL 与箭头清楚，但文字较小，适合 HTML/SVG 重绘。实际查看发布者原始 PNG。"
+          },
+          "title": "Uber：网关与公开/私有接口边界"
+        }
+      ]
+    },
+    {
+      "id": "aws-airline",
+      "title": "AWS：航空订票示例应用",
+      "category": "交易应用",
+      "target": "html",
+      "kind": "sample",
+      "creator": "AWS Compute Blog",
+      "source_url": "https://aws.amazon.com/blogs/compute/building-well-architected-serverless-applications-introduction/",
+      "description": "联合展示用户入口、业务域、异步工作流与存储。",
+      "selection_note": "业务域、前端和运维各有分组，信息完整；服务图标、边框和小字较密，讲稿中应按业务链路拆开。",
+      "limits": "用于研究原图的组织方式；具体技术关系按来源版本及实际项目核对。",
+      "license_note": "Original publisher retains image rights; private research copy with source attribution; not distributed.",
+      "imagegen_reference_eligible": false,
+      "theme_ref": null,
+      "generation_note": "not established by source",
+      "pages": [
+        {
+          "id": "p01",
+          "url": "https://d2908q01vomqb2.cloudfront.net/1b6453892473a467d07372d45eb05abc2031647a/2020/04/01/bwasa-1-4-airline-architecture-1024x511.png",
+          "width": 1024,
+          "height": 511,
+          "sha256": "2eb2659edd884fecccda86753daf2c7c2971d6d86b09346db15489ecc5eec802",
+          "roles": [
+            "architecture",
+            "process"
+          ],
+          "review": {
+            "kind": "agent",
+            "method": "actual-image",
+            "reviewed_sha256": "2eb2659edd884fecccda86753daf2c7c2971d6d86b09346db15489ecc5eec802",
+            "notes": "业务域、前端和运维各有分组，信息完整；服务图标、边框和小字较密，讲稿中应按业务链路拆开。"
+          },
+          "title": "AWS：航空订票示例应用"
+        }
+      ]
+    },
+    {
+      "id": "online-boutique",
+      "title": "Google：Online Boutique 电商微服务",
+      "category": "交易应用",
+      "target": "html",
+      "kind": "sample",
+      "creator": "Google Cloud",
+      "source_url": "https://github.com/GoogleCloudPlatform/microservices-demo/tree/c7cb6d5bfd6ea3aed768634ebbcb98cb7a523712",
+      "description": "以购物链路讲清前端、结账、支付、购物车、推荐及服务调用。",
+      "selection_note": "真实命名的服务和箭头有助理解购物链路；交叉连线较多，适合先总览再聚焦结账调用。",
+      "limits": "用于研究原图的组织方式；具体技术关系按来源版本及实际项目核对。",
+      "license_note": "Apache-2.0；原图未修改，保留上游许可文本与固定来源版本。",
+      "imagegen_reference_eligible": false,
+      "theme_ref": null,
+      "generation_note": "not established by source",
+      "pages": [
+        {
+          "id": "p01",
+          "url": "https://raw.githubusercontent.com/GoogleCloudPlatform/microservices-demo/c7cb6d5bfd6ea3aed768634ebbcb98cb7a523712/docs/img/architecture-diagram.png",
+          "width": 1376,
+          "height": 768,
+          "sha256": "04d84acdc7a4fd50bed47c6b34c905d0ed39a75005a9b8acbd4edbb4f99e8358",
+          "roles": [
+            "architecture",
+            "process"
+          ],
+          "review": {
+            "kind": "agent",
+            "method": "actual-image",
+            "reviewed_sha256": "04d84acdc7a4fd50bed47c6b34c905d0ed39a75005a9b8acbd4edbb4f99e8358",
+            "notes": "真实命名的服务和箭头有助理解购物链路；交叉连线较多，适合先总览再聚焦结账调用。"
+          },
+          "title": "Google：Online Boutique 电商微服务",
+          "local_asset": "skills/storyweave-html/assets/application-architecture-references/online-boutique.png"
+        }
+      ],
+      "revision": "c7cb6d5bfd6ea3aed768634ebbcb98cb7a523712",
+      "license_path": "skills/storyweave-html/assets/application-architecture-references/licenses/online-boutique.txt"
+    },
+    {
+      "id": "ragflow",
+      "title": "RAGFlow：应用与知识处理架构",
+      "category": "AI 应用",
+      "target": "html",
+      "kind": "project",
+      "creator": "InfiniFlow / RAGFlow",
+      "source_url": "https://github.com/infiniflow/ragflow",
+      "description": "展示入口、API、文档处理、检索、模型和存储等系统边界。",
+      "selection_note": "浅灰底及不同颜色的连线区分写入、查询、元数据；层次清楚，但线与背景对比偏低，重绘时应加强。",
+      "limits": "用于研究原图的组织方式；具体技术关系按来源版本及实际项目核对。",
+      "license_note": "Original publisher retains image rights; private research copy with source attribution; not distributed.",
+      "imagegen_reference_eligible": false,
+      "theme_ref": null,
+      "generation_note": "not established by source",
+      "pages": [
+        {
+          "id": "p01",
+          "url": "https://raw.githubusercontent.com/infiniflow/ragflow-docs/main/images/structure.jpg",
+          "width": 2760,
+          "height": 1600,
+          "sha256": "be003002b61ac97236f2cf685228f5087a15f3f669bf58c96fe02e59291bd7be",
+          "roles": [
+            "architecture",
+            "process"
+          ],
+          "review": {
+            "kind": "agent",
+            "method": "actual-image",
+            "reviewed_sha256": "be003002b61ac97236f2cf685228f5087a15f3f669bf58c96fe02e59291bd7be",
+            "notes": "浅灰底及不同颜色的连线区分写入、查询、元数据；层次清楚，但线与背景对比偏低，重绘时应加强。"
+          },
+          "title": "RAGFlow：应用与知识处理架构"
+        }
+      ]
+    },
+    {
+      "id": "netflix",
+      "title": "Netflix：总体架构教学图",
+      "category": "视频与内容平台",
+      "target": "html",
+      "kind": "teaching",
+      "creator": "ByteByteGo",
+      "source_url": "https://bytebytego.com/guides/netflixs-overall-architecture/",
+      "description": "从客户端到后端、存储和内容交付的分层总览。",
+      "selection_note": "适合观察技术栈分类和全局能力地图；它更接近分类树，不能当作所有服务间的实际调用拓扑。竖图需拆成演讲页。",
+      "limits": "用于研究原图的组织方式；具体技术关系按来源版本及实际项目核对。",
+      "license_note": "Source repository: CC BY-NC-ND 4.0; keep original attribution and original pixels; private reference only.",
+      "imagegen_reference_eligible": false,
+      "theme_ref": null,
+      "generation_note": "not established by source",
+      "pages": [
+        {
+          "id": "p01",
+          "url": "https://assets.bytebytego.com/diagrams/0288-netflix-overal-arch.png",
+          "width": 2553,
+          "height": 3693,
+          "sha256": "a70d2e5031663498d664c9bddebccbf5cb845a365abf2659263938b19dd85963",
+          "roles": [
+            "architecture"
+          ],
+          "review": {
+            "kind": "agent",
+            "method": "actual-image",
+            "reviewed_sha256": "a70d2e5031663498d664c9bddebccbf5cb845a365abf2659263938b19dd85963",
+            "notes": "适合观察技术栈分类和全局能力地图；它更接近分类树，不能当作所有服务间的实际调用拓扑。竖图需拆成演讲页。"
+          },
+          "title": "Netflix：总体架构教学图"
+        }
+      ]
+    },
+    {
+      "id": "youtube-upload",
+      "title": "YouTube：视频处理与编码",
+      "category": "视频与内容平台",
+      "target": "html",
+      "kind": "teaching",
+      "creator": "ByteByteGo",
+      "source_url": "https://bytebytego.com/guides/how-does-youtube-handle-massive-video-content-upload/",
+      "description": "在流程中展开集群、服务器和加速卡的空间层次。",
+      "selection_note": "软件与硬件编码并列对照，展开服务器内部层次；原图为竖版，需要拆讲，不能直接当横版整页。",
+      "limits": "用于研究原图的组织方式；具体技术关系按来源版本及实际项目核对。",
+      "license_note": "Source repository: CC BY-NC-ND 4.0; keep original attribution and original pixels; private reference only.",
+      "imagegen_reference_eligible": false,
+      "theme_ref": null,
+      "generation_note": "not established by source",
+      "pages": [
+        {
+          "id": "p01",
+          "url": "https://assets.bytebytego.com/diagrams/0425-yt-massive-upload.png",
+          "width": 3543,
+          "height": 3978,
+          "sha256": "fc0e8496c1e4849d12acc340a78c0aeae8f301a044c093eab3e83c9ffd50cea6",
+          "roles": [
+            "architecture",
+            "process"
+          ],
+          "review": {
+            "kind": "agent",
+            "method": "actual-image",
+            "reviewed_sha256": "fc0e8496c1e4849d12acc340a78c0aeae8f301a044c093eab3e83c9ffd50cea6",
+            "notes": "软件与硬件编码并列对照，展开服务器内部层次；原图为竖版，需要拆讲，不能直接当横版整页。"
+          },
+          "title": "YouTube：视频处理与编码"
+        }
+      ]
+    },
+    {
+      "id": "chat",
+      "title": "聊天应用：在线与离线消息",
+      "category": "即时通信",
+      "target": "html",
+      "kind": "teaching",
+      "creator": "ByteByteGo",
+      "source_url": "https://bytebytego.com/guides/how-do-we-design-a-chat-application-like-whatsapp-facebook-messenger-or-discord/",
+      "description": "用编号路径和分支讲解消息存储、同步及推送。",
+      "selection_note": "登录和消息用不同颜色分区，编号及在线/离线分支明确；适合架构讲解，纯结构适合 HTML。",
+      "limits": "用于研究原图的组织方式；具体技术关系按来源版本及实际项目核对。",
+      "license_note": "Source repository: CC BY-NC-ND 4.0; keep original attribution and original pixels; private reference only.",
+      "imagegen_reference_eligible": false,
+      "theme_ref": null,
+      "generation_note": "not established by source",
+      "pages": [
+        {
+          "id": "p01",
+          "url": "https://assets.bytebytego.com/diagrams/0134-chat-app.jpeg",
+          "width": 3243,
+          "height": 3453,
+          "sha256": "af1396dad150982f48911cf4bdaf15397ea7c2fdb58a0ac0261942bc55929a41",
+          "roles": [
+            "architecture",
+            "process"
+          ],
+          "review": {
+            "kind": "agent",
+            "method": "actual-image",
+            "reviewed_sha256": "af1396dad150982f48911cf4bdaf15397ea7c2fdb58a0ac0261942bc55929a41",
+            "notes": "登录和消息用不同颜色分区，编号及在线/离线分支明确；适合架构讲解，纯结构适合 HTML。"
+          },
+          "title": "聊天应用：在线与离线消息"
+        }
+      ]
+    },
+    {
+      "id": "search",
+      "title": "搜索引擎：采集、索引与查询",
+      "category": "搜索应用",
+      "target": "html",
+      "kind": "teaching",
+      "creator": "ByteByteGo",
+      "source_url": "https://bytebytego.com/guides/how-do-search-engines-work/",
+      "description": "区分离线索引构建与在线查询路径。",
+      "selection_note": "采集、索引和查询在同图中形成不同区域，颜色区分有意义；原图较长，宜分阶段讲解。",
+      "limits": "用于研究原图的组织方式；具体技术关系按来源版本及实际项目核对。",
+      "license_note": "Source repository: CC BY-NC-ND 4.0; keep original attribution and original pixels; private reference only.",
+      "imagegen_reference_eligible": false,
+      "theme_ref": null,
+      "generation_note": "not established by source",
+      "pages": [
+        {
+          "id": "p01",
+          "url": "https://assets.bytebytego.com/diagrams/0103-how-do-search-engines-work.png",
+          "width": 2560,
+          "height": 3300,
+          "sha256": "e1fe892c6bae3f8a4ef467ddcc74610a64c0fea336080704e927103e825bd354",
+          "roles": [
+            "architecture",
+            "process"
+          ],
+          "review": {
+            "kind": "agent",
+            "method": "actual-image",
+            "reviewed_sha256": "e1fe892c6bae3f8a4ef467ddcc74610a64c0fea336080704e927103e825bd354",
+            "notes": "采集、索引和查询在同图中形成不同区域，颜色区分有意义；原图较长，宜分阶段讲解。"
+          },
+          "title": "搜索引擎：采集、索引与查询"
+        }
+      ]
+    },
+    {
+      "id": "payment",
+      "title": "支付系统：执行、钱包与账本",
+      "category": "交易应用",
+      "target": "html",
+      "kind": "teaching",
+      "creator": "ByteByteGo",
+      "source_url": "https://bytebytego.com/guides/payment-system/",
+      "description": "通过业务职责和外部支付边界组织调用关系。",
+      "selection_note": "服务职责、内外边界和调用编号明确；适合研究支付讲解图的组织，不是某家公司的完整生产架构。",
+      "limits": "用于研究原图的组织方式；具体技术关系按来源版本及实际项目核对。",
+      "license_note": "Source repository: CC BY-NC-ND 4.0; keep original attribution and original pixels; private reference only.",
+      "imagegen_reference_eligible": false,
+      "theme_ref": null,
+      "generation_note": "not established by source",
+      "pages": [
+        {
+          "id": "p01",
+          "url": "https://assets.bytebytego.com/diagrams/0299-payment-system.jpeg",
+          "width": 1913,
+          "height": 1536,
+          "sha256": "dfeeea5e79a61224470de2ecd8d703a0bb26a602fda2bac03ff5f9c3b6dd0bea",
+          "roles": [
+            "architecture",
+            "process"
+          ],
+          "review": {
+            "kind": "agent",
+            "method": "actual-image",
+            "reviewed_sha256": "dfeeea5e79a61224470de2ecd8d703a0bb26a602fda2bac03ff5f9c3b6dd0bea",
+            "notes": "服务职责、内外边界和调用编号明确；适合研究支付讲解图的组织，不是某家公司的完整生产架构。"
+          },
+          "title": "支付系统：执行、钱包与账本"
+        }
+      ]
+    },
+    {
+      "id": "banking-ai",
+      "title": "AI 案例：企业银行应用架构",
+      "category": "AI 架构绘图案例",
+      "target": "html",
+      "kind": "ai-example",
+      "creator": "ArcadeAI / Blueprint MCP",
+      "source_url": "https://github.com/ArcadeAI/blueprint-mcp",
+      "description": "评估有明确组件与关系的 AI 生成架构讲解图。",
+      "selection_note": "浅色的五层架构包含角色、AI 助手、运行时和企业系统，层次明确；主要为方框连线，适合 HTML 重绘。源项目标注为 Nano Banana Pro 图例。",
+      "limits": "用于研究原图的组织方式；具体技术关系按来源版本及实际项目核对。",
+      "license_note": "No repository license was found in the observed tree; private source reference only; no redistribution or derived recoloring.",
+      "imagegen_reference_eligible": false,
+      "theme_ref": null,
+      "generation_note": "README identifies examples generated via Blueprint MCP with Nano Banana Pro; no generation was run in this task.",
+      "pages": [
+        {
+          "id": "p01",
+          "url": "https://raw.githubusercontent.com/ArcadeAI/blueprint-mcp/main/images/arcade_enterprise_banking.png",
+          "width": 2752,
+          "height": 1536,
+          "sha256": "7b69c2b1800e5ca1249c9585a7f58ecc99b29febaf8502c3a72ada16ef5ecf3e",
+          "roles": [
+            "architecture",
+            "process"
+          ],
+          "review": {
+            "kind": "agent",
+            "method": "actual-image",
+            "reviewed_sha256": "7b69c2b1800e5ca1249c9585a7f58ecc99b29febaf8502c3a72ada16ef5ecf3e",
+            "notes": "浅色的五层架构包含角色、AI 助手、运行时和企业系统，层次明确；主要为方框连线，适合 HTML 重绘。源项目标注为 Nano Banana Pro 图例。"
+          },
+          "title": "AI 案例：企业银行应用架构"
+        }
+      ]
+    },
+    {
+      "id": "langgraph-ai",
+      "title": "AI 案例：LangGraph 架构学习卡",
+      "category": "AI 架构绘图案例",
+      "target": "html",
+      "kind": "ai-example",
+      "creator": "ArcadeAI / Blueprint MCP",
+      "source_url": "https://github.com/ArcadeAI/blueprint-mcp",
+      "description": "评估有明确组件与关系的 AI 生成架构讲解图。",
+      "selection_note": "浅色学习卡包含组件、执行、检查点等多个讲解区域；信息量较高，讲稿应拆页。作为 AI 绘图示例，技术内容需按官方资料复核。",
+      "limits": "用于研究原图的组织方式；具体技术关系按来源版本及实际项目核对。",
+      "license_note": "No repository license was found in the observed tree; private source reference only; no redistribution or derived recoloring.",
+      "imagegen_reference_eligible": false,
+      "theme_ref": null,
+      "generation_note": "README identifies examples generated via Blueprint MCP with Nano Banana Pro; no generation was run in this task.",
+      "pages": [
+        {
+          "id": "p01",
+          "url": "https://raw.githubusercontent.com/ArcadeAI/blueprint-mcp/main/images/langgraph_architecture_learning_card.png",
+          "width": 2752,
+          "height": 1536,
+          "sha256": "db499e8c4c2c2aa7359f2d609c0aece47603ac403b030e3e280b8414573e1438",
+          "roles": [
+            "architecture",
+            "process"
+          ],
+          "review": {
+            "kind": "agent",
+            "method": "actual-image",
+            "reviewed_sha256": "db499e8c4c2c2aa7359f2d609c0aece47603ac403b030e3e280b8414573e1438",
+            "notes": "浅色学习卡包含组件、执行、检查点等多个讲解区域；信息量较高，讲稿应拆页。作为 AI 绘图示例，技术内容需按官方资料复核。"
+          },
+          "title": "AI 案例：LangGraph 架构学习卡"
+        }
+      ]
+    },
+    {
+      "id": "bank-of-anthos",
+      "title": "Google：Bank of Anthos 银行示例应用",
+      "category": "交易应用",
+      "target": "html",
+      "kind": "sample",
+      "creator": "GoogleCloudPlatform/bank-of-anthos",
+      "source_url": "https://github.com/GoogleCloudPlatform/bank-of-anthos/tree/db35fea9fd090150e2398106aadb475576f80d94",
+      "description": "浅色服务分区适合讲解金融应用的入口、账户与交易边界。",
+      "selection_note": "浅底以入口、用户资料、交易写入和读模型划分职责，账户库与账本库的连接清楚；样图仅是参考应用架构。",
+      "limits": "上游可运行的参考应用，不能当作某家公司的完整生产架构。",
+      "license_note": "Apache-2.0；保留原图、上游许可文本和来源版本。",
+      "license_path": "skills/storyweave-html/assets/application-architecture-references/licenses/bank-of-anthos.txt",
+      "revision": "db35fea9fd090150e2398106aadb475576f80d94",
+      "imagegen_reference_eligible": false,
+      "theme_ref": null,
+      "generation_note": "上游仓库架构原图；未声明由 AI 生成。",
+      "pages": [
+        {
+          "id": "p01",
+          "url": "https://raw.githubusercontent.com/GoogleCloudPlatform/bank-of-anthos/db35fea9fd090150e2398106aadb475576f80d94/docs/img/architecture.png",
+          "local_asset": "skills/storyweave-html/assets/application-architecture-references/bank-of-anthos.png",
+          "width": 1376,
+          "height": 768,
+          "sha256": "15bf75003506b66b161536bd362ebd5d8bc6c40684d7d4291e79f8e22a74d13b",
+          "review": {
+            "kind": "agent",
+            "method": "actual-image",
+            "reviewed_sha256": "15bf75003506b66b161536bd362ebd5d8bc6c40684d7d4291e79f8e22a74d13b",
+            "notes": "浅底以入口、用户资料、交易写入和读模型划分职责，账户库与账本库的连接清楚；样图仅是参考应用架构。"
+          },
+          "roles": [
+            "architecture"
+          ],
+          "title": "Google：Bank of Anthos 银行示例应用"
+        }
+      ]
+    }
+  ]
+}

@@ -17,3 +17,5 @@
 复杂插画或照片可以作为 HTML 页面中的独立素材。页面使用图片素材，不等于需要将整页栅格化。
 
 `upstream.json` 保存来源提交、源文件链接、图片路径和哈希。`LICENSE.txt` 保存上游 MIT 文本。外部字体和素材仍按各自来源取用。
+
+大型应用与子系统的结构讲解另见[应用架构参考](../application-architecture-references/README.md)，覆盖银行、电商、消息、搜索、支付、视频与 AI 平台。

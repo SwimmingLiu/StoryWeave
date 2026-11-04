@@ -41,9 +41,11 @@ HTML 制作先读[视觉生成规则](docs/architecture/visual-generation.md)。
 
 ## Imagegen 主题与参考图
 
-生成器现有 **23 套候选主题**。新增淡彩机械手绘、工程线稿工坊、银白玻璃管线、淡紫玻璃反馈四套配方，以下为各自的原创架构参考图。原有主题与完整引用保留。[完整主题目录](skills/storyweave-imagegen/references/themes.md) · [23 套实际预览](skills/storyweave-imagegen/assets/examples/theme-previews/index.html)
+生成器现有 **23 套候选主题**。新增淡彩机械手绘、工程线稿工坊、银白玻璃管线、淡紫玻璃反馈四套配方，以下展示全部主题预览与原创架构案例。原有主题与完整引用保留。[完整主题目录](skills/storyweave-imagegen/references/themes.md) · [23 套实际预览](skills/storyweave-imagegen/assets/examples/theme-previews/index.html)
 
 默认优先浅色主题，深色主题保留为显式备选。每套新主题都支持现有页型与准确文字合同；参考图说明媒介和关系表达，具体演示仍需逐页复核。
+
+### 新增架构主题
 
 | 淡彩机械手绘 · A1 | 工程线稿工坊 · A2 |
 | --- | --- |
@@ -54,6 +56,72 @@ HTML 制作先读[视觉生成规则](docs/architecture/visual-generation.md)。
 | --- | --- |
 | ![银白玻璃管线视频平台](skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/video-glass.png) | ![淡紫玻璃反馈推荐系统](skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/recommendation-glass.png) |
 | `systems/glass-pipeline` | `systems/lavender-feedback` |
+
+### 其他浅色主题
+
+| 纸面编辑 | 白底电路 |
+| --- | --- |
+| ![纸面编辑](skills/storyweave-imagegen/assets/examples/theme-previews/editorial--paper-magazine.png) | ![白底电路](skills/storyweave-imagegen/assets/examples/theme-previews/systems--white-cyan-circuit.png) |
+| `editorial/paper-magazine` | `systems/white-cyan-circuit` |
+
+| 参数化波纹 | 银白玻璃 |
+| --- | --- |
+| ![参数化波纹](skills/storyweave-imagegen/assets/examples/theme-previews/systems--white-cyan-wave.png) | ![银白玻璃](skills/storyweave-imagegen/assets/examples/theme-previews/systems--silver-glass.png) |
+| `systems/white-cyan-wave` | `systems/silver-glass` |
+
+| 暖色电路 | 日常电影 |
+| --- | --- |
+| ![暖色电路](skills/storyweave-imagegen/assets/examples/theme-previews/systems--warm-circuit.png) | ![日常电影](skills/storyweave-imagegen/assets/examples/theme-previews/cinematic--natural-film.png) |
+| `systems/warm-circuit` | `cinematic/natural-film` |
+
+| 手绘白板 | 水墨方法论 |
+| --- | --- |
+| ![手绘白板](skills/storyweave-imagegen/assets/examples/theme-previews/knowledge--sketch-notes.png) | ![水墨方法论](skills/storyweave-imagegen/assets/examples/theme-previews/knowledge--ink-method.png) |
+| `knowledge/sketch-notes` | `knowledge/ink-method` |
+
+| 黏土流程 | 角色彩绘 |
+| --- | --- |
+| ![黏土流程](skills/storyweave-imagegen/assets/examples/theme-previews/tactile--clay-workflow.png) | ![角色彩绘](skills/storyweave-imagegen/assets/examples/theme-previews/illustrated--storybook-guide.png) |
+| `tactile/clay-workflow` | `illustrated/storybook-guide` |
+
+| 漫画工程 | 场景系统图 |
+| --- | --- |
+| ![漫画工程](skills/storyweave-imagegen/assets/examples/theme-previews/illustrated--comic-engineering.png) | ![场景系统图](skills/storyweave-imagegen/assets/examples/theme-previews/illustrated--panoramic-system.png) |
+| `illustrated/comic-engineering` | `illustrated/panoramic-system` |
+
+### 深色与高饱和备选
+
+| 技术蓝图 | 霓虹系统 |
+| --- | --- |
+| ![技术蓝图](skills/storyweave-imagegen/assets/examples/theme-previews/systems--engineering-blueprint.png) | ![霓虹系统](skills/storyweave-imagegen/assets/examples/theme-previews/systems--neon-network.png) |
+| `systems/engineering-blueprint` | `systems/neon-network` |
+
+| 黑金运行 | 粉笔黑板 |
+| --- | --- |
+| ![黑金运行](skills/storyweave-imagegen/assets/examples/theme-previews/systems--black-gold.png) | ![粉笔黑板](skills/storyweave-imagegen/assets/examples/theme-previews/knowledge--chalkboard.png) |
+| `systems/black-gold` | `knowledge/chalkboard` |
+
+| 复古设备 | 像素世界 |
+| --- | --- |
+| ![复古设备](skills/storyweave-imagegen/assets/examples/theme-previews/tactile--retro-device.png) | ![像素世界](skills/storyweave-imagegen/assets/examples/theme-previews/illustrated--pixel-world.png) |
+| `tactile/retro-device` | `illustrated/pixel-world` |
+
+| 朱红海报 |
+| --- |
+| ![朱红海报](skills/storyweave-imagegen/assets/examples/theme-previews/campaign--bold-poster.png) |
+| `campaign/bold-poster` |
+
+### 其他原创架构案例
+
+| 数据分析：批流处理与指标交付 · B1 | 即时消息：在线投递与离线通知 · C1 |
+| --- | --- |
+| ![数据分析：批流处理与指标交付 · B1](skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/analytics-atlas.png) | ![即时消息：在线投递与离线通知 · C1](skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/messaging-clay.png) |
+
+| 订单履约：库存、仓储与配送 · D2 | 电商交易：请求、订单与事件 · D3 |
+| --- | --- |
+| ![订单履约：库存、仓储与配送 · D2](skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/fulfillment-cyan.png) | ![电商交易：请求、订单与事件 · D3](skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/ecommerce-cyan.png) |
+
+### 应用架构参考
 
 应用架构目录包含 **26 个案例**：16 个结构讲解参考归入 HTML/SVG，10 个插画参考归入 Imagegen。其中 [8 张原创候选图](skills/storyweave-imagegen/assets/application-architecture-references/generated-cases/index.html)按相似风格分组，默认展示已选的 A1、A2、D1、D4，可展开备选并导出选择；原图与提示词随包保存。以下两张 Google 原图附上游许可；[全部来源与用途](design-library/application-architecture-references/README.md)。
 
